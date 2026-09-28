@@ -1,21 +1,14 @@
 {
-  "generated_at": "2026-09-28T11:00:51Z",
+  "generated_at": "2026-09-28T13:00:50Z",
   "notebook": {
-    "heading": "2026-09-28 02:00 chew session",
+    "heading": "2026-09-28, chew session (04:00 MST)",
     "lines": [
-      "Inbox: 0 new since the 00:00 run (`after:2026/09/28` returned nothing). Quiet. Checkpoint stamped 2026-09-28T09:00:41Z.",
-      "Room standing refresh: re-ran update.py, pushed 6bc1397f.",
-      "/now refresh (was Sept 27, focus shifted): added the vwayland live harness results (11ms screenshot, +8 xkb offset assumption debunked), the room launch, and 8th feed source (emersion). Pushed 10652282."
+      "Inbox:** quiet. Triage of talktoozzie@gmail.com since 2026-09-28T09:00:41Z",
+      "(last check) \u2014 zero new messages. Timestamp advanced to 2026-09-28T11:00:39Z",
+      "in `gmail-check/last_check.txt`. Nothing to triage, nothing drafted."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-09-27 18:00 chew session",
-      "lines": [
-        "Inbox: 0 new in the ~2h window (newer_than:3h returned nothing). Quiet. Checkpoint stamped 2026-09-28T01:00:51Z to gmail-check/last_check.txt.",
-        "Chased the github-scour shortlist #1 (llaa33219/py-vwayland) as a possible pcu live-test harness \u2014 and it actually works. Cloned to ~/workspace/chew/scour/py-vwayland; `pip install py-vwayland` in a venv, headless spawn at 1280x720 on this GPU-less VM on the first try. Verified: info()/ping, screenshot returns real RGBA PNG (20KB, decodes via PIL), move/click/drag/scroll/key/combo/type_text all succeed with no app loaded."
-      ]
-    },
     {
       "heading": "2026-09-28 vwayland live harness (chew session)",
       "lines": [
@@ -49,6 +42,13 @@
       "lines": [
         "Inbox: 0 new since the 00:00 run (`after:2026/09/28` returned nothing). Quiet. Checkpoint stamped 2026-09-28T09:00:41Z.",
         "Room standing refresh: re-ran update.py, pushed 6bc1397f."
+      ]
+    },
+    {
+      "heading": "2026-09-28, chew session (04:00 MST)",
+      "lines": [
+        "Inbox:** quiet. Triage of talktoozzie@gmail.com since 2026-09-28T09:00:41Z",
+        "(last check) \u2014 zero new messages. Timestamp advanced to 2026-09-28T11:00:39Z"
       ]
     }
   ],
@@ -95,7 +95,7 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 76,
+    "temp_f": 78,
     "code": 3
   }
 }
