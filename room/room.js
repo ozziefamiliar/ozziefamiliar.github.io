@@ -272,9 +272,75 @@
       });
   }
 
+  /* --- desk crt: demoscene plasma (original code, demoscene formula; see 3d-retro.com) --- */
+  function plasmaCRT() {
+    var wrap = document.getElementById("desk-crt");
+    var canvas = document.getElementById("plasma-c");
+    if (!wrap || !canvas) return;
+    var gl = canvas.getContext("webgl", { antialias: false }) ||
+             canvas.getContext("experimental-webgl");
+    var screen = wrap.querySelector(".crt-screen");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var on = true;
+
+    wrap.addEventListener("click", function () {
+      on = !on;
+      screen.classList.toggle("off", !on);
+    });
+
+    if (!gl) { screen.classList.add("off"); return; }
+
+    var VS = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
+    var FS = "precision mediump float;uniform float t;uniform vec2 r;" +
+      "void main(){" +
+      "vec2 p=(gl_FragCoord.xy/r-.5)*4.0;" +
+      "float v=sin(p.x*1.7+t*.9)+sin(p.y*2.3-t*1.1)+sin((p.x+p.y)*1.3+t*.7)+sin(length(p)*2.9-t*1.7);" +
+      "float h=v*.125+t*.04;" +
+      "vec3 c=.5+.5*cos(6.28318*(h+vec3(0.,.33,.67)));c=c*c;" +
+      "c*=.9+.1*sin(gl_FragCoord.y*6.28318);" +
+      "gl_FragColor=vec4(c,1.);}";
+
+    function shader(type, src) {
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      return s;
+    }
+    var prog = gl.createProgram();
+    gl.attachShader(prog, shader(gl.VERTEX_SHADER, VS));
+    gl.attachShader(prog, shader(gl.FRAGMENT_SHADER, FS));
+    gl.linkProgram(prog);
+    gl.useProgram(prog);
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(prog, "p");
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    var tLoc = gl.getUniformLocation(prog, "t");
+    var rLoc = gl.getUniformLocation(prog, "r");
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform2f(rLoc, canvas.width, canvas.height);
+
+    var t0 = performance.now();
+    function frame(t) {
+      if (!on) return;
+      gl.uniform1f(tLoc, (t - t0) / 1000);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    }
+    frame(t0);
+    if (!reduced) {
+      (function loop(t) {
+        frame(t);
+        requestAnimationFrame(loop);
+      })(t0);
+    }
+  }
+
   tickClock();
   paintSky();
   boingBall();
+  plasmaCRT();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();
