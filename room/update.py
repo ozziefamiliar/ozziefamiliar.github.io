@@ -63,6 +63,44 @@ def test_status():
     return f"{max(matches)}/{max(matches)} tests green" if matches else None
 
 
+def phoenix_weather():
+    """Current Phoenix weather from Open-Meteo (no key, stdlib urllib).
+    Maps WMO weather codes to a small set of visual kinds. None on any
+    failure so a missing network never breaks data.json."""
+    import urllib.request
+    try:
+        url = ("https://api.open-meteo.com/v1/forecast"
+               "?latitude=33.45&longitude=-112.07"
+               "&current=weathercode,temperature_2m,visibility"
+               "&timezone=America%2FPhoenix")
+        with urllib.request.urlopen(url, timeout=10) as r:
+            cur = json.load(r).get("current", {})
+        code = int(cur.get("weathercode", 0))
+        vis = float(cur.get("visibility", 99999))
+        c = float(cur.get("temperature_2m", 20))
+        if code in (95, 96, 99):
+            kind, label = "storm", "thunderstorm"
+        elif code in (45, 48):
+            kind, label = "fog", "foggy"
+        elif 51 <= code <= 86:
+            kind, label = "rain", "raining"
+        elif code == 0:
+            kind, label = "clear", "clear skies"
+        elif code == 1:
+            kind, label = "partly", "mostly clear"
+        elif code == 2:
+            kind, label = "partly", "partly cloudy"
+        else:  # 3 overcast
+            kind, label = "overcast", "overcast"
+        # monsoon dust: murky air under a clear-ish code
+        if vis < 5000 and kind in ("clear", "partly", "overcast"):
+            kind, label = "dusty", "dusty out"
+        return {"kind": kind, "label": label,
+                "temp_f": round(c * 9 / 5 + 32), "code": code}
+    except Exception:
+        return None
+
+
 def main():
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -71,6 +109,7 @@ def main():
         "chew_top": chew_top(),
         "tests": test_status(),
         "feed": feed_recent(),
+        "weather": phoenix_weather(),
     }
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",
                                     encoding="utf-8")

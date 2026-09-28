@@ -52,6 +52,47 @@
     }
   }
 
+  /* weather: overlays painted from data.json, phoenix current conditions */
+  function paintWeather(wx) {
+    var K = (wx && wx.kind) || "clear";
+    var cloudy = ["partly", "cloudy", "overcast", "rain", "storm", "dusty"]
+      .indexOf(K) >= 0;
+    var clouds = document.getElementById("wx-clouds");
+    clouds.style.display = cloudy ? "block" : "none";
+    clouds.style.opacity = K === "overcast" ? "0.95"
+      : K === "partly" ? "0.45" : "0.8";
+    var n = K === "partly" ? 1 : K === "overcast" ? 3 : 2;
+    ["c1", "c2", "c3"].forEach(function (c, i) {
+      var el = clouds.getElementsByClassName(c)[0];
+      if (el) el.style.display = i < n ? "block" : "none";
+    });
+    document.getElementById("wx-rain").style.display =
+      (K === "rain" || K === "storm") ? "block" : "none";
+    var haze = document.getElementById("wx-haze");
+    haze.style.display = (K === "fog" || K === "dusty" || K === "overcast")
+      ? "block" : "none";
+    haze.style.background = K === "dusty" ? "rgba(190, 130, 60, 0.35)"
+      : K === "fog" ? "rgba(200, 205, 215, 0.5)"
+      : "rgba(70, 80, 95, 0.32)";
+    var label = document.getElementById("wx-label");
+    if (wx && wx.label) {
+      label.style.display = "block";
+      label.textContent = wx.temp_f + "\u00b0f \u00b7 " + wx.label;
+    } else {
+      label.style.display = "none";
+    }
+    if (K === "storm" && !window.__stormT) {
+      window.__stormT = setInterval(function () {
+        var f = document.getElementById("wx-flash");
+        f.style.opacity = "0.85";
+        setTimeout(function () { f.style.opacity = "0"; }, 150);
+      }, 3800);
+    } else if (K !== "storm" && window.__stormT) {
+      clearInterval(window.__stormT);
+      window.__stormT = null;
+    }
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -88,6 +129,7 @@
         }
 
         document.getElementById("chew-top").textContent = d.chew_top || "—";
+        paintWeather(d.weather);
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";
 

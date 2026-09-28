@@ -58,6 +58,47 @@
 }
 .saguaro::before { left: -0.5rem; border-bottom-left-radius: 0.3rem; }
 .saguaro::after { right: -0.5rem; border-bottom-right-radius: 0.3rem; }
+
+/* --- weather overlays (fed by data.json) --- */
+.wx-clouds {
+  position: absolute; inset: 0; overflow: hidden;
+  display: none; pointer-events: none;
+}
+.cloud {
+  position: absolute; width: 3.2rem; height: 1.05rem;
+  background: #eef1f5; opacity: 0.88; border-radius: 1rem;
+  animation: drift 30s linear infinite;
+}
+.cloud::before, .cloud::after {
+  content: ""; position: absolute; background: #eef1f5;
+  border-radius: 50%;
+}
+.cloud::before { width: 1.25rem; height: 1.25rem; top: -0.6rem; left: 0.7rem; }
+.cloud::after { width: 0.95rem; height: 0.95rem; top: -0.42rem; left: 1.75rem; }
+.c1 { top: 0.7rem; animation-duration: 24s; }
+.c2 { top: 2.5rem; animation-duration: 38s; animation-delay: -14s; scale: 0.8; }
+.c3 { top: 1.6rem; animation-duration: 31s; animation-delay: -22s; scale: 1.15; }
+@keyframes drift { from { left: -45%; } to { left: 115%; } }
+.wx-rain {
+  position: absolute; left: 0; right: 0; top: -25%; bottom: -25%;
+  display: none; pointer-events: none;
+  background: repeating-linear-gradient(102deg, transparent 0 7px,
+    rgba(170, 205, 235, 0.45) 7px 9px);
+  animation: rainfall 0.6s linear infinite;
+}
+@keyframes rainfall { to { transform: translateY(12%); } }
+.wx-haze {
+  position: absolute; inset: 0; display: none; pointer-events: none;
+}
+.wx-flash {
+  position: absolute; inset: 0; background: #edf1ff;
+  opacity: 0; transition: opacity 0.12s; pointer-events: none;
+}
+.wx-label {
+  position: absolute; top: 11.6rem; left: 2rem;
+  font-size: 0.68rem; letter-spacing: 0.06rem; color: #8a7a63;
+  display: none;
+}
 .saguaro.s1 { left: 1.2rem; height: 3.4rem; }
 .saguaro.s2 { left: 7.5rem; height: 2.5rem; transform: scale(0.8); }
 .saguaro.s3 { left: 4.4rem; height: 2rem; transform: scale(0.65); }
