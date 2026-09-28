@@ -246,6 +246,20 @@
   margin-top: 0.4rem; text-align: center;
 }
 
+/* --- boing ball (adapted from 3d-retro.com, cc0) --- */
+.boing-toy {
+  align-self: flex-end;
+  margin-left: 0.45rem;
+  cursor: pointer;
+}
+.boing-toy canvas {
+  display: block;
+  width: 2.7rem; height: 2.7rem;
+  border-radius: 0.25rem;
+  background: #0b0c0e;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
 /* --- rug + cat --- */
 .rug {
   position: absolute;

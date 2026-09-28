@@ -3,6 +3,123 @@
   "use strict";
   var PHX = "America/Phoenix";
 
+  /* --- boing ball on the shelf (adapted from 3d-retro.com, cc0) --- */
+  function boingBall() {
+    var canvas = document.getElementById("boing-c");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    var x = 0, y = 1.8, vx = 1.15, vy = 0, spin = 0.4, last = 0, poke = 0;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var G = 9.4, FLOOR = 0, R = 0.72, RGB = [216, 36, 28];
+
+    canvas.addEventListener("pointerdown", function () {
+      vy = 4.2;
+      vx = -vx * 0.9;
+      poke = 1;
+    });
+
+    function project(px, py, pz, w, h) {
+      var z = pz + 5.2;
+      var f = Math.min(w, h) * 0.95 / z;
+      return { x: w * 0.5 + px * f, y: h * 0.62 - py * f, s: f };
+    }
+
+    function drawGrid(w, h) {
+      ctx.strokeStyle = "rgba(216,36,28,0.22)";
+      ctx.lineWidth = 1;
+      for (var i = -6; i <= 6; i++) {
+        var a = project(i * 0.55, FLOOR, -3.2, w, h);
+        var b = project(i * 0.55, FLOOR, 3.4, w, h);
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        var c = project(-3.4, FLOOR, i * 0.55, w, h);
+        var d = project(3.4, FLOOR, i * 0.55, w, h);
+        ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(d.x, d.y); ctx.stroke();
+      }
+    }
+
+    function drawBall(w, h) {
+      var p = project(x, y + R, 0, w, h);
+      var rad = R * p.s;
+      var sh = project(x + 0.35, FLOOR + 0.01, 0.15, w, h);
+      var lift = Math.max(0.15, 1 - (y / 2.6));
+      ctx.fillStyle = "rgba(0,0,0," + (0.38 * lift) + ")";
+      ctx.beginPath();
+      ctx.ellipse(sh.x, sh.y, rad * 0.85, rad * 0.22, 0, 0, Math.PI * 2);
+      ctx.fill();
+      var xmin = Math.max(0, (p.x - rad) | 0),
+          xmax = Math.min(w - 1, (p.x + rad) | 0),
+          ymin = Math.max(0, (p.y - rad) | 0),
+          ymax = Math.min(h - 1, (p.y + rad) | 0);
+      var id = ctx.getImageData(xmin, ymin, xmax - xmin + 1, ymax - ymin + 1);
+      var data = id.data, cw = xmax - xmin + 1;
+      var cs = Math.cos(spin), sn = Math.sin(spin);
+      var white = [236, 232, 224];
+      for (var py = ymin; py <= ymax; py++) {
+        for (var px = xmin; px <= xmax; px++) {
+          var nx = (px - p.x) / rad, ny = (py - p.y) / rad;
+          var r2 = nx * nx + ny * ny;
+          if (r2 > 1) continue;
+          var nz = Math.sqrt(1 - r2);
+          var rx = nx * cs + nz * sn, rz = -nx * sn + nz * cs;
+          var lon = Math.atan2(rx, rz);
+          var lat = Math.asin(Math.max(-1, Math.min(1, ny)));
+          var u = Math.floor(((lon + Math.PI) / (Math.PI * 2)) * 8);
+          var v = Math.floor(((lat + Math.PI / 2) / Math.PI) * 4);
+          var on = (u + v) & 1;
+          var wrap = 0.18 + 0.85 * Math.max(0, 0.35 + 0.75 * (nx * 0.4 - ny * 0.5 + nz * 0.7));
+          var col = on ? RGB : white;
+          var k = ((py - ymin) * cw + (px - xmin)) * 4;
+          data[k] = col[0] * wrap;
+          data[k + 1] = col[1] * wrap;
+          data[k + 2] = col[2] * wrap;
+          data[k + 3] = 255;
+        }
+      }
+      ctx.putImageData(id, xmin, ymin);
+    }
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(1, Math.floor(canvas.clientWidth * dpr));
+      var h = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+
+    function frame(now) {
+      var dt = Math.min(0.032, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      vy -= G * dt; y += vy * dt; x += vx * dt;
+      spin += vx * dt * 0.85;
+      if (y < FLOOR) {
+        y = FLOOR;
+        vy = Math.abs(vy) * 0.84;
+        if (vy < 0.4) vy = 3.6 + poke * 1.2;
+      }
+      if (x > 2.1) { x = 2.1; vx = -Math.abs(vx); }
+      if (x < -2.1) { x = -2.1; vx = Math.abs(vx); }
+      poke *= 0.9;
+      resize();
+      var w = canvas.width, h = canvas.height;
+      ctx.fillStyle = "#0b0c0e";
+      ctx.fillRect(0, 0, w, h);
+      drawGrid(w, h);
+      drawBall(w, h);
+      requestAnimationFrame(frame);
+    }
+
+    if (reduced) {
+      resize();
+      ctx.fillStyle = "#0b0c0e";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      drawGrid(canvas.width, canvas.height);
+      drawBall(canvas.width, canvas.height);
+    } else requestAnimationFrame(frame);
+  }
+
   function phxNow() {
     return new Date(new Date().toLocaleString("en-US", { timeZone: PHX }));
   }
@@ -157,6 +274,7 @@
 
   tickClock();
   paintSky();
+  boingBall();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();
