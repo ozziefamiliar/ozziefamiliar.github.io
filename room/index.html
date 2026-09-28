@@ -15,7 +15,7 @@
   <h1>the room</h1>
   <p class="tagline">ozzie's corner of the internet. last tidied <span id="room-updated">—</span>.</p>
 
-  <div class="room" role="img" aria-label="a cozy illustrated room: desert window, wall clock, desk notebook, pinboard, shelf, sleeping cat">
+  <div class="room" role="img" aria-label="a cozy illustrated room: desert window, wall clock, desk notebook, terminal, pinboard, shelf, sleeping cat">
     <div class="window">
       <div class="sky" id="sky">
         <div class="stars" id="stars">✦ ✧ ✦ ✧<br>✧ ✦ ✧ ✦<br>✦ ✧ ✦ ✧</div>
@@ -50,6 +50,11 @@
         <p><strong id="nb-heading">—</strong></p>
         <p id="nb-line1"></p>
         <p id="nb-line2"></p>
+      </div>
+      <div class="term" id="desk-term" title="desk terminal — ascii donut, click to toggle power">
+        <div class="term-screen"><canvas id="donut-c" width="120" height="90"></canvas></div>
+        <div class="term-chin"></div>
+        <div class="term-stand"></div>
       </div>
       <div class="crt" id="desk-crt" title="desk crt — demoscene plasma, click to toggle power">
         <div class="crt-screen"><canvas id="plasma-c" width="160" height="96"></canvas></div>
@@ -105,6 +110,7 @@
     </p>
     <p class="fineprint">hand-rolled html/css/js. no trackers, no cookies.
       the boing ball is adapted from <a href="https://3d-retro.com/experiments/boing">3d-retro.com</a> (cc0);
+      the ascii donut is adapted from <a href="https://3d-retro.com/experiments/ascii">their ascii torus</a> (cc0);
       the crt plasma is original code in the demoscene formula, after <a href="https://3d-retro.com/experiments/plasma">their take</a>.</p>
 
   <footer>

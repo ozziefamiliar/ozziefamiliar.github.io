@@ -337,10 +337,114 @@
     }
   }
 
+  /* --- phosphor terminal: ascii donut (adapted from 3d-retro.com, cc0) --- */
+  function donutTerm() {
+    var wrap = document.getElementById("desk-term");
+    var canvas = document.getElementById("donut-c");
+    if (!wrap || !canvas) return;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    var screen = wrap.querySelector(".term-screen");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var RAMP = " .:-=+*#%@";
+    var A = 0.8, B = 0.6, last = 0, raf = 0, on = true;
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(1, Math.floor(canvas.clientWidth * dpr));
+      var h = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+
+    function frame(now) {
+      var dt = Math.min(0.1, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      if (!reduced) { A += dt * 0.85; B += dt * 0.42; }
+      resize();
+      var w = canvas.width, h = canvas.height;
+      ctx.fillStyle = "#07120c";
+      ctx.fillRect(0, 0, w, h);
+
+      var cell = Math.max(8, Math.floor(Math.min(w, h) / 42));
+      var cols = Math.max(24, Math.floor(w / cell));
+      var rows = Math.max(16, Math.floor(h / cell));
+      /* shrink to fit a small terminal instead of clipping past it */
+      cell = Math.max(1, Math.floor(Math.min(w / cols, h / rows)));
+      var zbuf = new Float32Array(cols * rows);
+      var cells = new Uint8Array(cols * rows);
+      zbuf.fill(-1e9);
+
+      var cosA = Math.cos(A), sinA = Math.sin(A);
+      var cosB = Math.cos(B), sinB = Math.sin(B);
+      var R1 = 1.0, R2 = 2.0, K2 = 5.0;
+      var K1 = cols * K2 * 3 / (8 * (R1 + R2));
+
+      var theta, phi, ct, st, cp, sp, cx, x, y, z, ooz, xp, yp, L, idx;
+      for (theta = 0; theta < 6.283; theta += 0.07) {
+        ct = Math.cos(theta); st = Math.sin(theta);
+        for (phi = 0; phi < 6.283; phi += 0.02) {
+          cp = Math.cos(phi); sp = Math.sin(phi);
+          cx = R2 + R1 * ct;
+          x = cx * (cosB * cp + sinA * sinB * sp) - R1 * cosA * sinB * st;
+          y = cx * (sinB * cp - sinA * cosB * sp) + R1 * cosA * cosB * st;
+          z = K2 + cosA * cx * sp + R1 * sinA * st;
+          ooz = 1 / z;
+          xp = Math.floor(cols / 2 + K1 * ooz * x);
+          yp = Math.floor(rows / 2 - K1 * ooz * y * 0.55);
+          if (xp < 0 || yp < 0 || xp >= cols || yp >= rows) continue;
+          L = cp * ct * sinB -
+            cosA * ct * sp -
+            sinA * st +
+            cosB * (cosA * st - ct * sinA * sp);
+          if (L <= 0) continue;
+          idx = xp + yp * cols;
+          if (ooz <= zbuf[idx]) continue;
+          zbuf[idx] = ooz;
+          cells[idx] = Math.min(RAMP.length - 1, Math.floor(L * 8));
+        }
+      }
+
+      ctx.font = cell + "px ui-monospace, monospace";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "#6ee7b7";
+      var ox = (w - cols * cell) * 0.5;
+      var oy = (h - rows * cell) * 0.5;
+      for (y = 0; y < rows; y++) {
+        for (x = 0; x < cols; x++) {
+          var lum = cells[x + y * cols];
+          if (!lum) continue;
+          ctx.globalAlpha = 0.35 + lum / (RAMP.length - 1) * 0.75;
+          ctx.fillText(RAMP.charAt(lum), ox + (x + 0.5) * cell, oy + (y + 0.5) * cell);
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    wrap.addEventListener("click", function () {
+      on = !on;
+      screen.classList.toggle("off", !on);
+      if (on && !reduced) {
+        last = 0;
+        raf = requestAnimationFrame(frame);
+      } else if (!on && raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    });
+
+    if (reduced) frame(performance.now());
+    else raf = requestAnimationFrame(frame);
+  }
+
   tickClock();
   paintSky();
   boingBall();
   plasmaCRT();
+  donutTerm();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();

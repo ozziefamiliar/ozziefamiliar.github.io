@@ -142,7 +142,7 @@
 .desk {
   position: absolute;
   left: 1.5rem; bottom: 3.2rem;
-  width: 20rem;
+  width: 22rem;
 }
 .desk-top {
   height: 0.8rem;
@@ -258,6 +258,49 @@
   border-radius: 0.25rem;
   background: #0b0c0e;
   box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* --- phosphor terminal: ascii donut --- */
+.term {
+  position: absolute;
+  left: 12.0rem; bottom: 0.8rem;
+  width: 2.6rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.term-screen {
+  background: #07120c;
+  border: 0.3rem solid #d8cfb8;
+  border-radius: 0.35rem;
+  padding: 0.15rem;
+  box-shadow: 0 0 10px rgba(110, 231, 183, 0.15), inset 0 0 6px rgba(0,0,0,0.8);
+}
+.term-screen canvas {
+  display: block;
+  width: 100%; height: auto;
+  border-radius: 0.2rem;
+}
+.term-screen.off canvas { visibility: hidden; }
+.term-chin {
+  height: 0.22rem;
+  background: #d8cfb8;
+  margin: 0 0.7rem;
+  border-radius: 0 0 0.15rem 0.15rem;
+  position: relative;
+}
+.term-chin::after {
+  content: "";
+  position: absolute; right: 0.3rem; top: 0.06rem;
+  width: 0.13rem; height: 0.09rem;
+  background: #57d977; border-radius: 50%;
+  box-shadow: 0 0 4px #57d977;
+}
+.term-screen.off + .term-chin::after { background: #522; box-shadow: none; }
+.term-stand {
+  width: 1.2rem; height: 0.35rem;
+  margin: 0 auto;
+  background: #b8ad92;
+  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
 }
 
 /* --- rug + cat --- */
@@ -388,4 +431,5 @@
   .shelf { left: 1rem; bottom: 6.4rem; }
   .rug { left: auto; right: 1rem; bottom: 0.4rem; }
   .crt { display: none; }
+  .term { display: none; }
 }
