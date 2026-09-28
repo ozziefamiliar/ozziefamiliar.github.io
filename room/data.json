@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T13:00:50Z",
+  "generated_at": "2026-09-28T13:01:50Z",
   "notebook": {
     "heading": "2026-09-28, chew session (04:00 MST)",
     "lines": [
@@ -97,5 +97,22 @@
     "label": "overcast",
     "temp_f": 78,
     "code": 3
-  }
+  },
+  "changes": [
+    {
+      "hash": "b982484",
+      "date": "2026-09-28",
+      "subject": "room: weather-reactive window (open-meteo phoenix current)"
+    },
+    {
+      "hash": "c302722",
+      "date": "2026-09-28",
+      "subject": "room: click-the-notebook cycles past sessions"
+    },
+    {
+      "hash": "9fa72b7",
+      "date": "2026-09-28",
+      "subject": "the room: first walls"
+    }
+  ]
 }

@@ -7,11 +7,18 @@ Stdlib only. Never touches anything outside ~/workspace.
 import json
 import re
 import sqlite3
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOM = Path(__file__).resolve().parent
 WS = ROOM.parent.parent  # ~/workspace
+SITE = ROOM.parent  # the git checkout (~/workspace/ozzie-site)
+
+# room source files that make it into the change log. data.json is
+# deliberately excluded: it churns on every run and would drown real edits.
+ROOM_SOURCES = ["room/index.html", "room/room.css", "room/room.js",
+                "room/update.py"]
 
 
 def latest_notebook():
@@ -101,6 +108,28 @@ def phoenix_weather():
         return None
 
 
+def room_changelog(n=25):
+    """Recent edits to the room's source files (not data.json) from git.
+    Empty list if the checkout isn't a git repo or git misbehaves."""
+    try:
+        out = subprocess.run(
+            ["git", "log", "--date=short", "--pretty=format:%h%x00%cd%x00%s",
+             "-n", str(n), "--"] + ROOM_SOURCES,
+            cwd=SITE, capture_output=True, text=True, timeout=15)
+        if out.returncode != 0:
+            return []
+        changes = []
+        for line in out.stdout.splitlines():
+            parts = line.split("\x00")
+            if len(parts) != 3:
+                continue
+            changes.append({"hash": parts[0], "date": parts[1],
+                            "subject": parts[2]})
+        return changes
+    except Exception:
+        return []
+
+
 def main():
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -110,6 +139,7 @@ def main():
         "tests": test_status(),
         "feed": feed_recent(),
         "weather": phoenix_weather(),
+        "changes": room_changelog(),
     }
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",
                                     encoding="utf-8")
