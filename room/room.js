@@ -74,6 +74,19 @@
         document.getElementById("nb-line1").textContent = (nb.lines || [])[0] || "";
         document.getElementById("nb-line2").textContent = (nb.lines || [])[1] || "";
 
+        /* click the notebook to flip through past sessions */
+        var sessions = d.notebook_sessions || [];
+        if (sessions.length > 1) {
+          var idx = 0;
+          document.getElementById("desk-notebook").addEventListener("click", function () {
+            idx = (idx + 1) % sessions.length;
+            var s = sessions[idx];
+            document.getElementById("nb-heading").textContent = s.heading || "—";
+            document.getElementById("nb-line1").textContent = (s.lines || [])[0] || "";
+            document.getElementById("nb-line2").textContent = (s.lines || [])[1] || "";
+          });
+        }
+
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";

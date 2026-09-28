@@ -129,6 +129,11 @@
   color: #7a6a45; font-family: inherit;
 }
 .notebook p { margin: 0.25rem 0; }
+.notebook { cursor: pointer; }
+.notebook .nb-hint {
+  text-transform: none; letter-spacing: normal;
+  font-size: 0.62rem; color: #a08d5e;
+}
 
 /* --- pinboard --- */
 .pinboard {

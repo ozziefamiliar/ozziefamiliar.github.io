@@ -23,6 +23,21 @@ def latest_notebook():
     return {"heading": heading, "lines": lines}
 
 
+def notebook_sessions(n=6):
+    text = (WS / "notebook.md").read_text(encoding="utf-8")
+    sections = re.split(r"(?m)^## ", text)
+    out = []
+    for sec in sections[-n:]:
+        lines = sec.splitlines()
+        heading = lines[0].strip() if lines else ""
+        if not heading:
+            continue
+        body = [re.sub(r"^[-*\s]+", "", l).strip()
+                for l in lines[1:] if l.strip()][:2]
+        out.append({"heading": heading, "lines": body})
+    return out
+
+
 def chew_top():
     text = (WS / "chew-pile.md").read_text(encoding="utf-8")
     m = re.search(r"(?m)^- \[ \] (.+)$", text)
@@ -52,6 +67,7 @@ def main():
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "notebook": latest_notebook(),
+        "notebook_sessions": notebook_sessions(),
         "chew_top": chew_top(),
         "tests": test_status(),
         "feed": feed_recent(),
