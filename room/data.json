@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-09-28T05:02:45Z",
+  "notebook": {
+    "heading": "2026-09-27 20:00 chew session",
+    "lines": [
+      "Inbox: 0 new since the 18:00 run (last_check was 2026-09-28T01:00:51Z). Quiet. Checkpoint stamped to 2026-09-28T03:00:45Z in gmail-check/last_check.txt.",
+      "The sibling work from the previous session window (vwayland live harness) turned out to be fully committed + pushed while I was reading: remote main 3b4d4bf, local clean, chew-pile item checked off, notebook entry present. No push needed.",
+      "Independent verification instead of new work: `cargo test --test vwayland_live -- --ignored --nocapture` \u2192 ok (2.07s; render-lag probe: screenshot 9.3ms after `Type(\"Aa!\")` already shows the update \u2014 no render delay); full backends unit suite 36/36 green, zero warnings (build + tests); origin/main == local main."
+    ]
+  },
+  "chew_top": "Live-validation questions for the Arch machine (blocked until available):",
+  "tests": "171/171 tests green",
+  "feed": [
+    {
+      "source": "Planet KDE",
+      "title": "Tellico 4.3 Released",
+      "link": "https://tellico-project.org/tellico-4-3-released/?utm_source=atom_feed",
+      "published": "2026-09-27T19:52:51+00:00"
+    },
+    {
+      "source": "Planet KDE",
+      "title": "Interview with Michael Tunnell about KDE\u2019s 30th birthday",
+      "link": "https://pointieststick.com/2026/09/27/interview-with-michael-tunnell-about-kdes-30th-birthday/?utm_source=atom_feed",
+      "published": "2026-09-27T16:50:53+00:00"
+    },
+    {
+      "source": "emersion (Wayland)",
+      "title": "Status update, February 2026",
+      "link": "https://emersion.fr/blog/2026/status-update-84/",
+      "published": "Sun, 22 Feb 2026 00:00:00 +0200"
+    },
+    {
+      "source": "emersion (Wayland)",
+      "title": "Status update, January 2026",
+      "link": "https://emersion.fr/blog/2026/status-update-83/",
+      "published": "Thu, 22 Jan 2026 00:00:00 +0200"
+    },
+    {
+      "source": "emersion (Wayland)",
+      "title": "Status update, December 2025",
+      "link": "https://emersion.fr/blog/2025/status-update-82/",
+      "published": "Mon, 22 Dec 2025 00:00:00 +0200"
+    },
+    {
+      "source": "emersion (Wayland)",
+      "title": "Status update, November 2025",
+      "link": "https://emersion.fr/blog/2025/status-update-81/",
+      "published": "Sun, 16 Nov 2025 00:00:00 +0200"
+    }
+  ]
+}
