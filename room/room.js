@@ -803,6 +803,253 @@
     else raf = requestAnimationFrame(frame);
   }
 
+  /* --- shelf frame: flat-shaded gl torus (adapted from 3d-retro.com, cc0) --- */
+  function lowpolyFrame() {
+    var wrap = document.getElementById("lowpoly-frame");
+    var canvas = document.getElementById("lowpoly-c");
+    if (!wrap || !canvas) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var gl = canvas.getContext("webgl", { alpha: false, antialias: false });
+    if (!gl) { canvas.classList.add("off"); return; }
+
+    function hexToRgb(hex) {
+      var n = parseInt(String(hex).replace("#", ""), 16);
+      if (isNaN(n)) return [0.43, 0.91, 0.72];
+      return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
+    }
+    var COLOR = hexToRgb("#c7cccf"), ACCENT = hexToRgb("#6ee7b7");
+
+    var VERT = "attribute vec3 a_pos;\nattribute vec3 a_nrm;\n" +
+      "uniform mat4 u_mvp;\nuniform mat4 u_model;\n" +
+      "varying vec3 v_nrm;\nvarying vec3 v_pos;\n" +
+      "void main() {\n" +
+      "  vec4 world = u_model * vec4(a_pos, 1.0);\n" +
+      "  v_pos = world.xyz;\n" +
+      "  v_nrm = mat3(u_model) * a_nrm;\n" +
+      "  gl_Position = u_mvp * vec4(a_pos, 1.0);\n}";
+    var FRAG = "precision mediump float;\n" +
+      "varying vec3 v_nrm;\nvarying vec3 v_pos;\n" +
+      "uniform vec3 u_cam;\nuniform vec3 u_color;\nuniform vec3 u_accent;\n" +
+      "void main() {\n" +
+      "  vec3 n = normalize(v_nrm);\n" +
+      "  vec3 v = normalize(u_cam - v_pos);\n" +
+      "  vec3 l1 = normalize(vec3(0.55, 0.85, 0.35));\n" +
+      "  vec3 l2 = normalize(vec3(-0.75, 0.25, 0.2));\n" +
+      "  float d1 = max(dot(n, l1), 0.0);\n" +
+      "  float d2 = max(dot(n, l2), 0.0);\n" +
+      "  float rim = pow(1.0 - max(dot(n, v), 0.0), 2.8);\n" +
+      "  vec3 col = u_color * (0.10 + 0.78 * d1);\n" +
+      "  col += u_accent * d2 * 0.38;\n" +
+      "  col += u_accent * rim * 0.22;\n" +
+      "  gl_FragColor = vec4(col, 1.0);\n}";
+    var LINE_VERT = "attribute vec3 a_pos;\nuniform mat4 u_mvp;\n" +
+      "void main() {\n  gl_Position = u_mvp * vec4(a_pos, 1.0);\n}";
+    var LINE_FRAG = "precision mediump float;\nuniform vec3 u_accent;\n" +
+      "void main() {\n  gl_FragColor = vec4(u_accent, 0.28);\n}";
+
+    function compile(type, src) {
+      var sh = gl.createShader(type);
+      gl.shaderSource(sh, src);
+      gl.compileShader(sh);
+      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+        throw new Error(gl.getShaderInfoLog(sh) || "shader compile failed");
+      }
+      return sh;
+    }
+    function makeProg(vs, fs) {
+      var p = gl.createProgram();
+      gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+      gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(p);
+      if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+        throw new Error(gl.getProgramInfoLog(p) || "program link failed");
+      }
+      return p;
+    }
+    var meshProg = makeProg(VERT, FRAG);
+    var lineProg = makeProg(LINE_VERT, LINE_FRAG);
+
+    function mul(a, b) {
+      var o = new Float32Array(16), c, r;
+      for (c = 0; c < 4; c++) for (r = 0; r < 4; r++) {
+        o[c * 4 + r] =
+          a[r] * b[c * 4] + a[4 + r] * b[c * 4 + 1] +
+          a[8 + r] * b[c * 4 + 2] + a[12 + r] * b[c * 4 + 3];
+      }
+      return o;
+    }
+    function perspective(fovy, aspect, near, far) {
+      var f = 1 / Math.tan(fovy / 2), nf = 1 / (near - far);
+      var o = new Float32Array(16);
+      o[0] = f / aspect; o[5] = f;
+      o[10] = (far + near) * nf; o[11] = -1;
+      o[14] = 2 * far * near * nf;
+      return o;
+    }
+    function translate(x, y, z) {
+      var o = new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]);
+      o[12] = x; o[13] = y; o[14] = z;
+      return o;
+    }
+    function rotateXY(ax, ay) {
+      var cx = Math.cos(ax), sx = Math.sin(ax);
+      var cy = Math.cos(ay), sy = Math.sin(ay);
+      var rx = new Float32Array([1,0,0,0, 0,cx,sx,0, 0,-sx,cx,0, 0,0,0,1]);
+      var ry = new Float32Array([cy,0,-sy,0, 0,1,0,0, sy,0,cy,0, 0,0,0,1]);
+      return mul(ry, rx);
+    }
+
+    /* torus geometry + per-face normals + wire pass (donor math, 1:1) */
+    function torus(major, minor, R, r) {
+      var pos = [], nrm = [], lines = [];
+      function point(i, j) {
+        var u = (i / major) * Math.PI * 2, v = (j / minor) * Math.PI * 2;
+        var cx = Math.cos(u), sx = Math.sin(u);
+        var cy = Math.cos(v), sy = Math.sin(v);
+        return [(R + r * cy) * cx, r * sy, (R + r * cy) * sx];
+      }
+      function tri(a, b, c) {
+        var ux = b[0]-a[0], uy = b[1]-a[1], uz = b[2]-a[2];
+        var vx = c[0]-a[0], vy = c[1]-a[1], vz = c[2]-a[2];
+        var nx = uy*vz-uz*vy, ny = uz*vx-ux*vz, nz = ux*vy-uy*vx;
+        var len = Math.hypot(nx, ny, nz) || 1;
+        nx /= len; ny /= len; nz /= len;
+        var k, p;
+        for (k = 0; k < 3; k++) {
+          p = [a, b, c][k];
+          pos.push(p[0], p[1], p[2]); nrm.push(nx, ny, nz);
+        }
+      }
+      var i, j, a, b, c, d;
+      for (i = 0; i < major; i++) for (j = 0; j < minor; j++) {
+        a = point(i, j); b = point(i + 1, j);
+        c = point(i + 1, j + 1); d = point(i, j + 1);
+        tri(a, b, c); tri(a, c, d);
+        lines.push(a[0], a[1], a[2], b[0], b[1], b[2]);
+        lines.push(a[0], a[1], a[2], d[0], d[1], d[2]);
+      }
+      return {
+        pos: new Float32Array(pos), nrm: new Float32Array(nrm),
+        count: pos.length / 3,
+        lines: new Float32Array(lines), lineCount: lines.length / 3
+      };
+    }
+    function grid(size, step) {
+      var pts = [], i;
+      for (i = -size; i <= size; i += step) {
+        pts.push(-size, 0, i, size, 0, i);
+        pts.push(i, 0, -size, i, 0, size);
+      }
+      return { data: new Float32Array(pts), count: pts.length / 3 };
+    }
+    var mesh = torus(16, 10, 1.05, 0.42);
+    var floor = grid(4.5, 0.5);
+
+    function makeBuf(data) {
+      var b = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, b);
+      gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+      return b;
+    }
+    var posBuf = makeBuf(mesh.pos), nrmBuf = makeBuf(mesh.nrm);
+    var lineBuf = makeBuf(mesh.lines), gridBuf = makeBuf(floor.data);
+    function bindAttrib(prog, name, buffer, size) {
+      var loc = gl.getAttribLocation(prog, name);
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, size, gl.FLOAT, false, 0, 0);
+    }
+
+    gl.enable(gl.DEPTH_TEST);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    gl.clearColor(0.043, 0.047, 0.055, 1);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+
+    var yaw = 0.7, pitch = 0.45, auto = true;
+    var on = true, raf = 0, last = 0;
+    var dragging = false, downX = 0, downY = 0, lastX = 0, lastY = 0;
+
+    function toggle() {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) { last = 0; raf = requestAnimationFrame(frame); }
+    }
+    canvas.addEventListener("pointerdown", function (e) {
+      dragging = true; auto = false;
+      downX = e.clientX; downY = e.clientY;
+      lastX = e.clientX; lastY = e.clientY;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    canvas.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      yaw += (e.clientX - lastX) * 0.008;
+      pitch += (e.clientY - lastY) * 0.008;
+      pitch = Math.max(-0.2, Math.min(1.2, pitch));
+      lastX = e.clientX; lastY = e.clientY;
+    });
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      /* a tap (no real movement) toggles power instead of orbiting */
+      if (Math.hypot(e.clientX - downX, e.clientY - downY) < 6) toggle();
+    }
+    canvas.addEventListener("pointerup", endDrag);
+    canvas.addEventListener("pointercancel", function () { dragging = false; });
+
+    function frame(now) {
+      var dt = Math.min(0.1, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      if (auto && !reduced) yaw += dt * 0.45;
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+      var aspect = canvas.width / canvas.height;
+      var proj = perspective(Math.PI / 4, aspect, 0.1, 40);
+      var view = mul(translate(0, -0.15, -5.2), rotateXY(-0.35, 0));
+      var model = mul(translate(0, 0.55, 0), rotateXY(pitch, yaw));
+      var mvp = mul(mul(proj, view), model);
+      var gridMvp = mul(mul(proj, view), translate(0, -0.85, 0));
+
+      gl.useProgram(meshProg);
+      gl.uniformMatrix4fv(gl.getUniformLocation(meshProg, "u_mvp"), false, mvp);
+      gl.uniformMatrix4fv(gl.getUniformLocation(meshProg, "u_model"), false, model);
+      gl.uniform3fv(gl.getUniformLocation(meshProg, "u_cam"), [0, 1.6, 5.2]);
+      gl.uniform3fv(gl.getUniformLocation(meshProg, "u_color"), COLOR);
+      gl.uniform3fv(gl.getUniformLocation(meshProg, "u_accent"), ACCENT);
+      bindAttrib(meshProg, "a_pos", posBuf, 3);
+      bindAttrib(meshProg, "a_nrm", nrmBuf, 3);
+      gl.enable(gl.CULL_FACE);
+      gl.drawArrays(gl.TRIANGLES, 0, mesh.count);
+
+      gl.useProgram(lineProg);
+      gl.uniform3fv(gl.getUniformLocation(lineProg, "u_accent"), ACCENT);
+      gl.uniformMatrix4fv(gl.getUniformLocation(lineProg, "u_mvp"), false, mvp);
+      bindAttrib(lineProg, "a_pos", lineBuf, 3);
+      gl.disable(gl.CULL_FACE);
+      gl.drawArrays(gl.LINES, 0, mesh.lineCount);
+
+      gl.uniformMatrix4fv(gl.getUniformLocation(lineProg, "u_mvp"), false, gridMvp);
+      bindAttrib(lineProg, "a_pos", gridBuf, 3);
+      gl.drawArrays(gl.LINES, 0, floor.count);
+
+      if (!reduced) raf = requestAnimationFrame(frame);
+    }
+
+    canvas.addEventListener("webglcontextlost", function (e) {
+      e.preventDefault();
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      canvas.classList.add("off");
+    });
+
+    try {
+      if (reduced) frame(performance.now());
+      else raf = requestAnimationFrame(frame);
+    } catch (err) {
+      canvas.classList.add("off");
+    }
+  }
+
   tickClock();
   paintSky();
   boingBall();
@@ -811,6 +1058,7 @@
   voxelFly();
   starFrame();
   metaFrame();
+  lowpolyFrame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();
