@@ -219,7 +219,7 @@
 .shelf {
   position: absolute;
   left: 45rem; bottom: 4rem;
-  width: 20rem;
+  width: 23rem;
   max-width: calc(100% - 2rem);
 }
 .shelf .plank {
@@ -302,6 +302,26 @@
   image-rendering: pixelated;
 }
 .starfield-frame canvas.off { visibility: hidden; }
+
+/* --- metaball frame (raymarched shader, adapted from 3d-retro.com, cc0) --- */
+.metaball-frame {
+  align-self: flex-end;
+  margin-left: 0.45rem;
+  padding: 0.2rem;
+  background: #2e2430;
+  border-radius: 0.15rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transform: rotate(-0.7deg);
+}
+.metaball-frame canvas {
+  display: block;
+  width: 3.2rem; height: auto;
+  border-radius: 0.1rem;
+  background: #0b0c0e;
+  image-rendering: pixelated;
+}
+.metaball-frame canvas.off { visibility: hidden; }
 
 /* --- phosphor terminal: ascii donut --- */
 .term {

@@ -666,6 +666,127 @@
     else raf = requestAnimationFrame(frame);
   }
 
+  /* --- shelf frame: raymarched chrome metaballs (adapted from 3d-retro.com, cc0) --- */
+  function metaFrame() {
+    var wrap = document.getElementById("metaball-frame");
+    var canvas = document.getElementById("metaball-c");
+    if (!wrap || !canvas) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var gl = canvas.getContext("webgl", { alpha: false, antialias: false });
+    if (!gl) { canvas.classList.add("off"); return; }
+    var VERT = "attribute vec2 a_pos;\nvoid main() {\n  gl_Position = vec4(a_pos, 0.0, 1.0);\n}";
+    var FRAG = "#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\n" +
+      "uniform float u_time;\n" +
+      "uniform vec2 u_resolution;\n" +
+      "float smin(float a, float b, float k) {\n" +
+      "  float h = clamp(0.5 + 0.5 * (b - a) / k, 0.0, 1.0);\n" +
+      "  return mix(b, a, h) - k * h * (1.0 - h);\n" +
+      "}\n" +
+      "vec3 blob0(float t) { return vec3(sin(t * 0.70) * 0.52, cos(t * 0.48) * 0.22, sin(t * 0.41) * 0.32); }\n" +
+      "vec3 blob1(float t) { return vec3(cos(t * 0.62) * 0.48, sin(t * 0.79) * 0.28, cos(t * 0.51) * 0.38); }\n" +
+      "vec3 blob2(float t) { return vec3(sin(t * 0.91 + 2.0) * 0.38, cos(t * 0.67 + 1.1) * 0.32, sin(t * 0.58 + 2.6) * 0.28); }\n" +
+      "float map(vec3 p, float t) {\n" +
+      "  float d = length(p - blob0(t)) - 0.42;\n" +
+      "  d = smin(d, length(p - blob1(t)) - 0.35, 0.42);\n" +
+      "  d = smin(d, length(p - blob2(t)) - 0.31, 0.42);\n" +
+      "  return d;\n" +
+      "}\n" +
+      "vec3 calcNormal(vec3 p, float t) {\n" +
+      "  vec2 e = vec2(0.0016, 0.0);\n" +
+      "  return normalize(vec3(\n" +
+      "    map(p + e.xyy, t) - map(p - e.xyy, t),\n" +
+      "    map(p + e.yxy, t) - map(p - e.yxy, t),\n" +
+      "    map(p + e.yyx, t) - map(p - e.yyx, t)\n" +
+      "  ));\n" +
+      "}\n" +
+      "vec3 envMap(vec3 dir) {\n" +
+      "  vec3 zenith = vec3(0.62, 0.78, 0.84);\n" +
+      "  vec3 horizon = vec3(0.16, 0.18, 0.20);\n" +
+      "  vec3 ground = vec3(0.035, 0.038, 0.042);\n" +
+      "  vec3 col = mix(ground, horizon, smoothstep(-0.45, 0.06, dir.y));\n" +
+      "  col = mix(col, zenith, smoothstep(0.04, 0.92, dir.y));\n" +
+      "  col += vec3(1.0, 0.93, 0.82) * pow(max(dot(dir, normalize(vec3(0.42, 0.74, 0.32))), 0.0), 52.0) * 1.55;\n" +
+      "  col += vec3(0.40, 0.86, 0.75) * pow(max(dot(dir, normalize(vec3(-0.62, 0.22, 0.48))), 0.0), 18.0) * 0.42;\n" +
+      "  return col;\n" +
+      "}\n" +
+      "void main() {\n" +
+      "  vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution) / u_resolution.y;\n" +
+      "  float t = u_time;\n" +
+      "  vec3 ro = vec3(0.0, 0.12, 2.55);\n" +
+      "  vec3 rd = normalize(vec3(uv, -1.45));\n" +
+      "  float dist = 0.0; float hit = 0.0;\n" +
+      "  vec3 p = ro;\n" +
+      "  for (int i = 0; i < 72; i++) {\n" +
+      "    p = ro + rd * dist;\n" +
+      "    float d = map(p, t);\n" +
+      "    if (d < 0.001) { hit = 1.0; break; }\n" +
+      "    dist += d;\n" +
+      "    if (dist > 10.0) break;\n" +
+      "  }\n" +
+      "  vec3 col = envMap(rd) * 0.42;\n" +
+      "  if (hit > 0.5) {\n" +
+      "    vec3 n = calcNormal(p, t);\n" +
+      "    vec3 r = reflect(rd, n);\n" +
+      "    vec3 chrome = envMap(r);\n" +
+      "    float fres = pow(1.0 - max(dot(n, -rd), 0.0), 2.4);\n" +
+      "    col = mix(chrome * 0.52, chrome, fres);\n" +
+      "    col *= 0.82 + 0.18 * n.y;\n" +
+      "  }\n" +
+      "  vec2 q = gl_FragCoord.xy / u_resolution;\n" +
+      "  col *= 0.72 + 0.28 * pow(16.0 * q.x * q.y * (1.0 - q.x) * (1.0 - q.y), 0.28);\n" +
+      "  gl_FragColor = vec4(col, 1.0);\n" +
+      "}";
+    function compile(type, src) {
+      var sh = gl.createShader(type);
+      gl.shaderSource(sh, src);
+      gl.compileShader(sh);
+      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+        throw new Error(gl.getShaderInfoLog(sh) || "shader compile failed");
+      }
+      return sh;
+    }
+    var prog = gl.createProgram();
+    gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT));
+    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG));
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      canvas.classList.add("off"); return;
+    }
+    gl.useProgram(prog);
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(prog, "a_pos");
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    var uTime = gl.getUniformLocation(prog, "u_time");
+    var uRes = gl.getUniformLocation(prog, "u_resolution");
+    var raf = 0, on = true;
+
+    wrap.addEventListener("click", function () {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) raf = requestAnimationFrame(frame);
+    });
+
+    function frame(now) {
+      gl.uniform1f(uTime, reduced ? 1.7 : now * 0.001);
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+      if (!reduced) raf = requestAnimationFrame(frame);
+    }
+
+    canvas.addEventListener("webglcontextlost", function (e) {
+      e.preventDefault();
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      canvas.classList.add("off");
+    });
+
+    if (reduced) frame(performance.now());
+    else raf = requestAnimationFrame(frame);
+  }
+
   tickClock();
   paintSky();
   boingBall();
@@ -673,6 +794,7 @@
   donutTerm();
   voxelFly();
   starFrame();
+  metaFrame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();
