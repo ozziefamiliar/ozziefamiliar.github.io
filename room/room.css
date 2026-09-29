@@ -253,7 +253,7 @@
 .shelf {
   position: absolute;
   top: 22rem; right: 3rem;
-  width: 26.5rem;
+  width: 30.5rem;
   max-width: calc(100% - 2rem);
 }
 .shelf .plank {
@@ -388,6 +388,27 @@
   touch-action: none;
 }
 .lowpoly-frame canvas.off { visibility: hidden; }
+
+/* --- elite planet frame (adapted from 3d-retro.com, cc0) --- */
+.elite-frame {
+  align-self: flex-end;
+  margin-left: 0.45rem;
+  padding: 0.2rem;
+  background: #26303a;
+  border-radius: 0.15rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  cursor: grab;
+  transform: rotate(-0.5deg);
+}
+.elite-frame canvas {
+  display: block;
+  width: 3.2rem; height: auto;
+  border-radius: 0.1rem;
+  background: #000;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+.elite-frame canvas.off { visibility: hidden; }
 
 /* --- phosphor terminal: ascii donut --- */
 .term {

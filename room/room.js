@@ -1050,6 +1050,137 @@
     }
   }
 
+  /* --- shelf frame: elite dotted planet (adapted from 3d-retro.com, cc0) --- */
+  function eliteFrame() {
+    var wrap = document.getElementById("elite-frame");
+    var canvas = document.getElementById("elite-c");
+    if (!wrap || !canvas) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var BW = 192, BH = 128;
+    var buf = document.createElement("canvas");
+    buf.width = BW; buf.height = BH;
+    var bctx = buf.getContext("2d");
+    var ctx = canvas.getContext("2d");
+    if (!bctx || !ctx) { canvas.classList.add("off"); return; }
+
+    var RGB = [200, 210, 220];
+    var stars = [], i;
+    for (i = 0; i < 120; i++) {
+      stars.push({ x: Math.random(), y: Math.random(),
+        a: 0.25 + Math.random() * 0.7, s: 0.7 + Math.random() * 1.4 });
+    }
+
+    var yaw = 0.6, pitch = 0.25, auto = true;
+    var on = true, raf = 0, last = 0;
+    var dragging = false, downX = 0, downY = 0, lastX = 0, lastY = 0;
+
+    function toggle() {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) { last = 0; raf = requestAnimationFrame(frame); }
+    }
+    canvas.addEventListener("pointerdown", function (e) {
+      dragging = true; auto = false;
+      downX = e.clientX; downY = e.clientY;
+      lastX = e.clientX; lastY = e.clientY;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    canvas.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      yaw += (e.clientX - lastX) * 0.008;
+      pitch += (e.clientY - lastY) * 0.006;
+      pitch = Math.max(-0.9, Math.min(0.9, pitch));
+      lastX = e.clientX; lastY = e.clientY;
+    });
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      /* a tap (no real movement) toggles power instead of spinning */
+      if (Math.hypot(e.clientX - downX, e.clientY - downY) < 6) toggle();
+    }
+    canvas.addEventListener("pointerup", endDrag);
+    canvas.addEventListener("pointercancel", function () { dragging = false; });
+
+    function rot(x, y, z) {
+      var cx = Math.cos(pitch), sx = Math.sin(pitch);
+      var cy = Math.cos(yaw), sy = Math.sin(yaw);
+      var y2 = y * cx - z * sx; z = y * sx + z * cx; y = y2;
+      var x2 = x * cy + z * sy; z = -x * sy + z * cy;
+      return [x2, y, z];
+    }
+
+    function draw() {
+      bctx.fillStyle = "#000";
+      bctx.fillRect(0, 0, BW, BH);
+      var w = BW, h = BH, i, s, p, k, a, sx, sy;
+      for (i = 0; i < stars.length; i++) {
+        s = stars[i];
+        bctx.fillStyle = "rgba(" + RGB[0] + "," + RGB[1] + "," + RGB[2] + "," + s.a + ")";
+        bctx.fillRect(s.x * w, s.y * h, s.s, s.s);
+      }
+      var R = Math.min(w, h) * 0.32;
+      var cx = w * 0.5, cy = h * 0.52;
+      /* planet: lat/long dot grid, back culled, lambert terminator */
+      var latN = 16, lonN = 28, lat, cl, sl, lon, x, y, z, lambert, size;
+      for (i = 0; i <= latN; i++) {
+        lat = (i / latN) * Math.PI - Math.PI / 2;
+        cl = Math.cos(lat); sl = Math.sin(lat);
+        for (var j = 0; j < lonN; j++) {
+          lon = (j / lonN) * Math.PI * 2;
+          x = cl * Math.cos(lon); y = sl; z = cl * Math.sin(lon);
+          p = rot(x, y, z);
+          if (p[2] < 0.04) continue;
+          lambert = Math.max(0.12, p[2] * 0.7 + 0.25);
+          size = 1.1 + p[2] * 1.1;
+          bctx.fillStyle = "rgba(" + (RGB[0] * lambert | 0) + "," +
+            (RGB[1] * lambert | 0) + "," + (RGB[2] * lambert | 0) + ",0.95)";
+          bctx.fillRect(cx + p[0] * R - size * 0.5, cy - p[1] * R - size * 0.5, size, size);
+        }
+      }
+      /* cheap ring: tilted ellipse line through the rotated planet */
+      bctx.strokeStyle = "rgba(" + RGB[0] + "," + RGB[1] + "," + RGB[2] + ",0.28)";
+      bctx.lineWidth = 1;
+      bctx.beginPath();
+      for (k = 0; k <= 64; k++) {
+        a = (k / 64) * Math.PI * 2;
+        p = rot(Math.cos(a) * 1.35, 0.08, Math.sin(a) * 1.35);
+        sx = cx + p[0] * R; sy = cy - p[1] * R;
+        if (k === 0) bctx.moveTo(sx, sy); else bctx.lineTo(sx, sy);
+      }
+      bctx.stroke();
+    }
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(1, Math.floor(canvas.clientWidth * dpr));
+      var h = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+
+    function frame(now) {
+      var dt = Math.min(0.1, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      if (auto && !reduced) yaw += dt * 0.22;
+      resize();
+      draw();
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(buf, 0, 0, canvas.width, canvas.height);
+      if (!reduced) raf = requestAnimationFrame(frame);
+    }
+
+    try {
+      resize();
+      if (reduced) frame(performance.now());
+      else raf = requestAnimationFrame(frame);
+    } catch (err) {
+      canvas.classList.add("off");
+    }
+  }
+
   tickClock();
   paintSky();
   boingBall();
@@ -1059,6 +1190,7 @@
   starFrame();
   metaFrame();
   lowpolyFrame();
+  eliteFrame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();
