@@ -213,6 +213,27 @@
     }
   }
 
+  /* meteors: one shooting star every 8-22s, only when the night sky is up */
+  function meteorWatch() {
+    var stars = document.getElementById("stars");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (stars && stars.style.opacity === "1" && !reduced) {
+      var sky = document.getElementById("sky");
+      if (sky) {
+        var m = document.createElement("div");
+        m.className = "meteor";
+        m.style.left = (8 + Math.random() * 55) + "%";
+        m.style.top = (6 + Math.random() * 28) + "%";
+        m.style.setProperty("--ang", -(18 + Math.random() * 26) + "deg");
+        m.style.setProperty("--dist", (7 + Math.random() * 5) + "rem");
+        sky.appendChild(m);
+        requestAnimationFrame(function () { m.classList.add("go"); });
+        setTimeout(function () { m.remove(); }, 1200);
+      }
+    }
+    window.__meteorT = setTimeout(meteorWatch, 8000 + Math.random() * 14000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -1704,6 +1725,7 @@
 
   tickClock();
   paintSky();
+  meteorWatch();
   boingBall();
   plasmaCRT();
   donutTerm();
