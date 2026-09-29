@@ -17,7 +17,7 @@
 .window {
   position: absolute;
   top: 2rem; left: 3rem;
-  width: 13rem; height: 10rem;
+  width: 16rem; height: 12rem;
   border: 0.55rem solid #3a2c1c;
   border-radius: 0.4rem;
   overflow: hidden;
@@ -35,6 +35,16 @@
   box-shadow: 0 0 24px 8px rgba(255, 217, 122, 0.5);
   transition: background 2s, box-shadow 2s;
 }
+.moon {
+  position: absolute;
+  top: 1.1rem; right: 1.3rem;
+  width: 1.5rem; height: 1.5rem;
+  border-radius: 50%;
+  background: #f2eee0;
+  box-shadow: 0 0 18px 6px rgba(242, 238, 224, 0.35),
+    inset -0.3rem -0.2rem 0 rgba(178, 172, 156, 0.55);
+  display: none;
+}
 .stars {
   position: absolute; inset: 0;
   font-size: 0.7rem; letter-spacing: 0.6rem;
@@ -42,6 +52,19 @@
   transition: opacity 2s;
   padding: 0.5rem 0.2rem;
 }
+.stars-tw { animation: twinkle 4.5s ease-in-out infinite; }
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.mesa {
+  position: absolute; bottom: 1.4rem;
+  background: #46304d;
+  opacity: 0.9;
+  clip-path: polygon(0 100%, 14% 0, 86% 0, 100% 100%);
+}
+.mesa.m1 { left: 0.8rem; width: 5rem; height: 1.6rem; }
+.mesa.m2 { left: 9.8rem; width: 5.8rem; height: 1.15rem; }
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;
@@ -95,7 +118,7 @@
   opacity: 0; transition: opacity 0.12s; pointer-events: none;
 }
 .wx-label {
-  position: absolute; top: 13.4rem; left: 3rem;
+  position: absolute; top: 15.6rem; left: 3rem;
   font-size: 0.68rem; letter-spacing: 0.06rem; color: #8a7a63;
   display: none;
 }
@@ -154,7 +177,7 @@
 .desk-legs span { width: 0.55rem; height: 3.2rem; background: #3a2a18; }
 .notebook {
   position: absolute;
-  left: 1rem; bottom: 0.8rem;
+  left: 1rem; bottom: 4rem;
   width: 12rem;
   max-height: 13rem;
   overflow-y: auto;
@@ -189,10 +212,10 @@
 .notebook .nb-close:hover { color: #b3402a; }
 .notebook:not(.closed) .nb-close { display: inline-block; }
 
-/* --- pinboard --- */
+/* --- pinboard: up on the wall where the eye goes --- */
 .pinboard {
   position: absolute;
-  top: 12.5rem; right: 3rem;
+  top: 2.5rem; left: 33rem;
   width: 15rem;
   background: #8a6a42;
   border: 0.5rem solid #3a2c1c;
@@ -226,10 +249,10 @@
 }
 .pinboard a { color: #7a3b1e; }
 
-/* --- shelf --- */
+/* --- shelf: wall-mounted, with brackets --- */
 .shelf {
   position: absolute;
-  left: 45rem; bottom: 4rem;
+  top: 19rem; right: 3rem;
   width: 23rem;
   max-width: calc(100% - 2rem);
 }
@@ -237,6 +260,17 @@
   height: 0.6rem; background: #4a3520;
   border-radius: 0.2rem;
   box-shadow: 0 5px 14px rgba(0,0,0,0.5);
+}
+.shelf .brackets {
+  display: flex; justify-content: space-between;
+  padding: 0 2.5rem;
+}
+.shelf .brackets span {
+  width: 0; height: 0;
+  border-left: 0.55rem solid transparent;
+  border-right: 0.55rem solid transparent;
+  border-top: 0.8rem solid #3a2a18;
+  opacity: 0.9;
 }
 .shelf .books {
   display: flex; align-items: flex-end; gap: 0.25rem;
@@ -337,7 +371,7 @@
 /* --- phosphor terminal: ascii donut --- */
 .term {
   position: absolute;
-  left: 14.5rem; bottom: 0.8rem;
+  left: 14.5rem; bottom: 4rem;
   width: 2.6rem;
   cursor: pointer;
   z-index: 2;
@@ -454,7 +488,7 @@
 /* --- desk crt: demoscene plasma --- */
 .crt {
   position: absolute;
-  right: 0.7rem; bottom: 0.8rem;
+  right: 1rem; bottom: 4rem;
   width: 6.6rem;
   cursor: pointer;
   z-index: 2;
@@ -502,7 +536,7 @@
   .desk { left: 1rem; width: calc(100% - 2rem); }
   .notebook { width: calc(100% - 4rem); }
   .pinboard { top: auto; bottom: 12.5rem; right: 1rem; left: 1rem; width: auto; }
-  .shelf { left: 1rem; bottom: 6.4rem; }
+  .shelf { left: 1rem; right: auto; top: auto; bottom: 6.4rem; }
   .rug { left: auto; right: 1rem; bottom: 0.4rem; }
   .crt { display: none; }
   .term { display: none; }

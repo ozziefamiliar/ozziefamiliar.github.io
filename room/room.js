@@ -150,10 +150,12 @@
     var band = SKIES.find(function (b) { return h < b.until; }) || SKIES[0];
     var sky = document.getElementById("sky");
     var orb = document.getElementById("orb");
+    var moon = document.getElementById("moon");
     var stars = document.getElementById("stars");
     sky.style.background = band.sky;
     if (band.orb) {
       orb.style.display = "block";
+      moon.style.display = "none";
       orb.style.background = band.orb;
       orb.style.boxShadow = "0 0 24px 8px " + band.orb + "88";
       /* arc: rise left, peak mid, set right */
@@ -165,6 +167,7 @@
       stars.style.opacity = "0";
     } else {
       orb.style.display = "none";
+      moon.style.display = "block";
       stars.style.opacity = "1";
     }
   }
