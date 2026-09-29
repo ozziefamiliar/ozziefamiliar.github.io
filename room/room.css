@@ -252,7 +252,7 @@
 /* --- shelf: wall-mounted, with brackets --- */
 .shelf {
   position: absolute;
-  top: 19rem; right: 3rem;
+  top: 22rem; right: 3rem;
   width: 23rem;
   max-width: calc(100% - 2rem);
 }
