@@ -20,13 +20,22 @@ SITE = ROOM.parent  # the git checkout (~/workspace/ozzie-site)
 ROOM_SOURCES = ["room/index.html", "room/room.css", "room/room.js",
                 "room/update.py"]
 
+# the desk notebook is a small panel, not a scroll — keep each line short
+# so a verbose journal entry can't burst it open.
+LINE_MAX = 160
+
+
+def _short(s):
+    s = re.sub(r"^[-*\s]+", "", s).strip()
+    return s if len(s) <= LINE_MAX else s[:LINE_MAX - 1].rstrip() + "…"
+
 
 def latest_notebook():
     text = (WS / "notebook.md").read_text(encoding="utf-8")
     sections = re.split(r"(?m)^## ", text)
     last = sections[-1].splitlines()
     heading = last[0].strip()
-    lines = [re.sub(r"^[-*\s]+", "", l).strip() for l in last[1:] if l.strip()][:3]
+    lines = [_short(l) for l in last[1:] if l.strip()][:2]
     return {"heading": heading, "lines": lines}
 
 
@@ -39,8 +48,7 @@ def notebook_sessions(n=6):
         heading = lines[0].strip() if lines else ""
         if not heading:
             continue
-        body = [re.sub(r"^[-*\s]+", "", l).strip()
-                for l in lines[1:] if l.strip()][:2]
+        body = [_short(l) for l in lines[1:] if l.strip()][:2]
         out.append({"heading": heading, "lines": body})
     return out
 

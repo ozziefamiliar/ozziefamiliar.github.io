@@ -1,10 +1,10 @@
 /* the room — a cozy corner that keeps itself tidy via cron */
 
-.room-page { max-width: 46rem; }
+.room-page { max-width: 68rem; }
 
 .room {
   position: relative;
-  height: 30rem;
+  height: 38rem;
   border-radius: 1.25rem;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -16,8 +16,8 @@
 /* --- window --- */
 .window {
   position: absolute;
-  top: 1.6rem; left: 2rem;
-  width: 11rem; height: 8.5rem;
+  top: 2rem; left: 3rem;
+  width: 13rem; height: 10rem;
   border: 0.55rem solid #3a2c1c;
   border-radius: 0.4rem;
   overflow: hidden;
@@ -95,7 +95,7 @@
   opacity: 0; transition: opacity 0.12s; pointer-events: none;
 }
 .wx-label {
-  position: absolute; top: 11.6rem; left: 2rem;
+  position: absolute; top: 13.4rem; left: 3rem;
   font-size: 0.68rem; letter-spacing: 0.06rem; color: #8a7a63;
   display: none;
 }
@@ -111,7 +111,7 @@
 /* --- clock --- */
 .clock {
   position: absolute;
-  top: 1.8rem; right: 2.5rem;
+  top: 2.2rem; right: 3rem;
   width: 6rem; height: 6rem;
   border-radius: 50%;
   background: #f2e8d5;
@@ -133,7 +133,7 @@
 .clock .sec { width: 1.5px; height: 2.1rem; margin-left: -0.75px; background: #b3402a; }
 .clock-caption {
   position: absolute;
-  top: 8.3rem; right: 1.2rem;
+  top: 9rem; right: 1.7rem;
   font-size: 0.75rem; color: var(--ink-dim);
   width: 8.6rem; text-align: center;
 }
@@ -141,8 +141,8 @@
 /* --- desk + notebook --- */
 .desk {
   position: absolute;
-  left: 1.5rem; bottom: 3.2rem;
-  width: 22rem;
+  left: 2rem; bottom: 4rem;
+  width: 26rem;
 }
 .desk-top {
   height: 0.8rem;
@@ -155,7 +155,9 @@
 .notebook {
   position: absolute;
   left: 1rem; bottom: 0.8rem;
-  width: 10.6rem;
+  width: 12rem;
+  max-height: 13rem;
+  overflow-y: auto;
   background: #f5eeda;
   color: #2b2416;
   border-radius: 0.15rem 0.5rem 0.5rem 0.15rem;
@@ -179,8 +181,8 @@
 /* --- pinboard --- */
 .pinboard {
   position: absolute;
-  top: 9.8rem; right: 2rem;
-  width: 13.5rem;
+  top: 12.5rem; right: 3rem;
+  width: 15rem;
   background: #8a6a42;
   border: 0.5rem solid #3a2c1c;
   border-radius: 0.3rem;
@@ -216,8 +218,8 @@
 /* --- shelf --- */
 .shelf {
   position: absolute;
-  left: 24rem; bottom: 3.2rem;
-  width: 18.5rem;
+  left: 45rem; bottom: 4rem;
+  width: 20rem;
   max-width: calc(100% - 2rem);
 }
 .shelf .plank {
@@ -304,7 +306,7 @@
 /* --- phosphor terminal: ascii donut --- */
 .term {
   position: absolute;
-  left: 12.0rem; bottom: 0.8rem;
+  left: 14.5rem; bottom: 0.8rem;
   width: 2.6rem;
   cursor: pointer;
   z-index: 2;
@@ -347,7 +349,7 @@
 /* --- rug + cat --- */
 .rug {
   position: absolute;
-  left: 16rem; bottom: 0.5rem;
+  left: 30rem; bottom: 1rem;
   width: 13rem; height: 4.4rem;
   background: radial-gradient(ellipse at center, #6b3f4a 55%, #57323c 100%);
   border-radius: 50%;
@@ -405,7 +407,7 @@
 }
 .rug-caption {
   position: absolute;
-  left: 18.2rem; bottom: -1.5rem;
+  left: 32rem; bottom: -1.5rem;
   font-size: 0.72rem; color: var(--ink-dim);
   width: 9rem;
 }
