@@ -1181,6 +1181,136 @@
     }
   }
 
+  /* --- shelf frame: wireframe globe (adapted from 3d-retro.com, cc0) --- */
+  function globeFrame() {
+    var wrap = document.getElementById("globe-frame");
+    var canvas = document.getElementById("globe-c");
+    if (!wrap || !canvas) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var BW = 192, BH = 128;
+    var buf = document.createElement("canvas");
+    buf.width = BW; buf.height = BH;
+    var bctx = buf.getContext("2d");
+    var ctx = canvas.getContext("2d");
+    if (!bctx || !ctx) { canvas.classList.add("off"); return; }
+
+    var COLOR = [110, 231, 183], HI = [210, 255, 236];
+    var LAT = 13, LON = 24, i, j;
+    var verts = [];
+    function sph(lat, lon) {
+      var phi = (lat / LAT) * Math.PI;
+      var th = (lon / LON) * Math.PI * 2;
+      return {
+        x: Math.sin(phi) * Math.cos(th),
+        y: Math.cos(phi),
+        z: Math.sin(phi) * Math.sin(th)
+      };
+    }
+    for (i = 0; i <= LAT; i++) {
+      for (j = 0; j <= LON; j++) verts.push(sph(i, j));
+    }
+    function idx(a, b) { return a * (LON + 1) + (b % (LON + 1)); }
+    var edges = [];
+    for (i = 0; i <= LAT; i++) {
+      for (j = 0; j < LON; j++) {
+        edges.push(idx(i, j), idx(i, j + 1), (i === ((LAT / 2) | 0)) ? 2 : 0);
+      }
+    }
+    for (j = 0; j < LON; j++) {
+      for (i = 0; i < LAT; i++) {
+        edges.push(idx(i, j), idx(i + 1, j), (j === 0) ? 2 : 0);
+      }
+    }
+
+    var yaw = 0.85, pitch = 0.35, auto = true;
+    var on = true, raf = 0, last = 0;
+    var dragging = false, downX = 0, downY = 0, lastX = 0, lastY = 0;
+
+    function toggle() {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) { last = 0; raf = requestAnimationFrame(frame); }
+    }
+    canvas.addEventListener("pointerdown", function (e) {
+      dragging = true; auto = false;
+      downX = e.clientX; downY = e.clientY;
+      lastX = e.clientX; lastY = e.clientY;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    canvas.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      yaw += (e.clientX - lastX) * 0.008;
+      pitch += (e.clientY - lastY) * 0.008;
+      pitch = Math.max(-1.1, Math.min(1.1, pitch));
+      lastX = e.clientX; lastY = e.clientY;
+    });
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      /* a tap (no real movement) toggles power instead of spinning */
+      if (Math.hypot(e.clientX - downX, e.clientY - downY) < 6) toggle();
+    }
+    canvas.addEventListener("pointerup", endDrag);
+    canvas.addEventListener("pointercancel", function () { dragging = false; });
+
+    function rotate(p) {
+      var cy = Math.cos(yaw), sy = Math.sin(yaw);
+      var x1 = p.x * cy + p.z * sy;
+      var z1 = -p.x * sy + p.z * cy;
+      var cp = Math.cos(pitch), sp = Math.sin(pitch);
+      var y2 = p.y * cp - z1 * sp;
+      var z2 = p.y * sp + z1 * cp;
+      return { x: x1, y: y2, z: z2 };
+    }
+
+    function draw() {
+      bctx.fillStyle = "#07090a";
+      bctx.fillRect(0, 0, BW, BH);
+      var cx = BW * 0.5, cy = BH * 0.5;
+      var cam = 2.85;
+      var fov = Math.min(BW, BH) * 0.92;
+      var proj = verts.map(rotate);
+      bctx.lineCap = "round"; bctx.lineJoin = "round";
+      for (var e = 0; e < edges.length; e += 3) {
+        var a = proj[edges[e]], b = proj[edges[e + 1]];
+        var kind = edges[e + 2];
+        var za = a.z + cam, zb = b.z + cam;
+        if (za < 0.15 || zb < 0.15) continue;
+        var depth = 0.25 * (a.z + b.z) + 0.5;
+        var alpha = 0.22 + depth * (kind ? 0.78 : 0.58);
+        var x0 = cx + a.x * fov / za, y0 = cy - a.y * fov / za;
+        var x1 = cx + b.x * fov / zb, y1 = cy - b.y * fov / zb;
+        var col = kind ? HI : COLOR;
+        bctx.strokeStyle = "rgba(" + col[0] + "," + col[1] + "," + col[2] +
+          "," + (alpha * 0.28).toFixed(3) + ")";
+        bctx.lineWidth = kind ? 2.2 : 1.6;
+        bctx.beginPath(); bctx.moveTo(x0, y0); bctx.lineTo(x1, y1); bctx.stroke();
+        bctx.strokeStyle = "rgba(" + col[0] + "," + col[1] + "," + col[2] +
+          "," + alpha.toFixed(3) + ")";
+        bctx.lineWidth = kind ? 1.0 : 0.7;
+        bctx.beginPath(); bctx.moveTo(x0, y0); bctx.lineTo(x1, y1); bctx.stroke();
+      }
+    }
+
+    function frame(now) {
+      var dt = Math.min(0.1, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      if (auto && !reduced) yaw += dt * 0.28;
+      draw();
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(buf, 0, 0, canvas.width, canvas.height);
+      if (!reduced) raf = requestAnimationFrame(frame);
+    }
+
+    try {
+      if (reduced) frame(performance.now());
+      else raf = requestAnimationFrame(frame);
+    } catch (err) {
+      canvas.classList.add("off");
+    }
+  }
+
   tickClock();
   paintSky();
   boingBall();
@@ -1191,6 +1321,7 @@
   metaFrame();
   lowpolyFrame();
   eliteFrame();
+  globeFrame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();
