@@ -1311,6 +1311,227 @@
     }
   }
 
+  /* --- fluid tank: stam stable-fluids dye, adapted from 3d-retro.com (cc0) --- */
+  function fluidFrame() {
+    var wrap = document.getElementById("fluid-frame");
+    var canvas = document.getElementById("fluid-c");
+    if (!wrap || !canvas) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var N = 48, ITER = 4, dim = N + 2, size = dim * dim, i, j;
+    var off = document.createElement("canvas");
+    off.width = N; off.height = N;
+    var offCtx = off.getContext("2d");
+    var ctx = canvas.getContext("2d");
+    if (!offCtx || !ctx) { canvas.classList.add("off"); return; }
+
+    function ix(a, b) { return a + dim * b; }
+    function field() { return new Float32Array(size); }
+    var u = field(), v = field(), u0 = field(), v0 = field();
+    var dens = field(), dens0 = field(), p = field(), div = field();
+    var COLOR = [110, 231, 183]; /* #6ee7b7 */
+
+    function setBnd(b, x) {
+      for (i = 1; i <= N; i++) {
+        x[ix(0, i)] = b === 1 ? -x[ix(1, i)] : x[ix(1, i)];
+        x[ix(N + 1, i)] = b === 1 ? -x[ix(N, i)] : x[ix(N, i)];
+        x[ix(i, 0)] = b === 2 ? -x[ix(i, 1)] : x[ix(i, 1)];
+        x[ix(i, N + 1)] = b === 2 ? -x[ix(i, N)] : x[ix(i, N)];
+      }
+      x[ix(0, 0)] = 0.5 * (x[ix(1, 0)] + x[ix(0, 1)]);
+      x[ix(0, N + 1)] = 0.5 * (x[ix(1, N + 1)] + x[ix(0, N)]);
+      x[ix(N + 1, 0)] = 0.5 * (x[ix(N, 0)] + x[ix(N + 1, 1)]);
+      x[ix(N + 1, N + 1)] = 0.5 * (x[ix(N, N + 1)] + x[ix(N + 1, N)]);
+    }
+    function linSolve(b, x, x0, a, c) {
+      var inv = 1 / c, k;
+      for (k = 0; k < ITER; k++) {
+        for (j = 1; j <= N; j++) {
+          for (i = 1; i <= N; i++) {
+            x[ix(i, j)] = (x0[ix(i, j)] + a * (
+              x[ix(i - 1, j)] + x[ix(i + 1, j)] +
+              x[ix(i, j - 1)] + x[ix(i, j + 1)]
+            )) * inv;
+          }
+        }
+        setBnd(b, x);
+      }
+    }
+    function diffuse(b, x, x0, diff, dt) {
+      var a = dt * diff * N * N;
+      linSolve(b, x, x0, a, 1 + 4 * a);
+    }
+    function advect(b, d, d0, uu, vv, dt) {
+      var dt0 = dt * N, x, y, i0, i1, j0, j1, s0, s1, t0, t1;
+      for (j = 1; j <= N; j++) {
+        for (i = 1; i <= N; i++) {
+          x = i - dt0 * uu[ix(i, j)];
+          y = j - dt0 * vv[ix(i, j)];
+          if (x < 0.5) x = 0.5;
+          if (x > N + 0.5) x = N + 0.5;
+          if (y < 0.5) y = 0.5;
+          if (y > N + 0.5) y = N + 0.5;
+          i0 = x | 0; i1 = i0 + 1;
+          j0 = y | 0; j1 = j0 + 1;
+          s1 = x - i0; s0 = 1 - s1;
+          t1 = y - j0; t0 = 1 - t1;
+          d[ix(i, j)] =
+            s0 * (t0 * d0[ix(i0, j0)] + t1 * d0[ix(i0, j1)]) +
+            s1 * (t0 * d0[ix(i1, j0)] + t1 * d0[ix(i1, j1)]);
+        }
+      }
+      setBnd(b, d);
+    }
+    function project(uu, vv, pp, dv) {
+      for (j = 1; j <= N; j++) {
+        for (i = 1; i <= N; i++) {
+          dv[ix(i, j)] = -0.5 * (
+            uu[ix(i + 1, j)] - uu[ix(i - 1, j)] +
+            vv[ix(i, j + 1)] - vv[ix(i, j - 1)]
+          ) / N;
+          pp[ix(i, j)] = 0;
+        }
+      }
+      setBnd(0, dv);
+      setBnd(0, pp);
+      linSolve(0, pp, dv, 1, 4);
+      for (j = 1; j <= N; j++) {
+        for (i = 1; i <= N; i++) {
+          uu[ix(i, j)] -= 0.5 * N * (pp[ix(i + 1, j)] - pp[ix(i - 1, j)]);
+          vv[ix(i, j)] -= 0.5 * N * (pp[ix(i, j + 1)] - pp[ix(i, j - 1)]);
+        }
+      }
+      setBnd(1, uu);
+      setBnd(2, vv);
+    }
+    function velStep(dt) {
+      diffuse(1, u0, u, 0.00012, dt);
+      diffuse(2, v0, v, 0.00012, dt);
+      project(u0, v0, p, div);
+      advect(1, u, u0, u0, v0, dt);
+      advect(2, v, v0, u0, v0, dt);
+      project(u, v, p, div);
+    }
+    function densStep(dt) {
+      var k;
+      diffuse(0, dens0, dens, 0.00008, dt);
+      advect(0, dens, dens0, u, v, dt);
+      for (k = 0; k < size; k++) dens[k] *= 0.994;
+    }
+    function splat(gx, gy, dx, dy, amount) {
+      var si = Math.max(1, Math.min(N, gx | 0));
+      var sj = Math.max(1, Math.min(N, gy | 0));
+      var oi, oj, ii, jj, wgt;
+      for (oj = -1; oj <= 1; oj++) {
+        for (oi = -1; oi <= 1; oi++) {
+          ii = si + oi; jj = sj + oj;
+          if (ii < 1 || jj < 1 || ii > N || jj > N) continue;
+          wgt = (oi === 0 && oj === 0) ? 1 : 0.45;
+          dens[ix(ii, jj)] += amount * wgt;
+          u[ix(ii, jj)] += dx * wgt;
+          v[ix(ii, jj)] += dy * wgt;
+        }
+      }
+    }
+
+    var pixels = offCtx.createImageData(N, N);
+    var data = pixels.data;
+    function render() {
+      var d, spd, glow, o;
+      for (j = 1; j <= N; j++) {
+        for (i = 1; i <= N; i++) {
+          d = dens[ix(i, j)];
+          spd = Math.hypot(u[ix(i, j)], v[ix(i, j)]);
+          glow = Math.min(1, Math.min(1, d * 0.045) + spd * 0.08);
+          o = ((j - 1) * N + (i - 1)) * 4;
+          data[o] = 12 + glow * COLOR[0];
+          data[o + 1] = 14 + glow * COLOR[1];
+          data[o + 2] = 16 + glow * COLOR[2];
+          data[o + 3] = 255;
+        }
+      }
+      offCtx.putImageData(pixels, 0, 0);
+      ctx.imageSmoothingEnabled = true;
+      ctx.drawImage(off, 0, 0, canvas.width, canvas.height);
+    }
+
+    var on = true, raf = 0, last = 0;
+    var pointer = { x: 0, y: 0, px: 0, py: 0, down: false, inside: false };
+    var downX = 0, downY = 0;
+
+    function toggle() {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) { last = 0; raf = requestAnimationFrame(frame); }
+    }
+    function toGrid(e) {
+      var rect = canvas.getBoundingClientRect();
+      return {
+        x: ((e.clientX - rect.left) / rect.width) * N + 1,
+        y: ((e.clientY - rect.top) / rect.height) * N + 1
+      };
+    }
+    canvas.addEventListener("pointerdown", function (e) {
+      var g = toGrid(e);
+      pointer.down = true; pointer.inside = true;
+      pointer.x = pointer.px = g.x;
+      pointer.y = pointer.py = g.y;
+      downX = e.clientX; downY = e.clientY;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    canvas.addEventListener("pointermove", function (e) {
+      var g = toGrid(e);
+      pointer.px = pointer.x;
+      pointer.py = pointer.y;
+      pointer.x = g.x;
+      pointer.y = g.y;
+      pointer.inside = true;
+    });
+    canvas.addEventListener("pointerup", function (e) {
+      pointer.down = false;
+      if (Math.hypot(e.clientX - downX, e.clientY - downY) < 6) toggle();
+    });
+    canvas.addEventListener("pointercancel", function () {
+      pointer.down = false; pointer.inside = false;
+    });
+    canvas.addEventListener("pointerleave", function () { pointer.inside = false; });
+
+    function frame(now) {
+      var dt = Math.min(0.033, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      var t = now * 0.001;
+      var ang = t * 0.85;
+      var gx = N * 0.5 + Math.cos(ang) * N * 0.22;
+      var gy = N * 0.5 + Math.sin(ang * 0.72) * N * 0.18;
+      splat(gx, gy, -Math.sin(ang) * 22, Math.cos(ang * 0.72) * 22, 42);
+      if (pointer.inside || pointer.down) {
+        var dx = (pointer.x - pointer.px) * 12;
+        var dy = (pointer.y - pointer.py) * 12;
+        splat(pointer.x, pointer.y, dx, dy, pointer.down ? 90 : 22);
+        pointer.px = pointer.x;
+        pointer.py = pointer.y;
+      }
+      velStep(dt);
+      densStep(dt);
+      render();
+      if (!reduced) raf = requestAnimationFrame(frame);
+    }
+
+    try {
+      if (reduced) {
+        splat(N * 0.45, N * 0.5, 8, -4, 120);
+        splat(N * 0.62, N * 0.42, -6, 5, 90);
+        velStep(0.016);
+        densStep(0.016);
+        render();
+      } else {
+        raf = requestAnimationFrame(frame);
+      }
+    } catch (err) {
+      canvas.classList.add("off");
+    }
+  }
+
   tickClock();
   paintSky();
   boingBall();
@@ -1322,6 +1543,7 @@
   lowpolyFrame();
   eliteFrame();
   globeFrame();
+  fluidFrame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();

@@ -253,7 +253,7 @@
 .shelf {
   position: absolute;
   top: 22rem; right: 3rem;
-  width: 34.5rem;
+  width: 38rem;
   max-width: calc(100% - 2rem);
 }
 .shelf .plank {
@@ -409,6 +409,27 @@
   touch-action: none;
 }
 .elite-frame canvas.off { visibility: hidden; }
+
+/* --- fluid tank (adapted from 3d-retro.com, cc0) --- */
+.fluid-frame {
+  align-self: flex-end;
+  margin-left: 0.45rem;
+  padding: 0.2rem;
+  background: #0f2f28;
+  border-radius: 0.15rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  cursor: grab;
+  transform: rotate(-0.35deg);
+}
+.fluid-frame canvas {
+  display: block;
+  width: 3.2rem; height: auto;
+  border-radius: 0.1rem;
+  background: #0b0e0d;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+.fluid-frame canvas.off { visibility: hidden; }
 
 /* --- wireframe globe (adapted from 3d-retro.com, cc0) --- */
 .globe-frame {
