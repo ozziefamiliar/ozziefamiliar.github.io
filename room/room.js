@@ -1532,6 +1532,176 @@
     }
   }
 
+  /* --- ps1 affine warp (adapted from 3d-retro.com, cc0) ---
+     software rasterizer with screen-space (affine) uv interpolation and
+     gte-style integer vertex snapping — the texture "swim" is the point. */
+  function ps1Frame() {
+    var wrap = document.getElementById("ps1-frame");
+    var canvas = document.getElementById("ps1-c");
+    if (!wrap || !canvas) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) { canvas.classList.add("off"); return; }
+
+    var BW = 192, BH = 128, F = 93; /* donor 320x180/155, same fov */
+    var img = ctx.createImageData(BW, BH);
+    var px = img.data;
+    var zbuf = new Float32Array(BW * BH);
+    var TINT = [110, 231, 183]; /* #6ee7b7 */
+
+    var yaw = 0.4, pitch = 0.35, auto = true, dragging = false;
+    var lastX = 0, lastY = 0, downX = 0, downY = 0;
+
+    function rot(p, ax, ay) {
+      var cx = Math.cos(ax), sx = Math.sin(ax);
+      var cy = Math.cos(ay), sy = Math.sin(ay);
+      var x = p[0], y = p[1], z = p[2];
+      var y2 = y * cx - z * sx; z = y * sx + z * cx; y = y2;
+      var x2 = x * cy + z * sy; z = -x * sy + z * cy; x = x2;
+      return [x, y, z];
+    }
+
+    function project(p) {
+      var z = p[2] + 5.2;
+      if (z < 0.2) return null;
+      var f = F / z;
+      var x = BW * 0.5 + p[0] * f;
+      var y = BH * 0.42 - p[1] * f;
+      x = (x + 0.5) | 0; y = (y + 0.5) | 0; /* gte vertex snap */
+      return { x: x, y: y, z: z };
+    }
+
+    function baryFill(a, b, c, uvs, tint) {
+      var minx = Math.max(0, Math.min(a.x, b.x, c.x) | 0);
+      var maxx = Math.min(BW - 1, Math.max(a.x, b.x, c.x) | 0);
+      var miny = Math.max(0, Math.min(a.y, b.y, c.y) | 0);
+      var maxy = Math.min(BH - 1, Math.max(a.y, b.y, c.y) | 0);
+      var area = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+      if (area <= 1) return;
+      var inv = 1 / area, x, y, w0, w1, w2, z, zi, u, v, chk, fog, k, i;
+      for (y = miny; y <= maxy; y++) {
+        for (x = minx; x <= maxx; x++) {
+          w0 = ((b.x - x) * (c.y - y) - (b.y - y) * (c.x - x)) * inv;
+          w1 = ((c.x - x) * (a.y - y) - (c.y - y) * (a.x - x)) * inv;
+          w2 = 1 - w0 - w1;
+          if (w0 < 0 || w1 < 0 || w2 < 0) continue;
+          z = w0 * a.z + w1 * b.z + w2 * c.z;
+          zi = y * BW + x;
+          if (z >= zbuf[zi]) continue;
+          zbuf[zi] = z;
+          /* affine (non-perspective) uv — this is what swims */
+          u = w0 * uvs[0] + w1 * uvs[2] + w2 * uvs[4];
+          v = w0 * uvs[1] + w1 * uvs[3] + w2 * uvs[5];
+          chk = (((u * 8) | 0) ^ ((v * 8) | 0)) & 1;
+          fog = 1 / (1 + (z - 2.2) * 0.18);
+          k = (chk ? 1 : 0.22) * fog;
+          i = zi * 4;
+          px[i] = tint[0] * k;
+          px[i + 1] = tint[1] * k;
+          px[i + 2] = tint[2] * k;
+          px[i + 3] = 255;
+        }
+      }
+    }
+
+    function tri(pts, i0, i1, i2, uvs, tint) {
+      var a = pts[i0], b = pts[i1], c = pts[i2];
+      if (!a || !b || !c) return;
+      if ((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x) <= 0) return;
+      baryFill(a, b, c, uvs, tint);
+    }
+
+    var floorTint = [TINT[0] * 0.85, TINT[1] * 0.85, TINT[2] * 0.7];
+    var cubePts = [
+      [-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1],
+      [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1]
+    ];
+    var faces = [
+      [0, 1, 2, 0, 2, 3], [5, 4, 7, 5, 7, 6], [4, 0, 3, 4, 3, 7],
+      [1, 5, 6, 1, 6, 2], [3, 2, 6, 3, 6, 7], [4, 5, 1, 4, 1, 0]
+    ];
+    var tints = [
+      [TINT[0], TINT[1], TINT[2]],
+      [TINT[0] * 0.55, TINT[1] * 0.55, TINT[2] * 0.55],
+      [TINT[0] * 0.75, TINT[1] * 0.7, TINT[2] * 0.55],
+      [TINT[0] * 0.7, TINT[1] * 0.8, TINT[2] * 0.75],
+      [Math.min(255, TINT[0] * 1.1), Math.min(255, TINT[1] * 1.1), TINT[2]],
+      [TINT[0] * 0.4, TINT[1] * 0.4, TINT[2] * 0.45]
+    ];
+
+    function draw() {
+      var i, y, horizon = (BH * 0.48) | 0;
+      for (i = 0; i < px.length; i += 4) {
+        y = (i / 4 / BW) | 0;
+        px[i] = 18; px[i + 1] = 22; px[i + 2] = 32; px[i + 3] = 255;
+        if (y >= horizon) {
+          px[i] = 12; px[i + 1] = 14; px[i + 2] = 18;
+        }
+      }
+      zbuf.fill(1e9);
+
+      var floor = [
+        [-5.5, -1.35, -5.5], [5.5, -1.35, -5.5],
+        [5.5, -1.35, 5.5], [-5.5, -1.35, 5.5]
+      ].map(function (p) { return project(rot(p, 0.38, yaw * 0.2)); });
+      tri(floor, 0, 1, 2, [0, 0, 2, 0, 2, 2], floorTint);
+      tri(floor, 0, 2, 3, [0, 0, 2, 2, 0, 2], floorTint);
+
+      var sp = cubePts.map(function (p) {
+        return project(rot([p[0] * 0.85, p[1] * 0.85 + 0.55, p[2] * 0.85], pitch, yaw));
+      });
+      var f, id;
+      for (f = 0; f < faces.length; f++) {
+        id = faces[f];
+        tri(sp, id[0], id[1], id[2], [0, 0, 1, 0, 1, 1], tints[f]);
+        tri(sp, id[3], id[4], id[5], [0, 0, 1, 1, 0, 1], tints[f]);
+      }
+      ctx.putImageData(img, 0, 0);
+    }
+
+    var on = true, raf = 0, last = 0;
+
+    function toggle() {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) { last = 0; raf = requestAnimationFrame(frame); }
+    }
+
+    canvas.addEventListener("pointerdown", function (e) {
+      dragging = true; auto = false;
+      lastX = e.clientX; lastY = e.clientY;
+      downX = e.clientX; downY = e.clientY;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    canvas.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      yaw += (e.clientX - lastX) * 0.01;
+      pitch += (e.clientY - lastY) * 0.01;
+      pitch = Math.max(-0.2, Math.min(1.1, pitch));
+      lastX = e.clientX; lastY = e.clientY;
+    });
+    canvas.addEventListener("pointerup", function (e) {
+      dragging = false;
+      if (Math.hypot(e.clientX - downX, e.clientY - downY) < 6) toggle();
+    });
+    canvas.addEventListener("pointercancel", function () { dragging = false; });
+
+    function frame(now) {
+      var dt = Math.min(0.05, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      if (auto) yaw += dt * 0.45;
+      draw();
+      if (!reduced) raf = requestAnimationFrame(frame);
+    }
+
+    try {
+      if (reduced) { draw(); } else { raf = requestAnimationFrame(frame); }
+    } catch (err) {
+      canvas.classList.add("off");
+    }
+  }
+
   tickClock();
   paintSky();
   boingBall();
@@ -1544,6 +1714,7 @@
   eliteFrame();
   globeFrame();
   fluidFrame();
+  ps1Frame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();

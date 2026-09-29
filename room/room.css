@@ -253,7 +253,7 @@
 .shelf {
   position: absolute;
   top: 22rem; right: 3rem;
-  width: 38rem;
+  width: 42rem;
   max-width: calc(100% - 2rem);
 }
 .shelf .plank {
@@ -430,6 +430,27 @@
   touch-action: none;
 }
 .fluid-frame canvas.off { visibility: hidden; }
+
+/* --- ps1 affine warp (adapted from 3d-retro.com, cc0) --- */
+.ps1-frame {
+  align-self: flex-end;
+  margin-left: 0.45rem;
+  padding: 0.2rem;
+  background: #23252f;
+  border-radius: 0.15rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  cursor: grab;
+  transform: rotate(0.3deg);
+}
+.ps1-frame canvas {
+  display: block;
+  width: 3.2rem; height: auto;
+  border-radius: 0.1rem;
+  background: #0b0c0e;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+.ps1-frame canvas.off { visibility: hidden; }
 
 /* --- wireframe globe (adapted from 3d-retro.com, cc0) --- */
 .globe-frame {
