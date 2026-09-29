@@ -582,12 +582,97 @@
     else raf = requestAnimationFrame(frame);
   }
 
+  /* --- shelf frame: hyperspace starfield (adapted from 3d-retro.com, cc0) --- */
+  function starFrame() {
+    var wrap = document.getElementById("starfield-frame");
+    var canvas = document.getElementById("starfield-c");
+    if (!wrap || !canvas) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var BW = 240, BH = 160;
+    var buf = document.createElement("canvas");
+    buf.width = BW; buf.height = BH;
+    var bctx = buf.getContext("2d");
+    var ctx = canvas.getContext("2d");
+    var COUNT = 170, stars = [], i;
+    for (i = 0; i < COUNT; i++) {
+      stars.push({ x: Math.random() * 2 - 1, y: Math.random() * 2 - 1, z: Math.random() });
+    }
+    var look = { x: 0, y: 0 }, target = { x: 0, y: 0 };
+    var last = 0, raf = 0, on = true;
+
+    canvas.addEventListener("pointermove", function (ev) {
+      var r = canvas.getBoundingClientRect();
+      target.x = ((ev.clientX - r.left) / r.width) * 2 - 1;
+      target.y = ((ev.clientY - r.top) / r.height) * 2 - 1;
+    });
+    canvas.addEventListener("pointerleave", function () {
+      target.x = 0; target.y = 0;
+    });
+    wrap.addEventListener("click", function () {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) { last = 0; raf = requestAnimationFrame(frame); }
+    });
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(1, Math.floor(canvas.clientWidth * dpr));
+      var h = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+
+    function frame(now) {
+      var dt = Math.min(0.1, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      var t = now * 0.001;
+      look.x += (target.x - look.x) * (1 - Math.exp(-dt * 6));
+      look.y += (target.y - look.y) * (1 - Math.exp(-dt * 6));
+      /* warp breathes in and out (donor formula) */
+      var warp = reduced ? 0.12 : 0.18 + 0.82 * (0.5 + 0.5 * Math.sin(t * 0.32));
+      var speed = (reduced ? 0 : 0.22 + warp * 1.55);
+      resize();
+      bctx.fillStyle = reduced ? "#0b0c0e" : "rgba(11, 12, 14, 0.28)";
+      bctx.fillRect(0, 0, BW, BH);
+      var cx = BW * 0.5 + look.x * BW * 0.1;
+      var cy = BH * 0.5 + look.y * BH * 0.1;
+      var fov = Math.min(BW, BH) * 0.52;
+      for (i = 0; i < COUNT; i++) {
+        var s = stars[i];
+        var pz = s.z;
+        s.z -= speed * dt;
+        if (s.z <= 0.02) {
+          s.x = Math.random() * 2 - 1;
+          s.y = Math.random() * 2 - 1;
+          s.z = 1;
+        }
+        var bright = 1 - s.z;
+        bctx.strokeStyle = "rgba(186, 255, 230, " + (0.25 + bright * (0.45 + warp * 0.5)) + ")";
+        bctx.lineWidth = Math.max(1, bright * (1.1 + warp * 2.4));
+        bctx.beginPath();
+        bctx.moveTo(cx + (s.x / pz) * fov, cy + (s.y / pz) * fov);
+        bctx.lineTo(cx + (s.x / s.z) * fov, cy + (s.y / s.z) * fov);
+        bctx.stroke();
+      }
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(buf, 0, 0, canvas.width, canvas.height);
+      if (!reduced) raf = requestAnimationFrame(frame);
+    }
+
+    if (reduced) { resize(); frame(performance.now()); }
+    else raf = requestAnimationFrame(frame);
+  }
+
   tickClock();
   paintSky();
   boingBall();
   plasmaCRT();
   donutTerm();
   voxelFly();
+  starFrame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();
