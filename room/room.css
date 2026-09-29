@@ -177,6 +177,17 @@
   text-transform: none; letter-spacing: normal;
   font-size: 0.62rem; color: #a08d5e;
 }
+/* the notebook rests closed — a peekable easter egg, not a billboard */
+.notebook.closed p { display: none; }
+.notebook .nb-close {
+  display: none;
+  float: right;
+  border: none; background: none;
+  color: #a08d5e; font-size: 0.9rem; line-height: 1;
+  cursor: pointer; padding: 0 0 0 0.5rem;
+}
+.notebook .nb-close:hover { color: #b3402a; }
+.notebook:not(.closed) .nb-close { display: inline-block; }
 
 /* --- pinboard --- */
 .pinboard {

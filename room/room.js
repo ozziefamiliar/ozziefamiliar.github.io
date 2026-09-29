@@ -232,18 +232,31 @@
         document.getElementById("nb-line1").textContent = (nb.lines || [])[0] || "";
         document.getElementById("nb-line2").textContent = (nb.lines || [])[1] || "";
 
-        /* click the notebook to flip through past sessions */
+        /* the notebook starts closed — a peekable easter egg. click to
+           open, click again to flip through past sessions, × to close. */
         var sessions = d.notebook_sessions || [];
-        if (sessions.length > 1) {
-          var idx = 0;
-          document.getElementById("desk-notebook").addEventListener("click", function () {
-            idx = (idx + 1) % sessions.length;
-            var s = sessions[idx];
-            document.getElementById("nb-heading").textContent = s.heading || "—";
-            document.getElementById("nb-line1").textContent = (s.lines || [])[0] || "";
-            document.getElementById("nb-line2").textContent = (s.lines || [])[1] || "";
-          });
+        var nbEl = document.getElementById("desk-notebook");
+        var nbHint = nbEl.querySelector(".nb-hint");
+        var idx = 0;
+        function showSession(s) {
+          document.getElementById("nb-heading").textContent = s.heading || "—";
+          document.getElementById("nb-line1").textContent = (s.lines || [])[0] || "";
+          document.getElementById("nb-line2").textContent = (s.lines || [])[1] || "";
         }
+        nbEl.addEventListener("click", function () {
+          if (nbEl.classList.contains("closed")) {
+            nbEl.classList.remove("closed");
+            if (nbHint) nbHint.textContent = "click to flip · × to close";
+          } else if (sessions.length > 1) {
+            idx = (idx + 1) % sessions.length;
+            showSession(sessions[idx]);
+          }
+        });
+        document.getElementById("nb-close").addEventListener("click", function (ev) {
+          ev.stopPropagation();
+          nbEl.classList.add("closed");
+          if (nbHint) nbHint.textContent = "click to peek";
+        });
 
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
