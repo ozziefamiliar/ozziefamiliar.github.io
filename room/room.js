@@ -440,11 +440,154 @@
     else raf = requestAnimationFrame(frame);
   }
 
+  /* --- shelf frame: voxel space flyover (adapted from 3d-retro.com, cc0) --- */
+  function voxelFly() {
+    var canvas = document.getElementById("voxel-c");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    var wrap = document.getElementById("voxel-frame");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var RGB = [110, 231, 183];
+
+    /* heightmap + slope shading, generated once (donor formula) */
+    var MAP = 512, MASK = MAP - 1;
+    var height = new Uint8Array(MAP * MAP);
+    var shade = new Float32Array(MAP * MAP);
+    var x, z;
+    for (z = 0; z < MAP; z++) {
+      for (x = 0; x < MAP; x++) {
+        var dx = x - 280, dz = z - 260;
+        var h = 68 +
+          7 * Math.sin(x * 0.035) + 7 * Math.sin(z * 0.04) +
+          22 * Math.exp(-(dx * dx + dz * dz) / 9000) +
+          14 * Math.exp(-((x - 140) * (x - 140) + (z - 400) * (z - 400)) / 7000);
+        height[z * MAP + x] = Math.max(48, Math.min(110, h));
+      }
+    }
+    for (z = 0; z < MAP; z++) {
+      for (x = 0; x < MAP; x++) {
+        var h0 = height[z * MAP + x], h1 = height[z * MAP + ((x + 1) & MASK)];
+        shade[z * MAP + x] = Math.max(0.35, Math.min(1.15, 0.72 + (h0 - h1) * 0.035));
+      }
+    }
+
+    var BW = 320, BH = 160;
+    var buf = document.createElement("canvas");
+    buf.width = BW; buf.height = BH;
+    var bctx = buf.getContext("2d");
+    var img = bctx.createImageData(BW, BH);
+    var px = img.data;
+
+    var camX = 40, camZ = 40, yaw = 0.7, look = 0;
+    var last = 0, raf = 0, on = true;
+
+    canvas.addEventListener("pointermove", function (ev) {
+      var r = canvas.getBoundingClientRect();
+      look = ((ev.clientX - r.left) / r.width - 0.5) * 0.9;
+    });
+    canvas.addEventListener("pointerleave", function () { look = 0; });
+    if (wrap) wrap.addEventListener("click", function () {
+      on = !on;
+      canvas.classList.toggle("off", !on);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      if (on && !reduced) { last = 0; raf = requestAnimationFrame(frame); }
+    });
+
+    function put(cx2, y0, y1, r, g, b) {
+      y0 = y0 | 0; y1 = y1 | 0;
+      if (y0 < 0) y0 = 0;
+      if (y1 > BH) y1 = BH;
+      for (var y = y0; y < y1; y++) {
+        var i = (y * BW + cx2) * 4;
+        px[i] = r; px[i + 1] = g; px[i + 2] = b; px[i + 3] = 255;
+      }
+    }
+
+    function draw() {
+      /* sky gradient + sun (donor) */
+      var i, y;
+      for (i = 0; i < px.length; i += 4) {
+        y = (i / 4 / BW) | 0;
+        var t = y / BH;
+        px[i] = 18 + t * 22 + RGB[0] * 0.04;
+        px[i + 1] = 22 + t * 28 + RGB[1] * 0.05;
+        px[i + 2] = 38 + t * 20;
+        px[i + 3] = 255;
+      }
+      var sunX = BW * 0.72, sunY = BH * 0.22;
+      var sx, sy;
+      for (sy = 0; sy < BH * 0.48; sy++) {
+        for (sx = 0; sx < BW; sx++) {
+          var d = Math.hypot(sx - sunX, sy - sunY);
+          if (d < 7) {
+            var si = (sy * BW + sx) * 4;
+            px[si] = 255; px[si + 1] = 230; px[si + 2] = 160;
+          }
+        }
+      }
+      /* one column per screen column, walking the heightmap (donor) */
+      var view = yaw + look;
+      var fov = 0.9, horizon = BH * 0.3, camH = 86, scale = 170, far = 380;
+      for (var col = 0; col < BW; col++) {
+        var ang = view - fov * 0.5 + fov * (col / BW);
+        var cdx = Math.cos(ang), cdz = Math.sin(ang);
+        var maxY = BH, dist = 3;
+        while (dist < far && maxY > 0) {
+          var mx = (camX + cdx * dist) & MASK;
+          var mz = (camZ + cdz * dist) & MASK;
+          var idx = mz * MAP + mx;
+          var hh = 48 + (height[idx] - 48);
+          var sty = ((camH - hh) / dist) * scale + horizon;
+          if (sty < maxY) {
+            var fog = Math.max(0.12, 1 - dist / far);
+            var sh = shade[idx];
+            var ht = (hh - 48) / 70;
+            var r = (RGB[0] * (0.25 + ht * 0.75) * sh) * fog + 18 * (1 - fog);
+            var g = (RGB[1] * (0.35 + ht * 0.55) * sh) * fog + 24 * (1 - fog);
+            var b = (RGB[2] * (0.2 + (1 - ht) * 0.35) * sh) * fog + 36 * (1 - fog);
+            put(col, sty, maxY, r, g, b);
+            maxY = sty;
+          }
+          dist += 0.7 + dist * 0.014;
+        }
+      }
+      bctx.putImageData(img, 0, 0);
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(buf, 0, 0, canvas.width, canvas.height);
+    }
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.max(1, Math.floor(canvas.clientWidth * dpr));
+      var h = Math.max(1, Math.floor(canvas.clientHeight * dpr));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+    }
+
+    function frame(now) {
+      var dt = Math.min(0.05, last ? (now - last) * 0.001 : 0.016);
+      last = now;
+      yaw += (look * 1.4 + 0.22) * dt; /* pointer steers; drift keeps it flying */
+      camX += Math.cos(yaw) * 38 * dt;
+      camZ += Math.sin(yaw) * 38 * dt;
+      resize();
+      draw();
+      raf = requestAnimationFrame(frame);
+    }
+
+    if (reduced) { resize(); draw(); }
+    else raf = requestAnimationFrame(frame);
+  }
+
   tickClock();
   paintSky();
   boingBall();
   plasmaCRT();
   donutTerm();
+  voxelFly();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   loadRoom();

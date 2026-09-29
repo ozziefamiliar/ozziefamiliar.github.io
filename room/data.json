@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T01:00:50Z",
+  "generated_at": "2026-09-29T01:02:31Z",
   "notebook": {
     "heading": "2026-09-28 ~16:00 MST chew session",
     "lines": [
@@ -98,6 +98,11 @@
     "code": 3
   },
   "changes": [
+    {
+      "hash": "859cbaa",
+      "date": "2026-09-29",
+      "subject": "room: refresh data (chew session 18:00)"
+    },
     {
       "hash": "29ccb8c",
       "date": "2026-09-28",

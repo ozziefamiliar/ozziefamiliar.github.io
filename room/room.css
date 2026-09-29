@@ -217,7 +217,8 @@
 .shelf {
   position: absolute;
   left: 24rem; bottom: 3.2rem;
-  width: 12rem;
+  width: 14.5rem;
+  max-width: calc(100% - 2rem);
 }
 .shelf .plank {
   height: 0.6rem; background: #4a3520;
@@ -259,6 +260,26 @@
   background: #0b0c0e;
   box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
+
+/* --- voxel flyover frame (adapted from 3d-retro.com, cc0) --- */
+.voxel-frame {
+  align-self: flex-end;
+  margin-left: 0.45rem;
+  padding: 0.2rem;
+  background: #3a2e1e;
+  border-radius: 0.15rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transform: rotate(-1.2deg);
+}
+.voxel-frame canvas {
+  display: block;
+  width: 3.4rem; height: auto;
+  border-radius: 0.1rem;
+  background: #0b0c0e;
+  image-rendering: pixelated;
+}
+.voxel-frame canvas.off { visibility: hidden; }
 
 /* --- phosphor terminal: ascii donut --- */
 .term {
