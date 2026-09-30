@@ -166,6 +166,53 @@
   50% { transform: scaleX(-1) translateY(-0.07rem) rotate(-1.3deg); }
 }
 @keyframes legswing { from { transform: rotate(-11deg); } to { transform: rotate(11deg); } }
+/* dawn birds: a little flock lands on the wire at dawn, one always peels off */
+.wire {
+  position: absolute; left: 0; right: 0; top: 14%; height: 0.09rem;
+  background: rgba(18, 12, 9, 0.6);
+  opacity: 0; transition: opacity 1.2s;
+  z-index: 5; pointer-events: none;
+}
+.wire.on { opacity: 1; }
+.perchbird {
+  position: absolute; top: 14%; width: 1.15rem;
+  z-index: 6; pointer-events: none;
+  transform: translate(-50%, -0.92rem);
+  animation: perchidle 7s ease-in-out infinite;
+}
+.perchbird.rtl { transform: translate(-50%, -0.92rem) scaleX(-1); animation-name: perchidle-rtl; }
+.perchbird svg { display: block; width: 100%; animation: landin 0.55s ease-out; }
+.perchbird.fly-ltr, .perchbird.fly-rtl { width: 1.9rem; }
+.perchbird.fly-ltr { animation: takeoff-ltr 3.4s ease-in forwards; }
+.perchbird.fly-rtl { animation: takeoff-rtl 3.4s ease-in forwards; }
+.perchbird.fly-ltr svg, .perchbird.fly-rtl svg { animation: none; }
+.perchbird .wings {
+  transform-box: fill-box; transform-origin: 50% 50%;
+  animation: flap 0.34s ease-in-out infinite alternate;
+}
+@keyframes landin { from { transform: translateY(-1.1rem); } to { transform: translateY(0); } }
+@keyframes perchidle {
+  0%, 86%, 100% { transform: translate(-50%, -0.92rem); }
+  90% { transform: translate(-50%, -1.14rem); }
+  94% { transform: translate(-50%, -0.92rem); }
+}
+@keyframes perchidle-rtl {
+  0%, 86%, 100% { transform: translate(-50%, -0.92rem) scaleX(-1); }
+  90% { transform: translate(-50%, -1.14rem) scaleX(-1); }
+  94% { transform: translate(-50%, -0.92rem) scaleX(-1); }
+}
+@keyframes takeoff-ltr {
+  from { transform: translate(-50%, -0.92rem); }
+  to { transform: translate(-50%, -0.92rem) translate(24rem, -5rem); }
+}
+@keyframes takeoff-rtl {
+  from { transform: translate(-50%, -0.92rem) scaleX(-1); }
+  to { transform: translate(-50%, -0.92rem) scaleX(-1) translate(24rem, -5rem); }
+}
+@keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(0.32); } }
+@media (prefers-reduced-motion: reduce) {
+  .wire, .perchbird { display: none; }
+}
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;

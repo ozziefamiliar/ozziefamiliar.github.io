@@ -333,6 +333,68 @@
     window.__pigT = setTimeout(pigWatch, 75000 + Math.random() * 70000);
   }
 
+  /* dawn birds: a little flock lands on the wire at dawn; one always peels off */
+  var PERCH_SVG =
+    '<svg viewBox="0 0 26 30" aria-hidden="true">' +
+    '<g fill="#14100b">' +
+    '<ellipse cx="13" cy="16" rx="7" ry="8.6"/>' +
+    '<circle cx="17.5" cy="8" r="4.6"/>' +
+    '<path d="M21.6 7 L26 8.6 L21.6 10.2 Z"/>' +
+    '<path d="M7.5 21 L3 28.5 L7.5 26.5 L9.5 24 Z"/>' +
+    '<rect x="10" y="24" width="1.6" height="4" rx="0.8"/>' +
+    '<rect x="15" y="24" width="1.6" height="4" rx="0.8"/>' +
+    '</g></svg>';
+  var FLY_SVG =
+    '<svg viewBox="0 0 44 26" aria-hidden="true">' +
+    '<g fill="#14100b">' +
+    '<ellipse cx="22" cy="15" rx="9" ry="4.6"/>' +
+    '<circle cx="31.5" cy="12.5" r="3.6"/>' +
+    '<path d="M34.5 11.5 L40 13.2 L34.5 15.2 Z"/>' +
+    '<path d="M13 14 L6.5 17.5 L13 19 Z"/>' +
+    '</g>' +
+    '<g class="wings" fill="#14100b">' +
+    '<path d="M20 13 C14 6 9 3 4 2 C9 8 14 12 19 15 Z"/>' +
+    '<path d="M20 15 C14 22 9 25 4 26 C9 20 14 16 19 13 Z"/>' +
+    '</g></svg>';
+  function isDawn() {
+    /* window.__forceDawn is a console easter egg to peek at the flock anytime */
+    if (window.__forceDawn === true) return true;
+    var h = phxNow().getHours() + phxNow().getMinutes() / 60;
+    return h >= 5 && h < 7;
+  }
+  function birdWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var sky = document.getElementById("sky");
+    if (sky && isDawn() && !reduced) {
+      var wire = document.getElementById("wire");
+      if (wire) wire.classList.add("on");
+      var n = 3 + Math.floor(Math.random() * 3);
+      var birds = [];
+      for (var i = 0; i < n; i++) {
+        var b = document.createElement("div");
+        b.className = "perchbird" + (Math.random() < 0.5 ? " rtl" : "");
+        b.style.left = (8 + (i + 0.5) * (84 / n) + (Math.random() * 6 - 3)) + "%";
+        b.style.animationDelay = (-Math.random() * 7).toFixed(2) + "s";
+        b.innerHTML = PERCH_SVG;
+        sky.appendChild(b);
+        birds.push(b);
+      }
+      /* one bird peels off mid-visit */
+      setTimeout(function () {
+        if (birds.length) {
+          var b = birds[Math.floor(Math.random() * birds.length)];
+          b.classList.add(b.classList.contains("rtl") ? "fly-rtl" : "fly-ltr");
+          b.innerHTML = FLY_SVG;
+        }
+      }, 14000 + Math.random() * 16000);
+      setTimeout(function () {
+        birds.forEach(function (b) { b.remove(); });
+        if (wire) wire.classList.remove("on");
+      }, 45000);
+    }
+    window.__birdT = setTimeout(birdWatch, 90000 + Math.random() * 90000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -1828,6 +1890,7 @@
   runnerWatch();
   bunnyWatch();
   pigWatch();
+  birdWatch();
   boingBall();
   plasmaCRT();
   donutTerm();
