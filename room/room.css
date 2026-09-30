@@ -213,6 +213,47 @@
 @media (prefers-reduced-motion: reduce) {
   .wire, .perchbird { display: none; }
 }
+
+/* dusk swallows: erratic insect-runs at dusk, one always barrel-rolls mid-run */
+.swallow {
+  position: absolute; top: var(--y0, 3rem); width: 1.7rem;
+  z-index: 6; pointer-events: none; opacity: 0;
+  animation: swoop var(--dur, 9s) linear var(--delay, 0s) 1 forwards;
+}
+.swallow.rtl { animation-name: swoop-rtl; }
+.swallow svg { display: block; width: 100%; animation: swoopin 0.7s ease-out var(--delay, 0s) backwards; }
+.swallow.loop svg { animation: swoopin 0.7s ease-out var(--delay, 0s) backwards, barrelroll var(--dur, 9s) linear var(--delay, 0s) 1; }
+.swallow .wings {
+  transform-box: fill-box; transform-origin: 50% 100%;
+  animation: flap 0.26s ease-in-out infinite alternate;
+}
+@keyframes swoop {
+  0% { opacity: 0; left: -2.5rem; transform: translateY(0); }
+  8% { opacity: 1; }
+  22% { left: 20%; transform: translateY(var(--dy1, -1.5rem)); }
+  45% { left: 44%; transform: translateY(var(--dy2, 2rem)); }
+  68% { left: 68%; transform: translateY(var(--dy3, -1rem)); }
+  92% { opacity: 1; left: 88%; }
+  100% { opacity: 0; left: calc(100% + 2.5rem); transform: translateY(var(--dy2, 2rem)); }
+}
+@keyframes swoop-rtl {
+  0% { opacity: 0; right: -2.5rem; transform: scaleX(-1) translateY(0); }
+  8% { opacity: 1; }
+  22% { right: 20%; transform: scaleX(-1) translateY(var(--dy1, -1.5rem)); }
+  45% { right: 44%; transform: scaleX(-1) translateY(var(--dy2, 2rem)); }
+  68% { right: 68%; transform: scaleX(-1) translateY(var(--dy3, -1rem)); }
+  92% { opacity: 1; right: 88%; }
+  100% { opacity: 0; right: calc(100% + 2.5rem); transform: scaleX(-1) translateY(var(--dy2, 2rem)); }
+}
+@keyframes swoopin { from { opacity: 0; } to { opacity: 1; } }
+@keyframes barrelroll {
+  0%, 40% { transform: rotate(0deg); }
+  60% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .swallow { display: none; }
+}
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;

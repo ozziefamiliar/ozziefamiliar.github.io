@@ -395,6 +395,54 @@
     window.__birdT = setTimeout(birdWatch, 90000 + Math.random() * 90000);
   }
 
+  /* dusk swallows: a few swallows swoop erratic insect-runs at dusk;
+     one always pulls a barrel roll mid-run */
+  var SWALLOW_SVG =
+    '<svg viewBox="0 0 46 22" aria-hidden="true">' +
+    '<g class="wings" fill="#14100b">' +
+    '<path d="M24 11 C19 5 12 1 5 1 C10 6 16 10 23 13 Z"/>' +
+    '<path d="M24 13 C19 18 13 21 7 20 C13 17 19 14 23 12 Z"/>' +
+    '</g>' +
+    '<g fill="#14100b">' +
+    '<ellipse cx="26" cy="12" rx="8" ry="3.2"/>' +
+    '<circle cx="33" cy="10.6" r="3"/>' +
+    '<path d="M36 9.8 L40.5 10.8 L36 12 Z"/>' +
+    '<path d="M18 11 L9 7.5 L12 11 L9 14.5 Z"/>' +
+    '</g></svg>';
+  function isDusk() {
+    /* window.__forceDusk is a console easter egg to peek at the swallows anytime */
+    if (window.__forceDusk === true) return true;
+    var h = phxNow().getHours() + phxNow().getMinutes() / 60;
+    return h >= 17 && h < 19;
+  }
+  function swallowWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var sky = document.getElementById("sky");
+    if (sky && isDusk() && !reduced) {
+      var n = 3 + Math.floor(Math.random() * 4);
+      var birds = [];
+      for (var i = 0; i < n; i++) {
+        var s = document.createElement("div");
+        s.className = "swallow" + (Math.random() < 0.5 ? " rtl" : "");
+        s.style.setProperty("--y0", (1 + Math.random() * 4).toFixed(2) + "rem");
+        s.style.setProperty("--dy1", (-2.2 + Math.random() * 1.5).toFixed(2) + "rem");
+        s.style.setProperty("--dy2", (0.8 + Math.random() * 1.8).toFixed(2) + "rem");
+        s.style.setProperty("--dy3", (-1.8 + Math.random() * 2.4).toFixed(2) + "rem");
+        s.style.setProperty("--dur", (8 + Math.random() * 5).toFixed(2) + "s");
+        s.style.setProperty("--delay", (Math.random() * 6).toFixed(2) + "s");
+        s.innerHTML = SWALLOW_SVG;
+        sky.appendChild(s);
+        birds.push(s);
+      }
+      /* one bird always pulls a barrel roll mid-run */
+      birds[Math.floor(Math.random() * birds.length)].classList.add("loop");
+      setTimeout(function () {
+        birds.forEach(function (b) { b.remove(); });
+      }, 25000);
+    }
+    window.__swallowT = setTimeout(swallowWatch, 150000 + Math.random() * 150000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -1891,6 +1939,7 @@
   bunnyWatch();
   pigWatch();
   birdWatch();
+  swallowWatch();
   boingBall();
   plasmaCRT();
   donutTerm();
