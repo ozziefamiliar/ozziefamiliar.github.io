@@ -234,6 +234,35 @@
     window.__meteorT = setTimeout(meteorWatch, 8000 + Math.random() * 14000);
   }
 
+  /* wildlife: a roadrunner dashes across the desert floor every 45-110s */
+  var RUNNER_SVG =
+    '<svg viewBox="0 0 64 34" aria-hidden="true">' +
+    '<g fill="#1a130c">' +
+    '<path d="M3 5 L17 12 L14 17 L2 10 Z"/>' +
+    '<ellipse cx="27" cy="14" rx="10" ry="5.2"/>' +
+    '<path d="M33 11 L41 4 L45 6 L37 14 Z"/>' +
+    '<circle cx="43.5" cy="5" r="3.4"/>' +
+    '<path d="M46.4 3.6 L55 5.8 L46.4 7.6 Z"/>' +
+    '<path d="M41 2.4 L39.8 0.4 M43.2 2 L42.9 0.2 M45.4 2.4 L45.7 0.4"' +
+    ' stroke="#1a130c" stroke-width="1.3" stroke-linecap="round"/>' +
+    '</g>' +
+    '<g stroke="#1a130c" stroke-width="2.2" stroke-linecap="round" fill="none">' +
+    '<path d="M29 18 C32 22 34 26 37 29.5 M37 29.5 l4.5 1.2"/>' +
+    '<path d="M24 18 C21 22.5 18 26.5 15 29 M15 29 l-4 0.8"/>' +
+    '</g></svg>';
+  function runnerWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && !reduced) {
+      var r = document.createElement("div");
+      r.className = "runner" + (Math.random() < 0.5 ? " rtl" : "");
+      r.innerHTML = RUNNER_SVG;
+      win.appendChild(r);
+      setTimeout(function () { r.remove(); }, 5600);
+    }
+    window.__runnerT = setTimeout(runnerWatch, 45000 + Math.random() * 65000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -1726,6 +1755,7 @@
   tickClock();
   paintSky();
   meteorWatch();
+  runnerWatch();
   boingBall();
   plasmaCRT();
   donutTerm();

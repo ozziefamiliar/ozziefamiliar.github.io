@@ -82,6 +82,22 @@
 }
 .mesa.m1 { left: 0.8rem; width: 5rem; height: 1.6rem; }
 .mesa.m2 { left: 9.8rem; width: 5.8rem; height: 1.15rem; }
+/* desert wildlife: a roadrunner silhouette dashes across the ground strip */
+.runner {
+  position: absolute;
+  bottom: 0.12rem;
+  width: 2.6rem;
+  z-index: 6;
+  pointer-events: none;
+  animation: rundash-ltr 5.2s linear forwards;
+}
+.runner.rtl { animation-name: rundash-rtl; }
+.runner svg { display: block; width: 100%; animation: runbob 0.22s ease-in-out infinite alternate; }
+.runner.rtl svg { animation-name: runbob-flip; }
+@keyframes runbob { from { transform: translateY(0); } to { transform: translateY(-0.13rem); } }
+@keyframes runbob-flip { from { transform: scaleX(-1) translateY(0); } to { transform: scaleX(-1) translateY(-0.13rem); } }
+@keyframes rundash-ltr { from { left: -3.4rem; } to { left: 17.4rem; } }
+@keyframes rundash-rtl { from { left: 17.4rem; } to { left: -3.4rem; } }
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;
