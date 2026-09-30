@@ -201,6 +201,13 @@
     } else {
       label.style.display = "none";
     }
+    /* heat shimmer: hot (90f+), clear-ish days only, sun up, motion allowed */
+    var hotDay = (K === "clear" || K === "partly") &&
+      wx && typeof wx.temp_f === "number" && wx.temp_f >= 90 &&
+      document.getElementById("orb").style.display === "block";
+    var reducedM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById("wx-shimmer").style.display =
+      (hotDay && !reducedM) ? "block" : "none";
     if (K === "storm" && !window.__stormT) {
       window.__stormT = setInterval(function () {
         var f = document.getElementById("wx-flash");

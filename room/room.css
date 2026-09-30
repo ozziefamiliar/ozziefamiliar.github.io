@@ -218,6 +218,29 @@
   position: absolute; inset: 0; background: #edf1ff;
   opacity: 0; transition: opacity 0.12s; pointer-events: none;
 }
+/* heat shimmer: faint rising columns over the ground strip, hot clear days */
+.wx-shimmer {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 4.8rem;
+  display: none; pointer-events: none; overflow: hidden; opacity: 0.65;
+  filter: blur(1px);
+  background:
+    repeating-linear-gradient(91deg,
+      transparent 0 9px, rgba(255, 246, 224, 0.16) 10px 11px, transparent 12px 20px),
+    repeating-linear-gradient(89deg,
+      transparent 0 13px, rgba(255, 255, 255, 0.11) 14px 15px, transparent 16px 26px);
+  animation: shimmerUp 1.3s linear infinite, shimmerWob 2.6s ease-in-out infinite;
+}
+@keyframes shimmerUp {
+  from { background-position-y: 4.8rem, 4.8rem; }
+  to { background-position-y: 0, 0; }
+}
+@keyframes shimmerWob {
+  0%, 100% { transform: skewX(-0.7deg); }
+  50% { transform: skewX(0.7deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wx-shimmer { animation: none; }
+}
 .wx-label {
   position: absolute; top: 15.6rem; left: 3rem;
   font-size: 0.68rem; letter-spacing: 0.06rem; color: #8a7a63;
