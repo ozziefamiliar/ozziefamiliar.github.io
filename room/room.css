@@ -137,6 +137,35 @@
   90% { transform: rotate(4deg); }
   94%, 100% { transform: rotate(0deg); }
 }
+/* desert wildlife: a javelina ambles the ground strip, swaying and swinging its legs */
+.javelina {
+  position: absolute;
+  bottom: 0.12rem;
+  width: 2.3rem;
+  z-index: 6;
+  pointer-events: none;
+  animation: amblecross-ltr 13s linear forwards;
+}
+.javelina.rtl { animation-name: amblecross-rtl; }
+.javelina svg { display: block; width: 100%; animation: amble 0.9s ease-in-out infinite; }
+.javelina.rtl svg { animation-name: amble-flip; }
+.javelina .legs-front, .javelina .legs-back {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: legswing 0.9s ease-in-out infinite alternate;
+}
+.javelina .legs-back { animation-direction: alternate-reverse; }
+@keyframes amblecross-ltr { from { left: -3rem; } to { left: 17.4rem; } }
+@keyframes amblecross-rtl { from { left: 17.4rem; } to { left: -3rem; } }
+@keyframes amble {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-0.07rem) rotate(1.3deg); }
+}
+@keyframes amble-flip {
+  0%, 100% { transform: scaleX(-1) translateY(0) rotate(0deg); }
+  50% { transform: scaleX(-1) translateY(-0.07rem) rotate(-1.3deg); }
+}
+@keyframes legswing { from { transform: rotate(-11deg); } to { transform: rotate(11deg); } }
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;

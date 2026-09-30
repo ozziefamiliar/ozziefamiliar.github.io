@@ -291,6 +291,41 @@
     window.__bunnyT = setTimeout(bunnyWatch, 60000 + Math.random() * 90000);
   }
 
+  /* wildlife: a javelina ambles the ground strip every 75-145s, swinging its legs */
+  var PIG_SVG =
+    '<svg viewBox="0 0 56 36" aria-hidden="true">' +
+    '<g fill="#1a130c">' +
+    '<ellipse cx="24" cy="18" rx="13.5" ry="8.2"/>' +
+    '<ellipse cx="11" cy="20" rx="6" ry="6.4"/>' +
+    '<path d="M35 12 L45.5 12.5 L47.8 16.2 L44.5 19.8 L35.5 19 Z"/>' +
+    '<circle cx="46.4" cy="16" r="2.8"/>' +
+    '<path d="M36.2 11.5 L34.6 5.6 L39.4 8 Z"/>' +
+    '</g>' +
+    '<g class="legs-back" fill="#1a130c">' +
+    '<path d="M13 23 L11.6 33.4 L14.4 33.4 L15.2 23 Z"/>' +
+    '<path d="M17.5 23.5 L16.4 33.4 L19 33.4 L19.8 23.5 Z"/>' +
+    '</g>' +
+    '<g class="legs-front" fill="#1a130c">' +
+    '<path d="M32.5 23 L31 33.4 L33.8 33.4 L34.7 23 Z"/>' +
+    '<path d="M36.4 23.5 L35.2 33.4 L38 33.4 L38.8 23.5 Z"/>' +
+    '</g>' +
+    '<g stroke="#1a130c" stroke-width="1.4" stroke-linecap="round" fill="none">' +
+    '<path d="M11 11 L9 7.5 M16 10 L14 6.5 M21 9.6 L19 6.1 M26 9.8 L24.2 6.4 M31 10.5 L29.4 7.3"/>' +
+    '<path d="M4.6 16.5 L1.2 15.8"/>' +
+    '</g></svg>';
+  function pigWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && !reduced) {
+      var p = document.createElement("div");
+      p.className = "javelina" + (Math.random() < 0.5 ? " rtl" : "");
+      p.innerHTML = PIG_SVG;
+      win.appendChild(p);
+      setTimeout(function () { p.remove(); }, 13600);
+    }
+    window.__pigT = setTimeout(pigWatch, 75000 + Math.random() * 70000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -1785,6 +1820,7 @@
   meteorWatch();
   runnerWatch();
   bunnyWatch();
+  pigWatch();
   boingBall();
   plasmaCRT();
   donutTerm();
