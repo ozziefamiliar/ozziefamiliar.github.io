@@ -98,6 +98,45 @@
 @keyframes runbob-flip { from { transform: scaleX(-1) translateY(0); } to { transform: scaleX(-1) translateY(-0.13rem); } }
 @keyframes rundash-ltr { from { left: -3.4rem; } to { left: 17.4rem; } }
 @keyframes rundash-rtl { from { left: 17.4rem; } to { left: -3.4rem; } }
+/* desert wildlife: a cottontail hops the ground strip at night, pausing to twitch its ears */
+.bunny {
+  position: absolute;
+  bottom: 0.12rem;
+  width: 1.7rem;
+  z-index: 6;
+  pointer-events: none;
+  animation: hopcross-ltr 11s linear forwards;
+}
+.bunny.rtl { animation-name: hopcross-rtl; }
+.bunny svg { display: block; width: 100%; animation: hopcycle 1.9s ease-in-out infinite; }
+.bunny.rtl svg { animation-name: hopcycle-flip; }
+.bunny .ears {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: eartwitch 3.8s ease-in-out infinite;
+}
+@keyframes hopcross-ltr { from { left: -2.4rem; } to { left: 17.4rem; } }
+@keyframes hopcross-rtl { from { left: 17.4rem; } to { left: -2.4rem; } }
+@keyframes hopcycle {
+  0% { transform: translateY(0); }
+  8% { transform: translateY(-0.32rem); }
+  16% { transform: translateY(0); }
+  24% { transform: translateY(-0.32rem); }
+  32%, 100% { transform: translateY(0); }
+}
+@keyframes hopcycle-flip {
+  0% { transform: scaleX(-1) translateY(0); }
+  8% { transform: scaleX(-1) translateY(-0.32rem); }
+  16% { transform: scaleX(-1) translateY(0); }
+  24% { transform: scaleX(-1) translateY(-0.32rem); }
+  32%, 100% { transform: scaleX(-1) translateY(0); }
+}
+@keyframes eartwitch {
+  0%, 82% { transform: rotate(0deg); }
+  86% { transform: rotate(-9deg); }
+  90% { transform: rotate(4deg); }
+  94%, 100% { transform: rotate(0deg); }
+}
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;

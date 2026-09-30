@@ -263,6 +263,34 @@
     window.__runnerT = setTimeout(runnerWatch, 45000 + Math.random() * 65000);
   }
 
+  /* wildlife: a cottontail hops the ground strip every 60-150s, night only */
+  var BUNNY_SVG =
+    '<svg viewBox="0 0 40 32" aria-hidden="true">' +
+    '<g fill="#1a130c">' +
+    '<circle cx="8" cy="18" r="3.2" fill="#241b12"/>' +
+    '<ellipse cx="19" cy="20" rx="9.5" ry="6.2"/>' +
+    '<circle cx="30" cy="14" r="5.2"/>' +
+    '<g class="ears">' +
+    '<path d="M27.5 10 L25 1 L28.5 1.2 L30 10 Z"/>' +
+    '<path d="M31 9.5 L31.5 0 L35 0.8 L34 10 Z"/>' +
+    '</g>' +
+    '<path d="M25 25 L24.5 30 L27 30 L27.5 25 Z"/>' +
+    '<path d="M14 25 C13 27.5 12 29 11 30 L15 30 C16 28.5 16.5 26.5 17 25 Z"/>' +
+    '</g></svg>';
+  function bunnyWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var stars = document.getElementById("stars");
+    var win = document.querySelector(".window");
+    if (win && stars && stars.style.opacity === "1" && !reduced) {
+      var b = document.createElement("div");
+      b.className = "bunny" + (Math.random() < 0.5 ? " rtl" : "");
+      b.innerHTML = BUNNY_SVG;
+      win.appendChild(b);
+      setTimeout(function () { b.remove(); }, 11500);
+    }
+    window.__bunnyT = setTimeout(bunnyWatch, 60000 + Math.random() * 90000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -1756,6 +1784,7 @@
   paintSky();
   meteorWatch();
   runnerWatch();
+  bunnyWatch();
   boingBall();
   plasmaCRT();
   donutTerm();
