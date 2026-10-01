@@ -175,6 +175,7 @@
   /* weather: overlays painted from data.json, phoenix current conditions */
   function paintWeather(wx) {
     var K = (wx && wx.kind) || "clear";
+    window.__wxKind = K; /* gates for the fair-weather balloon and friends */
     var cloudy = ["partly", "cloudy", "overcast", "rain", "storm", "dusty"]
       .indexOf(K) >= 0;
     var clouds = document.getElementById("wx-clouds");
@@ -501,6 +502,57 @@
       setTimeout(function () { t.remove(); }, 26000);
     }
     window.__trainT = setTimeout(trainWatch, 180000 + Math.random() * 180000);
+  }
+
+  /* fair-weather balloon: a fiesta-colored hot-air balloon drifts the sky
+     on clear/partly days, bobbing gently; every 3-8 min */
+  window.__balloonN = 0;
+  var ENVELOPE_D =
+    "M3 17 C3 8 10.5 2.5 20 2.5 C29.5 2.5 37 8 37 17 " +
+    "C37 26.5 28.5 33 20 33 C11.5 33 3 26.5 3 17 Z";
+  function balloonSVG() {
+    var uid = "bclip-" + (++window.__balloonN);
+    return (
+    '<svg viewBox="0 0 40 62" aria-hidden="true">' +
+    '<defs><clipPath id="' + uid + '"><path d="' + ENVELOPE_D + '"/></clipPath></defs>' +
+    '<path d="' + ENVELOPE_D + '" fill="#f2e3c6"/>' +
+    '<g clip-path="url(#' + uid + ')">' +
+    '<rect x="4" y="0" width="6" height="36" fill="#e07840"/>' +
+    '<rect x="10" y="0" width="6" height="36" fill="#2f8f83"/>' +
+    '<rect x="17" y="0" width="6" height="36" fill="#c9a13b"/>' +
+    '<rect x="24" y="0" width="6" height="36" fill="#2f8f83"/>' +
+    '<rect x="30" y="0" width="6" height="36" fill="#7a3b54"/>' +
+    '<ellipse cx="13" cy="10" rx="3.2" ry="4.6" fill="#ffffff" opacity="0.28"/>' +
+    '</g>' +
+    '<g stroke="#3a2c1c" stroke-width="0.8" fill="none">' +
+    '<path d="M11 31 L16.8 46"/>' +
+    '<path d="M29 31 L23.2 46"/>' +
+    '</g>' +
+    '<path d="M16 46 L24 46 L22.8 55.5 L17.2 55.5 Z" fill="#5b3d22"/>' +
+    '<path d="M16.7 49.4 L23.3 49.4" stroke="#7a5630" stroke-width="0.7"/>' +
+    '</svg>');
+  }
+  function isBalloonFair() {
+    /* window.__forceBalloon is a console easter egg to peek at the balloon anytime */
+    if (window.__forceBalloon === true) return true;
+    var orb = document.getElementById("orb");
+    var day = !!(orb && orb.style.display === "block");
+    var K = window.__wxKind || "clear";
+    return day && (K === "clear" || K === "partly");
+  }
+  function balloonWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && isBalloonFair() && !reduced) {
+      var b = document.createElement("div");
+      b.className = "balloon" + (Math.random() < 0.5 ? " rtl" : "");
+      b.style.setProperty("--y", (1.5 + Math.random() * 2.5).toFixed(2) + "rem");
+      b.style.setProperty("--dur", (38 + Math.random() * 14).toFixed(2) + "s");
+      b.innerHTML = balloonSVG();
+      win.appendChild(b);
+      setTimeout(function () { b.remove(); }, 56000);
+    }
+    window.__balloonT = setTimeout(balloonWatch, 180000 + Math.random() * 300000);
   }
 
   function esc(s) {
@@ -2001,6 +2053,7 @@
   birdWatch();
   swallowWatch();
   trainWatch();
+  balloonWatch();
   boingBall();
   plasmaCRT();
   donutTerm();

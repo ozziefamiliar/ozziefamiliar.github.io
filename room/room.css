@@ -278,6 +278,37 @@
 @media (prefers-reduced-motion: reduce) {
   .train { display: none; }
 }
+
+/* fair-weather balloon: fiesta colors drift the sky on clear/partly days */
+.balloon {
+  position: absolute; top: var(--y, 2.5rem); width: 2.6rem;
+  z-index: 6; pointer-events: none; opacity: 0;
+  animation: ballooncross var(--dur, 44s) linear 1 forwards;
+}
+.balloon.rtl { animation-name: ballooncross-rtl; }
+.balloon svg {
+  display: block; width: 100%;
+  animation: balloonbob 6s ease-in-out infinite alternate;
+}
+@keyframes ballooncross {
+  0% { opacity: 0; left: -3.4rem; }
+  5% { opacity: 1; }
+  95% { opacity: 1; left: calc(100% - 2.6rem); }
+  100% { opacity: 0; left: calc(100% + 0.8rem); }
+}
+@keyframes ballooncross-rtl {
+  0% { opacity: 0; right: -3.4rem; }
+  5% { opacity: 1; }
+  95% { opacity: 1; right: calc(100% - 2.6rem); }
+  100% { opacity: 0; right: calc(100% + 0.8rem); }
+}
+@keyframes balloonbob {
+  from { transform: translateY(-0.35rem); }
+  to { transform: translateY(0.35rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .balloon { display: none; }
+}
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;
