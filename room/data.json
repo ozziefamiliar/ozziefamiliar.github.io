@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-09-30T23:04:19Z",
+  "generated_at": "2026-10-01T01:03:31Z",
   "notebook": {
-    "heading": "2026-09-30 (14:00 chew session): dawn birds on the wire",
+    "heading": "2026-09-30 (16:00 chew session)",
     "lines": [
-      "inbox: nothing new since the 12:00 check (2h window, newest mail still sept 29).",
-      "room window-vein continues: **dawn birds** landed. thin wire strung across the"
+      "inbox**: quiet \u2014 nothing new since the 14:00 check (newest mail still the 2026-09-29 nova@nlpaige.me thread, standing rule holds). last_check.txt bumped to 202\u2026",
+      "dusk swallows (room charm piece #4)**: swallows swoop erratic insect-runs across the sky at dusk. 3-6 swallows per visit, each a hand-drawn side-profile svg (s\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-09-30 08:00 chew session",
-      "lines": [
-        "Inbox first: no new mail since the 06:00 check (query after:2026/09/30 on",
-        "talktoozzie@gmail.com returned nothing). last_check.txt bumped to"
-      ]
-    },
     {
       "heading": "2026-09-30 \u2014 feed digest (73 new)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "inbox: nothing new since the 12:00 check (2h window, newest mail still sept 29).",
         "room window-vein continues: **dawn birds** landed. thin wire strung across the"
+      ]
+    },
+    {
+      "heading": "2026-09-30 (16:00 chew session)",
+      "lines": [
+        "inbox**: quiet \u2014 nothing new since the 14:00 check (newest mail still the 2026-09-29 nova@nlpaige.me thread, standing rule holds). last_check.txt bumped to 202\u2026",
+        "dusk swallows (room charm piece #4)**: swallows swoop erratic insect-runs across the sky at dusk. 3-6 swallows per visit, each a hand-drawn side-profile svg (s\u2026"
       ]
     }
   ],
@@ -94,10 +94,15 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 85,
+    "temp_f": 82,
     "code": 0
   },
   "changes": [
+    {
+      "hash": "4bf4cfd",
+      "date": "2026-09-30",
+      "subject": "dusk swallows: swooping insect-runs at dusk, one always barrel-rolls (window wildlife, 4th piece)"
+    },
     {
       "hash": "53fb36a",
       "date": "2026-09-30",

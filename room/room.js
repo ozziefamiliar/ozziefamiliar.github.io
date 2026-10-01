@@ -443,6 +443,60 @@
     window.__swallowT = setTimeout(swallowWatch, 150000 + Math.random() * 150000);
   }
 
+  /* night freight: five boxcars and an engine thread the horizon, windows lit */
+  var TRAIN_SVG =
+    '<svg viewBox="0 0 128 22" aria-hidden="true">' +
+    '<g fill="#0d0a06">' +
+    '<rect x="8" y="9" width="17" height="8"/>' +
+    '<rect x="26.5" y="9" width="17" height="8"/>' +
+    '<rect x="45" y="9" width="17" height="8"/>' +
+    '<rect x="63.5" y="9" width="17" height="8"/>' +
+    '<rect x="82" y="9" width="17" height="8"/>' +
+    '<rect x="100.5" y="9" width="23" height="8"/>' +
+    '<rect x="111" y="4" width="9" height="7"/>' +
+    '<circle cx="11" cy="19" r="1.6"/><circle cx="23" cy="19" r="1.6"/>' +
+    '<circle cx="29.5" cy="19" r="1.6"/><circle cx="41.5" cy="19" r="1.6"/>' +
+    '<circle cx="48" cy="19" r="1.6"/><circle cx="60" cy="19" r="1.6"/>' +
+    '<circle cx="66.5" cy="19" r="1.6"/><circle cx="78.5" cy="19" r="1.6"/>' +
+    '<circle cx="85" cy="19" r="1.6"/><circle cx="97" cy="19" r="1.6"/>' +
+    '<circle cx="103" cy="19" r="1.6"/><circle cx="121" cy="19" r="1.6"/>' +
+    '</g>' +
+    '<g fill="#ffcf7a" opacity="0.85">' +
+    '<rect x="12" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="18.4" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="30.5" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="36.9" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="49" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="55.4" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="67.5" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="73.9" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="86" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="92.4" y="10.8" width="2.2" height="2.6"/>' +
+    '<rect x="113.5" y="5.6" width="3.4" height="3.2"/>' +
+    '</g>' +
+    '<circle cx="4.5" cy="12" r="1.1" fill="#e0432f" opacity="0.9"/>' +
+    '<circle cx="126.5" cy="13" r="5" fill="#ffd97a" opacity="0.16"/>' +
+    '<circle class="headlamp" cx="124.6" cy="13" r="1.5" fill="#fff6d8"/>' +
+    '</svg>';
+  function isNightTrain() {
+    /* window.__forceTrain is a console easter egg to peek at the train anytime */
+    if (window.__forceTrain === true) return true;
+    var stars = document.getElementById("stars");
+    return !!(stars && stars.style.opacity === "1");
+  }
+  function trainWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && isNightTrain() && !reduced) {
+      var t = document.createElement("div");
+      t.className = "train" + (Math.random() < 0.5 ? " rtl" : "");
+      t.innerHTML = TRAIN_SVG;
+      win.appendChild(t);
+      setTimeout(function () { t.remove(); }, 26000);
+    }
+    window.__trainT = setTimeout(trainWatch, 180000 + Math.random() * 180000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -1940,6 +1994,7 @@
   pigWatch();
   birdWatch();
   swallowWatch();
+  trainWatch();
   boingBall();
   plasmaCRT();
   donutTerm();
