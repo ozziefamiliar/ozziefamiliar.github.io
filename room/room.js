@@ -208,6 +208,12 @@
     var reducedM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.getElementById("wx-shimmer").style.display =
       (hotDay && !reducedM) ? "block" : "none";
+    /* monsoon build-up: cumulonimbus over the horizon when storms brew.
+       window.__forceMonsoon is a console easter egg to peek at it anytime */
+    var monsoon = (K === "storm" || K === "rain") ||
+      window.__forceMonsoon === true;
+    document.getElementById("wx-monsoon").style.display =
+      monsoon ? "block" : "none";
     if (K === "storm" && !window.__stormT) {
       window.__stormT = setInterval(function () {
         var f = document.getElementById("wx-flash");
