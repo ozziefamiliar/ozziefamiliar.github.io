@@ -345,6 +345,12 @@
       clearInterval(window.__stormT);
       window.__stormT = null;
     }
+    /* ocotillo: bare canes most of the year; leafs out after real rain.
+       window.__forceLeafy is a console easter egg to peek anytime (and
+       the headless-test hook, set before load like the other flags) */
+    var oco = document.querySelector(".ocotillo");
+    if (oco) oco.classList.toggle("leafy",
+      (K === "rain" || K === "storm") || window.__forceLeafy === true);
   }
 
   /* meteors: one shooting star every 8-22s, only when the night sky is up */

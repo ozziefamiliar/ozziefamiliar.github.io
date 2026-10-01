@@ -697,6 +697,16 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
   height: 1.4rem;
   background: #7c4a21;
 }
+/* ocotillo: grey-green bare canes most of the year; leafs out after rain */
+.ocotillo {
+  position: absolute; bottom: 1.15rem; left: 11.6rem; width: 2.8rem;
+}
+.ocotillo svg { display: block; width: 100%; height: auto; }
+.ocotillo .leaf { opacity: 0; transition: opacity 5s ease; }
+.ocotillo.leafy .leaf { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .ocotillo .leaf { transition: none; }
+}
 
 /* --- clock --- */
 .clock {
