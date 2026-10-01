@@ -225,6 +225,62 @@
   from { margin-bottom: 0; }
   to { margin-bottom: 0.42rem; }
 }
+/* dust devil: a dust column spins up on hot, calm days, wobbling across
+   the ground strip. funnel svg with rising swirl bands; the calm-wind
+   complement to the tumbleweed (>=14 km/h). */
+.dustdevil {
+  position: absolute;
+  bottom: 0.12rem;
+  width: 2rem;
+  z-index: 6;
+  pointer-events: none;
+  animation: dustcross-ltr var(--dur, 40s) linear forwards;
+}
+.dustdevil.rtl { animation-name: dustcross-rtl; }
+.dustdevil svg {
+  display: block; width: 100%;
+  transform-origin: 50% 100%;
+  animation: dustsway 3.4s ease-in-out infinite alternate;
+}
+@keyframes dustcross-ltr {
+  0% { left: -6rem; opacity: 0; }
+  7% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { left: 17.4rem; opacity: 0; }
+}
+@keyframes dustcross-rtl {
+  0% { left: 17.4rem; opacity: 0; }
+  7% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { left: -6rem; opacity: 0; }
+}
+@keyframes dustsway {
+  from { transform: skewX(-3.5deg); }
+  to { transform: skewX(3.5deg); }
+}
+/* rising swirl bands, clipped to the funnel shape */
+.dustdevil .dswirl {
+  transform-box: fill-box; transform-origin: center;
+  animation: dustrise 2.4s linear infinite;
+}
+@keyframes dustrise {
+  0% { transform: translateY(0); opacity: 0; }
+  18% { opacity: 0.55; }
+  82% { opacity: 0.4; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+/* kicked-up dust at the base */
+.dustdevil .dpuff {
+  transform-box: fill-box; transform-origin: center;
+  animation: dustpuff 2.8s ease-out infinite;
+}
+@keyframes dustpuff {
+  0% { transform: scale(0.5); opacity: 0.55; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dustdevil { display: none; }
+}
 /* gambel's quail family: two adults + a scurry of chicks cross the ground strip on sunny days */
 .quailparty {
   position: absolute;

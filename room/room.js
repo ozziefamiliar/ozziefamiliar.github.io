@@ -207,6 +207,7 @@
     var K = (wx && wx.kind) || "clear";
     window.__wxKind = K; /* gates for the fair-weather balloon and friends */
     window.__wxWind = (wx && typeof wx.wind_kmh === "number") ? wx.wind_kmh : 0;
+    window.__wxTemp = (wx && typeof wx.temp_f === "number") ? wx.temp_f : 0;
     var cloudy = ["partly", "cloudy", "overcast", "rain", "storm", "dusty"]
       .indexOf(K) >= 0;
     var clouds = document.getElementById("wx-clouds");
@@ -446,6 +447,54 @@
       setTimeout(function () { t.remove(); }, 22000);
     }
     window.__tumbleT = setTimeout(tumbleWatch, 200000 + Math.random() * 360000);
+  }
+
+  /* weather: on hot (90f+), calm (<=12 km/h) clear/partly days a dust devil
+     spins up — a dust column wobbling across the ground strip, fading in
+     and out at the edges of its run. the calm-wind complement to the
+     tumbleweed. window.__forceDust is a console easter egg to peek anytime */
+  var DUST_SVG =
+    '<svg viewBox="0 0 60 120" aria-hidden="true">' +
+    '<defs>' +
+    '<linearGradient id="dustg" x1="0" y1="1" x2="0" y2="0">' +
+    '<stop offset="0" stop-color="rgba(172,122,62,0.72)"/>' +
+    '<stop offset="0.5" stop-color="rgba(182,134,76,0.52)"/>' +
+    '<stop offset="1" stop-color="rgba(192,150,92,0.30)"/>' +
+    '</linearGradient>' +
+    '<clipPath id="dustclip">' +
+    '<path d="M25 116 C27 90 22 70 14 48 C8 30 5 18 4 8 L56 8 C55 18 52 30 46 48 C38 70 33 90 35 116 Z"/>' +
+    '</clipPath>' +
+    '</defs>' +
+    '<path d="M25 116 C27 90 22 70 14 48 C8 30 5 18 4 8 L56 8 C55 18 52 30 46 48 C38 70 33 90 35 116 Z" fill="url(#dustg)"/>' +
+    '<g clip-path="url(#dustclip)">' +
+    '<ellipse class="dswirl" cx="30" cy="104" rx="6" ry="3" fill="none" stroke="#7d5527" stroke-width="2.2" style="animation-delay:0s"/>' +
+    '<ellipse class="dswirl" cx="30" cy="86" rx="8" ry="3" fill="none" stroke="#7d5527" stroke-width="2.2" style="animation-delay:-0.48s"/>' +
+    '<ellipse class="dswirl" cx="30" cy="68" rx="10" ry="3" fill="none" stroke="#7d5527" stroke-width="2.2" style="animation-delay:-0.96s"/>' +
+    '<ellipse class="dswirl" cx="30" cy="50" rx="13" ry="3.2" fill="none" stroke="#7d5527" stroke-width="2.2" style="animation-delay:-1.44s"/>' +
+    '<ellipse class="dswirl" cx="30" cy="32" rx="16" ry="3.4" fill="none" stroke="#7d5527" stroke-width="2.2" style="animation-delay:-1.92s"/>' +
+    '</g>' +
+    '<ellipse class="dpuff" cx="30" cy="113" rx="7" ry="3" fill="rgba(190,145,88,0.55)" style="animation-delay:0s"/>' +
+    '<ellipse class="dpuff" cx="24" cy="115" rx="5" ry="2.4" fill="rgba(190,145,88,0.5)" style="animation-delay:-1.4s"/>' +
+    '</svg>';
+  function dustWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    var orbUp = document.getElementById("orb") &&
+      document.getElementById("orb").style.display === "block";
+    var hotCalm = (window.__wxKind === "clear" || window.__wxKind === "partly") &&
+      typeof window.__wxTemp === "number" && window.__wxTemp >= 90 &&
+      typeof window.__wxWind === "number" && window.__wxWind <= 12;
+    if (win && !reduced && orbUp && (hotCalm || window.__forceDust === true)) {
+      var d = document.createElement("div");
+      d.className = "dustdevil" + (Math.random() < 0.5 ? " rtl" : "");
+      d.style.width = (1.6 + Math.random() * 1.0).toFixed(2) + "rem";
+      var dur = 34000 + Math.random() * 18000;
+      d.style.setProperty("--dur", (dur / 1000).toFixed(1) + "s");
+      d.innerHTML = DUST_SVG;
+      win.appendChild(d);
+      setTimeout(function () { d.remove(); }, dur + 4000);
+    }
+    window.__dustT = setTimeout(dustWatch, 240000 + Math.random() * 300000);
   }
 
   /* wildlife: a gambel's quail family — two adults and a scurry of chicks —
@@ -2257,6 +2306,7 @@
   pigWatch();
   coyoteWatch();
   tumbleWatch();
+  dustWatch();
   birdWatch();
   swallowWatch();
   trainWatch();
