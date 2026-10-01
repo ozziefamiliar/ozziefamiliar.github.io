@@ -172,6 +172,36 @@
     }
   }
 
+  /* moon: true lunar phase from data.json. the inset box-shadow paints the
+     box MINUS the box translated by (dx,0) — headless-verified: dx = 0
+     paints nothing (new moon), |dx| >= the diameter paints the whole disc
+     (full moon), and in between it carves the crescent. negative dx lights
+     the right limb (waxing), positive the left (waning).
+     window.__forceMoonPhase is a console easter egg to peek at any phase */
+  var MOON_NAMES = ["new moon", "waxing crescent", "first quarter",
+    "waxing gibbous", "full moon", "waning gibbous", "last quarter",
+    "waning crescent"];
+  function paintMoon(m) {
+    var p = (m && typeof m.phase === "number")
+      ? (((m.phase % 1) + 1) % 1) : 0.5;
+    if (window.__forceMoonPhase != null) {
+      p = (((window.__forceMoonPhase % 1) + 1) % 1);
+    }
+    var illum = (m && typeof m.illum === "number") ? m.illum
+      : Math.round((1 - Math.cos(2 * Math.PI * p)) / 2 * 100);
+    /* 0 at new moon, 1 at full; the sign picks the lit limb */
+    var s = 1 - Math.abs(2 * p - 1);
+    var dx = 1.5 * s * (p <= 0.5 ? -1 : 1); /* moon is 1.5rem across */
+    var glow = 0.35 * illum / 100;
+    var moon = document.getElementById("moon");
+    moon.style.background = "transparent";
+    moon.style.boxShadow = "0 0 18px 6px rgba(242,238,224," +
+      glow.toFixed(3) + "), inset " + dx.toFixed(3) + "rem 0 0 0 #f2eee0";
+    var name = (m && m.name) || MOON_NAMES[Math.floor((((p + 1 / 16) % 1) * 8)) % 8];
+    moon.title = name + " · " + illum + "% lit";
+  }
+  window.__paintMoon = paintMoon; /* headless-test hook */
+
   /* weather: overlays painted from data.json, phoenix current conditions */
   function paintWeather(wx) {
     var K = (wx && wx.kind) || "clear";
@@ -727,6 +757,7 @@
 
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
+        paintMoon(d.moon);
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";
 

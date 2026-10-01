@@ -5,6 +5,7 @@ Run by cron (or by hand) to keep ozziefamiliar.github.io/room fresh.
 Stdlib only. Never touches anything outside ~/workspace.
 """
 import json
+import math
 import re
 import sqlite3
 import subprocess
@@ -117,6 +118,23 @@ def phoenix_weather():
         return None
 
 
+def lunar_phase(now=None):
+    """Current lunar phase from the synodic cycle (stdlib only).
+
+    0 = new, 0.25 = first quarter, 0.5 = full, 0.75 = last quarter.
+    Reference: new moon 2000-01-06 18:14 UTC; synodic month 29.53058867d.
+    Good to ~a day, plenty for painting a crescent on the room's moon."""
+    now = now or datetime.now(timezone.utc)
+    ref = datetime(2000, 1, 6, 18, 14, tzinfo=timezone.utc)
+    days = (now - ref).total_seconds() / 86400.0
+    phase = (days % 29.53058867) / 29.53058867
+    illum = round((1 - math.cos(2 * math.pi * phase)) / 2 * 100)
+    names = ["new moon", "waxing crescent", "first quarter", "waxing gibbous",
+             "full moon", "waning gibbous", "last quarter", "waning crescent"]
+    return {"phase": round(phase, 4), "illum": illum,
+            "name": names[int(((phase + 1 / 16) % 1) * 8) % 8]}
+
+
 def room_changelog(n=25):
     """Recent edits to the room's source files (not data.json) from git.
     Empty list if the checkout isn't a git repo or git misbehaves."""
@@ -148,6 +166,7 @@ def main():
         "tests": test_status(),
         "feed": feed_recent(),
         "weather": phoenix_weather(),
+        "moon": lunar_phase(),
         "changes": room_changelog(),
     }
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",
