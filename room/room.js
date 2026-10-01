@@ -448,6 +448,58 @@
     window.__tumbleT = setTimeout(tumbleWatch, 200000 + Math.random() * 360000);
   }
 
+  /* wildlife: a gambel's quail family — two adults and a scurry of chicks —
+     crosses the ground strip on sunny days. the teardrop topknot is the
+     giveaway. window.__forceQuail is a console easter egg to peek at them */
+  var QUAIL_ADULT_SVG =
+    '<svg viewBox="0 0 48 40" aria-hidden="true">' +
+    '<g fill="#14100b">' +
+    '<path d="M12 24 L3 32 L7 34 L15 26 Z"/>' +
+    '<ellipse cx="23" cy="26" rx="12" ry="8.2"/>' +
+    '<circle cx="36" cy="16" r="5.6"/>' +
+    '<path d="M41.4 14.8 L46.5 16.6 L41.4 18.6 Z"/>' +
+    '<ellipse cx="35.4" cy="2.4" rx="1.7" ry="2.2"/>' +
+    '<path d="M21 33.5 L20.4 39 L22.4 39 L23 33.5 Z"/>' +
+    '<path d="M26 33.5 L25.6 39 L27.6 39 L28.2 33.5 Z"/>' +
+    '</g>' +
+    '<path d="M36 10.6 C35.5 8 35.2 5.8 35.4 4.4" stroke="#14100b" stroke-width="1.2" fill="none"/>' +
+    '</svg>';
+  var QUAIL_CHICK_SVG =
+    '<svg viewBox="0 0 22 17" aria-hidden="true">' +
+    '<g fill="#14100b">' +
+    '<ellipse cx="9.5" cy="10.5" rx="6.2" ry="4.6"/>' +
+    '<circle cx="15.5" cy="6.6" r="3.1"/>' +
+    '<path d="M18.4 6 L20.8 6.9 L18.4 7.8 Z"/>' +
+    '<circle cx="15.5" cy="2.9" r="1.05"/>' +
+    '<path d="M7.5 14.8 L7.2 16.6 L8.3 16.6 L8.6 14.8 Z"/>' +
+    '<path d="M11 14.8 L10.8 16.6 L11.9 16.6 L12.1 14.8 Z"/>' +
+    '</g></svg>';
+  function isQuailFair() {
+    /* window.__forceQuail is a console easter egg to peek at the quail anytime */
+    if (window.__forceQuail === true) return true;
+    var orb = document.getElementById("orb");
+    var day = !!(orb && orb.style.display === "block");
+    var K = window.__wxKind || "clear";
+    return day && (K === "clear" || K === "partly");
+  }
+  function quailWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && isQuailFair() && !reduced) {
+      var q = document.createElement("div");
+      q.className = "quailparty" + (Math.random() < 0.5 ? " rtl" : "");
+      q.innerHTML =
+        '<div class="adult a1">' + QUAIL_ADULT_SVG + "</div>" +
+        '<div class="adult a2">' + QUAIL_ADULT_SVG + "</div>" +
+        '<div class="chick c1">' + QUAIL_CHICK_SVG + "</div>" +
+        '<div class="chick c2">' + QUAIL_CHICK_SVG + "</div>" +
+        '<div class="chick c3">' + QUAIL_CHICK_SVG + "</div>";
+      win.appendChild(q);
+      setTimeout(function () { q.remove(); }, 17000);
+    }
+    window.__quailT = setTimeout(quailWatch, 300000 + Math.random() * 240000);
+  }
+
   /* dawn birds: a little flock lands on the wire at dawn; one always peels off */
   var PERCH_SVG =
     '<svg viewBox="0 0 26 30" aria-hidden="true">' +
@@ -2210,6 +2262,7 @@
   trainWatch();
   balloonWatch();
   hawkWatch();
+  quailWatch();
   boingBall();
   plasmaCRT();
   donutTerm();

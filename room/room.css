@@ -225,6 +225,37 @@
   from { margin-bottom: 0; }
   to { margin-bottom: 0.42rem; }
 }
+/* gambel's quail family: two adults + a scurry of chicks cross the ground strip on sunny days */
+.quailparty {
+  position: absolute;
+  bottom: 0.12rem;
+  width: 4.8rem;
+  height: 1.7rem;
+  z-index: 6;
+  pointer-events: none;
+  animation: quailcross-ltr 15s linear forwards;
+}
+.quailparty.rtl { animation-name: quailcross-rtl; }
+.quailparty .adult, .quailparty .chick { position: absolute; bottom: 0; }
+.quailparty .adult { width: 1.75rem; animation: quailscurry 0.46s ease-in-out infinite; }
+.quailparty .adult.a1 { left: 0; }
+.quailparty .adult.a2 { left: 1.0rem; bottom: 0.03rem; width: 1.55rem; animation-delay: -0.23s; }
+.quailparty .chick { width: 0.58rem; animation: quailscurry 0.3s ease-in-out infinite; }
+.quailparty .chick.c1 { left: 2.5rem; animation-delay: -0.05s; }
+.quailparty .chick.c2 { left: 3.2rem; animation-delay: -0.17s; }
+.quailparty .chick.c3 { left: 3.9rem; bottom: 0.02rem; animation-delay: -0.28s; }
+.quailparty .adult svg, .quailparty .chick svg { display: block; width: 100%; }
+.quailparty.rtl .adult, .quailparty.rtl .chick { animation-name: quailscurry-flip; }
+@keyframes quailcross-ltr { from { left: -5.6rem; } to { left: 17.4rem; } }
+@keyframes quailcross-rtl { from { left: 17.4rem; } to { left: -5.6rem; } }
+@keyframes quailscurry {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-0.08rem) rotate(1.5deg); }
+}
+@keyframes quailscurry-flip {
+  0%, 100% { transform: scaleX(-1) translateY(0) rotate(0deg); }
+  50% { transform: scaleX(-1) translateY(-0.08rem) rotate(-1.5deg); }
+}
 
 /* dawn birds: a little flock lands on the wire at dawn, one always peels off */
 .wire {
