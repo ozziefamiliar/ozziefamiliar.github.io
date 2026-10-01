@@ -212,6 +212,84 @@
   }
   window.__paintBloom = paintBloom; /* headless-test hook */
 
+  /* woven rug: the flat gradient became a hand-loomed pattern. a seeded
+     prng (mulberry32) draws navajo-style stepped diamonds and stripe bands
+     in desert colors onto a small canvas, set as the .rug background so it
+     survives the ellipse border-radius. fixed default seed = a stable rug;
+     window.__rugSeed is a console easter egg to re-weave with another seed */
+  function mulberry(seed) {
+    var a = seed >>> 0;
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function weaveRug() {
+    var rug = document.querySelector(".rug");
+    if (!rug) return;
+    var seed = (typeof window.__rugSeed === "number") ? window.__rugSeed : 20261001;
+    var rnd = mulberry(seed);
+    var W = 520, H = 180;
+    var c = document.createElement("canvas");
+    c.width = W; c.height = H;
+    var x = c.getContext("2d");
+    var cream = "#e8dcc3", sand = "#d9a05e", terra = "#b4562f",
+        dark = "#5c3340", sage = "#7d8b5f";
+    /* stepped diamond: stacked horizontal bars, woven read */
+    function diamond(cx, cy, r, colA, colB) {
+      var rows = Math.ceil(r);
+      for (var i = 0; i < rows; i++) {
+        var frac = 1 - Math.abs(i - (rows - 1) / 2) / ((rows + 1) / 2);
+        var w = Math.max(2, Math.round(r * 2 * frac));
+        x.fillStyle = (i % 2) ? colA : colB;
+        x.fillRect(Math.round(cx - w / 2), Math.round(cy - rows + i * 2), w, 2);
+      }
+    }
+    function motifRow(y0, h, gap, r, colA, colB) {
+      var n = Math.floor(W / gap);
+      for (var i = 0; i < n; i++) {
+        var cx = (i + 0.5) * (W / n) + (rnd() - 0.5) * 6;
+        diamond(cx, y0 + h / 2, r, colA, colB);
+      }
+    }
+    x.fillStyle = dark; x.fillRect(0, 0, W, H);
+    x.fillStyle = cream; x.fillRect(0, 10, W, 2); x.fillRect(0, H - 12, W, 2);
+    var y = 14;
+    function band(h, col, motif) {
+      x.fillStyle = col; x.fillRect(0, y, W, h);
+      if (motif) motif(y, h);
+      y += h;
+    }
+    band(22, cream);
+    band(4, sage);
+    band(34, sand, function (yy, hh) {
+      motifRow(yy, hh, 74, 11, cream, dark);
+    });
+    band(4, dark);
+    band(30, terra, function (yy, hh) {
+      motifRow(yy, hh, 56, 8, cream, dark);
+    });
+    band(4, sage);
+    band(26, dark, function (yy, hh) {
+      motifRow(yy, hh, 92, 8, sand, cream);
+    });
+    band(4, dark);
+    band(22, cream);
+    /* weave texture: thread lines + a few pale slubs, loomed unevenness */
+    for (var ty = 0; ty < H; ty += 2) {
+      x.fillStyle = "rgba(20,8,4,0.07)";
+      x.fillRect(0, ty, W, 1);
+      if (rnd() < 0.06) {
+        x.fillStyle = "rgba(255,246,224,0.05)";
+        x.fillRect(0, ty + 1, W, 1);
+      }
+    }
+    rug.style.backgroundImage = "url(" + c.toDataURL() + ")";
+  }
+  window.__weaveRug = weaveRug; /* headless-test hook */
+
   /* weather: overlays painted from data.json, phoenix current conditions */
   function paintWeather(wx) {
     var K = (wx && wx.kind) || "clear";
@@ -2311,6 +2389,7 @@
 
   tickClock();
   paintSky();
+  weaveRug();
   meteorWatch();
   runnerWatch();
   bunnyWatch();
