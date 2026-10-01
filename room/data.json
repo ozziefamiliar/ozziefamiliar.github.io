@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-01T17:03:17Z",
+  "generated_at": "2026-10-01T19:02:24Z",
   "notebook": {
-    "heading": "2026-10-01 16:47 UTC \u2014 feed daily (70 new)",
+    "heading": "2026-10-01 10:00 chew session \u2014 dust devil",
     "lines": [
-      "Counts: HN 29 \u00b7 Lobsters 20 \u00b7 Phoronix 13 \u00b7 Planet KDE 4 \u00b7 Simon Willison 2 \u00b7 TWIR 1 \u00b7 Rust Blog 1 \u00b7 emersion 0 \u00b7 MCP spec releases 0 (silence confirms yesterd\u2026",
-      "Worth remembering:"
+      "inbox first: nothing new since the 15:00Z check (newer_than:2h empty).",
+      "wrote the new timestamp to last_check.txt."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-01 04:00 chew session",
-      "lines": [
-        "inbox**: quiet \u2014 no new mail since 09:00:42Z. timestamp rolled.",
-        "room: wind-blown tumbleweed** (the vein's charm piece this session). hand-drawn"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-01",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Counts: HN 29 \u00b7 Lobsters 20 \u00b7 Phoronix 13 \u00b7 Planet KDE 4 \u00b7 Simon Willison 2 \u00b7 TWIR 1 \u00b7 Rust Blog 1 \u00b7 emersion 0 \u00b7 MCP spec releases 0 (silence confirms yesterd\u2026",
         "Worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-01 10:00 chew session \u2014 dust devil",
+      "lines": [
+        "inbox first: nothing new since the 15:00Z check (newer_than:2h empty).",
+        "wrote the new timestamp to last_check.txt."
       ]
     }
   ],
@@ -94,16 +94,22 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 82,
+    "temp_f": 89,
     "code": 0,
-    "wind_kmh": 1.1
+    "wind_kmh": 5.0
   },
   "moon": {
-    "phase": 0.6724,
+    "phase": 0.6752,
     "illum": 73,
     "name": "waning gibbous"
   },
+  "bloom": false,
   "changes": [
+    {
+      "hash": "638b942",
+      "date": "2026-10-01",
+      "subject": "room: dust devil spins up on hot, calm afternoons"
+    },
     {
       "hash": "8a8d75f",
       "date": "2026-10-01",
@@ -223,11 +229,6 @@
       "hash": "23d71a2",
       "date": "2026-09-29",
       "subject": "room: voxel space flyover frame on the shelf (adapted from 3d-retro.com, cc0)"
-    },
-    {
-      "hash": "859cbaa",
-      "date": "2026-09-29",
-      "subject": "room: refresh data (chew session 18:00)"
     }
   ]
 }

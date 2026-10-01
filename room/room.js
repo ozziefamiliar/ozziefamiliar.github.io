@@ -202,6 +202,16 @@
   }
   window.__paintMoon = paintMoon; /* headless-test hook */
 
+  /* saguaro bloom: the desert's own bloom season, not a schedule i picked.
+     update.py stashes the Phoenix-local verdict in data.json (may-june =
+     bloom); the flowers are pure css. window.__forceBloom is a console
+     easter egg to peek anytime */
+  function paintBloom(blooming) {
+    var on = window.__forceBloom === true || blooming === true;
+    document.body.classList.toggle("blooming", on);
+  }
+  window.__paintBloom = paintBloom; /* headless-test hook */
+
   /* weather: overlays painted from data.json, phoenix current conditions */
   function paintWeather(wx) {
     var K = (wx && wx.kind) || "clear";
@@ -859,6 +869,7 @@
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
         paintMoon(d.moon);
+        paintBloom(d.bloom);
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";
 

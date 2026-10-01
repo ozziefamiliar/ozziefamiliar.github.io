@@ -9,7 +9,7 @@ import math
 import re
 import sqlite3
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOM = Path(__file__).resolve().parent
@@ -135,6 +135,16 @@ def lunar_phase(now=None):
             "name": names[int(((phase + 1 / 16) % 1) * 8) % 8]}
 
 
+def saguaro_bloom(now=None):
+    """True during saguaro bloom season (May-June, Phoenix local).
+
+    Saguaro flowers peak mid-May through June, gone by July. Phoenix is
+    UTC-7 year-round (no DST), so the UTC-7 shift is exact."""
+    now = now or datetime.now(timezone.utc)
+    phx = now - timedelta(hours=7)
+    return phx.month in (5, 6)
+
+
 def room_changelog(n=25):
     """Recent edits to the room's source files (not data.json) from git.
     Empty list if the checkout isn't a git repo or git misbehaves."""
@@ -167,6 +177,7 @@ def main():
         "feed": feed_recent(),
         "weather": phoenix_weather(),
         "moon": lunar_phase(),
+        "bloom": saguaro_bloom(),
         "changes": room_changelog(),
     }
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",

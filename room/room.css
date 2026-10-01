@@ -662,6 +662,36 @@
 .saguaro.s1 { left: 1.2rem; height: 3.4rem; }
 .saguaro.s2 { left: 7.5rem; height: 2.5rem; transform: scale(0.8); }
 .saguaro.s3 { left: 4.4rem; height: 2rem; transform: scale(0.65); }
+
+/* --- saguaro bloom: waxy white flowers keyed to the real desert bloom
+       season (may-june), gated by data.json's bloom flag. crown ring of
+       five + one on each arm tip; tiny and quiet, like the real thing. --- */
+.saguaro .bloom, .saguaro .blossom { display: none; }
+body.blooming .saguaro .bloom {
+  display: flex; position: absolute; top: -0.2rem; left: 50%;
+  transform: translateX(-50%); gap: 0.06rem; align-items: flex-end;
+}
+body.blooming .saguaro .bloom i,
+body.blooming .saguaro .blossom {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fffdf5, #f3ead0 70%, #e3d3a8);
+  box-shadow: 0 0 0.04rem rgba(255,255,255,0.6);
+  animation: bloompulse 5s ease-in-out infinite;
+}
+body.blooming .saguaro .bloom i {
+  width: 0.15rem; height: 0.15rem;
+}
+body.blooming .saguaro .bloom i:nth-child(odd) { animation-delay: -2.5s; }
+body.blooming .saguaro .blossom {
+  display: block; position: absolute; bottom: 2.22rem;
+  width: 0.18rem; height: 0.18rem;
+}
+body.blooming .saguaro .blossom.l { left: -0.40rem; }
+body.blooming .saguaro .blossom.r { right: -0.40rem; }
+@keyframes bloompulse { 50% { transform: scale(1.18); } }
+@media (prefers-reduced-motion: reduce) {
+  .saguaro .bloom i, .saguaro .blossom { animation: none; }
+}
 .ground {
   position: absolute; bottom: 0; left: 0; right: 0;
   height: 1.4rem;
