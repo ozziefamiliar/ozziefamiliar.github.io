@@ -340,6 +340,49 @@
     window.__pigT = setTimeout(pigWatch, 75000 + Math.random() * 70000);
   }
 
+  /* wildlife: a coyote trots the ground strip at night, pausing mid-crossing
+     to throw its head back in a silent howl.
+     window.__forceCoyote is a console easter egg to peek at it anytime */
+  var COYOTE_SVG =
+    '<svg viewBox="0 0 62 38" aria-hidden="true">' +
+    '<g fill="#120d08">' +
+    '<g class="tail">' +
+    '<path d="M21 19 C15 20 10 24 7 30 L11 30.5 C14 25.5 19 22.5 23 21.5 Z"/>' +
+    '</g>' +
+    '<ellipse cx="31" cy="21" rx="12" ry="5"/>' +
+    '<g class="head">' +
+    '<path d="M38 18 L42 10 L47 12 L43 20 Z"/>' +
+    '<ellipse cx="44" cy="12.5" rx="4.2" ry="3.4"/>' +
+    '<path d="M47.5 11 L55 13.5 L47.5 15.5 Z"/>' +
+    '<path d="M41 10.5 L39.6 3.6 L44.4 9.4 Z"/>' +
+    '<path d="M45.4 10 L46.2 3.2 L49.6 9.2 Z"/>' +
+    '</g>' +
+    '</g>' +
+    '<g class="legs-back" fill="#120d08">' +
+    '<path d="M23 25 L22 36 L24.4 36 L25 25 Z"/>' +
+    '<path d="M27.5 25 L26.8 36 L29.2 36 L29.8 25 Z"/>' +
+    '</g>' +
+    '<g class="legs-front" fill="#120d08">' +
+    '<path d="M36 25 L35 36 L37.4 36 L38 25 Z"/>' +
+    '<path d="M40 25 L39.2 36 L41.6 36 L42 25 Z"/>' +
+    '</g></svg>';
+  function coyoteWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var stars = document.getElementById("stars");
+    var win = document.querySelector(".window");
+    var night = stars && stars.style.opacity === "1";
+    if (win && !reduced && (night || window.__forceCoyote === true)) {
+      var c = document.createElement("div");
+      c.className = "coyote" + (Math.random() < 0.5 ? " rtl" : "");
+      c.innerHTML = COYOTE_SVG;
+      win.appendChild(c);
+      setTimeout(function () { c.classList.add("howling"); }, 5200);
+      setTimeout(function () { c.classList.remove("howling"); }, 8800);
+      setTimeout(function () { c.remove(); }, 20000);
+    }
+    window.__coyoteT = setTimeout(coyoteWatch, 240000 + Math.random() * 300000);
+  }
+
   /* dawn birds: a little flock lands on the wire at dawn; one always peels off */
   var PERCH_SVG =
     '<svg viewBox="0 0 26 30" aria-hidden="true">' +
@@ -2050,6 +2093,7 @@
   runnerWatch();
   bunnyWatch();
   pigWatch();
+  coyoteWatch();
   birdWatch();
   swallowWatch();
   trainWatch();

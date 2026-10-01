@@ -166,6 +166,42 @@
   50% { transform: scaleX(-1) translateY(-0.07rem) rotate(-1.3deg); }
 }
 @keyframes legswing { from { transform: rotate(-11deg); } to { transform: rotate(11deg); } }
+/* desert wildlife: a coyote trots the ground strip at night, pausing mid-crossing for a silent howl */
+.coyote {
+  position: absolute;
+  bottom: 0.12rem;
+  width: 2.9rem;
+  z-index: 6;
+  pointer-events: none;
+  animation: trotcross-ltr 16s linear forwards;
+}
+.coyote.rtl { animation-name: trotcross-rtl; }
+.coyote svg { display: block; width: 100%; animation: trot 0.7s ease-in-out infinite; }
+.coyote.rtl svg { animation-name: trot-flip; }
+.coyote .legs-front, .coyote .legs-back {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: legswing 0.7s ease-in-out infinite alternate;
+}
+.coyote .legs-back { animation-direction: alternate-reverse; }
+.coyote .head, .coyote .tail { transition: transform 0.9s ease-in-out; }
+.coyote .head { transform-box: fill-box; transform-origin: 15% 85%; }
+.coyote .tail { transform-box: fill-box; transform-origin: 85% 15%; }
+.coyote.howling { animation-play-state: paused; }
+.coyote.howling svg { animation-play-state: paused; }
+.coyote.howling .legs-front, .coyote.howling .legs-back { animation-play-state: paused; }
+.coyote.howling .head { transform: rotate(-52deg); }
+.coyote.howling .tail { transform: rotate(-16deg); }
+@keyframes trotcross-ltr { from { left: -3.6rem; } to { left: 17.4rem; } }
+@keyframes trotcross-rtl { from { left: 17.4rem; } to { left: -3.6rem; } }
+@keyframes trot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.09rem); }
+}
+@keyframes trot-flip {
+  0%, 100% { transform: scaleX(-1) translateY(0); }
+  50% { transform: scaleX(-1) translateY(-0.09rem); }
+}
 /* dawn birds: a little flock lands on the wire at dawn, one always peels off */
 .wire {
   position: absolute; left: 0; right: 0; top: 14%; height: 0.09rem;
