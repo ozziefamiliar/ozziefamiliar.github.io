@@ -598,6 +598,50 @@
     window.__balloonT = setTimeout(balloonWatch, 180000 + Math.random() * 300000);
   }
 
+  /* wildlife: a red-tailed hawk rides a thermal, circling high in the sky —
+     two orbits, mostly gliding, the odd burst of wingbeats.
+     window.__forceHawk is a console easter egg to peek at it anytime */
+  var HAWK_SVG =
+    '<svg viewBox="0 0 84 32" aria-hidden="true">' +
+    '<g fill="#14100b">' +
+    '<g class="wing-l">' +
+    '<path d="M37 15 C28 8 16 5 4 7 C9 9 11 10 13 11.5 C9 11.5 6 12.5 4 14' +
+    ' C8 15 10.5 16 12 17 C9.5 17.5 7.5 18.5 6 20 C10 21 14 21.5 18 22' +
+    ' C26 23 32 21 37 18 Z"/>' +
+    '</g>' +
+    '<g transform="translate(84,0) scale(-1,1)"><g class="wing-r">' +
+    '<path d="M37 15 C28 8 16 5 4 7 C9 9 11 10 13 11.5 C9 11.5 6 12.5 4 14' +
+    ' C8 15 10.5 16 12 17 C9.5 17.5 7.5 18.5 6 20 C10 21 14 21.5 18 22' +
+    ' C26 23 32 21 37 18 Z"/>' +
+    '</g></g>' +
+    '<ellipse cx="42" cy="17" rx="6" ry="2.8"/>' +
+    '<circle cx="48.5" cy="16" r="2.4"/>' +
+    '<path d="M36 16.5 L27 13.5 L26.5 20.5 L29.5 23.5 L36.5 20 Z"/>' +
+    '</g></svg>';
+  function isHawkFair() {
+    /* window.__forceHawk is a console easter egg to peek at the hawk anytime */
+    if (window.__forceHawk === true) return true;
+    var orb = document.getElementById("orb");
+    var day = !!(orb && orb.style.display === "block");
+    var K = window.__wxKind || "clear";
+    return day && (K === "clear" || K === "partly");
+  }
+  function hawkWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && isHawkFair() && !reduced) {
+      var dur = 56 + Math.random() * 20;
+      var h = document.createElement("div");
+      h.className = "hawk" + (Math.random() < 0.5 ? " rev" : "");
+      h.style.setProperty("--dur", dur.toFixed(1) + "s");
+      h.style.top = (16 + Math.random() * 8).toFixed(1) + "%";
+      h.innerHTML = HAWK_SVG;
+      win.appendChild(h);
+      setTimeout(function () { h.remove(); }, Math.round(dur * 2000) + 5000);
+    }
+    window.__hawkT = setTimeout(hawkWatch, 240000 + Math.random() * 300000);
+  }
+
   function esc(s) {
     return String(s || "").replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -2098,6 +2142,7 @@
   swallowWatch();
   trainWatch();
   balloonWatch();
+  hawkWatch();
   boingBall();
   plasmaCRT();
   donutTerm();

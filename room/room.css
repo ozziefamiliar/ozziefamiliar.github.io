@@ -345,6 +345,58 @@
 @media (prefers-reduced-motion: reduce) {
   .balloon { display: none; }
 }
+
+/* desert wildlife: a red-tailed hawk circles a thermal high in the sky,
+   two orbits, mostly gliding with the odd burst of wingbeats */
+.hawk {
+  position: absolute;
+  left: 50%; top: 20%;
+  width: 2.3rem;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  animation:
+    thermal var(--dur, 62s) linear 2 forwards,
+    hawkfade calc(var(--dur, 62s) * 2) linear 1 forwards;
+}
+.hawk.rev { animation-direction: reverse, normal; }
+.hawk svg { display: block; width: 100%; animation: bank 7s ease-in-out infinite alternate; }
+.hawk .wing-l, .hawk .wing-r {
+  transform-box: fill-box;
+  transform-origin: 100% 60%;
+  animation: flapburst 16s ease-in-out infinite;
+}
+@keyframes thermal {
+  0%    { transform: translate(3.4rem, 0); }
+  12.5% { transform: translate(2.4rem, 1.06rem); }
+  25%   { transform: translate(0, 1.5rem); }
+  37.5% { transform: translate(-2.4rem, 1.06rem); }
+  50%   { transform: translate(-3.4rem, 0); }
+  62.5% { transform: translate(-2.4rem, -1.06rem); }
+  75%   { transform: translate(0, -1.5rem); }
+  87.5% { transform: translate(2.4rem, -1.06rem); }
+  100%  { transform: translate(3.4rem, 0); }
+}
+@keyframes hawkfade {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes bank {
+  from { transform: rotate(-7deg) translateY(0); }
+  to { transform: rotate(7deg) translateY(-0.12rem); }
+}
+@keyframes flapburst {
+  0%, 62% { transform: rotate(0deg); }
+  66% { transform: rotate(-16deg); }
+  70% { transform: rotate(6deg); }
+  74% { transform: rotate(-16deg); }
+  78%, 100% { transform: rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hawk { display: none; }
+}
 .saguaro {
   position: absolute; bottom: 0;
   width: 0.7rem; height: 3.4rem;
