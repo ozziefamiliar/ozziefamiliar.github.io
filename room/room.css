@@ -202,6 +202,30 @@
   0%, 100% { transform: scaleX(-1) translateY(0); }
   50% { transform: scaleX(-1) translateY(-0.09rem); }
 }
+/* tumbleweed: bowls across the ground strip on windy days, bouncing as it rolls */
+.tumbleweed {
+  position: absolute;
+  bottom: 0.15rem;
+  width: 1.4rem;
+  z-index: 6;
+  pointer-events: none;
+  animation: tumblecross-ltr 19s linear forwards;
+}
+.tumbleweed.rtl { animation-name: tumblecross-rtl; }
+.tumbleweed svg {
+  display: block; width: 100%;
+  animation: tumble-roll 1.1s linear infinite, tumble-bounce 0.62s ease-in-out infinite alternate;
+}
+.tumbleweed.rtl svg { animation-name: tumble-roll-rev, tumble-bounce; }
+@keyframes tumblecross-ltr { from { left: -4.5rem; } to { left: 17.4rem; } }
+@keyframes tumblecross-rtl { from { left: 17.4rem; } to { left: -4.5rem; } }
+@keyframes tumble-roll { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes tumble-roll-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@keyframes tumble-bounce {
+  from { margin-bottom: 0; }
+  to { margin-bottom: 0.42rem; }
+}
+
 /* dawn birds: a little flock lands on the wire at dawn, one always peels off */
 .wire {
   position: absolute; left: 0; right: 0; top: 14%; height: 0.09rem;

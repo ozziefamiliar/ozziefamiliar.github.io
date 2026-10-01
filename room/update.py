@@ -86,7 +86,7 @@ def phoenix_weather():
     try:
         url = ("https://api.open-meteo.com/v1/forecast"
                "?latitude=33.45&longitude=-112.07"
-               "&current=weathercode,temperature_2m,visibility"
+               "&current=weathercode,temperature_2m,visibility,windspeed_10m"
                "&timezone=America%2FPhoenix")
         with urllib.request.urlopen(url, timeout=10) as r:
             cur = json.load(r).get("current", {})
@@ -111,7 +111,8 @@ def phoenix_weather():
         if vis < 5000 and kind in ("clear", "partly", "overcast"):
             kind, label = "dusty", "dusty out"
         return {"kind": kind, "label": label,
-                "temp_f": round(c * 9 / 5 + 32), "code": code}
+                "temp_f": round(c * 9 / 5 + 32), "code": code,
+                "wind_kmh": round(float(cur.get("windspeed_10m", 0)), 1)}
     except Exception:
         return None
 

@@ -176,6 +176,7 @@
   function paintWeather(wx) {
     var K = (wx && wx.kind) || "clear";
     window.__wxKind = K; /* gates for the fair-weather balloon and friends */
+    window.__wxWind = (wx && typeof wx.wind_kmh === "number") ? wx.wind_kmh : 0;
     var cloudy = ["partly", "cloudy", "overcast", "rain", "storm", "dusty"]
       .indexOf(K) >= 0;
     var clouds = document.getElementById("wx-clouds");
@@ -381,6 +382,40 @@
       setTimeout(function () { c.remove(); }, 20000);
     }
     window.__coyoteT = setTimeout(coyoteWatch, 240000 + Math.random() * 300000);
+  }
+
+  /* wildlife: on windy days a tumbleweed bowls across the ground strip,
+     bouncing as it rolls. gated on phoenix wind (>=14 km/h), storm, or the
+     window.__forceTumble console easter egg to peek at it anytime */
+  var TUMBLE_SVG =
+    '<svg viewBox="0 0 60 60" aria-hidden="true">' +
+    '<g stroke="#171208" stroke-width="1.7" fill="none" stroke-linecap="round">' +
+    '<path d="M8 32 Q22 10 40 14 Q56 18 54 36 Q50 54 28 54 Q10 52 8 32 Z"/>' +
+    '<path d="M14 10 Q30 26 52 22"/>' +
+    '<path d="M10 48 Q32 40 54 46"/>' +
+    '<path d="M30 4 Q26 30 34 56"/>' +
+    '<path d="M4 26 Q30 20 56 30"/>' +
+    '<path d="M16 54 Q36 32 46 6"/>' +
+    '<path d="M22 6 Q26 32 20 55"/>' +
+    '<path d="M46 5 Q42 30 50 56"/>' +
+    '<path d="M8 20 Q20 32 10 46"/>' +
+    '<path d="M54 24 Q44 34 56 44"/>' +
+    '<path d="M26 52 Q30 44 24 38"/>' +
+    '<path d="M44 12 Q40 18 46 22"/>' +
+    '</g></svg>';
+  function tumbleWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    var windy = (window.__wxWind >= 14) || window.__wxKind === "storm";
+    if (win && !reduced && (windy || window.__forceTumble === true)) {
+      var t = document.createElement("div");
+      t.className = "tumbleweed" + (Math.random() < 0.5 ? " rtl" : "");
+      t.style.width = (1.1 + Math.random() * 0.8).toFixed(2) + "rem";
+      t.innerHTML = TUMBLE_SVG;
+      win.appendChild(t);
+      setTimeout(function () { t.remove(); }, 22000);
+    }
+    window.__tumbleT = setTimeout(tumbleWatch, 200000 + Math.random() * 360000);
   }
 
   /* dawn birds: a little flock lands on the wire at dawn; one always peels off */
@@ -2138,6 +2173,7 @@
   bunnyWatch();
   pigWatch();
   coyoteWatch();
+  tumbleWatch();
   birdWatch();
   swallowWatch();
   trainWatch();
