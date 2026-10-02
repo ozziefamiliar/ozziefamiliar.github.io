@@ -224,6 +224,28 @@
   }
   window.__paintMoon = paintMoon; /* headless-test hook */
 
+  /* alpenglow: twice a day the mesas catch the real sunrise/sunset light.
+     update.py stashes the Phoenix-local times in data.json (minutes-of-day,
+     refreshed with every data run so they track the seasons); the gate is
+     ±25 minutes around each, so the glow lands inside the dawn/dusk sky
+     bands and the mesa rims pick up the color. window.__forceGlow is "am"
+     or "pm" to peek at either anytime (and the headless hook). */
+  function paintGlow() {
+    var now = phxNow();
+    var t = now.getHours() * 60 + now.getMinutes();
+    var cls = null;
+    if (window.__forceGlow === "am") cls = "glow-am";
+    else if (window.__forceGlow === "pm") cls = "glow-pm";
+    else {
+      var rise = window.__sunRiseMin, set = window.__sunSetMin;
+      if (typeof rise === "number" && Math.abs(t - rise) <= 25) cls = "glow-am";
+      else if (typeof set === "number" && Math.abs(t - set) <= 25) cls = "glow-pm";
+    }
+    document.body.classList.toggle("glow-am", cls === "glow-am");
+    document.body.classList.toggle("glow-pm", cls === "glow-pm");
+  }
+  window.__paintGlow = paintGlow; /* headless-test hook */
+
   /* saguaro bloom: the desert's own bloom season, not a schedule i picked.
      update.py stashes the Phoenix-local verdict in data.json (may-june =
      bloom); the flowers are pure css. window.__forceBloom is a console
@@ -329,6 +351,11 @@
     window.__wxWind = (wx && typeof wx.wind_kmh === "number") ? wx.wind_kmh : 0;
     window.__wxTemp = (wx && typeof wx.temp_f === "number") ? wx.temp_f : 0;
     window.__wxHumidity = (wx && typeof wx.humidity === "number") ? wx.humidity : 0;
+    /* the real sunrise/sunset in minutes-of-day — gates the alpenglow */
+    window.__sunRiseMin = (wx && typeof wx.sun_rise_min === "number")
+      ? wx.sun_rise_min : null;
+    window.__sunSetMin = (wx && typeof wx.sun_set_min === "number")
+      ? wx.sun_set_min : null;
     var cloudy = ["partly", "cloudy", "overcast", "rain", "storm", "dusty"]
       .indexOf(K) >= 0;
     var clouds = document.getElementById("wx-clouds");
@@ -1069,6 +1096,7 @@
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
         paintMoon(d.moon);
+        paintGlow();
         paintBloom(d.bloom);
         paintPear(d.pear_bloom);
         paintShower(d.shower);
@@ -2513,6 +2541,7 @@
 
   tickClock();
   paintSky();
+  paintGlow();
   weaveRug();
   meteorWatch();
   runnerWatch();
@@ -2541,5 +2570,6 @@
   ps1Frame();
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
+  setInterval(paintGlow, 60000);
   loadRoom();
 })();

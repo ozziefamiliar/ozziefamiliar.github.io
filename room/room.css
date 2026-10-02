@@ -124,6 +124,23 @@
 }
 .mesa.m1 { left: 0.8rem; width: 5rem; height: 1.6rem; }
 .mesa.m2 { left: 9.8rem; width: 5.8rem; height: 1.15rem; }
+/* alpenglow: twice a day the mesas catch the real sunrise/sunset light.
+   the ::after sits inside the same clip-path and lays a warm rim on the
+   summit edges, fading in over a few minutes. morning glow is pinkish on
+   the east (left) mesa, evening glow deeper orange on the west (right). */
+.mesa::after {
+  content: ""; position: absolute; inset: 0;
+  clip-path: polygon(0 100%, 14% 0, 86% 0, 100% 100%);
+  background: linear-gradient(to bottom, rgba(255,150,135,0.95), rgba(255,150,135,0) 55%);
+  opacity: 0; transition: opacity 3s ease; pointer-events: none;
+}
+body.glow-am .mesa::after,
+body.glow-pm .mesa::after { opacity: 0.7; }
+body.glow-am .mesa.m1::after { opacity: 1; }
+body.glow-pm .mesa.m2::after { opacity: 1; }
+body.glow-pm .mesa::after {
+  background: linear-gradient(to bottom, rgba(255,118,64,0.95), rgba(255,118,64,0) 55%);
+}
 /* desert wildlife: a roadrunner silhouette dashes across the ground strip */
 .runner {
   position: absolute;
