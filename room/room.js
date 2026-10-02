@@ -775,6 +775,77 @@
     window.__dustT = setTimeout(dustWatch, 240000 + Math.random() * 300000);
   }
 
+  /* weather: a haboob dust wall — when update.py's real open-meteo
+     visibility drops under 5000m under a clear-ish code it demotes the
+     kind to "dusty" (the monsoon signature), and a towering billowing
+     wall rolls in over the horizon behind the mesas: 34-52s crossing,
+     churning innards, random direction, visits every 3-7min while the
+     air stays dusty. under prefers-reduced-motion the wall parks
+     statically, mid-approach, no crossing. window.__forceHaboob is a
+     console easter egg to peek anytime (and the headless-test hook, set
+     before load like the other flags) */
+  /* NOTE (2026-10-02): the haboob's gradient + clipPath live in a hidden
+     body-level <defs> block (HABOOB_DEFS, injected once by haboobWatch),
+     NOT inside the animated node's own svg. Chromium fails to resolve
+     url(#...) paint servers defined inside the crossing-animated node
+     (the wall painted invisible), while a document-level def resolves
+     fine. the dust devil's local defs still work, so this is specific
+     to this svg; global defs are the robust shape for it. */
+  var HABOOB_DEFS =
+    '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' +
+    '<linearGradient id="hbwall" x1="0" y1="1" x2="0" y2="0">' +
+    '<stop offset="0" stop-color="#5f3a1c"/>' +
+    '<stop offset="0.45" stop-color="#8a5c2e"/>' +
+    '<stop offset="0.8" stop-color="#b5854f"/>' +
+    '<stop offset="1" stop-color="#d9ac72"/>' +
+    '</linearGradient>' +
+    '<clipPath id="hbclip">' +
+    '<path d="M0,420 L0,250 Q25,185 65,200 Q90,130 150,155 Q185,80 255,115 ' +
+    'Q300,50 370,105 Q420,60 470,125 Q520,85 570,145 Q620,110 660,185 ' +
+    'Q700,165 720,235 L720,420 Z"/>' +
+    '</clipPath>' +
+    '</defs></svg>';
+  var HABOOB_SVG =
+    '<svg viewBox="0 0 720 420" preserveAspectRatio="none" aria-hidden="true">' +
+    '<g class="hwall">' +
+    '<path d="M0,420 L0,250 Q25,185 65,200 Q90,130 150,155 Q185,80 255,115 ' +
+    'Q300,50 370,105 Q420,60 470,125 Q520,85 570,145 Q620,110 660,185 ' +
+    'Q700,165 720,235 L720,420 Z" fill="url(#hbwall)"/>' +
+    '<g clip-path="url(#hbclip)">' +
+    '<ellipse class="hchurn" cx="150" cy="330" rx="72" ry="26" fill="rgba(60,35,16,0.4)" style="animation-delay:0s"/>' +
+    '<ellipse class="hchurn" cx="330" cy="298" rx="92" ry="30" fill="rgba(60,35,16,0.38)" style="animation-delay:-1.2s"/>' +
+    '<ellipse class="hchurn" cx="520" cy="322" rx="82" ry="28" fill="rgba(60,35,16,0.4)" style="animation-delay:-2.4s"/>' +
+    '<ellipse class="hchurn" cx="240" cy="238" rx="56" ry="22" fill="rgba(60,35,16,0.34)" style="animation-delay:-3.1s"/>' +
+    '<ellipse class="hchurn" cx="470" cy="248" rx="62" ry="24" fill="rgba(60,35,16,0.34)" style="animation-delay:-0.6s"/>' +
+    '<ellipse class="hchurn" cx="610" cy="286" rx="58" ry="22" fill="rgba(60,35,16,0.36)" style="animation-delay:-1.8s"/>' +
+    '<ellipse cx="360" cy="410" rx="340" ry="36" fill="rgba(48,28,13,0.55)"/>' +
+    '</g>' +
+    '<path d="M0,250 Q25,185 65,200 Q90,130 150,155 Q185,80 255,115 ' +
+    'Q300,50 370,105 Q420,60 470,125 Q520,85 570,145 Q620,110 660,185 ' +
+    'Q700,165 720,235" fill="none" stroke="#e8c08a" stroke-width="7" opacity="0.55"/>' +
+    '</g>' +
+    '</svg>';
+  function haboobWatch() {
+    var box = document.getElementById("wx-haboob");
+    var dusty = (window.__wxKind || "clear") === "dusty";
+    if (box && (dusty || window.__forceHaboob === true)) {
+      if (!document.getElementById("hbwall")) {
+        var defs = document.createElement("div");
+        defs.innerHTML = HABOOB_DEFS;
+        document.body.appendChild(defs);
+      }
+      var h = document.createElement("div");
+      h.className = "haboob";
+      if (Math.random() < 0.5) h.classList.add("rtl");
+      var dur = 34 + Math.random() * 18;
+      h.style.setProperty("--dur", dur.toFixed(1) + "s");
+      h.innerHTML = HABOOB_SVG;
+      box.appendChild(h);
+      setTimeout(function () { h.remove(); }, dur * 1000 + 500);
+    }
+    window.__haboobT = setTimeout(haboobWatch, 180000 + Math.random() * 240000);
+  }
+
   /* wildlife: a gambel's quail family — two adults and a scurry of chicks —
      crosses the ground strip on sunny days. the teardrop topknot is the
      giveaway. window.__forceQuail is a console easter egg to peek at them */
@@ -2644,6 +2715,7 @@
   coyoteWatch();
   tumbleWatch();
   dustWatch();
+  haboobWatch();
   shadowWatch();
   birdWatch();
   swallowWatch();

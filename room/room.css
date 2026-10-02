@@ -678,6 +678,51 @@ body.glow-pm .mesa::after {
   .gshadow { display: none; }
 }
 
+/* haboob: when real phoenix visibility drops under 5000m (the "dusty"
+   kind update.py demotes from clear/partly/overcast), a wall of dust
+   rolls in over the horizon behind the mesas — a towering billowing wall
+   crossing the whole sky, churning as it goes. sits behind the mesas
+   (dom order), feet at the horizon line. under prefers-reduced-motion it
+   parks as a static wall on the horizon, mid-approach. */
+.wx-haboob {
+  position: absolute; left: 0; right: 0; top: 0; bottom: 1.28rem;
+  overflow: hidden; pointer-events: none;
+}
+.haboob {
+  position: absolute; bottom: 0; left: 102%;
+  width: 34rem; height: 84%;
+  opacity: 0;
+  animation: haboobRun var(--dur, 42s) linear forwards;
+}
+.haboob.rtl { animation-name: haboobRunR; }
+.haboob svg { width: 100%; height: 100%; display: block; }
+.hwall { animation: haboobWobble 7s ease-in-out infinite alternate; }
+@keyframes haboobWobble {
+  0% { transform: skewX(-0.5deg) translateY(0); }
+  100% { transform: skewX(0.7deg) translateY(-0.25rem); }
+}
+.hchurn { animation: hchurnPulse 4.6s ease-in-out infinite alternate; }
+@keyframes hchurnPulse {
+  0% { opacity: 0.30; }
+  100% { opacity: 0.52; }
+}
+@keyframes haboobRun {
+  0% { left: 102%; opacity: 0; }
+  9% { opacity: 1; }
+  89% { opacity: 1; }
+  100% { left: -92%; opacity: 0; }
+}
+@keyframes haboobRunR {
+  0% { left: -92%; opacity: 0; }
+  9% { opacity: 1; }
+  89% { opacity: 1; }
+  100% { left: 102%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .haboob, .haboob.rtl { animation: none; left: 38%; opacity: 1; }
+  .hwall, .hchurn { animation: none; }
+}
+
 /* monsoon build-up: a cumulonimbus rises over the horizon when storms brew.
    sits behind the mesas (dom order), feet at the horizon line. */
 .wx-monsoon {
