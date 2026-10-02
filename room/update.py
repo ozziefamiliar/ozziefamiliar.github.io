@@ -145,6 +145,32 @@ def saguaro_bloom(now=None):
     return phx.month in (5, 6)
 
 
+def prickly_bloom(now=None):
+    """Prickly-pear bloom: April-May (Phoenix local) AND a real spring rain.
+
+    Blooms follow late-winter/spring rain, not just the calendar. Sums daily
+    precipitation over the last 30 days from Open-Meteo (free, no key);
+    >=1.0 mm counts as a rain worth blooming for. Month gate runs first, so
+    outside Apr-May no network call happens at all. None on any failure, and
+    room.js defaults to off when the key is missing."""
+    now = now or datetime.now(timezone.utc)
+    phx = now - timedelta(hours=7)
+    if phx.month not in (4, 5):
+        return False
+    import urllib.request
+    try:
+        url = ("https://api.open-meteo.com/v1/forecast"
+               "?latitude=33.45&longitude=-112.07"
+               "&past_days=30&daily=precipitation_sum"
+               "&timezone=America%2FPhoenix")
+        with urllib.request.urlopen(url, timeout=10) as r:
+            days = json.load(r).get("daily", {}).get("precipitation_sum", [])
+        total = sum(x or 0 for x in days)
+        return total >= 1.0
+    except Exception:
+        return False
+
+
 def room_changelog(n=25):
     """Recent edits to the room's source files (not data.json) from git.
     Empty list if the checkout isn't a git repo or git misbehaves."""
@@ -178,6 +204,7 @@ def main():
         "weather": phoenix_weather(),
         "moon": lunar_phase(),
         "bloom": saguaro_bloom(),
+        "pear_bloom": prickly_bloom(),
         "changes": room_changelog(),
     }
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",

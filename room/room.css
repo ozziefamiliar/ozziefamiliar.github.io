@@ -708,6 +708,25 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
   .ocotillo .leaf { transition: none; }
 }
 
+/* prickly-pear: permanent pad cluster; magenta blooms open only after a
+   real spring rain (update.py: phoenix-local apr-may + 30-day precip) */
+.pear {
+  position: absolute; bottom: 1.28rem; left: 8.7rem; width: 2.7rem;
+}
+.pear svg { display: block; width: 100%; height: auto; }
+.pear .flower {
+  opacity: 0; transition: opacity 6s ease;
+  transform-box: fill-box; transform-origin: center;
+}
+body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out infinite; }
+@keyframes pearpulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pear .flower { transition: none; animation: none; }
+}
+
 /* --- clock --- */
 .clock {
   position: absolute;

@@ -212,6 +212,16 @@
   }
   window.__paintBloom = paintBloom; /* headless-test hook */
 
+  /* prickly-pear bloom: the pad cluster is a permanent fixture; the magenta
+     flowers open only when phoenix got a real spring rain. update.py stashes
+     the verdict in data.json (april-may + 30-day precip); the petals are pure
+     css. window.__forcePear is a console easter egg to peek anytime */
+  function paintPear(pearing) {
+    var on = window.__forcePear === true || pearing === true;
+    document.body.classList.toggle("pearbloom", on);
+  }
+  window.__paintPear = paintPear; /* headless-test hook */
+
   /* woven rug: the flat gradient became a hand-loomed pattern. a seeded
      prng (mulberry32) draws navajo-style stepped diamonds and stripe bands
      in desert colors onto a small canvas, set as the .rug background so it
@@ -954,6 +964,7 @@
         paintWeather(d.weather);
         paintMoon(d.moon);
         paintBloom(d.bloom);
+        paintPear(d.pear_bloom);
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";
 
