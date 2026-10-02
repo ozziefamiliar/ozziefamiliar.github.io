@@ -772,6 +772,25 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
 @media (prefers-reduced-motion: reduce) {
   .moonwash { transition: none; }
 }
+/* sunlight pooling: on clear/partly days the real sun comes through the
+   window — a warm wash on the wall below the sill plus a bright patch on
+   the floor, both drifting, leaning, and warming with the sun's real arc
+   (room.js paintSun: update.py's sunrise/sunset + open-meteo weather).
+   positioned on the minute tick only, no animation loop — nothing to idle
+   under prefers-reduced-motion. z-index under the furniture, which sits
+   later in the DOM and shadows the patch where it overlaps. */
+.sunwall {
+  position: absolute; left: 2.45rem; width: 17.1rem; top: 14.6rem;
+  height: 9rem; pointer-events: none; z-index: 1; opacity: 0;
+  clip-path: polygon(calc(12% + var(--sp-lean, 0px)) 0,
+    calc(88% + var(--sp-lean, 0px)) 0, 100% 100%, 0 100%);
+  filter: blur(0.6rem);
+}
+.sunpool {
+  position: absolute; bottom: -3rem; height: 10rem; pointer-events: none;
+  z-index: 1; opacity: 0; border-radius: 50%;
+  filter: blur(1.1rem);
+}
 /* ocotillo: grey-green bare canes most of the year; leafs out after rain */
 .ocotillo {
   position: absolute; bottom: 1.15rem; left: 11.6rem; width: 2.8rem;

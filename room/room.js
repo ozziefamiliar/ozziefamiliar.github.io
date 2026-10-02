@@ -246,6 +246,74 @@
   }
   window.__paintGlow = paintGlow; /* headless-test hook */
 
+  /* sunlight pooling: the real sun comes through the window and lands on
+     the room — a warm wash on the wall below the sill (#sunwall) and a
+     bright patch on the floor in front of the desk (#sunpool). both
+     drift, lean, and warm with the sun's real arc: update.py stashes the
+     phoenix-local sunrise/sunset minutes in data.json (window.__
+     sunRiseMin/__sunSetMin), and the travel goes left→right mirroring the
+     orb's arc across the window sky. morning sun leans the wall wash
+     right and lands the floor patch near the window, deep gold; midday
+     the wash is upright and the patch centered, pale; evening mirrors
+     morning. gated on the open-meteo weather kind (storm/rain/dusty =
+     off, overcast/fog = faint and diffuse), ramping up and down over the
+     first and last eighth of the day. window.__forceSun ("am"/"noon"/
+     "pm") peeks anytime and is the headless hook. repositioned on the
+     minute tick alongside paintGlow — no animation loop, nothing to idle
+     under prefers-reduced-motion. */
+  function mixRGB(a, b, t) {
+    return [0, 1, 2].map(function (i) {
+      return Math.round(a[i] + (b[i] - a[i]) * t);
+    }).join(",");
+  }
+  function paintSun() {
+    var wall = document.getElementById("sunwall");
+    var pool = document.getElementById("sunpool");
+    if (!wall || !pool) return;
+    var now = phxNow();
+    var t = now.getHours() * 60 + now.getMinutes();
+    var rise = window.__sunRiseMin, set = window.__sunSetMin;
+    var p = null; /* 0 at sunrise, 1 at sunset */
+    var force = window.__forceSun;
+    if (force === "am") p = 0.1;
+    else if (force === "noon") p = 0.5;
+    else if (force === "pm") p = 0.9;
+    else if (typeof rise === "number" && typeof set === "number" && set > rise) {
+      p = (t - rise) / (set - rise);
+    }
+    var on = p !== null && p >= 0 && p <= 1;
+    var K = window.__wxKind || "clear";
+    if (on && (K === "storm" || K === "rain" || K === "dusty")) on = false;
+    if (!on) {
+      wall.style.opacity = "0";
+      pool.style.opacity = "0";
+      return;
+    }
+    /* ramp over the first/last eighth of the day (~1.5h of ~12h) */
+    var ramp = Math.max(0, Math.min(1, Math.min(p, 1 - p) / 0.125));
+    var maxO = K === "overcast" ? 0.15 : K === "fog" ? 0.10 : 0.42;
+    var o = maxO * ramp;
+    /* gold at the day's edges, pale at noon */
+    var gold = Math.min(1, Math.abs(p - 0.5) * 2.6);
+    var c = mixRGB([255, 188, 108], [255, 228, 196], 1 - gold);
+    /* wall wash: top edge under the sill, leaning away from the sun —
+       morning sun (left) leans it right, evening the mirror */
+    var lean = (0.5 - p) * 46; /* px at the top edge */
+    wall.style.setProperty("--sp-lean", lean.toFixed(1) + "px");
+    wall.style.background = "linear-gradient(to bottom, rgba(" + c +
+      ", 0.95), rgba(" + c + ", 0) 85%)";
+    wall.style.opacity = o.toFixed(3);
+    /* floor pool: drifts left→right through the day, spreading wide when
+       the sun is low */
+    var width = 16 + (1 - Math.sin(p * Math.PI)) * 10; /* rem */
+    pool.style.left = (3 + p * 11).toFixed(2) + "rem";
+    pool.style.width = width.toFixed(2) + "rem";
+    pool.style.background = "radial-gradient(ellipse at center, rgba(" + c +
+      ", 0.9), rgba(" + c + ", 0) 70%)";
+    pool.style.opacity = Math.min(0.75, o * 1.15).toFixed(3);
+  }
+  window.__paintSun = paintSun; /* headless-test hook */
+
   /* saguaro bloom: the desert's own bloom season, not a schedule i picked.
      update.py stashes the Phoenix-local verdict in data.json (may-june =
      bloom); the flowers are pure css. window.__forceBloom is a console
@@ -1097,6 +1165,7 @@
         paintWeather(d.weather);
         paintMoon(d.moon);
         paintGlow();
+        paintSun();
         paintBloom(d.bloom);
         paintPear(d.pear_bloom);
         paintShower(d.shower);
@@ -2542,6 +2611,7 @@
   tickClock();
   paintSky();
   paintGlow();
+  paintSun();
   weaveRug();
   meteorWatch();
   runnerWatch();
@@ -2571,5 +2641,6 @@
   setInterval(tickClock, 1000);
   setInterval(paintSky, 60000);
   setInterval(paintGlow, 60000);
+  setInterval(paintSun, 60000);
   loadRoom();
 })();
