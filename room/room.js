@@ -498,6 +498,22 @@
       (K === "rain" || K === "storm") || window.__forceLeafy === true);
   }
 
+  /* rainbow after the storm: when update.py catches a real rain->clear
+     transition it opens a 2h window (rainbow_until in data.json) and the
+     bow — primary plus a fainter reversed secondary — hangs over the
+     mesas. window.__forceRainbow is a console easter egg to peek anytime
+     (and the headless-test hook, set before load like the other flags) */
+  function paintRainbow(untilIso) {
+    window.__rainbowUntil = untilIso || null; /* minute-tick re-check */
+    var on = window.__forceRainbow === true;
+    if (!on && untilIso) {
+      var exp = Date.parse(untilIso);
+      on = !isNaN(exp) && Date.now() < exp;
+    }
+    document.getElementById("wx-rainbow").classList.toggle("on", on);
+  }
+  window.__paintRainbow = paintRainbow; /* headless hook */
+
   /* meteors: shooting stars, one every 8-22s when the night sky is up —
      but when a real meteor shower is peaking (update.py stashes the annual
      shower calendar in data.json), the interval tightens with the shower's
@@ -1275,6 +1291,7 @@
 
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
+        paintRainbow(d.rainbow_until);
         paintMoon(d.moon);
         paintGlow();
         paintSun();
@@ -2756,5 +2773,6 @@
   setInterval(paintSky, 60000);
   setInterval(paintGlow, 60000);
   setInterval(paintSun, 60000);
+  setInterval(function () { paintRainbow(window.__rainbowUntil); }, 60000);
   loadRoom();
 })();

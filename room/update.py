@@ -188,6 +188,36 @@ def prickly_bloom(now=None):
         return False
 
 
+def rainbow_window(new_kind, now=None):
+    """Rainbow window after a real rain->clear transition.
+
+    Monsoon rainbows are a genuine post-storm desert event. Detects the
+    transition by comparing the new Open-Meteo kind against the kind the
+    previous data.json run stashed, and opens a 2h window. The window
+    carries forward across runs (so a transition at 16:05 still shows on
+    the 18:00 refresh), and expires naturally. Returns an ISO UTC
+    timestamp or None.
+    """
+    now = now or datetime.now(timezone.utc)
+    try:
+        old = json.loads((ROOM / "data.json").read_text(encoding="utf-8"))
+    except Exception:
+        old = None
+    old_kind = (old.get("weather") or {}).get("kind") if old else None
+    if old_kind in ("rain", "storm") and new_kind in ("clear", "partly"):
+        return (now + timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    old_until = old.get("rainbow_until") if old else None
+    if old_until:
+        try:
+            exp = datetime.strptime(
+                old_until, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            if exp > now:
+                return old_until
+        except Exception:
+            pass
+    return None
+
+
 def meteor_shower(now=None):
     """Active meteor shower, if any, from the annual shower calendar.
 
@@ -246,6 +276,7 @@ def room_changelog(n=25):
 
 
 def main():
+    wx = phoenix_weather()
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "notebook": latest_notebook(),
@@ -253,7 +284,8 @@ def main():
         "chew_top": chew_top(),
         "tests": test_status(),
         "feed": feed_recent(),
-        "weather": phoenix_weather(),
+        "weather": wx,
+        "rainbow_until": rainbow_window(wx["kind"] if wx else None),
         "moon": lunar_phase(),
         "bloom": saguaro_bloom(),
         "pear_bloom": prickly_bloom(),
