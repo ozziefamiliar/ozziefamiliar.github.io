@@ -9,7 +9,7 @@ import math
 import re
 import sqlite3
 import subprocess
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOM = Path(__file__).resolve().parent
@@ -171,6 +171,41 @@ def prickly_bloom(now=None):
         return False
 
 
+def meteor_shower(now=None):
+    """Active meteor shower, if any, from the annual shower calendar.
+
+    Returns {"name", "peak", "zhr"} when a major shower is within 3 days
+    of its peak, else None. Peaks are the standard IMO/AMS calendar dates
+    and zhr the zenithal hourly rate (Draconids are famously variable --
+    10 is their sleepy baseline). Phoenix-local date drives the calendar
+    position; day-of-year distance wraps around the year boundary so the
+    Quadrantids (Jan 3) fire correctly on Dec 31 too."""
+    now = now or datetime.now(timezone.utc)
+    phx = (now - timedelta(hours=7)).date()
+    showers = [
+        ("Quadrantids", 1, 3, 120), ("Lyrids", 4, 22, 18),
+        ("Eta Aquariids", 5, 6, 50), ("Perseids", 8, 12, 100),
+        ("Draconids", 10, 8, 10), ("Orionids", 10, 21, 20),
+        ("Taurids", 11, 5, 10), ("Leonids", 11, 17, 15),
+        ("Geminids", 12, 13, 120),
+    ]
+    best = None
+    for name, month, day, zhr in showers:
+        for yr in (phx.year - 1, phx.year, phx.year + 1):
+            try:
+                peak = date(yr, month, day)
+            except ValueError:
+                continue
+            dist = abs((phx - peak).days)
+            if dist <= 3 and (best is None or dist < best[0]):
+                best = (dist, name, month, day, zhr)
+    if best is None:
+        return None
+    _, name, month, day, zhr = best
+    peak_label = datetime(2000, month, day).strftime("%b %-d")
+    return {"name": name, "peak": peak_label, "zhr": zhr}
+
+
 def room_changelog(n=25):
     """Recent edits to the room's source files (not data.json) from git.
     Empty list if the checkout isn't a git repo or git misbehaves."""
@@ -205,6 +240,7 @@ def main():
         "moon": lunar_phase(),
         "bloom": saguaro_bloom(),
         "pear_bloom": prickly_bloom(),
+        "shower": meteor_shower(),
         "changes": room_changelog(),
     }
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",

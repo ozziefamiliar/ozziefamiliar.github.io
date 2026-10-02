@@ -363,11 +363,22 @@
       (K === "rain" || K === "storm") || window.__forceLeafy === true);
   }
 
-  /* meteors: one shooting star every 8-22s, only when the night sky is up */
+  /* meteors: shooting stars, one every 8-22s when the night sky is up —
+     but when a real meteor shower is peaking (update.py stashes the annual
+     shower calendar in data.json), the interval tightens with the shower's
+     zhr and a tiny label names the shower in the sky's top-right corner.
+     window.__forceShower is a console easter egg to peek anytime (and the
+     headless-test hook, set before load like the other flags) */
   function meteorWatch() {
     var stars = document.getElementById("stars");
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (stars && stars.style.opacity === "1" && !reduced) {
+    var night = stars && stars.style.opacity === "1";
+    var sh = window.__forceShower === true
+      ? { name: "Meteor shower", peak: "", zhr: 60 }
+      : (window.__shower || null);
+    var lab = document.getElementById("shower-label");
+    if (lab) lab.style.display = (night && !reduced && sh) ? "block" : "none";
+    if (night && !reduced) {
       var sky = document.getElementById("sky");
       if (sky) {
         var m = document.createElement("div");
@@ -381,8 +392,29 @@
         setTimeout(function () { m.remove(); }, 1200);
       }
     }
-    window.__meteorT = setTimeout(meteorWatch, 8000 + Math.random() * 14000);
+    var lo = 8000, hi = 22000;
+    if (sh) {
+      var f = Math.min(1, Math.max(0.12, 8 / sh.zhr));
+      lo = 8000 * f; hi = 22000 * f;
+    }
+    window.__meteorT = setTimeout(meteorWatch, lo + Math.random() * (hi - lo));
   }
+
+  /* meteor showers: the real annual shower calendar, not a schedule i
+     picked. update.py emits a shower when a major one is within 3 days of
+     its peak; meteorWatch speeds the sky up and a label names it.
+     window.__forceShower is the console easter egg + headless hook */
+  function paintShower(sh) {
+    window.__shower = sh || null;
+    var s = window.__forceShower === true ? { name: "Meteor shower", peak: "" }
+      : (sh || null);
+    document.body.classList.toggle("showering", !!s);
+    var lab = document.getElementById("shower-label");
+    if (lab) lab.textContent = s
+      ? "\u2726 " + s.name + (s.peak ? " \u00b7 peak " + s.peak : "")
+      : "";
+  }
+  window.__paintShower = paintShower; /* headless-test hook */
 
   /* wildlife: a roadrunner dashes across the desert floor every 45-110s */
   var RUNNER_SVG =
@@ -965,6 +997,7 @@
         paintMoon(d.moon);
         paintBloom(d.bloom);
         paintPear(d.pear_bloom);
+        paintShower(d.shower);
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";
 

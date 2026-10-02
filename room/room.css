@@ -74,6 +74,20 @@
   14% { opacity: 1; }
   100% { opacity: 0; transform: rotate(var(--ang)) translateX(var(--dist, 9rem)); }
 }
+/* meteor-shower label: names the peaking shower, top-right of the sky.
+   shown by meteorWatch only at night, when the shower is active */
+#shower-label {
+  position: absolute;
+  top: 0.45rem; right: 0.7rem;
+  display: none;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 241, 203, 0.85);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 4;
+}
 .mesa {
   position: absolute; bottom: 1.4rem;
   background: #46304d;
