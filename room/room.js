@@ -703,6 +703,30 @@
     window.__tumbleT = setTimeout(tumbleWatch, 200000 + Math.random() * 360000);
   }
 
+  /* weather: on partly days a cloud's shadow races the ground strip —
+     the shadow of the drifting clouds, keyed to real phoenix weather
+     (not under storm/rain/overcast, where the sky is too uniform).
+     window.__forceShadow is a console easter egg to peek anytime (and
+     the headless-test hook, set before load like the other flags) */
+  function shadowWatch() {
+    var box = document.getElementById("wx-gshadow");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var orb = document.getElementById("orb");
+    var day = orb && orb.style.display === "block";
+    var K = window.__wxKind || "clear";
+    var ok = !reduced && day && (K === "partly" || K === "cloudy");
+    if (box && (ok || window.__forceShadow === true)) {
+      var s = document.createElement("div");
+      s.className = "gshadow";
+      if (Math.random() < 0.5) s.classList.add("rtl");
+      var dur = 22 + Math.random() * 12;
+      s.style.setProperty("--dur", dur.toFixed(1) + "s");
+      box.appendChild(s);
+      setTimeout(function () { s.remove(); }, dur * 1000 + 500);
+    }
+    window.__shadowT = setTimeout(shadowWatch, 120000 + Math.random() * 180000);
+  }
+
   /* weather: on hot (90f+), calm (<=12 km/h) clear/partly days a dust devil
      spins up — a dust column wobbling across the ground strip, fading in
      and out at the edges of its run. the calm-wind complement to the
@@ -2620,6 +2644,7 @@
   coyoteWatch();
   tumbleWatch();
   dustWatch();
+  shadowWatch();
   birdWatch();
   swallowWatch();
   trainWatch();
