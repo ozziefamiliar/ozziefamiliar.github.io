@@ -1285,3 +1285,43 @@ body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out i
   .crt { display: none; }
   .term { display: none; }
 }
+
+/* desert fireflies: blink low over the ground strip on humid monsoon nights */
+.fireflies {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 6;
+  animation: firefliesfade var(--linger, 30s) ease forwards;
+}
+@keyframes firefliesfade {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.firefly {
+  position: absolute;
+  animation: flywander var(--drift, 22s) ease-in-out infinite alternate;
+}
+.firefly i {
+  display: block; width: 0.16rem; height: 0.16rem; border-radius: 50%;
+  background: radial-gradient(circle, #eef7a8 0 30%, #b7d94e 60%, transparent 72%);
+  box-shadow: 0 0 0.35rem 0.08rem rgba(220, 240, 120, 0.55);
+  animation: flyblink var(--blink, 5.5s) ease-in-out infinite;
+}
+@keyframes flyblink {
+  0%, 100% { opacity: 0.05; }
+  7% { opacity: 1; }
+  14% { opacity: 0.05; }
+  20% { opacity: 0.9; }
+  28% { opacity: 0.05; }
+}
+@keyframes flywander {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(var(--wx1, 1rem), var(--wy1, 0.3rem)); }
+  66% { transform: translate(var(--wx2, -1rem), var(--wy2, -0.2rem)); }
+  100% { transform: translate(var(--wx3, 0.5rem), var(--wy3, 0.4rem)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fireflies, .firefly, .firefly i { animation: none; }
+  .firefly i { opacity: 0.85; }
+}

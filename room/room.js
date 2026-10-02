@@ -312,6 +312,7 @@
     window.__wxKind = K; /* gates for the fair-weather balloon and friends */
     window.__wxWind = (wx && typeof wx.wind_kmh === "number") ? wx.wind_kmh : 0;
     window.__wxTemp = (wx && typeof wx.temp_f === "number") ? wx.temp_f : 0;
+    window.__wxHumidity = (wx && typeof wx.humidity === "number") ? wx.humidity : 0;
     var cloudy = ["partly", "cloudy", "overcast", "rain", "storm", "dusty"]
       .indexOf(K) >= 0;
     var clouds = document.getElementById("wx-clouds");
@@ -690,6 +691,57 @@
     }
     window.__quailT = setTimeout(quailWatch, 300000 + Math.random() * 240000);
   }
+
+  /* wildlife: desert fireflies — a loose cluster of blinking dots drifting
+     low over the ground strip on humid monsoon nights. arizona does have
+     real fireflies; they come out when the desert air turns soupy.
+     gate: night + phoenix humidity >= 60% + june-through-september, so the
+     window stays an environmental instrument, not a schedule i picked.
+     window.__forceFirefly is a console easter egg to peek at them anytime */
+  function isFireflyNight() {
+    if (window.__forceFirefly === true) return true;
+    var stars = document.getElementById("stars");
+    var night = !!(stars && stars.style.opacity === "1");
+    var humid = typeof window.__wxHumidity === "number" &&
+      window.__wxHumidity >= 60;
+    var m = phxNow().getMonth() + 1;
+    var monsoon = m >= 6 && m <= 9;
+    return night && humid && monsoon;
+  }
+  function fireflyWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && !reduced && isFireflyNight()) {
+      var cl = document.createElement("div");
+      cl.className = "fireflies";
+      var linger = 25000 + Math.random() * 15000;
+      cl.style.setProperty("--linger", (linger / 1000).toFixed(1) + "s");
+      var n = 4 + Math.floor(Math.random() * 4); /* 4-7 fireflies */
+      for (var i = 0; i < n; i++) {
+        var f = document.createElement("div");
+        f.className = "firefly";
+        f.style.left = (8 + Math.random() * 80) + "%";
+        f.style.bottom = (0.4 + Math.random() * 0.8).toFixed(2) + "rem";
+        f.style.setProperty("--wx1", ((Math.random() * 3 - 1.5).toFixed(2)) + "rem");
+        f.style.setProperty("--wy1", ((Math.random() * 1 - 0.5).toFixed(2)) + "rem");
+        f.style.setProperty("--wx2", ((Math.random() * 3 - 1.5).toFixed(2)) + "rem");
+        f.style.setProperty("--wy2", ((Math.random() * 1 - 0.5).toFixed(2)) + "rem");
+        f.style.setProperty("--wx3", ((Math.random() * 3 - 1.5).toFixed(2)) + "rem");
+        f.style.setProperty("--wy3", ((Math.random() * 1 - 0.5).toFixed(2)) + "rem");
+        f.style.setProperty("--drift", (16 + Math.random() * 14).toFixed(1) + "s");
+        var bl = document.createElement("i");
+        bl.style.setProperty("--blink", (4 + Math.random() * 3).toFixed(2) + "s");
+        bl.style.animationDelay = (-Math.random() * 7).toFixed(2) + "s";
+        f.appendChild(bl);
+        cl.appendChild(f);
+      }
+      win.appendChild(cl);
+      setTimeout(function () { cl.remove(); }, linger + 5000);
+    }
+    window.__fireflyT = setTimeout(fireflyWatch,
+      180000 + Math.random() * 210000); /* every 3-6.5 min */
+  }
+  window.__fireflyWatch = fireflyWatch; /* headless-test hook */
 
   /* dawn birds: a little flock lands on the wire at dawn; one always peels off */
   var PERCH_SVG =
@@ -2459,6 +2511,7 @@
   balloonWatch();
   hawkWatch();
   quailWatch();
+  fireflyWatch();
   boingBall();
   plasmaCRT();
   donutTerm();
