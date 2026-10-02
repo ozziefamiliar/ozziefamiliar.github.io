@@ -170,6 +170,12 @@
       moon.style.display = "block";
       stars.style.opacity = "1";
     }
+    /* milky way: fades in with the night sky, behind the stars.
+       window.__forceMilky is a console easter egg to peek at it anytime
+       (and the headless hook) */
+    var mw = document.getElementById("milkyway");
+    if (mw) mw.classList.toggle("on",
+      (!band.orb || window.__forceMilky === true));
   }
 
   /* moon: true lunar phase from data.json. the inset box-shadow paints the
