@@ -205,6 +205,22 @@
       glow.toFixed(3) + "), inset " + dx.toFixed(3) + "rem 0 0 0 #f2eee0";
     var name = (m && m.name) || MOON_NAMES[Math.floor((((p + 1 / 16) % 1) * 8)) % 8];
     moon.title = name + " · " + illum + "% lit";
+    /* moonlight wash: on clear/partly bright-moon nights the ground strip
+       gets a faint silver wash, opacity scaled by the real illumination.
+       window.__forceMoonwash is a console easter egg to peek anytime
+       (and the headless hook) */
+    var washEl = document.getElementById("moonwash");
+    if (washEl) {
+      var nightNow = document.getElementById("stars").style.opacity === "1";
+      var wxK = window.__wxKind || "clear";
+      var washOn = (nightNow && (wxK === "clear" || wxK === "partly") &&
+        illum >= 50) || window.__forceMoonwash === true;
+      /* the force flag also lifts a dark moon so the peek reads */
+      var effIllum = window.__forceMoonwash === true
+        ? Math.max(illum, 75) : illum;
+      washEl.style.opacity = washOn
+        ? (0.12 + 0.20 * (effIllum - 50) / 50).toFixed(3) : "0";
+    }
   }
   window.__paintMoon = paintMoon; /* headless-test hook */
 

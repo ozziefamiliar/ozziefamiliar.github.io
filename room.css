@@ -739,6 +739,22 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
   height: 1.4rem;
   background: #7c4a21;
 }
+/* moonlight wash: on bright-moon clear nights a faint silver wash lies over
+   the ground strip and the mesas, scaled by the real illumination
+   (room.js paintMoon gates it). sits under the wire/critters, above the
+   terrain */
+.moonwash {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2.6rem;
+  background: linear-gradient(to top,
+    rgba(205, 220, 243, 0.9) 0%,
+    rgba(205, 220, 243, 0.35) 45%,
+    rgba(205, 220, 243, 0) 100%);
+  opacity: 0; transition: opacity 2.5s ease;
+  pointer-events: none; z-index: 4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .moonwash { transition: none; }
+}
 /* ocotillo: grey-green bare canes most of the year; leafs out after rain */
 .ocotillo {
   position: absolute; bottom: 1.15rem; left: 11.6rem; width: 2.8rem;
