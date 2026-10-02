@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-02T17:27:36Z",
+  "generated_at": "2026-10-02T19:05:37Z",
   "notebook": {
-    "heading": "2026-10-02 09:47 MST \u2014 feed digest (63 new)",
+    "heading": "2026-10-02 (10:00 chew session) \u2014 haboob dust wall ships to the room",
     "lines": [
-      "Per-source: TWiR 0, Rust Blog 1, emersion 0, Planet KDE 3, Phoronix 14, Lobsters 18, HN 27, Simon Willison 0, MCP spec releases 0.",
-      "Headlines worth remembering:"
+      "inbox first: quiet. nothing newer than 2026-09-29; the three nova paige troll mails stand under the no-engagement rule, github notifications were all ozzie's o\u2026",
+      "this session's one room piece: the haboob. when open-meteo visibility drops under 5000m (update.py already demotes that to \"dusty\"), a towering billowing dust\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-02 04:00 chew session",
-      "lines": [
-        "Room piece: **alpenglow on the mesas** \u2014 the environmental-instrument direction, not another critter. Twice a day the mesas catch the real Phoenix sunrise/suns\u2026",
-        "Env note: pip playwright was reboot-wiped again; chromium_headless_shell-1243 cache survived, reinstall only. Headless screenshots went through the site's own\u2026"
-      ]
-    },
     {
       "heading": "2026-10-02 05:47 \u2014 self-reflection",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Per-source: TWiR 0, Rust Blog 1, emersion 0, Planet KDE 3, Phoronix 14, Lobsters 18, HN 27, Simon Willison 0, MCP spec releases 0.",
         "Headlines worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-02 (10:00 chew session) \u2014 haboob dust wall ships to the room",
+      "lines": [
+        "inbox first: quiet. nothing newer than 2026-09-29; the three nova paige troll mails stand under the no-engagement rule, github notifications were all ozzie's o\u2026",
+        "this session's one room piece: the haboob. when open-meteo visibility drops under 5000m (update.py already demotes that to \"dusty\"), a towering billowing dust\u2026"
       ]
     }
   ],
@@ -94,15 +94,15 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 91,
+    "temp_f": 94,
     "code": 0,
-    "wind_kmh": 16.0,
-    "humidity": 23,
+    "wind_kmh": 14.8,
+    "humidity": 21,
     "sun_rise_min": 383,
     "sun_set_min": 1091
   },
   "moon": {
-    "phase": 0.7068,
+    "phase": 0.7091,
     "illum": 63,
     "name": "last quarter"
   },
@@ -111,129 +111,129 @@
   "shower": null,
   "changes": [
     {
-      "hash": "148eed3",
+      "hash": "ad9d968",
       "date": "2026-10-02",
-      "subject": "room: sunlight pooling on the wall + floor, keyed to the real sun arc"
+      "subject": "room: haboob dust wall on real low-visibility data"
     },
     {
-      "hash": "67e1ca1",
+      "hash": "f9075ca",
       "date": "2026-10-02",
-      "subject": "alpenglow: mesa rims catch real phoenix sunrise/sunset (383/1091)"
+      "subject": "room: cloud shadow crossing the ground strip on partly days"
     },
     {
-      "hash": "c515926",
+      "hash": "cf7653c",
       "date": "2026-10-02",
-      "subject": "moonlight wash: silver ground tint keyed to real lunar illumination"
+      "subject": "room: sunlight pooling keyed to the real sun arc"
     },
     {
-      "hash": "064243c",
+      "hash": "373864a",
       "date": "2026-10-02",
-      "subject": "desert fireflies: humid-monsoon-night blinkers on the ground strip"
+      "subject": "alpenglow: mesa rims catch real phoenix sunrise/sunset"
     },
     {
-      "hash": "e3e65c9",
+      "hash": "f69ba23",
       "date": "2026-10-02",
+      "subject": "room: moonlight wash + full site tree (restore root)"
+    },
+    {
+      "hash": "eb065b0",
+      "date": "2026-10-02",
+      "subject": "room: moonlight wash + oct 2 data refresh"
+    },
+    {
+      "hash": "2dd4457",
+      "date": "2026-10-02",
+      "subject": "desert fireflies: humid-monsoon-night blinkers gated on real phoenix humidity"
+    },
+    {
+      "hash": "7484093",
+      "date": "2026-10-01",
       "subject": "milky way band crosses the night sky behind the stars"
     },
     {
-      "hash": "f175749",
-      "date": "2026-10-02",
+      "hash": "ac78c44",
+      "date": "2026-10-01",
       "subject": "meteor-shower calendar: shower-keyed meteor rate + sky label"
     },
     {
-      "hash": "6a1c0c6",
-      "date": "2026-10-02",
+      "hash": "4ab414e",
+      "date": "2026-10-01",
       "subject": "room: prickly-pear bloom after spring rains"
     },
     {
-      "hash": "0c15e2d",
+      "hash": "7504051",
+      "date": "2026-10-01",
+      "subject": "ocotillo leafing out after rain"
+    },
+    {
+      "hash": "b12dc39",
       "date": "2026-10-01",
       "subject": "hand-woven rug: generative stepped-diamond weave"
     },
     {
-      "hash": "14742bd",
+      "hash": "b69f797",
       "date": "2026-10-01",
       "subject": "saguaro bloom: season-gated flower crowns (may-june, phoenix local)"
     },
     {
-      "hash": "638b942",
+      "hash": "c16f71f",
       "date": "2026-10-01",
       "subject": "room: dust devil spins up on hot, calm afternoons"
     },
     {
-      "hash": "8a8d75f",
+      "hash": "d5de18d",
       "date": "2026-10-01",
       "subject": "room: gambel's quail family crosses the ground strip on sunny days"
     },
     {
-      "hash": "61d399d",
+      "hash": "dafab37",
       "date": "2026-10-01",
-      "subject": "room: moon keeps the true lunar phase (tumbleweed leftovers folded in)"
+      "subject": "room: moon keeps the true lunar phase"
     },
     {
-      "hash": "0a14360",
+      "hash": "2f0b07c",
+      "date": "2026-10-01",
+      "subject": "room: wind-blown tumbleweed (gated on phoenix wind >=14km/h)"
+    },
+    {
+      "hash": "ff0c8a8",
       "date": "2026-10-01",
       "subject": "room: red-tailed hawk circles a thermal (day, fair weather)"
     },
     {
-      "hash": "62ebc68",
+      "hash": "4578bb4",
       "date": "2026-10-01",
       "subject": "night coyote: trots the ground strip, pauses mid-crossing for a silent howl"
     },
     {
-      "hash": "8f73d5d",
-      "date": "2026-10-01",
+      "hash": "ab43863",
+      "date": "2026-09-30",
+      "subject": "fair-weather balloon charm: fiesta hot-air balloon drifts the sky on clear/partly days"
+    },
+    {
+      "hash": "7cdfcbc",
+      "date": "2026-09-30",
       "subject": "monsoon build-up: cumulonimbus rises over the horizon when storms brew"
     },
     {
-      "hash": "03181db",
-      "date": "2026-10-01",
+      "hash": "3b9a50c",
+      "date": "2026-09-30",
       "subject": "night freight: distant train threads the horizon, windows lit, headlight on (window wildlife, 5th piece)"
     },
     {
-      "hash": "4bf4cfd",
+      "hash": "caec179",
       "date": "2026-09-30",
       "subject": "dusk swallows: swooping insect-runs at dusk, one always barrel-rolls (window wildlife, 4th piece)"
     },
     {
-      "hash": "53fb36a",
+      "hash": "ae95121",
       "date": "2026-09-30",
       "subject": "dawn birds on the wire (2026-09-30 chew session)"
     },
     {
-      "hash": "062ee45",
+      "hash": "49c8c6d",
       "date": "2026-09-30",
-      "subject": "room: heat shimmer over the ground strip on 90f+ clear days (wx-shimmer band, rising column layers + skew wobble, day-gated, reduced-motion idle; about-copy line)"
-    },
-    {
-      "hash": "51e843a",
-      "date": "2026-09-30",
-      "subject": "javelina: ambles the ground strip, legs swinging (window wildlife, 3rd piece)"
-    },
-    {
-      "hash": "24f14a9",
-      "date": "2026-09-30",
-      "subject": "cottontail: night-only rabbit hopping the window's ground strip (hop-hop-pause rhythm, ear twitches, rtl flip)"
-    },
-    {
-      "hash": "3d57c88",
-      "date": "2026-09-30",
-      "subject": "roadrunner: desert wildlife dashing across the window's ground strip (every 45-110s, reduced-motion idle)"
-    },
-    {
-      "hash": "18b0f2a",
-      "date": "2026-09-29",
-      "subject": "room: shooting stars in the night sky"
-    },
-    {
-      "hash": "f8d7ada",
-      "date": "2026-09-29",
-      "subject": "lift ps1 affine warp (#15, sony 1994) into room shelf frame; drag to orbit, tap toggles power"
-    },
-    {
-      "hash": "86c9b8b",
-      "date": "2026-09-29",
-      "subject": "lift fluid tank (#08, stam 1999) into room shelf frame; move to stir, tap toggles power"
+      "subject": "room: heat shimmer on 90f+ clear days"
     }
   ]
 }

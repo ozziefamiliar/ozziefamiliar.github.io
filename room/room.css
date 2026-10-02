@@ -1404,6 +1404,77 @@ body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out i
   clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
 }
 
+/* --- desk lamp: lights itself after dark, keyed to real phoenix night --- */
+.lamp {
+  position: absolute;
+  left: 17.2rem; bottom: 4rem;
+  width: 1.1rem; height: 3.4rem;
+  z-index: 2;
+}
+.lamp-base {
+  position: absolute; bottom: 0; left: 0.05rem;
+  width: 1.0rem; height: 0.18rem;
+  background: #4d3a26; border-radius: 0.09rem;
+}
+.lamp-arm {
+  position: absolute; bottom: 0.14rem; left: 0.48rem;
+  width: 0.14rem; height: 2.9rem;
+  background: linear-gradient(#6b543a, #4d3a26);
+  border-radius: 0.07rem;
+  transform-origin: bottom center;
+  transform: rotate(-14deg); /* leans left, over the notebook */
+}
+.lamp-shade {
+  position: absolute; bottom: 2.55rem; left: -0.45rem;
+  width: 1.5rem; height: 1.05rem;
+  background: linear-gradient(to bottom, #6b543a, #4d3a26);
+  clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
+  transform: rotate(-6deg);
+  transition: background 3s ease;
+}
+.lamp-bulb {
+  position: absolute; bottom: 2.42rem; left: 0.18rem;
+  width: 0.24rem; height: 0.24rem;
+  border-radius: 50%;
+  background: #6b5a44;
+  transition: background 3s ease, box-shadow 3s ease;
+}
+/* warm cone from the shade mouth down to the desk, and the light pool
+   on the desk-top — both fade with body.lamplit */
+.lampcone {
+  position: absolute;
+  bottom: 4rem; left: 15.6rem;
+  width: 3.6rem; height: 2.9rem;
+  clip-path: polygon(36% 0, 64% 0, 100% 100%, 0 100%);
+  background: linear-gradient(to bottom,
+    rgba(255, 196, 120, 0),
+    rgba(255, 196, 120, 0.28) 75%,
+    rgba(255, 196, 120, 0.42));
+  opacity: 0;
+  transition: opacity 3s ease;
+  z-index: 1;
+}
+.lamppool {
+  position: absolute;
+  bottom: 3.35rem; left: 12.6rem;
+  width: 6.8rem; height: 1.0rem;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 182, 105, 0.6), rgba(255, 182, 105, 0) 70%);
+  opacity: 0;
+  transition: opacity 3s ease;
+  z-index: 1;
+}
+body.lamplit .lampcone { opacity: 0.55; }
+body.lamplit .lamppool { opacity: 1; }
+body.lamplit .lamp-shade { background: linear-gradient(to bottom, #8a6f4d, #6b543a); }
+body.lamplit .lamp-bulb {
+  background: #ffe9b0;
+  box-shadow: 0 0 0.5rem 0.22rem rgba(255, 214, 140, 0.85);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lampcone, .lamppool, .lamp-shade, .lamp-bulb { transition: none; }
+}
+
 @media (max-width: 700px) {
   .room { height: 46rem; }
   .window { left: 1rem; }

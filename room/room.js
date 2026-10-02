@@ -145,6 +145,22 @@
     { until: 19, sky: "linear-gradient(#3d1f4e, #e07840)", orb: "#ff7a4d" },      // dusk
     { until: 24, sky: "linear-gradient(#0b0e1a, #1a1430)", orb: null },          // night
   ];
+  /* desk lamp: lights itself after dark. keyed to real phoenix night (the
+     same stars-opacity gate as the meteors), not a schedule i picked.
+     body.lamplit glows the bulb and fades the light cone + desk pool in
+     over 3s (instant under prefers-reduced-motion). window.__forceLamp
+     (true/false) is the console easter egg to peek anytime (and the
+     headless hook). called from paintSky so the minute tick keeps it
+     in sync with dusk and dawn. */
+  function paintLamp() {
+    var force = window.__forceLamp;
+    var stars = document.getElementById("stars");
+    var night = stars && stars.style.opacity === "1";
+    var on = force === true ? true : force === false ? false : night;
+    document.body.classList.toggle("lamplit", on);
+  }
+  window.__paintLamp = paintLamp; /* headless-test hook */
+
   function paintSky() {
     var h = phxNow().getHours() + phxNow().getMinutes() / 60;
     var band = SKIES.find(function (b) { return h < b.until; }) || SKIES[0];
@@ -176,6 +192,7 @@
     var mw = document.getElementById("milkyway");
     if (mw) mw.classList.toggle("on",
       (!band.orb || window.__forceMilky === true));
+    paintLamp(); /* the desk lamp follows nightfall, on the same tick */
   }
 
   /* moon: true lunar phase from data.json. the inset box-shadow paints the
