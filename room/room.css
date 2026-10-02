@@ -888,6 +888,30 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
   z-index: 1; opacity: 0; border-radius: 50%;
   filter: blur(1.1rem);
 }
+/* dust motes caught in the sunbeam: the container mirrors the floor pool's
+   geometry from paintSun, so the specks drift inside the patch as it moves.
+   each mote is a tiny soft dot on a slow alternating rise, desynced; static
+   + hidden under prefers-reduced-motion. */
+.sunmotes {
+  position: absolute; bottom: -3rem; height: 10rem; pointer-events: none;
+  z-index: 1; opacity: 0;
+}
+.sunmotes .mote {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 250, 230, 0.95),
+    rgba(255, 244, 214, 0) 70%);
+  animation: motedrift var(--md, 18s) ease-in-out var(--mdel, 0s)
+    infinite alternate;
+}
+@keyframes motedrift {
+  from { transform: translate(0, 0); opacity: var(--mo, 0.5); }
+  50%  { opacity: calc(var(--mo, 0.5) * 0.3); }
+  to   { transform: translate(var(--mx, 1.2rem), var(--my, -1.8rem));
+         opacity: var(--mo, 0.5); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sunmotes { display: none; }
+}
 /* ocotillo: grey-green bare canes most of the year; leafs out after rain */
 .ocotillo {
   position: absolute; bottom: 1.15rem; left: 11.6rem; width: 2.8rem;

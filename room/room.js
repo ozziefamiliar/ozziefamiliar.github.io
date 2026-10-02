@@ -286,6 +286,7 @@
   function paintSun() {
     var wall = document.getElementById("sunwall");
     var pool = document.getElementById("sunpool");
+    var motes = document.getElementById("sunmotes");
     if (!wall || !pool) return;
     var now = phxNow();
     var t = now.getHours() * 60 + now.getMinutes();
@@ -304,6 +305,7 @@
     if (!on) {
       wall.style.opacity = "0";
       pool.style.opacity = "0";
+      if (motes) motes.style.opacity = "0";
       return;
     }
     /* ramp over the first/last eighth of the day (~1.5h of ~12h) */
@@ -328,8 +330,40 @@
     pool.style.background = "radial-gradient(ellipse at center, rgba(" + c +
       ", 0.9), rgba(" + c + ", 0) 70%)";
     pool.style.opacity = Math.min(0.75, o * 1.15).toFixed(3);
+    /* dust motes ride the pool: same geometry, slightly fainter, so the
+       specks stay inside the patch as it drifts across the floor */
+    if (motes) {
+      motes.style.left = pool.style.left;
+      motes.style.width = pool.style.width;
+      motes.style.opacity = (Math.min(0.75, o * 1.15) * 0.85).toFixed(3);
+    }
   }
   window.__paintSun = paintSun; /* headless-test hook */
+
+  /* dust motes in the sunbeam: a handful of specks seeded once, drifting
+     slow rises on alternating loops, desynced by negative delays.
+     paintSun positions the whole container with the pool — nothing here
+     needs a timer. window.__forceSun rides along, so the noon peek shows
+     them too. */
+  function seedMotes() {
+    var wrap = document.getElementById("sunmotes");
+    if (!wrap || wrap.children.length) return;
+    for (var i = 0; i < 9; i++) {
+      var m = document.createElement("div");
+      m.className = "mote";
+      m.style.left = (12 + Math.random() * 76).toFixed(1) + "%";
+      m.style.top = (18 + Math.random() * 64).toFixed(1) + "%";
+      m.style.setProperty("--mx", (Math.random() * 2.6 - 1.3).toFixed(2) + "rem");
+      m.style.setProperty("--my", (-(0.8 + Math.random() * 2.4)).toFixed(2) + "rem");
+      m.style.setProperty("--md", (13 + Math.random() * 15).toFixed(1) + "s");
+      m.style.setProperty("--mdel", (-(Math.random() * 24)).toFixed(1) + "s");
+      m.style.setProperty("--mo", (0.30 + Math.random() * 0.35).toFixed(2));
+      var s = (0.16 * (0.7 + Math.random() * 0.9)).toFixed(2);
+      m.style.width = s + "rem";
+      m.style.height = s + "rem";
+      wrap.appendChild(m);
+    }
+  }
 
   /* saguaro bloom: the desert's own bloom season, not a schedule i picked.
      update.py stashes the Phoenix-local verdict in data.json (may-june =
@@ -2740,6 +2774,7 @@
   tickClock();
   paintSky();
   paintGlow();
+  seedMotes();
   paintSun();
   weaveRug();
   meteorWatch();
