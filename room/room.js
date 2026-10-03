@@ -340,6 +340,49 @@
   }
   window.__paintSun = paintSun; /* headless-test hook */
 
+  /* saguaro ground shadows: the same real phoenix sun that comes through
+     the window also falls on the desert. long at dawn/dusk, short at
+     noon, switching sides at midday — morning sun (east/left) throws
+     each shadow right, afternoon throws it left. off at night and under
+     storm/rain/dust, faint under overcast/fog. window.__forceSun
+     ("am"/"noon"/"pm") doubles as the headless peek. minute tick keeps
+     it in step with paintSun; nothing animates, so reduced-motion has
+     nothing to idle. */
+  function paintSagShadows() {
+    var now = phxNow();
+    var t = now.getHours() * 60 + now.getMinutes();
+    var rise = window.__sunRiseMin, set = window.__sunSetMin;
+    var p = null; /* 0 at sunrise, 1 at sunset */
+    var force = window.__forceSun;
+    if (force === "am") p = 0.1;
+    else if (force === "noon") p = 0.5;
+    else if (force === "pm") p = 0.9;
+    else if (typeof rise === "number" && typeof set === "number" && set > rise) {
+      p = (t - rise) / (set - rise);
+    }
+    var on = p !== null && p >= 0 && p <= 1;
+    var K = window.__wxKind || "clear";
+    if (on && (K === "storm" || K === "rain" || K === "dusty")) on = false;
+    var shadows = document.querySelectorAll(".saguaro .sagshadow");
+    if (!shadows.length) return;
+    if (!on) {
+      for (var i = 0; i < shadows.length; i++) shadows[i].style.opacity = "0";
+      return;
+    }
+    var elev = Math.sin(p * Math.PI); /* 0 at horizon, 1 at noon */
+    var len = Math.min(3.6, Math.max(0.7, 0.85 / Math.max(elev, 0.12)));
+    var ramp = Math.max(0, Math.min(1, Math.min(p, 1 - p) / 0.125));
+    var o = 0.9 * ramp * (K === "overcast" ? 0.45 : K === "fog" ? 0.35 : 1);
+    var flip = p > 0.5;
+    for (var j = 0; j < shadows.length; j++) {
+      var s = shadows[j];
+      s.classList.toggle("flip", flip);
+      s.style.width = len.toFixed(2) + "rem";
+      s.style.opacity = o.toFixed(3);
+    }
+  }
+  window.__paintSagShadows = paintSagShadows; /* headless-test hook */
+
   /* dust motes in the sunbeam: a handful of specks seeded once, drifting
      slow rises on alternating loops, desynced by negative delays.
      paintSun positions the whole container with the pool — nothing here
@@ -1329,6 +1372,7 @@
         paintMoon(d.moon);
         paintGlow();
         paintSun();
+        paintSagShadows();
         paintBloom(d.bloom);
         paintPear(d.pear_bloom);
         paintShower(d.shower);
@@ -2808,6 +2852,7 @@
   setInterval(paintSky, 60000);
   setInterval(paintGlow, 60000);
   setInterval(paintSun, 60000);
+  setInterval(paintSagShadows, 60000);
   setInterval(function () { paintRainbow(window.__rainbowUntil); }, 60000);
   loadRoom();
 })();

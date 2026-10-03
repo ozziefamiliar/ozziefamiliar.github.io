@@ -584,6 +584,24 @@ body.glow-pm .mesa::after {
 .saguaro::before { left: -0.5rem; border-bottom-left-radius: 0.3rem; }
 .saguaro::after { right: -0.5rem; border-bottom-right-radius: 0.3rem; }
 
+/* ground shadow thrown by each saguaro: long at dawn/dusk, short at noon.
+   js (paintSagShadows) sets width/opacity/flip per the real sun's arc;
+   morning sun (east, left) throws it right, afternoon throws it left. */
+.saguaro .sagshadow {
+  position: absolute; bottom: -0.08rem; left: 46%;
+  width: 2.4rem; height: 0.5rem;
+  background: radial-gradient(ellipse at left center,
+    rgba(24, 28, 18, 0.34), rgba(24, 28, 18, 0) 68%);
+  border-radius: 50%; pointer-events: none;
+  transform: skewX(-14deg); opacity: 0;
+}
+.saguaro .sagshadow.flip {
+  left: auto; right: 46%;
+  background: radial-gradient(ellipse at right center,
+    rgba(24, 28, 18, 0.34), rgba(24, 28, 18, 0) 68%);
+  transform: skewX(14deg);
+}
+
 /* --- weather overlays (fed by data.json) --- */
 .wx-clouds {
   position: absolute; inset: 0; overflow: hidden;
