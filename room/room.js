@@ -161,6 +161,21 @@
   }
   window.__paintLamp = paintLamp; /* headless-test hook */
 
+  /* morning coffee: the steam over the desk mug only rises on phoenix
+     mornings (5:00–10:00 local), not a spawn timer. body.coffeemorning
+     fades the wisps in over 4s (instant under prefers-reduced-motion,
+     where the steam hides entirely and the mug stays as furniture).
+     window.__forceMug (true/false) is the console easter egg to peek
+     anytime (and the headless hook). called from paintSky so the minute
+     tick carries it through dawn. */
+  function paintMug() {
+    var force = window.__forceMug;
+    var h = phxNow().getHours() + phxNow().getMinutes() / 60;
+    var on = force === true ? true : force === false ? false : (h >= 5 && h < 10);
+    document.body.classList.toggle("coffeemorning", on);
+  }
+  window.__paintMug = paintMug; /* headless-test hook */
+
   function paintSky() {
     var h = phxNow().getHours() + phxNow().getMinutes() / 60;
     var band = SKIES.find(function (b) { return h < b.until; }) || SKIES[0];
@@ -193,6 +208,7 @@
     if (mw) mw.classList.toggle("on",
       (!band.orb || window.__forceMilky === true));
     paintLamp(); /* the desk lamp follows nightfall, on the same tick */
+    paintMug(); /* the coffee steams through the morning, on the same tick */
   }
 
   /* moon: true lunar phase from data.json. the inset box-shadow paints the

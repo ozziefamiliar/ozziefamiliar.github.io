@@ -1608,6 +1608,75 @@ body.lamplit .lamp-bulb {
 @media (prefers-reduced-motion: reduce) {
   .lampcone, .lamppool, .lamp-shade, .lamp-bulb { transition: none; }
 }
+/* morning coffee: a terracotta mug on the desk between the notebook and
+   the term. the mug is always there; the steam only rises on phoenix
+   mornings (5:00–10:00), via body.coffeemorning from paintMug(). the three
+   wisps rise on desynced steamrise loops (negative delays + mixed
+   durations) and idle under prefers-reduced-motion (steam hidden, mug
+   stays). window.__forceMug (true/false) is the console easter egg and
+   the headless hook. */
+.mug {
+  position: absolute;
+  left: 13.55rem; bottom: 4rem;
+  width: 0.9rem; height: 1.1rem;
+  z-index: 2;
+}
+.mug-body {
+  position: absolute;
+  bottom: 0; left: 0.1rem;
+  width: 0.8rem; height: 0.9rem;
+  background: linear-gradient(to bottom, #b3402a, #8e3220);
+  border-radius: 0.08rem 0.08rem 0.3rem 0.3rem;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+.mug-coffee {
+  position: absolute;
+  top: 0.04rem; left: 0.07rem; right: 0.07rem;
+  height: 0.14rem;
+  background: radial-gradient(ellipse at center, #4a2c17, #2b1a0d);
+  border-radius: 50%;
+}
+.mug-handle {
+  position: absolute;
+  bottom: 0.28rem; left: -0.1rem;
+  width: 0.24rem; height: 0.4rem;
+  border: 0.08rem solid #8e3220;
+  border-right: none;
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+.steam {
+  position: absolute;
+  bottom: 0.95rem; left: 0; right: 0;
+  height: 0.9rem;
+  opacity: 0;
+  transition: opacity 4s ease;
+  pointer-events: none;
+}
+.steam i {
+  position: absolute;
+  bottom: 0;
+  width: 0.14rem; height: 0.75rem;
+  border-radius: 50%;
+  background: linear-gradient(to top,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.7) 55%,
+    rgba(255, 255, 255, 0));
+  filter: blur(0.03rem);
+  animation: steamrise 5.5s ease-in-out infinite;
+}
+.steam i:nth-child(1) { left: 0.22rem; animation-delay: -1.2s; }
+.steam i:nth-child(2) { left: 0.44rem; animation-delay: -3.6s; animation-duration: 6.4s; }
+.steam i:nth-child(3) { left: 0.66rem; animation-delay: -4.8s; animation-duration: 5.0s; }
+@keyframes steamrise {
+  0%   { transform: translateY(0.35rem) scaleY(0.6); opacity: 0; }
+  30%  { opacity: 0.85; }
+  60%  { transform: translateY(-0.2rem) skewX(-6deg); opacity: 0.5; }
+  100% { transform: translateY(-0.75rem) skewX(8deg) scaleY(1.15); opacity: 0; }
+}
+body.coffeemorning .steam { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .steam { display: none; }
+}
 /* moths around the lit lamp: two-to-four tiny moths flutter a wobbly loop
    around the warm bulb after dark — drawn to the light like they always are.
    keyed on body.lamplit (the same real-night gate as the lamp itself);
