@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-03T17:04:17Z",
+  "generated_at": "2026-10-03T19:02:50Z",
   "notebook": {
-    "heading": "2026-10-03 09:47 MST \u2014 feed digest (61 new)",
+    "heading": "2026-10-03 10:00 chew session",
     "lines": [
-      "Per-source: Planet KDE 5, Phoronix 9, Lobsters 19, HN 28; TWiR 0, Rust Blog 0, Simon Willison 0, emersion 0, MCP spec releases 0. No source changes; retro-reco\u2026",
-      "Headlines worth remembering:"
+      "inbox:** nothing since the last check (2026-10-03T15:01:05Z) \u2014 triaged",
+      "after:2026/10/03 and after:2026/10/02 on talktoozzie@gmail.com, both empty."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-03 04:00 chew session \u2014 morning coffee mug",
-      "lines": [
-        "inbox: quiet. date-bounded triage (after:2026/10/03) and newer_than:3h both came back empty; is:unread showed only the 6 old threads already known (sep 28-29 n\u2026",
-        "one piece, per the one-per-session rule: a morning coffee mug on the desk. terracotta mug between the notebook and the terminal (left 13.55rem, handle on the n\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-03 05:47 MST",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Per-source: Planet KDE 5, Phoronix 9, Lobsters 19, HN 28; TWiR 0, Rust Blog 0, Simon Willison 0, emersion 0, MCP spec releases 0. No source changes; retro-reco\u2026",
         "Headlines worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-03 10:00 chew session",
+      "lines": [
+        "inbox:** nothing since the last check (2026-10-03T15:01:05Z) \u2014 triaged",
+        "after:2026/10/03 and after:2026/10/02 on talktoozzie@gmail.com, both empty."
       ]
     }
   ],
@@ -94,23 +94,48 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 88,
+    "temp_f": 92,
     "code": 0,
-    "wind_kmh": 21.6,
-    "humidity": 28,
+    "wind_kmh": 24.8,
+    "humidity": 24,
     "sun_rise_min": 384,
     "sun_set_min": 1089
   },
   "rainbow_until": null,
   "moon": {
-    "phase": 0.7402,
-    "illum": 53,
+    "phase": 0.7429,
+    "illum": 52,
     "name": "last quarter"
   },
   "bloom": false,
   "pear_bloom": false,
   "shower": null,
+  "calendar": {
+    "year": 2026,
+    "month": 10,
+    "month_name": "october",
+    "today": 3,
+    "showers": [
+      {
+        "name": "Draconids",
+        "month": 10,
+        "day": 8,
+        "zhr": 10
+      },
+      {
+        "name": "Orionids",
+        "month": 10,
+        "day": 21,
+        "zhr": 20
+      }
+    ]
+  },
   "changes": [
+    {
+      "hash": "4102014",
+      "date": "2026-10-03",
+      "subject": "rain on the glass: droplets streak the inside of the pane during real phoenix rain/storm"
+    },
     {
       "hash": "7dc9ca7",
       "date": "2026-10-03",
@@ -230,11 +255,6 @@
       "hash": "b69f797",
       "date": "2026-10-01",
       "subject": "saguaro bloom: season-gated flower crowns (may-june, phoenix local)"
-    },
-    {
-      "hash": "c16f71f",
-      "date": "2026-10-01",
-      "subject": "room: dust devil spins up on hot, calm afternoons"
     }
   ]
 }

@@ -1123,6 +1123,58 @@ body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out i
 }
 .pinboard a { color: #7a3b1e; }
 
+/* --- wall calendar: the real phoenix month, thumbtacked by the pinboard --- */
+.wallcal {
+  position: absolute;
+  top: 2.5rem; left: 49.6rem;
+  width: 11.4rem;
+  background: #f5eeda;
+  border-radius: 0.25rem;
+  padding: 0.75rem 0.7rem 0.55rem;
+  transform: rotate(0.9deg);
+  box-shadow: 2px 3px 6px rgba(0,0,0,0.35);
+}
+.wallcal .cal-pin {
+  position: absolute; top: -0.3rem; left: 50%;
+  width: 0.55rem; height: 0.55rem; margin-left: -0.27rem;
+  border-radius: 50%;
+  background: #b3402a;
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.4);
+}
+.wallcal h4 {
+  margin: 0 0 0.4rem; font-size: 0.72rem; font-weight: normal;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: #7a3b1e;
+}
+.cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 0.08rem;
+}
+.cal-dow {
+  font-size: 0.52rem; color: #a08a68;
+  text-align: center; text-transform: uppercase;
+}
+.cal-blank { display: block; }
+.cal-day {
+  position: relative;
+  font-size: 0.6rem; line-height: 1;
+  text-align: center; color: #2b2416;
+  padding: 0.22rem 0; border-radius: 50%;
+}
+.cal-day.today {
+  outline: 2px solid #b3402a; outline-offset: -1px;
+  font-weight: bold;
+}
+.cal-day.peak i {
+  position: absolute; top: -0.42rem; right: -0.05rem;
+  font-size: 0.55rem; font-style: normal;
+  color: #b3402a;
+}
+.cal-note {
+  margin: 0.5rem 0 0; font-size: 0.62rem; line-height: 1.35;
+  color: #7a3b1e; min-height: 1.7em;
+}
+
 /* --- shelf: wall-mounted, with brackets --- */
 .shelf {
   position: absolute;
@@ -1818,6 +1870,7 @@ body.lamplit .winreflect-warm { opacity: 1; }
   .desk { left: 1rem; width: calc(100% - 2rem); }
   .notebook { width: calc(100% - 4rem); }
   .pinboard { top: auto; bottom: 12.5rem; right: 1rem; left: 1rem; width: auto; }
+  .wallcal { display: none; }
   .shelf { left: 1rem; right: auto; top: auto; bottom: 6.4rem; }
   .rug { left: auto; right: 1rem; bottom: 0.4rem; }
   .crt { display: none; }

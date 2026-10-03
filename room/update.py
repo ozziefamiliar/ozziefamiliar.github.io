@@ -218,6 +218,15 @@ def rainbow_window(new_kind, now=None):
     return None
 
 
+SHOWERS = [
+    ("Quadrantids", 1, 3, 120), ("Lyrids", 4, 22, 18),
+    ("Eta Aquariids", 5, 6, 50), ("Perseids", 8, 12, 100),
+    ("Draconids", 10, 8, 10), ("Orionids", 10, 21, 20),
+    ("Taurids", 11, 5, 10), ("Leonids", 11, 17, 15),
+    ("Geminids", 12, 13, 120),
+]
+
+
 def meteor_shower(now=None):
     """Active meteor shower, if any, from the annual shower calendar.
 
@@ -229,13 +238,7 @@ def meteor_shower(now=None):
     Quadrantids (Jan 3) fire correctly on Dec 31 too."""
     now = now or datetime.now(timezone.utc)
     phx = (now - timedelta(hours=7)).date()
-    showers = [
-        ("Quadrantids", 1, 3, 120), ("Lyrids", 4, 22, 18),
-        ("Eta Aquariids", 5, 6, 50), ("Perseids", 8, 12, 100),
-        ("Draconids", 10, 8, 10), ("Orionids", 10, 21, 20),
-        ("Taurids", 11, 5, 10), ("Leonids", 11, 17, 15),
-        ("Geminids", 12, 13, 120),
-    ]
+    showers = SHOWERS
     best = None
     for name, month, day, zhr in showers:
         for yr in (phx.year - 1, phx.year, phx.year + 1):
@@ -251,6 +254,24 @@ def meteor_shower(now=None):
     _, name, month, day, zhr = best
     peak_label = datetime(2000, month, day).strftime("%b %-d")
     return {"name": name, "peak": peak_label, "zhr": zhr}
+
+
+def wall_calendar(now=None):
+    """The month the wall calendar hangs: phoenix-local year/month, today,
+    and that month's meteor-shower peaks (same table as meteor_shower).
+    room.js rings today, marks the peaks, and composes the note line."""
+    now = now or datetime.now(timezone.utc)
+    phx = (now - timedelta(hours=7)).date()
+    return {
+        "year": phx.year,
+        "month": phx.month,
+        "month_name": phx.strftime("%B").lower(),
+        "today": phx.day,
+        "showers": [
+            {"name": name, "month": month, "day": day, "zhr": zhr}
+            for name, month, day, zhr in SHOWERS if month == phx.month
+        ],
+    }
 
 
 def room_changelog(n=25):
@@ -290,6 +311,7 @@ def main():
         "bloom": saguaro_bloom(),
         "pear_bloom": prickly_bloom(),
         "shower": meteor_shower(),
+        "calendar": wall_calendar(),
         "changes": room_changelog(),
     }
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",

@@ -729,6 +729,63 @@
   }
   window.__paintShower = paintShower; /* headless-test hook */
 
+  /* wall calendar: the real phoenix month, today ringed in terracotta,
+     meteor-shower peaks starred. fully static (built once from data.json),
+     so reduced-motion has nothing to idle. the note line counts down to
+     the next peak this month, or names the desert season. */
+  var CAL_SMON = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+  function paintCal(cal) {
+    if (!cal) return;
+    document.getElementById("cal-month").textContent =
+      cal.month_name + " " + cal.year;
+    var grid = document.getElementById("cal-grid");
+    grid.innerHTML = "";
+    "smtwtfs".split("").forEach(function (d) {
+      var w = document.createElement("span");
+      w.className = "cal-dow"; w.textContent = d;
+      grid.appendChild(w);
+    });
+    var first = new Date(cal.year, cal.month - 1, 1).getDay();
+    var days = new Date(cal.year, cal.month, 0).getDate();
+    var peaks = {};
+    (cal.showers || []).forEach(function (s) { peaks[s.day] = s; });
+    for (var b = 0; b < first; b++) {
+      var blank = document.createElement("span");
+      blank.className = "cal-blank";
+      grid.appendChild(blank);
+    }
+    for (var d = 1; d <= days; d++) {
+      var cell = document.createElement("span");
+      cell.className = "cal-day";
+      if (d === cal.today) cell.classList.add("today");
+      cell.textContent = d;
+      if (peaks[d]) {
+        cell.classList.add("peak");
+        var star = document.createElement("i");
+        star.textContent = "\u2726";
+        star.title = peaks[d].name + " peak";
+        cell.appendChild(star);
+      }
+      grid.appendChild(cell);
+    }
+    var note = document.getElementById("cal-note");
+    var upcoming = (cal.showers || [])
+      .filter(function (s) { return s.day >= cal.today; })
+      .sort(function (a, b) { return a.day - b.day; })[0];
+    if (upcoming) {
+      var n = upcoming.day - cal.today;
+      note.textContent = "\u2726 " + upcoming.name.toLowerCase() + " peak " +
+        CAL_SMON[cal.month - 1] + " " + upcoming.day +
+        (n === 0 ? " \u2014 tonight!"
+                 : " \u2014 " + n + (n === 1 ? " night" : " nights") + " away");
+    } else if (cal.month === 5 || cal.month === 6) {
+      note.textContent = "\u{1F335} saguaro bloom season";
+    } else {
+      note.textContent = "";
+    }
+  }
+  window.__paintCal = paintCal; /* headless-test hook */
+
   /* the desk terminal doubles as the room's weather station: the same real
      phoenix conditions the window wears, plus the shower calendar the sky
      follows. text from data.json via the __wx* stashes; no new gate, so it
@@ -1583,6 +1640,7 @@
         paintBloom(d.bloom);
         paintPear(d.pear_bloom);
         paintShower(d.shower);
+        paintCal(d.calendar);
         paintTerm();
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";
