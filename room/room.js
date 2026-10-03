@@ -644,6 +644,39 @@
   }
   window.__paintShower = paintShower; /* headless-test hook */
 
+  /* satellites: a tiny blinking dot crosses the night sky on a slow straight
+     path — the most boring thing in orbit, and the easiest to miss. visits
+     every 2.5-6min, 24-40s crossings, random direction, blinking 0.5-1.4s;
+     most nights white, occasionally the reddish tint of a sunlit
+     rocket body. gated on night (stars opacity == 1, like the meteors),
+     idle under prefers-reduced-motion; window.__forceSat=true is the
+     console easter egg + headless hook, window.__spawnSat the direct call */
+  function spawnSat() {
+    var sky = document.getElementById("sky");
+    if (!sky) return;
+    var s = document.createElement("div");
+    s.className = "sat";
+    if (Math.random() < 0.5) s.classList.add("rtl");
+    s.style.top = (8 + Math.random() * 34) + "%";
+    s.style.setProperty("--dur", (24 + Math.random() * 16).toFixed(1) + "s");
+    var dot = document.createElement("i");
+    dot.style.setProperty("--blink", (0.5 + Math.random() * 0.9).toFixed(2) + "s");
+    if (Math.random() < 0.18) dot.classList.add("red");
+    s.appendChild(dot);
+    sky.appendChild(s);
+    requestAnimationFrame(function () { s.classList.add("go"); });
+    setTimeout(function () { s.remove(); }, 45000);
+  }
+  window.__spawnSat = spawnSat; /* headless hook */
+  function satelliteWatch() {
+    var stars = document.getElementById("stars");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var night = stars && stars.style.opacity === "1";
+    var force = window.__forceSat === true; /* easter egg: peek anytime */
+    if ((night || force) && !reduced) spawnSat(); /* visits every 2.5-6min */
+    window.__satT = setTimeout(satelliteWatch, 150000 + Math.random() * 210000);
+  }
+
   /* wildlife: a roadrunner dashes across the desert floor every 45-110s */
   var RUNNER_SVG =
     '<svg viewBox="0 0 64 34" aria-hidden="true">' +
@@ -2822,6 +2855,7 @@
   paintSun();
   weaveRug();
   meteorWatch();
+  satelliteWatch();
   runnerWatch();
   bunnyWatch();
   pigWatch();

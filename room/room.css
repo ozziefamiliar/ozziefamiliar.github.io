@@ -116,6 +116,51 @@
   pointer-events: none;
   z-index: 4;
 }
+/* satellite: a tiny blinking dot on a slow straight path across the sky.
+   the div does the crossing (--dur travel), the inner dot does the blink
+   (--blink period) so the two transforms never clobber each other */
+.sat {
+  position: absolute;
+  left: -2%;
+  width: 0.16rem; height: 0.16rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.sat.rtl { left: auto; right: -2%; }
+.sat.go { animation: satcross var(--dur, 30s) linear forwards; }
+.sat.rtl.go { animation-name: satcross-rtl; }
+.sat i {
+  display: block;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: #eef2ff;
+  box-shadow: 0 0 4px 1px rgba(230, 238, 255, 0.75);
+  animation: satblink var(--blink, 0.9s) ease-in-out infinite;
+}
+.sat i.red {
+  background: #ffc9b8;
+  box-shadow: 0 0 4px 1px rgba(255, 170, 140, 0.75);
+}
+@keyframes satcross {
+  0% { left: -2%; opacity: 0; }
+  4% { opacity: 1; }
+  96% { opacity: 1; }
+  100% { left: 102%; opacity: 0; }
+}
+@keyframes satcross-rtl {
+  0% { right: -2%; opacity: 0; }
+  4% { opacity: 1; }
+  96% { opacity: 1; }
+  100% { right: 102%; opacity: 0; }
+}
+@keyframes satblink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sat { display: none; }
+}
 .mesa {
   position: absolute; bottom: 1.4rem;
   background: #46304d;
