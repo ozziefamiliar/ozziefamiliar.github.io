@@ -1005,6 +1005,34 @@ body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out i
   .pear .flower { transition: none; animation: none; }
 }
 
+/* basking rock: permanent stone pile between the saguaros; on hot days a
+   lizard claims the top stone (room.js lizardWatch) */
+.baskrock {
+  position: absolute; bottom: 0.22rem; left: 2.45rem; width: 1.35rem;
+}
+.baskrock svg { display: block; width: 100%; height: auto; }
+
+/* lizard: basks flat on the rock when phoenix is hot, does push-ups now
+   and then — the classic desert territorial display. idle under
+   prefers-reduced-motion (watch never spawns it) */
+.lizard {
+  position: absolute; bottom: 0.86rem; left: 2.35rem; width: 1.6rem;
+  z-index: 6; pointer-events: none;
+}
+.lizard.rtl { transform: scaleX(-1); }
+.lizard svg { display: block; width: 100%; height: auto; }
+.lizard.push svg { animation: lizardpush 1.9s ease-in-out 1; }
+@keyframes lizardpush {
+  0%, 100% { transform: translateY(0); }
+  12% { transform: translateY(-0.2rem); }
+  24% { transform: translateY(0); }
+  36% { transform: translateY(-0.2rem); }
+  48%, 100% { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lizard { display: none; }
+}
+
 /* --- clock --- */
 .clock {
   position: absolute;

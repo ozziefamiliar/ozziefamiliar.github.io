@@ -1271,6 +1271,62 @@
     window.__quailT = setTimeout(quailWatch, 300000 + Math.random() * 240000);
   }
 
+  /* wildlife: a desert lizard basks on the warm rock between the saguaros —
+     flattening out in the heat, doing push-ups now and then, as lizards do.
+     gated on real phoenix heat: day + temp >= 90 + clear/partly (the same
+     heat gate the shimmer and dust devil fire on). visits every 4-8min,
+     lingers 60-90s, push-up burst every 10-22s; idle under
+     prefers-reduced-motion (watch never spawns it); window.__forceLizard
+     is a console easter egg to peek at it anytime, window.__spawnLizard
+     the direct call (headless hook) */
+  var LIZARD_SVG =
+    '<svg viewBox="0 0 64 30" aria-hidden="true">' +
+    '<g fill="#1a130c">' +
+    '<path d="M22,20 C14,19 8,15 2,7 C1.6,6.3 2.4,5.2 3.2,5.8 C9.5,12.5 15.5,16 22.5,17 Z"/>' +
+    '<ellipse cx="32" cy="17" rx="11" ry="5.2"/>' +
+    '<ellipse cx="44" cy="13.5" rx="5" ry="3.8"/>' +
+    '<path d="M48.5,12 L54.5,14.2 L48.5,16.6 Z"/>' +
+    '<path d="M38,21 L36.5,27 L38.5,27 L40,21.5 Z"/>' +
+    '<path d="M43,21 L42.5,27 L44.5,27 Z"/>' +
+    '<path d="M26,21 L24,27 L26,27 L27.5,21.5 Z"/>' +
+    '<path d="M21,21 L19.5,26.5 L21.5,26.5 Z"/>' +
+    '</g></svg>';
+  function isLizardHot() {
+    if (window.__forceLizard === true) return true;
+    var orb = document.getElementById("orb");
+    var day = !!(orb && orb.style.display === "block");
+    var hot = typeof window.__wxTemp === "number" && window.__wxTemp >= 90;
+    var K = window.__wxKind || "clear";
+    return day && hot && (K === "clear" || K === "partly");
+  }
+  function spawnLizard() {
+    var win = document.querySelector(".window");
+    if (!win) return;
+    var l = document.createElement("div");
+    l.className = "lizard" + (Math.random() < 0.5 ? " rtl" : "");
+    l.innerHTML = LIZARD_SVG;
+    win.appendChild(l);
+    function burst() {
+      if (!l.isConnected) return;
+      l.classList.add("push");
+      setTimeout(function () { l.classList.remove("push"); }, 2000);
+    }
+    setTimeout(burst, 2500);
+    var pushT = setInterval(function () {
+      if (!l.isConnected) { clearInterval(pushT); return; }
+      burst();
+    }, 10000 + Math.random() * 12000);
+    setTimeout(function () { clearInterval(pushT); l.remove(); },
+      60000 + Math.random() * 30000);
+  }
+  window.__spawnLizard = spawnLizard; /* headless hook */
+  function lizardWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && !reduced && isLizardHot()) spawnLizard();
+    window.__lizardT = setTimeout(lizardWatch, 240000 + Math.random() * 240000);
+  }
+
   /* wildlife: desert fireflies — a loose cluster of blinking dots drifting
      low over the ground strip on humid monsoon nights. arizona does have
      real fireflies; they come out when the desert air turns soupy.
@@ -3104,6 +3160,7 @@
   balloonWatch();
   hawkWatch();
   quailWatch();
+  lizardWatch();
   fireflyWatch();
   mothWatch();
   catWatch();
