@@ -633,6 +633,49 @@
   }
   window.__paintRainbow = paintRainbow; /* headless hook */
 
+  /* rain on the glass: when phoenix is actually raining (open-meteo
+     rain/storm, same gate as the wx-rain streaks outside), droplets bead
+     and streak down the inside of the window pane — the inside answer to
+     the weather outside. beads grow, then run leaving thin trails; storm
+     drops are fatter and run faster. idle under prefers-reduced-motion.
+     window.__forceGlassDrops is a console easter egg to peek anytime (and
+     the headless-test hook, set before load like the other flags) */
+  function glassDropsWatch() {
+    var box = document.getElementById("glassdrops");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var K = window.__wxKind || "clear";
+    var wet = (K === "rain" || K === "storm") ||
+      window.__forceGlassDrops === true;
+    if (box) {
+      box.style.display = (wet && !reduced) ? "block" : "none";
+      if (wet && !reduced) {
+        var stormy = K === "storm";
+        var n = stormy ? 3 : 2;
+        for (var i = 0; i < n; i++) {
+          (function () {
+            var d = document.createElement("div");
+            d.className = "gdrop";
+            var s = stormy ? (0.24 + Math.random() * 0.14)
+                          : (0.20 + Math.random() * 0.10);
+            var travel = (4 + Math.random() * 6).toFixed(2);
+            var dur = stormy ? (3.2 + Math.random() * 2.2)
+                             : (4.6 + Math.random() * 2.8);
+            d.style.setProperty("--x", (Math.random() * 96).toFixed(1) + "%");
+            d.style.setProperty("--y0", (Math.random() * 55).toFixed(1) + "%");
+            d.style.setProperty("--s", s.toFixed(3) + "rem");
+            d.style.setProperty("--travel", travel + "rem");
+            d.style.setProperty("--dur", dur.toFixed(2) + "s");
+            d.style.animationDelay = (Math.random() * 0.6).toFixed(2) + "s";
+            box.appendChild(d);
+            setTimeout(function () { d.remove(); }, dur * 1000 + 900);
+          })();
+        }
+      }
+    }
+    window.__glassT = setTimeout(glassDropsWatch, 900 + Math.random() * 1600);
+  }
+  window.__spawnGlassDrop = glassDropsWatch; /* headless hook */
+
   /* meteors: shooting stars, one every 8-22s when the night sky is up —
      but when a real meteor shower is peaking (update.py stashes the annual
      shower calendar in data.json), the interval tightens with the shower's
@@ -2996,6 +3039,7 @@
   dustWatch();
   haboobWatch();
   shadowWatch();
+  glassDropsWatch();
   birdWatch();
   swallowWatch();
   trainWatch();
