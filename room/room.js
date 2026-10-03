@@ -677,6 +677,38 @@
     window.__satT = setTimeout(satelliteWatch, 150000 + Math.random() * 210000);
   }
 
+  /* the sleeping cat breathes (pure css) and twitches in its sleep: every
+     45-105s a tail flick or an ear twitch, dreams presumably. css breathes,
+     this only fires the twitches; idle under prefers-reduced-motion.
+     window.__flickCat=true is the console easter egg + headless hook,
+     window.__flickCatNow() the direct call */
+  window.__flickCatNow = function () {
+    var cat = document.querySelector(".cat");
+    if (!cat) return;
+    if (Math.random() < 0.5) {
+      var tail = cat.querySelector(".tail");
+      if (tail) {
+        tail.classList.remove("flick"); void tail.offsetWidth;
+        tail.classList.add("flick");
+        setTimeout(function () { tail.classList.remove("flick"); }, 700);
+        return;
+      }
+    }
+    var which = Math.random() < 0.5 ? "twitch1" : "twitch2";
+    cat.classList.remove("twitch1", "twitch2"); void cat.offsetWidth;
+    cat.classList.add(which);
+    setTimeout(function () { cat.classList.remove(which); }, 650);
+  };
+  function catWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+    if (window.__flickCat === true) window.__flickCatNow(); /* peek anytime */
+    window.__catT = setTimeout(function tick() {
+      window.__flickCatNow();
+      window.__catT = setTimeout(tick, 45000 + Math.random() * 60000);
+    }, 45000 + Math.random() * 60000); /* a twitch every 45-105s */
+  }
+
   /* wildlife: a roadrunner dashes across the desert floor every 45-110s */
   var RUNNER_SVG =
     '<svg viewBox="0 0 64 34" aria-hidden="true">' +
@@ -2871,6 +2903,7 @@
   hawkWatch();
   quailWatch();
   fireflyWatch();
+  catWatch();
   boingBall();
   plasmaCRT();
   donutTerm();

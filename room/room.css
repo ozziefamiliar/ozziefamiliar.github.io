@@ -1450,6 +1450,36 @@ body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out i
   0%, 100% { opacity: 0.25; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-0.35rem); }
 }
+/* the sleeping cat breathes: a slow rise of the body; every 45-105s a tail
+   flick or an ear twitch passes through its sleep. still under
+   prefers-reduced-motion. */
+.cat .body { animation: breathe 4.6s ease-in-out infinite; transform-origin: 50% 92%; }
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.03); }
+}
+@keyframes tailflick {
+  0%, 100% { transform: rotate(24deg); }
+  25% { transform: rotate(8deg); }
+  55% { transform: rotate(28deg); }
+  80% { transform: rotate(18deg); }
+}
+.cat .tail.flick { animation: tailflick 0.6s ease-in-out; }
+@keyframes eartwitch-l { /* e1 base rotate(-18deg) */
+  0%, 100% { transform: rotate(-18deg); }
+  40% { transform: rotate(-32deg); }
+  70% { transform: rotate(-14deg); }
+}
+@keyframes eartwitch-r { /* e2 base rotate(18deg) */
+  0%, 100% { transform: rotate(18deg); }
+  40% { transform: rotate(32deg); }
+  70% { transform: rotate(14deg); }
+}
+.cat.twitch1 .e1 { animation: eartwitch-l 0.55s ease-in-out; }
+.cat.twitch2 .e2 { animation: eartwitch-r 0.55s ease-in-out; }
+@media (prefers-reduced-motion: reduce) {
+  .cat .body { animation: none; }
+}
 .rug-caption {
   position: absolute;
   left: 32rem; bottom: -1.5rem;
