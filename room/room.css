@@ -85,6 +85,22 @@
   mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
 }
 .milkyway.on { opacity: 1; }
+/* city glow: on phoenix nights the horizon carries the real light dome —
+   a faint warm amber smudge rising behind the mesas (DOM order puts the
+   mesas over it). static, no animation, so reduced-motion has nothing to
+   idle; opacity set inline by room.js paintCityGlow. */
+.cityglow {
+  position: absolute; left: 0; right: 0; bottom: 1.2rem; height: 3.4rem;
+  background:
+    radial-gradient(ellipse 4.5rem 1.7rem at 32% 58%, rgba(255,154,80,0.42), transparent 70%),
+    radial-gradient(ellipse 9rem 2.6rem at 45% 62%, rgba(255,140,66,0.18), transparent 70%),
+    linear-gradient(to top, rgba(255,150,74,0.16) 0%, rgba(255,150,74,0) 90%);
+  opacity: 0; transition: opacity 3s ease;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cityglow { transition: none; }
+}
 /* shooting star: a gradient streak, --ang aims it, --dist its travel */
 .meteor {
   position: absolute;

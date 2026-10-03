@@ -201,6 +201,33 @@
   }
   window.__paintCurtains = paintCurtains; /* headless-test hook */
 
+  /* city glow: after dark the horizon north of here carries phoenix's real
+     light dome — a faint amber smudge rising behind the mesas. strength
+     follows the same real open-meteo weather the window wears: full on
+     clear/partly, slightly brighter under cloudy/overcast where the deck
+     reflects the dome, faint under dust, off in storm/rain/fog.
+     window.__forceCityGlow (true/false) is the console easter egg to peek
+     anytime (and the headless hook). called from paintSky so the minute
+     tick carries it through dusk and dawn. */
+  function paintCityGlow() {
+    var force = window.__forceCityGlow;
+    var stars = document.getElementById("stars");
+    var city = document.getElementById("cityglow");
+    if (!city) return;
+    var night = stars && stars.style.opacity === "1";
+    var op = 0;
+    if (force === true) { op = 1; }
+    else if (force === false || !night) { op = 0; }
+    else {
+      var K = window.__wxKind || "clear";
+      if (K === "clear" || K === "partly") op = 0.9;
+      else if (K === "cloudy" || K === "overcast") op = 1;
+      else if (K === "dusty") op = 0.35;
+    }
+    city.style.opacity = op.toFixed(2);
+  }
+  window.__paintCityGlow = paintCityGlow; /* headless-test hook */
+
   function paintSky() {
     var h = phxNow().getHours() + phxNow().getMinutes() / 60;
     var band = SKIES.find(function (b) { return h < b.until; }) || SKIES[0];
@@ -235,6 +262,7 @@
     paintLamp(); /* the desk lamp follows nightfall, on the same tick */
     paintMug(); /* the coffee steams through the morning, on the same tick */
     paintCurtains(); /* the curtains answer the real wind, on the same tick */
+    paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
   }
 
   /* moon: true lunar phase from data.json. the inset box-shadow paints the
