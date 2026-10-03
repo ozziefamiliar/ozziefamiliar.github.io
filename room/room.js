@@ -752,6 +752,43 @@
     '<path d="M25 25 L24.5 30 L27 30 L27.5 25 Z"/>' +
     '<path d="M14 25 C13 27.5 12 29 11 30 L15 30 C16 28.5 16.5 26.5 17 25 Z"/>' +
     '</g></svg>';
+  /* moths around the lit lamp: 2-4 tiny moths flutter a wobbly loop around
+     the warm bulb after dark — drawn to the light like they always are.
+     gated on body.lamplit (the same real-night gate as the lamp itself, so
+     paintLamp's minute tick covers dusk/dawn); visits every 2-5min; idle
+     under prefers-reduced-motion; window.__forceMoth=true is the console
+     easter egg + headless hook, window.__spawnMoth the direct call */
+  var MOTH_SVG =
+    '<svg viewBox="0 0 22 16" aria-hidden="true">' +
+    '<g class="wing" fill="#d9b983"><ellipse cx="6.5" cy="6" rx="5.4" ry="4.2"/></g>' +
+    '<g class="wing" fill="#cda871"><ellipse cx="15.5" cy="6" rx="5.4" ry="4.2"/></g>' +
+    '<ellipse cx="11" cy="8.5" rx="1.8" ry="5.2" fill="#8a6840"/>' +
+    '<circle cx="11" cy="3.4" r="1.5" fill="#8a6840"/></svg>';
+  function spawnMoth() {
+    var room = document.querySelector(".room");
+    if (!room) return;
+    var m = document.createElement("div");
+    m.className = "moth" + (Math.random() < 0.5 ? " rev" : "");
+    m.innerHTML = MOTH_SVG;
+    m.style.setProperty("--orb", (0.6 + Math.random() * 0.8).toFixed(2) + "rem");
+    m.style.animationDuration = (18 + Math.random() * 14).toFixed(1) + "s";
+    room.appendChild(m);
+    setTimeout(function () { m.remove(); }, 45000 + Math.random() * 20000);
+  }
+  window.__spawnMoth = spawnMoth; /* headless hook */
+  function mothWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var lit = document.body.classList.contains("lamplit");
+    var force = window.__forceMoth === true; /* easter egg: peek anytime */
+    if ((lit || force) && !reduced) {
+      var n = 2 + Math.floor(Math.random() * 3); /* 2-4 moths */
+      for (var i = 0; i < n; i++) {
+        (function (k) { setTimeout(spawnMoth, k * 1500); })(i);
+      }
+    }
+    window.__mothT = setTimeout(mothWatch, 120000 + Math.random() * 180000);
+  }
+
   function bunnyWatch() {
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var stars = document.getElementById("stars");
@@ -2903,6 +2940,7 @@
   hawkWatch();
   quailWatch();
   fireflyWatch();
+  mothWatch();
   catWatch();
   boingBall();
   plasmaCRT();

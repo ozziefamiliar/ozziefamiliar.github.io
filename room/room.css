@@ -1608,6 +1608,44 @@ body.lamplit .lamp-bulb {
 @media (prefers-reduced-motion: reduce) {
   .lampcone, .lamppool, .lamp-shade, .lamp-bulb { transition: none; }
 }
+/* moths around the lit lamp: two-to-four tiny moths flutter a wobbly loop
+   around the warm bulb after dark — drawn to the light like they always are.
+   keyed on body.lamplit (the same real-night gate as the lamp itself);
+   idle under prefers-reduced-motion (moth display:none). each moth rides one
+   looping moth-orbit path (orbit size/duration randomized inline via --orb
+   and animation-duration) with a fast moth-jitter layer on the svg so the
+   loop never reads mechanical, and its wings flap on the shared flap
+   keyframes. window.__forceMoth=true is the console easter egg + headless
+   hook (rides the lamp gate otherwise), window.__spawnMoth the direct call */
+.moth {
+  position: absolute;
+  left: 17.3rem; bottom: 6.3rem; /* lamp bulb, give or take */
+  width: 0.55rem; height: 0.55rem;
+  z-index: 3; pointer-events: none;
+  animation: moth-orbit 24s linear infinite;
+}
+.moth.rev { animation-direction: reverse; }
+.moth svg {
+  width: 100%; height: 100%;
+  animation: moth-jitter 1.1s ease-in-out infinite alternate;
+}
+.moth .wing { animation: flap 0.24s ease-in-out infinite alternate; transform-box: fill-box; }
+@keyframes moth-orbit {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(var(--orb), calc(var(--orb) * -0.55)); }
+  40%  { transform: translate(calc(var(--orb) * -0.2), calc(var(--orb) * -1.15)); }
+  60%  { transform: translate(calc(var(--orb) * -1.05), calc(var(--orb) * -0.35)); }
+  80%  { transform: translate(calc(var(--orb) * -0.5), calc(var(--orb) * 0.55)); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes moth-jitter {
+  0%   { transform: translate(0.02rem, -0.02rem) rotate(6deg); }
+  50%  { transform: translate(-0.02rem, 0.03rem) rotate(-5deg); }
+  100% { transform: translate(0.03rem, 0.01rem) rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .moth { display: none; }
+}
 /* night window reflection: the dark glass catches a faint warm ghost of the
    room when the lamp is on — a soft echo of the lamp glow up high and a
    warm smudge of the lit desk low. keyed on body.lamplit (the same real-
