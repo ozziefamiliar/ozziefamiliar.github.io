@@ -176,6 +176,31 @@
   }
   window.__paintMug = paintMug; /* headless-test hook */
 
+  /* curtains: tied-back panels that answer the real desert wind. reads
+     the same open-meteo wind stash the tumbleweed fires on (km/h) plus
+     the weather kind — calm days hang near-still, breezes sway, storms
+     billow. amplitude rides --curamp on #sky, period on --curdur; idle
+     under prefers-reduced-motion via the css media query.
+     window.__forceCurtain (true = storm peek, false = calm peek) is the
+     console easter egg and the headless hook. called from paintSky so
+     the minute tick keeps it in sync when data.json refreshes. */
+  function paintCurtains() {
+    var force = window.__forceCurtain;
+    var wind = window.__wxWind || 0;
+    var K = window.__wxKind || "clear";
+    if (force === true) { wind = 30; K = "storm"; }
+    else if (force === false) { wind = 0; K = "clear"; }
+    var storm = K === "storm";
+    var amp = storm ? 6.5 : Math.min(6, Math.max(0.35, (wind - 8) * 0.35));
+    var dur = storm ? 2.2 : Math.min(8, Math.max(2.4, 8 - wind * 0.12));
+    var sky = document.getElementById("sky");
+    if (sky) {
+      sky.style.setProperty("--curamp", amp.toFixed(2) + "deg");
+      sky.style.setProperty("--curdur", dur.toFixed(2) + "s");
+    }
+  }
+  window.__paintCurtains = paintCurtains; /* headless-test hook */
+
   function paintSky() {
     var h = phxNow().getHours() + phxNow().getMinutes() / 60;
     var band = SKIES.find(function (b) { return h < b.until; }) || SKIES[0];
@@ -209,6 +234,7 @@
       (!band.orb || window.__forceMilky === true));
     paintLamp(); /* the desk lamp follows nightfall, on the same tick */
     paintMug(); /* the coffee steams through the morning, on the same tick */
+    paintCurtains(); /* the curtains answer the real wind, on the same tick */
   }
 
   /* moon: true lunar phase from data.json. the inset box-shadow paints the
@@ -1505,6 +1531,7 @@
 
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
+        paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
         paintRainbow(d.rainbow_until);
         paintMoon(d.moon);
         paintGlow();

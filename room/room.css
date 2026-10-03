@@ -1761,6 +1761,55 @@ body.lamplit .winreflect-warm { opacity: 1; }
   .winreflect-warm { transition: none; }
 }
 
+/* window curtains: tied-back panels that answer the real desert wind.
+   amplitude and period ride --curamp/--curdur on #sky, set by
+   paintCurtains() from the same open-meteo wind stash the tumbleweed
+   reads — calm days hang still, breezes sway, storms billow. the tie
+   cinches the silhouette mid-panel; the rod caps the frame. still
+   under prefers-reduced-motion. */
+.curtain { position: absolute; pointer-events: none; }
+.curtain.rod {
+  top: 0.12rem; left: 0.15rem; right: 0.15rem; height: 0.13rem;
+  background: linear-gradient(#3a2c1c, #241a10);
+  border-radius: 0.07rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.curtain.rod::before, .curtain.rod::after {
+  content: ""; position: absolute; top: -0.045rem;
+  width: 0.22rem; height: 0.22rem; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #6b4e2e, #2b2114);
+}
+.curtain.rod::before { left: -0.09rem; }
+.curtain.rod::after { right: -0.09rem; }
+.curtain.left, .curtain.right {
+  top: 0.1rem; bottom: 0; width: 1.75rem;
+  transform-origin: 50% 0;
+  animation: curtsway var(--curdur, 8s) ease-in-out infinite;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.25) 0 0.08rem,
+      rgba(255, 236, 200, 0.07) 0.08rem 0.2rem),
+    linear-gradient(100deg, #c47a37 0%, #a8611f 55%, #8f5219 100%);
+  /* tie-back silhouette: full at the rod, cinched at the tie, flaring hem */
+  clip-path: polygon(0 0, 100% 0, 76% 56%, 88% 100%, 12% 100%, 24% 56%);
+}
+.curtain.left { left: 0.05rem; }
+.curtain.right { right: 0.05rem; }
+.curtain.left::after, .curtain.right::after {
+  content: ""; position: absolute; top: 54%; left: 22%; right: 22%;
+  height: 0.28rem; border-radius: 0.14rem;
+  background: linear-gradient(#6b3f15, #4a2a0d);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+@keyframes curtsway {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(var(--curamp, 0.4deg)); }
+  65% { transform: rotate(calc(var(--curamp, 0.4deg) * -0.85)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .curtain.left, .curtain.right { animation: none; }
+}
+
 @media (max-width: 700px) {
   .room { height: 46rem; }
   .window { left: 1rem; }
