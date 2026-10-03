@@ -660,6 +660,25 @@
   }
   window.__paintShower = paintShower; /* headless-test hook */
 
+  /* the desk terminal doubles as the room's weather station: the same real
+     phoenix conditions the window wears, plus the shower calendar the sky
+     follows. text from data.json via the __wx* stashes; no new gate, so it
+     updates whenever loadRoom refreshes the weather. static (no animation
+     loop) under prefers-reduced-motion except the blink, which idles there */
+  function paintTerm() {
+    var el = document.getElementById("term-status");
+    if (!el) return;
+    var t = Math.round(window.__wxTemp || 0);
+    var k = window.__wxKind || "clear";
+    var w = Math.round(window.__wxWind || 0);
+    var lines = t + "\u00b0f " + k + "\nwind " + w + "km/h";
+    var s = window.__forceShower === true ? { name: "meteor shower", peak: "" }
+      : (window.__shower || null);
+    if (s) lines += "\n\u2726 " + s.name + (s.peak ? " pk " + s.peak : "");
+    el.textContent = lines;
+  }
+  window.__paintTerm = paintTerm; /* headless-test hook */
+
   /* satellites: a tiny blinking dot crosses the night sky on a slow straight
      path — the most boring thing in orbit, and the easiest to miss. visits
      every 2.5-6min, 24-40s crossings, random direction, blinking 0.5-1.4s;
@@ -1494,6 +1513,7 @@
         paintBloom(d.bloom);
         paintPear(d.pear_bloom);
         paintShower(d.shower);
+        paintTerm();
         document.getElementById("tests-line").textContent = d.tests || "";
         document.getElementById("tests-meta").textContent = d.tests || "—";
 

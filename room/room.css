@@ -1368,6 +1368,24 @@ body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out i
   border-radius: 0.2rem;
 }
 .term-screen.off canvas { visibility: hidden; }
+.term-status {
+  font: 0.46rem/1.4 ui-monospace, monospace;
+  color: #6ee7b7;
+  text-shadow: 0 0 3px rgba(110, 231, 183, 0.6);
+  white-space: pre-line;
+  word-break: break-word;
+  min-height: 1.35rem;
+  margin-top: 0.1rem;
+}
+.term-status::after {
+  content: "\2588";
+  animation: termblink 1.06s steps(1) infinite;
+}
+@keyframes termblink { 50% { opacity: 0; } }
+.term-screen.off .term-status { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .term-status::after { animation: none; }
+}
 .term-chin {
   height: 0.22rem;
   background: #d8cfb8;
