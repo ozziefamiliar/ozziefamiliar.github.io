@@ -45,6 +45,28 @@
     inset -0.3rem -0.2rem 0 rgba(178, 172, 156, 0.55);
   display: none;
 }
+/* sundogs: faint rainbow flecks flanking the low sun. red sits on the
+   inner edge (toward the sun) — the left dog's gradient ends red on the
+   right, the right dog's starts red on the left. static: they're an
+   optical effect, not weather, so there's nothing to animate — nothing
+   to idle under prefers-reduced-motion either. */
+.sundog {
+  position: absolute;
+  width: 0.8rem; height: 2.1rem;
+  top: 46%; opacity: 0;
+  border-radius: 50%;
+  filter: blur(2px);
+  transition: opacity 4s;
+  pointer-events: none;
+}
+.sd-l {
+  left: 22%;
+  background: linear-gradient(90deg, #9a8fd0, #7fb8d8, #f4e285, #f4845f);
+}
+.sd-r {
+  left: 78%;
+  background: linear-gradient(90deg, #f4845f, #f4e285, #7fb8d8, #9a8fd0);
+}
 .stars {
   position: absolute; inset: 0;
   font-size: 0.7rem; letter-spacing: 0.6rem;

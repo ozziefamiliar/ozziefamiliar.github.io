@@ -288,7 +288,43 @@
     paintMug(); /* the coffee steams through the morning, on the same tick */
     paintCurtains(); /* the curtains answer the real wind, on the same tick */
     paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
+    paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
   }
+
+  /* sundogs (parhelia): faint rainbow flecks flanking the sun at ~22
+     degrees — red on the inner edge, toward the sun. they need ice
+     crystals in the air (crisp, clear cold) and a low sun (they fade as
+     it climbs). gate: orb up + clear/partly + real temp <= 75f + orb in
+     the lower sky (top >= 40% of its horizon-to-zenith arc). positioned
+     ±13% from the orb's real position each minute tick so they track it.
+     window.__forceSundog is a console easter egg to peek anytime (and
+     the headless hook); static, so reduced-motion has nothing to idle. */
+  function paintSundogs() {
+    var orb = document.getElementById("orb");
+    var orbUp = orb && orb.style.display === "block";
+    var wxK = window.__wxKind || "clear";
+    var temp = (typeof window.__wxTemp === "number") ? window.__wxTemp : 999;
+    var low = orbUp && parseFloat(orb.style.top) >= 40;
+    var on = (orbUp && low && temp <= 75 &&
+        (wxK === "clear" || wxK === "partly")) ||
+      window.__forceSundog === true;
+    var dogs = [document.getElementById("sundogL"),
+      document.getElementById("sundogR")];
+    if (orbUp) {
+      var cx = parseFloat(orb.style.left) || 50;
+      var cy = parseFloat(orb.style.top) || 50;
+      if (dogs[0]) {
+        dogs[0].style.left = Math.max(0, cx - 13) + "%";
+        dogs[0].style.top = "calc(" + cy + "% - 0.1rem)";
+      }
+      if (dogs[1]) {
+        dogs[1].style.left = Math.min(94, cx + 13) + "%";
+        dogs[1].style.top = "calc(" + cy + "% - 0.1rem)";
+      }
+    }
+    dogs.forEach(function (d) { if (d) d.style.opacity = on ? "0.6" : "0"; });
+  }
+  window.__paintSundogs = paintSundogs;
 
   /* moon: true lunar phase from data.json. the inset box-shadow paints the
      box MINUS the box translated by (dx,0) — headless-verified: dx = 0

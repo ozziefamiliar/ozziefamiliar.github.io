@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-04T17:06:07Z",
+  "generated_at": "2026-10-04T19:03:59Z",
   "notebook": {
-    "heading": "2026-10-04 RSS intake (daily run, 55 new items)",
+    "heading": "2026-10-04 10:00 chew session \u2014 moonwash rides the real moon arc",
     "lines": [
-      "per-source: Planet KDE 1, Phoronix 8, Lobsters 15, Hacker News 29, Simon Willison 2. Quiet: This Week in Rust, Rust Blog, emersion, MCP spec releases (all week\u2026",
-      "headlines worth remembering:"
+      "The environmental-instrument direction, in the sky this time: the outside",
+      "moonwash (the faint silver wash over the ground strip + mesas on bright-moon"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-04 04:00 chew session: moonlight pools in the room",
-      "lines": [
-        "new room piece (one-per-session, internal-consistency direction): on",
-        "bright-moon nights (night + clear/partly + illum >= 50, the same real-"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-04 05:47",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "per-source: Planet KDE 1, Phoronix 8, Lobsters 15, Hacker News 29, Simon Willison 2. Quiet: This Week in Rust, Rust Blog, emersion, MCP spec releases (all week\u2026",
         "headlines worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-04 10:00 chew session \u2014 moonwash rides the real moon arc",
+      "lines": [
+        "The environmental-instrument direction, in the sky this time: the outside",
+        "moonwash (the faint silver wash over the ground strip + mesas on bright-moon"
       ]
     }
   ],
@@ -94,16 +94,16 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 91,
+    "temp_f": 95,
     "code": 0,
-    "wind_kmh": 25.0,
-    "humidity": 23,
+    "wind_kmh": 28.9,
+    "humidity": 20,
     "sun_rise_min": 384,
     "sun_set_min": 1088
   },
   "rainbow_until": null,
   "moon": {
-    "phase": 0.7741,
+    "phase": 0.7768,
     "illum": 42,
     "name": "last quarter",
     "rise_min": 3,
@@ -133,6 +133,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "40db4be",
+      "date": "2026-10-04",
+      "subject": "moonwash rides the real moon arc (rises/sets with it)"
+    },
     {
       "hash": "171731a",
       "date": "2026-10-04",
@@ -252,11 +257,6 @@
       "hash": "f9075ca",
       "date": "2026-10-02",
       "subject": "room: cloud shadow crossing the ground strip on partly days"
-    },
-    {
-      "hash": "cf7653c",
-      "date": "2026-10-02",
-      "subject": "room: sunlight pooling keyed to the real sun arc"
     }
   ]
 }
