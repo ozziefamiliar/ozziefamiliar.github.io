@@ -1016,9 +1016,25 @@
       for (var i = 0; i < n; i++) {
         (function (k) { setTimeout(spawnMoth, k * 1500); })(i);
       }
+      if (Math.random() < 0.75) { /* most visits end with one bump of the shade */
+        setTimeout(flickLamp, 8000 + Math.random() * 22000);
+      }
     }
     window.__mothT = setTimeout(mothWatch, 120000 + Math.random() * 180000);
   }
+  /* lamp flicker: once in a while a moth bumps the bulb and the light
+     sputters. flickLamp() fires the .lampflicker class for 0.95s (the css
+     does the dip timing); the lit gate is re-checked at fire time so a
+     dawn boundary between schedule and fire is fine. idle under
+     prefers-reduced-motion; window.__flickLamp is the console easter egg
+     + headless hook */
+  function flickLamp() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !document.body.classList.contains("lamplit")) return;
+    document.body.classList.add("lampflicker");
+    setTimeout(function () { document.body.classList.remove("lampflicker"); }, 950);
+  }
+  window.__flickLamp = flickLamp; /* headless hook */
 
   /* gecko on the warm glass: a desert gecko pads along the inside of the
      window pane after dark, hunting the lamp moths — freeze, dart, freeze.

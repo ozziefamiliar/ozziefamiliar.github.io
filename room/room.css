@@ -1770,6 +1770,24 @@ body.lamplit .lamp-bulb {
 @media (prefers-reduced-motion: reduce) {
   .lampcone, .lamppool, .lamp-shade, .lamp-bulb { transition: none; }
 }
+/* lamp flicker: once in a while a moth bumps the bulb and the light
+   sputters briefly. filter-brightness multiplies the lit opacity and
+   box-shadow rules instead of fighting them; one 0.9s dip cycle fired by
+   JS, idle under prefers-reduced-motion. */
+@keyframes lampflick {
+  0%, 100% { filter: brightness(1); }
+  16% { filter: brightness(0.25); }
+  32% { filter: brightness(0.85); }
+  48% { filter: brightness(0.35); }
+  64% { filter: brightness(0.95); }
+  80% { filter: brightness(0.6); }
+}
+body.lampflicker .lamp-bulb, body.lampflicker .lampcone, body.lampflicker .lamppool {
+  animation: lampflick 0.9s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.lampflicker .lamp-bulb, body.lampflicker .lampcone, body.lampflicker .lamppool { animation: none; }
+}
 /* morning coffee: a terracotta mug on the desk between the notebook and
    the term. the mug is always there; the steam only rises on phoenix
    mornings (5:00–10:00), via body.coffeemorning from paintMug(). the three
