@@ -317,16 +317,40 @@
       glow.toFixed(3) + "), inset " + dx.toFixed(3) + "rem 0 0 0 #f2eee0";
     var name = (m && m.name) || MOON_NAMES[Math.floor((((p + 1 / 16) % 1) * 8)) % 8];
     moon.title = name + " · " + illum + "% lit";
+    /* the moon's real arc: 0 at moonrise, 1 at moonset, from update.py's
+       lunar ephemeris in data.json (rise_min/set_min). null when no data.
+       hoisted here so the outside wash and the indoor pool ride the same
+       arc — the wash now rises and sets with the real moon instead of
+       sitting on all night. */
+    var mpNow = phxNow();
+    var mpT = mpNow.getHours() * 60 + mpNow.getMinutes();
+    window.__moonRiseMin = (m && typeof m.rise_min === "number")
+      ? m.rise_min : null;
+    window.__moonSetMin = (m && typeof m.set_min === "number")
+      ? m.set_min : null;
+    window.__moonData = m; /* minute tick repaints the drift */
+    var moonArc = null;
+    if (typeof window.__moonRiseMin === "number" &&
+        typeof window.__moonSetMin === "number") {
+      var mra = window.__moonRiseMin, msa = window.__moonSetMin, mta = mpT;
+      if (msa < mra) msa += 1440;
+      if (mta < mra) mta += 1440;
+      moonArc = (mta - mra) / (msa - mra);
+    }
+    var moonUp = moonArc !== null && moonArc >= 0 && moonArc <= 1;
     /* moonlight wash: on clear/partly bright-moon nights the ground strip
-       gets a faint silver wash, opacity scaled by the real illumination.
-       window.__forceMoonwash is a console easter egg to peek anytime
-       (and the headless hook) */
+       gets a faint silver wash, opacity scaled by the real illumination —
+       riding the moon's real arc now (see above): off before moonrise and
+       after moonset, so it breathes in and out with the actual moon;
+       null arc keeps the old static behavior. window.__forceMoonwash is
+       a console easter egg to peek anytime (and the headless hook) */
     var washEl = document.getElementById("moonwash");
     if (washEl) {
       var nightNow = document.getElementById("stars").style.opacity === "1";
       var wxK = window.__wxKind || "clear";
       var washOn = (nightNow && (wxK === "clear" || wxK === "partly") &&
-        illum >= 50) || window.__forceMoonwash === true;
+        illum >= 50 && (moonArc === null || moonUp)) ||
+        window.__forceMoonwash === true;
       /* the force flag also lifts a dark moon so the peek reads */
       var effIllum = window.__forceMoonwash === true
         ? Math.max(illum, 75) : illum;
@@ -347,40 +371,25 @@
     var mp = document.getElementById("moonpool");
     var mw = document.getElementById("moonwall");
     if (mp && mw) {
-      window.__moonRiseMin = (m && typeof m.rise_min === "number")
-        ? m.rise_min : null;
-      window.__moonSetMin = (m && typeof m.set_min === "number")
-        ? m.set_min : null;
-      window.__moonData = m; /* minute tick repaints the drift */
-      var mpT = phxNow();
-      var t = mpT.getHours() * 60 + mpT.getMinutes();
-      var mRise = window.__moonRiseMin, mSet = window.__moonSetMin;
-      var mpP = null; /* 0 at moonrise, 1 at moonset */
-      if (window.__forceMoonpool === true) mpP = 0.5;
-      else if (typeof mRise === "number" && typeof mSet === "number") {
-        var mr = mRise, ms = mSet, mt = t;
-        if (ms < mr) ms += 1440;
-        if (mt < mr) mt += 1440;
-        mpP = (mt - mr) / (ms - mr);
-      }
-      var moonUp = mpP !== null && mpP >= 0 && mpP <= 1;
+      if (window.__forceMoonpool === true) moonArc = 0.5;
+      moonUp = moonArc !== null && moonArc >= 0 && moonArc <= 1;
       var mpGate = nightNow && (wxK === "clear" || wxK === "partly") &&
         illum >= 50;
-      var mpOn = (mpGate && (mpP === null || moonUp)) ||
+      var mpOn = (mpGate && (moonArc === null || moonUp)) ||
         window.__forceMoonpool === true;
       var mpIllum = window.__forceMoonpool === true
         ? Math.max(illum, 75) : illum;
       var mpo = mpOn
         ? Math.min(0.45, (0.12 + 0.20 * (mpIllum - 50) / 50) * 1.4) : 0;
-      if (mpOn && mpP !== null) {
+      if (mpOn && moonArc !== null) {
         /* the silver patch rides the moon's real arc: left→right like
            the sun's, spreading wide when the moon hangs low; the wall
            wash leans away from it, evening-side at moonset */
-        var mpw = 16 + (1 - Math.sin(mpP * Math.PI)) * 10; /* rem */
-        mp.style.left = (3 + mpP * 11).toFixed(2) + "rem";
+        var mpw = 16 + (1 - Math.sin(moonArc * Math.PI)) * 10; /* rem */
+        mp.style.left = (3 + moonArc * 11).toFixed(2) + "rem";
         mp.style.width = mpw.toFixed(2) + "rem";
         mw.style.setProperty("--sp-lean",
-          ((0.5 - mpP) * 46).toFixed(1) + "px");
+          ((0.5 - moonArc) * 46).toFixed(1) + "px");
       }
       mp.style.opacity = mpo.toFixed(3);
       mw.style.opacity = (mpo * 0.6).toFixed(3);
