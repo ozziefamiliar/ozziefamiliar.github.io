@@ -594,6 +594,28 @@ body.glow-pm .mesa::after {
   .train { display: none; }
 }
 
+/* windmill: an old farm windmill on the horizon, its wheel turning on the
+   real phoenix wind (room.js paintWindmill sets the spin period; still on
+   calm days). static silhouette under reduced motion. */
+.windmill {
+  position: absolute;
+  bottom: 1.28rem;
+  left: 6.9rem;
+  width: 2.6rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.windmill svg { display: block; width: 100%; }
+.windmill .wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: windspin 12s linear infinite;
+}
+@keyframes windspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .windmill .wheel { animation: none; }
+}
+
 /* fair-weather balloon: fiesta colors drift the sky on clear/partly days */
 .balloon {
   position: absolute; top: var(--y, 2.5rem); width: 2.6rem;

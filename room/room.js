@@ -201,6 +201,31 @@
   }
   window.__paintCurtains = paintCurtains; /* headless-test hook */
 
+  /* windmill: an old farm windmill on the horizon turns on the real phoenix
+     wind (the same open-meteo stash the tumbleweed fires on). calm days the
+     wheel stands still; the spin period maps 1/wind, and races in storm or
+     dusty weather. window.__forceWindSpin (a km/h number) is the console
+     easter egg and the headless hook; idle under prefers-reduced-motion via
+     the css media query. called from paintWeather, beside paintCurtains. */
+  function paintWindmill() {
+    var force = window.__forceWindSpin;
+    var wind = (typeof force === "number") ? force : (window.__wxWind || 0);
+    var K = window.__wxKind || "clear";
+    var wheel = document.querySelector(".windmill .wheel");
+    if (!wheel) return;
+    if (wind < 4) {
+      wheel.style.animation = "none"; /* calm days the mill stands still */
+      window.__windDur = "still";
+      return;
+    }
+    var dur = Math.max(2.2, Math.min(30, 120 / wind));
+    if (K === "storm" || K === "dusty") dur *= 0.6; /* blades race in a storm */
+    wheel.style.animation = "";
+    wheel.style.animationDuration = dur.toFixed(2) + "s";
+    window.__windDur = dur.toFixed(2) + "s"; /* headless peek */
+  }
+  window.__paintWindmill = paintWindmill; /* headless-test hook */
+
   /* city glow: after dark the horizon north of here carries phoenix's real
      light dome — a faint amber smudge rising behind the mesas. strength
      follows the same real open-meteo weather the window wears: full on
@@ -1872,6 +1897,7 @@
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
         paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
+        paintWindmill(); /* the old mill answers the same real wind */
         paintRainbow(d.rainbow_until);
         paintMoon(d.moon);
         paintGlow();
