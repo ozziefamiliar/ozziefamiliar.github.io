@@ -289,6 +289,7 @@
     paintCurtains(); /* the curtains answer the real wind, on the same tick */
     paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
     paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
+    paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
   }
 
   /* sundogs (parhelia): faint rainbow flecks flanking the sun at ~22
@@ -920,6 +921,39 @@
     }
   }
   window.__paintShower = paintShower; /* headless-test hook */
+
+  /* the telescope on the sill: a little brass refractor on a tripod, set
+     up on the window frame whenever a real meteor shower is active. it
+     slews to the shower's radiant (the same sky-relative point the meteors
+     stream out of) and waits there all night — fades in at dusk with the
+     meteors, away by dawn. the tube pivots at (35,38) in its own viewBox;
+     the angle is recomputed from live rects so the aim survives layout.
+     static once aimed, so reduced-motion has nothing to idle.
+     window.__forceScope is the console easter egg to peek anytime (and
+     the headless hook, set before load like the other flags) */
+  function paintScope() {
+    var force = window.__forceScope;
+    var stars = document.getElementById("stars");
+    var night = stars && stars.style.opacity === "1";
+    var s = force === true
+      ? { name: "Meteor shower", peak: "", radiant: [30, 10] }
+      : (window.__shower || null);
+    var on = force === true ? true : (night && !!s);
+    document.body.classList.toggle("scopeout", on);
+    if (on && s && s.radiant) {
+      var sky = document.getElementById("sky").getBoundingClientRect();
+      var tel = document.getElementById("telescope").getBoundingClientRect();
+      var mx = tel.left + tel.width * 35 / 70 - sky.left;
+      var my = tel.top + tel.height * 38 / 92 - sky.top;
+      var deg = Math.atan2(s.radiant[1] / 100 * sky.height - my,
+                           s.radiant[0] / 100 * sky.width - mx)
+                * 180 / Math.PI + 90;
+      var tube = document.getElementById("scope-tube");
+      if (tube) tube.setAttribute("transform",
+        "rotate(" + deg.toFixed(1) + " 35 38)");
+    }
+  }
+  window.__paintScope = paintScope; /* headless-test hook */
 
   /* wall calendar: the real phoenix month, today ringed in terracotta,
      meteor-shower peaks starred. fully static (built once from data.json),
@@ -1951,6 +1985,7 @@
         paintBloom(d.bloom);
         paintPear(d.pear_bloom);
         paintShower(d.shower);
+        paintScope(); /* the telescope joins the shower as soon as data lands */
         paintCal(d.calendar);
         paintTerm();
         document.getElementById("tests-line").textContent = d.tests || "";
