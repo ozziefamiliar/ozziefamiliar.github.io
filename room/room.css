@@ -118,6 +118,41 @@
   14% { opacity: 1; }
   100% { opacity: 0; transform: rotate(var(--ang)) translateX(var(--dist, 9rem)); }
 }
+/* fireball: during an active shower, ~1 in 12 meteors is a slow,
+   amber-red fireball — the draconids are famous for these (17 km/s,
+   slow enough to leave a lingering ember trail). wider, warmer, and
+   2.2s across the sky; a static .firetrail marks the path it burned */
+.meteor.fireball {
+  width: 5.2rem; height: 3px;
+  background: linear-gradient(to left, #fff3d6, rgba(255, 150, 60, 0.55) 45%, rgba(255, 110, 40, 0));
+  box-shadow: 0 0 10px 2px rgba(255, 170, 80, 0.7);
+}
+.meteor.fireball.go { animation: fireballfly 2.2s ease-in forwards; }
+@keyframes fireballfly {
+  0% { opacity: 0; transform: rotate(var(--ang)) translateX(0); }
+  10% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(var(--ang)) translateX(var(--dist, 9rem)); }
+}
+/* the ember trail blooms as the head finishes its 2.2s flight, then
+   lingers a couple of seconds after — slow draconids leave these */
+.firetrail {
+  position: absolute;
+  width: var(--dist, 9rem); height: 2px;
+  background: linear-gradient(to left, rgba(255, 190, 110, 0.55), rgba(255, 130, 50, 0));
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(var(--ang, -32deg));
+  animation: firetrailfade 3.6s linear forwards;
+}
+@keyframes firetrailfade {
+  0% { opacity: 0; }
+  55% { opacity: 0; }
+  68% { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .firetrail { animation: none; display: none; }
+}
 /* meteor-shower label: names the peaking shower, top-right of the sky.
    shown by meteorWatch only at night, when the shower is active */
 #shower-label {

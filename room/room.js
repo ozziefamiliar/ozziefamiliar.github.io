@@ -711,7 +711,10 @@
      real radiant point — the patch of sky the naming constellation owns —
      instead of streaking random directions. on peak night the label glows.
      window.__forceShower is a console easter egg to peek anytime (and the
-     headless-test hook, set before load like the other flags) */
+     headless-test hook, set before load like the other flags). about
+     one in twelve shower meteors is a fireball: slow, amber-red, with a
+     lingering ember trail — the draconids are famous for them.
+     window.__forceFireball forces one */
   function meteorWatch() {
     var stars = document.getElementById("stars");
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -726,6 +729,12 @@
       if (sky) {
         var m = document.createElement("div");
         m.className = "meteor";
+        /* during an active shower, ~1 in 12 meteors is a fireball —
+           slow, amber-red, with a lingering ember trail. draconids are
+           famous for these. window.__forceFireball is the console easter
+           egg (set before load, like __forceShower) + headless hook */
+        var fb = !!sh && (window.__forceFireball === true || Math.random() < 1 / 12);
+        if (fb) m.classList.add("fireball");
         var rad = sh && sh.radiant;
         if (rad) {
           /* radiant stream: pick a random ray out of the radiant, spawn
@@ -743,10 +752,22 @@
           m.style.top = (6 + Math.random() * 28) + "%";
           m.style.setProperty("--ang", -(18 + Math.random() * 26) + "deg");
         }
-        m.style.setProperty("--dist", (7 + Math.random() * 5) + "rem");
+        m.style.setProperty("--dist", fb ? (12 + Math.random() * 4) + "rem"
+                                         : (7 + Math.random() * 5) + "rem");
         sky.appendChild(m);
         requestAnimationFrame(function () { m.classList.add("go"); });
-        setTimeout(function () { m.remove(); }, 1200);
+        setTimeout(function () { m.remove(); }, fb ? 2600 : 1200);
+        if (fb) {
+          /* the ember trail lingers where the fireball burned through */
+          var tr = document.createElement("div");
+          tr.className = "firetrail";
+          tr.style.left = m.style.left;
+          tr.style.top = m.style.top;
+          tr.style.setProperty("--ang", m.style.getPropertyValue("--ang"));
+          tr.style.setProperty("--dist", m.style.getPropertyValue("--dist"));
+          sky.appendChild(tr);
+          setTimeout(function () { tr.remove(); }, 3800);
+        }
       }
     }
     var lo = 8000, hi = 22000;
