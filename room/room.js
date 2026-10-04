@@ -999,6 +999,52 @@
     window.__mothT = setTimeout(mothWatch, 120000 + Math.random() * 180000);
   }
 
+  /* gecko on the warm glass: a desert gecko pads along the inside of the
+     window pane after dark, hunting the lamp moths — freeze, dart, freeze.
+     gated on night (stars opacity == 1) AND body.lamplit (the moths are
+     out, so the predator follows the prey); visits every 5-10min; idle
+     under prefers-reduced-motion; window.__forceGecko=true is the console
+     easter egg + headless hook, window.__spawnGecko the direct call */
+  var GECKO_SVG =
+    '<svg viewBox="0 0 64 42" aria-hidden="true">' +
+    '<path d="M26 20 C18 17.5 11 19.5 4 25.5 C11 26.5 19 25 26 24 Z" fill="#d5c9a8"/>' +
+    '<ellipse cx="36" cy="22" rx="12" ry="6.8" fill="#ded4b8"/>' +
+    '<path d="M45 17 C51 17.5 55.5 20 57 22.5 C55.5 25.5 50.5 27.5 45 27 Z" fill="#e3d9bd"/>' +
+    '<circle cx="51" cy="20.8" r="1.1" fill="#3a3128"/>' +
+    '<g stroke="#ded4b8" stroke-width="2.4" stroke-linecap="round" fill="none">' +
+    '<path d="M41 16.5 C44 13 46 10.5 47.5 8.5"/>' +
+    '<path d="M44 27.5 C46 31 47.5 33.5 49 35.5"/>' +
+    '<path d="M31 16.5 C28 13.5 26 11 24.5 8.5"/>' +
+    '<path d="M30 27.5 C28 31 26.5 33.5 25 36"/>' +
+    '</g>' +
+    '<g fill="#e3d9bd">' +
+    '<ellipse cx="47.8" cy="7.6" rx="1.7" ry="1.2"/>' +
+    '<ellipse cx="49.3" cy="36.3" rx="1.7" ry="1.2"/>' +
+    '<ellipse cx="24.2" cy="7.6" rx="1.7" ry="1.2"/>' +
+    '<ellipse cx="24.7" cy="36.8" rx="1.7" ry="1.2"/>' +
+    '</g></svg>';
+  function spawnGecko() {
+    var win = document.querySelector(".window");
+    if (!win) return;
+    var g = document.createElement("div");
+    g.className = "gecko" + (Math.random() < 0.5 ? " rtl" : "");
+    g.innerHTML = GECKO_SVG;
+    win.appendChild(g);
+    setTimeout(function () { g.remove(); }, 58000);
+  }
+  window.__spawnGecko = spawnGecko; /* headless hook */
+  function geckoWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var lit = document.body.classList.contains("lamplit");
+    var stars = document.getElementById("stars");
+    var night = stars && stars.style.opacity === "1";
+    var force = window.__forceGecko === true; /* easter egg: peek anytime */
+    if (((lit && night) || force) && !reduced) {
+      spawnGecko();
+    }
+    window.__geckoT = setTimeout(geckoWatch, 300000 + Math.random() * 300000);
+  }
+
   function bunnyWatch() {
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var stars = document.getElementById("stars");
@@ -3212,6 +3258,7 @@
   lizardWatch();
   fireflyWatch();
   mothWatch();
+  geckoWatch();
   catWatch();
   boingBall();
   plasmaCRT();

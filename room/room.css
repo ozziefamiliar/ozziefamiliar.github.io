@@ -1842,6 +1842,62 @@ body.coffeemorning .steam { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .moth { display: none; }
 }
+/* gecko on the warm glass: a desert gecko pads the inside of the window
+   pane after dark, hunting the lamp moths. the crossing rides left/bottom
+   keyframes (like the quail's, so the svg stays free for the scuttle), with
+   freeze-and-dart beats — geckos never just walk. rtl mirrors the crawl
+   and flips the scuttle. idle under prefers-reduced-motion
+   (gecko display:none + watch never spawns). window.__forceGecko=true is the
+   console easter egg + headless hook (rides the lamplit gate otherwise) */
+.gecko {
+  position: absolute;
+  width: 2.8rem;
+  z-index: 60; pointer-events: none;
+  animation: geckocrawl-ltr 55s linear forwards;
+}
+.gecko.rtl { animation-name: geckocrawl-rtl; }
+.gecko svg {
+  display: block; width: 100%;
+  animation: geckoscuttle 0.5s ease-in-out infinite alternate;
+}
+.gecko.rtl svg { animation-name: geckoscuttle-flip; }
+@keyframes geckocrawl-ltr {
+  0%   { left: -3.2rem; bottom: 2.2rem; opacity: 0; }
+  4%   { opacity: 1; }
+  18%  { left: -0.4rem; bottom: 3.2rem; }
+  24%  { left: -0.4rem; bottom: 3.2rem; } /* freeze — watching */
+  27%  { left: 1.6rem; bottom: 3.8rem; }  /* dart! */
+  44%  { left: 4.6rem; bottom: 5.0rem; }
+  52%  { left: 4.6rem; bottom: 5.0rem; }  /* freeze again */
+  55%  { left: 6.4rem; bottom: 5.6rem; }  /* dart */
+  78%  { left: 11.0rem; bottom: 7.4rem; }
+  95%  { left: 12.6rem; bottom: 8.0rem; opacity: 1; }
+  100% { left: 13.8rem; bottom: 8.4rem; opacity: 0; }
+}
+@keyframes geckocrawl-rtl {
+  0%   { left: 16.6rem; bottom: 2.2rem; opacity: 0; }
+  4%   { opacity: 1; }
+  18%  { left: 13.8rem; bottom: 3.2rem; }
+  24%  { left: 13.8rem; bottom: 3.2rem; }
+  27%  { left: 11.8rem; bottom: 3.8rem; }
+  44%  { left: 8.8rem; bottom: 5.0rem; }
+  52%  { left: 8.8rem; bottom: 5.0rem; }
+  55%  { left: 7.0rem; bottom: 5.6rem; }
+  78%  { left: 2.4rem; bottom: 7.4rem; }
+  95%  { left: 0.8rem; bottom: 8.0rem; opacity: 1; }
+  100% { left: -0.4rem; bottom: 8.4rem; opacity: 0; }
+}
+@keyframes geckoscuttle {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(0.09rem, -0.02rem) rotate(1.2deg); }
+}
+@keyframes geckoscuttle-flip {
+  0%   { transform: scaleX(-1) translate(0, 0) rotate(0deg); }
+  100% { transform: scaleX(-1) translate(0.09rem, -0.02rem) rotate(-1.2deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gecko { display: none; }
+}
 /* night window reflection: the dark glass catches a faint warm ghost of the
    room when the lamp is on — a soft echo of the lamp glow up high and a
    warm smudge of the lit desk low. keyed on body.lamplit (the same real-
