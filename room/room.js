@@ -173,8 +173,38 @@
     var h = phxNow().getHours() + phxNow().getMinutes() / 60;
     var on = force === true ? true : force === false ? false : (h >= 5 && h < 10);
     document.body.classList.toggle("coffeemorning", on);
+    paintWindLean(); /* the steam leans with the real wind direction */
   }
   window.__paintMug = paintMug; /* headless-test hook */
+
+  /* wind lean: the real phoenix wind has a direction now, not just a
+     speed — meteorological degrees from open-meteo, stashed beside the
+     wind in data.json. two things answer it, so the room agrees with
+     itself: the outside rain streaks slant (the wx-rain gradient angle
+     rides --rainang) and the morning coffee steam leans (the .steam
+     container rides --steamlean). the east mesa stands on the left of the
+     frame, so the window faces south — wind FROM direction d blows toward
+     the view's left by sin(d) (d=270 from the west -> toward the east ->
+     left). magnitude scales 0..1 by 40 km/h; calm air stays straight.
+     static geometry, nothing to idle under prefers-reduced-motion.
+     window.__forceWindDir (degrees) is the console easter egg — the peek
+     also assumes 25 km/h so the lean reads. called from paintWeather and
+     paintMug so the tick and the data refresh both carry it. */
+  function paintWindLean() {
+    var fdir = window.__forceWindDir;
+    var wind = window.__wxWind || 0;
+    var dir = (typeof fdir === "number") ? fdir : (window.__wxWindDir || 0);
+    if (typeof fdir === "number") wind = Math.max(wind, 25);
+    var lean = Math.sin(dir * Math.PI / 180); /* -1..1 lateral, view x */
+    var amp = Math.min(1, Math.max(0, wind / 40));
+    var rain = document.getElementById("wx-rain");
+    if (rain) rain.style.setProperty("--rainang",
+      (102 + lean * amp * 24).toFixed(1) + "deg");
+    var steam = document.querySelector(".steam");
+    if (steam) steam.style.setProperty("--steamlean",
+      (-lean * amp * 12).toFixed(1) + "deg");
+  }
+  window.__paintWindLean = paintWindLean; /* headless-test hook */
 
   /* curtains: tied-back panels that answer the real desert wind. reads
      the same open-meteo wind stash the tumbleweed fires on (km/h) plus
@@ -704,6 +734,7 @@
     var K = (wx && wx.kind) || "clear";
     window.__wxKind = K; /* gates for the fair-weather balloon and friends */
     window.__wxWind = (wx && typeof wx.wind_kmh === "number") ? wx.wind_kmh : 0;
+    window.__wxWindDir = (wx && typeof wx.wind_dir === "number") ? wx.wind_dir : 0;
     window.__wxTemp = (wx && typeof wx.temp_f === "number") ? wx.temp_f : 0;
     window.__wxHumidity = (wx && typeof wx.humidity === "number") ? wx.humidity : 0;
     /* the real sunrise/sunset in minutes-of-day — gates the alpenglow */
@@ -724,6 +755,7 @@
     });
     document.getElementById("wx-rain").style.display =
       (K === "rain" || K === "storm") ? "block" : "none";
+    paintWindLean(); /* the rain slants with the real wind direction */
     var haze = document.getElementById("wx-haze");
     haze.style.display = (K === "fog" || K === "dusty" || K === "overcast")
       ? "block" : "none";

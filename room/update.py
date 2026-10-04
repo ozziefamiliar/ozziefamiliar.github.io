@@ -88,7 +88,7 @@ def phoenix_weather():
         url = ("https://api.open-meteo.com/v1/forecast"
                "?latitude=33.45&longitude=-112.07"
                "&current=weathercode,temperature_2m,visibility,windspeed_10m,"
-               "relative_humidity_2m"
+               "relative_humidity_2m,winddirection_10m"
                "&daily=sunrise,sunset"
                "&timezone=America%2FPhoenix")
         with urllib.request.urlopen(url, timeout=10) as r:
@@ -129,6 +129,7 @@ def phoenix_weather():
         return {"kind": kind, "label": label,
                 "temp_f": round(c * 9 / 5 + 32), "code": code,
                 "wind_kmh": round(float(cur.get("windspeed_10m", 0)), 1),
+                "wind_dir": int(cur.get("winddirection_10m", 0) or 0),
                 "humidity": int(cur.get("relative_humidity_2m", 0) or 0),
                 "sun_rise_min": rise, "sun_set_min": set_}
     except Exception:

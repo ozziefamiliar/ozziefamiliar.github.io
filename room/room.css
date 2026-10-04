@@ -799,7 +799,9 @@ body.glow-pm .mesa::after {
 .wx-rain {
   position: absolute; left: 0; right: 0; top: -25%; bottom: -25%;
   display: none; pointer-events: none;
-  background: repeating-linear-gradient(102deg, transparent 0 7px,
+  /* --rainang rides the real wind direction via paintWindLean() — the
+     streaks slant with the wind instead of always falling straight */
+  background: repeating-linear-gradient(var(--rainang, 102deg), transparent 0 7px,
     rgba(170, 205, 235, 0.45) 7px 9px);
   animation: rainfall 0.6s linear infinite;
 }
@@ -1923,6 +1925,10 @@ body.lampflicker .lamp-bulb, body.lampflicker .lampcone, body.lampflicker .lampp
   opacity: 0;
   transition: opacity 4s ease;
   pointer-events: none;
+  /* --steamlean rides the real wind direction via paintWindLean() — the
+     whole plume skews so the steam bends downwind; composes with the
+     wisps' own steamrise transforms */
+  transform: skewX(var(--steamlean, 0deg));
 }
 .steam i {
   position: absolute;
