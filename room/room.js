@@ -308,6 +308,26 @@
       washEl.style.opacity = washOn
         ? (0.12 + 0.20 * (effIllum - 50) / 50).toFixed(3) : "0";
     }
+    /* moonlight pooling in the room: on the same bright-moon nights the
+       moon comes through the window like the sun does — a cool wash on
+       the wall under the sill and a silver patch pooling on the floor,
+       mirroring the sun's daytime pieces (paintSun). no moonrise data to
+       drift with, so the patch holds one position through the night;
+       opacity keyed to the real illumination, 3s fade in css, z-index 1
+       under the furniture. window.__forceMoonpool easter egg + headless
+       hook (lifts a dark moon so the peek reads, like __forceMoonwash) */
+    var mp = document.getElementById("moonpool");
+    var mw = document.getElementById("moonwall");
+    if (mp && mw) {
+      var mpOn = (nightNow && (wxK === "clear" || wxK === "partly") &&
+        illum >= 50) || window.__forceMoonpool === true;
+      var mpIllum = window.__forceMoonpool === true
+        ? Math.max(illum, 75) : illum;
+      var mpo = mpOn
+        ? Math.min(0.45, (0.12 + 0.20 * (mpIllum - 50) / 50) * 1.4) : 0;
+      mp.style.opacity = mpo.toFixed(3);
+      mw.style.opacity = (mpo * 0.6).toFixed(3);
+    }
   }
   window.__paintMoon = paintMoon; /* headless-test hook */
 

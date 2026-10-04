@@ -1039,6 +1039,31 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
 @media (prefers-reduced-motion: reduce) {
   .sunmotes { display: none; }
 }
+/* moonlight pooling: on clear bright-moon nights the moon comes through
+   the window too — a cool wash on the wall under the sill plus a silver
+   patch pooling on the floor, mirroring the sun's daytime pieces (room.js
+   paintMoon: same bright-moon gate as the outside moonwash, opacity keyed
+   to the real illumination). 3s fade, static under
+   prefers-reduced-motion; z-index under the furniture, which sits later in
+   the DOM and shadows the patch where it overlaps. */
+.moonwall {
+  position: absolute; left: 3.2rem; width: 14rem; top: 14.8rem;
+  height: 7rem; pointer-events: none; z-index: 1; opacity: 0;
+  background: linear-gradient(to bottom, rgba(206, 222, 246, 0.9),
+    rgba(206, 222, 246, 0) 85%);
+  clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%);
+  filter: blur(0.6rem); transition: opacity 3s ease;
+}
+.moonpool {
+  position: absolute; bottom: -3rem; height: 9rem; left: 6rem; width: 15rem;
+  pointer-events: none; z-index: 1; opacity: 0; border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(206, 222, 246, 0.85),
+    rgba(206, 222, 246, 0) 70%);
+  filter: blur(1.1rem); transition: opacity 3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .moonwall, .moonpool { transition: none; }
+}
 /* ocotillo: grey-green bare canes most of the year; leafs out after rain */
 .ocotillo {
   position: absolute; bottom: 1.15rem; left: 11.6rem; width: 2.8rem;
