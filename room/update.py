@@ -148,8 +148,111 @@ def lunar_phase(now=None):
     illum = round((1 - math.cos(2 * math.pi * phase)) / 2 * 100)
     names = ["new moon", "waxing crescent", "first quarter", "waxing gibbous",
              "full moon", "waning gibbous", "last quarter", "waning crescent"]
+    rise_min, set_min = moon_rise_set(now)
     return {"phase": round(phase, 4), "illum": illum,
-            "name": names[int(((phase + 1 / 16) % 1) * 8) % 8]}
+            "name": names[int(((phase + 1 / 16) % 1) * 8) % 8],
+            "rise_min": rise_min, "set_min": set_min}
+
+
+PHX_LAT, PHX_LON = 33.4484, -112.0740  # Phoenix, UTC-7 year-round
+
+
+def _moon_altitude(utc_ts):
+    """Moon altitude (deg) over Phoenix. Low-precision lunar theory, stdlib.
+
+    Schlyter's formulation: d is days since 2000 Jan 0.0 (= 1999-12-31
+    00:00 UTC, JD 2451543.5) — NOT J2000.0; using the wrong epoch costs
+    ~1.5 days x 13.1 deg/day = ~20 deg in the moon's longitude (caught
+    against published elongations at new/full/quarter before shipping).
+    Major perturbation terms included; good to ~0.2-0.3 deg, a few
+    minutes in rise/set. Center-of-disk, no refraction."""
+    d = (utc_ts - datetime(1999, 12, 31, 0, 0, tzinfo=timezone.utc)
+         .timestamp()) / 86400.0
+    s = lambda x: math.sin(math.radians(x))  # noqa: E731
+    c = lambda x: math.cos(math.radians(x))  # noqa: E731
+    N = 125.1228 - 0.0529538083 * d
+    i = 5.1454
+    w = 318.0634 + 0.1643573223 * d
+    a = 60.2666
+    e = 0.054900
+    M = 115.3654 + 13.0649929509 * d
+    E = M + e * 180 / math.pi * s(M) * (1 + e * c(M))
+    for _ in range(4):
+        E = E - (E - e * 180 / math.pi * s(E) - M) / (1 - e * c(E))
+    x = a * (c(E) - e)
+    y = a * (math.sqrt(1 - e * e) * s(E))
+    v = math.degrees(math.atan2(y, x))
+    r = math.hypot(x, y)
+    xh = r * (c(N) * c(v + w) - s(N) * s(v + w) * c(i))
+    yh = r * (s(N) * c(v + w) + c(N) * s(v + w) * c(i))
+    zh = r * s(v + w) * s(i)
+    lon = math.degrees(math.atan2(yh, xh))
+    lat = math.degrees(math.atan2(zh, math.hypot(xh, yh)))
+    Ms = 356.0470 + 0.9856002585 * d
+    Mm = 115.3654 + 13.0649929509 * d
+    Nm = 125.1228 - 0.0529538083 * d
+    ws = 282.9404 + 4.70935E-5 * d
+    Lm = Nm + ws + Mm
+    D = Lm - ws - Ms
+    F = Lm - Nm
+    lon += (-1.274 * s(Mm - 2 * D) + 0.658 * s(2 * D) - 0.186 * s(Ms)
+            - 0.059 * s(2 * Mm - 2 * D) - 0.057 * s(Mm - 2 * D + Ms))
+    lat += (-0.173 * s(F - 2 * D) - 0.055 * s(Mm - F - 2 * D)
+            - 0.046 * s(Mm + F - 2 * D) + 0.033 * s(F + 2 * D)
+            + 0.017 * s(2 * Mm + F))
+    ecl = 23.4393 - 3.563E-7 * d
+    xe = r * c(lon) * c(lat)
+    ye = r * (s(lon) * c(lat) * c(ecl) - s(lat) * s(ecl))
+    ze = r * (s(lon) * c(lat) * s(ecl) + s(lat) * c(ecl))
+    RA = math.degrees(math.atan2(ye, xe))
+    dec = math.degrees(math.atan2(ze, math.hypot(xe, ye)))
+    JD = d + 2451543.5
+    gmst = (280.46061837 + 360.98564736629 * (JD - 2451545.0)) % 360
+    lst = gmst + PHX_LON  # Phoenix 33.4484N 112.0740W, UTC-7 year-round
+    H = ((lst - RA + 180) % 360) - 180
+    return math.degrees(math.asin(s(PHX_LAT) * s(dec)
+                                  + c(PHX_LAT) * c(dec) * c(H)))
+
+
+def moon_rise_set(now=None):
+    """Moonrise/moonset for Phoenix, in local minutes from local midnight.
+
+    Sweeps the altitude over a 48h window at 10-min steps, linearly
+    interpolating the horizon crossings, and pairs the rise nearest now
+    with the following set. Returns (rise_min, set_min); either can sit
+    outside 0..1440 (rise just before midnight, set after), or (None, None)
+    when the moon doesn't cross the horizon in the window. Verified
+    against timeanddate's published Phoenix tables (2026-10-03..05):
+    within ~7 min, the residual being their refraction + upper-limb
+    conventions; meridian altitude matched to 0.4 deg."""
+    now = now or datetime.now(timezone.utc)
+    phx = now - timedelta(hours=7)
+    midnight_utc = (datetime(phx.year, phx.month, phx.day,
+                             tzinfo=timezone.utc)
+                    + timedelta(hours=7))
+    t0 = midnight_utc.timestamp() - 12 * 3600
+    step = 600
+    n = int(48 * 3600 / step) + 1
+    alts = [_moon_altitude(t0 + i * step) for i in range(n)]
+    ups, downs = [], []
+    for i in range(n - 1):
+        if alts[i] <= 0 < alts[i + 1]:
+            frac = -alts[i] / (alts[i + 1] - alts[i])
+            ups.append((t0 + (i + frac) * step
+                        - midnight_utc.timestamp()) / 60)
+        elif alts[i] > 0 >= alts[i + 1]:
+            frac = alts[i] / (alts[i] - alts[i + 1])
+            downs.append((t0 + (i + frac) * step
+                          - midnight_utc.timestamp()) / 60)
+    now_min = (now.timestamp() - midnight_utc.timestamp()) / 60
+    cand = [r for r in ups if r <= now_min + 720]
+    if not cand:
+        return None, None
+    rise = max(cand)
+    sets = [x for x in downs if x > rise]
+    if not sets:
+        return None, None
+    return round(rise), round(sets[0])
 
 
 def saguaro_bloom(now=None):

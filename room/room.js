@@ -311,20 +311,52 @@
     /* moonlight pooling in the room: on the same bright-moon nights the
        moon comes through the window like the sun does — a cool wash on
        the wall under the sill and a silver patch pooling on the floor,
-       mirroring the sun's daytime pieces (paintSun). no moonrise data to
-       drift with, so the patch holds one position through the night;
-       opacity keyed to the real illumination, 3s fade in css, z-index 1
-       under the furniture. window.__forceMoonpool easter egg + headless
-       hook (lifts a dark moon so the peek reads, like __forceMoonwash) */
+       mirroring the sun's daytime pieces (paintSun). update.py's real
+       phoenix moonrise/moonset (data.json) drifts the patch left→right
+       across the floor through the night — slow, like the moon — and the
+       pool stays off when the moon is below the horizon; opacity keyed
+       to the real illumination, 3s fade in css, z-index 1 under the
+       furniture. window.__forceMoonpool easter egg + headless hook peeks
+       at mid-arc (and lifts a dark moon so the peek reads, like
+       __forceMoonwash) */
     var mp = document.getElementById("moonpool");
     var mw = document.getElementById("moonwall");
     if (mp && mw) {
-      var mpOn = (nightNow && (wxK === "clear" || wxK === "partly") &&
-        illum >= 50) || window.__forceMoonpool === true;
+      window.__moonRiseMin = (m && typeof m.rise_min === "number")
+        ? m.rise_min : null;
+      window.__moonSetMin = (m && typeof m.set_min === "number")
+        ? m.set_min : null;
+      window.__moonData = m; /* minute tick repaints the drift */
+      var mpT = phxNow();
+      var t = mpT.getHours() * 60 + mpT.getMinutes();
+      var mRise = window.__moonRiseMin, mSet = window.__moonSetMin;
+      var mpP = null; /* 0 at moonrise, 1 at moonset */
+      if (window.__forceMoonpool === true) mpP = 0.5;
+      else if (typeof mRise === "number" && typeof mSet === "number") {
+        var mr = mRise, ms = mSet, mt = t;
+        if (ms < mr) ms += 1440;
+        if (mt < mr) mt += 1440;
+        mpP = (mt - mr) / (ms - mr);
+      }
+      var moonUp = mpP !== null && mpP >= 0 && mpP <= 1;
+      var mpGate = nightNow && (wxK === "clear" || wxK === "partly") &&
+        illum >= 50;
+      var mpOn = (mpGate && (mpP === null || moonUp)) ||
+        window.__forceMoonpool === true;
       var mpIllum = window.__forceMoonpool === true
         ? Math.max(illum, 75) : illum;
       var mpo = mpOn
         ? Math.min(0.45, (0.12 + 0.20 * (mpIllum - 50) / 50) * 1.4) : 0;
+      if (mpOn && mpP !== null) {
+        /* the silver patch rides the moon's real arc: left→right like
+           the sun's, spreading wide when the moon hangs low; the wall
+           wash leans away from it, evening-side at moonset */
+        var mpw = 16 + (1 - Math.sin(mpP * Math.PI)) * 10; /* rem */
+        mp.style.left = (3 + mpP * 11).toFixed(2) + "rem";
+        mp.style.width = mpw.toFixed(2) + "rem";
+        mw.style.setProperty("--sp-lean",
+          ((0.5 - mpP) * 46).toFixed(1) + "px");
+      }
       mp.style.opacity = mpo.toFixed(3);
       mw.style.opacity = (mpo * 0.6).toFixed(3);
     }
@@ -3332,6 +3364,9 @@
   setInterval(paintSky, 60000);
   setInterval(paintGlow, 60000);
   setInterval(paintSun, 60000);
+  setInterval(function () {
+    if (window.__moonData) paintMoon(window.__moonData);
+  }, 60000); /* the silver patch rides the moon's real arc through the night */
   setInterval(paintSagShadows, 60000);
   setInterval(function () { paintRainbow(window.__rainbowUntil); }, 60000);
   loadRoom();
