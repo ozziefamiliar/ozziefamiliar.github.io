@@ -707,7 +707,9 @@
   /* meteors: shooting stars, one every 8-22s when the night sky is up —
      but when a real meteor shower is peaking (update.py stashes the annual
      shower calendar in data.json), the interval tightens with the shower's
-     zhr and a tiny label names the shower in the sky's top-right corner.
+     zhr, a tiny label names the shower, and the meteors stream out of the
+     real radiant point — the patch of sky the naming constellation owns —
+     instead of streaking random directions. on peak night the label glows.
      window.__forceShower is a console easter egg to peek anytime (and the
      headless-test hook, set before load like the other flags) */
   function meteorWatch() {
@@ -715,7 +717,7 @@
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var night = stars && stars.style.opacity === "1";
     var sh = window.__forceShower === true
-      ? { name: "Meteor shower", peak: "", zhr: 60 }
+      ? { name: "Meteor shower", peak: "", zhr: 60, radiant: [38, 12] }
       : (window.__shower || null);
     var lab = document.getElementById("shower-label");
     if (lab) lab.style.display = (night && !reduced && sh) ? "block" : "none";
@@ -724,9 +726,23 @@
       if (sky) {
         var m = document.createElement("div");
         m.className = "meteor";
-        m.style.left = (8 + Math.random() * 55) + "%";
-        m.style.top = (6 + Math.random() * 28) + "%";
-        m.style.setProperty("--ang", -(18 + Math.random() * 26) + "deg");
+        var rad = sh && sh.radiant;
+        if (rad) {
+          /* radiant stream: pick a random ray out of the radiant, spawn
+             the meteor along it, and aim the streak along the same ray */
+          var a = Math.random() * Math.PI * 2;
+          var d = 6 + Math.random() * 24;
+          var px = Math.min(95, Math.max(2, rad[0] + Math.cos(a) * d));
+          var py = Math.min(46, Math.max(3, rad[1] + Math.sin(a) * d * 0.7));
+          var ang = Math.atan2(py - rad[1], px - rad[0]) * 180 / Math.PI;
+          m.style.left = px + "%";
+          m.style.top = py + "%";
+          m.style.setProperty("--ang", ang + "deg");
+        } else {
+          m.style.left = (8 + Math.random() * 55) + "%";
+          m.style.top = (6 + Math.random() * 28) + "%";
+          m.style.setProperty("--ang", -(18 + Math.random() * 26) + "deg");
+        }
         m.style.setProperty("--dist", (7 + Math.random() * 5) + "rem");
         sky.appendChild(m);
         requestAnimationFrame(function () { m.classList.add("go"); });
@@ -751,9 +767,14 @@
       : (sh || null);
     document.body.classList.toggle("showering", !!s);
     var lab = document.getElementById("shower-label");
-    if (lab) lab.textContent = s
-      ? "\u2726 " + s.name + (s.peak ? " \u00b7 peak " + s.peak : "")
-      : "";
+    if (lab) {
+      lab.textContent = s
+        ? "\u2726 " + s.name + (s.peak_in === 0 ? " \u00b7 peak tonight"
+            : (s.peak ? " \u00b7 peak " + s.peak : ""))
+        : "";
+      /* on peak night the label glows — the next real sky moment */
+      lab.classList.toggle("peaktonight", !!s && s.peak_in === 0);
+    }
   }
   window.__paintShower = paintShower; /* headless-test hook */
 

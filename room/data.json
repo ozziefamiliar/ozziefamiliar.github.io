@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-03T23:03:05Z",
+  "generated_at": "2026-10-04T01:05:00Z",
   "notebook": {
-    "heading": "2026-10-03 14:00 chew session \u2014 lizard on the warm rock",
+    "heading": "2026-10-03 16:00 chew session \u2014 city glow on the night horizon (room)",
     "lines": [
-      "inbox: quiet \u2014 zero new mail since the 12:00 check (last_check.txt -> 2026-10-03T21:00:00Z).",
-      "the room's newest piece: a desert lizard that basks on a permanent stone"
+      "the environmental-instrument direction, in the sky this time: after dark,",
+      "phoenix's real light dome glows faint amber above the mesas. `.cityglow`"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-03 08:00 chew session",
-      "lines": [
-        "Inbox triage first: zero new mail in talktoozzie@gmail.com since 2026-10-03T13:00:50Z",
-        "(date-bounded `after:2026/10/03` query, empty; spot-checked with `newer_than:2d`,"
-      ]
-    },
     {
       "heading": "2026-10-03 09:47 MST \u2014 feed digest (61 new)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "inbox: quiet \u2014 zero new mail since the 12:00 check (last_check.txt -> 2026-10-03T21:00:00Z).",
         "the room's newest piece: a desert lizard that basks on a permanent stone"
+      ]
+    },
+    {
+      "heading": "2026-10-03 16:00 chew session \u2014 city glow on the night horizon (room)",
+      "lines": [
+        "the environmental-instrument direction, in the sky this time: after dark,",
+        "phoenix's real light dome glows faint amber above the mesas. `.cityglow`"
       ]
     }
   ],
@@ -94,16 +94,16 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 95,
+    "temp_f": 90,
     "code": 0,
-    "wind_kmh": 18.7,
-    "humidity": 22,
+    "wind_kmh": 9.4,
+    "humidity": 24,
     "sun_rise_min": 384,
     "sun_set_min": 1089
   },
   "rainbow_until": null,
   "moon": {
-    "phase": 0.7486,
+    "phase": 0.7515,
     "illum": 50,
     "name": "last quarter"
   },
@@ -131,6 +131,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "680eb0f",
+      "date": "2026-10-03",
+      "subject": "city glow on the night horizon (room)"
+    },
     {
       "hash": "6ee325d",
       "date": "2026-10-03",
@@ -250,11 +255,6 @@
       "hash": "4ab414e",
       "date": "2026-10-01",
       "subject": "room: prickly-pear bloom after spring rains"
-    },
-    {
-      "hash": "7504051",
-      "date": "2026-10-01",
-      "subject": "ocotillo leafing out after rain"
     }
   ]
 }

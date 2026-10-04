@@ -132,6 +132,19 @@
   pointer-events: none;
   z-index: 4;
 }
+/* on peak night the shower label glows — the next real sky moment */
+#shower-label.peaktonight {
+  color: #fff6d0;
+  text-shadow: 0 0 9px rgba(255, 214, 120, 0.95), 0 0 5px rgba(0, 0, 0, 0.7);
+  animation: showerpulse 2.6s ease-in-out infinite;
+}
+@keyframes showerpulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.62; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #shower-label.peaktonight { animation: none; }
+}
 /* satellite: a tiny blinking dot on a slow straight path across the sky.
    the div does the crossing (--dur travel), the inner dot does the blink
    (--blink period) so the two transforms never clobber each other */
