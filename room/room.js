@@ -871,6 +871,8 @@
      headless-test hook, set before load like the other flags). about
      one in twelve shower meteors is a fireball: slow, amber-red, with a
      lingering ember trail — the draconids are famous for them.
+     each fireball also flashes a brief warm flicker on the window glass
+     (.winreflect-flash), the room answering the sky.
      window.__forceFireball forces one */
   function meteorWatch() {
     var stars = document.getElementById("stars");
@@ -924,6 +926,15 @@
           tr.style.setProperty("--dist", m.style.getPropertyValue("--dist"));
           sky.appendChild(tr);
           setTimeout(function () { tr.remove(); }, 3800);
+          /* and the glass catches a brief flicker of the ember — the room
+             answers the sky. restarting the animation via reflow so a
+             second fireball re-flashes even if the first is fading */
+          var fl = document.getElementById("winflash");
+          if (fl) {
+            fl.classList.remove("go");
+            void fl.offsetWidth;
+            fl.classList.add("go");
+          }
         }
       }
     }

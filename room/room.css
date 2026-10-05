@@ -2173,6 +2173,27 @@ body.lamplit .winreflect-warm { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .winreflect-warm { transition: none; }
 }
+/* fireball flash on the glass: when a shower fireball burns through, the
+   window glass catches a brief warm flicker of its ember — the room
+   answers the sky. fired from meteorWatch's fireball branch (same spawn,
+   so __forceFireball is the console easter egg + headless hook too).
+   sits with the reflect layers, under the glassdrops in DOM order. */
+.winreflect-flash {
+  position: absolute; inset: 0;
+  z-index: 52; pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(ellipse 5.5rem 3.2rem at 50% 18%,
+    rgba(255, 196, 128, 0.30), rgba(255, 170, 100, 0) 70%);
+}
+.winreflect-flash.go { animation: flashfade 1.8s ease-out forwards; }
+@keyframes flashfade {
+  0% { opacity: 0; }
+  18% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .winreflect-flash { display: none; }
+}
 
 /* window curtains: tied-back panels that answer the real desert wind.
    amplitude and period ride --curamp/--curdur on #sky, set by
