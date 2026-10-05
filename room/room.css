@@ -313,6 +313,48 @@ body.scopeout .starchart { opacity: 1; visibility: visible; }
 @media (prefers-reduced-motion: reduce) {
   .starchart { transition: none; }
 }
+
+/* --- the watcher's seat: a folded blanket + cushion laid out on the rug's
+   window-side edge, waiting for someone to watch the sky. rides the same
+   body.scopeout gate as the telescope/thermos/chart — set out on shower
+   nights, folded away by morning. static once placed, so
+   prefers-reduced-motion only kills the fade; window.__forceScope is the
+   console easter egg and headless peek (it forces scopeout, so the blanket
+   comes along with the rest of the kit). */
+.watchblanket {
+  position: absolute;
+  left: 39.2rem; bottom: 4.55rem;
+  width: 3.1rem; height: 0.95rem;
+  border-radius: 0.35rem 0.35rem 0.28rem 0.28rem;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.16), rgba(0,0,0,0.14)),
+    repeating-linear-gradient(to right,
+      #b3402a 0 0.42rem, #e8dcc0 0.42rem 0.56rem,
+      #7a8a5a 0.56rem 0.7rem, #2e2a24 0.7rem 0.78rem,
+      #b3402a 0.78rem 1.2rem);
+  box-shadow: 0 0.18rem 0.35rem rgba(0,0,0,0.35);
+  pointer-events: none;
+  opacity: 0; visibility: hidden;
+  transition: opacity 3s, visibility 3s;
+}
+.watchblanket::before { /* the folded top edge */
+  content: "";
+  position: absolute; left: 0.1rem; right: 0.1rem; top: 0.12rem;
+  height: 0.16rem; border-radius: 0.08rem;
+  background: rgba(232,220,192,0.5);
+}
+.wbcushion {
+  position: absolute; left: 0.55rem; top: -0.85rem;
+  width: 1.15rem; height: 0.85rem;
+  border-radius: 0.3rem;
+  background: linear-gradient(135deg, #8a3a26, #5f281b);
+  box-shadow: 0 0.12rem 0.25rem rgba(0,0,0,0.4);
+  transform: rotate(-7deg);
+}
+body.scopeout .watchblanket { opacity: 1; visibility: visible; }
+@media (prefers-reduced-motion: reduce) {
+  .watchblanket { transition: none; }
+}
 @keyframes showerpulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.62; }
