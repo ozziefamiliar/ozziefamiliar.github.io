@@ -870,7 +870,9 @@
      window.__forceShower is a console easter egg to peek anytime (and the
      headless-test hook, set before load like the other flags). about
      one in twelve shower meteors is a fireball: slow, amber-red, with a
-     lingering ember trail — the draconids are famous for them.
+     lingering ember trail — the draconids are famous for them, and the
+     embers cluster at the peak: about one in four on peak night, one in
+     eight the nights either side.
      each fireball also flashes a brief warm flicker on the window glass
      (.winreflect-flash), the room answering the sky.
      window.__forceFireball forces one
@@ -878,6 +880,18 @@
      counted in the shower label, reset at dawn — the room keeps score
      of the sky */
   var meteorTally = 0;
+  /* fireball probability: the embers cluster at the peak — ~1 in 4 on
+     peak night, ~1 in 8 the nights either side, ~1 in 12 otherwise.
+     peak_in rides the shower object from update.py's real calendar;
+     window.__fireballProb is the headless hook */
+  function fireballProb(sh) {
+    if (sh && typeof sh.peak_in === "number") {
+      if (sh.peak_in === 0) return 1 / 4;
+      if (Math.abs(sh.peak_in) <= 1) return 1 / 8;
+    }
+    return 1 / 12;
+  }
+  window.__fireballProb = fireballProb;
   function meteorWatch() {
     var stars = document.getElementById("stars");
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -894,11 +908,12 @@
       if (sky) {
         var m = document.createElement("div");
         m.className = "meteor";
-        /* during an active shower, ~1 in 12 meteors is a fireball —
+        /* during an active shower, some meteors are fireballs —
            slow, amber-red, with a lingering ember trail. draconids are
-           famous for these. window.__forceFireball is the console easter
+           famous for these. fireballProb() above sets the peak-aware rate.
+           window.__forceFireball is the console easter
            egg (set before load, like __forceShower) + headless hook */
-        var fb = !!sh && (window.__forceFireball === true || Math.random() < 1 / 12);
+        var fb = !!sh && (window.__forceFireball === true || Math.random() < fireballProb(sh));
         if (fb) m.classList.add("fireball");
         var rad = sh && sh.radiant;
         if (rad) {
