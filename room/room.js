@@ -965,6 +965,9 @@
      static once aimed, so reduced-motion has nothing to idle.
      the thermos (brushed steel + a steaming cup, #thermos) rides the same
      body.scopeout gate — where the telescope goes, the thermos follows.
+     the star chart (#starchart, thumbtacked to the wall) rides it too —
+     paintScope marks the real radiant on it, so one radiant shows in
+     three places: the chart, the tube's aim, the meteors.
      window.__forceScope is the console easter egg to peek anytime (and
      the headless hook, set before load like the other flags) */
   function paintScope() {
@@ -987,6 +990,15 @@
       var tube = document.getElementById("scope-tube");
       if (tube) tube.setAttribute("transform",
         "rotate(" + deg.toFixed(1) + " 35 38)");
+      /* the star chart on the wall marks the same radiant the tube aims at
+         and the meteors stream out of — one radiant, three witnesses */
+      var chart = document.getElementById("starchart");
+      if (chart) {
+        chart.style.setProperty("--rx", s.radiant[0] + "%");
+        chart.style.setProperty("--ry", s.radiant[1] + "%");
+        var cap = chart.querySelector(".chart-cap");
+        if (cap) cap.textContent = "✦ " + String(s.name || "shower").toLowerCase() + " radiant";
+      }
     }
   }
   window.__paintScope = paintScope; /* headless-test hook */
