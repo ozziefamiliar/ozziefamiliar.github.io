@@ -200,9 +200,11 @@
     var rain = document.getElementById("wx-rain");
     if (rain) rain.style.setProperty("--rainang",
       (102 + lean * amp * 24).toFixed(1) + "deg");
-    var steam = document.querySelector(".steam");
-    if (steam) steam.style.setProperty("--steamlean",
-      (-lean * amp * 12).toFixed(1) + "deg");
+    var steam = document.querySelectorAll(".steam, .tsteam");
+    for (var si = 0; si < steam.length; si++) {
+      steam[si].style.setProperty("--steamlean",
+        (-lean * amp * 12).toFixed(1) + "deg");
+    }
   }
   window.__paintWindLean = paintWindLean; /* headless-test hook */
 
@@ -961,6 +963,8 @@
      meteors, away by dawn. the tube pivots at (35,38) in its own viewBox;
      the angle is recomputed from live rects so the aim survives layout.
      static once aimed, so reduced-motion has nothing to idle.
+     the thermos (brushed steel + a steaming cup, #thermos) rides the same
+     body.scopeout gate — where the telescope goes, the thermos follows.
      window.__forceScope is the console easter egg to peek anytime (and
      the headless hook, set before load like the other flags) */
   function paintScope() {
