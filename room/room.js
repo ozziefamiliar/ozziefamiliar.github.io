@@ -1056,10 +1056,26 @@
     var k = window.__wxKind || "clear";
     var w = Math.round(window.__wxWind || 0);
     var lines = t + "\u00b0f " + k + "\nwind " + w + "km/h";
+    /* the lunar line: real phase + illumination + the moonrise/moonset
+       pair update.py's ephemeris governs the pool by. no new gate — it
+       rides the same __moonData paintMoon stashes, so set
+       window.__moonData before calling __paintTerm to peek headless */
+    var md = window.__moonData || null;
+    if (md && md.name) {
+      var ml = "\u263E " + md.name + " " + (md.illum || 0) + "%";
+      if (typeof md.rise_min === "number" && typeof md.set_min === "number")
+        ml += " \u2191" + fmtMin(md.rise_min) + " \u2193" + fmtMin(md.set_min);
+      lines += "\n" + ml;
+    }
     var s = window.__forceShower === true ? { name: "meteor shower", peak: "" }
       : (window.__shower || null);
     if (s) lines += "\n\u2726 " + s.name + (s.peak ? " pk " + s.peak : "");
     el.textContent = lines;
+    function fmtMin(m) {
+      m = Math.round(((m % 1440) + 1440) % 1440);
+      var hh = Math.floor(m / 60), mm = m % 60;
+      return (hh < 10 ? "0" : "") + hh + ":" + (mm < 10 ? "0" : "") + mm;
+    }
   }
   window.__paintTerm = paintTerm; /* headless-test hook */
 

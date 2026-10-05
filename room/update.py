@@ -218,38 +218,57 @@ def _moon_altitude(utc_ts):
 def moon_rise_set(now=None):
     """Moonrise/moonset for Phoenix, in local minutes from local midnight.
 
-    Sweeps the altitude over a 48h window at 10-min steps, linearly
+    Sweeps the altitude over a 72h window at 10-min steps, linearly
     interpolating the horizon crossings, and pairs the rise nearest now
-    with the following set. Returns (rise_min, set_min); either can sit
-    outside 0..1440 (rise just before midnight, set after), or (None, None)
-    when the moon doesn't cross the horizon in the window. Verified
-    against timeanddate's published Phoenix tables (2026-10-03..05):
-    within ~7 min, the residual being their refraction + upper-limb
-    conventions; meridian altitude matched to 0.4 deg."""
+    (past or future, within +/-24h) with the following set. Returns
+    (rise_min, set_min) as minutes from local midnight; either can sit
+    outside 0..1440 (rise just before midnight, set after), or
+    (None, None) when the moon doesn't cross the horizon in the window.
+    Verified against timeanddate's published Phoenix tables
+    (2026-10-03..05): within ~7 min, the residual being their
+    refraction + upper-limb conventions; meridian altitude matched to
+    0.4 deg."""
     now = now or datetime.now(timezone.utc)
     phx = now - timedelta(hours=7)
     midnight_utc = (datetime(phx.year, phx.month, phx.day,
                              tzinfo=timezone.utc)
                     + timedelta(hours=7))
-    t0 = midnight_utc.timestamp() - 12 * 3600
+    # window anchored on now: [now-24h, now+48h]. the set after any rise
+    # within +/-24h of now always lands inside (max moon-up ~17h).
+    t0 = now.timestamp() - 24 * 3600
     step = 600
-    n = int(48 * 3600 / step) + 1
+    n = int(72 * 3600 / step) + 1
     alts = [_moon_altitude(t0 + i * step) for i in range(n)]
+    rel = lambda t: (t - midnight_utc.timestamp()) / 60
     ups, downs = [], []
     for i in range(n - 1):
         if alts[i] <= 0 < alts[i + 1]:
             frac = -alts[i] / (alts[i + 1] - alts[i])
-            ups.append((t0 + (i + frac) * step
-                        - midnight_utc.timestamp()) / 60)
+            ups.append(rel(t0 + (i + frac) * step))
         elif alts[i] > 0 >= alts[i + 1]:
             frac = alts[i] / (alts[i] - alts[i + 1])
-            downs.append((t0 + (i + frac) * step
-                          - midnight_utc.timestamp()) / 60)
+            downs.append(rel(t0 + (i + frac) * step))
     now_min = (now.timestamp() - midnight_utc.timestamp()) / 60
-    cand = [r for r in ups if r <= now_min + 720]
+    cand = [r for r in ups if abs(r - now_min) <= 1440]
     if not cand:
         return None, None
-    rise = max(cand)
+    # the governing pair: if some rise started a span that contains now,
+    # the moon is up from it and that's the pair — even when a future
+    # rise is nominally nearer (caught 2026-10-04: a noon sample picked
+    # tomorrow's rise while the moon was up from today's). otherwise the
+    # nearest rise, past or future.
+    rise = None
+    for r in cand:
+        following = [x for x in downs if x > r]
+        if following and r <= now_min <= following[0]:
+            rise = r
+            break
+    if rise is None:
+        # nearest rise to now, not the latest: max() once grabbed a rise
+        # 7h in the future whose following set fell off the end of the old
+        # midnight-anchored sweep, returning (None, None) on a perfectly
+        # good night (2026-10-04).
+        rise = min(cand, key=lambda r: abs(r - now_min))
     sets = [x for x in downs if x > rise]
     if not sets:
         return None, None

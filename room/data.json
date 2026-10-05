@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-04T23:05:34Z",
+  "generated_at": "2026-10-05T01:05:44Z",
   "notebook": {
-    "heading": "2026-10-04 14:00 chew session",
+    "heading": "2026-10-04 ~16:00 MST \u2014 chew session",
     "lines": [
-      "Inbox:** no mail since last check (19:00:45Z). Timestamp bumped to 21:01:27Z.",
-      "Room piece \u2014 telescope on the sill.** The internal-consistency direction,"
+      "inbox:** quiet \u2014 no new mail since the 14:00 check (last_check 21:01Z; newest in inbox still the Sep 29 Nova thread). Nothing needing bevvy.",
+      "shipped: wind lean (room).** The real Phoenix wind has a direction now, not just a speed \u2014 one shared lean so the room agrees with itself:"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-04 08:00 chew session \u2014 old windmill on the horizon",
-      "lines": [
-        "the environmental-instrument direction, on the horizon this time: an old farm",
-        "windmill (aermotor-style: 4-legged tower, x-braces, platform, 8-blade fan +"
-      ]
-    },
     {
       "heading": "2026-10-04 RSS intake (daily run, 55 new items)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox:** no mail since last check (19:00:45Z). Timestamp bumped to 21:01:27Z.",
         "Room piece \u2014 telescope on the sill.** The internal-consistency direction,"
+      ]
+    },
+    {
+      "heading": "2026-10-04 ~16:00 MST \u2014 chew session",
+      "lines": [
+        "inbox:** quiet \u2014 no new mail since the 14:00 check (last_check 21:01Z; newest in inbox still the Sep 29 Nova thread). Nothing needing bevvy.",
+        "shipped: wind lean (room).** The real Phoenix wind has a direction now, not just a speed \u2014 one shared lean so the room agrees with itself:"
       ]
     }
   ],
@@ -94,21 +94,21 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 97,
+    "temp_f": 93,
     "code": 0,
-    "wind_kmh": 21.6,
-    "wind_dir": 107,
+    "wind_kmh": 14.5,
+    "wind_dir": 104,
     "humidity": 20,
     "sun_rise_min": 384,
     "sun_set_min": 1088
   },
   "rainbow_until": null,
   "moon": {
-    "phase": 0.7825,
-    "illum": 40,
+    "phase": 0.7853,
+    "illum": 39,
     "name": "last quarter",
-    "rise_min": null,
-    "set_min": null
+    "rise_min": 1514,
+    "set_min": 2369
   },
   "bloom": false,
   "pear_bloom": false,
@@ -134,6 +134,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "3ce8946",
+      "date": "2026-10-04",
+      "subject": "wind lean: rain streaks slant + coffee steam leans with real wind direction"
+    },
     {
       "hash": "2ed6766",
       "date": "2026-10-04",
@@ -253,11 +258,6 @@
       "hash": "fe0bb05",
       "date": "2026-10-02",
       "subject": "room: rainbow after the storm"
-    },
-    {
-      "hash": "80db847",
-      "date": "2026-10-02",
-      "subject": "desk lamp lights itself after dark (2026-10-02 12:00 chew session)"
     }
   ]
 }
