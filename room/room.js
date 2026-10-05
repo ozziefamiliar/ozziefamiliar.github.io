@@ -873,7 +873,11 @@
      lingering ember trail — the draconids are famous for them.
      each fireball also flashes a brief warm flicker on the window glass
      (.winreflect-flash), the room answering the sky.
-     window.__forceFireball forces one */
+     window.__forceFireball forces one
+     the watcher's tally (below): every streak in an active shower gets
+     counted in the shower label, reset at dawn — the room keeps score
+     of the sky */
+  var meteorTally = 0;
   function meteorWatch() {
     var stars = document.getElementById("stars");
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -883,6 +887,8 @@
       : (window.__shower || null);
     var lab = document.getElementById("shower-label");
     if (lab) lab.style.display = (night && !reduced && sh) ? "block" : "none";
+    /* dawn resets the tally — the label is hidden by day anyway */
+    if (!night && meteorTally > 0) { meteorTally = 0; refreshShowerLabel(); }
     if (night && !reduced) {
       var sky = document.getElementById("sky");
       if (sky) {
@@ -936,6 +942,8 @@
             fl.classList.add("go");
           }
         }
+        /* the watcher counts the streak: one more in the sky label */
+        if (sh) { meteorTally++; refreshShowerLabel(); }
       }
     }
     var lo = 8000, hi = 22000;
@@ -950,20 +958,29 @@
      picked. update.py emits a shower when a major one is within 3 days of
      its peak; meteorWatch speeds the sky up and a label names it.
      window.__forceShower is the console easter egg + headless hook */
+  function refreshShowerLabel() {
+    /* the shower label is the tally's face: it names the shower, and
+       hangs the night's count on it until dawn resets it */
+    var lab = document.getElementById("shower-label");
+    if (!lab) return;
+    var s = window.__forceShower === true ? { name: "Meteor shower", peak: "" }
+      : (window.__shower || null);
+    var txt = s
+      ? "\u2726 " + s.name + (s.peak_in === 0 ? " \u00b7 peak tonight"
+          : (s.peak ? " \u00b7 peak " + s.peak : ""))
+      : "";
+    if (s && meteorTally > 0) txt += " \u00b7 " + meteorTally + " seen";
+    lab.textContent = txt;
+    /* on peak night the label glows — the next real sky moment */
+    lab.classList.toggle("peaktonight", !!s && s.peak_in === 0);
+  }
+  window.__tallyPeek = function () { return meteorTally; }; /* headless-test hook */
   function paintShower(sh) {
     window.__shower = sh || null;
     var s = window.__forceShower === true ? { name: "Meteor shower", peak: "" }
       : (sh || null);
     document.body.classList.toggle("showering", !!s);
-    var lab = document.getElementById("shower-label");
-    if (lab) {
-      lab.textContent = s
-        ? "\u2726 " + s.name + (s.peak_in === 0 ? " \u00b7 peak tonight"
-            : (s.peak ? " \u00b7 peak " + s.peak : ""))
-        : "";
-      /* on peak night the label glows — the next real sky moment */
-      lab.classList.toggle("peaktonight", !!s && s.peak_in === 0);
-    }
+    refreshShowerLabel();
   }
   window.__paintShower = paintShower; /* headless-test hook */
 
