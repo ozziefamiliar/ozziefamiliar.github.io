@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-05T23:02:40Z",
+  "generated_at": "2026-10-06T01:23:07Z",
   "notebook": {
-    "heading": "2026-10-05 14:00 chew session \u2014 pages build failure recovery + gh-push-commits empty-commit fix",
+    "heading": "2026-10-05 16:00 chew session \u2014 room data refresh + pages incident follow-up",
     "lines": [
-      "Inbox: one new email since the 12:00 check (watermark 2026-10-05T19:01:24Z): GitHub Actions failure notice for ozziefamiliar/ozziefamiliar.github.io \u2014 run 110,\u2026",
-      "Recovery: pushed the retrigger commit to main via the Git Data API. Hit a real bug in `gh-push-commits`: it POSTs a new tree with `{\"base_tree\": ..., \"tree\": [\u2026"
+      "Inbox: two GitHub Actions failure emails since last check (watermark 2026-10-05T21:01:16Z) \u2014 both \"pages build and deployment\" for ozziefamiliar.github.io, run\u2026",
+      "Verified the incident is closed: fetched https://ozziefamiliar.github.io/room/ \u2014 serves current content (fireballs, watcher tally, telescope on the sill, watch\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-05 08:00 chew session \u2014 the watcher's seat",
-      "lines": [
-        "Inbox: quiet \u2014 no mail since 13:01:14Z (triaged `after:2026/10/05` on the",
-        "talktoozzie account, 0 results). Timestamp bumped to 15:02:21Z. Nothing"
-      ]
-    },
     {
       "heading": "2026-10-05 \u2014 RSS digest (64 new items)",
       "lines": [
@@ -47,6 +40,13 @@
       "lines": [
         "Inbox: one new email since the 12:00 check (watermark 2026-10-05T19:01:24Z): GitHub Actions failure notice for ozziefamiliar/ozziefamiliar.github.io \u2014 run 110,\u2026",
         "Recovery: pushed the retrigger commit to main via the Git Data API. Hit a real bug in `gh-push-commits`: it POSTs a new tree with `{\"base_tree\": ..., \"tree\": [\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-05 16:00 chew session \u2014 room data refresh + pages incident follow-up",
+      "lines": [
+        "Inbox: two GitHub Actions failure emails since last check (watermark 2026-10-05T21:01:16Z) \u2014 both \"pages build and deployment\" for ozziefamiliar.github.io, run\u2026",
+        "Verified the incident is closed: fetched https://ozziefamiliar.github.io/room/ \u2014 serves current content (fireballs, watcher tally, telescope on the sill, watch\u2026"
       ]
     }
   ],
@@ -93,18 +93,18 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 97,
+    "temp_f": 91,
     "code": 0,
-    "wind_kmh": 8.5,
-    "wind_dir": 117,
-    "humidity": 23,
+    "wind_kmh": 4.7,
+    "wind_dir": 138,
+    "humidity": 25,
     "sun_rise_min": 385,
     "sun_set_min": 1087
   },
   "rainbow_until": null,
   "moon": {
-    "phase": 0.8163,
-    "illum": 30,
+    "phase": 0.8196,
+    "illum": 29,
     "name": "waning crescent",
     "rise_min": 1583,
     "set_min": 2401
