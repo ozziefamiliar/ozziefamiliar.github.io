@@ -1997,6 +1997,71 @@ body.pearbloom .pear .flower { opacity: 1; animation: pearpulse 5s ease-in-out i
 @media (prefers-reduced-motion: reduce) {
   .cat .body { animation: none; }
 }
+/* on a shower's peak night the cat wakes up and sits to watch — the
+   sleeper fades out, the watcher fades in (3s), facing the window
+   (right, toward the watcher's blanket). eyes blink every ~11s.
+   static + no blink under prefers-reduced-motion. */
+.catwatch {
+  position: absolute;
+  left: 3.9rem; top: -3.2rem;
+  width: 3.4rem; height: 3.1rem;
+  opacity: 0; transition: opacity 3s ease;
+}
+body.peakwatch .cat { opacity: 0; transition: opacity 3s ease; }
+body.peakwatch .catwatch { opacity: 1; }
+.cw-body {
+  position: absolute; left: 0.6rem; bottom: 0;
+  width: 2.1rem; height: 2.4rem;
+  background: #d8a05e;
+  border-radius: 48% 48% 42% 42% / 62% 62% 34% 34%;
+}
+.cw-paw {
+  position: absolute; bottom: 0;
+  width: 0.5rem; height: 0.75rem;
+  background: #c98f52; border-radius: 0.25rem 0.25rem 0.35rem 0.35rem;
+}
+.cw-paw.p1 { left: 0.95rem; }
+.cw-paw.p2 { left: 1.75rem; }
+.cw-head {
+  position: absolute; left: 1.05rem; bottom: 1.85rem;
+  width: 1.5rem; height: 1.35rem;
+  background: #d8a05e; border-radius: 50%;
+}
+.cw-ear {
+  position: absolute; bottom: 2.85rem;
+  width: 0; height: 0;
+  border-left: 0.34rem solid transparent;
+  border-right: 0.34rem solid transparent;
+  border-bottom: 0.48rem solid #d8a05e;
+}
+.cw-ear.e1 { left: 1.2rem; transform: rotate(-14deg); }
+.cw-ear.e2 { left: 2.0rem; transform: rotate(14deg); }
+.cw-eye {
+  position: absolute; bottom: 2.35rem;
+  width: 0.17rem; height: 0.21rem;
+  background: #3a2a1a; border-radius: 50%;
+  animation: cwblink 11s ease-in-out infinite;
+  transform-origin: center;
+}
+.cw-eye.y1 { left: 1.95rem; }
+.cw-eye.y2 { left: 2.25rem; }
+@keyframes cwblink {
+  0%, 91.9%, 94.2%, 100% { transform: scaleY(1); }
+  92.6%, 93.4% { transform: scaleY(0.12); }
+}
+.cw-tail {
+  position: absolute; left: 0.15rem; bottom: 0.1rem;
+  width: 1.5rem; height: 1.1rem;
+  border: 0.4rem solid #d8a05e;
+  border-top: none; border-right: none;
+  border-radius: 0 0 0 70%;
+  transform: rotate(8deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .catwatch { transition: none; }
+  body.peakwatch .cat { transition: none; }
+  .cw-eye { animation: none; }
+}
 .rug-caption {
   position: absolute;
   left: 32rem; bottom: -1.5rem;

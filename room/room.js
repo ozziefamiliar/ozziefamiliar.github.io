@@ -345,7 +345,31 @@
     paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
     paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
     paintRadiant(); /* a faint breath of light at the radiant, on the same tick */
+    paintCatWatch(); /* on a shower's peak night the cat wakes up to watch, on the same tick */
   }
+
+  /* peak-night watcher: on a shower's peak night the sleeping cat wakes
+     up and sits facing the window, eyes on the radiant — body.peakwatch
+     fades the sleeper out and the sitter in (3s, instant under
+     prefers-reduced-motion). the rug caption flips from "recharging" to
+     "watching" so it reads as one place. gate: night (stars opacity
+     == 1) + a shower + peak_in == 0 from update.py's real calendar.
+     window.__forceCatWatch is the console easter egg to peek anytime
+     (and the headless hook, set before load like the other flags). */
+  function paintCatWatch() {
+    var force = window.__forceCatWatch;
+    var stars = document.getElementById("stars");
+    var night = stars && stars.style.opacity === "1";
+    var sh = window.__shower || null;
+    var peaknight = force === true ? true
+      : !!(night && sh && typeof sh.peak_in === "number" && sh.peak_in === 0);
+    document.body.classList.toggle("peakwatch", peaknight);
+    var cap = document.querySelector(".rug-caption");
+    if (cap) cap.textContent = peaknight
+      ? "ozzie, watching. do not disturb."
+      : "ozzie, recharging. do not disturb.";
+  }
+  window.__paintCatWatch = paintCatWatch; /* headless-test hook */
 
   /* radiant glow: a faint breath of light at the shower's real radiant —
      the patch of sky the meteors stream out of. gates on the night sky +
@@ -2228,6 +2252,7 @@
         paintPear(d.pear_bloom);
         paintShower(d.shower);
         paintScope(); /* the telescope joins the shower as soon as data lands */
+        paintCatWatch(); /* the cat wakes on peak night as soon as data lands */
         paintCal(d.calendar);
         paintTerm();
         document.getElementById("tests-line").textContent = d.tests || "";
