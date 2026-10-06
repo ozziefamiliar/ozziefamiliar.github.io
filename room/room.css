@@ -264,6 +264,50 @@ body.scopeout .tsteam { opacity: 1; }
   .tsteam { display: none; }
 }
 
+/* --- rain gauge: a little glass tube on the sill's far right end holding
+   the real phoenix rain. update.py fills it from open-meteo precipitation
+   and evaporates it in the desert air between storms (gauge_mm in
+   data.json, carried across runs); room.js paintGauge maps 0-25mm to the
+   fill height. desert irony: it sits bone dry most of the year. static —
+   set on data load, no animation loop — so prefers-reduced-motion has
+   nothing to idle; the fill's 2.5s transition eases the jump on refresh.
+   window.__forceGauge (a mm number) is the console easter egg and the
+   headless hook. */
+.gauge {
+  position: absolute;
+  top: 12.7rem; left: 17.05rem;
+  width: 1.05rem; height: 2.3rem;
+  z-index: 5;
+}
+.gauge-fill {
+  position: absolute;
+  left: 0.16rem; right: 0.16rem; bottom: 0.12rem;
+  height: 0%;
+  background: linear-gradient(to top, #3f8fd2, #7cc0e8);
+  border-radius: 0 0 0.18rem 0.18rem;
+  transition: height 2.5s ease;
+}
+.gauge-ticks {
+  position: absolute;
+  top: 0.18rem; right: 0.08rem;
+  width: 0.22rem; height: calc(100% - 0.48rem);
+  background-image: repeating-linear-gradient(to top,
+    transparent 0 0.24rem, rgba(235,240,245,0.65) 0.24rem 0.3rem);
+}
+.gauge::after {
+  content: "";
+  position: absolute; inset: 0;
+  border: 0.1rem solid rgba(228,234,240,0.8);
+  border-top: none;
+  border-radius: 0 0 0.26rem 0.26rem;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.22), rgba(255,255,255,0.05) 45%,
+    rgba(255,255,255,0.18));
+}
+@media (prefers-reduced-motion: reduce) {
+  .gauge-fill { transition: none; }
+}
+
 /* --- star chart: the meteor-watcher's field guide, thumbtacked to the wall
    beside the calendar, riding the same body.scopeout gate as the telescope —
    no new JS gate. shows the northern sky with draco winding past the shower's

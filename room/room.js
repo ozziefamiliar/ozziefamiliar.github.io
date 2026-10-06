@@ -258,6 +258,28 @@
   }
   window.__paintWindmill = paintWindmill; /* headless-test hook */
 
+  /* rain gauge on the sill: update.py fills it from real phoenix
+     precipitation and dries it in the desert air (gauge_mm in data.json,
+     carried across runs); paintGauge maps 0-25mm onto the tube's fill
+     height, and the hover reads the mm. called from paintWeather after
+     the __wx* stashes so the load refresh repaints it. static geometry —
+     only a 2.5s fill transition, idled under prefers-reduced-motion.
+     window.__forceGauge (a mm number) is the console easter egg and the
+     headless hook. */
+  function paintGauge() {
+    var el = document.getElementById("gauge");
+    var fill = document.getElementById("gauge-fill");
+    if (!el || !fill) return;
+    var mm = window.__forceGauge;
+    if (typeof mm !== "number") mm = window.__gaugeData;
+    mm = (typeof mm === "number") ? Math.max(0, Math.min(25, mm)) : 0;
+    fill.style.height = (mm / 25 * 100).toFixed(1) + "%";
+    el.title = "rain gauge — " + mm.toFixed(1) +
+      " mm of real phoenix rain in the tube";
+    window.__gaugeMm = mm; /* headless peek */
+  }
+  window.__paintGauge = paintGauge; /* headless-test hook */
+
   /* city glow: after dark the horizon north of here carries phoenix's real
      light dome — a faint amber smudge rising behind the mesas. strength
      follows the same real open-meteo weather the window wears: full on
@@ -2084,6 +2106,8 @@
         paintWeather(d.weather);
         paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
         paintWindmill(); /* the old mill answers the same real wind */
+        window.__gaugeData = (typeof d.gauge_mm === "number") ? d.gauge_mm : 0;
+        paintGauge(); /* the rain gauge fills from the real phoenix rain */
         paintRainbow(d.rainbow_until);
         paintMoon(d.moon);
         paintGlow();

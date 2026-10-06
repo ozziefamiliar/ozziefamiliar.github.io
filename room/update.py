@@ -88,7 +88,7 @@ def phoenix_weather():
         url = ("https://api.open-meteo.com/v1/forecast"
                "?latitude=33.45&longitude=-112.07"
                "&current=weathercode,temperature_2m,visibility,windspeed_10m,"
-               "relative_humidity_2m,winddirection_10m"
+               "relative_humidity_2m,winddirection_10m,precipitation"
                "&daily=sunrise,sunset"
                "&timezone=America%2FPhoenix")
         with urllib.request.urlopen(url, timeout=10) as r:
@@ -131,6 +131,7 @@ def phoenix_weather():
                 "wind_kmh": round(float(cur.get("windspeed_10m", 0)), 1),
                 "wind_dir": int(cur.get("winddirection_10m", 0) or 0),
                 "humidity": int(cur.get("relative_humidity_2m", 0) or 0),
+                "precip_mm": round(float(cur.get("precipitation", 0) or 0), 1),
                 "sun_rise_min": rise, "sun_set_min": set_}
     except Exception:
         return None
@@ -427,6 +428,38 @@ def room_changelog(n=25):
         return []
 
 
+def rain_gauge(wx, now=None):
+    """Sill rain gauge: fills from real Phoenix precipitation, dries out in
+    the desert air. Carries forward across runs like rainbow_until: while the
+    kind is rain/storm the gauge gains open-meteo's current hourly
+    precipitation; otherwise it evaporates ~0.4 mm/h (desert rate), elapsed
+    hours taken from the previous run's generated_at. Clamps 0-25 mm. None
+    on weather failure so room.js keeps the last painted level."""
+    now = now or datetime.now(timezone.utc)
+    try:
+        old = json.loads((ROOM / "data.json").read_text(encoding="utf-8"))
+        old_mm = float(old.get("gauge_mm") or 0)
+        old_at = old.get("generated_at")
+    except Exception:
+        old_mm, old_at = 0.0, None
+    if not wx:
+        return None
+    hours = 2.0
+    if old_at:
+        try:
+            prev = datetime.strptime(
+                old_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            hours = max(0.0, min(24.0, (now - prev).total_seconds() / 3600))
+        except Exception:
+            pass
+    mm = old_mm
+    if wx.get("kind") in ("rain", "storm"):
+        mm += float(wx.get("precip_mm") or 0)
+    else:
+        mm -= 0.4 * hours  # desert evaporation
+    return round(max(0.0, min(25.0, mm)), 1)
+
+
 def main():
     wx = phoenix_weather()
     data = {
@@ -438,6 +471,7 @@ def main():
         "feed": feed_recent(),
         "weather": wx,
         "rainbow_until": rainbow_window(wx["kind"] if wx else None),
+        "gauge_mm": rain_gauge(wx),
         "moon": lunar_phase(),
         "bloom": saguaro_bloom(),
         "pear_bloom": prickly_bloom(),
