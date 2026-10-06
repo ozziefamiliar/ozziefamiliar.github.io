@@ -353,6 +353,8 @@
      paintShower), so it breathes tonight while the draconids are live.
      window.__forceShower's stub carries a radiant too, so the console
      peek shows it; static under prefers-reduced-motion (no scale loop);
+     on peak night (peak_in == 0) the glow deepens and breathes faster —
+     the sky leans into the peak, like the fireball clustering does.
      the tube, the chart, and the meteors all aim at the same point —
      four witnesses now. headless-test hook. */
   function paintRadiant() {
@@ -363,8 +365,10 @@
       : (window.__shower || null);
     var rg = document.getElementById("radiant-glow");
     var on = !!(night && sh && sh.radiant);
+    var peaknight = !!(on && typeof sh.peak_in === "number" && sh.peak_in === 0);
     if (rg) {
       rg.classList.toggle("on", on);
+      rg.classList.toggle("peaknight", peaknight);
       if (on) {
         rg.style.setProperty("--rx", sh.radiant[0] + "%");
         rg.style.setProperty("--ry", sh.radiant[1] + "%");

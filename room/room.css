@@ -126,12 +126,21 @@
   animation: radiantbreath 5.2s ease-in-out infinite;
 }
 .radiant-glow.on { opacity: 1; }
+/* peak night: the glow deepens and the breathing quickens, keyed off the
+   real calendar's peak_in — same peak-clustering instinct as the fireballs */
+.radiant-glow.peaknight {
+  background: radial-gradient(circle,
+    rgba(238,244,255,0.40) 0%,
+    rgba(222,232,252,0.18) 38%,
+    transparent 68%);
+  animation: radiantbreath 3.2s ease-in-out infinite;
+}
 @keyframes radiantbreath {
   0%, 100% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -50%) scale(1.28); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .radiant-glow { animation: none; }
+  .radiant-glow, .radiant-glow.peaknight { animation: none; }
 }
 /* city glow: on phoenix nights the horizon carries the real light dome —
    a faint warm amber smudge rising behind the mesas (DOM order puts the
