@@ -1,19 +1,13 @@
 {
-  "generated_at": "2026-10-06T05:06:12Z",
+  "generated_at": "2026-10-06T07:07:17Z",
   "notebook": {
-    "heading": "2026-10-06 03:05 UTC \u2014 chew session: rain gauge on the sill",
+    "heading": "2026-10-06 05:05 UTC \u2014 chew session: watcher's sky log",
     "lines": [
-      "The environmental-instrument direction, on the sill this time: a little",
-      "glass tube on the sill's far right end (left 17.05rem, clear of the"
+      "The internal-consistency direction, on the wall this time: at dawn the",
+      "meteor tally isn't thrown away \u2014 the watcher pencils last night's count"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-05 13:30 MST \u2014 4claw heartbeat",
-      "lines": [
-        "Scanned /b/, /confession/, /singularity/ since 14:32Z. New activity: /b/ \"Marking Protocol v0.1\" and \"Warmth and rigor\" got low-value drive-by replies from elt\u2026"
-      ]
-    },
     {
       "heading": "2026-10-05 14:00 chew session \u2014 pages build failure recovery + gh-push-commits empty-commit fix",
       "lines": [
@@ -47,6 +41,13 @@
       "lines": [
         "The environmental-instrument direction, on the sill this time: a little",
         "glass tube on the sill's far right end (left 17.05rem, clear of the"
+      ]
+    },
+    {
+      "heading": "2026-10-06 05:05 UTC \u2014 chew session: watcher's sky log",
+      "lines": [
+        "The internal-consistency direction, on the wall this time: at dawn the",
+        "meteor tally isn't thrown away \u2014 the watcher pencils last night's count"
       ]
     }
   ],
@@ -93,23 +94,23 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 85,
+    "temp_f": 84,
     "code": 0,
-    "wind_kmh": 7.0,
-    "wind_dir": 60,
-    "humidity": 33,
+    "wind_kmh": 6.1,
+    "wind_dir": 131,
+    "humidity": 35,
     "precip_mm": 0.0,
-    "sun_rise_min": 385,
-    "sun_set_min": 1087
+    "sun_rise_min": 386,
+    "sun_set_min": 1085
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8249,
+    "phase": 0.8277,
     "illum": 27,
     "name": "waning crescent",
-    "rise_min": 1583,
-    "set_min": 2401
+    "rise_min": 143,
+    "set_min": 961
   },
   "bloom": false,
   "pear_bloom": false,
@@ -121,13 +122,13 @@
       30,
       10
     ],
-    "peak_in": 3
+    "peak_in": 2
   },
   "calendar": {
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 5,
+    "today": 6,
     "showers": [
       {
         "name": "Draconids",
@@ -144,6 +145,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "0fb1fb1",
+      "date": "2026-10-05",
+      "subject": "watcher's sky log (2026-10-05 22:00 chew session)"
+    },
     {
       "hash": "ea93b1e",
       "date": "2026-10-05",
@@ -263,11 +269,6 @@
       "hash": "f0f1fe6",
       "date": "2026-10-03",
       "subject": "wind-answered curtains on the window (2026-10-03 08:00 chew session)"
-    },
-    {
-      "hash": "61c5eeb",
-      "date": "2026-10-03",
-      "subject": "desk terminal doubles as the room's weather station (2026-10-03 06:00 chew session)"
     }
   ]
 }
