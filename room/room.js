@@ -1871,6 +1871,41 @@
   }
   window.__fireflyWatch = fireflyWatch; /* headless-test hook */
 
+  /* night ground mist: cool desert air pooling low on the ground strip.
+     gated on real phoenix weather: night + clear/partly + temp <= 75f +
+     wind <= 10 km/h — the radiational-cooling hours, gone by sunrise. */
+  function isMistNight() {
+    if (window.__forceMist === true) return true;
+    var stars = document.getElementById("stars");
+    var night = !!(stars && stars.style.opacity === "1");
+    var K = window.__wxKind || "clear";
+    var cool = typeof window.__wxTemp === "number" && window.__wxTemp <= 75;
+    var calm = typeof window.__wxWind === "number" && window.__wxWind <= 10;
+    return night && (K === "clear" || K === "partly") && cool && calm;
+  }
+  function mistWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var win = document.querySelector(".window");
+    if (win && !reduced && isMistNight()) {
+      var m = document.createElement("div");
+      m.className = "nightmist";
+      var linger = 45000 + Math.random() * 25000;
+      m.style.setProperty("--linger", (linger / 1000).toFixed(1) + "s");
+      for (var i = 0; i < 2; i++) {
+        var b = document.createElement("i");
+        b.style.setProperty("--drift", (38 + Math.random() * 22).toFixed(1) + "s");
+        b.style.animationDelay = (-Math.random() * 30).toFixed(1) + "s";
+        m.appendChild(b);
+      }
+      win.appendChild(m);
+      setTimeout(function () { m.remove(); }, linger + 3000);
+    }
+    window.__mistT = setTimeout(mistWatch,
+      240000 + Math.random() * 240000); /* every 4-8 min */
+  }
+  window.__mistWatch = mistWatch; /* headless-test hook */
+  window.__isMistNight = isMistNight; /* headless-test hook */
+
   /* dawn birds: a little flock lands on the wire at dawn; one always peels off */
   var PERCH_SVG =
     '<svg viewBox="0 0 26 30" aria-hidden="true">' +
@@ -3659,6 +3694,7 @@
   quailWatch();
   lizardWatch();
   fireflyWatch();
+  mistWatch();
   mothWatch();
   geckoWatch();
   catWatch();
