@@ -902,6 +902,30 @@
      counted in the shower label, reset at dawn — the room keeps score
      of the sky */
   var meteorTally = 0;
+  /* the watcher's sky log: at dawn the tally isn't thrown away — the
+     watcher pencils last night's count into the wall calendar, under its
+     date. localStorage (this browser's copy), pruned past 60 days; paintCal
+     reads it below. window.__stashTally / __skylogPeek are the easter egg
+     + headless hooks */
+  var SKYLOG_KEY = "ozzie.room.skylog";
+  function skylog() {
+    try { return JSON.parse(localStorage.getItem(SKYLOG_KEY) || "[]"); }
+    catch (e) { return []; }
+  }
+  function stashTally(n, showerName) {
+    var p = phxNow(); p.setDate(p.getDate() - 1); /* the night just ended */
+    function pad(x) { return ("0" + x).slice(-2); }
+    function iso(d) {
+      return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+    }
+    var log = skylog().filter(function (e) { return e.d !== iso(p); });
+    log.push({ d: iso(p), name: showerName, n: n });
+    var cutoff = new Date(phxNow().getTime() - 60 * 86400000);
+    log = log.filter(function (e) { return e.d >= iso(cutoff); });
+    try { localStorage.setItem(SKYLOG_KEY, JSON.stringify(log)); } catch (e) {}
+  }
+  window.__stashTally = stashTally;
+  window.__skylogPeek = skylog;
   /* fireball probability: the embers cluster at the peak — ~1 in 4 on
      peak night, ~1 in 8 the nights either side, ~1 in 12 otherwise.
      peak_in rides the shower object from update.py's real calendar;
@@ -923,8 +947,14 @@
       : (window.__shower || null);
     var lab = document.getElementById("shower-label");
     if (lab) lab.style.display = (night && !reduced && sh) ? "block" : "none";
-    /* dawn resets the tally — the label is hidden by day anyway */
-    if (!night && meteorTally > 0) { meteorTally = 0; refreshShowerLabel(); }
+    /* dawn resets the tally — but first the watcher pencils last night's
+       count into the wall calendar. real shower nights only; tallies from
+       the console peek don't go in the book */
+    if (!night && meteorTally > 0) {
+      if (window.__forceShower !== true && window.__shower && window.__shower.name)
+        stashTally(meteorTally, window.__shower.name);
+      meteorTally = 0; refreshShowerLabel();
+    }
     if (night && !reduced) {
       var sky = document.getElementById("sky");
       if (sky) {
@@ -1088,6 +1118,14 @@
     var days = new Date(cal.year, cal.month, 0).getDate();
     var peaks = {};
     (cal.showers || []).forEach(function (s) { peaks[s.day] = s; });
+    /* the sky log: nights the watcher counted, penciled under their dates */
+    var logged = {};
+    function pad2(x) { return ("0" + x).slice(-2); }
+    var calMonth = cal.year + "-" + pad2(cal.month);
+    skylog().forEach(function (e) {
+      if (String(e.d || "").indexOf(calMonth) === 0)
+        logged[+String(e.d).slice(8)] = e;
+    });
     for (var b = 0; b < first; b++) {
       var blank = document.createElement("span");
       blank.className = "cal-blank";
@@ -1104,6 +1142,13 @@
         star.textContent = "\u2726";
         star.title = peaks[d].name + " peak";
         cell.appendChild(star);
+      }
+      if (logged[d]) {
+        var sl = document.createElement("b");
+        sl.className = "skylog";
+        sl.textContent = logged[d].n + " seen";
+        sl.title = logged[d].name + " \u00b7 " + logged[d].n + " meteors counted";
+        cell.appendChild(sl);
       }
       grid.appendChild(cell);
     }
