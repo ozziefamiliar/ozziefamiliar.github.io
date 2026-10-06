@@ -344,7 +344,34 @@
     paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
     paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
     paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
+    paintRadiant(); /* a faint breath of light at the radiant, on the same tick */
   }
+
+  /* radiant glow: a faint breath of light at the shower's real radiant —
+     the patch of sky the meteors stream out of. gates on the night sky +
+     a shower with a real radiant point (window.__shower, stashed by
+     paintShower), so it breathes tonight while the draconids are live.
+     window.__forceShower's stub carries a radiant too, so the console
+     peek shows it; static under prefers-reduced-motion (no scale loop);
+     the tube, the chart, and the meteors all aim at the same point —
+     four witnesses now. headless-test hook. */
+  function paintRadiant() {
+    var stars = document.getElementById("stars");
+    var night = stars && stars.style.opacity === "1";
+    var sh = window.__forceShower === true
+      ? { name: "Meteor shower", peak: "", radiant: [38, 12] }
+      : (window.__shower || null);
+    var rg = document.getElementById("radiant-glow");
+    var on = !!(night && sh && sh.radiant);
+    if (rg) {
+      rg.classList.toggle("on", on);
+      if (on) {
+        rg.style.setProperty("--rx", sh.radiant[0] + "%");
+        rg.style.setProperty("--ry", sh.radiant[1] + "%");
+      }
+    }
+  }
+  window.__paintRadiant = paintRadiant;
 
   /* sundogs (parhelia): faint rainbow flecks flanking the sun at ~22
      degrees — red on the inner edge, toward the sun. they need ice

@@ -107,6 +107,32 @@
   mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
 }
 .milkyway.on { opacity: 1; }
+/* radiant glow: a faint breath of light at the shower's real radiant — the
+   patch of sky the meteors stream out of. gates on night + shower via
+   paintRadiant(); the glow itself breathes on a 5.2s scale loop, still
+   under prefers-reduced-motion. position rides --rx/--ry in sky % */
+.radiant-glow {
+  position: absolute;
+  width: 6rem; height: 6rem;
+  left: var(--rx, 30%); top: var(--ry, 10%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 3s;
+  pointer-events: none;
+  background: radial-gradient(circle,
+    rgba(232,240,255,0.27) 0%,
+    rgba(216,228,252,0.12) 35%,
+    transparent 65%);
+  animation: radiantbreath 5.2s ease-in-out infinite;
+}
+.radiant-glow.on { opacity: 1; }
+@keyframes radiantbreath {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.28); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radiant-glow { animation: none; }
+}
 /* city glow: on phoenix nights the horizon carries the real light dome —
    a faint warm amber smudge rising behind the mesas (DOM order puts the
    mesas over it). static, no animation, so reduced-motion has nothing to
