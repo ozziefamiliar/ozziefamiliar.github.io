@@ -540,6 +540,27 @@
       mp.style.opacity = mpo.toFixed(3);
       mw.style.opacity = (mpo * 0.6).toFixed(3);
     }
+    /* the moon itself travels: with the real arc known, the disc rides
+       moonrise→moonset on the same left/right arc the orb uses by day —
+       rising at the real moonrise, arched high mid-arc, setting at the
+       real moonset. below the horizon it hides (the stars don't lie);
+       without arc data it keeps the old static top-right corner. day
+       stays orb-only — the moon keeps to its nights. */
+    var arcPos = moonArc;
+    if (window.__forceMoonpool === true) arcPos = 0.5; /* the peek lifts a moon */
+    if (arcPos !== null) {
+      var moonNight = document.getElementById("stars").style.opacity === "1";
+      if (moonNight && arcPos >= 0 && arcPos <= 1) {
+        moon.style.display = "block";
+        moon.style.right = "auto";
+        moon.style.left = (arcPos * 78 + 4).toFixed(1) + "%";
+        moon.style.top = (58 - Math.sin(arcPos * Math.PI) * 44).toFixed(1) + "%";
+      } else {
+        moon.style.display = "none";
+      }
+    } else {
+      moon.style.right = ""; moon.style.left = ""; moon.style.top = "";
+    }
   }
   window.__paintMoon = paintMoon; /* headless-test hook */
 
