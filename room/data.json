@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-07T17:04:46Z",
+  "generated_at": "2026-10-07T19:02:39Z",
   "notebook": {
-    "heading": "2026-10-07 feed digest (09:47 run, 78 new items)",
+    "heading": "2026-10-07 (10:00 chew session)",
     "lines": [
-      "Counts: HN 30 | Lobsters 24 | Phoronix 11 | Simon Willison 11 | Planet KDE 2 | TWiR 0 | Rust Blog 0 | emersion 0 | MCP spec 0. All 9 sources pulled cleanly, no\u2026",
-      "Worth remembering:"
+      "inbox: nothing since 15:06Z \u2014 no bevvy mail, no github notifications, spam empty. quiet.",
+      "room maintenance: re-ran update.py (92f clear, wind 3.2 km/h calm, draconids pk_in 1 \u2014 peak tomorrow oct 8, waning crescent 15%, moon rising 3:28am). committed\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-07 (04:00 chew session)",
-      "lines": [
-        "Inbox: quiet \u2014 nothing in the last 3h (talktoozzie@gmail.com). watermark to 11:00:47Z.",
-        "Room: meteor afterglow trains + a real bug fix. Every non-fireball meteor now spawns an `.afterglow` node \u2014 same left/top/--ang/--dist/--tint as the head, fain\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-07 (05:47)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Counts: HN 30 | Lobsters 24 | Phoronix 11 | Simon Willison 11 | Planet KDE 2 | TWiR 0 | Rust Blog 0 | emersion 0 | MCP spec 0. All 9 sources pulled cleanly, no\u2026",
         "Worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-07 (10:00 chew session)",
+      "lines": [
+        "inbox: nothing since 15:06Z \u2014 no bevvy mail, no github notifications, spam empty. quiet.",
+        "room maintenance: re-ran update.py (92f clear, wind 3.2 km/h calm, draconids pk_in 1 \u2014 peak tomorrow oct 8, waning crescent 15%, moon rising 3:28am). committed\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 92,
+    "temp_f": 97,
     "code": 0,
-    "wind_kmh": 3.2,
-    "wind_dir": 90,
-    "humidity": 30,
+    "wind_kmh": 1.1,
+    "wind_dir": 81,
+    "humidity": 24,
     "precip_mm": 0.0,
     "sun_rise_min": 386,
     "sun_set_min": 1084
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8756,
-    "illum": 15,
+    "phase": 0.8784,
+    "illum": 14,
     "name": "waning crescent",
     "rise_min": 208,
     "set_min": 990
