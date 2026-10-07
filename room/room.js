@@ -1291,7 +1291,16 @@
     }
     var s = window.__forceShower === true ? { name: "meteor shower", peak: "" }
       : (window.__shower || null);
-    if (s) lines += "\n\u2726 " + s.name + (s.peak ? " pk " + s.peak : "");
+    /* the tally line: the weather station keeps the watcher's count — the
+       same night's count the sky label wears, read through the tally's own
+       headless hook (guarded in case the meteor iife hasn't run yet) */
+    if (s) {
+      var sline = "\u2726 " + s.name + (s.peak ? " pk " + s.peak : "");
+      var tc = (typeof window.__tallyPeek === "function")
+        ? window.__tallyPeek() : 0;
+      if (tc > 0) sline += " \u00b7 " + tc + " seen";
+      lines += "\n" + sline;
+    }
     el.textContent = lines;
     function fmtMin(m) {
       m = Math.round(((m % 1440) + 1440) % 1440);
@@ -3784,5 +3793,6 @@
   }, 60000); /* the silver patch rides the moon's real arc through the night */
   setInterval(paintSagShadows, 60000);
   setInterval(function () { paintRainbow(window.__rainbowUntil); }, 60000);
+  setInterval(paintTerm, 60000); /* the weather station keeps its own time now */
   loadRoom();
 })();
