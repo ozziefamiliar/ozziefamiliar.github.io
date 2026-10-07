@@ -212,6 +212,26 @@
 @media (prefers-reduced-motion: reduce) {
   .firetrail { animation: none; display: none; }
 }
+/* the afterglow: a faint ghost of the path, lingering a breath after
+   the head passes — the sky keeps a fading memory of each streak.
+   slow showers leave the longest; fireballs have their own ember */
+.afterglow {
+  position: absolute;
+  width: var(--dist, 9rem); height: 2px;
+  background: linear-gradient(to left, rgba(var(--tint, 255,255,255), 0.5), rgba(var(--tint, 255,255,255), 0));
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(var(--ang, -32deg));
+  animation: afterglowfade 3.4s linear forwards;
+}
+@keyframes afterglowfade {
+  0% { opacity: 0; }
+  38% { opacity: 0.42; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .afterglow { animation: none; display: none; }
+}
 /* meteor-shower label: names the peaking shower, top-right of the sky.
    shown by meteorWatch only at night, when the shower is active */
 #shower-label {

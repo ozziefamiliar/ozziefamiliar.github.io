@@ -1078,6 +1078,10 @@
            egg (set before load, like __forceShower) + headless hook */
         var fb = !!sh && (window.__forceFireball === true || Math.random() < fireballProb(sh));
         if (fb) m.classList.add("fireball");
+        /* the node leaves when the head finishes its real flight —
+           slow showers fly up to 2.6s (a flat 1200ms used to pop
+           draconids off mid-flight) */
+        var durMs = fb ? 2200 : Math.round(meteorDur(sh) * 1000);
         var rad = sh && sh.radiant;
         if (rad) {
           /* radiant stream: pick a random ray out of the radiant, spawn
@@ -1101,14 +1105,27 @@
            leonids zip. fireballs keep their own 2.2s burn via the
            .fireball.go rule, so they skip --dur. and each shower wears its
            true tint — warm amber for slow dusty draconids, white-blue for
-           fast leonids (fireballs keep their own ember look) */
+           fast leonids (fireballs keep their own ember look). the head's
+           flight is the durMs from above, so --dur and the removal timer
+           agree */
         if (!fb) {
-          m.style.setProperty("--dur", meteorDur(sh).toFixed(2) + "s");
+          m.style.setProperty("--dur", (durMs / 1000).toFixed(2) + "s");
           if (sh && sh.tint) m.style.setProperty("--tint", sh.tint);
+          /* a faint afterglow of the head's own tint lingers a breath
+             after it passes — slow showers leave the longest */
+          var ag = document.createElement("div");
+          ag.className = "afterglow";
+          ag.style.left = m.style.left;
+          ag.style.top = m.style.top;
+          ag.style.setProperty("--ang", m.style.getPropertyValue("--ang"));
+          ag.style.setProperty("--dist", m.style.getPropertyValue("--dist"));
+          ag.style.setProperty("--tint", m.style.getPropertyValue("--tint") || "255,255,255");
+          sky.appendChild(ag);
+          setTimeout(function () { ag.remove(); }, 3600);
         }
         sky.appendChild(m);
         requestAnimationFrame(function () { m.classList.add("go"); });
-        setTimeout(function () { m.remove(); }, fb ? 2600 : 1200);
+        setTimeout(function () { m.remove(); }, durMs + 400);
         if (fb) {
           /* the ember trail lingers where the fireball burned through */
           var tr = document.createElement("div");
