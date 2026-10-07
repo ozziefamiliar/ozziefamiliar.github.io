@@ -1054,7 +1054,7 @@
     var night = stars && stars.style.opacity === "1";
     var sh = window.__forceShower === true
       ? { name: "Meteor shower", peak: "", zhr: 60, radiant: [38, 12],
-          speed_km_s: 59 }
+          speed_km_s: 59, tint: "255, 220, 160" }
       : (window.__shower || null);
     var lab = document.getElementById("shower-label");
     if (lab) lab.style.display = (night && !reduced && sh) ? "block" : "none";
@@ -1099,8 +1099,13 @@
                                          : (7 + Math.random() * 5) + "rem");
         /* the streak flies at the shower's real speed — draconids drift,
            leonids zip. fireballs keep their own 2.2s burn via the
-           .fireball.go rule, so they skip --dur */
-        if (!fb) m.style.setProperty("--dur", meteorDur(sh).toFixed(2) + "s");
+           .fireball.go rule, so they skip --dur. and each shower wears its
+           true tint — warm amber for slow dusty draconids, white-blue for
+           fast leonids (fireballs keep their own ember look) */
+        if (!fb) {
+          m.style.setProperty("--dur", meteorDur(sh).toFixed(2) + "s");
+          if (sh && sh.tint) m.style.setProperty("--tint", sh.tint);
+        }
         sky.appendChild(m);
         requestAnimationFrame(function () { m.classList.add("go"); });
         setTimeout(function () { m.remove(); }, fb ? 2600 : 1200);

@@ -158,13 +158,15 @@
 @media (prefers-reduced-motion: reduce) {
   .cityglow { transition: none; }
 }
-/* shooting star: a gradient streak, --ang aims it, --dist its travel */
+/* shooting star: a gradient streak, --ang aims it, --dist its travel.
+   --tint wears the shower's true tint (warm amber draconids, greenish
+   geminids), defaulting to neutral white on showerless nights */
 .meteor {
   position: absolute;
   width: 3.2rem; height: 2px;
   border-radius: 2px;
-  background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
-  box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.6);
+  background: linear-gradient(to left, rgb(var(--tint, 255,255,255)), rgba(var(--tint, 255,255,255), 0));
+  box-shadow: 0 0 6px 1px rgba(var(--tint, 255,255,255), 0.6);
   opacity: 0;
   pointer-events: none;
   transform: rotate(var(--ang, -32deg));
