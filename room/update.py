@@ -343,26 +343,30 @@ def rainbow_window(new_kind, now=None):
 
 
 SHOWERS = [
-    # name, peak month, peak day, zhr, radiant x%, radiant y%.
+    # name, peak month, peak day, zhr, radiant x%, radiant y%, speed km/s.
     # radiant: sky-relative point the meteors stream out of, i.e. the patch
     # of sky the naming constellation owns — compass-rough, x right/east,
     # y down from the top of the window sky (draconids live in the north).
-    ("Quadrantids", 1, 3, 120, 24, 10), ("Lyrids", 4, 22, 18, 72, 14),
-    ("Eta Aquariids", 5, 6, 50, 74, 26), ("Perseids", 8, 12, 100, 70, 12),
-    ("Draconids", 10, 8, 10, 30, 10), ("Orionids", 10, 21, 20, 72, 24),
-    ("Taurids", 11, 5, 10, 68, 28), ("Leonids", 11, 17, 15, 70, 22),
-    ("Geminids", 12, 13, 120, 68, 12),
+    # speed: the shower's geocentric velocity; the room's streaks fly at it
+    # (draconids drift at 20 km/s, leonids zip at 71).
+    ("Quadrantids", 1, 3, 120, 24, 10, 41), ("Lyrids", 4, 22, 18, 72, 14, 49),
+    ("Eta Aquariids", 5, 6, 50, 74, 26, 66), ("Perseids", 8, 12, 100, 70, 12, 59),
+    ("Draconids", 10, 8, 10, 30, 10, 20), ("Orionids", 10, 21, 20, 72, 24, 66),
+    ("Taurids", 11, 5, 10, 68, 28, 27), ("Leonids", 11, 17, 15, 70, 22, 71),
+    ("Geminids", 12, 13, 120, 68, 12, 35),
 ]
 
 
 def meteor_shower(now=None):
     """Active meteor shower, if any, from the annual shower calendar.
 
-    Returns {"name", "peak", "zhr", "radiant", "peak_in"} when a major
-    shower is within 3 days of its peak, else None. Peaks are the standard
-    IMO/AMS calendar dates and zhr the zenithal hourly rate (Draconids are
-    famously variable -- 10 is their sleepy baseline). radiant is the
-    [x%, y%] sky-relative point the meteors stream out of; peak_in is the
+    Returns {"name", "peak", "zhr", "radiant", "peak_in", "speed_km_s"} when
+    a major shower is within 3 days of its peak, else None. Peaks are the
+    standard IMO/AMS calendar dates and zhr the zenithal hourly rate
+    (Draconids are famously variable -- 10 is their sleepy baseline).
+    radiant is the [x%, y%] sky-relative point the meteors stream out of;
+    peak_in is the signed days to peak (0 = tonight); speed_km_s is the
+    shower's geocentric velocity, which the room's streaks fly at.
     signed days to peak (0 = tonight). Phoenix-local date drives the
     calendar position; day-of-year distance wraps around the year boundary
     so the Quadrantids (Jan 3) fire correctly on Dec 31 too."""
@@ -370,7 +374,7 @@ def meteor_shower(now=None):
     phx = (now - timedelta(hours=7)).date()
     showers = SHOWERS
     best = None
-    for name, month, day, zhr, rx, ry in showers:
+    for name, month, day, zhr, rx, ry, spd in showers:
         for yr in (phx.year - 1, phx.year, phx.year + 1):
             try:
                 peak = date(yr, month, day)
@@ -378,13 +382,13 @@ def meteor_shower(now=None):
                 continue
             dist = abs((phx - peak).days)
             if dist <= 3 and (best is None or dist < best[0]):
-                best = (dist, name, month, day, zhr, rx, ry, peak)
+                best = (dist, name, month, day, zhr, rx, ry, spd, peak)
     if best is None:
         return None
-    _, name, month, day, zhr, rx, ry, peak_date = best
+    _, name, month, day, zhr, rx, ry, spd, peak_date = best
     peak_label = datetime(2000, month, day).strftime("%b %-d")
     return {"name": name, "peak": peak_label, "zhr": zhr,
-            "radiant": [rx, ry],
+            "radiant": [rx, ry], "speed_km_s": spd,
             "peak_in": (peak_date - phx).days}
 
 
@@ -401,7 +405,7 @@ def wall_calendar(now=None):
         "today": phx.day,
         "showers": [
             {"name": name, "month": month, "day": day, "zhr": zhr}
-            for name, month, day, zhr, _rx, _ry in SHOWERS if month == phx.month
+            for name, month, day, zhr, _rx, _ry, _spd in SHOWERS if month == phx.month
         ],
     }
 

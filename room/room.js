@@ -984,7 +984,9 @@
      shower calendar in data.json), the interval tightens with the shower's
      zhr, a tiny label names the shower, and the meteors stream out of the
      real radiant point — the patch of sky the naming constellation owns —
-     instead of streaking random directions. on peak night the label glows.
+     instead of streaking random directions. and each streak flies at its
+     shower's real geocentric speed: slow draconids drift, quick leonids.
+     on peak night the label glows.
      window.__forceShower is a console easter egg to peek anytime (and the
      headless-test hook, set before load like the other flags). about
      one in twelve shower meteors is a fireball: slow, amber-red, with a
@@ -1034,12 +1036,25 @@
     return 1 / 12;
   }
   window.__fireballProb = fireballProb;
+  /* shower-true meteor speed: each streak flies at its shower's real
+     geocentric velocity — draconids (20 km/s) drift slow and languid,
+     leonids (71 km/s) zip. base flight is the perseid 0.85s at 59 km/s,
+     scaled inversely and clamped 0.6-2.6s; fireballs keep their own 2.2s
+     ember burn. speed_km_s rides the shower object from update.py's real
+     calendar; window.__meteorDur is the headless hook */
+  function meteorDur(sh) {
+    var spd = (sh && typeof sh.speed_km_s === "number" && sh.speed_km_s > 0)
+      ? sh.speed_km_s : 59;
+    return Math.min(2.6, Math.max(0.6, 0.85 * 59 / spd));
+  }
+  window.__meteorDur = meteorDur;
   function meteorWatch() {
     var stars = document.getElementById("stars");
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var night = stars && stars.style.opacity === "1";
     var sh = window.__forceShower === true
-      ? { name: "Meteor shower", peak: "", zhr: 60, radiant: [38, 12] }
+      ? { name: "Meteor shower", peak: "", zhr: 60, radiant: [38, 12],
+          speed_km_s: 59 }
       : (window.__shower || null);
     var lab = document.getElementById("shower-label");
     if (lab) lab.style.display = (night && !reduced && sh) ? "block" : "none";
@@ -1082,6 +1097,10 @@
         }
         m.style.setProperty("--dist", fb ? (12 + Math.random() * 4) + "rem"
                                          : (7 + Math.random() * 5) + "rem");
+        /* the streak flies at the shower's real speed — draconids drift,
+           leonids zip. fireballs keep their own 2.2s burn via the
+           .fireball.go rule, so they skip --dur */
+        if (!fb) m.style.setProperty("--dur", meteorDur(sh).toFixed(2) + "s");
         sky.appendChild(m);
         requestAnimationFrame(function () { m.classList.add("go"); });
         setTimeout(function () { m.remove(); }, fb ? 2600 : 1200);

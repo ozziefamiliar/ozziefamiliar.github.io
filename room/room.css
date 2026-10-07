@@ -169,14 +169,14 @@
   pointer-events: none;
   transform: rotate(var(--ang, -32deg));
 }
-.meteor.go { animation: meteorfly 0.85s ease-in forwards; }
+.meteor.go { animation: meteorfly var(--dur, 0.85s) ease-in forwards; }
 @keyframes meteorfly {
   0% { opacity: 0; transform: rotate(var(--ang)) translateX(0); }
   14% { opacity: 1; }
   100% { opacity: 0; transform: rotate(var(--ang)) translateX(var(--dist, 9rem)); }
 }
 /* fireball: during an active shower, ~1 in 12 meteors is a slow,
-   amber-red fireball — the draconids are famous for these (17 km/s,
+   amber-red fireball — the draconids are famous for these (20 km/s,
    slow enough to leave a lingering ember trail). wider, warmer, and
    2.2s across the sky; a static .firetrail marks the path it burned */
 .meteor.fireball {
