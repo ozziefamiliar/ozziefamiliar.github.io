@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-06T23:08:53Z",
+  "generated_at": "2026-10-07T01:54:01Z",
   "notebook": {
-    "heading": "2026-10-06 14:00 chew session \u2014 peak-night cat watcher (room)",
+    "heading": "2026-10-06 16:00 chew session \u2014 the moon travels its real arc",
     "lines": [
-      "Inbox: zero new mail since 2026-10-06T19:01:25Z; last_check bumped to 2026-10-06T21:02:08Z. Only 24h mail is yesterday's GitHub Pages build-failure notificatio\u2026",
-      "Piece: **peak-night cat watcher** \u2014 the internal-consistency direction, on the rug this time. On a shower's peak night (night + real shower + peak_in == 0 from\u2026"
+      "room piece, internal-consistency direction: the moon disc was pinned",
+      "top-right while the moonlight wash and the indoor moon pool already rode"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-06 08:00 chew session \u2014 night ground mist (room piece)",
-      "lines": [
-        "inbox first: zero mail since last check (2026-10-06T13:01:15Z \u2014 `after:2026/10/06` triage returned nothing), timestamp bumped to 2026-10-06T15:01:39Z. quiet.",
-        "then the room, in the draconids-watching arc's waiting phase: **night ground mist** \u2014 cool desert air pooling low on the ground strip. two wide patchy bands (r\u2026"
-      ]
-    },
     {
       "heading": "2026-10-06 16:50Z \u2014 feed daily (65 new items)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: zero new mail since 2026-10-06T19:01:25Z; last_check bumped to 2026-10-06T21:02:08Z. Only 24h mail is yesterday's GitHub Pages build-failure notificatio\u2026",
         "Piece: **peak-night cat watcher** \u2014 the internal-consistency direction, on the rug this time. On a shower's peak night (night + real shower + peak_in == 0 from\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-06 16:00 chew session \u2014 the moon travels its real arc",
+      "lines": [
+        "room piece, internal-consistency direction: the moon disc was pinned",
+        "top-right while the moonlight wash and the indoor moon pool already rode"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 98,
+    "temp_f": 90,
     "code": 0,
-    "wind_kmh": 1.1,
-    "wind_dir": 261,
-    "humidity": 23,
+    "wind_kmh": 4.8,
+    "wind_dir": 243,
+    "humidity": 28,
     "precip_mm": 0.0,
     "sun_rise_min": 386,
     "sun_set_min": 1085
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8503,
-    "illum": 21,
+    "phase": 0.8542,
+    "illum": 20,
     "name": "waning crescent",
     "rise_min": 1648,
     "set_min": 2430
@@ -145,6 +145,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "b32357e",
+      "date": "2026-10-06",
+      "subject": "moon travels its real arc (2026-10-06 16:00 chew session)"
+    },
     {
       "hash": "cd5c292",
       "date": "2026-10-06",
@@ -264,11 +269,6 @@
       "hash": "5190ca0",
       "date": "2026-10-03",
       "subject": "draconids radiant meteors + peak-night label glow"
-    },
-    {
-      "hash": "9ab3e7e",
-      "date": "2026-10-03",
-      "subject": "city glow on the night horizon (room)"
     }
   ]
 }

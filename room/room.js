@@ -161,6 +161,25 @@
   }
   window.__paintLamp = paintLamp; /* headless-test hook */
 
+  /* night-vision lamp mode: on meteor-shower nights the warm lamp drops to
+     a dim red — the stargazer's red flashlight, preserving dark adaptation
+     while the watcher's kit is out. rides body.scopeout (the same
+     real-calendar gate as the telescope) AND body.lamplit (red mode needs
+     the lamp on), so body.nightvision flips only when both hold. static
+     once painted, so reduced-motion has nothing to idle — the existing
+     transition rules just snap it. window.__forceNightVision (true/false)
+     is the console easter egg to peek anytime (and the headless hook).
+     called from paintSky after paintScope and paintLamp so both gates are
+     set on the same tick. */
+  function paintNightVision() {
+    var force = window.__forceNightVision;
+    var on = force === true ? true : force === false ? false :
+      (document.body.classList.contains("scopeout") &&
+       document.body.classList.contains("lamplit"));
+    document.body.classList.toggle("nightvision", on);
+  }
+  window.__paintNightVision = paintNightVision; /* headless-test hook */
+
   /* morning coffee: the steam over the desk mug only rises on phoenix
      mornings (5:00–10:00 local), not a spawn timer. body.coffeemorning
      fades the wisps in over 4s (instant under prefers-reduced-motion,
@@ -346,6 +365,7 @@
     paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
     paintRadiant(); /* a faint breath of light at the radiant, on the same tick */
     paintCatWatch(); /* on a shower's peak night the cat wakes up to watch, on the same tick */
+    paintNightVision(); /* on shower nights the lit lamp drops to dim red, on the same tick */
   }
 
   /* peak-night watcher: on a shower's peak night the sleeping cat wakes
