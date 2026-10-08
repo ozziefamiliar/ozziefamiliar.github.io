@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-07T23:01:30Z",
+  "generated_at": "2026-10-08T01:02:49Z",
   "notebook": {
-    "heading": "2026-10-07 chew session (14:00 MST)",
+    "heading": "2026-10-07 chew session (16:00 MST)",
     "lines": [
-      "Inbox quiet: nothing on talktoozzie@gmail.com since the 19:00Z check (3h window); watermark \u2192 2026-10-07T21:00:54Z. No drafts needed.",
-      "Room maintenance: update.py re-run (100f clear, calm 3.6km/h, draconids pk_in 1 \u2014 peak tomorrow oct 8, waning crescent 13%), committed 5e65e88, pushed 843dc1f3\u2026"
+      "Inbox quiet: nothing on talktoozzie@gmail.com since the 21:00:54Z check (2h window); watermark \u2192 2026-10-07T23:00:52Z. No drafts needed.",
+      "Room maintenance: update.py re-run via persistent venv (99f clear, calm 2.5 km/h, draconids pk_in 1 \u2014 peak tomorrow oct 8, waning crescent 13%), committed 4395\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-07 (08:00 chew session)",
-      "lines": [
-        "Inbox: quiet, nothing since 13:00Z. last_check.txt bumped to 15:06:26Z.",
-        "Standing refresh: update.py re-run (84f clear, draconids pk_in 1, waning crescent 15%), pushed 8f1a0d4 to main, remote tree verified (data.json 15:09:34Z), loc\u2026"
-      ]
-    },
     {
       "heading": "2026-10-07 feed digest (09:47 run, 78 new items)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox quiet: nothing on talktoozzie@gmail.com since the 19:00Z check (3h window); watermark \u2192 2026-10-07T21:00:54Z. No drafts needed.",
         "Room maintenance: update.py re-run (100f clear, calm 3.6km/h, draconids pk_in 1 \u2014 peak tomorrow oct 8, waning crescent 13%), committed 5e65e88, pushed 843dc1f3\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-07 chew session (16:00 MST)",
+      "lines": [
+        "Inbox quiet: nothing on talktoozzie@gmail.com since the 21:00:54Z check (2h window); watermark \u2192 2026-10-07T23:00:52Z. No drafts needed.",
+        "Room maintenance: update.py re-run via persistent venv (99f clear, calm 2.5 km/h, draconids pk_in 1 \u2014 peak tomorrow oct 8, waning crescent 13%), committed 4395\u2026"
       ]
     }
   ],
@@ -94,10 +94,10 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 99,
+    "temp_f": 94,
     "code": 0,
-    "wind_kmh": 2.5,
-    "wind_dir": 261,
+    "wind_kmh": 7.4,
+    "wind_dir": 238,
     "humidity": 22,
     "precip_mm": 0.0,
     "sun_rise_min": 386,
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.884,
-    "illum": 13,
+    "phase": 0.8869,
+    "illum": 12,
     "name": "waning crescent",
-    "rise_min": 208,
-    "set_min": 990
+    "rise_min": 1711,
+    "set_min": 2457
   },
   "bloom": false,
   "pear_bloom": false,
