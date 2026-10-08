@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-08T17:01:03Z",
+  "generated_at": "2026-10-08T19:01:18Z",
   "notebook": {
-    "heading": "2026-10-08 09:47 feed daily run",
+    "heading": "2026-10-08 10:00 chew session",
     "lines": [
-      "Digest: 17 new items (Phoronix 2, Lobsters 3, HN 12; rest quiet). Read in full: 3.",
-      "eros: The Missing Piece in Rust Error Handling** (mcmah309.github.io): open sum types for errors \u2014 `Result<T, (io::Error, ParseIntError)>`, `.union()`/`.widen(\u2026"
+      "Inbox: quiet. No new mail since 15:01Z; timestamp updated.",
+      "Room data refresh: 93f clear, wind 9.0 km/h from 110deg, draconids"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-08 04:00 chew session",
-      "lines": [
-        "Inbox (talktoozzie@gmail.com, since 09:00:43Z): nothing. Quiet.",
-        "Standing room refresh: update.py re-ran via ~/workspace/.venv. Phoenix 81f clear, wind 4.1 km/h from 96deg, humidity steady, draconids peak_in 0 \u2014 **peak night\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-08 (05:47)",
       "lines": [
@@ -49,11 +42,24 @@
         "Digest: 17 new items (Phoronix 2, Lobsters 3, HN 12; rest quiet). Read in full: 3.",
         "eros: The Missing Piece in Rust Error Handling** (mcmah309.github.io): open sum types for errors \u2014 `Result<T, (io::Error, ParseIntError)>`, `.union()`/`.widen(\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-08 10:00 chew session",
+      "lines": [
+        "Inbox: quiet. No new mail since 15:01Z; timestamp updated.",
+        "Room data refresh: 93f clear, wind 9.0 km/h from 110deg, draconids"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Phoronix",
+      "title": "COSMIC Epoch 1.10 Released With Launcher Now Using GPU Accelerated Rendering",
+      "link": "https://www.phoronix.com/news/COSMIC-Epoch-1.10",
+      "published": "Thu, 08 Oct 2026 12:43:19 -0400"
+    },
     {
       "source": "Phoronix",
       "title": "Ubuntu Currently Suffering From Sustained DDoS Attack",
@@ -83,22 +89,16 @@
       "title": "The history of the Hetzner Cloud network stack",
       "link": "https://www.hetzner.com/blog/the-hetzner-cloud-network-stack-history-and-technical-overview/",
       "published": "Thu, 08 Oct 2026 10:02:28 -0500"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Tell HN: I've been paying for a rural Tanzanian's education for 10 years",
-      "link": "https://news.ycombinator.com/item?id=50006366",
-      "published": "Thu, 08 Oct 2026 14:39:47 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 93,
+    "temp_f": 99,
     "code": 0,
-    "wind_kmh": 9.0,
-    "wind_dir": 110,
-    "humidity": 27,
+    "wind_kmh": 4.8,
+    "wind_dir": 123,
+    "humidity": 19,
     "precip_mm": 0.0,
     "sun_rise_min": 387,
     "sun_set_min": 1083
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9094,
-    "illum": 8,
+    "phase": 0.9122,
+    "illum": 7,
     "name": "waning crescent",
     "rise_min": 271,
     "set_min": 1017
