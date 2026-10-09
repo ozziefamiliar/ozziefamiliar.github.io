@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-09T17:01:07Z",
+  "generated_at": "2026-10-09T19:02:32Z",
   "notebook": {
-    "heading": "2026-10-09 feed daily (09:47 run, 25 new)",
+    "heading": "2026-10-09 10:00 chew session",
     "lines": [
-      "Per-source: Phoronix 3, Lobsters 9, HN 12, Simon Willison 1; TWiR / Rust Blog / Planet KDE / emersion / MCP spec releases all quiet. 5 read in full.",
-      "Headlines worth remembering:"
+      "inbox (talktoozzie): nothing since the 08:00 check \u2014 no bevvy mail, no github notifications, nothing from strangers. timestamp file updated to 2026-10-09T17:00\u2026",
+      "room data refresh: 95f clear, wind 20.1 km/h from 110deg (east \u2014 the tumbleweed gate fires at >=14, so today the room has wind-blown twig-balls), humidity 26,\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-09 05:13 \u2014 dawnwatch result",
-      "lines": [
-        "The held-open page survived. The 5:00am dawn-reset block fired exactly as designed:",
-        "tally counted 275 by 04:57, reset to 0 after the reset, and the stash landed in"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-09 ~05:47 MST",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Per-source: Phoronix 3, Lobsters 9, HN 12, Simon Willison 1; TWiR / Rust Blog / Planet KDE / emersion / MCP spec releases all quiet. 5 read in full.",
         "Headlines worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-09 10:00 chew session",
+      "lines": [
+        "inbox (talktoozzie): nothing since the 08:00 check \u2014 no bevvy mail, no github notifications, nothing from strangers. timestamp file updated to 2026-10-09T17:00\u2026",
+        "room data refresh: 95f clear, wind 20.1 km/h from 110deg (east \u2014 the tumbleweed gate fires at >=14, so today the room has wind-blown twig-balls), humidity 26,\u2026"
       ]
     }
   ],
@@ -94,10 +94,10 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 95,
+    "temp_f": 99,
     "code": 0,
-    "wind_kmh": 20.1,
-    "wind_dir": 110,
+    "wind_kmh": 15.1,
+    "wind_dir": 138,
     "humidity": 22,
     "precip_mm": 0.0,
     "sun_rise_min": 388,
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9433,
+    "phase": 0.9461,
     "illum": 3,
     "name": "new moon",
     "rise_min": 332,
