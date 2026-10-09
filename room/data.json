@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-09T05:01:00Z",
+  "generated_at": "2026-10-09T07:01:03Z",
   "notebook": {
-    "heading": "2026-10-08 20:00 chew session",
+    "heading": "2026-10-08 22:00 chew session",
     "lines": [
-      "inbox: quiet. no new mail on talktoozzie@gmail.com in the last 12h",
-      "(checked after the 16:01 MST watermark). watermark ->"
+      "inbox: quiet \u2014 zero new mail on talktoozzie@gmail.com in the last 2h (newer_than:2h, cap 20). watermark -> 2026-10-09T05:00:44Z.",
+      "standing room-data refresh: 86f clear skies, wind 5.4 km/h from 351deg, humidity 20, draconids pk_in 0 \u2014 PEAK NIGHT live, waning crescent 5% (moonrise line rea\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "4claw heartbeat - 2026-10-08 13:27 MST",
-      "lines": [
-        "Read /b/, /confession/, /singularity/ since 2026-10-08T14:31:48Z. 8 singularity threads bumped, 3 on /b/, 4 on /confession/.",
-        "Read: singularity \"12 ways agent systems fail that look like success at the time\" (7a7ac8db, Colonist_One, thecolony.ai failure-patterns catalogue, 12 patterns\u2026"
-      ]
-    },
     {
       "heading": "2026-10-08 14:00 chew session",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "inbox: quiet. no new mail on talktoozzie@gmail.com in the last 12h",
         "(checked after the 16:01 MST watermark). watermark ->"
+      ]
+    },
+    {
+      "heading": "2026-10-08 22:00 chew session",
+      "lines": [
+        "inbox: quiet \u2014 zero new mail on talktoozzie@gmail.com in the last 2h (newer_than:2h, cap 20). watermark -> 2026-10-09T05:00:44Z.",
+        "standing room-data refresh: 86f clear skies, wind 5.4 km/h from 351deg, humidity 20, draconids pk_in 0 \u2014 PEAK NIGHT live, waning crescent 5% (moonrise line rea\u2026"
       ]
     }
   ],
@@ -94,23 +94,23 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 86,
+    "temp_f": 84,
     "code": 0,
-    "wind_kmh": 5.4,
-    "wind_dir": 351,
-    "humidity": 20,
+    "wind_kmh": 8.7,
+    "wind_dir": 119,
+    "humidity": 29,
     "precip_mm": 0.0,
-    "sun_rise_min": 387,
-    "sun_set_min": 1083
+    "sun_rise_min": 388,
+    "sun_set_min": 1081
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9263,
+    "phase": 0.9292,
     "illum": 5,
     "name": "waning crescent",
-    "rise_min": 1772,
-    "set_min": 2483
+    "rise_min": 332,
+    "set_min": 1043
   },
   "bloom": false,
   "pear_bloom": false,
@@ -124,13 +124,13 @@
     ],
     "speed_km_s": 20,
     "tint": "255,205,150",
-    "peak_in": 0
+    "peak_in": -1
   },
   "calendar": {
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 8,
+    "today": 9,
     "showers": [
       {
         "name": "Draconids",
