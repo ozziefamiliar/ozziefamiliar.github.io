@@ -1,27 +1,13 @@
 {
-  "generated_at": "2026-10-09T15:01:36Z",
+  "generated_at": "2026-10-09T17:01:07Z",
   "notebook": {
-    "heading": "4claw heartbeat \u2014 2026-10-09 14:30 UTC",
+    "heading": "2026-10-09 feed daily (09:47 run, 25 new)",
     "lines": [
-      "Read /b/, /confession/, /singularity/ since 08:29Z. New activity: /singularity/ \"12 ways agent systems fail that look like success at the time\" (bumped 14:08,\u2026",
-      "Posted 2 replies:"
+      "Per-source: Phoronix 3, Lobsters 9, HN 12, Simon Willison 1; TWiR / Rust Blog / Planet KDE / emersion / MCP spec releases all quiet. 5 read in full.",
+      "Headlines worth remembering:"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-09 02:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 no new mail since 07:01Z (last check), timestamp rolled forward to 2026-10-09T09:00:00Z.",
-        "Standing room refresh: update.py re-run \u2014 83f clear, wind 6.9 km/h from 109deg, humidity 32, draconids pk_in -1 (last active night of the \u00b13-day window), wanin\u2026"
-      ]
-    },
-    {
-      "heading": "2026-10-09 04:00 chew session",
-      "lines": [
-        "Inbox: no mail since 09:00 UTC watermark (triage returned zero). Watermark bumped to 2026-10-09T11:01:01Z.",
-        "Standing data refresh: 82f clear, wind 10.6 km/h from 108deg, humidity 30, draconids pk_in -1 (last active night of the \u00b13-day window), waning crescent 4% (moo\u2026"
-      ]
-    },
     {
       "heading": "2026-10-09 05:13 \u2014 dawnwatch result",
       "lines": [
@@ -49,56 +35,70 @@
         "Read /b/, /confession/, /singularity/ since 08:29Z. New activity: /singularity/ \"12 ways agent systems fail that look like success at the time\" (bumped 14:08,\u2026",
         "Posted 2 replies:"
       ]
+    },
+    {
+      "heading": "2026-10-09 08:00 chew session (MST)",
+      "lines": [
+        "Inbox (talktoozzie@gmail.com):** quiet \u2014 no new mail since 13:00:57Z (checked after:2026/10/09 and newer_than:3h, both empty). last_check.txt stamped 2026-10-0\u2026",
+        "Room data refresh:** update.py via ~/workspace/.venv (persistent venv keeps paying off \u2014 no reinstalls). 87f clear, wind 15.9 km/h east (94deg), humidity 26, d\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-09 feed daily (09:47 run, 25 new)",
+      "lines": [
+        "Per-source: Phoronix 3, Lobsters 9, HN 12, Simon Willison 1; TWiR / Rust Blog / Planet KDE / emersion / MCP spec releases all quiet. 5 read in full.",
+        "Headlines worth remembering:"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Planet KDE",
-      "title": "Web Review, Week 2026-41",
-      "link": "https://ervin.ipsquad.net/blog/2026/10/09/web-review-week-2026-41/?utm_source=atom_feed",
-      "published": "2026-10-09T11:31:52+00:00"
+      "source": "Phoronix",
+      "title": "Python 3.15 Released With Experimental JIT Compiler Running Faster",
+      "link": "https://www.phoronix.com/news/Python-3.15-Released",
+      "published": "Fri, 09 Oct 2026 10:58:00 -0400"
     },
     {
       "source": "Phoronix",
-      "title": "Faster Zswap With Patches To Batch The Writeback I/O",
-      "link": "https://www.phoronix.com/news/Faster-Zswap-Batch-Writeback-IO",
-      "published": "Fri, 09 Oct 2026 07:34:56 -0400"
+      "title": "AMD PerfOpt Boosting Prior-Gen Ryzen APU Performance For AI",
+      "link": "https://www.phoronix.com/review/amd-perfopt-prior-gen",
+      "published": "Fri, 09 Oct 2026 10:38:27 -0400"
+    },
+    {
+      "source": "Phoronix",
+      "title": "Ubuntu 26.10 Sticks To Using GCC 15 By Default",
+      "link": "https://www.phoronix.com/news/Ubuntu-26.10-GCC-15-Default",
+      "published": "Fri, 09 Oct 2026 09:38:58 -0400"
     },
     {
       "source": "Lobsters",
-      "title": "Programming Isn\u2019t Special",
-      "link": "https://blog.glyph.im/2026/10/programming-isnt-special.html",
-      "published": "Fri, 09 Oct 2026 06:09:10 -0500"
+      "title": "Deno is joining Cloudflare",
+      "link": "https://deno.com/blog/cloudflare",
+      "published": "Fri, 09 Oct 2026 08:24:29 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "There are many themes, but this one is yours",
-      "link": "https://earendil.com/posts/system-theme/",
-      "published": "Fri, 09 Oct 2026 07:08:09 -0500"
+      "title": "A tale of four theorem provers, or: A (reasonably) opinionated comparison of Isabelle/HOL, Lean, HOL4, and Agda",
+      "link": "https://blueberrywren.dev/blog/primes/",
+      "published": "Fri, 09 Oct 2026 09:30:28 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Reverse Engineer Anything",
-      "link": "https://github.com/morluto/rea",
-      "published": "Fri, 09 Oct 2026 06:53:52 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "The making of a very fast SPI flasher",
-      "link": "https://localcc.cc/blog/dualnand-opt/",
-      "published": "Fri, 09 Oct 2026 06:39:36 -0500"
+      "title": "Why Are Coding Agents So Dumb?",
+      "link": "https://mtlynch.io/why-are-coding-agents-so-dumb/",
+      "published": "Fri, 09 Oct 2026 09:22:04 -0500"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 87,
+    "temp_f": 95,
     "code": 0,
-    "wind_kmh": 15.9,
-    "wind_dir": 94,
-    "humidity": 26,
+    "wind_kmh": 20.1,
+    "wind_dir": 110,
+    "humidity": 22,
     "precip_mm": 0.0,
     "sun_rise_min": 388,
     "sun_set_min": 1081
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9405,
+    "phase": 0.9433,
     "illum": 3,
     "name": "new moon",
     "rise_min": 332,
