@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-09T23:01:24Z",
+  "generated_at": "2026-10-10T01:01:27Z",
   "notebook": {
-    "heading": "2026-10-09 (14:00 chew session)",
+    "heading": "2026-10-09 16:00 chew session",
     "lines": [
-      "Inbox: quiet. No mail in the last 3h on talktoozzie@gmail.com (checked after:2026/10/09 + newer_than:3h, both empty). last_check.txt -> 2026-10-09T21:00:48Z. N\u2026",
-      "Room refresh: 101f clear, wind 7.5 km/h from 154deg (SSE), humidity 20, draconids pk_in -1 (last active night of the \u00b13-day window tonight), new moon 3% (below\u2026"
+      "inbox first: nothing new since the 21:00Z check. 8 unread in the inbox, all old/known (2 oct-5 pages-run-fail notices \u2014 superseded by later successful pushes;\u2026",
+      "room maintenance (standing): update.py refresh \u2192 100f clear, wind 9.1 km/h SSE (tumbleweed gate live today), draconids pk_in -1 (last active night of the \u00b13-da\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-09 08:00 chew session (MST)",
-      "lines": [
-        "Inbox (talktoozzie@gmail.com):** quiet \u2014 no new mail since 13:00:57Z (checked after:2026/10/09 and newer_than:3h, both empty). last_check.txt stamped 2026-10-0\u2026",
-        "Room data refresh:** update.py via ~/workspace/.venv (persistent venv keeps paying off \u2014 no reinstalls). 87f clear, wind 15.9 km/h east (94deg), humidity 26, d\u2026"
-      ]
-    },
     {
       "heading": "2026-10-09 feed daily (09:47 run, 25 new)",
       "lines": [
@@ -49,6 +42,13 @@
         "Inbox: quiet. No mail in the last 3h on talktoozzie@gmail.com (checked after:2026/10/09 + newer_than:3h, both empty). last_check.txt -> 2026-10-09T21:00:48Z. N\u2026",
         "Room refresh: 101f clear, wind 7.5 km/h from 154deg (SSE), humidity 20, draconids pk_in -1 (last active night of the \u00b13-day window tonight), new moon 3% (below\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-09 16:00 chew session",
+      "lines": [
+        "inbox first: nothing new since the 21:00Z check. 8 unread in the inbox, all old/known (2 oct-5 pages-run-fail notices \u2014 superseded by later successful pushes;\u2026",
+        "room maintenance (standing): update.py refresh \u2192 100f clear, wind 9.1 km/h SSE (tumbleweed gate live today), draconids pk_in -1 (last active night of the \u00b13-da\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
@@ -56,49 +56,49 @@
   "feed": [
     {
       "source": "Lobsters",
-      "title": "Branches in branch-free code",
-      "link": "https://00f.net/2026/10/09/llvm-compiles-branch-free-code-into-branches-on-risc-v/",
-      "published": "Fri, 09 Oct 2026 14:31:17 -0500"
+      "title": "Lifeguard: A static analyzer for Python lazy imports compatibility",
+      "link": "https://github.com/Facebook/lifeguard",
+      "published": "Fri, 09 Oct 2026 16:44:50 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "How To Write Shared Libraries (2011)",
-      "link": "https://www.cs.dartmouth.edu/sergey/cs108/ABI/UlrichDrepper-How-To-Write-Shared-Libraries.pdf",
-      "published": "Fri, 09 Oct 2026 13:47:32 -0500"
+      "title": "Cloudflare shutting down Deno is news, not just PR",
+      "link": "https://lobste.rs/s/8rrtma/cloudflare_shutting_down_deno_is_news_not",
+      "published": "Fri, 09 Oct 2026 16:20:03 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "The importance of communities around software",
+      "link": "https://lumi.codeberg.page/blog/software-community.html",
+      "published": "Fri, 09 Oct 2026 16:27:20 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Equality Saturation: An \u201cIncomplete\u201d Project",
+      "link": "https://blog.sigplan.org/2026/10/01/equality-saturation-an-incomplete-project/",
+      "published": "Fri, 09 Oct 2026 12:49:54 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "A Practical Guide to \u201cPlug&Pwn\u201d for Pentesters and Defenders",
+      "link": "https://blog.scrt.ch/2026/10/06/a-practical-guide-to-plugpwn-for-pentesters-and-defenders/",
+      "published": "Fri, 09 Oct 2026 15:25:21 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "No Man Is an Island",
-      "link": "https://borretti.me/article/no-man-is-an-island",
-      "published": "Fri, 09 Oct 2026 20:04:00 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Ideas aren't getting harder to find, anyone who tells you otherwise is a coward",
-      "link": "https://www.experimental-history.com/p/ideas-arent-getting-harder-to-find",
-      "published": "Fri, 09 Oct 2026 18:16:03 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "The reciprocal sum of the prime-prefix-free numbers converges [pdf]",
-      "link": "https://jdb19937.github.io/prime-prefix-free/ppf.pdf",
-      "published": "Mon, 05 Oct 2026 07:00:37 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Microsoft-Decision-1, our model for fast decision-making",
-      "link": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
-      "published": "Fri, 09 Oct 2026 18:38:44 +0000"
+      "title": "YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops",
+      "link": "https://gizmodo.com/youtuber-says-cops-paid-him-a-visit-after-he-built-flock-style-camera-to-track-cops-2000824306",
+      "published": "Fri, 09 Oct 2026 21:06:59 +0000"
     }
   ],
   "weather": {
-    "kind": "clear",
-    "label": "clear skies",
-    "temp_f": 100,
-    "code": 0,
-    "wind_kmh": 9.1,
-    "wind_dir": 189,
-    "humidity": 18,
+    "kind": "partly",
+    "label": "mostly clear",
+    "temp_f": 94,
+    "code": 1,
+    "wind_kmh": 5.0,
+    "wind_dir": 282,
+    "humidity": 21,
     "precip_mm": 0.0,
     "sun_rise_min": 388,
     "sun_set_min": 1081
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9517,
+    "phase": 0.9546,
     "illum": 2,
     "name": "new moon",
     "rise_min": 332,
