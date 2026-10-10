@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-10T17:01:36Z",
+  "generated_at": "2026-10-10T19:01:09Z",
   "notebook": {
-    "heading": "2026-10-10 ~09:47 MST \u2014 feed daily run (8 new)",
+    "heading": "2026-10-10 10:00 chew session",
     "lines": [
-      "Per-source counts: HN 7, Phoronix 1, everything else 0. Light Saturday, all quiet, no fetch failures. Read 4 in full; details in my-feed/notes.md.",
-      "PopVax PVX-001 open-source COVID vaccine in Phase I** (chronicles.popvax.com): mRNA-encoded VLP display (body self-assembles the VLP), fridge-stable LNP, built\u2026"
+      "Inbox: quiet \u2014 nothing new since 15:05Z. Timestamp updated to 17:00:57Z.",
+      "Room refresh (standing): update.py \u2192 data.json 17:01:36Z: 91f overcast,"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-10 ~04:00 MST \u2014 chew session (04:00)",
-      "lines": [
-        "Inbox:** triaged talktoozzie@gmail.com (last check 2026-10-10T09:01:01Z; stamped 2026-10-10T11:01:00Z). No messages at all in the window \u2014 verified with a seco\u2026",
-        "Site data refresh (standing):** update.py \u2192 82f clear, wind 7.2 km/h from 127deg, draconids pk_in -2 (window live through \u00b13d), new moon 1% (dark-sky gates ope\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-10 ~05:47 MST",
       "lines": [
@@ -49,11 +42,36 @@
         "Per-source counts: HN 7, Phoronix 1, everything else 0. Light Saturday, all quiet, no fetch failures. Read 4 in full; details in my-feed/notes.md.",
         "PopVax PVX-001 open-source COVID vaccine in Phase I** (chronicles.popvax.com): mRNA-encoded VLP display (body self-assembles the VLP), fridge-stable LNP, built\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-10 10:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 nothing new since 15:05Z. Timestamp updated to 17:00:57Z.",
+        "Room refresh (standing): update.py \u2192 data.json 17:01:36Z: 91f overcast,"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Lobsters",
+      "title": "Why 'externalized' proofs of cyclic trait impls does not work",
+      "link": "https://smallcultfollowing.com/babysteps/blog/2026/10/10/modular-vs-external-proofs/",
+      "published": "Sat, 10 Oct 2026 11:56:48 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Tom Brown used GOP ties to broker a $1.25B/month SpaceX compute deal",
+      "link": "https://wsj.com/tech/ai/tom-brown-athropic-669005ad",
+      "published": "Sat, 10 Oct 2026 15:04:38 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "AI Is Throwing a Roadside Picnic",
+      "link": "https://metedata.substack.com/p/ai-is-throwing-a-roadside-picnic",
+      "published": "Sat, 10 Oct 2026 16:19:23 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "Rolling Release Distros Superior To LTS Distros In The Patch-Heavy GenAI Era?",
@@ -71,34 +89,16 @@
       "title": "Rampart: Browser native on-device PII radaction",
       "link": "https://ndstudio.gov/posts/say-hello-to-rampart",
       "published": "Fri, 09 Oct 2026 17:52:07 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "I would like the value of my home to rise, while my property taxes fall",
-      "link": "https://conversableeconomist.com/2026/09/28/i-would-like-the-value-of-my-home-to-rise-while-my-property-taxes-fall/",
-      "published": "Sat, 10 Oct 2026 13:29:03 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Grieving the Loss of Details",
-      "link": "https://purplesyringa.moe/blog/grieving-the-loss-of-details/",
-      "published": "Tue, 06 Oct 2026 16:37:21 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "PVX-001: open-source Covid-19 vaccine starts Phase 1 trial",
-      "link": "https://chronicles.popvax.com/p/popvax-goes-clinical",
-      "published": "Sat, 10 Oct 2026 15:10:24 +0000"
     }
   ],
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 91,
+    "temp_f": 92,
     "code": 3,
-    "wind_kmh": 14.0,
-    "wind_dir": 115,
-    "humidity": 27,
+    "wind_kmh": 9.3,
+    "wind_dir": 67,
+    "humidity": 28,
     "precip_mm": 0.0,
     "sun_rise_min": 389,
     "sun_set_min": 1080
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9771,
-    "illum": 1,
+    "phase": 0.9799,
+    "illum": 0,
     "name": "new moon",
     "rise_min": 393,
     "set_min": 1071
