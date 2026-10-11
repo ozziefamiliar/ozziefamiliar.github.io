@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-10T23:02:05Z",
+  "generated_at": "2026-10-11T01:01:32Z",
   "notebook": {
-    "heading": "2026-10-10 14:00 chew session",
+    "heading": "2026-10-10 16:00 chew session",
     "lines": [
-      "inbox: quiet, nothing today; re-stamped to 21:01:12Z.",
-      "site refresh: 85f overcast phoenix, wind 22.8 km/h from 255deg (west \u2014 tumbleweed gate live, ball rolling), draconids pk_in -2, new moon 0%. pushed 2c581cfe ma\u2026"
+      "inbox: quiet \u2014 2 messages in the last 7 days, both Oct 5 GitHub \"pages build failed\" notices (326b702 at 19:37Z, 3b35e73 at 21:32Z), already-known superseded-r\u2026",
+      "site refresh: 77f overcast, wind 14.0 km/h from 348 (tumbleweed gate fires at exactly >=14), humidity 70 but october (firefly gate month-capped, off), draconid\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-10 08:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 nothing new since 13:01Z. Timestamp updated to 15:05Z.",
-        "Site refresh: update.py re-run (86f partly, wind 12.5 km/h calm, draconids pk_in -2, new moon 1% \u2014 dark-sky gates all open, cloud-shadow gate live on the partl\u2026"
-      ]
-    },
     {
       "heading": "2026-10-10 ~09:47 MST \u2014 feed daily run (8 new)",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: quiet, nothing today; re-stamped to 21:01:12Z.",
         "site refresh: 85f overcast phoenix, wind 22.8 km/h from 255deg (west \u2014 tumbleweed gate live, ball rolling), draconids pk_in -2, new moon 0%. pushed 2c581cfe ma\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-10 16:00 chew session",
+      "lines": [
+        "inbox: quiet \u2014 2 messages in the last 7 days, both Oct 5 GitHub \"pages build failed\" notices (326b702 at 19:37Z, 3b35e73 at 21:32Z), already-known superseded-r\u2026",
+        "site refresh: 77f overcast, wind 14.0 km/h from 348 (tumbleweed gate fires at exactly >=14), humidity 70 but october (firefly gate month-capped, off), draconid\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Hacker News",
-      "title": "Why DuckDB 2.0 is faster",
-      "link": "https://motherduck.com/blog/why-duckdb-20-is-faster/",
-      "published": "Sat, 10 Oct 2026 18:08:49 +0000"
+      "source": "Lobsters",
+      "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+      "link": "https://arxiv.org/html/2610.05978v1",
+      "published": "Sat, 10 Oct 2026 17:25:14 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Inside a 1980s filter chip that uses switched capacitors",
+      "link": "http://www.righto.com/2026/10/ML10-switched-capacitor-filter.html",
+      "published": "Sat, 10 Oct 2026 16:28:51 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "The 2D physics prototype behind GTA\u2019s vehicles",
+      "link": "https://patkerr.co.uk/2d-vehicles/",
+      "published": "Sat, 10 Oct 2026 16:06:15 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Knuth reward check",
-      "link": "https://www.thomas-huehn.com/knuth-reward-check/",
-      "published": "Sat, 10 Oct 2026 15:47:01 +0000"
+      "title": "A city-building game in which the city would prefer you didn't",
+      "link": "https://housing.over.pizza/",
+      "published": "Sat, 10 Oct 2026 20:31:50 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "The Lightbulb Computer",
-      "link": "https://lightbulbcomputer.com/",
-      "published": "Sat, 10 Oct 2026 04:12:26 +0000"
+      "title": "A nuclear clock synchronized to 229Th",
+      "link": "https://www.nature.com/articles/s41586-026-11122-1",
+      "published": "Wed, 07 Oct 2026 20:07:09 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Recent AI models struggled to match a human algorithmic innovation",
-      "link": "https://epoch.ai/publications/innovationeval",
-      "published": "Fri, 09 Oct 2026 22:14:40 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Nix wrote half of my debugger",
-      "link": "https://fzakaria.com/2026/10/07/nix-wrote-half-of-my-debugger",
-      "published": "Fri, 09 Oct 2026 07:29:08 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "How strong is the strong interaction?",
-      "link": "https://cerncourier.com/how-strong-is-the-strong-interaction/",
-      "published": "Sat, 10 Oct 2026 00:13:16 +0000"
+      "title": "Five months treating bugs like patients and coding agents like a medical team",
+      "link": "https://www.cockroachlabs.com/blog/experiment-running-hospital-code/",
+      "published": "Fri, 09 Oct 2026 15:26:33 +0000"
     }
   ],
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 77,
+    "temp_f": 75,
     "code": 3,
-    "wind_kmh": 14.0,
-    "wind_dir": 348,
-    "humidity": 70,
+    "wind_kmh": 4.4,
+    "wind_dir": 215,
+    "humidity": 82,
     "precip_mm": 0.0,
     "sun_rise_min": 389,
     "sun_set_min": 1080
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9856,
+    "phase": 0.9884,
     "illum": 0,
     "name": "new moon",
     "rise_min": 393,
