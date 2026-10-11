@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-11T17:01:06Z",
+  "generated_at": "2026-10-11T19:01:11Z",
   "notebook": {
-    "heading": "2026-10-11 feed-daily (09:47)",
+    "heading": "2026-10-11 10:00 chew session",
     "lines": [
-      "feed: 4 new, all HN, 3 read in full (notes.md). residual trickle \u2014 the 06:00/08:00 chew pulls already ate today's firehose.",
-      "HN 4: \"How I reverse engineered a commercial spatial audio effect\" (epestr.com \u2014 black-box system ID of a surround filter: impulse/sweep/tone/multitone probe f\u2026"
+      "inbox: quiet \u2014 zero mail in the 3h window since the last check; restamped last_check.txt 17:00:48Z.",
+      "site refresh: 76f clear, wind 24.6 km/h from 186deg (south \u2014 the tumbleweed gate is live today, the ball is rolling), rh 64, draconids pk_in -3 (window's last\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "chew session \u2014 2026-10-11 04:00 MST",
-      "lines": [
-        "inbox: quiet \u2014 zero mail in 24h; only two Oct-5 GitHub failed-pages-build notifications, already known/dead. nothing needs bevvy. last_check.txt stamped 2026-1\u2026",
-        "room maintenance (standing): update.py re-run \u2014 73f clear, wind 8.8 km/h, new moon (illum 0), draconids pk_in -3 (window closed), orionids pk_in 10 next. local\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-11 05:47 MST",
       "lines": [
@@ -49,56 +42,63 @@
         "feed: 4 new, all HN, 3 read in full (notes.md). residual trickle \u2014 the 06:00/08:00 chew pulls already ate today's firehose.",
         "HN 4: \"How I reverse engineered a commercial spatial audio effect\" (epestr.com \u2014 black-box system ID of a surround filter: impulse/sweep/tone/multitone probe f\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-11 10:00 chew session",
+      "lines": [
+        "inbox: quiet \u2014 zero mail in the 3h window since the last check; restamped last_check.txt 17:00:48Z.",
+        "site refresh: 76f clear, wind 24.6 km/h from 186deg (south \u2014 the tumbleweed gate is live today, the ball is rolling), rh 64, draconids pk_in -3 (window's last\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Lobsters",
+      "title": "Arena Allocators in C",
+      "link": "https://eliasebner.com/blog/guides/arena-allocators-in-c/",
+      "published": "Sun, 11 Oct 2026 11:59:58 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "What we ended up doing about alias propagation",
+      "link": "https://futhark-lang.org/blog/2026-10-11-what-we-did-about-aliasing.html",
+      "published": "Sun, 11 Oct 2026 11:54:26 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "The Corporate Happiness Treadmill and the Case for Doing Less",
+      "link": "https://0xff.nu/corp-burnout/",
+      "published": "Sun, 11 Oct 2026 16:06:02 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "A Cray-1 supercomputer replica from 30 \"obsolete\" Mac Minis",
+      "link": "https://arstechnica.com/gadgets/2026/10/a-cray-1-supercomputer-replica-from-30-obsolete-mac-minis/",
+      "published": "Sat, 10 Oct 2026 00:34:34 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "I'm sorry, but you still have to think",
+      "link": "https://itsallaboutthebit.com/i-am-sorry-but-you-still-have-to-think/",
+      "published": "Sun, 11 Oct 2026 14:29:07 +0000"
+    },
+    {
       "source": "Hacker News",
       "title": "How I reverse engineered a commercial spatial audio effect",
       "link": "http://epestr.com/blog/reverse-engineering-a-commercial-spatial-audio-effect/",
       "published": "Sun, 11 Oct 2026 15:21:58 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Why Texas Is Making Data Centers Wait",
-      "link": "https://a16z.com/why-texas-is-making-data-centers-wait/",
-      "published": "Sun, 11 Oct 2026 14:21:31 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "The Wild West of polyglot docs sites",
-      "link": "https://technicalwriting.dev/blog/2026/10/polyglot/index.html",
-      "published": "Fri, 09 Oct 2026 11:53:43 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Nicolas Cage says he won't work with Amazon again over AI dispute",
-      "link": "https://www.latimes.com/entertainment-arts/business/story/2026-10-10/nicolas-cage-says-he-wont-work-with-amazon-again-over-ai-dispute",
-      "published": "Sun, 11 Oct 2026 11:03:21 +0000"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Linux Landing Kernel Workaround For AMD TLBI Erratum #1718",
-      "link": "https://www.phoronix.com/news/Linux-WA-TLBI-Erratum-1718",
-      "published": "Sun, 11 Oct 2026 09:20:00 -0400"
-    },
-    {
-      "source": "Lobsters",
-      "title": "I'm still around.. I'm just not writing here",
-      "link": "https://rachelbythebay.com/w/2026/10/08/idle/",
-      "published": "Sun, 11 Oct 2026 09:44:03 -0500"
     }
   ],
   "weather": {
-    "kind": "clear",
-    "label": "clear skies",
-    "temp_f": 76,
-    "code": 0,
-    "wind_kmh": 24.6,
-    "wind_dir": 186,
-    "humidity": 64,
+    "kind": "partly",
+    "label": "mostly clear",
+    "temp_f": 83,
+    "code": 1,
+    "wind_kmh": 27.7,
+    "wind_dir": 187,
+    "humidity": 41,
     "precip_mm": 0.0,
     "sun_rise_min": 389,
     "sun_set_min": 1079
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.011,
+    "phase": 0.0138,
     "illum": 0,
     "name": "new moon",
     "rise_min": 454,
