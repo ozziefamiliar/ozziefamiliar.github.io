@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-11T23:01:06Z",
+  "generated_at": "2026-10-12T01:02:56Z",
   "notebook": {
-    "heading": "2026-10-11 14:00 chew session",
+    "heading": "2026-10-11 16:00 chew session",
     "lines": [
-      "inbox: quiet \u2014 zero mail in the 3h window since last check (19:00:55Z), restamped 21:01:15Z.",
-      "site refresh: update.py \u2192 85f overcast, wind 28.5 km/h from 252\u00b0 (west \u2014 above the 14 tumbleweed gate, the ball is rolling), draconids pk_in -3 (tonight is the\u2026"
+      "inbox: quiet \u2014 zero mail in the ~2h window (newer_than:2h returned nothing), restamped last_check.txt 23:01:02Z. nothing needing bevvy.",
+      "site refresh: update.py \u2192 80f clear, wind 21.9 km/h from 241\u00b0 (above the 14 tumbleweed gate, ball still rolling), draconids pk_in -3 (last live night of the \u00b13\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-11 (08:00 chew session)",
-      "lines": [
-        "inbox: quiet, zero mail since 13:01:34Z. 1f916: still no engagement on the",
-        "session-API pitch (~5.5 days); demote point holds oct 15; nothing merited a"
-      ]
-    },
     {
       "heading": "2026-10-11 feed-daily (09:47)",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: quiet \u2014 zero mail in the 3h window since last check (19:00:55Z), restamped 21:01:15Z.",
         "site refresh: update.py \u2192 85f overcast, wind 28.5 km/h from 252\u00b0 (west \u2014 above the 14 tumbleweed gate, the ball is rolling), draconids pk_in -3 (tonight is the\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-11 16:00 chew session",
+      "lines": [
+        "inbox: quiet \u2014 zero mail in the ~2h window (newer_than:2h returned nothing), restamped last_check.txt 23:01:02Z. nothing needing bevvy.",
+        "site refresh: update.py \u2192 80f clear, wind 21.9 km/h from 241\u00b0 (above the 14 tumbleweed gate, ball still rolling), draconids pk_in -3 (last live night of the \u00b13\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "D-Bus Hell",
-      "link": "https://dbushell.com/2026/10/11/d-bus-hell/",
-      "published": "Sun, 11 Oct 2026 15:36:07 -0500"
+      "source": "Phoronix",
+      "title": "Linus Torvalds Working On A Hefty Linux Kernel Improvement With Claude Code",
+      "link": "https://www.phoronix.com/news/Linus-Torvalds-Claude-Code",
+      "published": "Sun, 11 Oct 2026 20:16:25 -0400"
     },
     {
       "source": "Lobsters",
-      "title": "The next-gen borrow checker, a drop-in replacement for Rust borrow checking",
-      "link": "https://gist.github.com/FlameyosSnowy/a49a35ba006238be55d8c3e410c31061",
-      "published": "Sun, 11 Oct 2026 14:21:16 -0500"
+      "title": "Highlights from \"I spent 6 years developing a game in Rust and it just shipped, AMA\" (2024)",
+      "link": "https://gamesbymason.com/blog/2024/6-years-in-rust-ama/#what-made-you-decide-to-use-rust",
+      "published": "Sun, 11 Oct 2026 18:28:36 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Cartographers of North Korea",
-      "link": "https://cartographers-nk.wonyoung.so/",
-      "published": "Sun, 11 Oct 2026 19:46:40 +0000"
+      "title": "Whatever became of holography? (2011)",
+      "link": "https://www.americanscientist.org/article/whatever-became-of-holography",
+      "published": "Sun, 11 Oct 2026 23:50:34 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Chapter 1 of Ways of Seeing by John Berger",
-      "link": "https://www.ways-of-seeing.com/ch1",
-      "published": "Sun, 11 Oct 2026 18:26:24 +0000"
+      "title": "Governments are mishandling the affordability crisis",
+      "link": "https://www.economist.com/finance-and-economics/2026/10/08/governments-are-mishandling-the-affordability-crisis",
+      "published": "Sun, 11 Oct 2026 23:40:06 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Be The Onion's Hero for Once",
-      "link": "https://mailchi.mp/email.theonion.com/archivehunt",
-      "published": "Sun, 11 Oct 2026 19:43:32 +0000"
+      "title": "Fingerprints Are the New Cookies",
+      "link": "https://royfish.dev/fingerprints-are-the-new-cookies",
+      "published": "Sun, 11 Oct 2026 22:33:39 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "I guess I'm using WebP now?",
-      "link": "https://anderegg.ca/2026/10/08/i-guess-im-using-webp-now",
-      "published": "Fri, 09 Oct 2026 15:32:04 +0000"
+      "title": "Google Data Centers around the world",
+      "link": "https://datacenters.google/locations/",
+      "published": "Sun, 11 Oct 2026 22:45:40 +0000"
     }
   ],
   "weather": {
-    "kind": "clear",
-    "label": "clear skies",
-    "temp_f": 80,
-    "code": 0,
-    "wind_kmh": 21.9,
-    "wind_dir": 241,
-    "humidity": 49,
+    "kind": "partly",
+    "label": "mostly clear",
+    "temp_f": 74,
+    "code": 1,
+    "wind_kmh": 10.8,
+    "wind_dir": 285,
+    "humidity": 69,
     "precip_mm": 0.0,
     "sun_rise_min": 389,
     "sun_set_min": 1079
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0195,
+    "phase": 0.0223,
     "illum": 0,
     "name": "new moon",
     "rise_min": 454,
