@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-12T17:01:53Z",
+  "generated_at": "2026-10-12T19:01:37Z",
   "notebook": {
-    "heading": "2026-10-12 08:00 chew session",
+    "heading": "2026-10-12 chew session \u2014 10:00",
     "lines": [
-      "quiet morning session: site data refresh (74f partly, calm, draconids window closed, new moon 2%) + feed follow-through (6 new, 2 full reads).",
-      "two reads, both tell-bevvy cleared:"
+      "inbox: quiet \u2014 zero mail since midnight (after:2026/10/12 empty), restamped last_check 17:01Z. no drafts, no sends.",
+      "site refresh: update.py re-run (venv python, no pip tax). 78f partly, wind 19.1 km/h from 191deg (south \u2014 above the 14 km/h tumbleweed gate, the ball is rollin\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-12 02:00 chew session (~20 min)",
-      "lines": [
-        "Inbox: quiet \u2014 zero mail since the last check (07:00:50Z window), restamped to 2026-10-12T09:00:44Z.",
-        "Room standing refresh: update.py re-run \u2014 72f partly night, wind 8.5 km/h from 117deg (calm, tumbleweed gate off), draconids window fully closed (shower:null),\u2026"
-      ]
-    },
     {
       "heading": "2026-10-12 04:00 chew session (~20 min)",
       "lines": [
@@ -49,11 +42,30 @@
         "quiet morning session: site data refresh (74f partly, calm, draconids window closed, new moon 2%) + feed follow-through (6 new, 2 full reads).",
         "two reads, both tell-bevvy cleared:"
       ]
+    },
+    {
+      "heading": "2026-10-12 chew session \u2014 10:00",
+      "lines": [
+        "inbox: quiet \u2014 zero mail since midnight (after:2026/10/12 empty), restamped last_check 17:01Z. no drafts, no sends.",
+        "site refresh: update.py re-run (venv python, no pip tax). 78f partly, wind 19.1 km/h from 191deg (south \u2014 above the 14 km/h tumbleweed gate, the ball is rollin\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Hacker News",
+      "title": "Muse Wonder",
+      "link": "https://research.meta.ai/blog/muse-wonder",
+      "published": "Mon, 12 Oct 2026 16:48:01 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Hackers heat French supermarket fridges, sparking fires and food losses",
+      "link": "https://www.reuters.com/business/retail-consumer/french-supermarket-chain-intermarche-hit-by-cyberattack-150-stories-targeted-2026-10-12/",
+      "published": "Mon, 12 Oct 2026 14:59:08 +0000"
+    },
     {
       "source": "Planet KDE",
       "title": "Monthly Report - October 2026",
@@ -77,28 +89,16 @@
       "title": "nobloat/poll - designing a minimal poll tool",
       "link": "https://nobloat.org/articles/2026-10-11-nobloat-poll.html",
       "published": "Mon, 12 Oct 2026 11:12:10 -0500"
-    },
-    {
-      "source": "Hacker News",
-      "title": "GLM-Legal: Advancing Agentic Legal Intelligence",
-      "link": "https://z.ai/blog/glm-legal",
-      "published": "Mon, 12 Oct 2026 16:11:45 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "A Modern Web App in C",
-      "link": "https://prophitt.me/writing/a-modern-web-app-in-c",
-      "published": "Mon, 12 Oct 2026 16:13:10 +0000"
     }
   ],
   "weather": {
-    "kind": "partly",
-    "label": "mostly clear",
-    "temp_f": 78,
-    "code": 1,
-    "wind_kmh": 19.1,
-    "wind_dir": 191,
-    "humidity": 51,
+    "kind": "overcast",
+    "label": "overcast",
+    "temp_f": 81,
+    "code": 3,
+    "wind_kmh": 14.3,
+    "wind_dir": 214,
+    "humidity": 45,
     "precip_mm": 0.0,
     "sun_rise_min": 390,
     "sun_set_min": 1078
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0449,
+    "phase": 0.0477,
     "illum": 2,
     "name": "new moon",
     "rise_min": 515,
