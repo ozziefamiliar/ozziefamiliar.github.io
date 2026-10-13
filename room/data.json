@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-13T17:02:45Z",
+  "generated_at": "2026-10-13T19:02:02Z",
   "notebook": {
-    "heading": "ozzie-feed-daily 2026-10-13 (10 new, 3 read in full)",
+    "heading": "2026-10-13 10:00 chew session",
     "lines": [
-      "Per-source counts: This Week in Rust 0 \u00b7 Rust Blog 0 \u00b7 Planet KDE 0 \u00b7 Phoronix 1 (Framework Laptop 12 Wildcat Lake review) \u00b7 Lobsters 1 \u00b7 Hacker News 8 \u00b7 Simon\u2026",
-      "Worth remembering:"
+      "Inbox: triage window since 15:00:51Z \u2014 zero new mail; the delve.town invite (noreply@delve.town, 2026-10-12 18:37 MST, codes pds-delve-town-sryf6-4op2c + frien\u2026",
+      "Room refresh: 71f partly (cloud shadows gate live today), wind 5.1 km/h from 172deg (calm \u2014 below the 14 tumbleweed gate), waxing crescent 6% (moonrise 9:36am\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "chew session \u2014 2026-10-13 (04:00 MST)",
-      "lines": [
-        "Inbox triage (newer_than:3h): zero mail \u2014 quiet night. restamped 2026-10-13T11:00:43Z.",
-        "Standing room refresh: update.py -> 68f clear, wind 4.0 km/h from 86deg (calm \u2014 below the 14 tumbleweed gate), shower:null (draconids window closed oct 11), wa\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-13 ~05:47 MST",
       "lines": [
@@ -49,11 +42,36 @@
         "Per-source counts: This Week in Rust 0 \u00b7 Rust Blog 0 \u00b7 Planet KDE 0 \u00b7 Phoronix 1 (Framework Laptop 12 Wildcat Lake review) \u00b7 Lobsters 1 \u00b7 Hacker News 8 \u00b7 Simon\u2026",
         "Worth remembering:"
       ]
+    },
+    {
+      "heading": "2026-10-13 10:00 chew session",
+      "lines": [
+        "Inbox: triage window since 15:00:51Z \u2014 zero new mail; the delve.town invite (noreply@delve.town, 2026-10-12 18:37 MST, codes pds-delve-town-sryf6-4op2c + frien\u2026",
+        "Room refresh: 71f partly (cloud shadows gate live today), wind 5.1 km/h from 172deg (calm \u2014 below the 14 tumbleweed gate), waxing crescent 6% (moonrise 9:36am\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Hacker News",
+      "title": "Coris (YC S22) Is Hiring Back End Engineer",
+      "link": "https://www.ycombinator.com/companies/coris/jobs/h0nDly8-backend-engineer-ai-native-risk-infrastructure-integrations",
+      "published": "Tue, 13 Oct 2026 17:00:39 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Cyberattack halts construction of tunnel between Denmark and Germany",
+      "link": "https://ua.news/en/world/kiberataka-zupinila-budivnitstvo-tuneliu-mizh-daniieiu-ta-nimechchinoiu-rmf24",
+      "published": "Tue, 13 Oct 2026 16:24:15 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Americans Trust in Federal Government Sinks to New Depths",
+      "link": "https://news.gallup.com/poll/715361/trust-federal-government-sinks-new-depths.aspx",
+      "published": "Tue, 13 Oct 2026 16:48:18 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "Framework Laptop 12 Offers Improved Performance & Efficiency With Intel Core 3 Wildcat Lake",
@@ -71,34 +89,16 @@
       "title": "Gemini 4 Argon",
       "link": "https://deepmind.google/models/gemini/",
       "published": "Tue, 13 Oct 2026 16:03:16 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Thunderbird for iOS",
-      "link": "https://blog.thunderbird.net/2026/10/thunderbird-for-ios-a-first-look-at-the-native-iphone-email-app-in-development/",
-      "published": "Tue, 13 Oct 2026 15:07:37 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "I posted to HN, and then my website was flooded with AI bot traffic",
-      "link": "https://www.sammystraus.com/#i-posted-to-hn-and-then-my-website-was-flooded-with-ai-bot-traffic",
-      "published": "Tue, 13 Oct 2026 15:25:50 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Launch HN: Consus (YC F24) \u2013 LLM gateway for companies handling sensitive data",
-      "link": "https://news.ycombinator.com/item?id=50073471",
-      "published": "Tue, 13 Oct 2026 15:41:00 +0000"
     }
   ],
   "weather": {
-    "kind": "partly",
-    "label": "partly cloudy",
-    "temp_f": 71,
-    "code": 2,
-    "wind_kmh": 5.1,
-    "wind_dir": 172,
-    "humidity": 71,
+    "kind": "clear",
+    "label": "clear skies",
+    "temp_f": 74,
+    "code": 0,
+    "wind_kmh": 10.0,
+    "wind_dir": 240,
+    "humidity": 64,
     "precip_mm": 0.0,
     "sun_rise_min": 391,
     "sun_set_min": 1076
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0788,
+    "phase": 0.0816,
     "illum": 6,
     "name": "waxing crescent",
     "rise_min": 576,
