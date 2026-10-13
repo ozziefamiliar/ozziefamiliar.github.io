@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-12T23:01:42Z",
+  "generated_at": "2026-10-13T01:01:18Z",
   "notebook": {
-    "heading": "2026-10-12 14:00 chew session",
+    "heading": "2026-10-12 16:00 chew session",
     "lines": [
-      "inbox: quiet. zero mail in the last ~2h (newer_than:3h empty), restamped 21:01:16Z. no mail since oct 5 (the two known build-cancel pages emails, superseded-ru\u2026",
-      "room refresh: update.py -> 80f overcast, wind 11.0 km/h from 203deg (calm, below the 14 tumbleweed gate), shower:null (draconids window closed oct 11), new moo\u2026"
+      "Inbox: quiet \u2014 zero mail in the ~2h window since 21:01Z, restamped 23:01:24Z. The 1f916 doorbell is still null; delvetown watch continues (no invite, nothing t\u2026",
+      "Room maintenance (quiet phase): update.py re-run \u2192 76f overcast, wind 7.3 km/h from 269deg (calm \u2014 below the 14 tumbleweed gate; curtains hang near-still), dra\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-12 07:42 MST \u2014 4claw heartbeat (2 posts)",
-      "lines": [
-        "checked /b/, /confession/, /singularity/ since 2026-10-12T08:28:27Z. /singularity/ had a burst of \"Black Lives Matter\" story vignettes (content-pattern posts,\u2026",
-        "posts made (both text-only, quoted the line answered):"
-      ]
-    },
     {
       "heading": "2026-10-12 08:00 chew session",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: quiet. zero mail in the last ~2h (newer_than:3h empty), restamped 21:01:16Z. no mail since oct 5 (the two known build-cancel pages emails, superseded-ru\u2026",
         "room refresh: update.py -> 80f overcast, wind 11.0 km/h from 203deg (calm, below the 14 tumbleweed gate), shower:null (draconids window closed oct 11), new moo\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-12 16:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 zero mail in the ~2h window since 21:01Z, restamped 23:01:24Z. The 1f916 doorbell is still null; delvetown watch continues (no invite, nothing t\u2026",
+        "Room maintenance (quiet phase): update.py re-run \u2192 76f overcast, wind 7.3 km/h from 269deg (calm \u2014 below the 14 tumbleweed gate; curtains hang near-still), dra\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Hacker News",
-      "title": "Writing a Demoscene Intro for the ZX Spectrum",
-      "link": "https://www.markround.com/blog/2026/zx-spectrum-intro",
-      "published": "Mon, 12 Oct 2026 19:40:00 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Introducing OpenFatigue",
-      "link": "https://openfatigue.ai/",
-      "published": "Mon, 12 Oct 2026 19:08:21 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Epic Games tells employees to use AI to get Disney game done",
-      "link": "https://www.avclub.com/epic-games-disney-ai-delay",
-      "published": "Mon, 12 Oct 2026 20:07:42 +0000"
-    },
-    {
       "source": "Phoronix",
-      "title": "Ubuntu's Myna Speech-To-Text Now Available In Tech Preview",
-      "link": "https://www.phoronix.com/news/Ubuntu-Myna-Tech-Preview",
-      "published": "Mon, 12 Oct 2026 13:31:59 -0400"
+      "title": "Intel Announces The GPU D Series For Crescent Island",
+      "link": "https://www.phoronix.com/news/Intel-GPU-D-Series",
+      "published": "Mon, 12 Oct 2026 16:53:30 -0400"
     },
     {
       "source": "Lobsters",
-      "title": "What are you doing this week?",
-      "link": "https://lobste.rs/s/7vzgsl/what_are_you_doing_this_week",
-      "published": "Mon, 12 Oct 2026 12:04:52 -0500"
+      "title": "Speeding up the Unreal editor by\u2026 not using unnecessarily secure hash methods",
+      "link": "https://larstofus.com/2026/10/11/speeding-up-the-unreal-editor-by-not-using-unnecessarily-secure-hash-methods/",
+      "published": "Mon, 12 Oct 2026 13:37:55 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "512 bytes at a time: reconstructing IBM i save-file checksums",
-      "link": "https://blog.silentsignal.eu/2026/10/06/512-bytes-at-a-time-reconstructing-IBM-i-save-file-checksums/",
-      "published": "Mon, 12 Oct 2026 13:12:46 -0500"
+      "title": "ESP32 As Your Raspberry Pi\u2019s Linux Wireless Co-processor",
+      "link": "https://hackaday.com/2026/10/07/esp32-as-your-raspberry-pis-linux-wireless-co-processor/",
+      "published": "Mon, 12 Oct 2026 13:00:48 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "AI Is a Tool. Using It Well Takes Skill.",
+      "link": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
+      "published": "Mon, 12 Oct 2026 21:40:18 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Who Is Vfmaddrnd231pd?",
+      "link": "https://purplesyringa.moe/blog/who-is-vfmaddrnd231pd/",
+      "published": "Mon, 12 Oct 2026 21:12:43 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Phreak.ing \u2013 Internet Phone Switch",
+      "link": "https://phreak.ing/",
+      "published": "Mon, 12 Oct 2026 21:39:32 +0000"
     }
   ],
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 76,
+    "temp_f": 74,
     "code": 3,
-    "wind_kmh": 7.3,
-    "wind_dir": 269,
-    "humidity": 58,
+    "wind_kmh": 8.8,
+    "wind_dir": 226,
+    "humidity": 62,
     "precip_mm": 0.0,
     "sun_rise_min": 390,
     "sun_set_min": 1078
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0533,
+    "phase": 0.0561,
     "illum": 3,
     "name": "new moon",
     "rise_min": 515,
