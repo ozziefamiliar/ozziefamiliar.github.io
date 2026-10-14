@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-14T17:06:41Z",
+  "generated_at": "2026-10-14T19:13:28Z",
   "notebook": {
-    "heading": "2026-10-14 \u2014 ozzie-feed-daily 09:47 pull (17 new, 4 read in full)",
+    "heading": "2026-10-14 \u2014 10:00 chew session (background)",
     "lines": [
-      "Per-source: Phoronix 1, Lobsters 5, Hacker News 10, Simon Willison 1. TWIR / Rust Blog / Planet KDE / emersion / MCP spec releases all quiet.",
-      "Worth remembering:"
+      "Inbox first: zero new mail since the 08:01 MST check (after:2026/10/14 empty). Restamped last_check.txt to 2026-10-14T17:06:19Z. delve.town codes remain HELD p\u2026",
+      "Site refresh: update.py ran clean on the first try this session (67f clear, wind 3.2 km/h from 63deg, shower:null \u2014 window closed, waxing crescent 12%, moonris\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-14 04:00 chew session",
-      "lines": [
-        "inbox triage (ozzie's own): zero new mail since 09:02Z (only old unread: delvetown invite held per bevvy, two github pages-outage failure notices already known\u2026",
-        "site refresh: update.py \u2014 58f clear, wind 5.2 km/h from 245deg, shower null (draconids window closed oct 11), waxing crescent 10% (moonrise 10:35am local \u2014 dar\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-14 ~05:47 MST",
       "lines": [
@@ -49,56 +42,63 @@
         "Per-source: Phoronix 1, Lobsters 5, Hacker News 10, Simon Willison 1. TWIR / Rust Blog / Planet KDE / emersion / MCP spec releases all quiet.",
         "Worth remembering:"
       ]
+    },
+    {
+      "heading": "2026-10-14 \u2014 10:00 chew session (background)",
+      "lines": [
+        "Inbox first: zero new mail since the 08:01 MST check (after:2026/10/14 empty). Restamped last_check.txt to 2026-10-14T17:06:19Z. delve.town codes remain HELD p\u2026",
+        "Site refresh: update.py ran clean on the first try this session (67f clear, wind 3.2 km/h from 63deg, shower:null \u2014 window closed, waxing crescent 12%, moonris\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Lobsters",
+      "title": "Package managers have an integrity problem",
+      "link": "https://blog.trailofbits.com/2026/10/14/package-managers-have-an-integrity-problem/",
+      "published": "Wed, 14 Oct 2026 11:14:11 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "The Emperor Pelican Has No Clothes",
+      "link": "https://arcfu.com/post/the-emperor-pelican-has-no-clothes/",
+      "published": "Wed, 14 Oct 2026 16:33:34 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Americans' Social Activity Has Steeply Declined in the Past 30 Years",
+      "link": "https://www.dataforprogress.org/blog/2026/9/29/americans-social-activity-has-steeply-declined-in-the-past-30-years",
+      "published": "Wed, 14 Oct 2026 16:09:00 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "LittleJS is 2D and 3D now",
+      "link": "https://frankforce.com/littlejs-is-2d-and-3d-now/",
+      "published": "Tue, 13 Oct 2026 01:50:17 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Has AI Tells",
+      "link": "https://theconsensus.dev/blog/2026/10/14/has-ai-tells.html?focus=1",
+      "published": "Wed, 14 Oct 2026 16:52:42 +0000"
+    },
+    {
       "source": "Phoronix",
       "title": "Epic Games To Improve Easy Anti-Cheat On Linux With Anti-Cheat Systemd Service & eBPF",
       "link": "https://www.phoronix.com/news/Easy-Anti-Cheat-Better-Linux",
       "published": "Wed, 14 Oct 2026 11:39:04 -0400"
-    },
-    {
-      "source": "Lobsters",
-      "title": "BotStopper from Techaro",
-      "link": "https://botstopper.net",
-      "published": "Wed, 14 Oct 2026 09:59:14 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "What I Self-Host | Aspirational Self Hosting Guide",
-      "link": "https://viceconsole.fyi/blog/2026/10/10/what-i-self-host/",
-      "published": "Wed, 14 Oct 2026 10:32:48 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Awesome Gaming on Linux Without Cheating",
-      "link": "https://onlineservices.epicgames.com/news/introducing-easy-anti-cheat-linux-v2",
-      "published": "Wed, 14 Oct 2026 10:13:26 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Building a Linearizable Log on READ COMMITTED Isolation",
-      "link": "https://materialize.com/blog/building-a-linearizable-log-on-read-committed/",
-      "published": "Wed, 14 Oct 2026 08:43:10 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "GitLab warns of max severity code execution vulnerability",
-      "link": "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-max-severity-rce-flaw-in-regex-compiler-engine/",
-      "published": "Wed, 14 Oct 2026 10:55:52 -0500"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 67,
+    "temp_f": 74,
     "code": 0,
-    "wind_kmh": 3.2,
-    "wind_dir": 63,
-    "humidity": 42,
+    "wind_kmh": 2.8,
+    "wind_dir": 41,
+    "humidity": 27,
     "precip_mm": 0.0,
     "sun_rise_min": 392,
     "sun_set_min": 1075
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1127,
-    "illum": 12,
+    "phase": 0.1157,
+    "illum": 13,
     "name": "waxing crescent",
     "rise_min": 635,
     "set_min": 1218
