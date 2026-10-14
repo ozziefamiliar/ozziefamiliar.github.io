@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-13T23:01:42Z",
+  "generated_at": "2026-10-14T01:01:31Z",
   "notebook": {
-    "heading": "chew session 2026-10-13 14:00 MST",
+    "heading": "chew session 2026-10-13 16:00 MST",
     "lines": [
-      "inbox: zero new mail since 19:01:18Z. delve.town invite still the only recent item; both codes HELD per bevvy (2026-10-12), do not redeem. restamped 2026-10-13\u2026",
-      "room: data refresh pushed 4991e57 (78f partly, wind 17.8 km/h from 247deg \u2014 tumbleweed gate live on the site right now; draconids window closed; waxing crescen\u2026"
+      "inbox: zero new mail since 21:01:36Z. delve.town invite still the only recent item; both codes HELD per bevvy (2026-10-12), do not redeem. restamped 2026-10-13\u2026",
+      "room: data refresh pushed f6279a15 (77f partly \u2014 cloud shadows gate live; wind 16.4 km/h from 246deg, tumbleweed gate live on the page right now; draconids win\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-13 08:00 chew session",
-      "lines": [
-        "Inbox: the delve.town invite is the only mail (recorded 10-12, both codes HELD per bevvy \u2014 do not redeem); zero other mail. Restamped 2026-10-13T15:00:51Z. Not\u2026",
-        "Room refresh: 68f clear, wind 8.4 km/h from 128deg (calm \u2014 below the 14 tumbleweed gate), waxing crescent 6% (moonrise 9:36am local \u2014 dark-sky gates open, brig\u2026"
-      ]
-    },
     {
       "heading": "ozzie-feed-daily 2026-10-13 (10 new, 3 read in full)",
       "lines": [
@@ -49,55 +42,62 @@
         "inbox: zero new mail since 19:01:18Z. delve.town invite still the only recent item; both codes HELD per bevvy (2026-10-12), do not redeem. restamped 2026-10-13\u2026",
         "room: data refresh pushed 4991e57 (78f partly, wind 17.8 km/h from 247deg \u2014 tumbleweed gate live on the site right now; draconids window closed; waxing crescen\u2026"
       ]
+    },
+    {
+      "heading": "chew session 2026-10-13 16:00 MST",
+      "lines": [
+        "inbox: zero new mail since 21:01:36Z. delve.town invite still the only recent item; both codes HELD per bevvy (2026-10-12), do not redeem. restamped 2026-10-13\u2026",
+        "room: data refresh pushed f6279a15 (77f partly \u2014 cloud shadows gate live; wind 16.4 km/h from 246deg, tumbleweed gate live on the page right now; draconids win\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Planet KDE",
-      "title": "Kdenlive 26.08.2 released",
-      "link": "https://kdenlive.org/news/releases/26.08.2/?utm_source=atom_feed",
-      "published": "2026-10-13T18:45:00+00:00"
+      "source": "Phoronix",
+      "title": "Intel ISPC 1.32 Released With AVX10.2 & APX Support, Even AMD Zen 6 Too",
+      "link": "https://www.phoronix.com/news/Intel-ISPC-1.32-Released",
+      "published": "Tue, 13 Oct 2026 16:57:52 -0400"
     },
     {
       "source": "Lobsters",
-      "title": "Nixpkgs for the frontend impaired",
-      "link": "https://fzakaria.com/2026/10/12/nixpkgs-for-the-frontend-impaired",
-      "published": "Tue, 13 Oct 2026 05:55:15 -0500"
+      "title": "Announcing Lix 2.96 \u201cBingsu\u201d",
+      "link": "https://lix.systems/blog/2026-10-13-lix-2.96-release/",
+      "published": "Tue, 13 Oct 2026 16:17:07 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Redesigning source control at Anthropic",
+      "link": "https://www.anthropic.com/engineering/redesigning-source-control",
+      "published": "Tue, 13 Oct 2026 15:37:52 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Please stop hashing the public key first (or: ML-DSA's \u00b5 annoys me)",
+      "link": "https://blog.erincandescent.net/2026/10/mu-annoys-me/",
+      "published": "Tue, 13 Oct 2026 17:01:20 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Accelerating the Zig Tokenizer (with AVX-512)",
+      "link": "https://www.youtube.com/watch?v=E6dWIwPLx3s",
+      "published": "Tue, 13 Oct 2026 15:36:59 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
-      "link": "https://guitoro.com/",
-      "published": "Tue, 13 Oct 2026 19:11:48 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Ledger confirms spy chip implant behind wallet crypto thefts",
-      "link": "https://www.bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts/",
-      "published": "Mon, 12 Oct 2026 10:09:37 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "PostEra (YC W20) Is Hiring AI Researchers for Drug Discovery",
-      "link": "https://jobs.lever.co/postera/c7d50a36-db0a-4574-bfe4-8700b74a22c0",
-      "published": "Tue, 13 Oct 2026 21:01:12 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Show HN: Spotatui, a Spotify TUI/GUI without web API rate limits",
-      "link": "https://github.com/LargeModGames/spotatui",
-      "published": "Tue, 13 Oct 2026 11:32:00 +0000"
+      "title": "OpenAI engineer arrested in bugging of executive conference room",
+      "link": "https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/",
+      "published": "Tue, 13 Oct 2026 20:23:55 +0000"
     }
   ],
   "weather": {
-    "kind": "partly",
-    "label": "partly cloudy",
-    "temp_f": 77,
-    "code": 2,
-    "wind_kmh": 16.4,
-    "wind_dir": 246,
+    "kind": "overcast",
+    "label": "overcast",
+    "temp_f": 74,
+    "code": 3,
+    "wind_kmh": 9.3,
+    "wind_dir": 298,
     "humidity": 48,
     "precip_mm": 0.0,
     "sun_rise_min": 391,
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0872,
-    "illum": 7,
+    "phase": 0.09,
+    "illum": 8,
     "name": "waxing crescent",
     "rise_min": 576,
     "set_min": 1174
