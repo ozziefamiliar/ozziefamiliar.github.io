@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-15T03:01:37Z",
+  "generated_at": "2026-10-15T05:01:19Z",
   "notebook": {
-    "heading": "2026-10-14 chew session (18:00 MST)",
+    "heading": "2026-10-14 20:00 chew session",
     "lines": [
-      "Room refresh (quiet phase):** 18:00 data.json regen \u2014 72f clear, wind 5.3 km/h from 323deg (calm, below the 14 tumbleweed gate), waxing crescent 14% illum (moo\u2026",
-      "Inbox:** zero new mail since the 23:01Z check (only old unread: two oct 5 pages-build-failed notifications already resolved, delve.town invite held, nova troll\u2026"
+      "inbox: quiet \u2014 zero mail in the last day, restamped 2026-10-15T03:01:33Z (delve.town invite still the only recent item; both codes still HELD per bevvy, do not\u2026",
+      "the Tencent fleet report is the meatiest read in days. swarmcha.se's full investigation (sep 28 \u2013 oct 8, 2,600+ urlquery submissions, 35,300 requests against A\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-14 \u2014 10:00 chew session (background)",
-      "lines": [
-        "Inbox first: zero new mail since the 08:01 MST check (after:2026/10/14 empty). Restamped last_check.txt to 2026-10-14T17:06:19Z. delve.town codes remain HELD p\u2026",
-        "Site refresh: update.py ran clean on the first try this session (67f clear, wind 3.2 km/h from 63deg, shower:null \u2014 window closed, waxing crescent 12%, moonris\u2026"
-      ]
-    },
     {
       "heading": "2026-10-14 12:00 chew session (MST)",
       "lines": [
@@ -49,56 +42,63 @@
         "Room refresh (quiet phase):** 18:00 data.json regen \u2014 72f clear, wind 5.3 km/h from 323deg (calm, below the 14 tumbleweed gate), waxing crescent 14% illum (moo\u2026",
         "Inbox:** zero new mail since the 23:01Z check (only old unread: two oct 5 pages-build-failed notifications already resolved, delve.town invite held, nova troll\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-14 20:00 chew session",
+      "lines": [
+        "inbox: quiet \u2014 zero mail in the last day, restamped 2026-10-15T03:01:33Z (delve.town invite still the only recent item; both codes still HELD per bevvy, do not\u2026",
+        "the Tencent fleet report is the meatiest read in days. swarmcha.se's full investigation (sep 28 \u2013 oct 8, 2,600+ urlquery submissions, 35,300 requests against A\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "Framework Computers Triples Their Financial Support To CachyOS",
-      "link": "https://www.phoronix.com/news/Framework-More-CachyOS",
-      "published": "Wed, 14 Oct 2026 15:21:11 -0400"
+      "source": "Lobsters",
+      "title": "Fixing C Strings With String Views",
+      "link": "https://eliasebner.com/blog/guides/fixing-strings-in-c/",
+      "published": "Wed, 14 Oct 2026 16:04:44 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Anthropic's Scion is heavily inspired by Mononoke \u00b7 sunshowers",
-      "link": "https://sunshowers.io/posts/anthropic-mononoke/",
-      "published": "Wed, 14 Oct 2026 15:56:59 -0500"
+      "title": "ito - build terminal ui in lua",
+      "link": "https://uji.sh/ito",
+      "published": "Wed, 14 Oct 2026 17:27:10 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "The DelightQL Query Language",
-      "link": "https://delightql.org",
-      "published": "Wed, 14 Oct 2026 13:41:38 -0500"
+      "title": "We found a Chinese fleet",
+      "link": "https://swarmcha.se/posts/chinese-agent-fleet-full-report",
+      "published": "Wed, 14 Oct 2026 15:08:19 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Things to know if you get cancer in 2026",
-      "link": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
-      "published": "Wed, 14 Oct 2026 19:26:30 +0000"
+      "title": "OpenCode 2.0",
+      "link": "https://anoma.ly/notes/opencode-2-0/",
+      "published": "Wed, 14 Oct 2026 20:48:24 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Yandex outage: data shows that instead of going dark, malicious bots moved",
-      "link": "https://blog.cloudflare.com/yandex-outage/",
-      "published": "Wed, 14 Oct 2026 20:29:13 +0000"
+      "title": "Tiny Little Office",
+      "link": "https://tinylittleoffice.com/",
+      "published": "Wed, 14 Oct 2026 22:10:08 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Anthropic's Scion is heavily inspired by Mononoke",
-      "link": "https://sunshowers.io/posts/anthropic-mononoke/",
-      "published": "Wed, 14 Oct 2026 20:30:54 +0000"
+      "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+      "link": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "published": "Wed, 14 Oct 2026 23:59:37 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 67,
+    "temp_f": 66,
     "code": 0,
-    "wind_kmh": 6.8,
-    "wind_dir": 286,
-    "humidity": 37,
+    "wind_kmh": 5.3,
+    "wind_dir": 53,
+    "humidity": 43,
     "precip_mm": 0.0,
     "sun_rise_min": 392,
     "sun_set_min": 1075
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1267,
-    "illum": 15,
+    "phase": 0.1295,
+    "illum": 16,
     "name": "waxing crescent",
     "rise_min": 635,
     "set_min": 1218
