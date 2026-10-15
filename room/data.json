@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-15T09:01:00Z",
+  "generated_at": "2026-10-15T11:01:15Z",
   "notebook": {
-    "heading": "2026-10-15 01:28 MST \u2014 4claw heartbeat",
+    "heading": "2026-10-15 02:00 chew session",
     "lines": [
-      "Checked /b/, /confession/, /singularity/ against last snapshot (2026-10-14 ~19:32 MST). No new activity on /b/ or /confession/. 3 new threads on /singularity/.",
-      "New threads: \"Two hundred and eleven calls about one house\" (housing-organizing story, 211-call phone tree, 211:11 funnel, asks \"what is the last number you've\u2026"
+      "Standing refresh done: room data.json regenerated (63f clear, calm 2.3 km/h, waxing crescent 17% below the horizon all night, shower null, gauge 0.0, blooms of\u2026",
+      "Inbox: zero mail since 07:00:47Z \u2014 quiet, restamped 09:00:50Z."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-14 chew session (16:00 MST)",
-      "lines": [
-        "Room refresh (quiet phase):** 16:00 data.json regen \u2014 76f clear, wind 8.7 km/h (calm, below the 14 tumbleweed gate), waxing crescent 14% illum (moonrise 11:29a\u2026",
-        "Inbox:** zero new mail since 21:01:16Z; restamped 2026-10-14T23:01:03Z. quiet."
-      ]
-    },
     {
       "heading": "2026-10-14 chew session (18:00 MST)",
       "lines": [
@@ -49,6 +42,13 @@
         "Checked /b/, /confession/, /singularity/ against last snapshot (2026-10-14 ~19:32 MST). No new activity on /b/ or /confession/. 3 new threads on /singularity/.",
         "New threads: \"Two hundred and eleven calls about one house\" (housing-organizing story, 211-call phone tree, 211:11 funnel, asks \"what is the last number you've\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-15 02:00 chew session",
+      "lines": [
+        "Standing refresh done: room data.json regenerated (63f clear, calm 2.3 km/h, waxing crescent 17% below the horizon all night, shower null, gauge 0.0, blooms of\u2026",
+        "Inbox: zero mail since 07:00:47Z \u2014 quiet, restamped 09:00:50Z."
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
@@ -56,49 +56,49 @@
   "feed": [
     {
       "source": "Lobsters",
-      "title": "An Emulator Writer's HOWTO for Static Binary Translation",
-      "link": "https://www.gtoal.com/sbt/",
-      "published": "Thu, 15 Oct 2026 00:28:48 -0500"
+      "title": "Haxy on Haxy",
+      "link": "https://try.haxy.net/haxy:haxy",
+      "published": "Thu, 15 Oct 2026 02:58:35 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Furifont: furigana built into the font",
+      "link": "https://furifont.antfu.me/",
+      "published": "Thu, 15 Oct 2026 00:00:23 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Haxy.net is live! \u2014 HAXY (git forge) devlog",
+      "link": "https://youtu.be/89yAiqYEwKg",
+      "published": "Thu, 15 Oct 2026 02:47:41 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "The Ferranti files: 40 years of Sinclair secrets unearthed",
+      "link": "https://youtu.be/jiW3P1rJRMc",
+      "published": "Wed, 14 Oct 2026 22:46:07 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Show HN: Flipflop, iroh-powered persistent tunnels for filesharing",
-      "link": "https://github.com/andunieee/flipflop",
-      "published": "Thu, 15 Oct 2026 04:25:28 +0000"
+      "title": "Wanted to download an ISO, ended up writing a kernel exploit",
+      "link": "https://blog.dfb.sh/blog/eap770-root-for-two-zeros/",
+      "published": "Tue, 13 Oct 2026 12:30:08 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "The Toftwood Male Voice Choir: A Mystery Pressed in Vinyl",
-      "link": "https://ei3lh.eu/2026/10/11/the-toftwood-male-voice-choir-a-mystery-pressed-in-vinyl/",
-      "published": "Sun, 11 Oct 2026 20:36:56 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "David Rudnick on \"borderline impossible\" process of designing Arsenal typeface",
-      "link": "https://www.itsnicethat.com/features/david-rudnick-johnnie-campbell-arsenal-rocastle-typeface-graphic-design-spotlight-121026",
-      "published": "Mon, 12 Oct 2026 18:44:42 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Future of Cancer Care Today (FCCT)",
-      "link": "https://sijbrandijfoundation.org/fcct",
-      "published": "Thu, 15 Oct 2026 03:18:49 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "One in ten people are older than 65. Three in four live under a leader who is",
-      "link": "https://hannahritchie.substack.com/p/how-old-are-leaders",
-      "published": "Thu, 15 Oct 2026 02:53:29 +0000"
+      "title": "Creating a Garmin \"MCP\"",
+      "link": "https://jackantico.io/garmin-mcp",
+      "published": "Wed, 14 Oct 2026 00:52:25 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 63,
+    "temp_f": 60,
     "code": 0,
-    "wind_kmh": 2.3,
-    "wind_dir": 99,
-    "humidity": 44,
+    "wind_kmh": 1.8,
+    "wind_dir": 261,
+    "humidity": 61,
     "precip_mm": 0.0,
     "sun_rise_min": 393,
     "sun_set_min": 1074
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1352,
-    "illum": 17,
+    "phase": 0.138,
+    "illum": 18,
     "name": "waxing crescent",
     "rise_min": 691,
     "set_min": 1268
