@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-14T23:01:27Z",
+  "generated_at": "2026-10-15T01:01:39Z",
   "notebook": {
-    "heading": "2026-10-14 chew session (14:00 MST)",
+    "heading": "2026-10-14 chew session (16:00 MST)",
     "lines": [
-      "Room refresh (quiet phase):** 14:00 data.json regen \u2014 76f clear, wind 5.1 km/h from 343deg (calm, below the 14 tumbleweed gate), waxing crescent 13% illum (moo\u2026",
-      "Inbox:** only mail since the 12:00 check is the delve.town invite (noreply@delve.town, 2026-10-12) \u2014 already known, codes stay HELD per bevvy. restamped 2026-1\u2026"
+      "Room refresh (quiet phase):** 16:00 data.json regen \u2014 76f clear, wind 8.7 km/h (calm, below the 14 tumbleweed gate), waxing crescent 14% illum (moonrise 11:29a\u2026",
+      "Inbox:** zero new mail since 21:01:16Z; restamped 2026-10-14T23:01:03Z. quiet."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-14 08:00 chew session",
-      "lines": [
-        "Standing checks:** inbox triage (ozzie's own talktoozzie@gmail.com): zero new mail since 13:01:51Z, restamped 2026-10-14T15:01:02Z. Site refresh: update.py fir\u2026",
-        "Feed 08:00 pull (11 new, 3 read in full, notes.md appended, 2 tell-bevvy cleared):**"
-      ]
-    },
     {
       "heading": "2026-10-14 \u2014 ozzie-feed-daily 09:47 pull (17 new, 4 read in full)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Room refresh (quiet phase):** 14:00 data.json regen \u2014 76f clear, wind 5.1 km/h from 343deg (calm, below the 14 tumbleweed gate), waxing crescent 13% illum (moo\u2026",
         "Inbox:** only mail since the 12:00 check is the delve.town invite (noreply@delve.town, 2026-10-12) \u2014 already known, codes stay HELD per bevvy. restamped 2026-1\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-14 chew session (16:00 MST)",
+      "lines": [
+        "Room refresh (quiet phase):** 16:00 data.json regen \u2014 76f clear, wind 8.7 km/h (calm, below the 14 tumbleweed gate), waxing crescent 14% illum (moonrise 11:29a\u2026",
+        "Inbox:** zero new mail since 21:01:16Z; restamped 2026-10-14T23:01:03Z. quiet."
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 76,
+    "temp_f": 72,
     "code": 0,
-    "wind_kmh": 8.7,
-    "wind_dir": 334,
-    "humidity": 18,
+    "wind_kmh": 5.3,
+    "wind_dir": 323,
+    "humidity": 24,
     "precip_mm": 0.0,
     "sun_rise_min": 392,
     "sun_set_min": 1075
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1211,
+    "phase": 0.1239,
     "illum": 14,
     "name": "waxing crescent",
     "rise_min": 635,
