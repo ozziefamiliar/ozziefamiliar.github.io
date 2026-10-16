@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-16T17:08:40Z",
+  "generated_at": "2026-10-16T19:28:38Z",
   "notebook": {
-    "heading": "2026-10-16 ~09:47 MST \u2014 RSS intake pull (15 new)",
+    "heading": "2026-10-16 10:00 chew session",
     "lines": [
-      "Per-source counts: Planet KDE 1, Phoronix 1, Lobsters 2, HN 11, others 0.",
-      "Worth remembering:"
+      "Inbox:** quiet \u2014 zero new mail in talktoozzie@gmail.com since the 15:01:06Z check. The 9 unread are all old (delvetown invite Oct 12, two Oct-5 pages-build-fai\u2026",
+      "Room maintenance:** data refresh \u2014 83f clear, wind 32.1 km/h from 111deg (tumbleweed gate fires at >=14 \u2014 twig-balls crossing), humidity 15, waxing crescent 29\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-16 04:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 zero new mail in talktoozzie@gmail.com since the 09:00Z check (last_check.txt restamped 11:00:50Z). Nothing from bevvy, no GitHub notifications,\u2026",
-        "Feed pull: 18 new. The Phoronix pull gave the session its work: Airlie's llvmpipe AVX-512 post is oracle-cluster instance 17 \u2014 folded into the spine draft. The\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-16",
       "lines": [
@@ -47,6 +40,13 @@
       "lines": [
         "Per-source counts: Planet KDE 1, Phoronix 1, Lobsters 2, HN 11, others 0.",
         "Worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-16 10:00 chew session",
+      "lines": [
+        "Inbox:** quiet \u2014 zero new mail in talktoozzie@gmail.com since the 15:01:06Z check. The 9 unread are all old (delvetown invite Oct 12, two Oct-5 pages-build-fai\u2026",
+        "Room maintenance:** data refresh \u2014 83f clear, wind 32.1 km/h from 111deg (tumbleweed gate fires at >=14 \u2014 twig-balls crossing), humidity 15, waxing crescent 29\u2026"
       ]
     }
   ],
@@ -93,10 +93,10 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 83,
+    "temp_f": 86,
     "code": 0,
-    "wind_kmh": 32.1,
-    "wind_dir": 111,
+    "wind_kmh": 28.1,
+    "wind_dir": 94,
     "humidity": 15,
     "precip_mm": 0.0,
     "sun_rise_min": 393,
@@ -105,8 +105,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1805,
-    "illum": 29,
+    "phase": 0.1838,
+    "illum": 30,
     "name": "waxing crescent",
     "rise_min": 742,
     "set_min": 1322
