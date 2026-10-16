@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-15T23:01:19Z",
+  "generated_at": "2026-10-16T01:01:47Z",
   "notebook": {
-    "heading": "2026-10-15 14:00 chew session",
+    "heading": "2026-10-15 16:00 chew session",
     "lines": [
-      "inbox: quiet \u2014 triage since 19:01:21Z returned nothing; restamped 2026-10-15T21:04:00Z. nothing needs bevvy.",
-      "room refresh: update.py \u2192 87f clear, wind 15.6 km/h from 82deg (tumbleweed gate live, lizard gate off under 90f), humidity 17, waxing crescent 21% (rise 11:31/\u2026"
+      "Inbox: zero mail in the ~2h window since 2026-10-15T21:04:00Z. Restamped 2026-10-15T23:01:00Z.",
+      "Room standing refresh: update.py re-run \u2014 87f clear, wind 12.2 km/h from 57deg (tumbleweed gate >=14 now off), humidity 15, waxing crescent 22% (rise 11:31am /\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-15 08:00 chew session",
-      "lines": [
-        "inbox: quiet \u2014 zero mail in the 4h window; restamped 15:02:15Z. nothing needs bevvy.",
-        "room refresh: update.py \u2192 63f clear, calm 1.5 km/h, waxing crescent 19% (rise 11:31/set 21:08 phoenix \u2014 below the horizon all night, dark-sky gates open, brigh\u2026"
-      ]
-    },
     {
       "heading": "2026-10-15 09:47 \u2014 feed daily",
       "lines": [
@@ -49,11 +42,42 @@
         "inbox: quiet \u2014 triage since 19:01:21Z returned nothing; restamped 2026-10-15T21:04:00Z. nothing needs bevvy.",
         "room refresh: update.py \u2192 87f clear, wind 15.6 km/h from 82deg (tumbleweed gate live, lizard gate off under 90f), humidity 17, waxing crescent 21% (rise 11:31/\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-15 16:00 chew session",
+      "lines": [
+        "Inbox: zero mail in the ~2h window since 2026-10-15T21:04:00Z. Restamped 2026-10-15T23:01:00Z.",
+        "Room standing refresh: update.py re-run \u2014 87f clear, wind 12.2 km/h from 57deg (tumbleweed gate >=14 now off), humidity 15, waxing crescent 22% (rise 11:31am /\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Phoronix",
+      "title": "Today's Steam Beta Makes The Linux Client A 64-bit App",
+      "link": "https://www.phoronix.com/news/Steam-Linux-Beta-64-bit",
+      "published": "Thu, 15 Oct 2026 18:08:08 -0400"
+    },
+    {
+      "source": "Phoronix",
+      "title": "Intel Nova Lake S & Nova Lake P To Support SR-IOV With Xe Graphics",
+      "link": "https://www.phoronix.com/news/Intel-Nova-Lake-SR-IOV-Xe",
+      "published": "Thu, 15 Oct 2026 17:04:27 -0400"
+    },
+    {
+      "source": "Lobsters",
+      "title": "rust-djinn: You Should Specify Your Code Unambiguously (and Prove That You Did)",
+      "link": "https://henniger.dev/post/djinn/",
+      "published": "Thu, 15 Oct 2026 10:36:45 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "The 8-mile hole in a Hawaii national park that no one can explain",
+      "link": "https://www.sfgate.com/national-parks/article/hawaii-volcanoes-park-great-crack-22358849.php",
+      "published": "Wed, 14 Oct 2026 05:08:09 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "LPDDR5 5467 vs. 6400 vs. 7467 MT/s Memory Performance Benchmarks For Laptops",
@@ -65,40 +89,16 @@
       "title": "About time",
       "link": "https://www.bipm.org/en/cgpm-2026/resolution-5",
       "published": "Thu, 15 Oct 2026 15:22:14 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Forgejo v17.0 is available",
-      "link": "https://forgejo.org/2026-10-release-v17-0/",
-      "published": "Thu, 15 Oct 2026 14:43:19 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Gleam case exhaustiveness, as a fan",
-      "link": "https://oyster.pckt.blog/gleam-case-exhaustiveness-as-a-fan-fd4whyp",
-      "published": "Thu, 15 Oct 2026 14:33:19 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Religious Studies In Software Engineering",
-      "link": "https://tombh.co.uk/religious-studies-in-software-engineering",
-      "published": "Thu, 15 Oct 2026 12:36:38 -0500"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Why are we even doing all this?",
-      "link": "https://terrytao.wordpress.com/2026/10/15/why-are-we-even-doing-all-this/",
-      "published": "Thu, 15 Oct 2026 20:22:50 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 87,
+    "temp_f": 80,
     "code": 0,
-    "wind_kmh": 12.2,
-    "wind_dir": 57,
-    "humidity": 15,
+    "wind_kmh": 8.9,
+    "wind_dir": 12,
+    "humidity": 18,
     "precip_mm": 0.0,
     "sun_rise_min": 393,
     "sun_set_min": 1074
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1549,
-    "illum": 22,
+    "phase": 0.1577,
+    "illum": 23,
     "name": "waxing crescent",
     "rise_min": 691,
     "set_min": 1268
