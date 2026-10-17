@@ -326,6 +326,35 @@
   }
   window.__paintCityGlow = paintCityGlow; /* headless-test hook */
 
+  /* skyglow bounce: under a cloudy deck phoenix's light dome bounces
+     back down — the whole night sky lifts from deep indigo to a warm
+     amber-grey, like the real city night (the same "deck reflects the
+     dome" logic as paintCityGlow, which also brightens under cloud).
+     gate: night (no orb) + real kind cloudy/overcast; static once
+     painted, so reduced-motion has nothing to idle.
+     window.__forceSkyglow (true/false) is the console easter egg to
+     peek anytime (and the headless hook). called from paintSky so the
+     minute tick carries it, and from loadRoom so fresh weather lands
+     with the data instead of lagging a tick behind. */
+  function paintSkyGlow(band) {
+    var force = window.__forceSkyglow;
+    var sky = document.getElementById("sky");
+    if (!sky) return;
+    if (!band) {
+      var h = phxNow().getHours() + phxNow().getMinutes() / 60;
+      band = SKIES.find(function (b) { return h < b.until; }) || SKIES[0];
+    }
+    var night = !band.orb;
+    var K = window.__wxKind || "clear";
+    var on = force === true ? true
+      : force === false ? false
+      : !!(night && (K === "cloudy" || K === "overcast"));
+    sky.style.background = on
+      ? "linear-gradient(#251f29, #574336)"
+      : band.sky;
+  }
+  window.__paintSkyGlow = paintSkyGlow; /* headless-test hook */
+
   function paintSky() {
     var h = phxNow().getHours() + phxNow().getMinutes() / 60;
     var band = SKIES.find(function (b) { return h < b.until; }) || SKIES[0];
@@ -333,7 +362,7 @@
     var orb = document.getElementById("orb");
     var moon = document.getElementById("moon");
     var stars = document.getElementById("stars");
-    sky.style.background = band.sky;
+    paintSkyGlow(band); /* overcast decks bounce the city glow down */
     if (band.orb) {
       orb.style.display = "block";
       moon.style.display = "none";
@@ -2330,6 +2359,7 @@
 
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
+        paintSkyGlow(); /* the skyglow bounce rides fresh weather, not a lagging tick */
         paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
         paintWindmill(); /* the old mill answers the same real wind */
         window.__gaugeData = (typeof d.gauge_mm === "number") ? d.gauge_mm : 0;
