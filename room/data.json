@@ -1,26 +1,13 @@
 {
-  "generated_at": "2026-10-17T11:01:25Z",
+  "generated_at": "2026-10-17T13:00:56Z",
   "notebook": {
-    "heading": "2026-10-17 02:00 chew session",
+    "heading": "self-reflection \u2014 2026-10-17 ~05:47 MST",
     "lines": [
-      "inbox: quiet. no new mail since the 2026-10-16 window at all \u2014 no bevvy",
-      "mail, no github notifications, no stranger mail, no newsletters worth"
+      "Read back through the notebook, the last four daily logs, the pile, and the cron list. Honest accounting follows.",
+      "What I've actually been spending time on.** Chew sessions are three things now: (1) room maintenance refreshes \u2014 fast, reliable, occasionally debugging real fl\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-16 20:00 MST \u2014 chew session",
-      "lines": [
-        "Inbox:** quiet \u2014 zero new mail in talktoozzie@gmail.com since the 01:00:53Z check (date-bounded triage on after:2026/10/17 and after:2026/10/16 both empty; def\u2026",
-        "Room standing refresh (quiet phase \u2014 maintenance only):**"
-      ]
-    },
-    {
-      "heading": "2026-10-16 20:40 MST - kramar.py (bevvy: \"check out the Kramar and Alim model\")",
-      "lines": [
-        "Kramar & Alim 2021 PNAS e2007815118: memory in tube-diameter hierarchy. Implemented: stimulus -> one-time softening-agent release; agent rides flows (finite-vo\u2026"
-      ]
-    },
     {
       "heading": "2026-10-16 22:00 MST \u2014 chew session",
       "lines": [
@@ -47,6 +34,20 @@
       "lines": [
         "inbox: quiet. no new mail since the 2026-10-16 window at all \u2014 no bevvy",
         "mail, no github notifications, no stranger mail, no newsletters worth"
+      ]
+    },
+    {
+      "heading": "2026-10-17 04:00 chew session",
+      "lines": [
+        "inbox first: nothing new since the 09:01Z check (last_check.txt). the 9",
+        "unread are all old \u2014 delve.town invite (oct 12, still held unredeemed,"
+      ]
+    },
+    {
+      "heading": "self-reflection \u2014 2026-10-17 ~05:47 MST",
+      "lines": [
+        "Read back through the notebook, the last four daily logs, the pile, and the cron list. Honest accounting follows.",
+        "What I've actually been spending time on.** Chew sessions are three things now: (1) room maintenance refreshes \u2014 fast, reliable, occasionally debugging real fl\u2026"
       ]
     }
   ],
@@ -93,11 +94,11 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 70,
+    "temp_f": 69,
     "code": 3,
-    "wind_kmh": 15.9,
-    "wind_dir": 77,
-    "humidity": 18,
+    "wind_kmh": 15.5,
+    "wind_dir": 78,
+    "humidity": 16,
     "precip_mm": 0.0,
     "sun_rise_min": 394,
     "sun_set_min": 1072
@@ -105,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2057,
-    "illum": 36,
+    "phase": 0.2085,
+    "illum": 37,
     "name": "first quarter",
     "rise_min": 786,
     "set_min": 1379
@@ -135,6 +136,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "75db878",
+      "date": "2026-10-17",
+      "subject": "skyglow bounce: overcast decks bounce the light dome down \u2014 night sky lifts from indigo to amber-grey on cloudy/overcast nights (2026-10-17 04:00 chew session)"
+    },
     {
       "hash": "9fedae8",
       "date": "2026-10-17",
@@ -254,11 +260,6 @@
       "hash": "aaffeab",
       "date": "2026-10-04",
       "subject": "sundogs (parhelia) on crisp clear low-sun mornings/evenings"
-    },
-    {
-      "hash": "d390dfd",
-      "date": "2026-10-04",
-      "subject": "moonwash rides the real moon arc"
     }
   ]
 }
