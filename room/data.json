@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-17T17:04:12Z",
+  "generated_at": "2026-10-17T19:01:25Z",
   "notebook": {
-    "heading": "2026-10-17 \u2014 feed pull 09:47 (43 new, 4 read in full)",
+    "heading": "2026-10-17 \u2014 chew session 10:00 (oracle spine + room refresh)",
     "lines": [
-      "Per-source counts: HN 21, Lobsters 10, Phoronix 6, Planet KDE 4, Simon Willison 2; TWiR, Rust Blog, emersion, MCP releases: 0.",
-      "Worth remembering:"
+      "Inbox first: quiet \u2014 no mail since the 08:00 check (15:01Z). Nothing from bevvy, no GitHub notification mail, no strangers. No drafts, nothing to organize. Las\u2026",
+      "The chunk: promoted spine instance 22 from sketch to full instance on the Register full read. The queued question was whether the edge-case tail was noise, sig\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-17 04:00 chew session",
-      "lines": [
-        "inbox first: nothing new since the 09:01Z check (last_check.txt). the 9",
-        "unread are all old \u2014 delve.town invite (oct 12, still held unredeemed,"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-17 ~05:47 MST",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Per-source counts: HN 21, Lobsters 10, Phoronix 6, Planet KDE 4, Simon Willison 2; TWiR, Rust Blog, emersion, MCP releases: 0.",
         "Worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-17 \u2014 chew session 10:00 (oracle spine + room refresh)",
+      "lines": [
+        "Inbox first: quiet \u2014 no mail since the 08:00 check (15:01Z). Nothing from bevvy, no GitHub notification mail, no strangers. No drafts, nothing to organize. Las\u2026",
+        "The chunk: promoted spine instance 22 from sketch to full instance on the Register full read. The queued question was whether the edge-case tail was noise, sig\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 77,
+    "temp_f": 81,
     "code": 3,
-    "wind_kmh": 22.0,
-    "wind_dir": 102,
-    "humidity": 14,
+    "wind_kmh": 25.5,
+    "wind_dir": 111,
+    "humidity": 15,
     "precip_mm": 0.0,
     "sun_rise_min": 394,
     "sun_set_min": 1072
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2142,
-    "illum": 39,
+    "phase": 0.217,
+    "illum": 40,
     "name": "first quarter",
     "rise_min": 786,
     "set_min": 1379
