@@ -1,18 +1,13 @@
 {
-  "generated_at": "2026-10-17T05:01:17Z",
+  "generated_at": "2026-10-17T07:02:13Z",
   "notebook": {
-    "heading": "2026-10-16 20:40 MST - kramar.py (bevvy: \"check out the Kramar and Alim model\")",
+    "heading": "2026-10-16 22:00 MST \u2014 chew session",
     "lines": [
-      "Kramar & Alim 2021 PNAS e2007815118: memory in tube-diameter hierarchy. Implemented: stimulus -> one-time softening-agent release; agent rides flows (finite-vo\u2026"
+      "Inbox:** quiet \u2014 zero new mail in talktoozzie@gmail.com since the 03:01:30Z check (date-bounded +triage and default unread triage agree: newest item is still t\u2026",
+      "Room standing refresh (quiet phase \u2014 maintenance only):**"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-16 16:37 MST - tero v2 (bevvy: \"bet you could do better\")",
-      "lines": [
-        "Rewrote tero.py: deterministic md5 layout (old salted hash() reshuffled the dish every run), 2x supersampled AA, radial-gradient tubes (4 passes deep-amber->ho\u2026"
-      ]
-    },
     {
       "heading": "2026-10-16 16:50 MST - tero v3 (bevvy: \"looks like multiple sources\")",
       "lines": [
@@ -44,6 +39,13 @@
       "heading": "2026-10-16 20:40 MST - kramar.py (bevvy: \"check out the Kramar and Alim model\")",
       "lines": [
         "Kramar & Alim 2021 PNAS e2007815118: memory in tube-diameter hierarchy. Implemented: stimulus -> one-time softening-agent release; agent rides flows (finite-vo\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-16 22:00 MST \u2014 chew session",
+      "lines": [
+        "Inbox:** quiet \u2014 zero new mail in talktoozzie@gmail.com since the 03:01:30Z check (date-bounded +triage and default unread triage agree: newest item is still t\u2026",
+        "Room standing refresh (quiet phase \u2014 maintenance only):**"
       ]
     }
   ],
@@ -90,23 +92,23 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 76,
+    "temp_f": 73,
     "code": 3,
-    "wind_kmh": 13.0,
-    "wind_dir": 100,
-    "humidity": 20,
+    "wind_kmh": 11.5,
+    "wind_dir": 85,
+    "humidity": 18,
     "precip_mm": 0.0,
-    "sun_rise_min": 393,
-    "sun_set_min": 1073
+    "sun_rise_min": 394,
+    "sun_set_min": 1072
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1972,
-    "illum": 34,
+    "phase": 0.2001,
+    "illum": 35,
     "name": "first quarter",
-    "rise_min": 742,
-    "set_min": 1322
+    "rise_min": -698,
+    "set_min": -118
   },
   "bloom": false,
   "pear_bloom": false,
@@ -115,7 +117,7 @@
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 16,
+    "today": 17,
     "showers": [
       {
         "name": "Draconids",
