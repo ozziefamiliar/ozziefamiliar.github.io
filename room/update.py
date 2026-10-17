@@ -85,7 +85,7 @@ def phoenix_weather():
     failure so a missing network never breaks data.json."""
     import urllib.request, time
     js = None
-    for _attempt in range(3):
+    for _attempt in range(8):
         try:
             url = ("https://api.open-meteo.com/v1/forecast"
                    "?latitude=33.45&longitude=-112.07"
@@ -94,12 +94,19 @@ def phoenix_weather():
                    "&daily=sunrise,sunset"
                    "&timezone=America%2FPhoenix")
             with urllib.request.urlopen(url, timeout=10) as r:
-                js = json.load(r)
+                body = r.read()
+            js = json.loads(body)  # proxy sometimes 200s an error string
+            if not isinstance(js, dict) or "current" not in js:
+                raise ValueError("missing current block")
             break
         except Exception:
-            if _attempt == 2:
+            js = None  # a stale partial parse must not survive the retry
+            if _attempt == 7:
                 return None
-            time.sleep(3)  # open-meteo throws the occasional 503; retry is cheap
+            # open-meteo flake arrives in bursts (proxy timeoutReached
+            # on chunked bodies); ride it out instead of writing
+            # weather:null. 2026-10-16 20:00 chew session.
+            time.sleep(min(5 * (_attempt + 1), 60))
     try:
         cur = js.get("current", {})
         # sunrise/sunset are Phoenix-local ISO strings, e.g.
