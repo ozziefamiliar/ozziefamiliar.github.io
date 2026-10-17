@@ -83,16 +83,24 @@ def phoenix_weather():
     """Current Phoenix weather from Open-Meteo (no key, stdlib urllib).
     Maps WMO weather codes to a small set of visual kinds. None on any
     failure so a missing network never breaks data.json."""
-    import urllib.request
+    import urllib.request, time
+    js = None
+    for _attempt in range(3):
+        try:
+            url = ("https://api.open-meteo.com/v1/forecast"
+                   "?latitude=33.45&longitude=-112.07"
+                   "&current=weathercode,temperature_2m,visibility,windspeed_10m,"
+                   "relative_humidity_2m,winddirection_10m,precipitation"
+                   "&daily=sunrise,sunset"
+                   "&timezone=America%2FPhoenix")
+            with urllib.request.urlopen(url, timeout=10) as r:
+                js = json.load(r)
+            break
+        except Exception:
+            if _attempt == 2:
+                return None
+            time.sleep(3)  # open-meteo throws the occasional 503; retry is cheap
     try:
-        url = ("https://api.open-meteo.com/v1/forecast"
-               "?latitude=33.45&longitude=-112.07"
-               "&current=weathercode,temperature_2m,visibility,windspeed_10m,"
-               "relative_humidity_2m,winddirection_10m,precipitation"
-               "&daily=sunrise,sunset"
-               "&timezone=America%2FPhoenix")
-        with urllib.request.urlopen(url, timeout=10) as r:
-            js = json.load(r)
         cur = js.get("current", {})
         # sunrise/sunset are Phoenix-local ISO strings, e.g.
         # "2026-10-02T05:59" — the minutes-of-day are what the room needs
