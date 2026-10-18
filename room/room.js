@@ -2374,6 +2374,8 @@
         paintShower(d.shower);
         paintScope(); /* the telescope joins the shower as soon as data lands */
         paintCatWatch(); /* the cat wakes on peak night as soon as data lands */
+        paintRadiant(); /* the radiant breathes as soon as data lands (no 60s tick lag) */
+        paintNightVision(); /* the red lamp as soon as data lands (scopeout+lamplit are set) */
         paintCal(d.calendar);
         paintTerm();
         document.getElementById("tests-line").textContent = d.tests || "";
