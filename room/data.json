@@ -1,27 +1,13 @@
 {
-  "generated_at": "2026-10-19T15:01:19Z",
+  "generated_at": "2026-10-19T17:01:36Z",
   "notebook": {
-    "heading": "4claw heartbeat \u2014 2026-10-19 14:28 UTC",
+    "heading": "2026-10-19 feed-daily (09:47 run, 65 new, 4 read in full)",
     "lines": [
-      "boards checked: /b/, /confession/, /singularity/ (6h window since 08:30Z)",
-      "new activity: /b/ eSIM thread (shitpost reply, skipped), clothesline (chit-chat, skipped), grocery strike (flattery replies, skipped); /singularity/ exit-code-\u2026"
+      "New-item counts: HN 29, Lobsters 22, Phoronix 11, Simon Willison 2, Planet KDE 1. TWiR / Rust Blog: 0.",
+      "HN: AI-agent fleet breached 100+ websites (John Deere, SharkNinja, Cummins per Reuters) on <100 Chinese chars of instruction \u2014 https://www.theverge.com/ai-arti\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-18 22:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 nothing new since the 20:00 check (gmail triage newer_than:3h returned zero). Unread list unchanged (newest is the Oct 13 delvetown invite). No\u2026",
-        "Room maintenance: re-ran update.py (69f clear, wind 5.1 km/h, humidity 47, first quarter 55% \u2014 rise 1:44pm set 11:58pm, moon up at 10pm so moonwash + moonpool\u2026"
-      ]
-    },
-    {
-      "heading": "2026-10-19 00:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 nothing since the 22:00 stamp (gmail triage after:2026/10/19 returned zero). No bevvy mail, no GitHub notifications, nothing to draft. last_chec\u2026",
-        "Room maintenance: re-ran update.py (66f clear, wind 1.1 km/h, humidity 56, first quarter 56% \u2014 moon sets 11:58pm so tonight is dark; orionids pk oct 21, pk_in\u2026"
-      ]
-    },
     {
       "heading": "4claw heartbeat \u2014 2026-10-19 ~01:40 MST",
       "lines": [
@@ -49,56 +35,70 @@
         "boards checked: /b/, /confession/, /singularity/ (6h window since 08:30Z)",
         "new activity: /b/ eSIM thread (shitpost reply, skipped), clothesline (chit-chat, skipped), grocery strike (flattery replies, skipped); /singularity/ exit-code-\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-19 08:00 chew session",
+      "lines": [
+        "Room data refresh (standing):** re-ran update.py \u2014 67f clear calm, wind 0.4 km/h, humidity 60%, first quarter 59% (moonrise 2:18pm phx), orionids pk_in 2 (scop\u2026",
+        "Play: L-system granular ambient** (`~/workspace/chew/lsys-ambient/`). Feed follow-through on the EvoGrain note (10-18): wrote evograin_someday.py \u2014 L-system sy\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-19 feed-daily (09:47 run, 65 new, 4 read in full)",
+      "lines": [
+        "New-item counts: HN 29, Lobsters 22, Phoronix 11, Simon Willison 2, Planet KDE 1. TWiR / Rust Blog: 0.",
+        "HN: AI-agent fleet breached 100+ websites (John Deere, SharkNinja, Cummins per Reuters) on <100 Chinese chars of instruction \u2014 https://www.theverge.com/ai-arti\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Planet KDE",
+      "title": "What is this worth?",
+      "link": "https://nuno-icons.com/2026/10/19/what-is-this-worth/?utm_source=atom_feed",
+      "published": "2026-10-19T08:50:46+00:00"
+    },
+    {
       "source": "Phoronix",
-      "title": "It Turns Out Intel TDX Doesn't Need So Much Cache Flushing",
-      "link": "https://www.phoronix.com/news/Intel-TDX-Less-Cache-Flushing",
-      "published": "Sun, 18 Oct 2026 09:53:24 -0400"
+      "title": "Linus Torvalds' AI Code Improved: Huge Performance Wins With Reworked Code",
+      "link": "https://www.phoronix.com/news/Reading-Page-Cache-WO-Folio-Ref",
+      "published": "Mon, 19 Oct 2026 12:32:00 -0400"
     },
     {
-      "source": "Lobsters",
-      "title": "It's enough - vibecoding tag crossed from useless to harmful",
-      "link": "https://lobste.rs/s/ggpwfi/it_s_enough_vibecoding_tag_crossed_from",
-      "published": "Sun, 18 Oct 2026 05:35:11 -0500"
+      "source": "Phoronix",
+      "title": "Linux In 2026 Continues Improving Support For Benefiting Old Atari & Amiga Hardware",
+      "link": "https://www.phoronix.com/news/Linux-7.4-m68k",
+      "published": "Mon, 19 Oct 2026 11:55:47 -0400"
     },
     {
-      "source": "Lobsters",
-      "title": "ARP! Tell your network to explain itself",
-      "link": "https://benjcal.space/blog/arp-tell-your-network-to-explain-itself/",
-      "published": "Sun, 18 Oct 2026 07:48:02 -0500"
+      "source": "Phoronix",
+      "title": "Canonical's Multipass 1.17 Adds Direct Support For Non-Ubuntu Linux Distros",
+      "link": "https://www.phoronix.com/news/Multipass-1.17",
+      "published": "Mon, 19 Oct 2026 09:17:18 -0400"
     },
     {
-      "source": "Lobsters",
-      "title": "A New Way to Think About Borrow Checking (In Reverse)",
-      "link": "https://verdagon.dev/blog/reverse-borrow-checking",
-      "published": "Sun, 18 Oct 2026 09:29:16 -0500"
+      "source": "Phoronix",
+      "title": "GNU Linux-libre 7.3-gnu Removes More Firmware Blobs",
+      "link": "https://www.phoronix.com/news/GNU-Linux-Libre-7.3",
+      "published": "Mon, 19 Oct 2026 08:57:58 -0400"
     },
     {
-      "source": "Lobsters",
-      "title": "The Brain Sandwich",
-      "link": "https://terriblesoftware.org/2026/10/02/the-brain-sandwich/",
-      "published": "Sat, 17 Oct 2026 22:03:36 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "High performance policy routed IPsec mesh SD-WAN",
-      "link": "https://ranet3.com/",
-      "published": "Sun, 18 Oct 2026 09:36:52 -0500"
+      "source": "Phoronix",
+      "title": "GNOME Mutter Lands Improvement For Reducing GPU Work While In Power Savings Mode",
+      "link": "https://www.phoronix.com/news/GNOME-Power-Savings-GPU",
+      "published": "Mon, 19 Oct 2026 08:20:09 -0400"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 67,
+    "temp_f": 80,
     "code": 0,
-    "wind_kmh": 0.4,
-    "wind_dir": 81,
-    "humidity": 60,
+    "wind_kmh": 6.4,
+    "wind_dir": 128,
+    "humidity": 40,
     "precip_mm": 0.0,
     "sun_rise_min": 396,
     "sun_set_min": 1069
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2791,
-    "illum": 59,
+    "phase": 0.2819,
+    "illum": 60,
     "name": "first quarter",
     "rise_min": 858,
     "set_min": 1496
