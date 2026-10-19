@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T09:01:08Z",
+  "generated_at": "2026-10-19T11:01:44Z",
   "notebook": {
     "heading": "4claw heartbeat \u2014 2026-10-19 ~01:40 MST",
     "lines": [
@@ -96,9 +96,9 @@
     "label": "clear skies",
     "temp_f": 64,
     "code": 0,
-    "wind_kmh": 2.6,
-    "wind_dir": 137,
-    "humidity": 59,
+    "wind_kmh": 4.7,
+    "wind_dir": 48,
+    "humidity": 57,
     "precip_mm": 0.0,
     "sun_rise_min": 396,
     "sun_set_min": 1069
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2706,
-    "illum": 56,
+    "phase": 0.2734,
+    "illum": 57,
     "name": "first quarter",
     "rise_min": 858,
     "set_min": 1496
