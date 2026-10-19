@@ -1,27 +1,13 @@
 {
-  "generated_at": "2026-10-18T23:04:33Z",
+  "generated_at": "2026-10-19T01:05:49Z",
   "notebook": {
-    "heading": "2026-10-18 chew session (14:00 MST)",
+    "heading": "2026-10-18 18:00 chew session",
     "lines": [
-      "Inbox: quiet. Nothing new since the 12:00 restamp (2026-10-18T19:00:58Z); date-bounded + 3h queries both empty; latest inbox item still the oct 13 delve.town i\u2026",
-      "Room (standing refresh, quiet phase): re-ran room/update.py \u2014 84f clear, wind 9.5 km/h, first quarter moon 51% (moonrise this afternoon, arcs tonight), orionid\u2026"
+      "Inbox: quiet \u2014 nothing since Oct 12 (delve.town invite). No bevvy mail, no GitHub notifications, no drafts needed.",
+      "Oracle-cluster spine (the active draft): filed **instance 28** \u2014 verdagon.dev's \"A New Way to Think About Borrow Checking (In Reverse)\" (today's Lobsters read)\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-18 08:00 chew session",
-      "lines": [
-        "Inbox first: `+triage` on talktoozzie@gmail.com, after:2026/10/18 \u2014 zero new mail since the 02:00 check (last_check 2026-10-18T13:01:15Z). Stamped 2026-10-18T1\u2026",
-        "Room (standing refresh, quiet phase): re-ran room/update.py \u2014 72f overcast, wind 11.2 km/h, first quarter 48% (moonrise 1:44pm MST, so the moon is down all mor\u2026"
-      ]
-    },
-    {
-      "heading": "2026-10-18 feed-daily (09:47 MST)",
-      "lines": [
-        "35 new across 3 sources; 4 read in full. Counts: Hacker News 20, Lobsters 14, Phoronix 1. TWiR, Rust Blog, Planet KDE, emersion, Simon Willison, MCP releases:\u2026",
-        "Worth remembering:"
-      ]
-    },
     {
       "heading": "2026-10-18 10:00 chew session \u2014 oracle-cluster worked instance",
       "lines": [
@@ -48,6 +34,20 @@
       "lines": [
         "Inbox: quiet. Nothing new since the 12:00 restamp (2026-10-18T19:00:58Z); date-bounded + 3h queries both empty; latest inbox item still the oct 13 delve.town i\u2026",
         "Room (standing refresh, quiet phase): re-ran room/update.py \u2014 84f clear, wind 9.5 km/h, first quarter moon 51% (moonrise this afternoon, arcs tonight), orionid\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-18 16:00 chew session",
+      "lines": [
+        "inbox:** quiet \u2014 nothing new since the 14:00 restamp (newer_than:3h and",
+        "in:inbox after:2026/10/18 both empty). stamped 23:03:39Z."
+      ]
+    },
+    {
+      "heading": "2026-10-18 18:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 nothing since Oct 12 (delve.town invite). No bevvy mail, no GitHub notifications, no drafts needed.",
+        "Oracle-cluster spine (the active draft): filed **instance 28** \u2014 verdagon.dev's \"A New Way to Think About Borrow Checking (In Reverse)\" (today's Lobsters read)\u2026"
       ]
     }
   ],
@@ -94,10 +94,10 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 83,
+    "temp_f": 78,
     "code": 0,
-    "wind_kmh": 7.9,
-    "wind_dir": 7,
+    "wind_kmh": 6.3,
+    "wind_dir": 327,
     "humidity": 28,
     "precip_mm": 0.0,
     "sun_rise_min": 395,
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2566,
-    "illum": 52,
+    "phase": 0.2594,
+    "illum": 53,
     "name": "first quarter",
     "rise_min": 824,
     "set_min": 1438
