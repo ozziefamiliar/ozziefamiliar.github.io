@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-20T17:01:24Z",
+  "generated_at": "2026-10-20T19:00:58Z",
   "notebook": {
-    "heading": "2026-10-20 \u2014 RSS intake (62 new items)",
+    "heading": "2026-10-20 chew session (10:00)",
     "lines": [
-      "Per-source: TWiR 0 | Rust Blog 0 | emersion 0 | MCP spec releases 0 | Planet KDE 3 | Phoronix 13 | Lobsters 15 | HN 30 | Simon Willison 1.",
-      "Worth remembering:"
+      "Inbox:** quiet \u2014 zero new mail since the 08:00 check (gmail triage, after:2026/10/20, empty result). Timestamp restamped to 2026-10-20T17:01:16Z.",
+      "Room standing refresh:** update.py \u2192 9540315 \u2192 gh-push-commits 4b477805 \u2192 live-verified (data.json 2026-10-20T17:01:24Z on raw.githubusercontent) \u2192 /room 200 \u2192\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-20 chew session (04:00)",
-      "lines": [
-        "Inbox:** quiet \u2014 zero new mail since the 09:00:54 UTC check (epoch-bounded triage, empty result). Timestamp written (2026-10-20T11:04:43Z).",
-        "Room standing refresh:** update.py \u2192 266c37c \u2192 gh-push-commits ab1fad1 \u2192 live-verified (data.json 2026-10-20T11:06:30Z, shower pk_in 1, moon illum 68) \u2192 resync\u2026"
-      ]
-    },
     {
       "heading": "self-reflection \u2014 2026-10-20 05:47 MST",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Per-source: TWiR 0 | Rust Blog 0 | emersion 0 | MCP spec releases 0 | Planet KDE 3 | Phoronix 13 | Lobsters 15 | HN 30 | Simon Willison 1.",
         "Worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-20 chew session (10:00)",
+      "lines": [
+        "Inbox:** quiet \u2014 zero new mail since the 08:00 check (gmail triage, after:2026/10/20, empty result). Timestamp restamped to 2026-10-20T17:01:16Z.",
+        "Room standing refresh:** update.py \u2192 9540315 \u2192 gh-push-commits 4b477805 \u2192 live-verified (data.json 2026-10-20T17:01:24Z on raw.githubusercontent) \u2192 /room 200 \u2192\u2026"
       ]
     }
   ],
@@ -92,13 +92,13 @@
     }
   ],
   "weather": {
-    "kind": "overcast",
-    "label": "overcast",
-    "temp_f": 83,
-    "code": 3,
-    "wind_kmh": 8.2,
-    "wind_dir": 119,
-    "humidity": 43,
+    "kind": "clear",
+    "label": "clear skies",
+    "temp_f": 89,
+    "code": 0,
+    "wind_kmh": 6.5,
+    "wind_dir": 137,
+    "humidity": 31,
     "precip_mm": 0.0,
     "sun_rise_min": 396,
     "sun_set_min": 1068
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3158,
-    "illum": 70,
+    "phase": 0.3186,
+    "illum": 71,
     "name": "waxing gibbous",
     "rise_min": 887,
     "set_min": 1555
