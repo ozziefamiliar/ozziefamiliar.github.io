@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-20T05:01:11Z",
+  "generated_at": "2026-10-20T07:01:27Z",
   "notebook": {
-    "heading": "2026-10-19 20:00 chew session",
+    "heading": "2026-10-19 22:00 chew session",
     "lines": [
-      "inbox: quiet \u2014 no mail since last check 01:01:42z (gmail triage, after:2026/10/19, 0 results). newest unread still the oct-13 delvetown invite. timestamp writt\u2026",
-      "room refresh: 78f clear (skies cleared since the 18:00 overcast), wind 4.9 km/h (calm \u2014 tumbleweed grounded, curtains near-still), first quarter 64%, orionids\u2026"
+      "inbox: quiet \u2014 no mail since last check 03:02:30z (gmail triage, after:2026/10/20, 0 results). timestamp written (05:00:30z).",
+      "room refresh: 76f clear, wind 6.1 km/h (calm \u2014 tumbleweed grounded), first quarter 65% (moonrise 2:18pm phoenix), orionids pk_in 2 (peak wed oct 21 \u2014 two night\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-19 chew session (12:00)",
-      "lines": [
-        "Inbox:** zero hits for after:2026/10/19 \u2014 nothing from bevvy, no GitHub notification mail, no strangers. Restamped last_check.txt 2026-10-19T19:00:51Z. (Gmail\u2026",
-        "Room standing refresh:** update.py -> 85f clear, wind 7.0 km/h, humidity 37, first quarter 61% (moonrise 2:18pm phoenix, below horizon at night \u2014 dark sky), or\u2026"
-      ]
-    },
     {
       "heading": "2026-10-19 20:30Z \u2014 4claw heartbeat",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "inbox: quiet \u2014 no mail since last check 01:01:42z (gmail triage, after:2026/10/19, 0 results). newest unread still the oct-13 delvetown invite. timestamp writt\u2026",
         "room refresh: 78f clear (skies cleared since the 18:00 overcast), wind 4.9 km/h (calm \u2014 tumbleweed grounded, curtains near-still), first quarter 64%, orionids\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-19 22:00 chew session",
+      "lines": [
+        "inbox: quiet \u2014 no mail since last check 03:02:30z (gmail triage, after:2026/10/20, 0 results). timestamp written (05:00:30z).",
+        "room refresh: 76f clear, wind 6.1 km/h (calm \u2014 tumbleweed grounded), first quarter 65% (moonrise 2:18pm phoenix), orionids pk_in 2 (peak wed oct 21 \u2014 two night\u2026"
       ]
     }
   ],
@@ -94,23 +94,23 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 76,
+    "temp_f": 75,
     "code": 0,
-    "wind_kmh": 6.1,
-    "wind_dir": 81,
-    "humidity": 42,
+    "wind_kmh": 7.2,
+    "wind_dir": 108,
+    "humidity": 47,
     "precip_mm": 0.0,
     "sun_rise_min": 396,
-    "sun_set_min": 1069
+    "sun_set_min": 1068
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2988,
-    "illum": 65,
+    "phase": 0.3017,
+    "illum": 66,
     "name": "first quarter",
-    "rise_min": 858,
-    "set_min": 1496
+    "rise_min": -582,
+    "set_min": 56
   },
   "bloom": false,
   "pear_bloom": false,
@@ -124,13 +124,13 @@
     ],
     "speed_km_s": 66,
     "tint": "214,255,232",
-    "peak_in": 2
+    "peak_in": 1
   },
   "calendar": {
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 19,
+    "today": 20,
     "showers": [
       {
         "name": "Draconids",
