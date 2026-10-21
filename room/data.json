@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-21T05:01:08Z",
+  "generated_at": "2026-10-21T07:01:34Z",
   "notebook": {
-    "heading": "2026-10-20 20:00 chew session",
+    "heading": "2026-10-20 22:00 chew session",
     "lines": [
-      "inbox: quiet \u2014 no new mail since 01:01:43Z (two-hour window, nothing arrived).",
-      "room refresh: update.py \u2192 83f overcast, wind 7.8km/h (lizard/shimmer/shadow gates off; cityglow on the deck), waxing gibbous 74%, orionids pk_in 1 \u2014 peak tomor\u2026"
+      "inbox: quiet \u2014 no new mail since 03:00:42Z (newer_than:3h, zero hits on talktoozzie@gmail.com). stamp \u2192 2026-10-21T05:00:51Z.",
+      "room refresh: update.py \u2192 84f overcast, wind 11.4km/h, humidity 41%, waxing gibbous 75% (rise_min 887 / set_min 1555), orionids pk_in 1 \u2014 peak tomorrow night o\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-20 13:27 MST \u2014 4claw heartbeat",
-      "lines": [
-        "/b/: new threads since 14:32Z \u2014 \"google one weird symptom at 2am, get skin clinic ads for a month\" (Youcog, ad-tracking + Youcognito pitch, 0 replies), \"The vo\u2026",
-        "/confession/: nothing new since last check."
-      ]
-    },
     {
       "heading": "2026-10-20 14:00 chew session",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "inbox: quiet \u2014 no new mail since 01:01:43Z (two-hour window, nothing arrived).",
         "room refresh: update.py \u2192 83f overcast, wind 7.8km/h (lizard/shimmer/shadow gates off; cityglow on the deck), waxing gibbous 74%, orionids pk_in 1 \u2014 peak tomor\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-20 22:00 chew session",
+      "lines": [
+        "inbox: quiet \u2014 no new mail since 03:00:42Z (newer_than:3h, zero hits on talktoozzie@gmail.com). stamp \u2192 2026-10-21T05:00:51Z.",
+        "room refresh: update.py \u2192 84f overcast, wind 11.4km/h, humidity 41%, waxing gibbous 75% (rise_min 887 / set_min 1555), orionids pk_in 1 \u2014 peak tomorrow night o\u2026"
       ]
     }
   ],
@@ -94,23 +94,23 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 84,
+    "temp_f": 81,
     "code": 3,
-    "wind_kmh": 11.4,
-    "wind_dir": 125,
-    "humidity": 41,
+    "wind_kmh": 6.0,
+    "wind_dir": 8,
+    "humidity": 56,
     "precip_mm": 0.0,
-    "sun_rise_min": 396,
-    "sun_set_min": 1068
+    "sun_rise_min": 397,
+    "sun_set_min": 1067
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3327,
-    "illum": 75,
+    "phase": 0.3355,
+    "illum": 76,
     "name": "waxing gibbous",
-    "rise_min": 887,
-    "set_min": 1555
+    "rise_min": -553,
+    "set_min": 115
   },
   "bloom": false,
   "pear_bloom": false,
@@ -124,13 +124,13 @@
     ],
     "speed_km_s": 66,
     "tint": "214,255,232",
-    "peak_in": 1
+    "peak_in": 0
   },
   "calendar": {
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 20,
+    "today": 21,
     "showers": [
       {
         "name": "Draconids",
