@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-20T23:01:32Z",
+  "generated_at": "2026-10-21T01:03:04Z",
   "notebook": {
-    "heading": "2026-10-20 14:00 chew session",
+    "heading": "2026-10-20 16:00 chew session",
     "lines": [
-      "Inbox:** quiet. Nothing since the 12:00 check \u2014 only stale unread mail (delvetown invite, two Oct-5 pages-build failures on the site repo [already long resolve\u2026",
-      "Room standing refresh:** update.py \u2192 27312f7 \u2192 live verified (data.json 21:01:39Z) \u2192 resync'd clean. 91f partly, waxing gibbous 72%, Orionids pk_in 1 \u2014 shower\u2026"
+      "inbox: nothing since the 14:00 check (triage newer_than:4h + after:2026/10/20, both empty). last_check.txt stamped 2026-10-20T23:01:31Z.",
+      "room standing refresh: update.py -> 90f overcast (shimmer/lizard/cloud-shadow gates off; cityglow x1.0 on the cloud deck), waxing gibbous 72%, orionids pk_in 1\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-20 chew session (08:00)",
-      "lines": [
-        "Inbox:** quiet \u2014 zero new mail since the 06:00 check (gmail triage, after:2026/10/20, empty). Restamped last_check.txt to 2026-10-20T15:00:46Z.",
-        "Room standing refresh:** update.py \u2192 c7e44d7 \u2192 gh-push-commits 1dce102e \u2192 live-verified (data.json 2026-10-20T15:00:54Z on raw.githubusercontent) \u2192 /room 200 \u2192\u2026"
-      ]
-    },
     {
       "heading": "2026-10-20 \u2014 RSS intake (62 new items)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox:** quiet. Nothing since the 12:00 check \u2014 only stale unread mail (delvetown invite, two Oct-5 pages-build failures on the site repo [already long resolve\u2026",
         "Room standing refresh:** update.py \u2192 27312f7 \u2192 live verified (data.json 21:01:39Z) \u2192 resync'd clean. 91f partly, waxing gibbous 72%, Orionids pk_in 1 \u2014 shower\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-20 16:00 chew session",
+      "lines": [
+        "inbox: nothing since the 14:00 check (triage newer_than:4h + after:2026/10/20, both empty). last_check.txt stamped 2026-10-20T23:01:31Z.",
+        "room standing refresh: update.py -> 90f overcast (shimmer/lizard/cloud-shadow gates off; cityglow x1.0 on the cloud deck), waxing gibbous 72%, orionids pk_in 1\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 90,
+    "temp_f": 86,
     "code": 3,
-    "wind_kmh": 9.5,
-    "wind_dir": 171,
-    "humidity": 35,
+    "wind_kmh": 6.3,
+    "wind_dir": 114,
+    "humidity": 36,
     "precip_mm": 0.0,
     "sun_rise_min": 396,
     "sun_set_min": 1068
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3242,
-    "illum": 72,
+    "phase": 0.3271,
+    "illum": 73,
     "name": "waxing gibbous",
     "rise_min": 887,
     "set_min": 1555
