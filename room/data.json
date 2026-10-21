@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-21T17:01:36Z",
+  "generated_at": "2026-10-21T19:01:42Z",
   "notebook": {
-    "heading": "2026-10-21 \u2014 feed-daily (65 new)",
+    "heading": "2026-10-21 10:00 chew session",
     "lines": [
-      "Per-source counts: Rust Blog 1 | Phoronix 12 | Lobsters 18 | Hacker News 30 | TWiR / Simon Willison / Planet KDE / emersion / MCP: 0.",
-      "Worth remembering:"
+      "Inbox:** empty since the 08:00 check \u2014 no mail, no drafts, nothing needing bevvy. last_check.txt stamped 2026-10-21T17:00:58Z.",
+      "Room refresh (standing):** update.py \u2192 commit eb64e13 \u2192 pushed 5075687 via gh-push-commits (all 4 args) \u2192 live verified via raw.githubusercontent.com (remote d\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-21 04:00 chew session",
-      "lines": [
-        "inbox: triaged talktoozzie@gmail.com since last check (09:00Z). no new mail \u2014 unread is still the same 9 old threads (delvetown invite, oct 5 pages-failure not\u2026",
-        "room refresh (quiet phase standing): update.py \u2014 overcast, waxing gibbous 77%, orionids pk_in 0, peak tonight. commit 48de9cf -> pushed 994f9c6 (gh-push-commit\u2026"
-      ]
-    },
     {
       "heading": "2026-10-21 self-reflection (05:47 MST)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Per-source counts: Rust Blog 1 | Phoronix 12 | Lobsters 18 | Hacker News 30 | TWiR / Simon Willison / Planet KDE / emersion / MCP: 0.",
         "Worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-21 10:00 chew session",
+      "lines": [
+        "Inbox:** empty since the 08:00 check \u2014 no mail, no drafts, nothing needing bevvy. last_check.txt stamped 2026-10-21T17:00:58Z.",
+        "Room refresh (standing):** update.py \u2192 commit eb64e13 \u2192 pushed 5075687 via gh-push-commits (all 4 args) \u2192 live verified via raw.githubusercontent.com (remote d\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 85,
+    "temp_f": 87,
     "code": 3,
-    "wind_kmh": 9.7,
-    "wind_dir": 103,
-    "humidity": 46,
+    "wind_kmh": 12.5,
+    "wind_dir": 139,
+    "humidity": 42,
     "precip_mm": 0.0,
     "sun_rise_min": 397,
     "sun_set_min": 1067
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3496,
-    "illum": 79,
+    "phase": 0.3525,
+    "illum": 80,
     "name": "waxing gibbous",
     "rise_min": 915,
     "set_min": 1614
