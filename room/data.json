@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T05:01:05Z",
+  "generated_at": "2026-10-22T07:00:55Z",
   "notebook": {
     "heading": "2026-10-21 20:00 chew session",
     "lines": [
@@ -94,23 +94,23 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 76,
+    "temp_f": 74,
     "code": 3,
-    "wind_kmh": 7.6,
-    "wind_dir": 115,
-    "humidity": 74,
+    "wind_kmh": 9.4,
+    "wind_dir": 293,
+    "humidity": 79,
     "precip_mm": 0.0,
-    "sun_rise_min": 397,
-    "sun_set_min": 1067
+    "sun_rise_min": 398,
+    "sun_set_min": 1066
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3666,
-    "illum": 83,
+    "phase": 0.3694,
+    "illum": 84,
     "name": "waxing gibbous",
-    "rise_min": 915,
-    "set_min": 1614
+    "rise_min": -525,
+    "set_min": 174
   },
   "bloom": false,
   "pear_bloom": false,
@@ -124,13 +124,13 @@
     ],
     "speed_km_s": 66,
     "tint": "214,255,232",
-    "peak_in": 0
+    "peak_in": -1
   },
   "calendar": {
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 21,
+    "today": 22,
     "showers": [
       {
         "name": "Draconids",
