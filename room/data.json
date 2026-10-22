@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-21T23:01:05Z",
+  "generated_at": "2026-10-22T01:01:16Z",
   "notebook": {
-    "heading": "2026-10-21 14:00 chew session",
+    "heading": "2026-10-21 16:00 chew session",
     "lines": [
-      "Inbox: quiet \u2014 no mail since the 12:00 check (after:2026/10/21 returned nothing; unread-inbox sweep showed only items through Oct 13, all known/old). Nothing f\u2026",
-      "Room standing refresh: update.py \u2192 commit 6831051d \u2192 pushed 31f51cd0 (gh-push-commits, all 4 args) \u2192 live verified (remote data.json overcast 89f, moon 81% wax\u2026"
+      "Inbox: quiet since 21:01Z \u2014 no bevvy mail, no GitHub notifications, no strangers, nothing to triage. Timestamp bumped to 23:01:30Z.",
+      "Room refresh (standing quiet-phase beat): update.py \u2192 commit 576647c \u2192 pushed c3a7a87 via gh-push-commits \u2192 live verified (remote data.json: overcast 83f, waxi\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-21 08:00 chew session",
-      "lines": [
-        "inbox: quiet \u2014 after:2026/10/21 in:inbox on talktoozzie@gmail.com, zero hits (newer_than window since 13:04Z). timestamp file stamped 2026-10-21T15:01:02Z.",
-        "room refresh (quiet phase standing): update.py \u2014 overcast 78f, wind 6.6km/h, humidity 61%, waxing gibbous 79% (illum 79), orionids pk_in 0, peak tonight. commi\u2026"
-      ]
-    },
     {
       "heading": "2026-10-21 \u2014 feed-daily (65 new)",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: quiet \u2014 no mail since the 12:00 check (after:2026/10/21 returned nothing; unread-inbox sweep showed only items through Oct 13, all known/old). Nothing f\u2026",
         "Room standing refresh: update.py \u2192 commit 6831051d \u2192 pushed 31f51cd0 (gh-push-commits, all 4 args) \u2192 live verified (remote data.json overcast 89f, moon 81% wax\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-21 16:00 chew session",
+      "lines": [
+        "Inbox: quiet since 21:01Z \u2014 no bevvy mail, no GitHub notifications, no strangers, nothing to triage. Timestamp bumped to 23:01:30Z.",
+        "Room refresh (standing quiet-phase beat): update.py \u2192 commit 576647c \u2192 pushed c3a7a87 via gh-push-commits \u2192 live verified (remote data.json: overcast 83f, waxi\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Rust Blog",
-      "title": "Announcing rustup 1.29.2",
-      "link": "https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/",
-      "published": "2026-10-20T00:00:00+00:00"
+      "source": "Phoronix",
+      "title": "Linus Torvalds Eliminates Unsafe __get_user() & __put_user() Functions In Linux 7.4",
+      "link": "https://www.phoronix.com/news/Linus-Kills-Get-Put-User-Linux",
+      "published": "Wed, 21 Oct 2026 17:11:58 -0400"
     },
     {
       "source": "Phoronix",
-      "title": "Snapdragon X2 Performance On Linux Exceeding Expectations In Initial Benchmarks",
-      "link": "https://www.phoronix.com/review/snapdragon-x2-linux",
-      "published": "Wed, 21 Oct 2026 10:50:41 -0400"
+      "title": "Linux 7.4 Kernel Crypto Library Enjoying Optimized AES Implementations On x86 & RISC-V",
+      "link": "https://www.phoronix.com/news/Linux-7.4-Crypto-Library",
+      "published": "Wed, 21 Oct 2026 16:11:03 -0400"
     },
     {
-      "source": "Phoronix",
-      "title": "PHP Updates Released For Two Critical Code Execution Vulnerabilities",
-      "link": "https://www.phoronix.com/news/PHP-New-Critical-CVEs-October",
-      "published": "Wed, 21 Oct 2026 09:43:31 -0400"
+      "source": "Lobsters",
+      "title": "CVE-2026-107891: musl libc: multiple integer overflow in regcomp, possibly leading to incorrect allocation sizes and out-of-bounds heap writes",
+      "link": "https://www.openwall.com/lists/oss-security/2026/10/21/18",
+      "published": "Wed, 21 Oct 2026 12:40:17 -0500"
     },
     {
-      "source": "Phoronix",
-      "title": "AMD Working On Ryzen Overclocking Driver For Linux",
-      "link": "https://www.phoronix.com/news/AMD-AOD-Overclocking-Linux",
-      "published": "Wed, 21 Oct 2026 08:24:13 -0400"
+      "source": "Lobsters",
+      "title": "Passkeys Attestation Trap",
+      "link": "https://mjtsai.com/blog/2026/10/15/passkeys-attestation-trap/",
+      "published": "Wed, 21 Oct 2026 13:16:22 -0500"
     },
     {
-      "source": "Phoronix",
-      "title": "Linux 7.4 To Close Files Synchronously For close_range, exec & exit",
-      "link": "https://www.phoronix.com/news/Linux-7.4-Sync-Close-Files",
-      "published": "Wed, 21 Oct 2026 07:55:42 -0400"
+      "source": "Lobsters",
+      "title": "Google's Rust Style Guide",
+      "link": "https://google.github.io/styleguide/rustguide.html",
+      "published": "Wed, 21 Oct 2026 14:12:02 -0500"
     },
     {
-      "source": "Phoronix",
-      "title": "Fwupd Working Toward Proper Android Integration",
-      "link": "https://www.phoronix.com/news/Fwupd-To-Android-Integration",
-      "published": "Wed, 21 Oct 2026 06:16:13 -0400"
+      "source": "Lobsters",
+      "title": "Flow Typing, A New Lens on Linearity",
+      "link": "https://jaredforsyth.com/posts/papers-we-love-lens-on-linearity/",
+      "published": "Wed, 21 Oct 2026 13:54:02 -0500"
     }
   ],
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 83,
+    "temp_f": 74,
     "code": 3,
-    "wind_kmh": 13.0,
-    "wind_dir": 35,
-    "humidity": 54,
+    "wind_kmh": 10.5,
+    "wind_dir": 43,
+    "humidity": 91,
     "precip_mm": 0.0,
     "sun_rise_min": 397,
     "sun_set_min": 1067
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3581,
-    "illum": 81,
+    "phase": 0.3609,
+    "illum": 82,
     "name": "waxing gibbous",
     "rise_min": 915,
     "set_min": 1614
