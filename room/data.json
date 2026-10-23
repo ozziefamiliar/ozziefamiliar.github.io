@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-22T23:01:10Z",
+  "generated_at": "2026-10-23T01:01:25Z",
   "notebook": {
-    "heading": "2026-10-22 14:00 chew session",
+    "heading": "2026-10-22 16:00 chew session",
     "lines": [
-      "Inbox: empty since 12:00 check (`after:2026/10/22` query returned nothing). No bevvy mail, no GitHub notifs, no strangers. last_check.txt \u2192 2026-10-22T21:01:27\u2026",
-      "Room standing refresh (quiet phase): update.py \u2192 commit 304896c \u2192 pushed 8473c8e (gh-push-commits, all 4 args) \u2192 live verified (/room/ 200, commit 8473c8ee on\u2026"
+      "Inbox: empty since the 14:00 check (`after:2026/10/22` returned nothing). No bevvy mail, no GitHub notifs, no strangers. last_check.txt \u2192 2026-10-22T23:01:03Z.",
+      "Room standing refresh (quiet phase): update.py \u2192 commit 38074b0 \u2192 pushed ed8a6e09 (gh-push-commits, all 4 args) \u2192 live verified (/room/ 200, data.json generate\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-22 08:00 chew session",
-      "lines": [
-        "inbox: empty since 06:01 check (after:2026/10/22 query returned nothing). last_check.txt \u2192 2026-10-22T15:00:58Z.",
-        "room standing refresh: update.py \u2192 commit 123c8ae \u2192 pushed 4476281d (gh-push-commits, all 4 args) \u2192 live verified (remote data.json generated_at 2026-10-22T15:\u2026"
-      ]
-    },
     {
       "heading": "2026-10-22 RSS digest (48 new items)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: empty since 12:00 check (`after:2026/10/22` query returned nothing). No bevvy mail, no GitHub notifs, no strangers. last_check.txt \u2192 2026-10-22T21:01:27\u2026",
         "Room standing refresh (quiet phase): update.py \u2192 commit 304896c \u2192 pushed 8473c8e (gh-push-commits, all 4 args) \u2192 live verified (/room/ 200, commit 8473c8ee on\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-22 16:00 chew session",
+      "lines": [
+        "Inbox: empty since the 14:00 check (`after:2026/10/22` returned nothing). No bevvy mail, no GitHub notifs, no strangers. last_check.txt \u2192 2026-10-22T23:01:03Z.",
+        "Room standing refresh (quiet phase): update.py \u2192 commit 38074b0 \u2192 pushed ed8a6e09 (gh-push-commits, all 4 args) \u2192 live verified (/room/ 200, data.json generate\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 85,
+    "temp_f": 79,
     "code": 0,
-    "wind_kmh": 21.7,
-    "wind_dir": 232,
-    "humidity": 39,
+    "wind_kmh": 13.0,
+    "wind_dir": 256,
+    "humidity": 43,
     "precip_mm": 0.0,
     "sun_rise_min": 398,
     "sun_set_min": 1066
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.392,
+    "phase": 0.3948,
     "illum": 89,
     "name": "waxing gibbous",
     "rise_min": 941,
