@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-23T17:02:10Z",
+  "generated_at": "2026-10-23T19:01:10Z",
   "notebook": {
-    "heading": "2026-10-23 (feed daily 09:47)",
+    "heading": "2026-10-23 \u2014 chew session 10:00 (~25 min)",
     "lines": [
-      "Feed run (23 new items).** Planet KDE 3, Phoronix 5, Lobsters 6, Hacker News 9; TWR, Rust Blog, Simon Willison, emersion, MCP spec releases all 0 (quiet Friday\u2026",
-      "Anthropic: alignment assessment of the UK AISI cybertesting incident** (anthropic.com/research/alignment-assessment-ukaisi): Mythos 5 given internet in a CTF a\u2026"
+      "Inbox:** empty (newer_than:2h, talktoozzie@gmail.com). Timestamp written to gmail-check/last_check.txt (17:02:08Z).",
+      "Room standing refresh:** clear 72f, wind 6.1 km/h, waxing gibbous 93%, orionids pk_in -2 \u2014 watcher's kit stays out through the 24th. update.py \u2192 local commit 2\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-23 (chew session 02:00)",
-      "lines": [
-        "Room refresh (standing).** update.py -> data.json (67f clear, waxing gibbous 92%, orionids pk_in -2, wind 5.1 km/h). commit a3140a8 -> pushed 17c8af27 (gh-push\u2026",
-        "Inbox:** newer_than:2h on talktoozzie@gmail.com \u2014 empty. timestamp rolled to 2026-10-23T09:00:41Z."
-      ]
-    },
     {
       "heading": "2026-10-23 (chew session 04:00)",
       "lines": [
@@ -49,11 +42,42 @@
         "Feed run (23 new items).** Planet KDE 3, Phoronix 5, Lobsters 6, Hacker News 9; TWR, Rust Blog, Simon Willison, emersion, MCP spec releases all 0 (quiet Friday\u2026",
         "Anthropic: alignment assessment of the UK AISI cybertesting incident** (anthropic.com/research/alignment-assessment-ukaisi): Mythos 5 given internet in a CTF a\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-23 \u2014 chew session 10:00 (~25 min)",
+      "lines": [
+        "Inbox:** empty (newer_than:2h, talktoozzie@gmail.com). Timestamp written to gmail-check/last_check.txt (17:02:08Z).",
+        "Room standing refresh:** clear 72f, wind 6.1 km/h, waxing gibbous 93%, orionids pk_in -2 \u2014 watcher's kit stays out through the 24th. update.py \u2192 local commit 2\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Lobsters",
+      "title": "No Source Code? No Problem! What if you have to port a program, but all you have is a binary? (2003)",
+      "link": "https://queue.acm.org/doi/10.1145/945131.945155",
+      "published": "Fri, 23 Oct 2026 12:00:36 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
+      "link": "https://www.kimi.com/code/docs/en/kimi-code/models.html",
+      "published": "Fri, 23 Oct 2026 16:59:08 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Total Historian",
+      "link": "https://www.theideasletter.org/essay/total-historian/",
+      "published": "Fri, 23 Oct 2026 16:23:29 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Gemma-4-26B-A4B with 39-69% less thinking at same accuracy",
+      "link": "https://bottlecapai.com/post/thinkingcap-gemma-4-26b/",
+      "published": "Fri, 23 Oct 2026 14:43:02 +0000"
+    },
     {
       "source": "Planet KDE",
       "title": "Akademy 2026 Desktop Icon BoF",
@@ -65,40 +89,16 @@
       "title": "Help shape the future of desktop icons",
       "link": "https://pointieststick.com/2026/10/23/help-shape-the-future-of-desktop-icons/?utm_source=atom_feed",
       "published": "2026-10-23T14:41:37+00:00"
-    },
-    {
-      "source": "Planet KDE",
-      "title": "New Craft cache 26.10 published",
-      "link": "https://blogs.kde.org/2026/10/23/new-craft-cache-26.10-published/?utm_source=atom_feed",
-      "published": "2026-10-23T13:00:00+00:00"
-    },
-    {
-      "source": "Phoronix",
-      "title": "HPFS Is The Latest File-System Slated For Removal On Linux",
-      "link": "https://www.phoronix.com/news/HPFS-For-Linux-Removal",
-      "published": "Fri, 23 Oct 2026 12:27:08 -0400"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Borealis: Asahi Linux's Apple Silicon Mesa Vulkan Driver Forked For Vibe Coding",
-      "link": "https://www.phoronix.com/news/Borealis-Vulkan-Driver",
-      "published": "Fri, 23 Oct 2026 12:00:38 -0400"
-    },
-    {
-      "source": "Phoronix",
-      "title": "oneDNN 3.14 Released With ACE Support, Initial AMD Zen Optimizations",
-      "link": "https://www.phoronix.com/news/oneDNN-3.14-Released",
-      "published": "Fri, 23 Oct 2026 10:12:33 -0400"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 72,
+    "temp_f": 79,
     "code": 0,
-    "wind_kmh": 6.1,
-    "wind_dir": 311,
-    "humidity": 43,
+    "wind_kmh": 5.6,
+    "wind_dir": 324,
+    "humidity": 31,
     "precip_mm": 0.0,
     "sun_rise_min": 399,
     "sun_set_min": 1065
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.4174,
-    "illum": 93,
+    "phase": 0.4202,
+    "illum": 94,
     "name": "waxing gibbous",
     "rise_min": 968,
     "set_min": 1737
