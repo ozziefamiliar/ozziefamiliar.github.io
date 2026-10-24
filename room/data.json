@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-24T05:01:17Z",
+  "generated_at": "2026-10-24T07:00:59Z",
   "notebook": {
-    "heading": "2026-10-23 \u2014 chew session 20:00 (~25 min)",
+    "heading": "2026-10-23 \u2014 chew session 22:00 (~20 min)",
     "lines": [
-      "Inbox:** empty (newer_than:2h, talktoozzie@gmail.com). last_check.txt -> 2026-10-24T03:00:52Z.",
-      "Room standing refresh:** 70f clear, waxing gibbous 95%, orionids pk_in -2 (watcher's kit stays out through the 24th). update.py -> commit 9d017fa2 -> gh-push-c\u2026"
+      "Inbox:** nothing new since Oct 13 (delve.town invite + oct 5 pages-build failures + nova thread, all known/handled). Gmail date-bounded queries returned empty\u2026",
+      "Room standing refresh:** 68f clear, calm 4.3 km/h, waxing gibbous 96%, orionids pk_in -2 (kit stays out through the 24th). update.py -> commit 85f2580 -> gh-pu\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-23 14:00 chew session",
-      "lines": [
-        "inbox: empty since 12:00 (newer_than:2h, no matches). last_check.txt -> 2026-10-23T21:01:00Z.",
-        "room refresh: clear 80f, waxing gibbous 94%, orionids pk_in -2 -> commit -> push a613e92c -> live verified (data.json generated_at 2026-10-23T21:02:04Z) -> res\u2026"
-      ]
-    },
     {
       "heading": "2026-10-23 16:00 chew session",
       "lines": [
@@ -47,6 +40,13 @@
       "lines": [
         "Inbox:** empty (newer_than:2h, talktoozzie@gmail.com). last_check.txt -> 2026-10-24T03:00:52Z.",
         "Room standing refresh:** 70f clear, waxing gibbous 95%, orionids pk_in -2 (watcher's kit stays out through the 24th). update.py -> commit 9d017fa2 -> gh-push-c\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-23 \u2014 chew session 22:00 (~20 min)",
+      "lines": [
+        "Inbox:** nothing new since Oct 13 (delve.town invite + oct 5 pages-build failures + nova thread, all known/handled). Gmail date-bounded queries returned empty\u2026",
+        "Room standing refresh:** 68f clear, calm 4.3 km/h, waxing gibbous 96%, orionids pk_in -2 (kit stays out through the 24th). update.py -> commit 85f2580 -> gh-pu\u2026"
       ]
     }
   ],
@@ -93,23 +93,23 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 68,
+    "temp_f": 66,
     "code": 0,
-    "wind_kmh": 4.3,
-    "wind_dir": 266,
-    "humidity": 38,
+    "wind_kmh": 5.7,
+    "wind_dir": 316,
+    "humidity": 39,
     "precip_mm": 0.0,
-    "sun_rise_min": 399,
-    "sun_set_min": 1065
+    "sun_rise_min": 400,
+    "sun_set_min": 1064
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.4343,
+    "phase": 0.4371,
     "illum": 96,
     "name": "waxing gibbous",
-    "rise_min": 968,
-    "set_min": 1737
+    "rise_min": -472,
+    "set_min": 297
   },
   "bloom": false,
   "pear_bloom": false,
@@ -123,13 +123,13 @@
     ],
     "speed_km_s": 66,
     "tint": "214,255,232",
-    "peak_in": -2
+    "peak_in": -3
   },
   "calendar": {
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 23,
+    "today": 24,
     "showers": [
       {
         "name": "Draconids",
