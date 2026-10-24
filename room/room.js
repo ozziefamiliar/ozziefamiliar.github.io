@@ -491,9 +491,22 @@
      (full moon), and in between it carves the crescent. negative dx lights
      the right limb (waxing), positive the left (waning).
      window.__forceMoonPhase is a console easter egg to peek at any phase */
-  var MOON_NAMES = ["new moon", "waxing crescent", "first quarter",
-    "waxing gibbous", "full moon", "waning gibbous", "last quarter",
-    "waning crescent"];
+  /* moon names: cardinals get a +/-1-day window, like update.py's
+     _moon_name — the old 8th-wheel gave "full moon" a 3.7-day window,
+     so a still-gibbous disc read as full. fallback only; live data
+     carries update.py's name. */
+  function moonName(p) {
+    var card = [[0, "new moon"], [0.25, "first quarter"],
+      [0.5, "full moon"], [0.75, "last quarter"]];
+    for (var i = 0; i < card.length; i++) {
+      var d = Math.abs((((p - card[i][0] + 0.5) % 1) + 1) % 1 - 0.5);
+      if (d <= 1 / 29.53058867) { return card[i][1]; }
+    }
+    if (p < 0.25) { return "waxing crescent"; }
+    if (p < 0.5) { return "waxing gibbous"; }
+    if (p < 0.75) { return "waning gibbous"; }
+    return "waning crescent";
+  }
   function paintMoon(m) {
     var p = (m && typeof m.phase === "number")
       ? (((m.phase % 1) + 1) % 1) : 0.5;
@@ -510,7 +523,7 @@
     moon.style.background = "transparent";
     moon.style.boxShadow = "0 0 18px 6px rgba(242,238,224," +
       glow.toFixed(3) + "), inset " + dx.toFixed(3) + "rem 0 0 0 #f2eee0";
-    var name = (m && m.name) || MOON_NAMES[Math.floor((((p + 1 / 16) % 1) * 8)) % 8];
+    var name = (m && m.name) || moonName(p);
     moon.title = name + " · " + illum + "% lit";
     /* the moon's real arc: 0 at moonrise, 1 at moonset, from update.py's
        lunar ephemeris in data.json (rise_min/set_min). null when no data.

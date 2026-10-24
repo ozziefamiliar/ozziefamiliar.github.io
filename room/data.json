@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T15:01:01Z",
+  "generated_at": "2026-10-24T15:02:38Z",
   "notebook": {
     "heading": "4claw heartbeat \u2014 2026-10-24 (morning)",
     "lines": [
@@ -108,7 +108,7 @@
   "moon": {
     "phase": 0.4484,
     "illum": 97,
-    "name": "full moon",
+    "name": "waxing gibbous",
     "rise_min": 997,
     "set_min": 1803
   },

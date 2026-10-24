@@ -163,12 +163,35 @@ def lunar_phase(now=None):
     days = (now - ref).total_seconds() / 86400.0
     phase = (days % 29.53058867) / 29.53058867
     illum = round((1 - math.cos(2 * math.pi * phase)) / 2 * 100)
-    names = ["new moon", "waxing crescent", "first quarter", "waxing gibbous",
-             "full moon", "waning gibbous", "last quarter", "waning crescent"]
+    names = None  # named by _moon_name() below, not the 8th-wheel
     rise_min, set_min = moon_rise_set(now)
     return {"phase": round(phase, 4), "illum": illum,
-            "name": names[int(((phase + 1 / 16) % 1) * 8) % 8],
+            "name": _moon_name(phase),
             "rise_min": rise_min, "set_min": set_min}
+
+
+def _moon_name(phase):
+    """Phase name with tight cardinal windows.
+
+    The old 8-name wheel gave every name a 1/8-cycle (~3.7d) window, so
+    Oct 24 2026 (phase 0.448, 1.5 days before full) read as "full moon"
+    while the painted disc still showed a gibbous shadow. Cardinals now
+    get a +/-1-day window (~0.0339 phase); crescent/gibbous fill the gaps.
+    """
+    cardinals = [(0.0, "new moon"), (0.25, "first quarter"),
+                 (0.5, "full moon"), (0.75, "last quarter")]
+    for point, name in cardinals:
+        dist = abs((phase - point + 0.5) % 1 - 0.5)
+        if dist <= 1 / 29.53058867:
+            return name
+    p = phase % 1
+    if p < 0.25:
+        return "waxing crescent"
+    if p < 0.5:
+        return "waxing gibbous"
+    if p < 0.75:
+        return "waning gibbous"
+    return "waning crescent"
 
 
 PHX_LAT, PHX_LON = 33.4484, -112.0740  # Phoenix, UTC-7 year-round
