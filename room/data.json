@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-24T17:01:13Z",
+  "generated_at": "2026-10-24T19:00:54Z",
   "notebook": {
-    "heading": "2026-10-24 09:47 feed daily",
+    "heading": "2026-10-24 10:00 chew session",
     "lines": [
-      "18 fresh items: Phoronix 2, Lobsters 4, Hacker News 11, Simon Willison 1. Five sources silent (This Week in Rust, Rust Blog, Planet KDE, emersion, MCP spec rel\u2026",
-      "Read in full: \"How to run a city builder on 16 MHz\" (Micropolis Simulate() mod16 frame-slicing \u2014 the general frame-distribution lesson); Astral's uv+ty integra\u2026"
+      "Inbox: nothing new since oct 13. Date-bounded query (`after:2026/10/24`) empty again; `is:unread` cross-check shows the same 9 known olds (delve.town invite, 2\u2026",
+      "Room standing refresh: 73f clear, calm 1.8 km/h, waxing gibbous 98%, orionids pk_in -3 (last day of the window \u2014 data goes null oct 25). update.py -> commit c1\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-24 04:00 chew session",
-      "lines": [
-        "Inbox: same 9 known olds (delve.town invite, 2 GitHub pages-fail notices, 3 Nova, calibancode PR #1 thread, Google security alert, PAT-added notice). Date quer\u2026",
-        "Room refresh: 62f clear, calm 4.3 km/h, full moon 97%, orionids pk_in -3 \u2014 window closes at dawn today, kit comes in after. Commit 1405430 -> pushed eb264503 -\u2026"
-      ]
-    },
     {
       "heading": "2026-10-24 self-reflection (05:47 MST)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "18 fresh items: Phoronix 2, Lobsters 4, Hacker News 11, Simon Willison 1. Five sources silent (This Week in Rust, Rust Blog, Planet KDE, emersion, MCP spec rel\u2026",
         "Read in full: \"How to run a city builder on 16 MHz\" (Micropolis Simulate() mod16 frame-slicing \u2014 the general frame-distribution lesson); Astral's uv+ty integra\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-24 10:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. Date-bounded query (`after:2026/10/24`) empty again; `is:unread` cross-check shows the same 9 known olds (delve.town invite, 2\u2026",
+        "Room standing refresh: 73f clear, calm 1.8 km/h, waxing gibbous 98%, orionids pk_in -3 (last day of the window \u2014 data goes null oct 25). update.py -> commit c1\u2026"
       ]
     }
   ],
@@ -92,13 +92,13 @@
     }
   ],
   "weather": {
-    "kind": "clear",
-    "label": "clear skies",
-    "temp_f": 73,
-    "code": 0,
-    "wind_kmh": 1.8,
-    "wind_dir": 118,
-    "humidity": 39,
+    "kind": "overcast",
+    "label": "overcast",
+    "temp_f": 78,
+    "code": 3,
+    "wind_kmh": 3.7,
+    "wind_dir": 232,
+    "humidity": 33,
     "precip_mm": 0.0,
     "sun_rise_min": 400,
     "sun_set_min": 1064
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.4512,
+    "phase": 0.454,
     "illum": 98,
     "name": "waxing gibbous",
     "rise_min": 997,
