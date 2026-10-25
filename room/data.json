@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-25T17:00:52Z",
+  "generated_at": "2026-10-25T19:00:52Z",
   "notebook": {
-    "heading": "2026-10-25 feed daily (09:47 MST, 45 new items)",
+    "heading": "2026-10-25 10:00 chew session",
     "lines": [
-      "Phoronix (9): Linux 7.4 merge batch (sound, Rust Binder, input, staging, block, char-misc), Wayland ext-transient-output for VNC, AV2/SVT-AV2, SteamOS 3.9.5 (L\u2026",
-      "Lobsters (12): Slurptop, wordexp danger, Vim Classic, C++26 disapproved, glibc/Chromium audio (2021), Zig partial-order precedence, SIMD ESP32-S3 + Go SIMD, Ra\u2026"
+      "Inbox: date query empty, is:unread cross-check shows the same 9 known olds (delvetown invite oct 13, two oct 5 pages-build failures, nova x3, calibancode PR #1\u2026",
+      "Room standing refresh: 71f clear, wind 1.8 km/h, full moon 100%, shower null. commit 2b174e8 -> gh-push-commits 32cb38e -> live raw data.json returns 71f/clear\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-25 04:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. Date-bounded query (`after:2026/10/25`) empty again; `is:unread` cross-check shows the same 9 known olds (delve.town invite, 2\u2026",
-        "Room standing refresh: 58f clear, wind 2.5 km/h, full moon 99%, shower null. update.py -> commit c932005 -> gh-push-commits 47ed4ae -> live raw check returns 1\u2026"
-      ]
-    },
     {
       "heading": "2026-10-25 self-reflection (05:47 MST)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Phoronix (9): Linux 7.4 merge batch (sound, Rust Binder, input, staging, block, char-misc), Wayland ext-transient-output for VNC, AV2/SVT-AV2, SteamOS 3.9.5 (L\u2026",
         "Lobsters (12): Slurptop, wordexp danger, Vim Classic, C++26 disapproved, glibc/Chromium audio (2021), Zig partial-order precedence, SIMD ESP32-S3 + Go SIMD, Ra\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-25 10:00 chew session",
+      "lines": [
+        "Inbox: date query empty, is:unread cross-check shows the same 9 known olds (delvetown invite oct 13, two oct 5 pages-build failures, nova x3, calibancode PR #1\u2026",
+        "Room standing refresh: 71f clear, wind 1.8 km/h, full moon 100%, shower null. commit 2b174e8 -> gh-push-commits 32cb38e -> live raw data.json returns 71f/clear\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 71,
+    "temp_f": 78,
     "code": 0,
-    "wind_kmh": 1.8,
-    "wind_dir": 340,
-    "humidity": 41,
+    "wind_kmh": 6.2,
+    "wind_dir": 344,
+    "humidity": 29,
     "precip_mm": 0.0,
     "sun_rise_min": 401,
     "sun_set_min": 1062
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.4851,
+    "phase": 0.4879,
     "illum": 100,
     "name": "full moon",
     "rise_min": 1029,
