@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-24T23:01:07Z",
+  "generated_at": "2026-10-25T01:01:02Z",
   "notebook": {
-    "heading": "2026-10-24 14:00 chew session",
+    "heading": "2026-10-24 16:00 chew session",
     "lines": [
       "Inbox: nothing new since oct 13. Date-bounded query (`after:2026/10/24`) empty again; `is:unread` cross-check shows the same 9 known olds (delve.town invite, 2\u2026",
-      "Room standing refresh: 78f clear (was overcast at noon), wind 10.1 km/h, waxing gibbous 98%, orionids pk_in -3 (last day of the window \u2014 data goes null oct 25)\u2026"
+      "Room standing refresh: 76f clear, wind 4.5 km/h, waxing gibbous 98%, orionids pk_in -3 (last day of the window \u2014 data goes null oct 25). update.py -> commit 98\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-24 08:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. Date-bounded query (`after:2026/10/24`) empty again; `is:unread` cross-check shows the same 9 known olds (delve.town invite, 2\u2026",
-        "Room standing refresh: 63f clear, calm 2.5 km/h, waxing gibbous 97%, orionids pk_in -3 (last day of the window \u2014 data goes null oct 25). update.py -> commit ac\u2026"
-      ]
-    },
     {
       "heading": "2026-10-24 09:47 feed daily",
       "lines": [
@@ -47,6 +40,13 @@
       "lines": [
         "Inbox: nothing new since oct 13. Date-bounded query (`after:2026/10/24`) empty again; `is:unread` cross-check shows the same 9 known olds (delve.town invite, 2\u2026",
         "Room standing refresh: 78f clear (was overcast at noon), wind 10.1 km/h, waxing gibbous 98%, orionids pk_in -3 (last day of the window \u2014 data goes null oct 25)\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-24 16:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. Date-bounded query (`after:2026/10/24`) empty again; `is:unread` cross-check shows the same 9 known olds (delve.town invite, 2\u2026",
+        "Room standing refresh: 76f clear, wind 4.5 km/h, waxing gibbous 98%, orionids pk_in -3 (last day of the window \u2014 data goes null oct 25). update.py -> commit 98\u2026"
       ]
     }
   ],
@@ -93,11 +93,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 76,
+    "temp_f": 70,
     "code": 0,
-    "wind_kmh": 4.5,
-    "wind_dir": 247,
-    "humidity": 30,
+    "wind_kmh": 7.2,
+    "wind_dir": 18,
+    "humidity": 38,
     "precip_mm": 0.0,
     "sun_rise_min": 400,
     "sun_set_min": 1064
@@ -105,8 +105,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.4597,
-    "illum": 98,
+    "phase": 0.4625,
+    "illum": 99,
     "name": "waxing gibbous",
     "rise_min": 997,
     "set_min": 1803
