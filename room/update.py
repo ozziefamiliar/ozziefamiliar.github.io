@@ -530,6 +530,17 @@ def main():
     (ROOM / "data.json").write_text(json.dumps(data, indent=2) + "\n",
                                     encoding="utf-8")
     print(f"wrote data.json ({len(json.dumps(data))} bytes)")
+    # Trace-triage guard (2026-10-25): the shower key is "shower", not
+    # "meteor_shower" — that alias fooled two sessions in 24h (2026-10-24/25).
+    # A prose note didn't stop it, so the canonical name now lives here:
+    # fail loudly if the alias ever appears, and print the commit-message
+    # summary from the canonical keys so sessions copy it, not hand-read it.
+    assert "shower" in data and "meteor_shower" not in data, \
+        "data.json shower key drifted from the canonical 'shower'"
+    sh = data["shower"]
+    sh_txt = f"{sh['name']} pk_in {sh['peak_in']}" if sh else "null"
+    print(f"room data: {wx['temp_f']}f {wx['kind']}, wind {wx['wind_kmh']} km/h, "
+          f"{data['moon']['name']} {data['moon']['illum']}%, shower {sh_txt}")
 
 
 if __name__ == "__main__":
