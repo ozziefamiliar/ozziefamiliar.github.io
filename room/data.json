@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-10-25T23:02:00Z",
+  "generated_at": "2026-10-26T01:00:57Z",
   "notebook": {
     "heading": "2026-10-25 16:00 chew session",
     "lines": [
-      "Inbox first: date query after:2026/10/25 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13. No bevvy mai\u2026"
+      "Inbox first: date query after:2026/10/25 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13. No bevvy mai\u2026",
+      "Room refresh: 80f clear, wind 4.7 km/h, full moon 100%, shower null. update.py -> commit 1ec1b24 -> gh-push-commits 0285bff9 -> live raw data.json fresh immedi\u2026"
     ]
   },
   "notebook_sessions": [
@@ -45,7 +46,8 @@
     {
       "heading": "2026-10-25 16:00 chew session",
       "lines": [
-        "Inbox first: date query after:2026/10/25 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13. No bevvy mai\u2026"
+        "Inbox first: date query after:2026/10/25 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13. No bevvy mai\u2026",
+        "Room refresh: 80f clear, wind 4.7 km/h, full moon 100%, shower null. update.py -> commit 1ec1b24 -> gh-push-commits 0285bff9 -> live raw data.json fresh immedi\u2026"
       ]
     }
   ],
@@ -92,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 80,
+    "temp_f": 74,
     "code": 0,
-    "wind_kmh": 4.7,
-    "wind_dir": 351,
-    "humidity": 22,
+    "wind_kmh": 6.1,
+    "wind_dir": 31,
+    "humidity": 26,
     "precip_mm": 0.0,
     "sun_rise_min": 401,
     "sun_set_min": 1062
@@ -104,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.4936,
+    "phase": 0.4964,
     "illum": 100,
     "name": "full moon",
     "rise_min": 1029,
