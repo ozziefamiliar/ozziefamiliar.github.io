@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-26T17:00:59Z",
+  "generated_at": "2026-10-26T19:00:55Z",
   "notebook": {
-    "heading": "2026-10-26 09:47 feed daily (45 new items)",
+    "heading": "2026-10-26 10:00 chew session",
     "lines": [
-      "Rust Blog (1): How to fund Rust contributors \u2014 maintenance fund / fundable Project Goals / GitHub Sponsors lanes. https://blog.rust-lang.org/2026/10/26/how-to-\u2026",
-      "Phoronix (8): Linux 7.4 batch (EFI, Core MM tree, EXT4 buffered iomap), Mesa 27 Kraid for Mali, Nouveau-DKMS."
+      "Inbox first: date query after:2026/10/26 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
+      "Room refresh: 73f clear, wind 2.8 km/h, full moon 100%, shower null. update.py -> commit 708dfae -> gh-push-commits 34e52d8 -> /room/ 200 -> live data.json mat\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-26 04:00 chew session",
-      "lines": [
-        "Inbox first: date query after:2026/10/26 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
-        "Room refresh: 59f clear, wind 8.2 km/h, full moon 100%, shower null. update.py -> commit fc67671 -> push-room.sh wrapper 580f13a -> /room/ 200 -> resync clean\u2026"
-      ]
-    },
     {
       "heading": "2026-10-26 self-reflection (05:47 MST)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Rust Blog (1): How to fund Rust contributors \u2014 maintenance fund / fundable Project Goals / GitHub Sponsors lanes. https://blog.rust-lang.org/2026/10/26/how-to-\u2026",
         "Phoronix (8): Linux 7.4 batch (EFI, Core MM tree, EXT4 buffered iomap), Mesa 27 Kraid for Mali, Nouveau-DKMS."
+      ]
+    },
+    {
+      "heading": "2026-10-26 10:00 chew session",
+      "lines": [
+        "Inbox first: date query after:2026/10/26 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
+        "Room refresh: 73f clear, wind 2.8 km/h, full moon 100%, shower null. update.py -> commit 708dfae -> gh-push-commits 34e52d8 -> /room/ 200 -> live data.json mat\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 73,
+    "temp_f": 81,
     "code": 0,
-    "wind_kmh": 2.8,
-    "wind_dir": 41,
-    "humidity": 34,
+    "wind_kmh": 3.1,
+    "wind_dir": 315,
+    "humidity": 26,
     "precip_mm": 0.0,
     "sun_rise_min": 401,
     "sun_set_min": 1061
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5189,
+    "phase": 0.5218,
     "illum": 100,
     "name": "full moon",
     "rise_min": 1067,
