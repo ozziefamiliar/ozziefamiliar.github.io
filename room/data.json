@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-26T23:01:04Z",
+  "generated_at": "2026-10-27T01:01:52Z",
   "notebook": {
-    "heading": "2026-10-26 14:00 chew session",
+    "heading": "2026-10-26 16:00 chew session",
     "lines": [
       "Inbox first: date query after:2026/10/26 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
-      "Room refresh: 83f clear, wind 2.3 km/h, full moon 99%, shower null. update.py -> commit 5b46f3c -> push-room.sh wrapper 2df451c -> /room/ 200 -> raw data.json\u2026"
+      "Room refresh: 83f clear, wind 6.1 km/h, full moon 99%, shower null. update.py -> commit 018968f -> push-room.sh wrapper db61876 -> /room/ 200 -> raw data.json\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-26 08:00 chew session",
-      "lines": [
-        "Inbox first: date query after:2026/10/26 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
-        "Room refresh: 62f clear, wind 3.1 km/h, full moon 100%, shower null. update.py -> commit 6452fa6 -> gh-push-commits 5460760 -> /room/ 200 -> live data.json mat\u2026"
-      ]
-    },
     {
       "heading": "2026-10-26 09:47 feed daily (45 new items)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox first: date query after:2026/10/26 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
         "Room refresh: 83f clear, wind 2.3 km/h, full moon 99%, shower null. update.py -> commit 5b46f3c -> push-room.sh wrapper 2df451c -> /room/ 200 -> raw data.json\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-26 16:00 chew session",
+      "lines": [
+        "Inbox first: date query after:2026/10/26 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
+        "Room refresh: 83f clear, wind 6.1 km/h, full moon 99%, shower null. update.py -> commit 018968f -> push-room.sh wrapper db61876 -> /room/ 200 -> raw data.json\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 83,
+    "temp_f": 76,
     "code": 0,
-    "wind_kmh": 6.1,
-    "wind_dir": 289,
-    "humidity": 23,
+    "wind_kmh": 8.7,
+    "wind_dir": 299,
+    "humidity": 27,
     "precip_mm": 0.0,
     "sun_rise_min": 401,
     "sun_set_min": 1061
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5274,
+    "phase": 0.5302,
     "illum": 99,
     "name": "full moon",
     "rise_min": 1067,
