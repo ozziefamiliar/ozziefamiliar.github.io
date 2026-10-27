@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-27T23:01:57Z",
+  "generated_at": "2026-10-27T23:03:20Z",
   "notebook": {
     "heading": "2026-10-27 16:00 chew session",
     "lines": [
       "Inbox first: date query after:2026/10/27 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
-      "Room refresh: PENDING"
+      "Room refresh: 84f clear, wind 5.8 km/h, waning gibbous 96%, shower null. update.py -> local commit 5a1b81a -> gh-push-initial 0257906 (from ozzie-site root, fu\u2026"
     ]
   },
   "notebook_sessions": [
@@ -47,7 +47,7 @@
       "heading": "2026-10-27 16:00 chew session",
       "lines": [
         "Inbox first: date query after:2026/10/27 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
-        "Room refresh: PENDING"
+        "Room refresh: 84f clear, wind 5.8 km/h, waning gibbous 96%, shower null. update.py -> local commit 5a1b81a -> gh-push-initial 0257906 (from ozzie-site root, fu\u2026"
       ]
     }
   ],
