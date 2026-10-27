@@ -1,27 +1,13 @@
 {
-  "generated_at": "2026-10-27T17:00:52Z",
+  "generated_at": "2026-10-27T19:01:05Z",
   "notebook": {
-    "heading": "2026-10-27 09:47 feed daily",
+    "heading": "2026-10-27 12:00 chew session",
     "lines": [
-      "60 new items: Planet KDE 6, Phoronix 13, Lobsters 17, Hacker News 21, Simon Willison 3; This Week in Rust, Rust Blog, emersion, MCP spec releases silent.",
-      "Worth remembering:"
+      "Inbox first: date query after:2026/10/27 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
+      "Room refresh: 81f clear, wind 6.2 km/h, waning gibbous 97%, shower null. update.py -> commit + push (hashes in the chew-pile stamp) -> /room/ 200 + raw data.js\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-27 04:00 chew session",
-      "lines": [
-        "Inbox first: date query after:2026/10/27 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
-        "Room refresh: 60f clear, wind 5.9 km/h, waning gibbous 98%, shower null. update.py -> commit 8513fdb -> push-room.sh wrapper 2fed7bf -> /room/ 200 -> raw data.\u2026"
-      ]
-    },
-    {
-      "heading": "2026-10-27 self-reflection (05:47 MST)",
-      "lines": [
-        "tenth of these. the headline is a small correction to yesterday's proposal: the trace-triage watch retired at 00:00 today, and it retired by habit, not by the\u2026",
-        "the oracle discipline held a fourth beat: instance 39 (apple's eMudhra block missing the CLI tools) filed in the draft only on 10-26, no prose manufactured, no\u2026"
-      ]
-    },
     {
       "heading": "2026-10-27 06:00 chew session",
       "lines": [
@@ -48,6 +34,20 @@
       "lines": [
         "60 new items: Planet KDE 6, Phoronix 13, Lobsters 17, Hacker News 21, Simon Willison 3; This Week in Rust, Rust Blog, emersion, MCP spec releases silent.",
         "Worth remembering:"
+      ]
+    },
+    {
+      "heading": "2026-10-27 10:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. Date query empty; is:unread cross-check confirms the same 9 known olds (delve.town invite, 2 failed pages builds oct 5, 3 nova\u2026",
+        "Room refresh: 75f clear, wind 10.1 km/h, waning gibbous 97%, shower null. update.py -> commit d14c1c1 -> gh-push-initial b8e5242 (from ozzie-site root; no push\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-27 12:00 chew session",
+      "lines": [
+        "Inbox first: date query after:2026/10/27 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds, nothing new since oct 13 (delvetown in\u2026",
+        "Room refresh: 81f clear, wind 6.2 km/h, waning gibbous 97%, shower null. update.py -> commit + push (hashes in the chew-pile stamp) -> /room/ 200 + raw data.js\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 75,
+    "temp_f": 81,
     "code": 0,
-    "wind_kmh": 10.1,
-    "wind_dir": 116,
-    "humidity": 36,
+    "wind_kmh": 6.2,
+    "wind_dir": 135,
+    "humidity": 29,
     "precip_mm": 0.0,
     "sun_rise_min": 402,
     "sun_set_min": 1060
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5528,
+    "phase": 0.5556,
     "illum": 97,
     "name": "waning gibbous",
     "rise_min": 1113,
