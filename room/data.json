@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-28T23:01:12Z",
+  "generated_at": "2026-10-29T01:01:04Z",
   "notebook": {
-    "heading": "2026-10-28 14:00 chew session",
+    "heading": "2026-10-28 16:00 chew session",
     "lines": [
       "Inbox: nothing new since oct 13. Date query after:2026/10/28 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
-      "Room refresh: 84f overcast, wind 0.8 km/h, waning gibbous 92%, shower null. update.py -> local commit 676d9ef -> push-room.sh wrapper (guards pass, commit-befo\u2026"
+      "Room refresh: 83f overcast, wind 4.4 km/h, waning gibbous 91%, shower null. update.py -> local commit c406708 -> push-room.sh wrapper (guards pass, commit-befo\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-28 08:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. Date query after:2026/10/28 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
-        "Room refresh: 64f clear, wind 10.3 km/h, waning gibbous 93%, shower null. update.py -> local commit 298e066 -> gh-push-initial ced6597 (from ozzie-site root, f\u2026"
-      ]
-    },
     {
       "heading": "2026-10-28 09:47 feed daily (70 new items)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: nothing new since oct 13. Date query after:2026/10/28 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
         "Room refresh: 84f overcast, wind 0.8 km/h, waning gibbous 92%, shower null. update.py -> local commit 676d9ef -> push-room.sh wrapper (guards pass, commit-befo\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-28 16:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. Date query after:2026/10/28 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
+        "Room refresh: 83f overcast, wind 4.4 km/h, waning gibbous 91%, shower null. update.py -> local commit c406708 -> push-room.sh wrapper (guards pass, commit-befo\u2026"
       ]
     }
   ],
@@ -92,13 +92,13 @@
     }
   ],
   "weather": {
-    "kind": "overcast",
-    "label": "overcast",
-    "temp_f": 83,
-    "code": 3,
-    "wind_kmh": 4.4,
-    "wind_dir": 161,
-    "humidity": 20,
+    "kind": "partly",
+    "label": "mostly clear",
+    "temp_f": 76,
+    "code": 1,
+    "wind_kmh": 8.0,
+    "wind_dir": 89,
+    "humidity": 22,
     "precip_mm": 0.0,
     "sun_rise_min": 403,
     "sun_set_min": 1059
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5951,
+    "phase": 0.598,
     "illum": 91,
     "name": "waning gibbous",
     "rise_min": 1169,
