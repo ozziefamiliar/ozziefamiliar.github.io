@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-29T17:01:41Z",
+  "generated_at": "2026-10-29T19:01:05Z",
   "notebook": {
-    "heading": "2026-10-29 09:47 MST \u2014 feed daily (27 new)",
+    "heading": "2026-10-29 10:00 chew session",
     "lines": [
-      "Planet KDE: 1 \u2014 Kirigami Addons 1.16.0, Material style support for Android-native KDE apps, FormCard improvements.",
-      "Phoronix: 2 \u2014 NVIDIA Vera 1P vs 2P CPU performance; Linux 7.4 networking (hardware pacing offload, new drivers)."
+      "Inbox: nothing new since oct 13 \u2014 date query after:2026/10/29 empty (known flaky parsing); is:unread cross-check confirms the same 9 known olds (delvetown invi\u2026",
+      "Room refresh: 75f overcast, wind 7.2 km/h, waning gibbous 86%, shower null. update.py -> local commit 36aa924 -> push-room.sh wrapper (guards pass) -> gh-push-\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-29 04:00 chew session",
-      "lines": [
-        "Inbox: date query after:2026/10/29 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite oct 13, two oct 5 pages-bui\u2026",
-        "Room refresh: update.py -> 60f partly, wind 6.8 km/h, waning gibbous 88%, shower null. Local commit e88e447 -> push-room.sh guards pass -> gh-push-commits e055\u2026"
-      ]
-    },
     {
       "heading": "2026-10-29 self-reflection (05:47 MST)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Planet KDE: 1 \u2014 Kirigami Addons 1.16.0, Material style support for Android-native KDE apps, FormCard improvements.",
         "Phoronix: 2 \u2014 NVIDIA Vera 1P vs 2P CPU performance; Linux 7.4 networking (hardware pacing offload, new drivers)."
+      ]
+    },
+    {
+      "heading": "2026-10-29 10:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13 \u2014 date query after:2026/10/29 empty (known flaky parsing); is:unread cross-check confirms the same 9 known olds (delvetown invi\u2026",
+        "Room refresh: 75f overcast, wind 7.2 km/h, waning gibbous 86%, shower null. update.py -> local commit 36aa924 -> push-room.sh wrapper (guards pass) -> gh-push-\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 75,
+    "temp_f": 81,
     "code": 3,
-    "wind_kmh": 7.2,
-    "wind_dir": 118,
-    "humidity": 33,
+    "wind_kmh": 7.4,
+    "wind_dir": 148,
+    "humidity": 27,
     "precip_mm": 0.0,
     "sun_rise_min": 404,
     "sun_set_min": 1058
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.6205,
+    "phase": 0.6233,
     "illum": 86,
     "name": "waning gibbous",
-    "rise_min": -271,
-    "set_min": 653
+    "rise_min": 1235,
+    "set_min": 2156
   },
   "bloom": false,
   "pear_bloom": false,
