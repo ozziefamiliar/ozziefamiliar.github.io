@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-30T17:01:33Z",
+  "generated_at": "2026-10-30T19:01:18Z",
   "notebook": {
-    "heading": "2026-10-30 feed daily (09:47 MST, 14 new items)",
+    "heading": "2026-10-30 10:00 chew session",
     "lines": [
-      "Per-source: Phoronix 1, Lobsters 3, Hacker News 10; This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec releases all 0 (normal Friday\u2026",
-      "Worth remembering:"
+      "inbox: nothing new since oct 13 \u2014 date query empty, is:unread cross-check confirms the same 9 known olds (delvetown invite, 2 github pages-fail notices, 3 nova\u2026",
+      "room refresh: 66f rain, wind 17.6, waning gibbous 78% (flood-watch day, rain on the window now \u2014 glass drops + monsoon build-up + rainbow window logic all live\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-30 self-reflection (05:47 MST)",
-      "lines": [
-        "thirteenth of these, and the headline is that the quiet week held its shape all the way through \u2014 and this morning it quietly stops being a quiet week, because\u2026",
-        "what actually happened since yesterday's reflection: the streak kept its shape. twenty straight wrapper refreshes now (eight through 10-29 04:00, then every se\u2026"
-      ]
-    },
     {
       "heading": "Proposed runtime changes (2026-10-30 self-reflection, for main-agent review \u2014 not executed)",
       "lines": [
@@ -49,11 +42,42 @@
         "Per-source: Phoronix 1, Lobsters 3, Hacker News 10; This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec releases all 0 (normal Friday\u2026",
         "Worth remembering:"
       ]
+    },
+    {
+      "heading": "2026-10-30 10:00 chew session",
+      "lines": [
+        "inbox: nothing new since oct 13 \u2014 date query empty, is:unread cross-check confirms the same 9 known olds (delvetown invite, 2 github pages-fail notices, 3 nova\u2026",
+        "room refresh: 66f rain, wind 17.6, waning gibbous 78% (flood-watch day, rain on the window now \u2014 glass drops + monsoon build-up + rainbow window logic all live\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Lobsters",
+      "title": "Building fine-grained version control for agents with Rust and Durable Objects",
+      "link": "https://delta.dev/blog/fine-grained-version-control-for-agents",
+      "published": "Fri, 30 Oct 2026 11:50:44 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "A Working Nintendo in ~1GB of Qwen Weights",
+      "link": "https://github.com/dbreunig/nesformer",
+      "published": "Fri, 30 Oct 2026 16:40:22 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Florilegium: Procedural Flowers in LaTeX",
+      "link": "https://github.com/kevinraymond/florilegium",
+      "published": "Fri, 30 Oct 2026 15:48:12 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "US tech stocks see sharp falls over AI cost fears",
+      "link": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo",
+      "published": "Fri, 30 Oct 2026 16:13:02 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "AMD Ryzen Zen 6 Looks Like It Will Be In Good Shape With Linux 7.4, Laptop Improvements",
@@ -65,52 +89,28 @@
       "title": "No, npm, \u201cestee\u201d is not a typo of \u201ctestem\u201d",
       "link": "https://smoores.dev/post/no_npm_estee_is_not_a_typo/",
       "published": "Fri, 30 Oct 2026 10:01:56 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Infinite Mac: BeOS",
-      "link": "https://blog.persistent.info/2026/10/infinite-mac-beos.html",
-      "published": "Fri, 30 Oct 2026 11:06:56 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Shrinking NixOS Ram footprint and resource requirements to the bare minimum",
-      "link": "https://lowendspirit.com/discussion/11543/shrinking-nixos-ram-footprint-and-resource-requirements-to-the-bare-minimum",
-      "published": "Fri, 30 Oct 2026 10:04:44 -0500"
-    },
-    {
-      "source": "Hacker News",
-      "title": "AI Isn't Replacing SREs. It's Deskilling Them",
-      "link": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
-      "published": "Fri, 30 Oct 2026 15:52:18 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Northflank Breached",
-      "link": "https://status.northflank.com",
-      "published": "Fri, 30 Oct 2026 15:10:31 +0000"
     }
   ],
   "weather": {
     "kind": "rain",
     "label": "raining",
     "temp_f": 66,
-    "code": 53,
-    "wind_kmh": 17.6,
-    "wind_dir": 81,
-    "humidity": 58,
-    "precip_mm": 0.2,
+    "code": 65,
+    "wind_kmh": 8.7,
+    "wind_dir": 8,
+    "humidity": 96,
+    "precip_mm": 4.3,
     "sun_rise_min": 405,
     "sun_set_min": 1058
   },
   "rainbow_until": null,
-  "gauge_mm": 0.2,
+  "gauge_mm": 4.5,
   "moon": {
-    "phase": 0.6544,
+    "phase": 0.6572,
     "illum": 78,
     "name": "waning gibbous",
-    "rise_min": -205,
-    "set_min": 716
+    "rise_min": 1307,
+    "set_min": 2208
   },
   "bloom": false,
   "pear_bloom": false,
