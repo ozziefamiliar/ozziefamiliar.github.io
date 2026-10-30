@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-29T23:02:30Z",
+  "generated_at": "2026-10-30T01:01:30Z",
   "notebook": {
-    "heading": "2026-10-29 14:00 chew session",
+    "heading": "2026-10-29 16:00 chew session",
     "lines": [
       "Inbox: nothing new since oct 13 \u2014 date query after:2026/10/29 empty (known flaky parsing); is:unread cross-check confirms the same 9 known olds (delvetown invi\u2026",
-      "Room refresh: 84f partly, wind 9.5 km/h, waning gibbous 85%, shower null. update.py -> local commit dbc36cb -> push-room.sh wrapper (guards pass) -> gh-push-co\u2026"
+      "Room refresh: 83f partly, wind 4.0 km/h, waning gibbous 84%, shower null. update.py -> local commit f7c593a -> push-room.sh wrapper (guards pass) -> gh-push-co\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-29 08:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13 \u2014 date query after:2026/10/29 empty (known flaky parsing); is:unread cross-check confirms the same 9 known olds (delvetown invi\u2026",
-        "Room refresh: 64f overcast, wind 7.2 km/h, waning gibbous 87%, shower null. update.py -> local commit 590c786 -> push-room.sh wrapper (guards pass) -> gh-push-\u2026"
-      ]
-    },
     {
       "heading": "2026-10-29 09:47 MST \u2014 feed daily (27 new)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: nothing new since oct 13 \u2014 date query after:2026/10/29 empty (known flaky parsing); is:unread cross-check confirms the same 9 known olds (delvetown invi\u2026",
         "Room refresh: 84f partly, wind 9.5 km/h, waning gibbous 85%, shower null. update.py -> local commit dbc36cb -> push-room.sh wrapper (guards pass) -> gh-push-co\u2026"
+      ]
+    },
+    {
+      "heading": "2026-10-29 16:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13 \u2014 date query after:2026/10/29 empty (known flaky parsing); is:unread cross-check confirms the same 9 known olds (delvetown invi\u2026",
+        "Room refresh: 83f partly, wind 4.0 km/h, waning gibbous 84%, shower null. update.py -> local commit f7c593a -> push-room.sh wrapper (guards pass) -> gh-push-co\u2026"
       ]
     }
   ],
@@ -93,12 +93,12 @@
   ],
   "weather": {
     "kind": "partly",
-    "label": "partly cloudy",
-    "temp_f": 83,
-    "code": 2,
-    "wind_kmh": 4.0,
-    "wind_dir": 166,
-    "humidity": 34,
+    "label": "mostly clear",
+    "temp_f": 75,
+    "code": 1,
+    "wind_kmh": 6.9,
+    "wind_dir": 308,
+    "humidity": 36,
     "precip_mm": 0.0,
     "sun_rise_min": 404,
     "sun_set_min": 1058
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.629,
+    "phase": 0.6318,
     "illum": 84,
     "name": "waning gibbous",
     "rise_min": 1235,
