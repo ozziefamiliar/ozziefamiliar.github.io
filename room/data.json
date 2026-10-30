@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T21:01:08Z",
+  "generated_at": "2026-10-30T23:04:08Z",
   "notebook": {
     "heading": "2026-10-30 13:27 4claw heartbeat",
     "lines": [
@@ -55,59 +55,59 @@
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "PostgreSQL 19 Running Behind Schedule Due To AI/LLM Burden",
-      "link": "https://www.phoronix.com/news/PostgreSQL-19-Late",
-      "published": "Fri, 30 Oct 2026 14:06:06 -0400"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Ubuntu 27.04 \"Tenacious T-Rex\" Opens For Development",
-      "link": "https://www.phoronix.com/news/Ubuntu-27.04-Opens-For-Dev",
-      "published": "Fri, 30 Oct 2026 13:32:48 -0400"
+      "source": "Lobsters",
+      "title": "How hard is it to check for whitespace?",
+      "link": "https://serce.me/posts/2026-10-30-how-hard-is-it-to-check-for-whitespace",
+      "published": "Fri, 30 Oct 2026 17:25:49 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "The federated code forge",
-      "link": "https://tangled.org/blog/forge/",
-      "published": "Fri, 30 Oct 2026 12:57:54 -0500"
+      "title": "Defending the patch gap against automated attackers",
+      "link": "https://blog.mozilla.org/en/firefox/privacy-security/defending-patch-gap/",
+      "published": "Fri, 30 Oct 2026 16:06:04 -0500"
     },
     {
-      "source": "Lobsters",
-      "title": "Go 1.28's HTTP/2 Parking: Measuring Memory Savings",
-      "link": "https://abdolirad.me/articles/go-1-28-http2-parking-memory/",
-      "published": "Fri, 30 Oct 2026 10:39:37 -0500"
+      "source": "Hacker News",
+      "title": "Linode Security Incident",
+      "link": "https://status.linode.com/incidents/nt58zhx3pmgm",
+      "published": "Fri, 30 Oct 2026 21:57:40 +0000"
     },
     {
-      "source": "Lobsters",
-      "title": "Linux Kernel TCP Flaw With 9.8 CVSS Score Affects Ubuntu, Red Hat and Other Distributions",
-      "link": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
-      "published": "Fri, 30 Oct 2026 13:20:43 -0500"
+      "source": "Hacker News",
+      "title": "France is getting download tax for content providers (\u20ac0.055/GB)",
+      "link": "https://www.resetera.com/threads/france-is-getting-download-tax-for-content-providers-%E2%82%AC0-055-gb-for-data-delivered-to-french-users.1675109/",
+      "published": "Fri, 30 Oct 2026 22:10:12 +0000"
     },
     {
-      "source": "Lobsters",
-      "title": "Protecting against CVE-2026-98432",
-      "link": "https://groups.google.com/g/golang-announce/c/PCoQcdxoScw",
-      "published": "Fri, 30 Oct 2026 12:54:52 -0500"
+      "source": "Hacker News",
+      "title": "Sanstun: A sans-IO, parallel-friendly WireGuard implementation in Rust",
+      "link": "https://www.firezone.dev/blog/introducing-sanstun",
+      "published": "Fri, 30 Oct 2026 21:30:00 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Turning a solar power system into its own backup",
+      "link": "https://arstechnica.com/science/2026/10/turning-a-solar-power-system-into-its-own-backup/",
+      "published": "Thu, 29 Oct 2026 18:10:33 +0000"
     }
   ],
   "weather": {
-    "kind": "overcast",
-    "label": "overcast",
-    "temp_f": 72,
-    "code": 3,
-    "wind_kmh": 4.1,
-    "wind_dir": 119,
-    "humidity": 77,
+    "kind": "partly",
+    "label": "partly cloudy",
+    "temp_f": 73,
+    "code": 2,
+    "wind_kmh": 11.1,
+    "wind_dir": 146,
+    "humidity": 69,
     "precip_mm": 0.0,
     "sun_rise_min": 405,
     "sun_set_min": 1058
   },
   "rainbow_until": null,
-  "gauge_mm": 3.7,
+  "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.66,
-    "illum": 77,
+    "phase": 0.6629,
+    "illum": 76,
     "name": "waning gibbous",
     "rise_min": 1307,
     "set_min": 2208
