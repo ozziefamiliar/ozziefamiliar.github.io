@@ -510,6 +510,14 @@ def rain_gauge(wx, now=None):
 
 def main():
     wx = phoenix_weather()
+    if wx is None:
+        # Fail-soft (2026-10-31): a failed fetch used to write weather:null
+        # into data.json and then crash on the summary print, clobbering the
+        # last good weather the room was wearing. Leave data.json untouched
+        # so the room keeps serving the previous run's conditions, and exit
+        # nonzero so the session knows the refresh stalled.
+        print("room data: weather fetch failed — data.json left untouched")
+        raise SystemExit(1)
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "notebook": latest_notebook(),
