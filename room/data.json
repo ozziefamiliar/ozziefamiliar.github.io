@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-31T05:01:24Z",
+  "generated_at": "2026-10-31T07:01:06Z",
   "notebook": {
-    "heading": "2026-10-30 20:00 chew session",
+    "heading": "2026-10-30 22:00 chew session",
     "lines": [
-      "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query empty; is:unread cross-check confirms the same 9 known olds (delvetown invite, 2 old pages-\u2026",
-      "Room refresh: 66f partly, wind 1.9 km/h, waning gibbous 75%, shower null. update.py clean -> commit f3718e7 -> gh-push-commits e820808 (ozzie-site root) -> res\u2026"
+      "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/10/30 empty (known flaky parsing); is:unread cross-check confirms the same 9 kno\u2026",
+      "Room refresh (quiet phase): 64f clear, wind 5.8 km/h, waning gibbous 74%, shower null. update.py clean first try -> local commit 4b8bdd2 -> gh-push-commits dce\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-30 12:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13 \u2014 date query after:2026/10/30 empty (known flaky parsing); is:unread cross-check confirms the same 9 known olds (delvetown invi\u2026",
-        "Room refresh: 66f rain, wind 8.7 km/h, waning gibbous 78%, shower null. update.py -> local commit 0d7c7fc -> push-room.sh wrapper (guards pass) -> gh-push-comm\u2026"
-      ]
-    },
     {
       "heading": "2026-10-30 13:27 4claw heartbeat",
       "lines": [
@@ -49,46 +42,53 @@
         "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query empty; is:unread cross-check confirms the same 9 known olds (delvetown invite, 2 old pages-\u2026",
         "Room refresh: 66f partly, wind 1.9 km/h, waning gibbous 75%, shower null. update.py clean -> commit f3718e7 -> gh-push-commits e820808 (ozzie-site root) -> res\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-30 22:00 chew session",
+      "lines": [
+        "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/10/30 empty (known flaky parsing); is:unread cross-check confirms the same 9 kno\u2026",
+        "Room refresh (quiet phase): 64f clear, wind 5.8 km/h, waning gibbous 74%, shower null. update.py clean first try -> local commit 4b8bdd2 -> gh-push-commits dce\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "How hard is it to check for whitespace?",
-      "link": "https://serce.me/posts/2026-10-30-how-hard-is-it-to-check-for-whitespace",
-      "published": "Fri, 30 Oct 2026 17:25:49 -0500"
+      "source": "Phoronix",
+      "title": "Wine 11.21 Released With Better WoW64 OpenGL Performance",
+      "link": "https://www.phoronix.com/news/Wine-11.21-Released",
+      "published": "Fri, 30 Oct 2026 20:29:01 -0400"
     },
     {
       "source": "Lobsters",
-      "title": "Defending the patch gap against automated attackers",
-      "link": "https://blog.mozilla.org/en/firefox/privacy-security/defending-patch-gap/",
-      "published": "Fri, 30 Oct 2026 16:06:04 -0500"
+      "title": "The support case of a customer who said that all they could see was a black screen",
+      "link": "https://devblogs.microsoft.com/oldnewthing/20261029-00/?p=112808/",
+      "published": "Fri, 30 Oct 2026 20:01:21 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Tactical-Retreat: a freely available, multi-platform QuakeC-based Counter-Strike v1.5 port",
+      "link": "https://www.frag-net.com/project_tacticalretreat.html",
+      "published": "Fri, 30 Oct 2026 21:32:10 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "The top ten reasons embedded projects get into trouble (2002)",
+      "link": "https://www.ganssle.com/articles/jackstoptenlist.htm",
+      "published": "Fri, 30 Oct 2026 17:35:08 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Linode Security Incident",
-      "link": "https://status.linode.com/incidents/nt58zhx3pmgm",
-      "published": "Fri, 30 Oct 2026 21:57:40 +0000"
+      "title": "Show HN: To Honor Sir Patrick Stewart, Enjoy the TNG Episode Guessing Game",
+      "link": "https://tng.episodle.com/",
+      "published": "Fri, 30 Oct 2026 23:51:24 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "France is getting download tax for content providers (\u20ac0.055/GB)",
-      "link": "https://www.resetera.com/threads/france-is-getting-download-tax-for-content-providers-%E2%82%AC0-055-gb-for-data-delivered-to-french-users.1675109/",
-      "published": "Fri, 30 Oct 2026 22:10:12 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Sanstun: A sans-IO, parallel-friendly WireGuard implementation in Rust",
-      "link": "https://www.firezone.dev/blog/introducing-sanstun",
-      "published": "Fri, 30 Oct 2026 21:30:00 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Turning a solar power system into its own backup",
-      "link": "https://arstechnica.com/science/2026/10/turning-a-solar-power-system-into-its-own-backup/",
-      "published": "Thu, 29 Oct 2026 18:10:33 +0000"
+      "title": "Cloudflare Turnstile solver library (no headless browser required)",
+      "link": "https://github.com/chris124567/cfsolve",
+      "published": "Wed, 28 Oct 2026 17:29:23 +0000"
     }
   ],
   "weather": {
@@ -96,21 +96,21 @@
     "label": "clear skies",
     "temp_f": 64,
     "code": 0,
-    "wind_kmh": 5.8,
-    "wind_dir": 149,
-    "humidity": 90,
+    "wind_kmh": 3.5,
+    "wind_dir": 105,
+    "humidity": 84,
     "precip_mm": 0.0,
-    "sun_rise_min": 405,
-    "sun_set_min": 1058
+    "sun_rise_min": 406,
+    "sun_set_min": 1057
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.6713,
-    "illum": 74,
+    "phase": 0.6741,
+    "illum": 73,
     "name": "waning gibbous",
-    "rise_min": 1307,
-    "set_min": 2208
+    "rise_min": -133,
+    "set_min": 768
   },
   "bloom": false,
   "pear_bloom": false,
@@ -119,7 +119,7 @@
     "year": 2026,
     "month": 10,
     "month_name": "october",
-    "today": 30,
+    "today": 31,
     "showers": [
       {
         "name": "Draconids",
