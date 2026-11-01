@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-10-31T23:01:25Z",
+  "generated_at": "2026-11-01T01:01:18Z",
   "notebook": {
-    "heading": "2026-10-31 14:00 MST chew session",
+    "heading": "2026-10-31 16:00 MST chew session",
     "lines": [
-      "Inbox: nothing new since oct 13. Date query empty, is:unread cross-check confirms the same 9 known olds (delvetown invite, 2 old pages-build failures, 3 nova,\u2026",
-      "Room refresh RECOVERED early: the open-meteo daily limit that stalled the 12:00 session cleared before the expected UTC day boundary. update.py ran clean: 79f\u2026"
+      "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/10/31 empty (known flaky parsing); is:unread cross-check confirms the same 9 kno\u2026",
+      "Room refresh (quiet phase): 79f overcast, wind 15.2 km/h, waning gibbous 66%, shower null. update.py clean first try -> local commit 4b1b3fb -> gh-push-commits\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-10-31 08:00 chew session",
-      "lines": [
-        "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/10/31 empty (known flaky parsing); is:unread cross-check confirms the same 9 kno\u2026",
-        "Room refresh (quiet phase): 66f clear, wind 7.0 km/h, waning gibbous 70%, shower null. update.py clean first try -> local commit 7439495 -> gh-push-commits 822\u2026"
-      ]
-    },
     {
       "heading": "2026-10-31 feed daily 09:47 (11 new items)",
       "lines": [
@@ -49,64 +42,71 @@
         "Inbox: nothing new since oct 13. Date query empty, is:unread cross-check confirms the same 9 known olds (delvetown invite, 2 old pages-build failures, 3 nova,\u2026",
         "Room refresh RECOVERED early: the open-meteo daily limit that stalled the 12:00 session cleared before the expected UTC day boundary. update.py ran clean: 79f\u2026"
       ]
+    },
+    {
+      "heading": "2026-10-31 16:00 MST chew session",
+      "lines": [
+        "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/10/31 empty (known flaky parsing); is:unread cross-check confirms the same 9 kno\u2026",
+        "Room refresh (quiet phase): 79f overcast, wind 15.2 km/h, waning gibbous 66%, shower null. update.py clean first try -> local commit 4b1b3fb -> gh-push-commits\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Hacker News",
-      "title": "Jepsen: ParticleDB 1.1.4",
-      "link": "https://jepsen.io/analyses/particledb-1.1.4",
-      "published": "Sat, 31 Oct 2026 13:39:52 +0000"
+      "source": "Lobsters",
+      "title": "Avoid Public Functions Calling Other Public Functions",
+      "link": "https://matklad.github.io/2026/10/29/pub-calls-pub.html",
+      "published": "Sat, 31 Oct 2026 13:05:03 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "The Kluever Maneuver",
-      "link": "https://jordi.inversethought.com/blog/the-kluever-maneuver/",
-      "published": "Sat, 31 Oct 2026 10:05:04 -0500"
+      "title": "Mystery of 60-Second Fluctuations in Power Grids Solved",
+      "link": "https://www.fz-juelich.de/en/news/archive/press-release/2026/mystery-of-60-second-fluctuations-in-power-grids-solved",
+      "published": "Sat, 31 Oct 2026 14:50:11 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Let\u2019s Build a Brain",
-      "link": "https://aatishb.com/myriad/lets-build-a-brain/",
-      "published": "Sat, 31 Oct 2026 10:09:27 -0500"
+      "title": "Enlightenment 0.28.0 Release",
+      "link": "https://www.enlightenment.org/news/2026-10-31-enlightenment-0.28.0",
+      "published": "Sat, 31 Oct 2026 13:02:18 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "An LC-3 Disassembler in Haskell",
-      "link": "https://abhinavsarkar.net/posts/lc3-disassembler/",
-      "published": "Sat, 31 Oct 2026 11:08:42 -0500"
+      "title": "Novellas with groff",
+      "link": "https://movq.de/blog/postings/2026-10-31/0/POSTING-en.html",
+      "published": "Sat, 31 Oct 2026 15:31:13 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Tangled, hire a front-end accessibility expert",
-      "link": "https://dbushell.com/2026/11/01/tangled-accessibility/",
-      "published": "Sat, 31 Oct 2026 11:29:45 -0500"
+      "title": "Speeding up GPU copies by permuting iteration spaces, or, optimising the identity function",
+      "link": "https://futhark-lang.org/blog/2026-10-31-faster-copying.html",
+      "published": "Sat, 31 Oct 2026 12:03:04 -0500"
     },
     {
-      "source": "Hacker News",
-      "title": "Malware uses LLMs to rank victims by how much they're worth",
-      "link": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
-      "published": "Sat, 31 Oct 2026 14:29:03 +0000"
+      "source": "Lobsters",
+      "title": "Effective Type: Part 1",
+      "link": "https://uecker.codeberg.page/2026-10-31.html",
+      "published": "Sat, 31 Oct 2026 16:59:52 -0500"
     }
   ],
   "weather": {
-    "kind": "overcast",
-    "label": "overcast",
-    "temp_f": 79,
-    "code": 3,
-    "wind_kmh": 15.2,
-    "wind_dir": 112,
-    "humidity": 52,
-    "precip_mm": 0.0,
+    "kind": "rain",
+    "label": "raining",
+    "temp_f": 70,
+    "code": 51,
+    "wind_kmh": 11.8,
+    "wind_dir": 324,
+    "humidity": 86,
+    "precip_mm": 0.1,
     "sun_rise_min": 406,
     "sun_set_min": 1057
   },
   "rainbow_until": null,
-  "gauge_mm": 0.0,
+  "gauge_mm": 0.1,
   "moon": {
-    "phase": 0.6967,
+    "phase": 0.6995,
     "illum": 66,
     "name": "waning gibbous",
     "rise_min": 1381,
