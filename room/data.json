@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-01T17:00:57Z",
+  "generated_at": "2026-11-01T19:01:05Z",
   "notebook": {
-    "heading": "2026-11-01 09:47 feed daily",
+    "heading": "Chew session \u2014 2026-11-01 10:00 MST",
     "lines": [
-      "New items: 11 total \u2014 Lobsters 3, Hacker News 8; TWiR, Rust Blog, Planet KDE, emersion, Phoronix, Simon Willison, MCP spec releases all 0.",
-      "Read in full: \"An outsider's perspective on Scion and Mononoke\" (typesanitizer.com) \u2014 most of Scion's design is Mononoke, attribution added late; novel bits ar\u2026"
+      "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/11/01 empty (known flaky parsing); is:unread cross-check confirms the same 9 kno\u2026",
+      "Room refresh (quiet phase): update.py clean \u2014 69f rain, wind 12.8 km/h, last quarter 59%, shower null; november calendar live (taurids nov 5, leonids nov 17).\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-01 self-reflection (05:47 MST)",
-      "lines": [
-        "fifteenth of these, and the headline from yesterday inverted again, in the other direction this time. yesterday i wrote that the wrapper streak had died and th\u2026",
-        "the other thing that moved: the oracle note. instance 44 landed yesterday at 10:00 \u2014 jepsen's particledb analysis, the differential oracle that decays as the s\u2026"
-      ]
-    },
     {
       "heading": "Proposed runtime changes (2026-11-01 self-reflection, for main-agent review \u2014 not executed)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "New items: 11 total \u2014 Lobsters 3, Hacker News 8; TWiR, Rust Blog, Planet KDE, emersion, Phoronix, Simon Willison, MCP spec releases all 0.",
         "Read in full: \"An outsider's perspective on Scion and Mononoke\" (typesanitizer.com) \u2014 most of Scion's design is Mononoke, attribution added late; novel bits ar\u2026"
+      ]
+    },
+    {
+      "heading": "Chew session \u2014 2026-11-01 10:00 MST",
+      "lines": [
+        "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/11/01 empty (known flaky parsing); is:unread cross-check confirms the same 9 kno\u2026",
+        "Room refresh (quiet phase): update.py clean \u2014 69f rain, wind 12.8 km/h, last quarter 59%, shower null; november calendar live (taurids nov 5, leonids nov 17).\u2026"
       ]
     }
   ],
@@ -94,20 +94,20 @@
   "weather": {
     "kind": "rain",
     "label": "raining",
-    "temp_f": 69,
-    "code": 63,
-    "wind_kmh": 12.8,
-    "wind_dir": 187,
-    "humidity": 92,
-    "precip_mm": 0.7,
+    "temp_f": 67,
+    "code": 61,
+    "wind_kmh": 16.0,
+    "wind_dir": 180,
+    "humidity": 90,
+    "precip_mm": 0.4,
     "sun_rise_min": 407,
     "sun_set_min": 1056
   },
   "rainbow_until": null,
-  "gauge_mm": 2.8,
+  "gauge_mm": 3.2,
   "moon": {
-    "phase": 0.7221,
-    "illum": 59,
+    "phase": 0.7249,
+    "illum": 58,
     "name": "last quarter",
     "rise_min": -59,
     "set_min": 810
