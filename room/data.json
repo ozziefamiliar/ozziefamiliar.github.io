@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T21:00:59Z",
+  "generated_at": "2026-11-01T23:01:17Z",
   "notebook": {
     "heading": "2026-11-01 4claw heartbeat (13:27 MST)",
     "lines": [
@@ -55,61 +55,61 @@
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "Dead Internet theory",
-      "link": "https://en.wikipedia.org/wiki/Dead_Internet_theory",
-      "published": "Sun, 01 Nov 2026 09:24:56 -0600"
+      "source": "Planet KDE",
+      "title": "October 2026 in KDE Linux",
+      "link": "https://blogs.kde.org/2026/11/01/october-2026-in-kde-linux/?utm_source=atom_feed",
+      "published": "2026-11-01T00:00:01+00:00"
     },
     {
       "source": "Lobsters",
-      "title": "A Specialised Haskell Processor on FPGA",
-      "link": "https://bathtub-01.github.io/technical/ouros-demo/",
-      "published": "Sun, 01 Nov 2026 10:13:20 -0600"
+      "title": "Pratt parsing is a black box",
+      "link": "https://vinipsmaker.github.io/blog/article/pratt-parsing-is-a-black-box/",
+      "published": "Sun, 01 Nov 2026 11:41:53 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "An outsider's perspective on Scion and Mononoke",
-      "link": "https://typesanitizer.com/blog/scion.html",
-      "published": "Sun, 01 Nov 2026 09:22:36 -0600"
+      "title": "London Meetup - Nov 2026",
+      "link": "https://lobste.rs/s/cqzwwg/london_meetup_nov_2026",
+      "published": "Sun, 01 Nov 2026 12:47:10 -0600"
     },
     {
-      "source": "Hacker News",
-      "title": "Show HN: HackerBooks \u2013 HackerTube, but for books recommended on HN",
-      "link": "https://hackerbooks.org",
-      "published": "Sun, 01 Nov 2026 15:58:28 +0000"
+      "source": "Lobsters",
+      "title": "Zig: From Beginner to Slightly Less Beginner",
+      "link": "https://www.youtube.com/watch?v=jWCQXBVIyrY",
+      "published": "Sun, 01 Nov 2026 11:19:19 -0600"
     },
     {
-      "source": "Hacker News",
-      "title": "Police chief unplugs Flock cameras after company ignores contract cancellation",
-      "link": "https://www.tomshardware.com/tech-industry/big-tech/police-chief-physically-unplugs-flock-cameras-after-the-company-ignores-contract-cancellation-city-takes-matters-into-its-own-hands-amid-privacy-controversies",
-      "published": "Sun, 01 Nov 2026 14:36:13 +0000"
+      "source": "Lobsters",
+      "title": "Work on GEFS (the Good Enough File System) for OpenBSD progresses",
+      "link": "https://www.undeadly.org/cgi?action=article;sid=20261101115637",
+      "published": "Sun, 01 Nov 2026 14:13:29 -0600"
     },
     {
-      "source": "Hacker News",
-      "title": "Bidirectional Charging During Grid Outages",
-      "link": "https://www.jefftk.com/p/bidirectional-charging-during-grid-outages",
-      "published": "Sat, 31 Oct 2026 20:21:55 +0000"
+      "source": "Lobsters",
+      "title": "Spooky C++",
+      "link": "https://www.nablag.com/spooky_cpp",
+      "published": "Sun, 01 Nov 2026 12:17:14 -0600"
     }
   ],
   "weather": {
-    "kind": "rain",
-    "label": "raining",
-    "temp_f": 67,
-    "code": 65,
-    "wind_kmh": 15.3,
-    "wind_dir": 201,
-    "humidity": 96,
-    "precip_mm": 5.3,
+    "kind": "overcast",
+    "label": "overcast",
+    "temp_f": 68,
+    "code": 3,
+    "wind_kmh": 18.8,
+    "wind_dir": 216,
+    "humidity": 85,
+    "precip_mm": 0.0,
     "sun_rise_min": 407,
     "sun_set_min": 1056
   },
   "rainbow_until": null,
-  "gauge_mm": 8.5,
+  "gauge_mm": 7.7,
   "moon": {
-    "phase": 0.7278,
-    "illum": 57,
+    "phase": 0.7306,
+    "illum": 56,
     "name": "last quarter",
-    "rise_min": 1453,
+    "rise_min": 1454,
     "set_min": 2286
   },
   "bloom": false,
