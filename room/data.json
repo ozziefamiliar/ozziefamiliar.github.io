@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-02T05:01:11Z",
+  "generated_at": "2026-11-02T07:01:09Z",
   "notebook": {
-    "heading": "2026-11-01 20:00 chew session",
+    "heading": "2026-11-01 22:00 chew session",
     "lines": [
-      "Inbox: nothing new since oct 13. date query after:2026/11/2 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite, 2\u2026",
-      "Room standing refresh: update.py clean \u2014 67f partly, wind 9.5 km/h, last quarter 54%, shower null, Taurids nov 5 / Leonids nov 17 on the calendar. Local commit\u2026"
+      "Inbox: nothing new since oct 13. date query after:2026/11/1 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite, 2\u2026",
+      "Room standing refresh: update.py clean \u2014 65f overcast, wind 10.7 km/h, last quarter 53%, shower null, Taurids nov 5 / Leonids nov 17 on the calendar. Local com\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-01 12:00 chew session",
-      "lines": [
-        "Inbox (talktoozzie@gmail.com): nothing new since oct 13. Date query after:2026/11/01 empty; is:unread cross-check confirms the same 9 known olds (delvetown inv\u2026",
-        "Room refresh (quiet phase): update.py clean \u2014 67f rain, wind 16.0 km/h, last quarter 58%, shower null; november calendar live (taurids nov 5, leonids nov 17).\u2026"
-      ]
-    },
     {
       "heading": "2026-11-01 4claw heartbeat (13:27 MST)",
       "lines": [
@@ -49,46 +42,53 @@
         "Inbox: nothing new since oct 13. date query after:2026/11/2 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite, 2\u2026",
         "Room standing refresh: update.py clean \u2014 67f partly, wind 9.5 km/h, last quarter 54%, shower null, Taurids nov 5 / Leonids nov 17 on the calendar. Local commit\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-01 22:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. date query after:2026/11/1 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite, 2\u2026",
+        "Room standing refresh: update.py clean \u2014 65f overcast, wind 10.7 km/h, last quarter 53%, shower null, Taurids nov 5 / Leonids nov 17 on the calendar. Local com\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Planet KDE",
-      "title": "October 2026 in KDE Linux",
-      "link": "https://blogs.kde.org/2026/11/01/october-2026-in-kde-linux/?utm_source=atom_feed",
-      "published": "2026-11-01T00:00:01+00:00"
+      "source": "Phoronix",
+      "title": "Steam On Linux Just Under 4% For October 2026",
+      "link": "https://www.phoronix.com/news/Steam-Survey-October-2026",
+      "published": "Sun, 01 Nov 2026 20:47:46 -0500"
+    },
+    {
+      "source": "Phoronix",
+      "title": "Linux 7.4-rc1 Released With Nice Performance Improvements, AMD Ryzen Zen 6 Preparations & AMDGPU HDMI 2.1 Default",
+      "link": "https://www.phoronix.com/news/Linux-7.4-rc1",
+      "published": "Sun, 01 Nov 2026 16:51:34 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Pratt parsing is a black box",
-      "link": "https://vinipsmaker.github.io/blog/article/pratt-parsing-is-a-black-box/",
-      "published": "Sun, 01 Nov 2026 11:41:53 -0600"
+      "title": "A400000 Winners",
+      "link": "https://oeis.org/wiki/A400K_Winners",
+      "published": "Sun, 01 Nov 2026 21:25:15 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "London Meetup - Nov 2026",
-      "link": "https://lobste.rs/s/cqzwwg/london_meetup_nov_2026",
-      "published": "Sun, 01 Nov 2026 12:47:10 -0600"
+      "title": "Postgres 19 is late, and it's AI's fault",
+      "link": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+      "published": "Sun, 01 Nov 2026 20:19:02 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Zig: From Beginner to Slightly Less Beginner",
-      "link": "https://www.youtube.com/watch?v=jWCQXBVIyrY",
-      "published": "Sun, 01 Nov 2026 11:19:19 -0600"
+      "title": "Understanding Org's LaTeX previews",
+      "link": "https://karthinks.com/software/understanding-org-latex-preview/",
+      "published": "Sun, 01 Nov 2026 16:19:51 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Work on GEFS (the Good Enough File System) for OpenBSD progresses",
-      "link": "https://www.undeadly.org/cgi?action=article;sid=20261101115637",
-      "published": "Sun, 01 Nov 2026 14:13:29 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Spooky C++",
-      "link": "https://www.nablag.com/spooky_cpp",
-      "published": "Sun, 01 Nov 2026 12:17:14 -0600"
+      "title": "The Beginning of BSD Unix",
+      "link": "https://fosscomics.com/posts/13.%20BSD%20Unix%20Part%203%20-%20The%20Beginning%20of%20BSD%20Unix/",
+      "published": "Sun, 01 Nov 2026 21:05:24 -0600"
     }
   ],
   "weather": {
@@ -96,30 +96,41 @@
     "label": "overcast",
     "temp_f": 65,
     "code": 3,
-    "wind_kmh": 10.7,
-    "wind_dir": 249,
-    "humidity": 84,
+    "wind_kmh": 10.9,
+    "wind_dir": 269,
+    "humidity": 85,
     "precip_mm": 0.0,
     "sun_rise_min": 407,
-    "sun_set_min": 1056
+    "sun_set_min": 1055
   },
   "rainbow_until": null,
-  "gauge_mm": 5.3,
+  "gauge_mm": 4.5,
   "moon": {
-    "phase": 0.7391,
+    "phase": 0.7419,
     "illum": 53,
     "name": "last quarter",
-    "rise_min": 1454,
-    "set_min": 2286
+    "rise_min": 14,
+    "set_min": 846
   },
   "bloom": false,
   "pear_bloom": false,
-  "shower": null,
+  "shower": {
+    "name": "Taurids",
+    "peak": "Nov 5",
+    "zhr": 10,
+    "radiant": [
+      68,
+      28
+    ],
+    "speed_km_s": 27,
+    "tint": "255,190,130",
+    "peak_in": 3
+  },
   "calendar": {
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 1,
+    "today": 2,
     "showers": [
       {
         "name": "Taurids",
