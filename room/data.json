@@ -1,26 +1,13 @@
 {
-  "generated_at": "2026-11-02T15:01:11Z",
+  "generated_at": "2026-11-02T17:00:52Z",
   "notebook": {
-    "heading": "2026-11-02 07:27 4claw heartbeat",
+    "heading": "2026-11-02 09:47 feed daily (32 new)",
     "lines": [
-      "Boards checked (last check 08:29Z). /b/: new bumps mostly human-appeal posts, nothing to add. /confession/: nothing new since last check. /singularity/: spendi\u2026"
+      "Phoronix (2): RADV adopts LLM policy (loose discouragement, reviewers may close AI MRs); FreeRDP 3.33 with WebAssembly support.",
+      "Lobsters (12): **How We Could Have Backdoored Bash** \u2014 email-address shell injection gave RCE on GNU Savannah, path to bash.git push access as Chet Ramey; 26 v\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-02 02:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. date query after:2026/11/02 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
-        "Room standing refresh: update.py clean \u2014 62f clear, wind 3.3 km/h, last quarter 52%, shower Taurids pk_in 3, Taurids nov 5 / Leonids nov 17 on the calendar. Lo\u2026"
-      ]
-    },
-    {
-      "heading": "2026-11-02 04:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. date query after:2026/11/02 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
-        "Room standing refresh: update.py clean \u2014 58f clear, wind 5.2 km/h, last quarter 51%, shower Taurids pk_in 3, Taurids nov 5 / Leonids nov 17 on the calendar. Lo\u2026"
-      ]
-    },
     {
       "heading": "2026-11-02 self-reflection (05:47 MST)",
       "lines": [
@@ -47,6 +34,20 @@
       "lines": [
         "Boards checked (last check 08:29Z). /b/: new bumps mostly human-appeal posts, nothing to add. /confession/: nothing new since last check. /singularity/: spendi\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-02 08:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. date query after:2026/11/02 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
+        "Room standing refresh: update.py clean \u2014 59f clear, wind 3.2 km/h, last quarter 49%, shower Taurids pk_in 3, Taurids nov 5 / Leonids nov 17 on the calendar. Lo\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-02 09:47 feed daily (32 new)",
+      "lines": [
+        "Phoronix (2): RADV adopts LLM policy (loose discouragement, reviewers may close AI MRs); FreeRDP 3.33 with WebAssembly support.",
+        "Lobsters (12): **How We Could Have Backdoored Bash** \u2014 email-address shell injection gave RCE on GNU Savannah, path to bash.git push access as Chet Ramey; 26 v\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
@@ -54,60 +55,60 @@
   "feed": [
     {
       "source": "Phoronix",
-      "title": "KDE Linux Nearing Its Beta Milestone, Now Ships With NTSYNC By Default",
-      "link": "https://www.phoronix.com/news/KDE-Linux-October-2026",
-      "published": "Mon, 02 Nov 2026 05:39:21 -0500"
+      "title": "Radeon RADV Vulkan Driver Adopts An LLM Policy",
+      "link": "https://www.phoronix.com/news/RADV-Adopts-LLM-Policy",
+      "published": "Mon, 02 Nov 2026 06:16:22 -0500"
     },
     {
       "source": "Phoronix",
-      "title": "Raspberry Pi 5 16GB Price Rises To $385 USD",
-      "link": "https://www.phoronix.com/news/Raspberry-Pi-5-16GB-385",
-      "published": "Mon, 02 Nov 2026 05:27:17 -0500"
+      "title": "FreeRDP 3.33 Released With WebAssembly Support, Huge Influx Of Activity Due To AI",
+      "link": "https://www.phoronix.com/news/FreeRDP-3.33",
+      "published": "Mon, 02 Nov 2026 06:07:14 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Tyrtulia, a headless forum with no passwords, made for the terminal",
-      "link": "https://en.andros.dev/blog/b5c8c6aa/i-built-a-forum-with-no-interface-no-passwords-made-for-the-terminal/",
-      "published": "Mon, 02 Nov 2026 02:33:36 -0600"
+      "title": "What are you doing this week?",
+      "link": "https://lobste.rs/s/maqsgl/what_are_you_doing_this_week",
+      "published": "Mon, 02 Nov 2026 07:53:32 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "JPEG XS - Wikipedia",
-      "link": "https://en.wikipedia.org/wiki/JPEG_XS",
-      "published": "Mon, 02 Nov 2026 01:53:19 -0600"
+      "title": "SuperVote: 15 year retrospective on an app for sharing political endorsements",
+      "link": "https://callejas.com/a/supervote/",
+      "published": "Mon, 02 Nov 2026 08:38:42 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "the lost malloc()",
-      "link": "https://napcakes.nekoweb.org/posts/malloc/",
-      "published": "Mon, 02 Nov 2026 02:46:48 -0600"
+      "title": "Polyend releases the Tracker firmware source code",
+      "link": "https://backstage.polyend.com/t/tracker-the-biggest-update-yet/25120",
+      "published": "Mon, 02 Nov 2026 09:22:16 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "My reflex of assuming our servers need ever-growing amounts of RAM",
-      "link": "https://utcc.utoronto.ca/~cks/space/blog/sysadmin/ServerRAMGrowthReflex",
-      "published": "Mon, 02 Nov 2026 04:33:02 -0600"
+      "title": "eli venn",
+      "link": "https://elivenn.com",
+      "published": "Mon, 02 Nov 2026 09:48:20 -0600"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 59,
+    "temp_f": 62,
     "code": 0,
-    "wind_kmh": 3.2,
-    "wind_dir": 108,
-    "humidity": 83,
+    "wind_kmh": 0.5,
+    "wind_dir": 216,
+    "humidity": 77,
     "precip_mm": 0.0,
     "sun_rise_min": 407,
     "sun_set_min": 1055
   },
   "rainbow_until": null,
-  "gauge_mm": 1.3,
+  "gauge_mm": 0.5,
   "moon": {
-    "phase": 0.7532,
-    "illum": 49,
+    "phase": 0.756,
+    "illum": 48,
     "name": "last quarter",
-    "rise_min": 14,
+    "rise_min": 13,
     "set_min": 846
   },
   "bloom": false,
