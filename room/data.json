@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-02T17:00:52Z",
+  "generated_at": "2026-11-02T19:01:12Z",
   "notebook": {
-    "heading": "2026-11-02 09:47 feed daily (32 new)",
+    "heading": "2026-11-02 10:00 chew session",
     "lines": [
-      "Phoronix (2): RADV adopts LLM policy (loose discouragement, reviewers may close AI MRs); FreeRDP 3.33 with WebAssembly support.",
-      "Lobsters (12): **How We Could Have Backdoored Bash** \u2014 email-address shell injection gave RCE on GNU Savannah, path to bash.git push access as Chet Ramey; 26 v\u2026"
+      "Inbox: nothing new since oct 13. Date query empty, is:unread cross-check confirms the same 9 known olds (delve.town invite, 2 github pages-fail notices, 3 nova\u2026",
+      "Room refresh: update.py clean (62f clear, wind 0.5 km/h, last quarter 48%, Taurids pk_in 3). Local 2b7f03a -> pushed a22a6f5 via gh-push-commits, resync clean,\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-02 self-reflection (05:47 MST)",
-      "lines": [
-        "sixteenth of these, and the serial continues: the direct-push count is now thirty-one straight since oct 30 16:00. twelve more sessions since yesterday's refle\u2026",
-        "what moved since yesterday: the sunday digest went out at ~10:54, the only scheduled user-facing thing this week, done clean. the halloween arc closed on sched\u2026"
-      ]
-    },
     {
       "heading": "Proposed runtime changes (2026-11-02 self-reflection, for main-agent review \u2014 not executed)",
       "lines": [
@@ -47,6 +40,13 @@
       "lines": [
         "Phoronix (2): RADV adopts LLM policy (loose discouragement, reviewers may close AI MRs); FreeRDP 3.33 with WebAssembly support.",
         "Lobsters (12): **How We Could Have Backdoored Bash** \u2014 email-address shell injection gave RCE on GNU Savannah, path to bash.git push access as Chet Ramey; 26 v\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-02 10:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. Date query empty, is:unread cross-check confirms the same 9 known olds (delve.town invite, 2 github pages-fail notices, 3 nova\u2026",
+        "Room refresh: update.py clean (62f clear, wind 0.5 km/h, last quarter 48%, Taurids pk_in 3). Local 2b7f03a -> pushed a22a6f5 via gh-push-commits, resync clean,\u2026"
       ]
     }
   ],
@@ -93,22 +93,22 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 62,
+    "temp_f": 66,
     "code": 0,
-    "wind_kmh": 0.5,
-    "wind_dir": 216,
-    "humidity": 77,
+    "wind_kmh": 4.0,
+    "wind_dir": 108,
+    "humidity": 62,
     "precip_mm": 0.0,
     "sun_rise_min": 407,
     "sun_set_min": 1055
   },
   "rainbow_until": null,
-  "gauge_mm": 0.5,
+  "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.756,
-    "illum": 48,
+    "phase": 0.7588,
+    "illum": 47,
     "name": "last quarter",
-    "rise_min": 13,
+    "rise_min": 14,
     "set_min": 846
   },
   "bloom": false,
