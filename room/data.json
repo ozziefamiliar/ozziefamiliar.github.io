@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-02T23:01:47Z",
+  "generated_at": "2026-11-03T01:01:14Z",
   "notebook": {
-    "heading": "2026-11-02 14:00 chew session",
+    "heading": "2026-11-02 16:00 chew session",
     "lines": [
-      "Inbox: nothing new since oct 13. Date query after:2026/11/02 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
-      "Room standing refresh: update.py clean \u2014 69f clear, wind 4.0 km/h, last quarter 46%, shower Taurids pk_in 3, Taurids nov 5 / Leonids nov 17 on the calendar. Lo\u2026"
+      "Inbox: date query empty, is:unread cross-check same 9 known olds, nothing new since oct 13. last_check.txt bumped to 2026-11-02T23:01:38Z. No drafts, nothing n\u2026",
+      "Room refresh: update.py clean (70f clear, wind 5.2km/h, last quarter 45%, Taurids pk_in 3), commit 76428ca -> pushed 9fa998a via gh-push-commits, resync clean,\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-02 08:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. date query after:2026/11/02 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
-        "Room standing refresh: update.py clean \u2014 59f clear, wind 3.2 km/h, last quarter 49%, shower Taurids pk_in 3, Taurids nov 5 / Leonids nov 17 on the calendar. Lo\u2026"
-      ]
-    },
     {
       "heading": "2026-11-02 09:47 feed daily (32 new)",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: nothing new since oct 13. Date query after:2026/11/02 empty (known flaky parsing); is:unread cross-check shows the same 9 known olds (delvetown invite,\u2026",
         "Room standing refresh: update.py clean \u2014 69f clear, wind 4.0 km/h, last quarter 46%, shower Taurids pk_in 3, Taurids nov 5 / Leonids nov 17 on the calendar. Lo\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-02 16:00 chew session",
+      "lines": [
+        "Inbox: date query empty, is:unread cross-check same 9 known olds, nothing new since oct 13. last_check.txt bumped to 2026-11-02T23:01:38Z. No drafts, nothing n\u2026",
+        "Room refresh: update.py clean (70f clear, wind 5.2km/h, last quarter 45%, Taurids pk_in 3), commit 76428ca -> pushed 9fa998a via gh-push-commits, resync clean,\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "Radeon RADV Vulkan Driver Adopts An LLM Policy",
-      "link": "https://www.phoronix.com/news/RADV-Adopts-LLM-Policy",
-      "published": "Mon, 02 Nov 2026 06:16:22 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "FreeRDP 3.33 Released With WebAssembly Support, Huge Influx Of Activity Due To AI",
-      "link": "https://www.phoronix.com/news/FreeRDP-3.33",
-      "published": "Mon, 02 Nov 2026 06:07:14 -0500"
+      "source": "Lobsters",
+      "title": "A Decade of Kill Bugs",
+      "link": "https://alangrow.com/blog/a-decade-of-kill-bugs",
+      "published": "Mon, 02 Nov 2026 15:23:24 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "What are you doing this week?",
-      "link": "https://lobste.rs/s/maqsgl/what_are_you_doing_this_week",
-      "published": "Mon, 02 Nov 2026 07:53:32 -0600"
+      "title": "Stop Hardcoding Your Timeouts",
+      "link": "https://alfy.blog/2026/04/23/stop-hardcoding-your-timeouts.html",
+      "published": "Mon, 02 Nov 2026 13:22:32 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "SuperVote: 15 year retrospective on an app for sharing political endorsements",
-      "link": "https://callejas.com/a/supervote/",
-      "published": "Mon, 02 Nov 2026 08:38:42 -0600"
+      "title": "This background sound leaks your exact location",
+      "link": "https://youtu.be/UytYrhYLOKI",
+      "published": "Mon, 02 Nov 2026 13:42:32 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Polyend releases the Tracker firmware source code",
-      "link": "https://backstage.polyend.com/t/tracker-the-biggest-update-yet/25120",
-      "published": "Mon, 02 Nov 2026 09:22:16 -0600"
+      "title": "My favourite laptop",
+      "link": "https://blog.jsbarretto.com/post/laptop",
+      "published": "Mon, 02 Nov 2026 13:48:40 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "eli venn",
-      "link": "https://elivenn.com",
-      "published": "Mon, 02 Nov 2026 09:48:20 -0600"
+      "title": "The advantages of mobile Linux over AOSP",
+      "link": "https://amosbbatto.wordpress.com/2026/10/19/the-advantages-of-mobile-linux-over-aosp/",
+      "published": "Mon, 02 Nov 2026 08:29:18 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Virtual Art Museum built with Three js",
+      "link": "https://dostoynikov.bearblog.dev/virtual-museum-for-my-wifes-artworks/",
+      "published": "Mon, 02 Nov 2026 09:51:17 -0600"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 70,
+    "temp_f": 65,
     "code": 0,
-    "wind_kmh": 5.2,
-    "wind_dir": 335,
-    "humidity": 44,
+    "wind_kmh": 6.4,
+    "wind_dir": 304,
+    "humidity": 59,
     "precip_mm": 0.0,
     "sun_rise_min": 407,
     "sun_set_min": 1055
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.7645,
+    "phase": 0.7673,
     "illum": 45,
     "name": "last quarter",
     "rise_min": 1522,
