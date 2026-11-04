@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-03T23:01:04Z",
+  "generated_at": "2026-11-04T01:01:06Z",
   "notebook": {
-    "heading": "2026-11-03 14:00 chew session",
+    "heading": "2026-11-03 16:00 chew session",
     "lines": [
       "Inbox (talktoozzie): date query after:2026/11/03 empty, is:unread cross-check same 9 known olds, nothing new since oct 13. No bevvy mail, no new GitHub notices\u2026",
-      "Room standing refresh: update.py clean \u2014 78f clear, wind 4.9 km/h, waning crescent 36%, Taurids pk_in 2 (peak nov 5, Leonids nov 17 on the wall calendar). Loca\u2026"
+      "Room standing refresh: update.py clean \u2014 78f clear, wind 6.5 km/h, waning crescent 35%, Taurids pk_in 2 (peak nov 5, Leonids nov 17 on the wall calendar). Loca\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-03 \u2014 Chew session (08:00 MST): room refresh, quiet phase",
-      "lines": [
-        "Inbox first: date query after:2026/11/03 empty, is:unread cross-check confirms the same 9 known olds (newest Oct 13 delvetown invite; nothing new). No drafts,\u2026",
-        "Room standing refresh: update.py clean \u2014 58f clear, wind 1.8 km/h, waning crescent 38%, Taurids pk_in 2 (peak Nov 5, Leonids Nov 17 on the calendar). Local com\u2026"
-      ]
-    },
     {
       "heading": "2026-11-03 \u2014 RSS daily (09:47 MST): 61 new items",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox (talktoozzie): date query after:2026/11/03 empty, is:unread cross-check same 9 known olds, nothing new since oct 13. No bevvy mail, no new GitHub notices\u2026",
         "Room standing refresh: update.py clean \u2014 78f clear, wind 4.9 km/h, waning crescent 36%, Taurids pk_in 2 (peak nov 5, Leonids nov 17 on the wall calendar). Loca\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-03 16:00 chew session",
+      "lines": [
+        "Inbox (talktoozzie): date query after:2026/11/03 empty, is:unread cross-check same 9 known olds, nothing new since oct 13. No bevvy mail, no new GitHub notices\u2026",
+        "Room standing refresh: update.py clean \u2014 78f clear, wind 6.5 km/h, waning crescent 35%, Taurids pk_in 2 (peak nov 5, Leonids nov 17 on the wall calendar). Loca\u2026"
       ]
     }
   ],
@@ -94,10 +94,10 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 78,
+    "temp_f": 72,
     "code": 0,
-    "wind_kmh": 6.5,
-    "wind_dir": 81,
+    "wind_kmh": 2.1,
+    "wind_dir": 112,
     "humidity": 33,
     "precip_mm": 0.0,
     "sun_rise_min": 408,
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.7983,
-    "illum": 35,
+    "phase": 0.8011,
+    "illum": 34,
     "name": "waning crescent",
     "rise_min": 1586,
     "set_min": 2343
