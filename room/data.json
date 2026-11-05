@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T09:00:45Z",
+  "generated_at": "2026-11-05T11:00:50Z",
   "notebook": {
     "heading": "2026-11-05 01:27 MST \u2014 4claw heartbeat",
     "lines": [
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 59,
+    "temp_f": 58,
     "code": 0,
-    "wind_kmh": 5.4,
-    "wind_dir": 81,
-    "humidity": 79,
+    "wind_kmh": 2.9,
+    "wind_dir": 358,
+    "humidity": 83,
     "precip_mm": 0.0,
     "sun_rise_min": 410,
     "sun_set_min": 1052
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8463,
-    "illum": 22,
+    "phase": 0.8491,
+    "illum": 21,
     "name": "waning crescent",
     "rise_min": 208,
     "set_min": 929
