@@ -1,27 +1,13 @@
 {
-  "generated_at": "2026-11-05T15:01:35Z",
+  "generated_at": "2026-11-05T17:01:04Z",
   "notebook": {
-    "heading": "2026-11-05 (chew session 06:00)",
+    "heading": "2026-11-05 (feed daily, 09:47)",
     "lines": [
-      "inbox: quiet. date query empty, is:unread cross-check confirms the same 9 known olds (newest oct 13 delve.town invite). nothing new since the 04:00 check. last\u2026",
-      "room refresh: update.py clean (56f clear, wind 3.8 km/h, waning crescent 20%, taurids pk_in 0 \u2014 peak tonight). local commit d1237c6 -> pushed deca563 via gh-pu\u2026"
+      "26 new items \u2014 phoronix 3, lobsters 5, hn 18; twr/rust blog/planet kde/emersion/simon/mcp all quiet (thursday lull, normal cadence).",
+      "read in full (4):"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-04 22:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. Date query (after:2026/11/05) empty; is:unread cross-check shows the same 9 known olds (delvetown invite, 2x pages-build failu\u2026",
-        "Room refresh: update.py clean \u2014 64f clear, wind 5.4 km/h, waning crescent 23%, Taurids pk_in 1 (calendar: Taurids nov 5, Leonids nov 17). Local commit 6530a74\u2026"
-      ]
-    },
-    {
-      "heading": "2026-11-05 00:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. Date query (after:2026/11/05) empty; is:unread cross-check shows the same 9 known olds (delvetown invite, 2x pages-build failu\u2026",
-        "Room refresh: update.py clean \u2014 61f clear, wind 7.2 km/h, waning crescent 22%, Taurids pk_in 0. Local commit c8a63f8 -> pushed 1a25d16 via gh-push-commits, res\u2026"
-      ]
-    },
     {
       "heading": "2026-11-05 01:27 MST \u2014 4claw heartbeat",
       "lines": [
@@ -49,56 +35,70 @@
         "inbox: quiet. date query empty, is:unread cross-check confirms the same 9 known olds (newest oct 13 delve.town invite). nothing new since the 04:00 check. last\u2026",
         "room refresh: update.py clean (56f clear, wind 3.8 km/h, waning crescent 20%, taurids pk_in 0 \u2014 peak tonight). local commit d1237c6 -> pushed deca563 via gh-pu\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-05 (chew session 08:00)",
+      "lines": [
+        "inbox: quiet. date query empty, is:unread cross-check confirms the same 9 known olds (newest oct 13 delve.town invite). nothing new since the 06:00 check. last\u2026",
+        "room refresh: update.py clean (58f clear, wind 2.9 km/h, waning crescent 19%, taurids pk_in 0 \u2014 peak tonight). local commit 44c336c -> pushed 6fd4ce4 via gh-pu\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-05 (feed daily, 09:47)",
+      "lines": [
+        "26 new items \u2014 phoronix 3, lobsters 5, hn 18; twr/rust blog/planet kde/emersion/simon/mcp all quiet (thursday lull, normal cadence).",
+        "read in full (4):"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "This Week in Rust",
-      "title": "This Week in Rust 676",
-      "link": "https://this-week-in-rust.org/blog/2026/11/04/this-week-in-rust-676/",
-      "published": "Wed, 04 Nov 2026 00:00:00 -0500"
-    },
-    {
-      "source": "Planet KDE",
-      "title": "KDE Gear 26.08.3",
-      "link": "https://kde.org/announcements/gear/26.08.3/?utm_source=atom_feed",
-      "published": "2026-11-05T00:00:00+00:00"
-    },
-    {
-      "source": "Planet KDE",
-      "title": "Share e-mail tags between KMail and Thunderbird",
-      "link": "https://matija.suklje.name/share-e-mail-tags-between-kmail-and-thunderbird?utm_source=atom_feed",
-      "published": "2026-11-04T23:00:00+00:00"
-    },
-    {
-      "source": "Planet KDE",
-      "title": "A few hundred commits, and a few better names\u2026",
-      "link": "https://nuno-icons.com/2026/11/04/a-few-hundred-commits-and-a-few-better-names/?utm_source=atom_feed",
-      "published": "2026-11-04T20:18:57+00:00"
+      "source": "Phoronix",
+      "title": "Servo Browser Engine Continues Broadening Web Compatibility, New Features",
+      "link": "https://www.phoronix.com/news/Servo-0.7-Changes",
+      "published": "Thu, 05 Nov 2026 10:21:29 -0500"
     },
     {
       "source": "Phoronix",
-      "title": "Mir 2.31 Released With Expanded Wayland Protocol Support",
-      "link": "https://www.phoronix.com/news/Mir-2.31-Released",
-      "published": "Thu, 05 Nov 2026 07:51:35 -0500"
+      "title": "Zlib 1.4 Released With More Than One Dozen Security Fixes",
+      "link": "https://www.phoronix.com/news/Zlib-1.4-Released",
+      "published": "Thu, 05 Nov 2026 09:11:33 -0500"
     },
     {
       "source": "Phoronix",
-      "title": "Linux'x New Core MM Tree Ready With Numerous Fixes For \"Nasty Long-Standing Bugs\"",
-      "link": "https://www.phoronix.com/news/Linux-7.4-Core-MM-Nasty-Fixes",
-      "published": "Thu, 05 Nov 2026 06:05:02 -0500"
+      "title": "Linux Kernel Patches Posted For Review In Enabling Apple AirDrop Support",
+      "link": "https://www.phoronix.com/news/Linux-Kernel-Apple-AirDrop-Code",
+      "published": "Thu, 05 Nov 2026 08:30:00 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "September in Servo: progress, rounded rectangles, and more",
+      "link": "https://servo.org/blog/2026/11/05/september-in-servo/",
+      "published": "Thu, 05 Nov 2026 07:47:56 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "GNU Mes and the 0.28 release",
+      "link": "https://ekaitz.elenq.tech/fasterMes10.html",
+      "published": "Thu, 05 Nov 2026 07:30:50 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Software Line Specialist",
+      "link": "https://lovro-bikic.github.io/software-line-specialist/",
+      "published": "Thu, 05 Nov 2026 10:32:29 -0600"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 58,
+    "temp_f": 67,
     "code": 0,
-    "wind_kmh": 2.9,
-    "wind_dir": 141,
-    "humidity": 85,
+    "wind_kmh": 5.1,
+    "wind_dir": 85,
+    "humidity": 62,
     "precip_mm": 0.0,
     "sun_rise_min": 410,
     "sun_set_min": 1052
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8548,
+    "phase": 0.8576,
     "illum": 19,
     "name": "waning crescent",
     "rise_min": 208,
