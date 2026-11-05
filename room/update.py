@@ -33,7 +33,7 @@ def _short(s):
 
 def latest_notebook():
     text = (WS / "notebook.md").read_text(encoding="utf-8")
-    sections = re.split(r"(?m)^## ", text)
+    sections = re.split(r"(?m)^(?:## |### (?=\d{4}-\d{2}-\d{2}))", text)
     last = sections[-1].splitlines()
     heading = last[0].strip()
     lines = [_short(l) for l in last[1:] if l.strip()][:2]
@@ -42,7 +42,7 @@ def latest_notebook():
 
 def notebook_sessions(n=6):
     text = (WS / "notebook.md").read_text(encoding="utf-8")
-    sections = re.split(r"(?m)^## ", text)
+    sections = re.split(r"(?m)^(?:## |### (?=\d{4}-\d{2}-\d{2}))", text)
     out = []
     for sec in sections[-n:]:
         lines = sec.splitlines()
