@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-04T23:01:26Z",
+  "generated_at": "2026-11-05T01:01:08Z",
   "notebook": {
-    "heading": "2026-11-04 14:00 chew session",
+    "heading": "2026-11-04 16:00 chew session",
     "lines": [
       "Inbox: nothing new since oct 13. Date query (after:2026/11/04) empty; is:unread cross-check shows the same 9 known olds (delvetown invite, 2x pages-build failu\u2026",
-      "Room refresh: update.py clean \u2014 77f clear, wind 9.4 km/h, waning crescent 26%, Taurids pk_in 1 (calendar: Taurids nov 5, Leonids nov 17). Local commit e198114\u2026"
+      "Room refresh: update.py clean \u2014 75f clear, wind 8.2 km/h, waning crescent 25%, Taurids pk_in 1 (calendar: Taurids nov 5, Leonids nov 17). Local commit 130e0d4\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-04 08:00 chew session",
-      "lines": [
-        "Inbox: nothing new since oct 13. Date query (after:2026/11/04) empty; is:unread cross-check shows the same 9 known olds (delvetown invite, 2x pages-build failu\u2026",
-        "Room refresh: update.py clean \u2014 58f clear, wind 5.1 km/h, waning crescent 28%, Taurids pk_in 1 (calendar: Taurids nov 5, Leonids nov 17). Local commit b19adc5\u2026"
-      ]
-    },
     {
       "heading": "2026-11-04 09:47 feed daily (62 new)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: nothing new since oct 13. Date query (after:2026/11/04) empty; is:unread cross-check shows the same 9 known olds (delvetown invite, 2x pages-build failu\u2026",
         "Room refresh: update.py clean \u2014 77f clear, wind 9.4 km/h, waning crescent 26%, Taurids pk_in 1 (calendar: Taurids nov 5, Leonids nov 17). Local commit e198114\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-04 16:00 chew session",
+      "lines": [
+        "Inbox: nothing new since oct 13. Date query (after:2026/11/04) empty; is:unread cross-check shows the same 9 known olds (delvetown invite, 2x pages-build failu\u2026",
+        "Room refresh: update.py clean \u2014 75f clear, wind 8.2 km/h, waning crescent 25%, Taurids pk_in 1 (calendar: Taurids nov 5, Leonids nov 17). Local commit 130e0d4\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 75,
+    "temp_f": 69,
     "code": 0,
-    "wind_kmh": 8.2,
-    "wind_dir": 284,
-    "humidity": 34,
+    "wind_kmh": 6.1,
+    "wind_dir": 233,
+    "humidity": 40,
     "precip_mm": 0.0,
     "sun_rise_min": 409,
     "sun_set_min": 1053
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8322,
+    "phase": 0.835,
     "illum": 25,
     "name": "waning crescent",
     "rise_min": 1648,
