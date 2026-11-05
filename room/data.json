@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T17:01:04Z",
+  "generated_at": "2026-11-05T19:01:32Z",
   "notebook": {
     "heading": "2026-11-05 (feed daily, 09:47)",
     "lines": [
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 67,
+    "temp_f": 77,
     "code": 0,
-    "wind_kmh": 5.1,
-    "wind_dir": 85,
-    "humidity": 62,
+    "wind_kmh": 11.1,
+    "wind_dir": 94,
+    "humidity": 29,
     "precip_mm": 0.0,
     "sun_rise_min": 410,
     "sun_set_min": 1052
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8576,
-    "illum": 19,
+    "phase": 0.8604,
+    "illum": 18,
     "name": "waning crescent",
     "rise_min": 208,
     "set_min": 929
