@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-06T03:01:14Z",
+  "generated_at": "2026-11-06T05:01:03Z",
   "notebook": {
-    "heading": "2026-11-05 18:00 chew session",
+    "heading": "2026-11-05 20:00 chew session",
     "lines": [
-      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T01:01:\u2026",
-      "Room refresh: update.py clean (71f clear, wind 6.7 km/h, waning crescent 16%, Taurids pk_in 0 \u2014 peak tonight). Local a83f452 -> pushed f923316 via gh-push-comm\u2026"
+      "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T03:01:07Z.",
+      "Room refresh: update.py clean \u2014 67f clear, wind 7.8 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 9cd6552 -> pushed 5038992e via gh-p\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-05 (chew session 10:00)",
-      "lines": [
-        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T17:01:\u2026",
-        "Room refresh: update.py clean (67f clear, wind 5.1 km/h, waning crescent 19%, Taurids pk_in 0 \u2014 peak tonight). Local ffee69e -> pushed 29bad4a via gh-push-comm\u2026"
-      ]
-    },
     {
       "heading": "2026-11-05 (chew session 12:00)",
       "lines": [
@@ -49,6 +42,13 @@
         "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T01:01:\u2026",
         "Room refresh: update.py clean (71f clear, wind 6.7 km/h, waning crescent 16%, Taurids pk_in 0 \u2014 peak tonight). Local a83f452 -> pushed f923316 via gh-push-comm\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-05 20:00 chew session",
+      "lines": [
+        "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T03:01:07Z.",
+        "Room refresh: update.py clean \u2014 67f clear, wind 7.8 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 9cd6552 -> pushed 5038992e via gh-p\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
@@ -56,49 +56,49 @@
   "feed": [
     {
       "source": "Phoronix",
-      "title": "Servo Browser Engine Continues Broadening Web Compatibility, New Features",
-      "link": "https://www.phoronix.com/news/Servo-0.7-Changes",
-      "published": "Thu, 05 Nov 2026 10:21:29 -0500"
+      "title": "AMDGPU Driver Seeing HDMI 2.2 FRL Fixes For Linux 7.4",
+      "link": "https://www.phoronix.com/news/AMDGPU-HDMI-2.2-FRL-Fixes",
+      "published": "Thu, 05 Nov 2026 17:07:00 -0500"
     },
     {
       "source": "Phoronix",
-      "title": "Zlib 1.4 Released With More Than One Dozen Security Fixes",
-      "link": "https://www.phoronix.com/news/Zlib-1.4-Released",
-      "published": "Thu, 05 Nov 2026 09:11:33 -0500"
+      "title": "Linux 7.4's Build Time Performance From Optimizations But Also Larger Codebase",
+      "link": "https://www.phoronix.com/news/Linux-7.4-rc1-Build-Times",
+      "published": "Thu, 05 Nov 2026 16:44:05 -0500"
     },
     {
       "source": "Phoronix",
-      "title": "Linux Kernel Patches Posted For Review In Enabling Apple AirDrop Support",
-      "link": "https://www.phoronix.com/news/Linux-Kernel-Apple-AirDrop-Code",
-      "published": "Thu, 05 Nov 2026 08:30:00 -0500"
+      "title": "Linux's RAID6 Check Tool Sees 3x Performance Via Batching",
+      "link": "https://www.phoronix.com/news/Linux-3x-Faster-raid6check",
+      "published": "Thu, 05 Nov 2026 12:09:10 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "September in Servo: progress, rounded rectangles, and more",
-      "link": "https://servo.org/blog/2026/11/05/september-in-servo/",
-      "published": "Thu, 05 Nov 2026 07:47:56 -0600"
+      "title": "SourceHut disabled registration bypass | CVE-2026-121728",
+      "link": "https://blog.arusekk.pl/posts/srht-disabled-registration-bypass/",
+      "published": "Thu, 05 Nov 2026 12:34:41 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "GNU Mes and the 0.28 release",
-      "link": "https://ekaitz.elenq.tech/fasterMes10.html",
-      "published": "Thu, 05 Nov 2026 07:30:50 -0600"
+      "title": "X-87 - DOS 256 bytes",
+      "link": "https://www.onirom.fr/wiki/codegolf/x-87/",
+      "published": "Thu, 05 Nov 2026 18:16:07 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Software Line Specialist",
-      "link": "https://lovro-bikic.github.io/software-line-specialist/",
-      "published": "Thu, 05 Nov 2026 10:32:29 -0600"
+      "title": "A Quick Guide to Go's Assembler",
+      "link": "https://go.dev/doc/asm",
+      "published": "Thu, 05 Nov 2026 16:07:32 -0600"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 67,
+    "temp_f": 63,
     "code": 0,
-    "wind_kmh": 7.8,
-    "wind_dir": 274,
-    "humidity": 39,
+    "wind_kmh": 2.9,
+    "wind_dir": 351,
+    "humidity": 46,
     "precip_mm": 0.0,
     "sun_rise_min": 410,
     "sun_set_min": 1052
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8717,
+    "phase": 0.8745,
     "illum": 15,
     "name": "waning crescent",
     "rise_min": 1708,
