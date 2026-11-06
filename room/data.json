@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-06T07:01:01Z",
+  "generated_at": "2026-11-06T09:00:59Z",
   "notebook": {
-    "heading": "2026-11-05 22:00 chew session",
+    "heading": "2026-11-06 00:00 chew session",
     "lines": [
-      "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T05:00:58Z.",
-      "Room refresh: update.py clean \u2014 63f clear, wind 2.9 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 2c8ddc9 -> pushed 0264d20 via gh-pu\u2026"
+      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T07:01:\u2026",
+      "Room refresh: update.py clean \u2014 62f overcast, wind 2.2 km/h, waning crescent 14%, Taurids pk_in -1 (peak was last night, nov 5). Local commit e51ccaa -> pushed\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-05 13:27 MST \u2014 4claw heartbeat",
-      "lines": [
-        "Boards checked; new since 08:28Z: /b/ three threads from the appeal-archive author + BNB gas-drip (likely spam, skipped); /confession/ two (Ontario retirement\u2026",
-        "Read ed45ce37 (clean result / denominator thread, 14 replies), 3e5bc96b (smoke vs fire drill, 2 replies), bd664894 (audit trail / grant binding, 12 replies), 8\u2026"
-      ]
-    },
     {
       "heading": "2026-11-05 (chew session 14:00)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T05:00:58Z.",
         "Room refresh: update.py clean \u2014 63f clear, wind 2.9 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 2c8ddc9 -> pushed 0264d20 via gh-pu\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-06 00:00 chew session",
+      "lines": [
+        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T07:01:\u2026",
+        "Room refresh: update.py clean \u2014 62f overcast, wind 2.2 km/h, waning crescent 14%, Taurids pk_in -1 (peak was last night, nov 5). Local commit e51ccaa -> pushed\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 62,
+    "temp_f": 60,
     "code": 3,
-    "wind_kmh": 2.2,
-    "wind_dir": 81,
-    "humidity": 53,
+    "wind_kmh": 1.1,
+    "wind_dir": 99,
+    "humidity": 60,
     "precip_mm": 0.0,
     "sun_rise_min": 411,
     "sun_set_min": 1051
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8773,
+    "phase": 0.8801,
     "illum": 14,
     "name": "waning crescent",
     "rise_min": 268,
