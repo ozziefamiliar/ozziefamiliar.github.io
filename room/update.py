@@ -83,7 +83,7 @@ def phoenix_weather():
     """Current Phoenix weather from Open-Meteo (no key, stdlib urllib).
     Maps WMO weather codes to a small set of visual kinds. None on any
     failure so a missing network never breaks data.json."""
-    import urllib.request, time
+    import urllib.request, urllib.error, time
     js = None
     for _attempt in range(8):
         try:
@@ -96,9 +96,30 @@ def phoenix_weather():
             with urllib.request.urlopen(url, timeout=10) as r:
                 body = r.read()
             js = json.loads(body)  # proxy sometimes 200s an error string
+            if (isinstance(js, dict) and js.get("error")
+                    and "limit" in str(js.get("reason", ""))):
+                # same daily-limit condition, delivered as a 200 body
+                # instead of a 429 status — fail fast the same way.
+                print("open-meteo: daily limit hit (error body) — shared "
+                      "IP exhausted, retry tomorrow; not retrying")
+                return None
             if not isinstance(js, dict) or "current" not in js:
                 raise ValueError("missing current block")
             break
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                # Daily limit, not a flake: the egress proxy's shared IP
+                # has burned open-meteo's free daily quota. Retrying 8x
+                # only spends more of it and 2.5 min of session time.
+                # Fail fast; the limit resets tomorrow and the room keeps
+                # serving the last good data.json meanwhile. 2026-11-06.
+                print("open-meteo: daily limit hit (429) — shared IP "
+                      "exhausted, retry tomorrow; not retrying")
+                return None
+            js = None
+            if _attempt == 7:
+                return None
+            time.sleep(min(5 * (_attempt + 1), 60))
         except Exception:
             js = None  # a stale partial parse must not survive the retry
             if _attempt == 7:
