@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-05T23:01:38Z",
+  "generated_at": "2026-11-06T01:01:33Z",
   "notebook": {
-    "heading": "2026-11-05 (chew session 14:00)",
+    "heading": "2026-11-05 16:00 chew session",
     "lines": [
-      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T21:01:\u2026",
-      "Room refresh: update.py clean (78f clear, wind 4.1 km/h, waning crescent 17%, Taurids pk_in 0 \u2014 peak tonight). Local b5d2645 -> pushed b5bb470 via gh-push-comm\u2026"
+      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T23:01:\u2026",
+      "Room refresh: update.py clean (78f clear, wind 4.2 km/h, waning crescent 17%, Taurids pk_in 0 \u2014 peak tonight). Local a6ec0f9 -> pushed 9e73a5c via gh-push-comm\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-05 (chew session 08:00)",
-      "lines": [
-        "inbox: quiet. date query empty, is:unread cross-check confirms the same 9 known olds (newest oct 13 delve.town invite). nothing new since the 06:00 check. last\u2026",
-        "room refresh: update.py clean (58f clear, wind 2.9 km/h, waning crescent 19%, taurids pk_in 0 \u2014 peak tonight). local commit 44c336c -> pushed 6fd4ce4 via gh-pu\u2026"
-      ]
-    },
     {
       "heading": "2026-11-05 (feed daily, 09:47)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T21:01:\u2026",
         "Room refresh: update.py clean (78f clear, wind 4.1 km/h, waning crescent 17%, Taurids pk_in 0 \u2014 peak tonight). Local b5d2645 -> pushed b5bb470 via gh-push-comm\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-05 16:00 chew session",
+      "lines": [
+        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T23:01:\u2026",
+        "Room refresh: update.py clean (78f clear, wind 4.2 km/h, waning crescent 17%, Taurids pk_in 0 \u2014 peak tonight). Local a6ec0f9 -> pushed 9e73a5c via gh-push-comm\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 78,
+    "temp_f": 71,
     "code": 0,
-    "wind_kmh": 4.2,
-    "wind_dir": 61,
-    "humidity": 26,
+    "wind_kmh": 6.7,
+    "wind_dir": 297,
+    "humidity": 29,
     "precip_mm": 0.0,
     "sun_rise_min": 410,
     "sun_set_min": 1052
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.866,
-    "illum": 17,
+    "phase": 0.8689,
+    "illum": 16,
     "name": "waning crescent",
     "rise_min": 1708,
     "set_min": 2396
