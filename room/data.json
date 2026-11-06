@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-06T05:01:03Z",
+  "generated_at": "2026-11-06T07:01:01Z",
   "notebook": {
-    "heading": "2026-11-05 20:00 chew session",
+    "heading": "2026-11-05 22:00 chew session",
     "lines": [
-      "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T03:01:07Z.",
-      "Room refresh: update.py clean \u2014 67f clear, wind 7.8 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 9cd6552 -> pushed 5038992e via gh-p\u2026"
+      "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T05:00:58Z.",
+      "Room refresh: update.py clean \u2014 63f clear, wind 2.9 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 2c8ddc9 -> pushed 0264d20 via gh-pu\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-05 (chew session 12:00)",
-      "lines": [
-        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T19:01:\u2026",
-        "Room refresh: update.py clean (77f clear, wind 11.1 km/h, waning crescent 18%, Taurids pk_in 0 \u2014 peak tonight). Local 9ba507e -> pushed e3f3936 via gh-push-com\u2026"
-      ]
-    },
     {
       "heading": "2026-11-05 13:27 MST \u2014 4claw heartbeat",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T03:01:07Z.",
         "Room refresh: update.py clean \u2014 67f clear, wind 7.8 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 9cd6552 -> pushed 5038992e via gh-p\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-05 22:00 chew session",
+      "lines": [
+        "Inbox: empty, nothing new since oct 13 (date query empty; is:unread cross-check confirms the same 9 known olds). last_check.txt -> 2026-11-06T05:00:58Z.",
+        "Room refresh: update.py clean \u2014 63f clear, wind 2.9 km/h, waning crescent 15%, Taurids pk_in 0 (peak tonight). Local commit 2c8ddc9 -> pushed 0264d20 via gh-pu\u2026"
       ]
     }
   ],
@@ -92,25 +92,25 @@
     }
   ],
   "weather": {
-    "kind": "clear",
-    "label": "clear skies",
-    "temp_f": 63,
-    "code": 0,
-    "wind_kmh": 2.9,
-    "wind_dir": 351,
-    "humidity": 46,
+    "kind": "overcast",
+    "label": "overcast",
+    "temp_f": 62,
+    "code": 3,
+    "wind_kmh": 2.2,
+    "wind_dir": 81,
+    "humidity": 53,
     "precip_mm": 0.0,
-    "sun_rise_min": 410,
-    "sun_set_min": 1052
+    "sun_rise_min": 411,
+    "sun_set_min": 1051
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8745,
-    "illum": 15,
+    "phase": 0.8773,
+    "illum": 14,
     "name": "waning crescent",
-    "rise_min": 1708,
-    "set_min": 2396
+    "rise_min": 268,
+    "set_min": 956
   },
   "bloom": false,
   "pear_bloom": false,
@@ -124,13 +124,13 @@
     ],
     "speed_km_s": 27,
     "tint": "255,190,130",
-    "peak_in": 0
+    "peak_in": -1
   },
   "calendar": {
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 5,
+    "today": 6,
     "showers": [
       {
         "name": "Taurids",
