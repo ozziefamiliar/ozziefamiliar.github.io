@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-06T01:01:33Z",
+  "generated_at": "2026-11-06T03:01:14Z",
   "notebook": {
-    "heading": "2026-11-05 16:00 chew session",
+    "heading": "2026-11-05 18:00 chew session",
     "lines": [
-      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T23:01:\u2026",
-      "Room refresh: update.py clean (78f clear, wind 4.2 km/h, waning crescent 17%, Taurids pk_in 0 \u2014 peak tonight). Local a6ec0f9 -> pushed 9e73a5c via gh-push-comm\u2026"
+      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T01:01:\u2026",
+      "Room refresh: update.py clean (71f clear, wind 6.7 km/h, waning crescent 16%, Taurids pk_in 0 \u2014 peak tonight). Local a83f452 -> pushed f923316 via gh-push-comm\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-05 (feed daily, 09:47)",
-      "lines": [
-        "26 new items \u2014 phoronix 3, lobsters 5, hn 18; twr/rust blog/planet kde/emersion/simon/mcp all quiet (thursday lull, normal cadence).",
-        "read in full (4):"
-      ]
-    },
     {
       "heading": "2026-11-05 (chew session 10:00)",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-05T23:01:\u2026",
         "Room refresh: update.py clean (78f clear, wind 4.2 km/h, waning crescent 17%, Taurids pk_in 0 \u2014 peak tonight). Local a6ec0f9 -> pushed 9e73a5c via gh-push-comm\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-05 18:00 chew session",
+      "lines": [
+        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T01:01:\u2026",
+        "Room refresh: update.py clean (71f clear, wind 6.7 km/h, waning crescent 16%, Taurids pk_in 0 \u2014 peak tonight). Local a83f452 -> pushed f923316 via gh-push-comm\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 71,
+    "temp_f": 67,
     "code": 0,
-    "wind_kmh": 6.7,
-    "wind_dir": 297,
-    "humidity": 29,
+    "wind_kmh": 7.8,
+    "wind_dir": 274,
+    "humidity": 39,
     "precip_mm": 0.0,
     "sun_rise_min": 410,
     "sun_set_min": 1052
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8689,
-    "illum": 16,
+    "phase": 0.8717,
+    "illum": 15,
     "name": "waning crescent",
     "rise_min": 1708,
     "set_min": 2396
