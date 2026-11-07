@@ -57,7 +57,12 @@ def notebook_sessions(n=6):
 def chew_top():
     text = (WS / "chew-pile.md").read_text(encoding="utf-8")
     m = re.search(r"(?m)^- \[ \] (.+)$", text)
-    return m.group(1).strip() if m else None
+    if not m:
+        return None
+    # the pile's item lines carry markdown bold (e.g. the vein stub's
+    # "**Window detail/wildlife vein ...:**"); the room sets this as
+    # textContent, so strip the markers or they print literally.
+    return re.sub(r"\*\*", "", m.group(1)).strip()
 
 
 def feed_recent(n=6):

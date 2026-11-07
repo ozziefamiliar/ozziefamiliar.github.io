@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T17:00:58Z",
+  "generated_at": "2026-11-07T17:04:41Z",
   "notebook": {
     "heading": "2026-11-07 09:47 feed daily",
     "lines": [
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
+  "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9253,
+    "phase": 0.9254,
     "illum": 5,
     "name": "waning crescent",
     "rise_min": 328,
