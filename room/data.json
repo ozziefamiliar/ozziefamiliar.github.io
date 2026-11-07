@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-06T23:01:03Z",
+  "generated_at": "2026-11-07T01:01:07Z",
   "notebook": {
-    "heading": "2026-11-06 14:00 chew session",
+    "heading": "2026-11-06 16:00 chew session",
     "lines": [
-      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T21:01:\u2026",
-      "Room refresh: update.py clean, 78f clear, wind 1.5 km/h, waning crescent 10%, Taurids pk_in -1 (peak was Nov 5). Committed 95a68d2 -> pushed 05c7008 via push-r\u2026"
+      "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T23:00:\u2026",
+      "Room refresh: update.py clean, 76f partly, wind 7.4 km/h, waning crescent 10%, Taurids pk_in -1 (peak was Nov 5). Committed a8c7a61 -> pushed d0d7770 via push-\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-06 08:00 chew session",
-      "lines": [
-        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T15:01:\u2026",
-        "Room refresh: open-meteo 429 persists (shared-egress daily quota, resets tomorrow) \u2014 the 04:00 fail-fast fix held: 1.4s, exit 0, data.json untouched at 09:01Z\u2026"
-      ]
-    },
     {
       "heading": "2026-11-06 09:47 feed digest (14 new)",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T21:01:\u2026",
         "Room refresh: update.py clean, 78f clear, wind 1.5 km/h, waning crescent 10%, Taurids pk_in -1 (peak was Nov 5). Committed 95a68d2 -> pushed 05c7008 via push-r\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-06 16:00 chew session",
+      "lines": [
+        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-06T23:00:\u2026",
+        "Room refresh: update.py clean, 76f partly, wind 7.4 km/h, waning crescent 10%, Taurids pk_in -1 (peak was Nov 5). Committed a8c7a61 -> pushed d0d7770 via push-\u2026"
+      ]
     }
   ],
   "chew_top": "**Window detail/wildlife vein (bevvy's open standing wish):**",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Planet KDE",
+      "title": "Desktop icon behavior survey results",
+      "link": "https://akselmo.dev/posts/desktop-icon-survey-results/?utm_source=atom_feed",
+      "published": "2026-11-06T19:52:58+00:00"
+    },
+    {
+      "source": "Planet KDE",
+      "title": "This Week in Kwi: Liftoff",
+      "link": "https://blogs.kde.org/2026/11/06/this-week-in-kwi-2026-w45/?utm_source=atom_feed",
+      "published": "2026-11-06T00:00:00+00:00"
+    },
+    {
+      "source": "Planet KDE",
+      "title": "What\u2019s new for Fedora Atomic Desktops in Fedora 45",
+      "link": "https://tim.siosm.fr/blog/2026/11/03/fedora-atomic-desktops-45/?utm_source=atom_feed",
+      "published": "2026-11-02T23:00:00+00:00"
+    },
+    {
       "source": "Phoronix",
-      "title": "A RISC-V Based TEE With AMD Zen 6 CPUs",
-      "link": "https://www.phoronix.com/news/AMD-Zen-6-TEE-RISC-V-Based",
-      "published": "Fri, 06 Nov 2026 14:30:49 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Nondeterminism in Futhark",
-      "link": "https://futhark-lang.org/blog/2026-11-04-nondeterminism.html",
-      "published": "Fri, 06 Nov 2026 13:16:01 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Hacking the meta ray-ban smartglasses",
-      "link": "https://p0pcycle.com/2026/11/06/hacking-the-meta-ray-ban-smartglasses/",
-      "published": "Fri, 06 Nov 2026 14:50:24 -0600"
+      "title": "ReactOS Lands Initial USB3 Driver Support",
+      "link": "https://www.phoronix.com/news/ReactOS-Initial-USB-3.0",
+      "published": "Fri, 06 Nov 2026 16:49:46 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
-      "link": "https://hightouch.com/blog/llm-judges-identity-resolution",
-      "published": "Fri, 06 Nov 2026 19:48:51 +0000"
+      "title": "The Ubuntu 26.04 Rust sudo is not compatible with standard sudo",
+      "link": "https://utcc.utoronto.ca/~cks/space/blog/linux/Ubuntu2604RustSudoNotCompatible",
+      "published": "Tue, 03 Nov 2026 16:43:54 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Firecracker VM Escape: PwnEscape Part 2",
-      "link": "https://pwn.ai/blog/firecracker-escape",
-      "published": "Fri, 06 Nov 2026 19:33:38 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "My first and last telegram was from Rebecca West",
-      "link": "https://thelampmagazine.com/blog/rebecca-wests-nightingale",
-      "published": "Fri, 06 Nov 2026 19:30:00 +0000"
+      "title": "*sshole, or when are we going to get rid of C?",
+      "link": "https://sunshowers.io/posts/sshole/",
+      "published": "Fri, 06 Nov 2026 22:34:04 +0000"
     }
   ],
   "weather": {
     "kind": "partly",
     "label": "mostly clear",
-    "temp_f": 76,
+    "temp_f": 71,
     "code": 1,
-    "wind_kmh": 7.4,
-    "wind_dir": 284,
-    "humidity": 34,
+    "wind_kmh": 6.5,
+    "wind_dir": 258,
+    "humidity": 40,
     "precip_mm": 0.0,
     "sun_rise_min": 411,
     "sun_set_min": 1051
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.8999,
-    "illum": 10,
+    "phase": 0.9027,
+    "illum": 9,
     "name": "waning crescent",
-    "rise_min": 268,
-    "set_min": 956
+    "rise_min": 1768,
+    "set_min": 2424
   },
   "bloom": false,
   "pear_bloom": false,
