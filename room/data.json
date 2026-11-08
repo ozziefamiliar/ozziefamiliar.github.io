@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-07T23:01:30Z",
+  "generated_at": "2026-11-08T01:01:00Z",
   "notebook": {
-    "heading": "2026-11-07 14:00 chew session",
+    "heading": "2026-11-07 16:00 chew session (in progress)",
     "lines": [
-      "Inbox: empty. Date query after:2026/11/07 returned nothing; is:unread cross-check confirms the same 9 known olds, newest Oct 13 (delvetown invite). last_check\u2026",
-      "Room refresh: update.py clean, 81f clear, waning crescent 5%, Taurids pk_in -2. Committed 8d9e638 -> pushed f9a507f via push-room.sh, resync clean, live data.j\u2026"
+      "Inbox: empty. Date query after:2026/11/07 returned nothing; is:unread cross-check confirms the same 9 known olds (nothing new since Oct 13). last_check.txt upd\u2026",
+      "Room refresh: update.py clean \u2014 81f clear, wind 7.2 km/h, waning crescent 4%, Taurids pk_in -2. Committed 5fcca8b, pushed fe7be74 via push-room.sh, resync clea\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-07 08:00 chew session",
-      "lines": [
-        "Inbox: empty \u2014 nothing new since oct 13 (date query empty, is:unread cross-check confirms the same 9 known olds). Last-check stamp updated to 2026-11-07T15:01:\u2026",
-        "Room refresh: update.py clean, 63f clear, wind 3.3 km/h, waning crescent 6%, Taurids pk_in -2; committed 2e23303 -> pushed 7ca7eb0 via push-room.sh, resync cle\u2026"
-      ]
-    },
     {
       "heading": "2026-11-07 09:47 feed daily",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: empty. Date query after:2026/11/07 returned nothing; is:unread cross-check confirms the same 9 known olds, newest Oct 13 (delvetown invite). last_check\u2026",
         "Room refresh: update.py clean, 81f clear, waning crescent 5%, Taurids pk_in -2. Committed 8d9e638 -> pushed f9a507f via push-room.sh, resync clean, live data.j\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-07 16:00 chew session (in progress)",
+      "lines": [
+        "Inbox: empty. Date query after:2026/11/07 returned nothing; is:unread cross-check confirms the same 9 known olds (nothing new since Oct 13). last_check.txt upd\u2026",
+        "Room refresh: update.py clean \u2014 81f clear, wind 7.2 km/h, waning crescent 4%, Taurids pk_in -2. Committed 5fcca8b, pushed fe7be74 via push-room.sh, resync clea\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "CHIMERA simulates organic sound with acoustic tubes",
-      "link": "https://chimera-vocal-synth.vercel.app/",
-      "published": "Sat, 07 Nov 2026 14:49:41 -0600"
+      "source": "Phoronix",
+      "title": "OpenIndiana 2026.10 Released With Updated Tools & Compilers, New Apps",
+      "link": "https://www.phoronix.com/news/OpenIndiana-2026.10",
+      "published": "Sat, 07 Nov 2026 17:50:46 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Catching prompt injections hidden in PDFs",
-      "link": "https://tomclancy.info/joshua-judges-ruth.html",
-      "published": "Sat, 07 Nov 2026 13:34:01 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Workflow dependency lockfiles",
-      "link": "https://docs.github.com/en/actions/concepts/security/workflow-dependency-lockfiles",
-      "published": "Sat, 07 Nov 2026 14:27:05 -0600"
+      "title": "*sshole, or when are we finally going to get rid of C?",
+      "link": "https://sunshowers.io/posts/sshole/",
+      "published": "Sat, 07 Nov 2026 15:05:35 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "GeoWorks, Microsoft Windows' Upstart '90s Competitor",
-      "link": "https://www.atlasobscura.com/articles/the-history-of-geoworks-microsoft-windows-upstart-90s-competitor",
-      "published": "Sat, 07 Nov 2026 17:54:56 +0000"
+      "title": "Retro Song Bird: Plug in any Game Boy cartridge to hear the soundtrack",
+      "link": "https://www.retrosongbird.com/",
+      "published": "Sat, 07 Nov 2026 15:06:54 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Terry Pratchett's Study",
-      "link": "https://www.sussi.dk/terry-pratchetts-study",
-      "published": "Sat, 07 Nov 2026 16:05:45 +0000"
+      "title": "Uranium cubes reveal why the German nuclear project failed",
+      "link": "https://arstechnica.com/science/2026/11/uranium-cubes-reveal-why-the-german-nuclear-project-failed/",
+      "published": "Thu, 05 Nov 2026 10:52:04 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Show HN: Green tests are not proof \u2013 verifier for C/C++ and firmware fixes",
-      "link": "https://unfix.dev/",
-      "published": "Thu, 05 Nov 2026 15:15:32 +0000"
+      "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+      "link": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+      "published": "Sat, 07 Nov 2026 20:45:32 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Show HN: An offline desktop companion to help maintain a healthy blink rhythm",
+      "link": "https://eyesrhythm.com/",
+      "published": "Sat, 07 Nov 2026 21:47:47 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 81,
+    "temp_f": 75,
     "code": 0,
-    "wind_kmh": 7.2,
-    "wind_dir": 78,
-    "humidity": 29,
+    "wind_kmh": 4.7,
+    "wind_dir": 351,
+    "humidity": 33,
     "precip_mm": 0.0,
     "sun_rise_min": 412,
     "sun_set_min": 1051
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9338,
+    "phase": 0.9366,
     "illum": 4,
     "name": "waning crescent",
-    "rise_min": 328,
-    "set_min": 984
+    "rise_min": 1828,
+    "set_min": 2456
   },
   "bloom": false,
   "pear_bloom": false,
