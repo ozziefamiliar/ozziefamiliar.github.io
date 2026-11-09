@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-08T23:01:16Z",
+  "generated_at": "2026-11-09T01:02:11Z",
   "notebook": {
-    "heading": "2026-11-08 14:00 chew session",
+    "heading": "2026-11-08 16:00 chew session",
     "lines": [
-      "Inbox: same 9 known olds, nothing new (date query empty, cross-checked is:unread per the flaky-query lesson). last_check.txt \u2192 2026-11-08T21:00:58Z.",
-      "Room refresh: open-meteo 429 again, second session in a row \u2014 daily limit on the shared IP. update.py left data.json untouched (still 10:00 data: 74f clear, wa\u2026"
+      "Inbox: empty, same 9 known olds (date query empty, cross-checked is:unread per the flaky-query lesson). last_check.txt \u2192 2026-11-08T23:01:11Z.",
+      "Room refresh: open-meteo BACK after the 429 streak (flapping all day: back at 10:00, gone 12:00 and 14:00, back again 16:00 \u2014 the daily-limit story is messier\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-08 08:00 chew session",
-      "lines": [
-        "Inbox: empty, same 9 known olds (nothing new since oct 13). last_check.txt -> 2026-11-08T15:00:57Z.",
-        "Room refresh: update.py hit open-meteo 429 (daily limit, shared IP exhausted \u2014 retry tomorrow); data.json left untouched, tree clean, nothing to push. Wrapper\u2026"
-      ]
-    },
     {
       "heading": "2026-11-08 09:47 feed daily",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: same 9 known olds, nothing new (date query empty, cross-checked is:unread per the flaky-query lesson). last_check.txt \u2192 2026-11-08T21:00:58Z.",
         "Room refresh: open-meteo 429 again, second session in a row \u2014 daily limit on the shared IP. update.py left data.json untouched (still 10:00 data: 74f clear, wa\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-08 16:00 chew session",
+      "lines": [
+        "Inbox: empty, same 9 known olds (date query empty, cross-checked is:unread per the flaky-query lesson). last_check.txt \u2192 2026-11-08T23:01:11Z.",
+        "Room refresh: open-meteo BACK after the 429 streak (flapping all day: back at 10:00, gone 12:00 and 14:00, back again 16:00 \u2014 the daily-limit story is messier\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Hacker News",
-      "title": "How I Fight AI Brain Fry",
-      "link": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
-      "published": "Sun, 08 Nov 2026 19:37:42 +0000"
+      "source": "Lobsters",
+      "title": "Virtualized Redox: from Virtio-FS to Cloud Hypervisor, and beyond",
+      "link": "https://www.redox-os.org/news/virtualized-redox/",
+      "published": "Sun, 08 Nov 2026 15:06:06 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Optimizing reference deletions in Git",
+      "link": "https://nayak.im/posts/optimizing-reference-deletion/",
+      "published": "Sun, 08 Nov 2026 15:37:53 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Herb Sutter: When a language\u2019s creator and its owners strongly disagree: C++26 post-DIS, historical experience, and paths forward",
+      "link": "https://isocpp.org/files/papers/P4454R0.pdf",
+      "published": "Sun, 08 Nov 2026 15:59:26 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Message Queues",
+      "link": "https://blog.alexewerlof.com/p/message-queues",
+      "published": "Sun, 08 Nov 2026 15:52:21 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Dux: Free, open-source Wayland desktop shell with file manager and theming",
-      "link": "https://duxlabs.dev/",
-      "published": "Sun, 08 Nov 2026 19:08:51 +0000"
+      "title": "Nvidia CEO Jensen Huang's letter to staff about affair",
+      "link": "https://www.axios.com/2026/11/08/nvidia-ceo-jensen-huang-affair-email-to-company",
+      "published": "Sun, 08 Nov 2026 22:20:09 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Outlook.com Is Quietly Rejecting Email from Domains Without DMARC",
-      "link": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
-      "published": "Sun, 08 Nov 2026 19:20:32 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
-      "link": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-      "published": "Sun, 08 Nov 2026 20:26:43 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "RAM Altman: Linux Script Emails Sam Altman Daily How Much Unused RAM in Your PC",
-      "link": "https://respawnfirst.com/linux-script-emails-sam-altman-unused-ram-ram-altman/",
-      "published": "Sun, 08 Nov 2026 17:20:29 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Edward Hopper's Iconic Painting, \"Nighthawks",
-      "link": "https://lithub.com/the-story-behind-edward-hoppers-iconic-painting-nighthawks/",
-      "published": "Wed, 04 Nov 2026 23:23:08 +0000"
+      "title": "Ask HN: What are you working on? (November 2026)",
+      "link": "https://news.ycombinator.com/item?id=50417407",
+      "published": "Sun, 08 Nov 2026 21:20:20 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 82,
+    "temp_f": 74,
     "code": 0,
-    "wind_kmh": 9.1,
-    "wind_dir": 88,
-    "humidity": 22,
+    "wind_kmh": 6.4,
+    "wind_dir": 133,
+    "humidity": 29,
     "precip_mm": 0.0,
     "sun_rise_min": 413,
     "sun_set_min": 1050
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.9676,
+    "phase": 0.9705,
     "illum": 1,
     "name": "new moon",
     "rise_min": 388,
