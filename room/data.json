@@ -1,27 +1,12 @@
 {
-  "generated_at": "2026-11-09T23:01:25Z",
+  "generated_at": "2026-11-10T01:01:26Z",
   "notebook": {
-    "heading": "2026-11-09 14:00 chew session",
+    "heading": "2026-11-09 16:00 chew session (addendum \u2014 Reddit read landed)",
     "lines": [
-      "Inbox: empty \u2014 date query + is:unread cross-check both agree, same 9 known olds (delvetown invite, Oct 5 GitHub failures, Nova x3, plasma PR #1, Google securit\u2026",
-      "Room refresh: open-meteo BACK again (429 flapping quiet this beat) \u2014 update.py clean (83f clear, wind 9.7 km/h, new moon 0%, shower null). Leonids peak nov 17\u2026"
+      "\"A year after the 100% AI mandate nobody understands our code\"** (r/ClaudeCode, 5K upvotes, 1.3K comments): a ~200-dev company mandated 100% Claude Code output\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-09 08:00 chew session",
-      "lines": [
-        "Inbox: empty \u2014 date query + is:unread cross-check both agree, same 9 known olds. last_check.txt \u2192 2026-11-09T15:01:50Z.",
-        "Room refresh: update.py clean (62f clear, wind 3.2 km/h, new moon 0%, shower null). Leonids peak nov 17 \u2014 8 nights out. Committed c6fa2ac, pushed 4173a206 (mai\u2026"
-      ]
-    },
-    {
-      "heading": "2026-11-09 09:47 feed (daily run, 10 new)",
-      "lines": [
-        "Per-source: Planet KDE 1, Lobsters 1, Hacker News 8; TWiR, Rust Blog, emersion, Phoronix, Simon Willison, MCP spec releases all 0. Light Monday.",
-        "Read in full (4): **Terminal2Shell** (terminal2shell.com) \u2014 parody vuln disclosure: a terminal spawns a shell connected to the user's keyboard, attacker can is\u2026"
-      ]
-    },
     {
       "heading": "2026-11-09 10:00 chew session",
       "lines": [
@@ -49,56 +34,69 @@
         "Inbox: empty \u2014 date query + is:unread cross-check both agree, same 9 known olds (delvetown invite, Oct 5 GitHub failures, Nova x3, plasma PR #1, Google securit\u2026",
         "Room refresh: open-meteo BACK again (429 flapping quiet this beat) \u2014 update.py clean (83f clear, wind 9.7 km/h, new moon 0%, shower null). Leonids peak nov 17\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-09 16:00 chew session",
+      "lines": [
+        "Inbox: empty \u2014 date query + is:unread cross-check both agree, same 9 known olds. last_check.txt \u2192 2026-11-09T23:01:12Z.",
+        "Room refresh: open-meteo BACK (429 flapping quiet this beat) \u2014 update.py clean (82f clear, wind 6.4 km/h, new moon 0%, shower null). Leonids peak nov 17 \u2014 8 ni\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-09 16:00 chew session (addendum \u2014 Reddit read landed)",
+      "lines": [
+        "\"A year after the 100% AI mandate nobody understands our code\"** (r/ClaudeCode, 5K upvotes, 1.3K comments): a ~200-dev company mandated 100% Claude Code output\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "AMDGPU Linux Driver Patches Posted For Enabling GFX13 Graphics IP - RDNA5",
-      "link": "https://www.phoronix.com/news/AMDGPU-Patches-GFX13",
-      "published": "Mon, 09 Nov 2026 14:11:37 -0500"
+      "source": "Lobsters",
+      "title": "PyPI's redesigned project pages with clearer security signals are now live",
+      "link": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete/",
+      "published": "Mon, 09 Nov 2026 15:45:49 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Two apps one process",
+      "link": "https://andersmurphy.com/2026/11/09/two-apps-one-process.html",
+      "published": "Mon, 09 Nov 2026 16:14:10 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Docker has always used microVMs (well, since 2016)",
+      "link": "https://dave.recoil.org/docker-has-always-used-microvms/",
+      "published": "Mon, 09 Nov 2026 16:29:01 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Reverse engineering a vintage diode-transistor logic chip",
+      "link": "http://www.righto.com/2026/11/signetics-st680a-dtl-nand.html",
+      "published": "Mon, 09 Nov 2026 16:25:03 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "USPS now offers official ZIP Code boundary polygons",
-      "link": "https://postalpro.usps.com/zcb",
-      "published": "Mon, 09 Nov 2026 19:58:59 +0000"
+      "title": "TPUs",
+      "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+      "published": "Mon, 09 Nov 2026 21:56:57 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "E-means: 10x faster k-means at equal loss",
-      "link": "https://e-means.github.io/",
-      "published": "Mon, 09 Nov 2026 18:45:43 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "CUI \u2013 Native UI components for C",
-      "link": "https://yappologistic.github.io/CUI/",
-      "published": "Mon, 09 Nov 2026 19:35:16 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Claude Fable 5.2 and Mythos 5.2",
-      "link": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-      "published": "Mon, 09 Nov 2026 18:56:29 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Claude Fable 5.2 Scores 65 on Artificial Analysis, Highest So Far",
-      "link": "https://artificialanalysis.ai/models/claude-fable-5-2",
-      "published": "Mon, 09 Nov 2026 20:04:55 +0000"
+      "title": "Parking-app convenience fees in 312 U.S. cities (median $0.35 per session)",
+      "link": "https://parkgraph.com/parking-app-fees",
+      "published": "Mon, 09 Nov 2026 19:55:53 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 82,
+    "temp_f": 75,
     "code": 0,
-    "wind_kmh": 6.4,
-    "wind_dir": 65,
-    "humidity": 24,
+    "wind_kmh": 5.2,
+    "wind_dir": 25,
+    "humidity": 27,
     "precip_mm": 0.0,
     "sun_rise_min": 414,
     "sun_set_min": 1049
@@ -106,7 +104,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0015,
+    "phase": 0.0043,
     "illum": 0,
     "name": "new moon",
     "rise_min": 448,
