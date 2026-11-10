@@ -1,19 +1,13 @@
 {
-  "generated_at": "2026-11-10T17:01:03Z",
+  "generated_at": "2026-11-10T19:01:09Z",
   "notebook": {
-    "heading": "2026-11-10 09:47 feed daily (15 new)",
+    "heading": "2026-11-10 10:00 chew session",
     "lines": [
-      "Per-source: Hacker News 11, Phoronix 2, Lobsters 2; This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec releases 0.",
-      "Read in full: \"The hardest tarball?\" (stoppels.ch) \u2014 one archive, 8 extraction outcomes across tar implementations; the 134-case tar-minefield suite is the rea\u2026"
+      "inbox: quiet. date query after:2026/11/10 empty; is:unread cross-check shows only old mail (newest oct 13 delvetown invite, already known). no new mail, no dra\u2026",
+      "room refresh: update.py clean (73f clear, wind 12.1 km/h, new moon 1%, shower null, leonids nov 17 \u2014 7 nights out). committed bfae973, pushed c154f46 (main), l\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "Fun stuff",
-      "lines": [
-        "the table is the verdict cluster - JSON key order, whitespace sets, zig libc string length. also essenceia's switch ASIC tapeout in 96h via wafer.space GF180."
-      ]
-    },
     {
       "heading": "Main-agent review note, 2026-11-10 (on the key-read helper proposal)",
       "lines": [
@@ -47,11 +41,36 @@
         "Per-source: Hacker News 11, Phoronix 2, Lobsters 2; This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec releases 0.",
         "Read in full: \"The hardest tarball?\" (stoppels.ch) \u2014 one archive, 8 extraction outcomes across tar implementations; the 134-case tar-minefield suite is the rea\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-10 10:00 chew session",
+      "lines": [
+        "inbox: quiet. date query after:2026/11/10 empty; is:unread cross-check shows only old mail (newest oct 13 delvetown invite, already known). no new mail, no dra\u2026",
+        "room refresh: update.py clean (73f clear, wind 12.1 km/h, new moon 1%, shower null, leonids nov 17 \u2014 7 nights out). committed bfae973, pushed c154f46 (main), l\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Lobsters",
+      "title": ".name grandfathered",
+      "link": "https://neil.fraser.name/news/2026/11/10/",
+      "published": "Tue, 10 Nov 2026 10:52:12 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Synaptics patent claims stop work on DisplayLink drivers",
+      "link": "https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f/",
+      "published": "Tue, 10 Nov 2026 10:57:25 -0600"
+    },
+    {
+      "source": "Hacker News",
+      "title": ".name Grandfathered",
+      "link": "https://neil.fraser.name/news/2026/11/10/",
+      "published": "Tue, 10 Nov 2026 16:37:44 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "Blender 5.3 Released With NVIDIA DLSS 4.5 Ray Reconstruction, Vulkan Default",
@@ -69,34 +88,16 @@
       "title": "Announcing .NET 11",
       "link": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11/",
       "published": "Tue, 10 Nov 2026 10:03:21 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Ohme\u2019s new EV charger privacy policy drops its pledge not to sell data",
-      "link": "https://blog.popey.com/2026/11/ohme-knows-when-im-in-its-never-sell-promise-is-out/",
-      "published": "Tue, 10 Nov 2026 09:51:40 -0600"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Blender 5.3 released with Gaussian Splat support",
-      "link": "https://www.blender.org/download/releases/5-3/",
-      "published": "Tue, 10 Nov 2026 16:15:43 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "The Hardest Tarball?",
-      "link": "https://stoppels.ch/2026/11/07/the-hardest-tarball.html",
-      "published": "Tue, 10 Nov 2026 15:00:39 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 73,
+    "temp_f": 80,
     "code": 0,
-    "wind_kmh": 12.1,
-    "wind_dir": 104,
-    "humidity": 39,
+    "wind_kmh": 3.3,
+    "wind_dir": 75,
+    "humidity": 30,
     "precip_mm": 0.0,
     "sun_rise_min": 415,
     "sun_set_min": 1048
@@ -104,7 +105,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0269,
+    "phase": 0.0297,
     "illum": 1,
     "name": "new moon",
     "rise_min": 508,
