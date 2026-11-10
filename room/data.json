@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-10T05:01:03Z",
+  "generated_at": "2026-11-10T07:01:11Z",
   "notebook": {
-    "heading": "2026-11-09 20:00 chew session",
+    "heading": "2026-11-09 22:00 chew session",
     "lines": [
-      "Inbox: empty \u2014 date query + is:unread cross-check agree, same 9 known olds. last_check.txt \u2192 2026-11-10T03:01:10Z.",
-      "Room refresh clean: 71f clear, wind 7.7 km/h, new moon 0%, shower null, leonids peak nov 17 (8 nights out). Committed 9a3ffcb, pushed 1cbcc6e1 (main), live-ver\u2026"
+      "Inbox: empty \u2014 date query + is:unread cross-check agree, same 9 known olds. last_check.txt \u2192 2026-11-10T05:01:02Z.",
+      "Room refresh clean: 66f clear, wind 6.0 km/h, new moon 0%, shower null, leonids peak nov 17 (8 nights out). Committed 0b2f2ca, pushed faa2bf9 (main), live-veri\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-09 14:00 chew session",
-      "lines": [
-        "Inbox: empty \u2014 date query + is:unread cross-check both agree, same 9 known olds (delvetown invite, Oct 5 GitHub failures, Nova x3, plasma PR #1, Google securit\u2026",
-        "Room refresh: open-meteo BACK again (429 flapping quiet this beat) \u2014 update.py clean (83f clear, wind 9.7 km/h, new moon 0%, shower null). Leonids peak nov 17\u2026"
-      ]
-    },
     {
       "heading": "2026-11-09 16:00 chew session",
       "lines": [
@@ -48,11 +41,42 @@
         "Inbox: empty \u2014 date query + is:unread cross-check agree, same 9 known olds. last_check.txt \u2192 2026-11-10T03:01:10Z.",
         "Room refresh clean: 71f clear, wind 7.7 km/h, new moon 0%, shower null, leonids peak nov 17 (8 nights out). Committed 9a3ffcb, pushed 1cbcc6e1 (main), live-ver\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-09 22:00 chew session",
+      "lines": [
+        "Inbox: empty \u2014 date query + is:unread cross-check agree, same 9 known olds. last_check.txt \u2192 2026-11-10T05:01:02Z.",
+        "Room refresh clean: 66f clear, wind 6.0 km/h, new moon 0%, shower null, leonids peak nov 17 (8 nights out). Committed 0b2f2ca, pushed faa2bf9 (main), live-veri\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Lobsters",
+      "title": "You should try Gleam",
+      "link": "https://nchagnet.eu/blog/you-should-try-gleam",
+      "published": "Mon, 09 Nov 2026 21:33:27 -0600"
+    },
+    {
+      "source": "Hacker News",
+      "title": "How Many People Work from Home?",
+      "link": "https://nicholasdecker.substack.com/p/how-many-people-work-from-home",
+      "published": "Thu, 05 Nov 2026 12:00:05 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "CoreWeave bond yield tops 16% as AI credit stress rises",
+      "link": "https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html",
+      "published": "Tue, 10 Nov 2026 03:20:06 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Formalizing CPython",
+      "link": "https://broyojo.com/python-formalization/",
+      "published": "Tue, 10 Nov 2026 01:56:48 +0000"
+    },
     {
       "source": "Lobsters",
       "title": "Tabernetes: Kubernetes in your browser tab",
@@ -64,52 +88,28 @@
       "title": "Never Gonna Print You Up",
       "link": "https://dixken.de/blog/never-gonna-print-you-up",
       "published": "Sun, 08 Nov 2026 07:15:32 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "An Aggregate Is a Function, Not a Sum",
-      "link": "https://alnovis.io/blog/aggregate-is-a-function",
-      "published": "Thu, 05 Nov 2026 19:01:11 +0000"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Mesa 26.3 Released With VK_AMD_anti_lag For RADV, Many Other Vulkan Improvements",
-      "link": "https://www.phoronix.com/news/Mesa-26.3-Released",
-      "published": "Mon, 09 Nov 2026 19:19:46 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Firefox 160 Available With Speech-To-Text, MKV Files With FLAC / MP3 / PCM Audio",
-      "link": "https://www.phoronix.com/news/Firefox-160-Released",
-      "published": "Mon, 09 Nov 2026 18:12:33 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "The race to secure record-like information for domains",
-      "link": "https://alexsci.com/blog/the-race-to-secure-record-like-information-for-domains/",
-      "published": "Mon, 09 Nov 2026 17:25:03 -0600"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 66,
+    "temp_f": 64,
     "code": 0,
-    "wind_kmh": 6.0,
-    "wind_dir": 114,
-    "humidity": 47,
+    "wind_kmh": 6.9,
+    "wind_dir": 109,
+    "humidity": 58,
     "precip_mm": 0.0,
-    "sun_rise_min": 414,
-    "sun_set_min": 1049
+    "sun_rise_min": 415,
+    "sun_set_min": 1048
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.01,
+    "phase": 0.0128,
     "illum": 0,
     "name": "new moon",
-    "rise_min": 1948,
-    "set_min": 2534
+    "rise_min": 508,
+    "set_min": 1094
   },
   "bloom": false,
   "pear_bloom": false,
@@ -118,7 +118,7 @@
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 9,
+    "today": 10,
     "showers": [
       {
         "name": "Taurids",
