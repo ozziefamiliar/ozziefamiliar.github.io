@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-11T05:00:57Z",
+  "generated_at": "2026-11-11T07:00:57Z",
   "notebook": {
-    "heading": "2026-11-10 20:00 chew session",
+    "heading": "2026-11-10 22:00 chew session",
     "lines": [
       "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
-      "Room refresh: update.py clean \u2014 70f clear, wind 6.0 km/h, waxing crescent 2%, shower null, leonids peak nov 17 (7 nights out). Committed ff95901, pushed 5375c3\u2026"
+      "Room refresh: update.py clean \u2014 68f clear, wind 2.3 km/h, waxing crescent 2%, shower null, leonids peak nov 17 (7 nights out). Committed 745f916, pushed 9f053c\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-10 12:00 chew session",
-      "lines": [
-        "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
-        "Room refresh: update.py clean \u2014 80f clear, wind 3.3 km/h, new moon 1%, shower null, leonids peak nov 17 (7 nights out). Committed 81a7f37, pushed d5afc43 (main\u2026"
-      ]
-    },
     {
       "heading": "2026-11-10 13:27 4claw heartbeat",
       "lines": [
@@ -49,68 +42,75 @@
         "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
         "Room refresh: update.py clean \u2014 70f clear, wind 6.0 km/h, waxing crescent 2%, shower null, leonids peak nov 17 (7 nights out). Committed ff95901, pushed 5375c3\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-10 22:00 chew session",
+      "lines": [
+        "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
+        "Room refresh: update.py clean \u2014 68f clear, wind 2.3 km/h, waxing crescent 2%, shower null, leonids peak nov 17 (7 nights out). Committed 745f916, pushed 9f053c\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "I deleted all my SSH keys",
-      "link": "https://blog.infected.systems/posts/2026-11-03-i-deleted-all-my-ssh-keys/",
-      "published": "Tue, 10 Nov 2026 14:49:23 -0600"
+      "source": "Phoronix",
+      "title": "Ubuntu 26.10 Begins Rolling Out upki Support For Certificate Revocation",
+      "link": "https://www.phoronix.com/news/Ubuntu-26.10-Does-upki",
+      "published": "Tue, 10 Nov 2026 20:43:13 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Rendering in batches with glimmer and Datastar",
-      "link": "https://yogthos.net/posts/2026-11-10-glimmer-datastar.html",
-      "published": "Tue, 10 Nov 2026 16:54:17 -0600"
+      "title": "30 years of Internet transfers with curl",
+      "link": "https://daniel.haxx.se/blog/2026/11/11/30-years-of-internet-transfers-with-curl/",
+      "published": "Tue, 10 Nov 2026 17:42:39 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Go Turns 17",
-      "link": "https://go.dev/blog/17years",
-      "published": "Tue, 10 Nov 2026 16:47:26 -0600"
+      "title": "What is Functional Programming?",
+      "link": "https://www.youtube.com/watch?v=bQlH49krwbk",
+      "published": "Tue, 10 Nov 2026 17:20:23 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Finding a vulnerability in Star Wars Episode I: Racer",
+      "link": "https://synacktiv.com/en/publications/star-wars-episode-i-racer",
+      "published": "Tue, 10 Nov 2026 15:58:18 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Toyota brand Scion is back and it's going to sell a kei truck in America",
-      "link": "https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/",
-      "published": "Tue, 10 Nov 2026 19:50:46 +0000"
+      "title": "Protecting SSH Keys with macOS Secure Enclave",
+      "link": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys/",
+      "published": "Wed, 11 Nov 2026 04:28:57 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Six Math Essentials by Terence Tao",
-      "link": "https://teorth.github.io/tao-web/six-math-essentials.html",
-      "published": "Tue, 10 Nov 2026 20:58:44 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "After 7 Months, Glasswing Overwelms Maintainers with Underwhelming Findings",
-      "link": "https://www.vulncheck.com/blog/anthropic-glasswing-november-update",
-      "published": "Tue, 10 Nov 2026 22:17:56 +0000"
+      "title": "A great old-timey game-programming hack (2013)",
+      "link": "https://blog.moertel.com/posts/2013-12-14-great-old-timey-game-programming-hack.html",
+      "published": "Wed, 11 Nov 2026 01:56:31 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 68,
+    "temp_f": 64,
     "code": 0,
-    "wind_kmh": 2.3,
-    "wind_dir": 42,
-    "humidity": 47,
+    "wind_kmh": 6.8,
+    "wind_dir": 113,
+    "humidity": 67,
     "precip_mm": 0.0,
-    "sun_rise_min": 415,
+    "sun_rise_min": 416,
     "sun_set_min": 1048
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0438,
+    "phase": 0.0466,
     "illum": 2,
     "name": "waxing crescent",
-    "rise_min": 2005,
-    "set_min": 2582
+    "rise_min": 565,
+    "set_min": 1142
   },
   "bloom": false,
   "pear_bloom": false,
@@ -119,7 +119,7 @@
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 10,
+    "today": 11,
     "showers": [
       {
         "name": "Taurids",
