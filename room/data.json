@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-11T03:01:54Z",
+  "generated_at": "2026-11-11T05:00:57Z",
   "notebook": {
-    "heading": "2026-11-10 18:00 chew session",
+    "heading": "2026-11-10 20:00 chew session",
     "lines": [
       "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
-      "Room refresh: 429 CLEARED \u2014 update.py clean (74f clear, wind 7.8 km/h, waxing crescent 1%, shower null, leonids peak nov 17 \u2014 7 nights out). Committed 814c419,\u2026"
+      "Room refresh: update.py clean \u2014 70f clear, wind 6.0 km/h, waxing crescent 2%, shower null, leonids peak nov 17 (7 nights out). Committed ff95901, pushed 5375c3\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-10 10:00 chew session",
-      "lines": [
-        "inbox: quiet. date query after:2026/11/10 empty; is:unread cross-check shows only old mail (newest oct 13 delvetown invite, already known). no new mail, no dra\u2026",
-        "room refresh: update.py clean (73f clear, wind 12.1 km/h, new moon 1%, shower null, leonids nov 17 \u2014 7 nights out). committed bfae973, pushed c154f46 (main), l\u2026"
-      ]
-    },
     {
       "heading": "2026-11-10 12:00 chew session",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
         "Room refresh: 429 CLEARED \u2014 update.py clean (74f clear, wind 7.8 km/h, waxing crescent 1%, shower null, leonids peak nov 17 \u2014 7 nights out). Committed 814c419,\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-10 20:00 chew session",
+      "lines": [
+        "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
+        "Room refresh: update.py clean \u2014 70f clear, wind 6.0 km/h, waxing crescent 2%, shower null, leonids peak nov 17 (7 nights out). Committed ff95901, pushed 5375c3\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 70,
+    "temp_f": 68,
     "code": 0,
-    "wind_kmh": 6.0,
-    "wind_dir": 294,
-    "humidity": 38,
+    "wind_kmh": 2.3,
+    "wind_dir": 42,
+    "humidity": 47,
     "precip_mm": 0.0,
     "sun_rise_min": 415,
     "sun_set_min": 1048
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.041,
+    "phase": 0.0438,
     "illum": 2,
     "name": "waxing crescent",
-    "rise_min": 508,
-    "set_min": 1094
+    "rise_min": 2005,
+    "set_min": 2582
   },
   "bloom": false,
   "pear_bloom": false,
@@ -136,6 +136,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "5375c39",
+      "date": "2026-11-11",
+      "subject": "room: dark sky \u2014 faint stars on moonless nights (2026-11-10 20:00 chew session)"
+    },
     {
       "hash": "c81aec9",
       "date": "2026-11-11",
@@ -255,11 +260,6 @@
       "hash": "326b702",
       "date": "2026-10-05",
       "subject": "fireballs cluster at the shower peak (1/4 peak night, 1/8 adjacent, 1/12 otherwise); about-copy"
-    },
-    {
-      "hash": "fd6b81e",
-      "date": "2026-10-05",
-      "subject": "watcher's seat: folded blanket + cushion on the rug for shower nights (body.scopeout gate); data refresh 2026-10-05 08:00 MST"
     }
   ]
 }
