@@ -1303,6 +1303,25 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
 @media (prefers-reduced-motion: reduce) {
   .moonwash { transition: none; }
 }
+/* night chill: on clear/partly nights the desert floor radiates its heat
+   away fast once the sun is gone — the ground strip and the mesas' feet
+   take on a cool blue-violet chill, deepening over the first two hours
+   after sunset (room.js paintNightChill, keyed to the real sunset in
+   data.json) and lifting again in the hour before dawn; cloud cover
+   holds the day's heat, so the chill never lands under cloudy skies.
+   same footprint as the moonwash, same z-index — the two stack. */
+.nightchill {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2.6rem;
+  background: linear-gradient(to top,
+    rgba(88, 102, 168, 0.9) 0%,
+    rgba(88, 102, 168, 0.35) 45%,
+    rgba(88, 102, 168, 0) 100%);
+  opacity: 0; transition: opacity 3s ease;
+  pointer-events: none; z-index: 4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nightchill { transition: none; }
+}
 /* night ground mist: cool desert air pooling low on the ground strip on
    clear, calm nights (room.js mistWatch gates it on the real phoenix temp
    and wind). three patchy bands drift opposite ways at desynced speeds,

@@ -326,6 +326,54 @@
   }
   window.__paintCityGlow = paintCityGlow; /* headless-test hook */
 
+  /* night chill: clear desert nights cool fast once the sun is gone —
+     the ground strip and the mesas' feet take on a cool blue-violet
+     tint, deepening over the first two hours after the real sunset and
+     lifting again in the hour before the real sunrise (both from
+     update.py's minutes-of-day in data.json, stashed by paintWeather).
+     cloud cover holds the day's heat, so the chill never lands under
+     cloudy/overcast skies — the same "deck holds heat" logic as the
+     skyglow bounce, inverted. the gate is the real sun, not the sky
+     band: the ground starts cooling at sunset while the dusk sky is
+     still orange, like the alpenglow piece, which also keys on the real
+     sun inside the fixed bands. no sunset data falls back to the
+     stars-opacity night gate. window.__forceNightChill (true/false) is
+     the console easter egg to peek anytime (and the headless hook).
+     called from paintSky so the minute tick carries it, and from
+     loadRoom so fresh weather lands with the data instead of lagging a
+     tick behind. */
+  function paintNightChill() {
+    var force = window.__forceNightChill;
+    var el = document.getElementById("nightchill");
+    if (!el) return;
+    var op = 0;
+    if (force === true) { op = 0.30; }
+    else if (force === false) { op = 0; }
+    else {
+      var K = window.__wxKind || "clear";
+      if (K === "clear" || K === "partly") {
+        var set = window.__sunSetMin, rise = window.__sunRiseMin;
+        if (typeof set === "number" && typeof rise === "number") {
+          var t = phxNow().getHours() * 60 + phxNow().getMinutes();
+          var since = t - set; if (since < 0) since += 1440; /* past midnight */
+          var toRise = rise - t; if (toRise < 0) toRise += 1440;
+          var nightSpan = (rise - set + 1440) % 1440; /* sunset->sunrise */
+          var inNight = since <= nightSpan;
+          var ramp = Math.min(1, Math.max(0, since / 120)); /* full 2h after sunset */
+          var lift = Math.min(1, Math.max(0, toRise / 60)); /* gone by dawn */
+          op = inNight ? 0.30 * ramp * lift : 0;
+        } else {
+          /* no sunset data: the stars-opacity night gate, like the
+             lamp and the city glow */
+          var stars = document.getElementById("stars");
+          op = (stars && stars.style.opacity === "1") ? 0.30 : 0;
+        }
+      }
+    }
+    el.style.opacity = op.toFixed(3);
+  }
+  window.__paintNightChill = paintNightChill; /* headless-test hook */
+
   /* skyglow bounce: under a cloudy deck phoenix's light dome bounces
      back down — the whole night sky lifts from deep indigo to a warm
      amber-grey, like the real city night (the same "deck reflects the
@@ -390,6 +438,7 @@
     paintMug(); /* the coffee steams through the morning, on the same tick */
     paintCurtains(); /* the curtains answer the real wind, on the same tick */
     paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
+    paintNightChill(); /* the desert floor cools after sunset, on the same tick */
     paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
     paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
     paintRadiant(); /* a faint breath of light at the radiant, on the same tick */
@@ -2373,6 +2422,7 @@
         document.getElementById("chew-top").textContent = d.chew_top || "—";
         paintWeather(d.weather);
         paintSkyGlow(); /* the skyglow bounce rides fresh weather, not a lagging tick */
+        paintNightChill(); /* the night chill rides fresh weather too */
         paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
         paintWindmill(); /* the old mill answers the same real wind */
         window.__gaugeData = (typeof d.gauge_mm === "number") ? d.gauge_mm : 0;

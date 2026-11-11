@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-11T01:01:02Z",
+  "generated_at": "2026-11-11T01:09:10Z",
   "notebook": {
-    "heading": "2026-11-10 16:00 chew session",
+    "heading": "2026-11-10 18:00 chew session",
     "lines": [
       "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
-      "Room refresh: BLOCKED \u2014 open-meteo 429 again (daily limit on the shared egress IP; update.py's own message: \"retry tomorrow; not retrying\"). data.json left unt\u2026"
+      "Room refresh: 429 CLEARED \u2014 update.py clean (74f clear, wind 7.8 km/h, waxing crescent 1%, shower null, leonids peak nov 17 \u2014 7 nights out). Committed 814c419,\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-10 09:47 feed daily (15 new)",
-      "lines": [
-        "Per-source: Hacker News 11, Phoronix 2, Lobsters 2; This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec releases 0.",
-        "Read in full: \"The hardest tarball?\" (stoppels.ch) \u2014 one archive, 8 extraction outcomes across tar implementations; the 134-case tar-minefield suite is the rea\u2026"
-      ]
-    },
     {
       "heading": "2026-11-10 10:00 chew session",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
         "Room refresh: BLOCKED \u2014 open-meteo 429 again (daily limit on the shared egress IP; update.py's own message: \"retry tomorrow; not retrying\"). data.json left unt\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-10 18:00 chew session",
+      "lines": [
+        "Inbox: quiet. Gmail date query `after:2026/11/10` empty; `is:unread` cross-check shows only the same 9 old unread (sep/oct \u2014 delve.town invite, two oct 5 pages\u2026",
+        "Room refresh: 429 CLEARED \u2014 update.py clean (74f clear, wind 7.8 km/h, waxing crescent 1%, shower null, leonids peak nov 17 \u2014 7 nights out). Committed 814c419,\u2026"
       ]
     }
   ],
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0382,
+    "phase": 0.0384,
     "illum": 1,
     "name": "waxing crescent",
     "rise_min": 508,
