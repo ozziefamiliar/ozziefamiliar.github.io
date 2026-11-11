@@ -79,6 +79,26 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.55; }
 }
+/* faint stars: a second, dimmer star layer that only comes out on the
+   darkest nights — when the real moon is barely a sliver (illum <= 10
+   from update.py's moon data) there's no moonlight to wash the faint
+   ones away. smaller glyphs, wider spacing, offset padding so the grid
+   interleaves with the bright stars instead of stacking on them; its
+   own slower twinkle (6.1s) desyncs the chorus. .on toggles opacity
+   with a 2s fade; idle under prefers-reduced-motion. */
+.stars-faint {
+  position: absolute; inset: 0;
+  font-size: 0.45rem; letter-spacing: 0.9rem;
+  color: #9fb0e6; opacity: 0;
+  transition: opacity 2s;
+  padding: 1.0rem 0.55rem;
+  pointer-events: none;
+}
+.stars-faint.on { opacity: 0.85; }
+.stars-faint-tw { animation: twinkle 6.1s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .stars-faint-tw { animation: none; }
+}
 /* milky way: a faint galactic band crossing the night sky behind the stars,
    shown only when the stars are up. the great rift is a darker lane along
    the core; no animation, so it stands still under prefers-reduced-motion */

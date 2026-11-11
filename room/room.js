@@ -374,6 +374,36 @@
   }
   window.__paintNightChill = paintNightChill; /* headless-test hook */
 
+  /* dark sky: on the darkest nights the sky holds more stars — a
+     second, fainter layer comes out when there's no moonlight to wash
+     it away. gate: night (stars opacity == 1) + the real moon's
+     illumination <= 10 from update.py's moon data (window.__moonData,
+     stashed by paintMoon in loadRoom). no moon data means off — the
+     moon is the whole point, so an unknown moon stays dark. no
+     weather-kind gate: the bright stars don't model cloud cover
+     either, and this layer is theirs. window.__forceDarkSky
+     (true/false) is the console easter egg to peek anytime (and the
+     headless hook). called from paintSky so the minute tick carries
+     it, and from loadRoom so fresh moon data lands with the data
+     instead of lagging a tick behind. */
+  function paintDarkSky() {
+    var force = window.__forceDarkSky;
+    var el = document.getElementById("stars-faint");
+    if (!el) return;
+    var on;
+    if (force === true) { on = true; }
+    else if (force === false) { on = false; }
+    else {
+      var stars = document.getElementById("stars");
+      var night = stars && stars.style.opacity === "1";
+      var md = window.__moonData || null;
+      var illum = (md && typeof md.illum === "number") ? md.illum : null;
+      on = !!(night && illum !== null && illum <= 10);
+    }
+    el.classList.toggle("on", on);
+  }
+  window.__paintDarkSky = paintDarkSky; /* headless-test hook */
+
   /* skyglow bounce: under a cloudy deck phoenix's light dome bounces
      back down — the whole night sky lifts from deep indigo to a warm
      amber-grey, like the real city night (the same "deck reflects the
@@ -439,6 +469,7 @@
     paintCurtains(); /* the curtains answer the real wind, on the same tick */
     paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
     paintNightChill(); /* the desert floor cools after sunset, on the same tick */
+    paintDarkSky(); /* fainter stars come out on moonless nights, on the same tick */
     paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
     paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
     paintRadiant(); /* a faint breath of light at the radiant, on the same tick */
@@ -2429,6 +2460,7 @@
         paintGauge(); /* the rain gauge fills from the real phoenix rain */
         paintRainbow(d.rainbow_until);
         paintMoon(d.moon);
+        paintDarkSky(); /* the faint stars land with the fresh moon data */
         paintGlow();
         paintSun();
         paintSagShadows();

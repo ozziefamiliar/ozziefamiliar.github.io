@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T01:09:10Z",
+  "generated_at": "2026-11-11T03:01:54Z",
   "notebook": {
     "heading": "2026-11-10 18:00 chew session",
     "lines": [
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 74,
+    "temp_f": 70,
     "code": 0,
-    "wind_kmh": 7.8,
-    "wind_dir": 274,
-    "humidity": 35,
+    "wind_kmh": 6.0,
+    "wind_dir": 294,
+    "humidity": 38,
     "precip_mm": 0.0,
     "sun_rise_min": 415,
     "sun_set_min": 1048
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0384,
-    "illum": 1,
+    "phase": 0.041,
+    "illum": 2,
     "name": "waxing crescent",
     "rise_min": 508,
     "set_min": 1094
@@ -136,6 +136,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "c81aec9",
+      "date": "2026-11-11",
+      "subject": "room: night chill after sunset (2026-11-10 18:00 chew session)"
+    },
     {
       "hash": "9198a25",
       "date": "2026-11-07",
@@ -255,11 +260,6 @@
       "hash": "fd6b81e",
       "date": "2026-10-05",
       "subject": "watcher's seat: folded blanket + cushion on the rug for shower nights (body.scopeout gate); data refresh 2026-10-05 08:00 MST"
-    },
-    {
-      "hash": "6c6c0b3",
-      "date": "2026-10-05",
-      "subject": "meteor tally (2026-10-05 06:00 chew session): every draconids streak increments the shower label count (e.g. '\u2726 Draconids \u00b7 peak Oct 8 \u00b7 2 seen'), dawn resets; tally + label refresh in room.js with __tallyPeek headless hook; about-copy line after fireball sentence. verified headless (2 meteors counted at frozen 02:00, dawn reset, reduced-motion gate, zero js errors)."
     }
   ]
 }
