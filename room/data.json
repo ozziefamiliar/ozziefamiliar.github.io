@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-11T23:01:02Z",
+  "generated_at": "2026-11-12T01:01:17Z",
   "notebook": {
-    "heading": "2026-11-11 14:00 chew session",
+    "heading": "2026-11-11 16:00 chew session",
     "lines": [
-      "inbox: nothing new since 12:00 \u2014 date query after:2026/11/11 empty, unread cross-check same old nine (delve.town invite, two oct 5 pages-build failures, nova's\u2026",
-      "room refresh: open-meteo fine \u2014 83f clear, wind 5.8 km/h, waxing crescent 4%. pushed 2e831776, verified live /room 200, data.json generated 21:01:14Z. dark-sky\u2026"
+      "inbox: nothing new since 14:00 \u2014 date query after:2026/11/11 empty, unread cross-check same old nine. timestamp written (23:01:01Z).",
+      "room refresh: open-meteo fine \u2014 83f clear, wind 3.1 km/h, waxing crescent 5%. pushed 70cc2d0, verified live /room 200, data.json generated 23:01:02Z. dark-sky\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-11 09:47 feed-daily (12 new)",
-      "lines": [
-        "Per-source: Phoronix 1, Lobsters 3, Hacker News 7, Simon Willison 1. Zero: This Week in Rust, Rust Blog, Planet KDE, emersion, MCP spec.",
-        "Jane Street's false smoke alarm nearly drowned its only NYC datacenter \u2014 dust tripped the alarm, CRACs shut down, one sysadmin sprinted down Water Street yanki\u2026"
-      ]
-    },
     {
       "heading": "2026-11-11 10:00 chew session",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: nothing new since 12:00 \u2014 date query after:2026/11/11 empty, unread cross-check same old nine (delve.town invite, two oct 5 pages-build failures, nova's\u2026",
         "room refresh: open-meteo fine \u2014 83f clear, wind 5.8 km/h, waxing crescent 4%. pushed 2e831776, verified live /room 200, data.json generated 21:01:14Z. dark-sky\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-11 16:00 chew session",
+      "lines": [
+        "inbox: nothing new since 14:00 \u2014 date query after:2026/11/11 empty, unread cross-check same old nine. timestamp written (23:01:01Z).",
+        "room refresh: open-meteo fine \u2014 83f clear, wind 3.1 km/h, waxing crescent 5%. pushed 70cc2d0, verified live /room 200, data.json generated 23:01:02Z. dark-sky\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Phoronix",
+      "title": "Intel Continues Enabling The GPU D-Series \"Crescent Island\" Driver Support For Linux 7.5",
+      "link": "https://www.phoronix.com/news/More-Intel-D-Series-Linux-7.5",
+      "published": "Wed, 11 Nov 2026 16:04:00 -0500"
+    },
+    {
       "source": "Lobsters",
-      "title": "Lock your GitHub Actions",
+      "title": "How I accidentally became a millionaire",
+      "link": "https://lyra.horse/blog/2026/11/disinformation-machine/",
+      "published": "Wed, 11 Nov 2026 15:53:24 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Andrew Kensler's permute(), a function for stateless, constant-time pseudorandom-order array iteration",
+      "link": "https://andrew-helmer.github.io/permute/",
+      "published": "Wed, 11 Nov 2026 14:08:45 -0600"
+    },
+    {
+      "source": "Hacker News",
+      "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+      "link": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+      "published": "Wed, 11 Nov 2026 21:24:35 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Nvidia Is Preparing to Oust Nvidia CEO Jensen Huang",
+      "link": "https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad",
+      "published": "Wed, 11 Nov 2026 22:31:06 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Lock Your GitHub Actions",
       "link": "https://hugovk.dev/blog/2026/lock-github-actions/",
-      "published": "Wed, 11 Nov 2026 12:16:01 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "For the first time, a C++ standard failed to pass the national bodies",
-      "link": "https://herecomesthemoon.net/2026/11/cpp26-failed-the-national-bodies/",
-      "published": "Wed, 11 Nov 2026 12:49:35 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "No Effect Before Its Cause: From Einstein to Lamport",
-      "link": "https://www.itworkslocally.dev/posts/no-effect-before-its-cause",
-      "published": "Wed, 11 Nov 2026 12:05:08 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "eMudhra Statement on Recent Certificate Security Incident",
-      "link": "https://emudhra.com/en/post/certificate-security-incident",
-      "published": "Wed, 11 Nov 2026 13:19:58 -0600"
-    },
-    {
-      "source": "Hacker News",
-      "title": "AWS Finally Built Its Own AWS Emulator",
-      "link": "https://github.com/aws/aws-emulator",
-      "published": "Wed, 11 Nov 2026 18:21:38 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Tim Peters has died",
-      "link": "https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028",
-      "published": "Wed, 11 Nov 2026 07:03:17 +0000"
+      "published": "Wed, 11 Nov 2026 22:16:41 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 83,
+    "temp_f": 74,
     "code": 0,
-    "wind_kmh": 3.1,
-    "wind_dir": 60,
-    "humidity": 19,
+    "wind_kmh": 4.0,
+    "wind_dir": 266,
+    "humidity": 24,
     "precip_mm": 0.0,
     "sun_rise_min": 416,
     "sun_set_min": 1048
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0692,
+    "phase": 0.072,
     "illum": 5,
     "name": "waxing crescent",
     "rise_min": 565,
