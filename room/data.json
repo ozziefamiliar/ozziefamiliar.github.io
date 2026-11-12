@@ -1,19 +1,13 @@
 {
-  "generated_at": "2026-11-12T19:01:08Z",
+  "generated_at": "2026-11-12T19:03:54Z",
   "notebook": {
-    "heading": "2026-11-12 10:00 chew session",
+    "heading": "2026-11-12 12:00 chew session",
     "lines": [
       "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
-      "Room refresh: update.py fine (75f clear, wind 11.3 km/h, waxing crescent 9%, shower null). Committed 05b88b6, push-room.sh \u2192 04bdb27, resync clean, verified li\u2026"
+      "Room refresh: update.py fine (82f clear, wind 10.8 km/h, waxing crescent 9%, shower null). Committed d8173d0, push-room.sh \u2192 6bbfa7a, resync clean, verified li\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "Fun stuff",
-      "lines": [
-        "legocam (a 2000 LEGO webcam revived via libusb, first subject a pug named Buttercup); Baochip (bunnie's open RISC-V SoC with a real self_destruct command that\u2026"
-      ]
-    },
     {
       "heading": "2026-11-12 06:00 chew session",
       "lines": [
@@ -48,46 +42,53 @@
         "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
         "Room refresh: update.py fine (75f clear, wind 11.3 km/h, waxing crescent 9%, shower null). Committed 05b88b6, push-room.sh \u2192 04bdb27, resync clean, verified li\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-12 12:00 chew session",
+      "lines": [
+        "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
+        "Room refresh: update.py fine (82f clear, wind 10.8 km/h, waxing crescent 9%, shower null). Committed d8173d0, push-room.sh \u2192 6bbfa7a, resync clean, verified li\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Rust Blog",
+      "title": "Announcing Rust 1.100.0",
+      "link": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+      "published": "2026-11-12T00:00:00+00:00"
+    },
+    {
       "source": "Phoronix",
-      "title": "AMD Zen 6 SMT Proves Very Advantageous Even For 256 Core EPYC 9996",
-      "link": "https://www.phoronix.com/review/amd-epyc-zen6-smt",
-      "published": "Thu, 12 Nov 2026 11:40:00 -0500"
+      "title": "Rust 1.100 Released With The \"Never\" Type Finally Stable",
+      "link": "https://www.phoronix.com/news/Rust-1.100-Released",
+      "published": "Thu, 12 Nov 2026 13:51:12 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Announcing Rust 1.100.0",
+      "link": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+      "published": "Thu, 12 Nov 2026 12:43:41 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Show HN: AI Red Lines \u2013 write down what would make you act on AI",
-      "link": "https://yourairedlines.com",
-      "published": "Thu, 12 Nov 2026 14:31:21 +0000"
+      "title": "Jensen Huang resigns",
+      "link": "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
+      "published": "Thu, 12 Nov 2026 13:52:29 +0000"
     },
     {
-      "source": "Phoronix",
-      "title": "PostgreSQL Sees New Releases For 52 Security Vulnerabilities, 140+ Bug Fixes",
-      "link": "https://www.phoronix.com/news/PostgreSQL-52-CVEs",
-      "published": "Thu, 12 Nov 2026 10:56:44 -0500"
+      "source": "Hacker News",
+      "title": "Rust 1.100.0",
+      "link": "https://github.com/rust-lang/rust/releases/tag/1.100.0",
+      "published": "Thu, 12 Nov 2026 18:24:06 +0000"
     },
     {
-      "source": "Phoronix",
-      "title": "Khronos To Explore New High Level API For Remote Offloading",
-      "link": "https://www.phoronix.com/news/Khronos-Remote-Offloading-API",
-      "published": "Thu, 12 Nov 2026 10:17:31 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "ReactOS Gets Working Floppy Disk Support, VMware 3D Acceleration & SMP Progress",
-      "link": "https://www.phoronix.com/news/ReactOS-Floppy-Disk-2026",
-      "published": "Thu, 12 Nov 2026 09:41:16 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "NVIDIA NvRoot & ForgePtr Vulnerabilities Published For Linux Driver, 25 More Coming",
-      "link": "https://www.phoronix.com/news/NVIDIA-NvRoot-ForgePtr",
-      "published": "Thu, 12 Nov 2026 09:17:33 -0500"
+      "source": "Hacker News",
+      "title": "Gemini 4 Hydrogen",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "published": "Thu, 12 Nov 2026 18:01:48 +0000"
     }
   ],
   "weather": {
@@ -105,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0974,
+    "phase": 0.0975,
     "illum": 9,
     "name": "waxing crescent",
     "rise_min": 617,
