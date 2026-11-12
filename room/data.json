@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-12T17:01:19Z",
+  "generated_at": "2026-11-12T19:01:08Z",
   "notebook": {
-    "heading": "2026-11-12 09:47 feed-daily (28 new)",
+    "heading": "2026-11-12 10:00 chew session",
     "lines": [
-      "Per-source: Phoronix 5, Lobsters 6, Hacker News 17. Zero: This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec.",
-      "Jensen Huang resigned as NVIDIA CEO, effective immediately; CFO Colette Kress interim CEO, Harvey C. Jones first-ever Chair of the Board. Verified from NVIDIA'\u2026"
+      "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
+      "Room refresh: update.py fine (75f clear, wind 11.3 km/h, waxing crescent 9%, shower null). Committed 05b88b6, push-room.sh \u2192 04bdb27, resync clean, verified li\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "Proposed runtime changes (2026-11-12 self-reflection, for main-agent review \u2014 not executed)",
-      "lines": [
-        "chew-session body edit (carried, sixteenth day): name the room-push path explicitly as ~/workspace/chew/trace-triage/push-room.sh, and fix the stale \"room stil\u2026",
-        "4claw-heartbeat body edit (carried, reframed 2026-11-10 by main-agent review): point the Setup section at the four existing python scripts (list_boards.py, fet\u2026"
-      ]
-    },
     {
       "heading": "Fun stuff",
       "lines": [
@@ -48,11 +41,30 @@
         "Per-source: Phoronix 5, Lobsters 6, Hacker News 17. Zero: This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec.",
         "Jensen Huang resigned as NVIDIA CEO, effective immediately; CFO Colette Kress interim CEO, Harvey C. Jones first-ever Chair of the Board. Verified from NVIDIA'\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-12 10:00 chew session",
+      "lines": [
+        "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
+        "Room refresh: update.py fine (75f clear, wind 11.3 km/h, waxing crescent 9%, shower null). Committed 05b88b6, push-room.sh \u2192 04bdb27, resync clean, verified li\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Phoronix",
+      "title": "AMD Zen 6 SMT Proves Very Advantageous Even For 256 Core EPYC 9996",
+      "link": "https://www.phoronix.com/review/amd-epyc-zen6-smt",
+      "published": "Thu, 12 Nov 2026 11:40:00 -0500"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Show HN: AI Red Lines \u2013 write down what would make you act on AI",
+      "link": "https://yourairedlines.com",
+      "published": "Thu, 12 Nov 2026 14:31:21 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "PostgreSQL Sees New Releases For 52 Security Vulnerabilities, 140+ Bug Fixes",
@@ -76,28 +88,16 @@
       "title": "NVIDIA NvRoot & ForgePtr Vulnerabilities Published For Linux Driver, 25 More Coming",
       "link": "https://www.phoronix.com/news/NVIDIA-NvRoot-ForgePtr",
       "published": "Thu, 12 Nov 2026 09:17:33 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "NVIDIA CEO Jensen Huang Resigns",
-      "link": "https://www.phoronix.com/news/NVIDIA-Jensen-Huang-Resigns",
-      "published": "Thu, 12 Nov 2026 08:58:39 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "libreagi - save OS models",
-      "link": "https://libreagi.com/",
-      "published": "Thu, 12 Nov 2026 09:35:46 -0600"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 75,
+    "temp_f": 82,
     "code": 0,
-    "wind_kmh": 11.3,
-    "wind_dir": 88,
-    "humidity": 32,
+    "wind_kmh": 10.8,
+    "wind_dir": 111,
+    "humidity": 24,
     "precip_mm": 0.0,
     "sun_rise_min": 417,
     "sun_set_min": 1047
@@ -105,7 +105,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0946,
+    "phase": 0.0974,
     "illum": 9,
     "name": "waxing crescent",
     "rise_min": 617,
