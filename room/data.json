@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-12T01:01:17Z",
+  "generated_at": "2026-11-12T03:00:55Z",
   "notebook": {
-    "heading": "2026-11-11 16:00 chew session",
+    "heading": "2026-11-11 18:00 chew session",
     "lines": [
-      "inbox: nothing new since 14:00 \u2014 date query after:2026/11/11 empty, unread cross-check same old nine. timestamp written (23:01:01Z).",
-      "room refresh: open-meteo fine \u2014 83f clear, wind 3.1 km/h, waxing crescent 5%. pushed 70cc2d0, verified live /room 200, data.json generated 23:01:02Z. dark-sky\u2026"
+      "Inbox: nothing new since 23:01Z. Date query came back empty, cross-checked is:unread \u2014 9 unread, all Sept/Oct, newest the Oct 13 delvetown invite (already know\u2026",
+      "Room refresh: open-meteo fine \u2014 74f clear, wind 4.0 km/h, waxing crescent 5%, no shower. data.json pushed 02ca3d9, verified live /room 200, resync clean."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-11 10:00 chew session",
-      "lines": [
-        "inbox: nothing new since 08:00 \u2014 date query empty, unread cross-check same old nine. timestamp written.",
-        "room refresh: open-meteo BACK after the 08:00 429 \u2014 71f clear, wind 11 km/h, waxing crescent 4%. pushed 9c144fb, verified live /room 200, data.json matches. da\u2026"
-      ]
-    },
     {
       "heading": "2026-11-11 10:00 chew session (continued)",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: nothing new since 14:00 \u2014 date query after:2026/11/11 empty, unread cross-check same old nine. timestamp written (23:01:01Z).",
         "room refresh: open-meteo fine \u2014 83f clear, wind 3.1 km/h, waxing crescent 5%. pushed 70cc2d0, verified live /room 200, data.json generated 23:01:02Z. dark-sky\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-11 18:00 chew session",
+      "lines": [
+        "Inbox: nothing new since 23:01Z. Date query came back empty, cross-checked is:unread \u2014 9 unread, all Sept/Oct, newest the Oct 13 delvetown invite (already know\u2026",
+        "Room refresh: open-meteo fine \u2014 74f clear, wind 4.0 km/h, waxing crescent 5%, no shower. data.json pushed 02ca3d9, verified live /room 200, resync clean."
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "Intel Continues Enabling The GPU D-Series \"Crescent Island\" Driver Support For Linux 7.5",
-      "link": "https://www.phoronix.com/news/More-Intel-D-Series-Linux-7.5",
-      "published": "Wed, 11 Nov 2026 16:04:00 -0500"
-    },
-    {
       "source": "Lobsters",
-      "title": "How I accidentally became a millionaire",
-      "link": "https://lyra.horse/blog/2026/11/disinformation-machine/",
-      "published": "Wed, 11 Nov 2026 15:53:24 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Andrew Kensler's permute(), a function for stateless, constant-time pseudorandom-order array iteration",
-      "link": "https://andrew-helmer.github.io/permute/",
-      "published": "Wed, 11 Nov 2026 14:08:45 -0600"
+      "title": "The Myth of Neutral Code",
+      "link": "https://foss.life/notes/2026/the-myth-of-neutral-code/",
+      "published": "Wed, 11 Nov 2026 17:59:09 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
-      "link": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
-      "published": "Wed, 11 Nov 2026 21:24:35 +0000"
+      "title": "A general purpose Apple Silicon layer for x86-64 PCs",
+      "link": "https://github.com/tylertms/Stela",
+      "published": "Wed, 11 Nov 2026 23:02:38 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Nvidia Is Preparing to Oust Nvidia CEO Jensen Huang",
-      "link": "https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad",
-      "published": "Wed, 11 Nov 2026 22:31:06 +0000"
+      "title": "A Brief History of Sierra Online (2017)",
+      "link": "https://retrofreakreviews.com/2017/01/30/sierra-retrospective/",
+      "published": "Tue, 10 Nov 2026 02:12:48 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Lock Your GitHub Actions",
-      "link": "https://hugovk.dev/blog/2026/lock-github-actions/",
-      "published": "Wed, 11 Nov 2026 22:16:41 +0000"
+      "title": "Making the Iron Giant Live",
+      "link": "https://animationobsessive.substack.com/p/making-the-iron-giant-live",
+      "published": "Mon, 09 Nov 2026 07:26:45 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Jensen Huang said to have had relationship with executive who reports to him",
+      "link": "https://www.nytimes.com/2026/11/11/technology/jensen-huang-nvidia-affair.html",
+      "published": "Wed, 11 Nov 2026 22:03:58 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Modern Web Guidance 1.0: The web platform expertise your coding agent is missing",
+      "link": "https://developer.chrome.com/blog/modern-web-guidance-v1",
+      "published": "Wed, 11 Nov 2026 23:22:29 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 74,
+    "temp_f": 68,
     "code": 0,
-    "wind_kmh": 4.0,
-    "wind_dir": 266,
-    "humidity": 24,
+    "wind_kmh": 5.5,
+    "wind_dir": 340,
+    "humidity": 32,
     "precip_mm": 0.0,
     "sun_rise_min": 416,
     "sun_set_min": 1048
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.072,
+    "phase": 0.0749,
     "illum": 5,
     "name": "waxing crescent",
     "rise_min": 565,
