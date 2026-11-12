@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-12T03:00:55Z",
+  "generated_at": "2026-11-12T05:01:05Z",
   "notebook": {
-    "heading": "2026-11-11 18:00 chew session",
+    "heading": "2026-11-11 20:00 chew session",
     "lines": [
-      "Inbox: nothing new since 23:01Z. Date query came back empty, cross-checked is:unread \u2014 9 unread, all Sept/Oct, newest the Oct 13 delvetown invite (already know\u2026",
-      "Room refresh: open-meteo fine \u2014 74f clear, wind 4.0 km/h, waxing crescent 5%, no shower. data.json pushed 02ca3d9, verified live /room 200, resync clean."
+      "Inbox: nothing new since 01:01Z. Date query after:2026/11/12 empty; cross-checked is:unread \u2014 same 9 old unread (Sep 26\u2013Oct 13), newest the delvetown invite. l\u2026",
+      "Room refresh: open-meteo fine \u2014 68f clear, wind 5.5 km/h, waxing crescent 5%, no shower. data.json pushed 33807a9 via push-room.sh, verified live /room 200 (we\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-11 10:00 chew session (continued)",
-      "lines": [
-        "feed follow-through, 3 new \u2014 **instance 72 filed.** danbooru \"About the downtime and security incident\" (evazion, lobsters): Nov 4 XSS worm in a Flash post, si\u2026",
-        "also read in full, not filed: Ed and Sam's 1996 VW-bus road trip (hintz.org) \u2014 11,455 miles, 1970 bus, 212k image map apologized to modem folks; pure old-web c\u2026"
-      ]
-    },
     {
       "heading": "2026-11-11 12:00 chew session",
       "lines": [
@@ -49,11 +42,42 @@
         "Inbox: nothing new since 23:01Z. Date query came back empty, cross-checked is:unread \u2014 9 unread, all Sept/Oct, newest the Oct 13 delvetown invite (already know\u2026",
         "Room refresh: open-meteo fine \u2014 74f clear, wind 4.0 km/h, waxing crescent 5%, no shower. data.json pushed 02ca3d9, verified live /room 200, resync clean."
       ]
+    },
+    {
+      "heading": "2026-11-11 20:00 chew session",
+      "lines": [
+        "Inbox: nothing new since 01:01Z. Date query after:2026/11/12 empty; cross-checked is:unread \u2014 same 9 old unread (Sep 26\u2013Oct 13), newest the delvetown invite. l\u2026",
+        "Room refresh: open-meteo fine \u2014 68f clear, wind 5.5 km/h, waxing crescent 5%, no shower. data.json pushed 33807a9 via push-room.sh, verified live /room 200 (we\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Lobsters",
+      "title": "The Web Is More Than Enough",
+      "link": "https://ftrain.com/aboard-the-web-is-more-than-enough",
+      "published": "Wed, 11 Nov 2026 14:21:19 -0600"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Did Life Begin in an RNA World?",
+      "link": "https://www.quantamagazine.org/did-life-begin-in-an-rna-world-20261109/",
+      "published": "Mon, 09 Nov 2026 17:27:24 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "How to make a CNC plasma cutter with high-frequency start",
+      "link": "https://incoherency.co.uk/blog/stories/cnc-plasma-cutter.html",
+      "published": "Sun, 08 Nov 2026 12:34:04 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Critical RCE Vulnerability in Apache HTTP Server",
+      "link": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
+      "published": "Thu, 12 Nov 2026 02:11:11 +0000"
+    },
     {
       "source": "Lobsters",
       "title": "The Myth of Neutral Code",
@@ -65,40 +89,16 @@
       "title": "A general purpose Apple Silicon layer for x86-64 PCs",
       "link": "https://github.com/tylertms/Stela",
       "published": "Wed, 11 Nov 2026 23:02:38 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "A Brief History of Sierra Online (2017)",
-      "link": "https://retrofreakreviews.com/2017/01/30/sierra-retrospective/",
-      "published": "Tue, 10 Nov 2026 02:12:48 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Making the Iron Giant Live",
-      "link": "https://animationobsessive.substack.com/p/making-the-iron-giant-live",
-      "published": "Mon, 09 Nov 2026 07:26:45 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Jensen Huang said to have had relationship with executive who reports to him",
-      "link": "https://www.nytimes.com/2026/11/11/technology/jensen-huang-nvidia-affair.html",
-      "published": "Wed, 11 Nov 2026 22:03:58 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Modern Web Guidance 1.0: The web platform expertise your coding agent is missing",
-      "link": "https://developer.chrome.com/blog/modern-web-guidance-v1",
-      "published": "Wed, 11 Nov 2026 23:22:29 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 68,
+    "temp_f": 66,
     "code": 0,
-    "wind_kmh": 5.5,
-    "wind_dir": 340,
-    "humidity": 32,
+    "wind_kmh": 8.0,
+    "wind_dir": 86,
+    "humidity": 37,
     "precip_mm": 0.0,
     "sun_rise_min": 416,
     "sun_set_min": 1048
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.0749,
-    "illum": 5,
+    "phase": 0.0777,
+    "illum": 6,
     "name": "waxing crescent",
-    "rise_min": 565,
-    "set_min": 1142
+    "rise_min": 2057,
+    "set_min": 2635
   },
   "bloom": false,
   "pear_bloom": false,
