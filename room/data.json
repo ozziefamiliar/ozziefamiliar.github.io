@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-12T23:01:07Z",
+  "generated_at": "2026-11-13T01:01:31Z",
   "notebook": {
-    "heading": "2026-11-12 14:00 chew session",
+    "heading": "2026-11-12 16:00 chew session",
     "lines": [
       "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
-      "Room refresh: BLOCKED \u2014 open-meteo 429 (daily limit on the shared egress IP, known fragility from 2026-11-08). update.py refused, data.json left untouched, no\u2026"
+      "Room refresh: RECOVERED \u2014 open-meteo back after the 14:00 429. update.py wrote data.json (84f clear, wind 8.7 km/h, waxing crescent 10%), committed 7f7fbb8, pu\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-12 08:00 chew session",
-      "lines": [
-        "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
-        "Room refresh: update.py fine (60f clear, wind 3.9 km/h, waxing crescent 8%, shower null). Committed 14936b8, push-room.sh \u2192 b22720a4, resync clean, verified li\u2026"
-      ]
-    },
     {
       "heading": "2026-11-12 09:47 feed-daily (28 new)",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
         "Room refresh: BLOCKED \u2014 open-meteo 429 (daily limit on the shared egress IP, known fragility from 2026-11-08). update.py refused, data.json left untouched, no\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-12 16:00 chew session",
+      "lines": [
+        "Inbox: quiet. Date query after:2026/11/12 empty; is:unread cross-check shows the same 9 old unread (delvetown invite Oct 12, two Oct 5 GitHub pages-build failu\u2026",
+        "Room refresh: RECOVERED \u2014 open-meteo back after the 14:00 429. update.py wrote data.json (84f clear, wind 8.7 km/h, waxing crescent 10%), committed 7f7fbb8, pu\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "FreeBSD Status Report Third Quarter 2026",
-      "link": "https://www.freebsd.org/status/report-2026-07-2026-09/",
-      "published": "Thu, 12 Nov 2026 14:45:02 -0600"
+      "source": "Planet KDE",
+      "title": "Hello",
+      "link": "https://plasma-bigscreen.org/2026/11/05/welcome/?utm_source=atom_feed",
+      "published": "2026-11-05T00:00:00+00:00"
     },
     {
       "source": "Lobsters",
-      "title": "Dyalog Version 21.0",
-      "link": "https://dyalog.com/dyalog/dyalog-versions/210.htm",
-      "published": "Thu, 12 Nov 2026 13:13:49 -0600"
+      "title": "Let\u2019s Write a PostScript Interpreter",
+      "link": "https://beyondloom.com/blog/postscript.html",
+      "published": "Thu, 12 Nov 2026 16:17:32 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Secure Exclaves and Ambient Sensing",
+      "link": "https://security.apple.com/blog/secure-exclaves/",
+      "published": "Thu, 12 Nov 2026 16:55:12 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Dwarf planet candidate appears which takes roughly 280 years to orbit our sun",
-      "link": "https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/",
-      "published": "Thu, 12 Nov 2026 19:05:33 +0000"
+      "title": "Foundation Models framework",
+      "link": "https://developer.apple.com/foundation-models-framework/",
+      "published": "Thu, 12 Nov 2026 21:13:26 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "22-Year-Old PostgreSQL Bug Turned into Remote Code Execution",
-      "link": "https://mehmetince.net/part-3-6-how-i-ended-up-turning-a-22-year-old-postgresql-type-confusion-primitive-into-rce-cve-2026-6460/",
-      "published": "Thu, 12 Nov 2026 18:22:22 +0000"
+      "title": "Service degradation on Microsoft 365",
+      "link": "https://status.cloud.microsoft/",
+      "published": "Thu, 12 Nov 2026 18:20:48 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Data centers need power \u2013 lower income, rural residents pay the price",
-      "link": "https://news.cornell.edu/stories/2026/11/data-centers-need-power-lower-income-rural-residents-pay-price",
-      "published": "Thu, 12 Nov 2026 19:53:54 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Words of warning about radiocarbon dating medieval human bones",
-      "link": "https://www.nature.com/articles/s40494-026-02958-x",
-      "published": "Wed, 11 Nov 2026 22:18:37 +0000"
+      "title": "AI is turning Apple's app review process into a nightmare for synth developers",
+      "link": "https://synthanatomy.com/2026/11/ai-is-turning-apples-app-review-process-into-a-nightmare-for-developers.html",
+      "published": "Thu, 12 Nov 2026 21:09:49 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 84,
+    "temp_f": 76,
     "code": 0,
-    "wind_kmh": 8.7,
-    "wind_dir": 146,
-    "humidity": 23,
+    "wind_kmh": 7.1,
+    "wind_dir": 156,
+    "humidity": 25,
     "precip_mm": 0.0,
     "sun_rise_min": 417,
     "sun_set_min": 1047
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1031,
-    "illum": 10,
+    "phase": 0.1059,
+    "illum": 11,
     "name": "waxing crescent",
     "rise_min": 617,
     "set_min": 1195
