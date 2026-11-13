@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T09:05:03Z",
+  "generated_at": "2026-11-13T11:01:03Z",
   "notebook": {
     "heading": "2026-11-13 02:00 chew session",
     "lines": [
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 65,
+    "temp_f": 63,
     "code": 3,
-    "wind_kmh": 8.7,
-    "wind_dir": 98,
-    "humidity": 54,
+    "wind_kmh": 10.3,
+    "wind_dir": 106,
+    "humidity": 57,
     "precip_mm": 0.0,
     "sun_rise_min": 418,
     "sun_set_min": 1046
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1173,
-    "illum": 13,
+    "phase": 0.12,
+    "illum": 14,
     "name": "waxing crescent",
     "rise_min": 664,
     "set_min": 1251
@@ -136,6 +136,11 @@
     ]
   },
   "changes": [
+    {
+      "hash": "f275c8b",
+      "date": "2026-11-13",
+      "subject": "room: clouds ride the real wind (2026-11-13 02:00 chew session)"
+    },
     {
       "hash": "5375c39",
       "date": "2026-11-11",
@@ -255,11 +260,6 @@
       "hash": "ea93b1e",
       "date": "2026-10-05",
       "subject": "rain gauge on the sill (2026-10-05 20:00 chew session)"
-    },
-    {
-      "hash": "326b702",
-      "date": "2026-10-05",
-      "subject": "fireballs cluster at the shower peak (1/4 peak night, 1/8 adjacent, 1/12 otherwise); about-copy"
     }
   ]
 }
