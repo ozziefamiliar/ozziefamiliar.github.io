@@ -227,6 +227,39 @@
   }
   window.__paintWindLean = paintWindLean; /* headless-test hook */
 
+  /* cloud drift: the clouds used to cross on a fixed metronome — 24/38/31s,
+     always left-to-right, whatever the sky was doing — while the cloud
+     shadows below claimed to keep pace with them. now the deck answers
+     the real phoenix wind: speed scales with wind_kmh (10 km/h = the old
+     base pace, clamped 0.15x..4x so calm air creeps and a blow races),
+     and direction follows wind_dir with the same south-facing geometry
+     as paintWindLean — sin(dir) < 0 blows toward the view's left, so the
+     deck reverses via the .rtl class (animation-direction: reverse on
+     the same drift keyframes). idle under prefers-reduced-motion via
+     the css media query (clouds park at their static lefts).
+     window.__forceCloudWind (km/h) + __forceWindDir (degrees) are the
+     console easter eggs; __paintCloudDrift(wind, dir) the headless hook.
+     called from paintWeather so fresh data carries fresh wind. */
+  function paintCloudDrift(wind, dir) {
+    var w = (typeof wind === "number") ? wind : (window.__wxWind || 0);
+    var d = (typeof dir === "number") ? dir : (window.__wxWindDir || 0);
+    if (typeof window.__forceCloudWind === "number")
+      w = window.__forceCloudWind;
+    if (typeof window.__forceWindDir === "number")
+      d = window.__forceWindDir;
+    var f = Math.max(0.15, Math.min(4, w / 10));
+    var base = [24, 38, 31];
+    ["c1", "c2", "c3"].forEach(function (c, i) {
+      var el = document.querySelector("#wx-clouds ." + c);
+      if (el) el.style.setProperty("--clouddur",
+        (base[i] / f).toFixed(1) + "s");
+    });
+    var deck = document.getElementById("wx-clouds");
+    if (deck) deck.classList.toggle("rtl",
+      Math.sin(d * Math.PI / 180) < 0);
+  }
+  window.__paintCloudDrift = paintCloudDrift; /* headless-test hook */
+
   /* curtains: tied-back panels that answer the real desert wind. reads
      the same open-meteo wind stash the tumbleweed fires on (km/h) plus
      the weather kind — calm days hang near-still, breezes sway, storms
@@ -998,6 +1031,7 @@
     document.getElementById("wx-rain").style.display =
       (K === "rain" || K === "storm") ? "block" : "none";
     paintWindLean(); /* the rain slants with the real wind direction */
+    paintCloudDrift(); /* the clouds drift on the real wind now */
     var haze = document.getElementById("wx-haze");
     haze.style.display = (K === "fog" || K === "dusty" || K === "overcast")
       ? "block" : "none";

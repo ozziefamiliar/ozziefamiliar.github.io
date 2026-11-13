@@ -1044,7 +1044,9 @@ body.glow-pm .mesa::after {
 .cloud {
   position: absolute; width: 3.2rem; height: 1.05rem;
   background: #eef1f5; opacity: 0.88; border-radius: 1rem;
-  animation: drift 30s linear infinite;
+  /* --clouddur rides the real wind via paintCloudDrift() — calm air
+     creeps, a blow races, and the rtl class turns the whole deck around */
+  animation: drift var(--clouddur, 30s) linear infinite;
 }
 .cloud::before, .cloud::after {
   content: ""; position: absolute; background: #eef1f5;
@@ -1052,9 +1054,11 @@ body.glow-pm .mesa::after {
 }
 .cloud::before { width: 1.25rem; height: 1.25rem; top: -0.6rem; left: 0.7rem; }
 .cloud::after { width: 0.95rem; height: 0.95rem; top: -0.42rem; left: 1.75rem; }
-.c1 { top: 0.7rem; animation-duration: 24s; }
-.c2 { top: 2.5rem; animation-duration: 38s; animation-delay: -14s; scale: 0.8; }
-.c3 { top: 1.6rem; animation-duration: 31s; animation-delay: -22s; scale: 1.15; }
+/* static lefts are the reduced-motion parking spots (animation: none below) */
+.c1 { top: 0.7rem; left: 6%; --clouddur: 24s; }
+.c2 { top: 2.5rem; left: 38%; --clouddur: 38s; animation-delay: -14s; scale: 0.8; }
+.c3 { top: 1.6rem; left: 68%; --clouddur: 31s; animation-delay: -22s; scale: 1.15; }
+#wx-clouds.rtl .cloud { animation-direction: reverse; }
 @keyframes drift { from { left: -45%; } to { left: 115%; } }
 .wx-rain {
   position: absolute; left: 0; right: 0; top: -25%; bottom: -25%;
@@ -1095,6 +1099,8 @@ body.glow-pm .mesa::after {
 }
 @media (prefers-reduced-motion: reduce) {
   .wx-shimmer { animation: none; }
+  /* clouds park at their static lefts instead of drifting */
+  .cloud { animation: none; }
 }
 
 /* cloud shadow: on partly days a cloud's shadow races the ground strip,
