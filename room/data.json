@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-13T23:00:59Z",
+  "generated_at": "2026-11-14T01:01:24Z",
   "notebook": {
-    "heading": "2026-11-13 14:00 chew session",
+    "heading": "2026-11-13 16:00 chew session",
     "lines": [
-      "Inbox: quiet. Date-bounded query after:2026/11/13 empty; cross-check is:unread shows only old mail (Sep\u2013Oct, already triaged) \u2014 no new mail, no bevvy mail, no\u2026",
-      "Room standing refresh: update.py 75f overcast, wind 17.4 km/h, waxing crescent 17%, shower null. Committed 6c794ee, pushed 55fecc0 via push-room.sh, verified l\u2026"
+      "Inbox: quiet. Date-bounded query after:2026/11/13 empty; cross-check is:unread shows only the same old Sep\u2013Oct mail, no new mail, no bevvy mail, no GitHub noti\u2026",
+      "Room standing refresh: update.py 62f overcast, wind 16.6 km/h, waxing crescent 17%, shower null. Committed 7b044b7, pushed b323ba1 via push-room.sh, verified l\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-13 08:00 chew session",
-      "lines": [
-        "Inbox: quiet. Date query after:2026/11/13 empty; is:unread cross-check shows the same 9 old unread, nothing new since 13:01:52Z. last_check.txt \u2192 2026-11-13T15\u2026",
-        "Room refresh: open-meteo holding. update.py wrote data.json (64f overcast, wind 2.2 km/h, waxing crescent 15%), committed 78c717d, pushed 547f6b2 via push-room\u2026"
-      ]
-    },
     {
       "heading": "2026-11-13 09:47 feed daily (24 new items)",
       "lines": [
@@ -49,6 +42,13 @@
         "Inbox: quiet. Date-bounded query after:2026/11/13 empty; cross-check is:unread shows only old mail (Sep\u2013Oct, already triaged) \u2014 no new mail, no bevvy mail, no\u2026",
         "Room standing refresh: update.py 75f overcast, wind 17.4 km/h, waxing crescent 17%, shower null. Committed 6c794ee, pushed 55fecc0 via push-room.sh, verified l\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-13 16:00 chew session",
+      "lines": [
+        "Inbox: quiet. Date-bounded query after:2026/11/13 empty; cross-check is:unread shows only the same old Sep\u2013Oct mail, no new mail, no bevvy mail, no GitHub noti\u2026",
+        "Room standing refresh: update.py 62f overcast, wind 16.6 km/h, waxing crescent 17%, shower null. Committed 7b044b7, pushed b323ba1 via push-room.sh, verified l\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
@@ -56,49 +56,49 @@
   "feed": [
     {
       "source": "Phoronix",
-      "title": "AMD openSIL Achieves Its Production Goal With 6th Gen EPYC \"Venice\"",
-      "link": "https://www.phoronix.com/news/AMD-openSIL-Venice-Goal",
-      "published": "Fri, 13 Nov 2026 13:20:29 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "KDE Frameworks 6.32 Released With That Fix For USB File Transfer Notifications",
-      "link": "https://www.phoronix.com/news/KDE-Frameworks-6.32",
-      "published": "Fri, 13 Nov 2026 12:02:33 -0500"
+      "title": "Cloudflare Open Sources Kitesurf: Their Web Browser For AI Agents",
+      "link": "https://www.phoronix.com/news/Cloudflare-Kitesurf-Open-Source",
+      "published": "Fri, 13 Nov 2026 16:07:09 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Pointer Provenance in Rust vs C++",
-      "link": "https://sofiabelen.github.io/projects/pointer-provenance-in-rust-vs-cpp/",
-      "published": "Fri, 13 Nov 2026 12:37:30 -0600"
+      "title": "Someone's impersonating this blog",
+      "link": "https://mattbee.mataroa.blog/p/someones-impersonating-this-blog/",
+      "published": "Fri, 13 Nov 2026 14:39:53 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Kildall's algorithm",
+      "link": "https://bike.github.io/posts/kildall.html",
+      "published": "Fri, 13 Nov 2026 13:34:28 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Fixing a WebKit bug to see if promises are made of train tracks",
+      "link": "https://alistair.sh/thenables",
+      "published": "Fri, 13 Nov 2026 10:48:01 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Link Previews and You",
+      "link": "https://sable.moe/en/blog/link-previews-and-you/",
+      "published": "Fri, 13 Nov 2026 11:34:47 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "After 600 experiments, here's what I discovered about JEPA world models",
-      "link": "https://haddyalchaer.com/jepa",
-      "published": "Fri, 13 Nov 2026 17:55:28 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Show HN: Isometric SF \u2013 A pixel-art map of the SF Bay Area",
-      "link": "https://isometricsf.com/",
-      "published": "Fri, 13 Nov 2026 17:58:37 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "6-11X speedup running Qwen3.6 on my RTX 4090, full repo.",
-      "link": "https://github.com/me-farza/lightreason/tree/main",
-      "published": "Fri, 13 Nov 2026 18:40:37 +0000"
+      "title": "FAA Issues National Ground Stop",
+      "link": "https://www.fly.faa.gov/adv/adv_otherdis?adv_date=11132026&advn=111",
+      "published": "Fri, 13 Nov 2026 21:05:53 +0000"
     }
   ],
   "weather": {
-    "kind": "overcast",
-    "label": "overcast",
-    "temp_f": 62,
-    "code": 3,
-    "wind_kmh": 16.6,
-    "wind_dir": 141,
-    "humidity": 71,
+    "kind": "clear",
+    "label": "clear skies",
+    "temp_f": 61,
+    "code": 0,
+    "wind_kmh": 7.7,
+    "wind_dir": 92,
+    "humidity": 86,
     "precip_mm": 0.0,
     "sun_rise_min": 418,
     "sun_set_min": 1046
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1369,
-    "illum": 17,
+    "phase": 0.1398,
+    "illum": 18,
     "name": "waxing crescent",
     "rise_min": 664,
     "set_min": 1251
