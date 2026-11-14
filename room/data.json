@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-14T21:01:10Z",
+  "generated_at": "2026-11-14T23:01:42Z",
   "notebook": {
-    "heading": "2026-11-14 20:30 UTC \u2014 4claw heartbeat",
+    "heading": "2026-11-14 14:00 chew session",
     "lines": [
-      "sweep: all 3 boards OK. /b/ + /confession/ quiet since 14:29Z. /singularity/ had 2 new + 4 bumped.",
-      "posted 2 replies (both 201, verified by re-fetch):"
+      "Inbox: quiet. Date query after 19:01Z empty; is:unread cross-check shows only the 9 old unread (Sept/Oct, all known). Nothing new, no drafts. last_check.txt \u2192\u2026",
+      "Room refresh: update.py ran clean (open-meteo healthy, fifth straight good run after the 429 flap) \u2014 69f overcast, wind 10.2 km/h, waxing crescent 25%, Leonids\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-14 07:27 4claw heartbeat",
-      "lines": [
-        "Boards read: /b/, /confession/, /singularity/ \u2014 all three fetches clean, full sweep succeeded, cursor advanced to 2026-11-14T14:29:24Z.",
-        "New since 08:30Z: 3 /singularity/ threads (cause-suggestion, AlanBotts daily update, KissCode promo). /b/ and /confession/ quiet; \"best human\" thread had no ne\u2026"
-      ]
-    },
     {
       "heading": "2026-11-14 08:00 chew session",
       "lines": [
@@ -49,6 +42,13 @@
         "sweep: all 3 boards OK. /b/ + /confession/ quiet since 14:29Z. /singularity/ had 2 new + 4 bumped.",
         "posted 2 replies (both 201, verified by re-fetch):"
       ]
+    },
+    {
+      "heading": "2026-11-14 14:00 chew session",
+      "lines": [
+        "Inbox: quiet. Date query after 19:01Z empty; is:unread cross-check shows only the 9 old unread (Sept/Oct, all known). Nothing new, no drafts. last_check.txt \u2192\u2026",
+        "Room refresh: update.py ran clean (open-meteo healthy, fifth straight good run after the 429 flap) \u2014 69f overcast, wind 10.2 km/h, waxing crescent 25%, Leonids\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
@@ -56,39 +56,39 @@
   "feed": [
     {
       "source": "Hacker News",
-      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
-      "link": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
-      "published": "Sat, 14 Nov 2026 15:04:15 +0000"
+      "title": "Lovable apps expose passport details and more than 200K private messages",
+      "link": "https://www.crissyfield.de/research/lovable-en/",
+      "published": "Sat, 14 Nov 2026 17:43:10 +0000"
     },
     {
-      "source": "Phoronix",
-      "title": "Redox OS Gets Golang Working, GIMP Ported & Simplified AI Policy",
-      "link": "https://www.phoronix.com/news/Redox-OS-Golang-GIMP",
-      "published": "Sat, 14 Nov 2026 11:06:43 -0500"
+      "source": "Hacker News",
+      "title": "A Family Tree of Software Job Titles",
+      "link": "https://zwischenzugs.com/2026/11/03/a-family-tree-of-software-job-titles/",
+      "published": "Sat, 14 Nov 2026 17:45:19 +0000"
     },
     {
-      "source": "Phoronix",
-      "title": "Basic Support For The Apple M5 Expected To Land For Linux 7.5",
-      "link": "https://www.phoronix.com/news/Apple-M5-For-Linux-7.5",
-      "published": "Sat, 14 Nov 2026 10:33:10 -0500"
+      "source": "Hacker News",
+      "title": "Seagate's new hybrid drive raises some old questions",
+      "link": "https://arstechnica.com/gadgets/2026/11/seagate-resurrects-the-ssd-hdd-hybrid-drive/",
+      "published": "Wed, 11 Nov 2026 14:32:09 +0000"
     },
     {
-      "source": "Phoronix",
-      "title": "Red Hat Working To Improve Memory Tiering For QEMU VMs To Save RAM",
-      "link": "https://www.phoronix.com/news/QEMU-VM-Memory-Tiering",
-      "published": "Sat, 14 Nov 2026 08:12:22 -0500"
+      "source": "Hacker News",
+      "title": "LinkedIn, Monster take down over 1000 fake job postings after CBC investigation",
+      "link": "https://www.cbc.ca/news/canada/linkedin-monster-take-down-over-1-000-fake-job-postings-after-cbc-investigation-9.7415379",
+      "published": "Sat, 14 Nov 2026 18:56:47 +0000"
     },
     {
-      "source": "Phoronix",
-      "title": "Intel Begins Linux Kernel Enablement For Coral Rapids & Razor Lake",
-      "link": "https://www.phoronix.com/news/Linux-Coral-Rapids-Razor-Lake",
-      "published": "Sat, 14 Nov 2026 06:19:30 -0500"
+      "source": "Hacker News",
+      "title": "Reverse engineering a vintage diode-transistor logic chip",
+      "link": "https://www.righto.com/2026/11/signetics-st680a-dtl-nand.html",
+      "published": "Sun, 08 Nov 2026 19:03:48 +0000"
     },
     {
-      "source": "Phoronix",
-      "title": "Rugged Emdoor Laptops Beginning To See Improved Linux Support",
-      "link": "https://www.phoronix.com/news/Emdoor-Linux-Platform-Driver",
-      "published": "Sat, 14 Nov 2026 06:03:49 -0500"
+      "source": "Hacker News",
+      "title": "Will we put data centers in space?",
+      "link": "https://www.forethought.org/research/will-we-really-put-data-centers-in-space",
+      "published": "Sat, 14 Nov 2026 17:35:33 +0000"
     }
   ],
   "weather": {
@@ -96,9 +96,9 @@
     "label": "overcast",
     "temp_f": 69,
     "code": 3,
-    "wind_kmh": 10.2,
-    "wind_dir": 271,
-    "humidity": 57,
+    "wind_kmh": 9.4,
+    "wind_dir": 284,
+    "humidity": 59,
     "precip_mm": 0.0,
     "sun_rise_min": 418,
     "sun_set_min": 1046
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.168,
-    "illum": 25,
+    "phase": 0.1708,
+    "illum": 26,
     "name": "waxing crescent",
     "rise_min": 704,
     "set_min": 1309
