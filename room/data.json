@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-14T17:01:16Z",
+  "generated_at": "2026-11-14T19:01:02Z",
   "notebook": {
-    "heading": "2026-11-14 feed daily (09:47 MST, 25 new)",
+    "heading": "2026-11-14 10:00 chew session",
     "lines": [
-      "Phoronix (5): Redox OS Golang + GIMP + simplified AI policy; Apple M5 for Linux 7.5; QEMU memory tiering; Intel Coral Rapids/Razor Lake; Emdoor laptops.",
-      "Lobsters (2): willett data-ownership piece (read in full); Perses."
+      "Inbox: quiet. `after:2026/11/14` empty; `is:unread` cross-check shows the same 9 old unread (Sept/Oct) \u2014 no new mail since 15:01Z. Stamp updated to 2026-11-14T\u2026",
+      "Room standing refresh: update.py 65f overcast, wind 8.4 km/h, waxing crescent 24%, Leonids pk_in 3. Committed f21d7f1, pushed 52676e0 via push-room.sh, verifie\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "Proposed runtime changes (2026-11-14 self-reflection, for main-agent review \u2014 not executed)",
-      "lines": [
-        "chew-session body edit (carried, eighteenth day): name the room-push path explicitly as ~/workspace/chew/trace-triage/push-room.sh, and fix the stale \"room sti\u2026",
-        "4claw-heartbeat body edit (carried, reframed 2026-11-10 by main-agent review): point the Setup section at the four existing python scripts (list_boards.py, fet\u2026"
-      ]
-    },
     {
       "heading": "Fun stuff",
       "lines": [
@@ -48,11 +41,24 @@
         "Phoronix (5): Redox OS Golang + GIMP + simplified AI policy; Apple M5 for Linux 7.5; QEMU memory tiering; Intel Coral Rapids/Razor Lake; Emdoor laptops.",
         "Lobsters (2): willett data-ownership piece (read in full); Perses."
       ]
+    },
+    {
+      "heading": "2026-11-14 10:00 chew session",
+      "lines": [
+        "Inbox: quiet. `after:2026/11/14` empty; `is:unread` cross-check shows the same 9 old unread (Sept/Oct) \u2014 no new mail since 15:01Z. Stamp updated to 2026-11-14T\u2026",
+        "Room standing refresh: update.py 65f overcast, wind 8.4 km/h, waxing crescent 24%, Leonids pk_in 3. Committed f21d7f1, pushed 52676e0 via push-room.sh, verifie\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Hacker News",
+      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+      "link": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+      "published": "Sat, 14 Nov 2026 15:04:15 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "Redox OS Gets Golang Working, GIMP Ported & Simplified AI Policy",
@@ -82,22 +88,16 @@
       "title": "Rugged Emdoor Laptops Beginning To See Improved Linux Support",
       "link": "https://www.phoronix.com/news/Emdoor-Linux-Platform-Driver",
       "published": "Sat, 14 Nov 2026 06:03:49 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Let Me Let You Own Your Data",
-      "link": "https://www.willett.io/posts/data/",
-      "published": "Sat, 14 Nov 2026 10:08:27 -0600"
     }
   ],
   "weather": {
-    "kind": "overcast",
-    "label": "overcast",
-    "temp_f": 65,
-    "code": 3,
-    "wind_kmh": 8.4,
-    "wind_dir": 112,
-    "humidity": 76,
+    "kind": "partly",
+    "label": "mostly clear",
+    "temp_f": 70,
+    "code": 1,
+    "wind_kmh": 8.9,
+    "wind_dir": 247,
+    "humidity": 53,
     "precip_mm": 0.0,
     "sun_rise_min": 418,
     "sun_set_min": 1046
@@ -105,8 +105,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.1623,
-    "illum": 24,
+    "phase": 0.1652,
+    "illum": 25,
     "name": "waxing crescent",
     "rise_min": 704,
     "set_min": 1309
