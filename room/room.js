@@ -310,6 +310,44 @@
   }
   window.__paintWindmill = paintWindmill; /* headless-test hook */
 
+  /* windsock: the windmill's wheel spins on the real wind, but it never
+     says which way the wind is going — the sock does. a striped cone on
+     a pole at the horizon's far right, pointing downwind with the same
+     south-facing geometry as paintWindLean (sin(dir) < 0 blows toward
+     the view's left), and drooping with speed: limp at 80deg in calm air,
+     halving every 8 km/h, near-horizontal in a blow. a small flutter rides
+     the nested .sock-flut (faster when windier) so it never clobbers the
+     point-and-droop transform on .sock. static geometry under
+     prefers-reduced-motion (the flutter idles, the sock still points).
+     window.__forceWindsock (a km/h number, or {wind, dir}) is the console
+     easter egg; __paintWindsock the headless hook, __windsockPeek the
+     state peek. called from loadRoom beside paintWindmill. */
+  function paintWindsock() {
+    var force = window.__forceWindsock;
+    var wind = window.__wxWind || 0;
+    var dir = window.__wxWindDir || 0;
+    if (typeof force === "number") wind = force;
+    else if (force && typeof force === "object") {
+      if (typeof force.wind === "number") wind = force.wind;
+      if (typeof force.dir === "number") dir = force.dir;
+    }
+    var droop = 80 * Math.pow(0.5, Math.max(0, wind) / 8);
+    var s = Math.sin(dir * Math.PI / 180) < 0 ? -1 : 1;
+    var sock = document.querySelector(".windsock .sock");
+    if (sock) {
+      sock.style.transform = "scaleX(" + s + ") rotate(" +
+        droop.toFixed(1) + "deg)";
+      sock.style.setProperty("--sockdur",
+        Math.max(0.5, Math.min(2, 24 / (wind + 6))).toFixed(2) + "s");
+      sock.style.setProperty("--sockamp",
+        Math.min(3, 0.5 + wind * 0.06).toFixed(2) + "deg");
+    }
+    window.__windsockState = { wind: wind, dir: dir,
+      droop: +droop.toFixed(1), pointing: s < 0 ? "left" : "right" };
+  }
+  window.__paintWindsock = paintWindsock; /* headless-test hook */
+  window.__windsockPeek = function () { return window.__windsockState; };
+
   /* rain gauge on the sill: update.py fills it from real phoenix
      precipitation and dries it in the desert air (gauge_mm in data.json,
      carried across runs); paintGauge maps 0-25mm onto the tube's fill
@@ -2490,6 +2528,7 @@
         paintNightChill(); /* the night chill rides fresh weather too */
         paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
         paintWindmill(); /* the old mill answers the same real wind */
+        paintWindsock(); /* the sock points downwind on the same real wind */
         window.__gaugeData = (typeof d.gauge_mm === "number") ? d.gauge_mm : 0;
         paintGauge(); /* the rain gauge fills from the real phoenix rain */
         paintRainbow(d.rainbow_until);

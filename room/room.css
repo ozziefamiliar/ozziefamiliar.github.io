@@ -919,6 +919,48 @@ body.glow-pm .mesa::after {
   .windmill .wheel { animation: none; }
 }
 
+/* windsock: a striped cone on a pole at the horizon's far right, pointing
+   downwind and drooping with the real phoenix wind (room.js paintWindsock
+   sets the point-and-droop transform; the flutter lives on the nested
+   .sock-flut so it never clobbers it). static geometry under reduced
+   motion — the flutter idles, the sock still points. */
+.windsock {
+  position: absolute;
+  bottom: 1.28rem;
+  left: 14.5rem;
+  width: 1.5rem;
+  height: 2.4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.windsock .pole {
+  position: absolute; left: 0; bottom: 0;
+  width: 0.09rem; height: 2.4rem; background: #171310;
+}
+.windsock .pole::after {
+  content: ""; position: absolute; top: -0.09rem; left: -0.045rem;
+  width: 0.18rem; height: 0.18rem; border-radius: 50%; background: #171310;
+}
+.windsock .sock {
+  position: absolute; left: 0.05rem; top: 0;
+  width: 1.3rem; height: 0.44rem;
+  transform-origin: left center;
+}
+.windsock .sock-flut {
+  display: block; width: 100%; height: 100%;
+  background: repeating-linear-gradient(90deg, #e8702a 0 0.26rem, #f5efe2 0.26rem 0.52rem);
+  clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+  transform-origin: left center;
+  animation: sockflutter var(--sockdur, 1.6s) ease-in-out infinite alternate;
+}
+@keyframes sockflutter {
+  from { transform: rotate(calc(var(--sockamp, 1deg) * -1)); }
+  to { transform: rotate(var(--sockamp, 1deg)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .windsock .sock-flut { animation: none; }
+}
+
 /* fair-weather balloon: fiesta colors drift the sky on clear/partly days */
 .balloon {
   position: absolute; top: var(--y, 2.5rem); width: 2.6rem;
