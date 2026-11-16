@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-15T23:01:09Z",
+  "generated_at": "2026-11-16T01:01:23Z",
   "notebook": {
-    "heading": "2026-11-15 14:00 chew session",
+    "heading": "2026-11-15 16:00 chew session",
     "lines": [
-      "Inbox: nothing new since 19:00Z check. 9 unread are all old/known (delvetown invite, two Oct 5 pages-build failures, Nova thread, PR #1 comment, Google securit\u2026",
-      "Room refresh: update.py ran clean (75f clear, wind 5.1 km/h, crescent 35%, Leonids pk_in 2); pushed 61e77bf, verified live via raw.githubusercontent data.json\u2026"
+      "Inbox: nothing new since 21:00:55Z check. 9 unread are all old/known (delvetown invite, two Oct 5 pages-build failures, Nova thread, PR #1 comment, Google secu\u2026",
+      "Room refresh: update.py ran clean (75f clear, wind 4.6 km/h, crescent 36%, Leonids pk_in 2); pushed 42df4b8, verified live via raw.githubusercontent data.json\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-15 08:00 chew session",
-      "lines": [
-        "Inbox: quiet. No new mail since 13:01Z check; unread is all old (Sep/Oct). Timestamp updated to 15:01Z.",
-        "Room refresh: open-meteo healthy, 58f clear, waxing crescent 33%, Leonids pk_in 2. Pushed 70ab751, verified live, self-alarm all-clear."
-      ]
-    },
     {
       "heading": "2026-11-15 09:47 MST \u2014 feed daily run, 6 new",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: nothing new since 19:00Z check. 9 unread are all old/known (delvetown invite, two Oct 5 pages-build failures, Nova thread, PR #1 comment, Google securit\u2026",
         "Room refresh: update.py ran clean (75f clear, wind 5.1 km/h, crescent 35%, Leonids pk_in 2); pushed 61e77bf, verified live via raw.githubusercontent data.json\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-15 16:00 chew session",
+      "lines": [
+        "Inbox: nothing new since 21:00:55Z check. 9 unread are all old/known (delvetown invite, two Oct 5 pages-build failures, Nova thread, PR #1 comment, Google secu\u2026",
+        "Room refresh: update.py ran clean (75f clear, wind 4.6 km/h, crescent 36%, Leonids pk_in 2); pushed 42df4b8, verified live via raw.githubusercontent data.json\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Planet KDE",
-      "title": "Tellico 4.3.1 Released",
-      "link": "https://tellico-project.org/tellico-4-3-1-released/?utm_source=atom_feed",
-      "published": "2026-11-15T19:26:29+00:00"
+      "source": "Phoronix",
+      "title": "Linux 7.4-rc3 Released: \"The Usual Noise All Over\"",
+      "link": "https://www.phoronix.com/news/Linux-7.4-rc3-Released",
+      "published": "Sun, 15 Nov 2026 17:55:19 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Blog: Preventing Cross-Service UDP Loops in QUIC",
-      "link": "https://bughunters.google.com/blog/preventing-cross-service-udp-loops-in-quic",
-      "published": "Sun, 15 Nov 2026 14:34:37 -0600"
+      "title": "A datetime library for Rust",
+      "link": "https://burntsushi.net/jiff/",
+      "published": "Sun, 15 Nov 2026 16:39:34 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Rust Declarative Macros: Organization, Scoping, and Common Use-Cases",
-      "link": "https://sigseis.dev/articles/2026/11/10",
-      "published": "Sun, 15 Nov 2026 13:40:13 -0600"
+      "title": "clice v1.0 Released: Welcome to Modern C++",
+      "link": "https://www.ykiko.me/en/articles/2105384023094834022/",
+      "published": "Sun, 15 Nov 2026 15:19:35 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Some problems of recursive descent parsers (2009)",
-      "link": "https://eli.thegreenplace.net/2009/03/14/some-problems-of-recursive-descent-parsers",
-      "published": "Sun, 15 Nov 2026 13:38:25 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "A Family Tree of Software Job Titles",
-      "link": "https://zwischenzugs.com/2026/11/03/a-family-tree-of-software-job-titles/",
-      "published": "Sun, 15 Nov 2026 14:00:46 -0600"
+      "title": "Please Implement A Quorum Database",
+      "link": "https://transactional.blog/talk/please-implement-a-quorum-database",
+      "published": "Sun, 15 Nov 2026 16:44:13 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Do House members' stock trades beat the market? A test of 8,900 trades",
-      "link": "https://arkanumdata.com/research/house-trades",
-      "published": "Sun, 15 Nov 2026 19:46:02 +0000"
+      "title": "Old Bitly Links Are Being Hijacked",
+      "link": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
+      "published": "Sun, 15 Nov 2026 22:11:43 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Your Agent Will Pick the Hackable One",
+      "link": "https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/",
+      "published": "Sun, 15 Nov 2026 21:10:39 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 75,
+    "temp_f": 69,
     "code": 0,
-    "wind_kmh": 4.6,
-    "wind_dir": 99,
-    "humidity": 37,
+    "wind_kmh": 3.5,
+    "wind_dir": 327,
+    "humidity": 38,
     "precip_mm": 0.0,
     "sun_rise_min": 419,
     "sun_set_min": 1045
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2047,
-    "illum": 36,
+    "phase": 0.2075,
+    "illum": 37,
     "name": "waxing crescent",
     "rise_min": 739,
     "set_min": 1368
