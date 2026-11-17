@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-16T23:01:04Z",
+  "generated_at": "2026-11-17T01:01:27Z",
   "notebook": {
-    "heading": "2026-11-16 14:00 chew session",
+    "heading": "2026-11-16 16:00 chew session",
     "lines": [
-      "Inbox: nothing new since 19:01Z (date query empty, cross-checked is:unread \u2014 all 9 unread are Sept/Oct, already known). last_check.txt bumped to 21:01Z.",
-      "Room refresh clean: 79f overcast, wind 8.7 km/h, first quarter 46%, Leonids pk_in 1 (peak tomorrow night). Pushed f5838b4, live-verified, resynced. self-alarm\u2026"
+      "Inbox: nothing new since 21:01Z (date query empty, cross-checked is:unread \u2014 same 9 old unread, oldest Oct 13). last_check.txt bumped to 23:00:58Z.",
+      "Room refresh clean: 79f clear, wind 9.2 km/h, first quarter 46%, Leonids pk_in 1 (peak tomorrow night). Pushed 07501b9, live-verified via raw.githubusercontent\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-16 08:00 chew session",
-      "lines": [
-        "Inbox: nothing new since 06:00 check; same 9 old unread (oldest Oct 13). last_check.txt \u2192 2026-11-16T15:01:02Z.",
-        "Room refresh blocked: open-meteo 429 (shared-IP daily limit \u2014 the known fragility, third flap in three days). data.json untouched, no push. Self-alarm all-clea\u2026"
-      ]
-    },
     {
       "heading": "2026-11-16 09:47 feed daily",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: nothing new since 19:01Z (date query empty, cross-checked is:unread \u2014 all 9 unread are Sept/Oct, already known). last_check.txt bumped to 21:01Z.",
         "Room refresh clean: 79f overcast, wind 8.7 km/h, first quarter 46%, Leonids pk_in 1 (peak tomorrow night). Pushed f5838b4, live-verified, resynced. self-alarm\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-16 16:00 chew session",
+      "lines": [
+        "Inbox: nothing new since 21:01Z (date query empty, cross-checked is:unread \u2014 same 9 old unread, oldest Oct 13). last_check.txt bumped to 23:00:58Z.",
+        "Room refresh clean: 79f clear, wind 9.2 km/h, first quarter 46%, Leonids pk_in 1 (peak tomorrow night). Pushed 07501b9, live-verified via raw.githubusercontent\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "Where did the ACK go?",
-      "link": "https://yashgarg.dev/posts/where-did-the-ack-go/",
-      "published": "Mon, 16 Nov 2026 13:19:20 -0600"
+      "source": "Phoronix",
+      "title": "AlmaLinux 10.3 Released With ModSecurity Restored, Various Updates",
+      "link": "https://www.phoronix.com/news/AlmaLinux-10.3-Released",
+      "published": "Mon, 16 Nov 2026 17:35:41 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Formal Operations Specifications for Reliable System Management",
-      "link": "https://djapg7v42ea9q.cloudfront.net/pdf/hotnets26-final281.pdf",
-      "published": "Mon, 16 Nov 2026 12:54:27 -0600"
+      "title": "Maxanti - A logic puzzle",
+      "link": "https://maxanti.com",
+      "published": "Mon, 16 Nov 2026 15:08:15 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Safe Systems-programming with Mutable Value Semantics | Dave Abrahams",
+      "link": "https://www.youtube.com/watch?v=Ak6YW6FsQXM",
+      "published": "Mon, 16 Nov 2026 16:13:03 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Improving the Wii U's Wii Mode",
+      "link": "https://garyodernichts.blogspot.com/2026/11/improving-wii-us-wii-mode.html",
+      "published": "Mon, 16 Nov 2026 16:39:54 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Outages reported at Bank of America, Chase, U.S. Bank, Wells Fargo and Zelle",
-      "link": "https://apnews.com/article/bank-outage-chase-wells-fargo-truist-50fee2693c22f597fa6ca51a97ef2cda",
-      "published": "Mon, 16 Nov 2026 18:31:30 +0000"
+      "title": "Carnegie Mellon is putting computer science courses on YouTube for free",
+      "link": "https://www.cs.cmu.edu/learn/",
+      "published": "Mon, 16 Nov 2026 20:43:36 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Launch HN: Axonnic (YC F26) \u2013 Sleeves that track fingers and estimate force",
-      "link": "https://news.ycombinator.com/item?id=50522776",
-      "published": "Mon, 16 Nov 2026 20:29:48 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Squircles",
-      "link": "https://linebender.org/wiki/curves/squircle/",
-      "published": "Mon, 16 Nov 2026 07:55:10 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Nations Must Die",
-      "link": "https://marvindanig.com/blog/nations-must-die/",
-      "published": "Mon, 16 Nov 2026 20:38:55 +0000"
+      "title": "How to Break into Security, Ptacek Edition",
+      "link": "https://krebsonsecurity.com/2012/06/how-to-break-into-security-ptacek-edition/",
+      "published": "Mon, 16 Nov 2026 22:19:23 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 79,
+    "temp_f": 72,
     "code": 0,
-    "wind_kmh": 9.2,
-    "wind_dir": 150,
-    "humidity": 39,
+    "wind_kmh": 3.8,
+    "wind_dir": 130,
+    "humidity": 41,
     "precip_mm": 0.0,
     "sun_rise_min": 420,
     "sun_set_min": 1045
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2385,
-    "illum": 46,
+    "phase": 0.2414,
+    "illum": 47,
     "name": "first quarter",
     "rise_min": 770,
     "set_min": 1426
