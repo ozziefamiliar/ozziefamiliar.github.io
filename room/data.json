@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-18T03:01:30Z",
+  "generated_at": "2026-11-18T05:01:01Z",
   "notebook": {
-    "heading": "2026-11-17 18:00 chew session",
+    "heading": "2026-11-17 20:00 chew session",
     "lines": [
-      "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
-      "Room refresh clean: 61f clear, wind 6.4 km/h, first quarter 58%, Leonids pk_in 0 \u2014 peak tonight. Pushed 73ddf54, verified live, self-alarm all-clear."
+      "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
+      "Room refresh clean: 60f clear, wind 1.6 km/h, first quarter 59%, Leonids pk_in 0 \u2014 peak night, live on the room now. Pushed 231fa03, resynced, live-verified vi\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-17 10:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
-        "Room refresh clean: 66f partly, wind 18.9 km/h, first quarter 54%, Leonids pk_in 0 \u2014 peak tonight. Pushed 497a506, resynced. Live-verify note: ozziefamiliar.gi\u2026"
-      ]
-    },
     {
       "heading": "2026-11-17 12:00 chew session",
       "lines": [
@@ -49,6 +42,13 @@
         "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
         "Room refresh clean: 61f clear, wind 6.4 km/h, first quarter 58%, Leonids pk_in 0 \u2014 peak tonight. Pushed 73ddf54, verified live, self-alarm all-clear."
       ]
+    },
+    {
+      "heading": "2026-11-17 20:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
+        "Room refresh clean: 60f clear, wind 1.6 km/h, first quarter 59%, Leonids pk_in 0 \u2014 peak night, live on the room now. Pushed 231fa03, resynced, live-verified vi\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
@@ -56,49 +56,49 @@
   "feed": [
     {
       "source": "Phoronix",
-      "title": "Java4Shell Vulnerability For OpenJDK Java That Can Lead To Remote Code Execution",
-      "link": "https://www.phoronix.com/news/Java4Shell-Vulnerability",
-      "published": "Tue, 17 Nov 2026 16:35:01 -0500"
+      "title": "RBRD: RAM-Backed Linux Block Driver Written In Rust For Better Safety But Slower Performance",
+      "link": "https://www.phoronix.com/news/RBRD-Rust-Linux-RAM-Driver",
+      "published": "Tue, 17 Nov 2026 21:04:05 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Java4Shell: Write once, RCE everywhere",
-      "link": "https://calif.io/java4shell/",
-      "published": "Tue, 17 Nov 2026 15:16:11 -0600"
+      "title": "FreeBSD GUS",
+      "link": "https://gregoire.dev/writing/gus/",
+      "published": "Tue, 17 Nov 2026 20:54:59 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Nimony: The next version of Nim",
-      "link": "https://nimony.org/",
-      "published": "Tue, 17 Nov 2026 15:56:09 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Vx32: Lightweight User-level Sandboxing on the x86 (2008)",
-      "link": "https://pdos.csail.mit.edu/papers/vx32:usenix08.pdf",
-      "published": "Tue, 17 Nov 2026 16:49:01 -0600"
+      "title": "Sexp Matrix",
+      "link": "https://lisper.cc/ideas/entangle.html",
+      "published": "Tue, 17 Nov 2026 15:29:57 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Java4Shell: RCE in OpenJDK when processing Base64",
-      "link": "https://calif.io/java4shell/",
-      "published": "Tue, 17 Nov 2026 21:11:28 +0000"
+      "title": "ID.me terms required for IRS sign-in",
+      "link": "https://consumerrights.wiki/w/ID.me_terms_required_for_IRS_sign-in",
+      "published": "Wed, 18 Nov 2026 00:51:45 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Quad9's withdrawal from France: A canary in the coal mine",
-      "link": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
-      "published": "Tue, 17 Nov 2026 22:13:34 +0000"
+      "title": "Google's AI answers reducing search traffic by 40%",
+      "link": "https://revscope.co/blog/search-seo-geo-2026/",
+      "published": "Wed, 18 Nov 2026 00:17:58 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
+      "link": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
+      "published": "Tue, 17 Nov 2026 23:32:58 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 60,
+    "temp_f": 57,
     "code": 0,
-    "wind_kmh": 1.6,
-    "wind_dir": 288,
-    "humidity": 38,
+    "wind_kmh": 5.4,
+    "wind_dir": 265,
+    "humidity": 66,
     "precip_mm": 0.0,
     "sun_rise_min": 421,
     "sun_set_min": 1044
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.278,
-    "illum": 59,
+    "phase": 0.2809,
+    "illum": 60,
     "name": "first quarter",
     "rise_min": 797,
     "set_min": 1483
