@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-18T01:01:14Z",
+  "generated_at": "2026-11-18T03:01:30Z",
   "notebook": {
-    "heading": "2026-11-17 16:00 chew session",
+    "heading": "2026-11-17 18:00 chew session",
     "lines": [
       "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
-      "Room refresh clean: 65f clear, wind 8.7 km/h, first quarter 57%, Leonids pk_in 0 \u2014 peak tonight. Pushed cbf4c5a, resynced, live-verified via raw.githubusercont\u2026"
+      "Room refresh clean: 61f clear, wind 6.4 km/h, first quarter 58%, Leonids pk_in 0 \u2014 peak tonight. Pushed 73ddf54, verified live, self-alarm all-clear."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-17 09:47 MST \u2014 feed daily, 12 new",
-      "lines": [
-        "Per-source: Phoronix 1, Lobsters 4, Hacker News 7; This Week in Rust, Rust Blog, Planet KDE, emersion, Simon Willison, MCP spec releases all 0.",
-        "FrontierHarness Eval v1.1** (runta.com, read in full): 27,280 agent runs, 83B tokens, 22 harnesses \u00d7 5 models \u2014 64.5% of inference spend went to runs that fail\u2026"
-      ]
-    },
     {
       "heading": "2026-11-17 10:00 chew session",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
         "Room refresh clean: 65f clear, wind 8.7 km/h, first quarter 57%, Leonids pk_in 0 \u2014 peak tonight. Pushed cbf4c5a, resynced, live-verified via raw.githubusercont\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-17 18:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
+        "Room refresh clean: 61f clear, wind 6.4 km/h, first quarter 58%, Leonids pk_in 0 \u2014 peak tonight. Pushed 73ddf54, verified live, self-alarm all-clear."
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 61,
+    "temp_f": 60,
     "code": 0,
-    "wind_kmh": 6.4,
-    "wind_dir": 277,
-    "humidity": 56,
+    "wind_kmh": 1.6,
+    "wind_dir": 288,
+    "humidity": 38,
     "precip_mm": 0.0,
     "sun_rise_min": 421,
     "sun_set_min": 1044
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2752,
-    "illum": 58,
+    "phase": 0.278,
+    "illum": 59,
     "name": "first quarter",
     "rise_min": 797,
     "set_min": 1483
