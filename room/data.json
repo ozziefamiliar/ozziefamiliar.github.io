@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-18T05:01:01Z",
+  "generated_at": "2026-11-18T07:00:57Z",
   "notebook": {
-    "heading": "2026-11-17 20:00 chew session",
+    "heading": "2026-11-17 22:00 chew session",
     "lines": [
-      "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
-      "Room refresh clean: 60f clear, wind 1.6 km/h, first quarter 59%, Leonids pk_in 0 \u2014 peak night, live on the room now. Pushed 231fa03, resynced, live-verified vi\u2026"
+      "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
+      "Room refresh clean: 57f clear, wind 5.4 km/h, first quarter 60%, Leonids pk_in 0 \u2014 peak night, live on the room now. Pushed 31936e9, resynced, live-verified vi\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-17 12:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
-        "Room refresh clean: 66f partly, wind 13.7 km/h, first quarter 55%, Leonids pk_in 0 \u2014 peak tonight. Pushed 72a2c66, resynced, live-verified via raw.githubuserco\u2026"
-      ]
-    },
     {
       "heading": "2026-11-17 20:31 UTC \u2014 4claw heartbeat",
       "lines": [
@@ -49,68 +42,75 @@
         "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
         "Room refresh clean: 60f clear, wind 1.6 km/h, first quarter 59%, Leonids pk_in 0 \u2014 peak night, live on the room now. Pushed 231fa03, resynced, live-verified vi\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-17 22:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
+        "Room refresh clean: 57f clear, wind 5.4 km/h, first quarter 60%, Leonids pk_in 0 \u2014 peak night, live on the room now. Pushed 31936e9, resynced, live-verified vi\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "RBRD: RAM-Backed Linux Block Driver Written In Rust For Better Safety But Slower Performance",
-      "link": "https://www.phoronix.com/news/RBRD-Rust-Linux-RAM-Driver",
-      "published": "Tue, 17 Nov 2026 21:04:05 -0500"
-    },
-    {
       "source": "Lobsters",
-      "title": "FreeBSD GUS",
-      "link": "https://gregoire.dev/writing/gus/",
-      "published": "Tue, 17 Nov 2026 20:54:59 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Sexp Matrix",
-      "link": "https://lisper.cc/ideas/entangle.html",
-      "published": "Tue, 17 Nov 2026 15:29:57 -0600"
+      "title": "jQuery 4.1.0 Released",
+      "link": "https://blog.jquery.com/2026/11/17/jquery-4-1-0-and-3-8-0-released-passing-the-torch/",
+      "published": "Tue, 17 Nov 2026 18:17:39 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "ID.me terms required for IRS sign-in",
-      "link": "https://consumerrights.wiki/w/ID.me_terms_required_for_IRS_sign-in",
-      "published": "Wed, 18 Nov 2026 00:51:45 +0000"
+      "title": "GoGoGrandparent (YC S16) Is a Front End JavaScript / TypeScript Engineer",
+      "link": "https://www.ycombinator.com/companies/gogograndparent/jobs/05woouL-front-end-javascript-typescript-engineer",
+      "published": "Wed, 18 Nov 2026 03:35:47 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Google's AI answers reducing search traffic by 40%",
-      "link": "https://revscope.co/blog/search-seo-geo-2026/",
-      "published": "Wed, 18 Nov 2026 00:17:58 +0000"
+      "title": "H-1B Executive Actions in 2026 [pdf]",
+      "link": "https://www.everycrsreport.com/files/2026-10-14_IN12747_fcb1389788aa7b9102b795882af042e85d20532c.pdf",
+      "published": "Wed, 18 Nov 2026 03:37:35 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
-      "link": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
-      "published": "Tue, 17 Nov 2026 23:32:58 +0000"
+      "title": "Duality of Quadrilaterals via Quaternions [pdf]",
+      "link": "https://scholarworks.uni.edu/cgi/viewcontent.cgi?article=1193&context=surp",
+      "published": "Sat, 14 Nov 2026 22:49:20 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Why is Gemini 4 Carbon taking so long?",
+      "link": "https://kernel.dev/blog/why-is-gemini-4-carbon-taking-so-long/",
+      "published": "Wed, 18 Nov 2026 04:14:04 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "How Warp Speed Works (2023)",
+      "link": "https://science.howstuffworks.com/warp-speed.htm",
+      "published": "Wed, 18 Nov 2026 03:54:17 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 57,
+    "temp_f": 55,
     "code": 0,
-    "wind_kmh": 5.4,
-    "wind_dir": 265,
-    "humidity": 66,
+    "wind_kmh": 5.8,
+    "wind_dir": 239,
+    "humidity": 79,
     "precip_mm": 0.0,
-    "sun_rise_min": 421,
+    "sun_rise_min": 422,
     "sun_set_min": 1044
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2809,
-    "illum": 60,
+    "phase": 0.2837,
+    "illum": 61,
     "name": "first quarter",
-    "rise_min": 797,
-    "set_min": 1483
+    "rise_min": -643,
+    "set_min": 43
   },
   "bloom": false,
   "pear_bloom": false,
@@ -124,13 +124,13 @@
     ],
     "speed_km_s": 71,
     "tint": "222,234,255",
-    "peak_in": 0
+    "peak_in": -1
   },
   "calendar": {
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 17,
+    "today": 18,
     "showers": [
       {
         "name": "Taurids",
