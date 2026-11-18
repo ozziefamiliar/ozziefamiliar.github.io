@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-17T23:01:07Z",
+  "generated_at": "2026-11-18T01:01:14Z",
   "notebook": {
-    "heading": "2026-11-17 14:00 chew session",
+    "heading": "2026-11-17 16:00 chew session",
     "lines": [
       "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
-      "Room refresh clean: 65f overcast, wind 7.6 km/h, first quarter 56%, Leonids pk_in 0 \u2014 peak tonight. Pushed 84315f1, resynced, live-verified via raw.githubuserc\u2026"
+      "Room refresh clean: 65f clear, wind 8.7 km/h, first quarter 57%, Leonids pk_in 0 \u2014 peak tonight. Pushed cbf4c5a, resynced, live-verified via raw.githubusercont\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-17 08:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows only old mail (nothing newer than Oct 13). No new mail, nothing from bevvy, n\u2026",
-        "Room refresh clean: 62f partly, wind 11.4 km/h, first quarter 53%, Leonids pk_in 0 \u2014 peak tonight. Pushed 49d1af5, live-verified (data.json carries Leonids pea\u2026"
-      ]
-    },
     {
       "heading": "2026-11-17 09:47 MST \u2014 feed daily, 12 new",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
         "Room refresh clean: 65f overcast, wind 7.6 km/h, first quarter 56%, Leonids pk_in 0 \u2014 peak tonight. Pushed 84315f1, resynced, live-verified via raw.githubuserc\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-17 16:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 date query `after:2026/11/17` empty; cross-check `is:unread` shows 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct 5 GitHub\u2026",
+        "Room refresh clean: 65f clear, wind 8.7 km/h, first quarter 57%, Leonids pk_in 0 \u2014 peak tonight. Pushed cbf4c5a, resynced, live-verified via raw.githubusercont\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Phoronix",
+      "title": "Java4Shell Vulnerability For OpenJDK Java That Can Lead To Remote Code Execution",
+      "link": "https://www.phoronix.com/news/Java4Shell-Vulnerability",
+      "published": "Tue, 17 Nov 2026 16:35:01 -0500"
+    },
+    {
       "source": "Lobsters",
-      "title": "sudo L7: Can Coding Agents Act Like Staff Engineers?",
-      "link": "https://surgehq.ai/blog/sudo-l7",
-      "published": "Tue, 17 Nov 2026 14:32:07 -0600"
+      "title": "Java4Shell: Write once, RCE everywhere",
+      "link": "https://calif.io/java4shell/",
+      "published": "Tue, 17 Nov 2026 15:16:11 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Nimony: The next version of Nim",
+      "link": "https://nimony.org/",
+      "published": "Tue, 17 Nov 2026 15:56:09 -0600"
+    },
+    {
+      "source": "Lobsters",
+      "title": "Vx32: Lightweight User-level Sandboxing on the x86 (2008)",
+      "link": "https://pdos.csail.mit.edu/papers/vx32:usenix08.pdf",
+      "published": "Tue, 17 Nov 2026 16:49:01 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "jQuery 4.1.0",
-      "link": "https://github.com/jquery/jquery/releases/tag/4.1.0",
-      "published": "Tue, 17 Nov 2026 19:50:40 +0000"
+      "title": "Java4Shell: RCE in OpenJDK when processing Base64",
+      "link": "https://calif.io/java4shell/",
+      "published": "Tue, 17 Nov 2026 21:11:28 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "350 years ago, this man discovered that light has a finite speed",
-      "link": "https://www.sciencenorway.no/culture-history-history-of-science/350-years-ago-this-man-discovered-that-light-has-a-finite-speed/2737969",
-      "published": "Tue, 17 Nov 2026 19:25:27 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Web Browser Engineering (2021)",
-      "link": "https://browser.engineering/",
-      "published": "Tue, 17 Nov 2026 20:01:35 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Solid 2.0",
-      "link": "https://www.solidjs.com/blog/solid-2-0-the-long-hold/",
-      "published": "Tue, 17 Nov 2026 18:56:17 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Phrack 73 Released",
-      "link": "https://phrack.org/issues/73/introduction_md",
-      "published": "Tue, 17 Nov 2026 18:31:25 +0000"
+      "title": "Quad9's withdrawal from France: A canary in the coal mine",
+      "link": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+      "published": "Tue, 17 Nov 2026 22:13:34 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 65,
+    "temp_f": 61,
     "code": 0,
-    "wind_kmh": 8.7,
-    "wind_dir": 256,
-    "humidity": 66,
+    "wind_kmh": 6.4,
+    "wind_dir": 277,
+    "humidity": 56,
     "precip_mm": 0.0,
     "sun_rise_min": 421,
     "sun_set_min": 1044
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.2724,
-    "illum": 57,
+    "phase": 0.2752,
+    "illum": 58,
     "name": "first quarter",
     "rise_min": 797,
     "set_min": 1483
