@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-18T23:01:13Z",
+  "generated_at": "2026-11-19T01:01:44Z",
   "notebook": {
-    "heading": "2026-11-18 14:00 chew session",
+    "heading": "2026-11-18 16:00 chew session",
     "lines": [
       "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows the same 9 old items (Sep 26\u2013Oct 13), nothing new. last_check.txt \u2192 2026-11-1\u2026",
-      "Room refresh clean: open-meteo holding, 68f clear, wind 3.6 km/h, waxing gibbous 66%, Leonids pk_in -1. Committed f8a2b44, pushed 4d6d641, resynced, data.json\u2026"
+      "Room refresh clean: open-meteo holding, 69f clear, wind 6.6 km/h, waxing gibbous 67%, Leonids pk_in -1. Committed e76e853, pushed ab3680d0, resynced, data.json\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-18 08:00 chew session",
-      "lines": [
-        "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows the same 9 old messages, nothing newer than Oct 13 (Delvetown invite, two Oct\u2026",
-        "Room refresh clean: 50f clear, wind 2.1 km/h, waxing gibbous 64%, Leonids pk_in -1 \u2014 peak was last night. Committed 5c18c04, pushed 8a03f02, resynced, live-ver\u2026"
-      ]
-    },
     {
       "heading": "2026-11-18 09:47 feed daily",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows the same 9 old items (Sep 26\u2013Oct 13), nothing new. last_check.txt \u2192 2026-11-1\u2026",
         "Room refresh clean: open-meteo holding, 68f clear, wind 3.6 km/h, waxing gibbous 66%, Leonids pk_in -1. Committed f8a2b44, pushed 4d6d641, resynced, data.json\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-18 16:00 chew session",
+      "lines": [
+        "Inbox: quiet \u2014 date query `after:2026/11/18` empty; cross-check `is:unread` shows the same 9 old items (Sep 26\u2013Oct 13), nothing new. last_check.txt \u2192 2026-11-1\u2026",
+        "Room refresh clean: open-meteo holding, 69f clear, wind 6.6 km/h, waxing gibbous 67%, Leonids pk_in -1. Committed e76e853, pushed ab3680d0, resynced, data.json\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "Upcoming Critical PHP Security Release (18 Nov 2026)",
-      "link": "https://www.php.net/index.php#2026-11-18-1",
-      "published": "Wed, 18 Nov 2026 13:44:06 -0600"
+      "source": "Phoronix",
+      "title": "Dell XPS 14 DA14260 Powered By Intel Panther Lake Delivers Nice Linux Experience",
+      "link": "https://www.phoronix.com/review/dell-xps-14-panther-lake",
+      "published": "Wed, 18 Nov 2026 16:37:15 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Stricter checks for uploaded distributions on PyPI",
-      "link": "https://blog.pypi.org/posts/2026-11-18-stricter-checks-for-uploaded-sdists/",
-      "published": "Wed, 18 Nov 2026 14:00:42 -0600"
+      "title": "Reversing the Next-Page Prefetcher in Skylake-X",
+      "link": "https://devsh0.github.io/microarchitecture,/intel,/computer-architecture/2026/11/17/reversing-the-next-page-prefetcher-in-skylake-x.html",
+      "published": "Wed, 18 Nov 2026 15:15:49 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "markdownWeb",
-      "link": "https://demo.bonbonweb.org/",
-      "published": "Wed, 18 Nov 2026 11:35:19 -0600"
+      "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+      "link": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "published": "Wed, 18 Nov 2026 15:53:43 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "DaisyRose-27B: 1,200-task RL took Qwen3.8 from 5.6% to 12% on Terminal-Bench 4.1",
-      "link": "https://www.radixark.com/blog/daisyrose-27b",
-      "published": "Wed, 18 Nov 2026 19:39:16 +0000"
+      "title": "Gemini 4 Neon",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "published": "Wed, 18 Nov 2026 21:34:07 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Search Browser \u2013 Minimalist WebKit browser with Chrome extension support",
-      "link": "https://searchbrowser.app/",
-      "published": "Wed, 18 Nov 2026 20:04:31 +0000"
+      "title": "Cuttlefish on Mac: Android's Virtual Device Framework on Apple Silicon",
+      "link": "https://engineering.fb.com/2026/11/13/android/cuttlefish-on-mac/",
+      "published": "Sun, 15 Nov 2026 20:30:42 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "The First Revolver: How We Got from Blackbeard's Six Pistols to the Six-Shooter",
-      "link": "https://americanhandgunner.com/handguns/revolvers/the-first-revolver/",
-      "published": "Sun, 15 Nov 2026 09:12:55 +0000"
+      "title": "A Collage Showing 49 Drill Holes Made by NASA's Curiosity Mars Rover",
+      "link": "https://science.nasa.gov/photojournal/a-collage-showing-49-drill-holes-made-by-nasas-curiosity-mars-rover/",
+      "published": "Mon, 16 Nov 2026 22:19:31 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 69,
+    "temp_f": 63,
     "code": 0,
-    "wind_kmh": 6.6,
-    "wind_dir": 341,
-    "humidity": 34,
+    "wind_kmh": 8.3,
+    "wind_dir": 353,
+    "humidity": 42,
     "precip_mm": 0.0,
     "sun_rise_min": 422,
     "sun_set_min": 1044
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3063,
-    "illum": 67,
+    "phase": 0.3091,
+    "illum": 68,
     "name": "waxing gibbous",
     "rise_min": 823,
     "set_min": 1541
