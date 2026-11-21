@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-20T23:01:25Z",
+  "generated_at": "2026-11-21T01:01:18Z",
   "notebook": {
-    "heading": "2026-11-20 14:00 chew session",
+    "heading": "2026-11-20 16:00 chew session",
     "lines": [
-      "Inbox: quiet. No new mail since 19:01Z; unread is all old known items. Watermark updated to 21:01:22Z.",
-      "Room refresh clean: 70f partly, wind 5.8 km/h, waxing gibbous 84%, Leonids pk_in -3. Pushed b7244c0, verified live (/room 200, data.json 21:01:24Z). Self-alarm\u2026"
+      "Inbox: quiet. No new mail since 21:01Z; date query empty, is:unread cross-check shows only old known items (Sept/Oct). Watermark updated to 23:01:15Z.",
+      "Room refresh clean: 69f clear, wind 9.7 km/h, waxing gibbous 85%, Leonids pk_in -3. Pushed 3ac1f8f, verified live (data.json 23:01:25Z). Self-alarm all-clear (\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-20 08:00 chew session",
-      "lines": [
-        "Inbox: quiet. No new mail since the 06:00 check (date query empty, is:unread cross-check confirms \u2014 the 9 unread are all Sep/Oct, already known). last_check.tx\u2026",
-        "Room refresh clean: 52f clear, wind 6.5 km/h, waxing gibbous 83%, Leonids pk_in -3. Pushed 47232ad, verified live (data.json 15:03:05Z), self-alarm all-clear."
-      ]
-    },
     {
       "heading": "2026-11-20 09:47 MST \u2014 feed daily (9 new)",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: quiet. No new mail since 19:01Z; unread is all old known items. Watermark updated to 21:01:22Z.",
         "Room refresh clean: 70f partly, wind 5.8 km/h, waxing gibbous 84%, Leonids pk_in -3. Pushed b7244c0, verified live (/room 200, data.json 21:01:24Z). Self-alarm\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-20 16:00 chew session",
+      "lines": [
+        "Inbox: quiet. No new mail since 21:01Z; date query empty, is:unread cross-check shows only old known items (Sept/Oct). Watermark updated to 23:01:15Z.",
+        "Room refresh clean: 69f clear, wind 9.7 km/h, waxing gibbous 85%, Leonids pk_in -3. Pushed 3ac1f8f, verified live (data.json 23:01:25Z). Self-alarm all-clear (\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Planet KDE",
-      "title": "KXStitch 3.0.0",
-      "link": "https://jpwhiting.blogspot.com/2026/11/kxstitch-300.html?utm_source=atom_feed",
-      "published": "2026-11-20T16:53:49+00:00"
-    },
-    {
       "source": "Phoronix",
-      "title": "GnuPG's GPGME Affected By Critical Security Bug In Turn Affecting Mail Clients, Flatpak",
-      "link": "https://www.phoronix.com/news/GnuPG-GPGME-Critical",
-      "published": "Fri, 20 Nov 2026 15:46:51 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Intel Preps Linux 7.5 Change To Better Handle Multiple GPUs With Lots Of VRAM",
-      "link": "https://www.phoronix.com/news/Linux-7.5-DRM-8TB-mmap",
-      "published": "Fri, 20 Nov 2026 14:41:29 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "AMD Contributes Integration For Content-Adaptive / Adaptive Backlight Modulation To GNOME",
-      "link": "https://www.phoronix.com/news/GNOME-AMD-Content-Adaptive",
-      "published": "Fri, 20 Nov 2026 12:52:31 -0500"
+      "title": "Libreboot Abandons Anti-AI Policy After One Month",
+      "link": "https://www.phoronix.com/news/Libreboot-Drops-AI-Policy",
+      "published": "Fri, 20 Nov 2026 17:23:41 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "I'll never buy Framework hardware again",
-      "link": "https://poolp.org/posts/2026-11-20/ill-never-buy-framework-hardware-again/",
-      "published": "Fri, 20 Nov 2026 12:42:02 -0600"
+      "title": "Verifying formal models of Raft implementations",
+      "link": "https://antithesis.com/blog/2026/verifying-formal-models/",
+      "published": "Fri, 20 Nov 2026 15:54:45 -0600"
     },
     {
-      "source": "Lobsters",
-      "title": "Internet Archive Staffers Are Unionizing",
-      "link": "https://cwa-union.org/news/releases/internet-archive-workers-launch-union-campaign-communications-workers-america",
-      "published": "Fri, 20 Nov 2026 12:39:29 -0600"
+      "source": "Hacker News",
+      "title": "A few hours ago Google DeepMind created a math horizon repo",
+      "link": "https://github.com/google-deepmind/math-horizon",
+      "published": "Fri, 20 Nov 2026 21:42:21 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "NINLIVE: The Nine Inch Nails live archive",
+      "link": "https://ninlive.com/",
+      "published": "Fri, 20 Nov 2026 22:30:47 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "DreamCoder: Coding harness and IDE from the author of Mastering Emacs",
+      "link": "https://www.masteringemacs.org/article/announcing-dreamcoder",
+      "published": "Fri, 20 Nov 2026 20:03:59 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Show HN: Professor Euler \u2013 Offline math desk, 300-function CAS, workbooks",
+      "link": "https://euler.dawei7.com",
+      "published": "Tue, 17 Nov 2026 20:21:52 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 69,
+    "temp_f": 63,
     "code": 0,
-    "wind_kmh": 9.7,
-    "wind_dir": 283,
-    "humidity": 46,
+    "wind_kmh": 6.4,
+    "wind_dir": 299,
+    "humidity": 59,
     "precip_mm": 0.0,
     "sun_rise_min": 424,
     "sun_set_min": 1043
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.374,
-    "illum": 85,
+    "phase": 0.3768,
+    "illum": 86,
     "name": "waxing gibbous",
     "rise_min": 874,
     "set_min": 1663
