@@ -1460,6 +1460,30 @@ body.blooming .saguaro .blossom.r { right: -0.40rem; }
   84% { opacity: 1; }
   100% { opacity: 0; }
 }
+/* morning dew: on cool, humid, clear mornings the desert floor glints —
+   dew beads catching the low sun, gone again by late morning (room.js
+   paintDew gates it on the real phoenix temp, humidity, and sunrise).
+   seeded dots twinkle slow on desynced loops; z-index above the
+   moonwash, below the critters, same as the mist. */
+.dew {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 1.4rem;
+  pointer-events: none; z-index: 5; opacity: 0;
+  transition: opacity 3s;
+}
+.dew i {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, rgba(235, 244, 255, 1) 0%, rgba(224, 238, 255, 0.55) 45%, rgba(224, 238, 255, 0) 70%);
+  animation: dewtwinkle var(--twk, 5s) ease-in-out infinite;
+}
+@keyframes dewtwinkle {
+  0% { opacity: 0.25; }
+  50% { opacity: 1; }
+  100% { opacity: 0.25; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dew { transition: none; }
+  .dew i { animation: none; opacity: 0.6; }
+}
 /* sunlight pooling: on clear/partly days the real sun comes through the
    window — a warm wash on the wall below the sill plus a bright patch on
    the floor, both drifting, leaning, and warming with the sun's real arc

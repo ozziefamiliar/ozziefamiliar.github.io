@@ -445,6 +445,61 @@
   }
   window.__paintNightChill = paintNightChill; /* headless-test hook */
 
+  /* morning dew: on cool, humid, clear mornings the desert floor glints
+     — dew beads catching the low sun, gone again by late morning. gate:
+     day (stars opacity == 0) + clear/partly + real temp <= 65f, fading
+     out as it warms + real humidity >= 50% + phoenix time from 30 min
+     before the real sunrise to 2.5h after it (update.py's sun_rise_min,
+     stashed by paintWeather), opacity fading across the morning as the
+     sun climbs. the dots seed once, on first paint, so the minute tick
+     never re-rolls them. window.__forceDew (true/false) is the console
+     easter egg to peek anytime (and the headless hook). called from
+     paintSky so the minute tick carries it, and from loadRoom so fresh
+     weather lands with the data instead of lagging a tick behind. */
+  function paintDew() {
+    var force = window.__forceDew;
+    var el = document.getElementById("dew");
+    if (!el) return;
+    if (!el.hasChildNodes()) {
+      for (var i = 0; i < 36; i++) {
+        var d = document.createElement("i");
+        d.style.left = (2 + Math.random() * 96).toFixed(1) + "%";
+        d.style.bottom = (0.05 + Math.random() * 1.1).toFixed(2) + "rem";
+        var s = (0.12 + Math.random() * 0.08).toFixed(2);
+        d.style.width = s + "rem";
+        d.style.height = s + "rem";
+        d.style.setProperty("--twk", (3.5 + Math.random() * 3.5).toFixed(1) + "s");
+        d.style.animationDelay = (-Math.random() * 7).toFixed(2) + "s";
+        el.appendChild(d);
+      }
+    }
+    var op = 0;
+    if (force === true) { op = 0.85; }
+    else if (force === false) { op = 0; }
+    else {
+      var stars = document.getElementById("stars");
+      var day = stars && stars.style.opacity === "0";
+      var K = window.__wxKind || "clear";
+      var humid = typeof window.__wxHumidity === "number" &&
+        window.__wxHumidity >= 50;
+      var temp = (typeof window.__wxTemp === "number")
+        ? window.__wxTemp : 99;
+      if (day && (K === "clear" || K === "partly") && humid && temp <= 65) {
+        var rise = (typeof window.__sunRiseMin === "number")
+          ? window.__sunRiseMin : 420;
+        var t = phxNow().getHours() * 60 + phxNow().getMinutes();
+        var start = rise - 30, end = rise + 150;
+        if (t >= start && t <= end) {
+          var hourFade = (end - t) / (end - start);
+          var tempFade = Math.min(1, Math.max(0, (65 - temp) / 10));
+          op = 0.85 * hourFade * tempFade;
+        }
+      }
+    }
+    el.style.opacity = op.toFixed(3);
+  }
+  window.__paintDew = paintDew; /* headless-test hook */
+
   /* dark sky: on the darkest nights the sky holds more stars — a
      second, fainter layer comes out when there's no moonlight to wash
      it away. gate: night (stars opacity == 1) + the real moon's
@@ -540,6 +595,7 @@
     paintCurtains(); /* the curtains answer the real wind, on the same tick */
     paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
     paintNightChill(); /* the desert floor cools after sunset, on the same tick */
+    paintDew(); /* the dew glints on cool humid mornings, on the same tick */
     paintDarkSky(); /* fainter stars come out on moonless nights, on the same tick */
     paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
     paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
@@ -2579,6 +2635,7 @@
         paintWeather(d.weather);
         paintSkyGlow(); /* the skyglow bounce rides fresh weather, not a lagging tick */
         paintNightChill(); /* the night chill rides fresh weather too */
+        paintDew(); /* the morning dew rides fresh weather too */
         paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
         paintWindmill(); /* the old mill answers the same real wind */
         paintWindsock(); /* the sock points downwind on the same real wind */
