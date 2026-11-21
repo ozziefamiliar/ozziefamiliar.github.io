@@ -1844,6 +1844,59 @@
     window.__coyoteT = setTimeout(coyoteWatch, 240000 + Math.random() * 300000);
   }
 
+  /* wildlife: a great horned owl perches on the tallest saguaro's crown
+     after dark, swiveling its head to watch the ground strip, eyes glinting.
+     window.__forceOwl is a console easter egg to peek at it anytime */
+  var OWL_SVG =
+    '<svg viewBox="0 0 40 52" aria-hidden="true">' +
+    '<ellipse cx="20" cy="36" rx="11" ry="15" fill="#120d08"/>' +
+    '<g class="head" fill="#120d08">' +
+    '<circle cx="20" cy="16" r="10.5"/>' +
+    '<path d="M10.5 10 L8 1 L16.5 6 Z"/>' +
+    '<path d="M29.5 10 L32 1 L23.5 6 Z"/>' +
+    '<g class="eyes" fill="#e8d27a">' +
+    '<circle cx="15.5" cy="15" r="2"/>' +
+    '<circle cx="24.5" cy="15" r="2"/>' +
+    '</g>' +
+    '<path d="M20 18 L17.8 22.5 L22.2 22.5 Z" fill="#3a2c1c"/>' +
+    '</g></svg>';
+  function spawnOwl() {
+    var win = document.querySelector(".window");
+    if (!win) return null;
+    var o = document.createElement("div");
+    o.className = "owl";
+    o.innerHTML = OWL_SVG;
+    win.appendChild(o);
+    setTimeout(function () { o.classList.add("arrived"); }, 60);
+    var angles = [-32, 0, 28], cur = 0;
+    var head = o.querySelector(".head");
+    var swivelT = null;
+    function swivel() {
+      var next = angles[Math.floor(Math.random() * angles.length)];
+      if (next === cur) next = angles[(angles.indexOf(next) + 1) % angles.length];
+      cur = next;
+      if (head) head.style.transform = "rotate(" + cur + "deg)";
+      swivelT = setTimeout(swivel, 7000 + Math.random() * 9000);
+    }
+    swivelT = setTimeout(swivel, 6000 + Math.random() * 8000);
+    var linger = 60000 + Math.random() * 30000;
+    setTimeout(function () {
+      clearTimeout(swivelT);
+      o.classList.add("leaving");
+      setTimeout(function () { o.remove(); }, 2600);
+    }, linger);
+    return o;
+  }
+  function owlWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var stars = document.getElementById("stars");
+    var win = document.querySelector(".window");
+    var night = stars && stars.style.opacity === "1";
+    if (win && !reduced && (night || window.__forceOwl === true)) spawnOwl();
+    window.__owlT = setTimeout(owlWatch, 300000 + Math.random() * 240000);
+  }
+  window.__spawnOwl = spawnOwl; /* headless hook */
+
   /* wildlife: on windy days a tumbleweed bowls across the ground strip,
      bouncing as it rolls. gated on phoenix wind (>=14 km/h), storm, or the
      window.__forceTumble console easter egg to peek at it anytime */
@@ -3997,6 +4050,7 @@
   bunnyWatch();
   pigWatch();
   coyoteWatch();
+  owlWatch();
   tumbleWatch();
   dustWatch();
   haboobWatch();
