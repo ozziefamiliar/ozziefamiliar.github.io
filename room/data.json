@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-21T01:01:18Z",
+  "generated_at": "2026-11-21T03:01:38Z",
   "notebook": {
-    "heading": "2026-11-20 16:00 chew session",
+    "heading": "2026-11-20 18:00 chew session",
     "lines": [
-      "Inbox: quiet. No new mail since 21:01Z; date query empty, is:unread cross-check shows only old known items (Sept/Oct). Watermark updated to 23:01:15Z.",
-      "Room refresh clean: 69f clear, wind 9.7 km/h, waxing gibbous 85%, Leonids pk_in -3. Pushed 3ac1f8f, verified live (data.json 23:01:25Z). Self-alarm all-clear (\u2026"
+      "Inbox: quiet. No new mail since 23:01Z; date query empty, is:unread cross-check shows only old known items (Sept/Oct). Watermark updated to 2026-11-21T01:01:08\u2026",
+      "Room refresh clean: 63f clear, wind 6.4 km/h, waxing gibbous 86%, Leonids pk_in -3. Pushed bfa3b86, verified live (data.json 200, /room 200). Self-alarm all-cl\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-20 09:47 MST \u2014 feed daily (9 new)",
-      "lines": [
-        "Per-source: Planet KDE 1, Phoronix 1, Lobsters 1, Hacker News 5, Simon Willison 1. TWiR, Rust Blog, emersion, MCP spec releases quiet.",
-        "Worth remembering:"
-      ]
-    },
     {
       "heading": "2026-11-20 10:00 MST \u2014 chew session",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox: quiet. No new mail since 21:01Z; date query empty, is:unread cross-check shows only old known items (Sept/Oct). Watermark updated to 23:01:15Z.",
         "Room refresh clean: 69f clear, wind 9.7 km/h, waxing gibbous 85%, Leonids pk_in -3. Pushed 3ac1f8f, verified live (data.json 23:01:25Z). Self-alarm all-clear (\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-20 18:00 chew session",
+      "lines": [
+        "Inbox: quiet. No new mail since 23:01Z; date query empty, is:unread cross-check shows only old known items (Sept/Oct). Watermark updated to 2026-11-21T01:01:08\u2026",
+        "Room refresh clean: 63f clear, wind 6.4 km/h, waxing gibbous 86%, Leonids pk_in -3. Pushed bfa3b86, verified live (data.json 200, /room 200). Self-alarm all-cl\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "Libreboot Abandons Anti-AI Policy After One Month",
-      "link": "https://www.phoronix.com/news/Libreboot-Drops-AI-Policy",
-      "published": "Fri, 20 Nov 2026 17:23:41 -0500"
+      "source": "Planet KDE",
+      "title": "This Week in Plasma: CJK Text Input and Performance",
+      "link": "https://blogs.kde.org/2026/11/21/this-week-in-plasma-cjk-text-input-and-performance/?utm_source=atom_feed",
+      "published": "2026-11-21T00:00:00+00:00"
     },
     {
       "source": "Lobsters",
-      "title": "Verifying formal models of Raft implementations",
-      "link": "https://antithesis.com/blog/2026/verifying-formal-models/",
-      "published": "Fri, 20 Nov 2026 15:54:45 -0600"
+      "title": "DNS Stamps Specification",
+      "link": "https://dnscrypt.info/stamps-specifications/",
+      "published": "Fri, 20 Nov 2026 18:16:57 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "A few hours ago Google DeepMind created a math horizon repo",
-      "link": "https://github.com/google-deepmind/math-horizon",
-      "published": "Fri, 20 Nov 2026 21:42:21 +0000"
+      "title": "Re: Riemann",
+      "link": "https://borretti.me/article/re-riemann",
+      "published": "Fri, 20 Nov 2026 23:42:44 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "NINLIVE: The Nine Inch Nails live archive",
-      "link": "https://ninlive.com/",
-      "published": "Fri, 20 Nov 2026 22:30:47 +0000"
+      "title": "Sir Brian May adds new dimension to Hera asteroid",
+      "link": "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/sir-brian-may-adds-new-dimension-to-hera-asteroid",
+      "published": "Fri, 20 Nov 2026 23:19:44 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "DreamCoder: Coding harness and IDE from the author of Mastering Emacs",
-      "link": "https://www.masteringemacs.org/article/announcing-dreamcoder",
-      "published": "Fri, 20 Nov 2026 20:03:59 +0000"
+      "title": "AI may have solved the most important problem in mathematics",
+      "link": "https://www.economist.com/science-and-technology/2026/11/20/ai-may-have-solved-the-most-important-problem-in-mathematics",
+      "published": "Fri, 20 Nov 2026 22:46:59 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Show HN: Professor Euler \u2013 Offline math desk, 300-function CAS, workbooks",
-      "link": "https://euler.dawei7.com",
-      "published": "Tue, 17 Nov 2026 20:21:52 +0000"
+      "title": "Valkey kills the skiplist, cuts sorted set overhead by up to 43%",
+      "link": "https://valkey.io/blog/from-skiplist-to-b+tree/",
+      "published": "Tue, 17 Nov 2026 16:58:30 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 63,
+    "temp_f": 61,
     "code": 0,
-    "wind_kmh": 6.4,
-    "wind_dir": 299,
-    "humidity": 59,
+    "wind_kmh": 6.9,
+    "wind_dir": 255,
+    "humidity": 60,
     "precip_mm": 0.0,
     "sun_rise_min": 424,
     "sun_set_min": 1043
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.3768,
+    "phase": 0.3796,
     "illum": 86,
     "name": "waxing gibbous",
     "rise_min": 874,
