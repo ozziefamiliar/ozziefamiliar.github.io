@@ -917,6 +917,45 @@ body.moonlit .mesa::after {
   .swallow { display: none; }
 }
 
+/* desert bats: small dark shapes flutter the night sky in wobbly loops */
+.bat {
+  position: absolute; top: var(--y0, 3rem); width: 1.1rem;
+  z-index: 6; pointer-events: none; opacity: 0;
+  animation: batflut var(--dur, 13s) linear var(--delay, 0s) 1 forwards;
+}
+.bat.rtl { animation-name: batflut-rtl; }
+.bat svg { display: block; width: 100%; animation: swoopin 0.7s ease-out var(--delay, 0s) backwards; }
+.bat .wings {
+  transform-box: fill-box; transform-origin: 50% 50%;
+  animation: batflap 0.16s ease-in-out infinite alternate;
+}
+@keyframes batflut {
+  0% { opacity: 0; left: -2rem; transform: translateY(0); }
+  8% { opacity: 1; }
+  18% { left: 14%; transform: translateY(var(--dy1, -1rem)); }
+  34% { left: 30%; transform: translateY(var(--dy2, 1rem)); }
+  50% { left: 48%; transform: translateY(var(--dy3, -0.8rem)); }
+  66% { left: 64%; transform: translateY(var(--dy1, -1rem)); }
+  82% { left: 82%; transform: translateY(var(--dy2, 1rem)); }
+  92% { opacity: 1; left: 92%; }
+  100% { opacity: 0; left: calc(100% + 2rem); transform: translateY(var(--dy3, -0.8rem)); }
+}
+@keyframes batflut-rtl {
+  0% { opacity: 0; right: -2rem; transform: scaleX(-1) translateY(0); }
+  8% { opacity: 1; }
+  18% { right: 14%; transform: scaleX(-1) translateY(var(--dy1, -1rem)); }
+  34% { right: 30%; transform: scaleX(-1) translateY(var(--dy2, 1rem)); }
+  50% { right: 48%; transform: scaleX(-1) translateY(var(--dy3, -0.8rem)); }
+  66% { right: 64%; transform: scaleX(-1) translateY(var(--dy1, -1rem)); }
+  82% { right: 82%; transform: scaleX(-1) translateY(var(--dy2, 1rem)); }
+  92% { opacity: 1; right: 92%; }
+  100% { opacity: 0; right: calc(100% + 2rem); transform: scaleX(-1) translateY(var(--dy3, -0.8rem)); }
+}
+@keyframes batflap { from { transform: scaleY(1); } to { transform: scaleY(0.35); } }
+@media (prefers-reduced-motion: reduce) {
+  .bat { display: none; }
+}
+
 /* night freight: a distant train threads the horizon, windows lit, headlight on */
 .train {
   position: absolute;

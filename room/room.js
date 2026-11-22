@@ -2523,6 +2523,53 @@
     window.__swallowT = setTimeout(swallowWatch, 150000 + Math.random() * 150000);
   }
 
+  /* desert bats: small dark shapes flutter the night sky in wobbly loops,
+     hunting in the dark the swallows leave behind */
+  var BAT_SVG =
+    '<svg viewBox="0 0 34 16" aria-hidden="true">' +
+    '<g class="wings" fill="#14100b">' +
+    '<path d="M16 8 C11 1 5 0 1 3 C3 5 6 6 9 7 C6 8 4 10 2 12 C7 11 12 10 16 9 Z"/>' +
+    '<path d="M18 8 C23 1 29 0 33 3 C31 5 28 6 25 7 C28 8 30 10 32 12 C27 11 22 10 18 9 Z"/>' +
+    '</g>' +
+    '<g fill="#14100b">' +
+    '<ellipse cx="17" cy="8" rx="2.6" ry="2"/>' +
+    '<circle cx="17" cy="5.8" r="1.7"/>' +
+    '<path d="M15.6 4.6 L15 2.6 L16.6 3.9 Z"/>' +
+    '<path d="M18.4 4.6 L19 2.6 L17.4 3.9 Z"/>' +
+    '</g></svg>';
+  function isBatNight() {
+    /* window.__forceBat is a console easter egg to peek at the bats anytime */
+    if (window.__forceBat === true) return true;
+    var stars = document.getElementById("stars");
+    return !!(stars && stars.style.opacity === "1");
+  }
+  function batWatch() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var sky = document.getElementById("sky");
+    if (sky && isBatNight() && !reduced) {
+      var n = 2 + Math.floor(Math.random() * 3);
+      var bats = [];
+      for (var i = 0; i < n; i++) {
+        var b = document.createElement("div");
+        b.className = "bat" + (Math.random() < 0.5 ? " rtl" : "");
+        b.style.setProperty("--y0", (1 + Math.random() * 4).toFixed(2) + "rem");
+        b.style.setProperty("--dy1", (-1.6 + Math.random() * 1.2).toFixed(2) + "rem");
+        b.style.setProperty("--dy2", (0.6 + Math.random() * 1.4).toFixed(2) + "rem");
+        b.style.setProperty("--dy3", (-1.4 + Math.random() * 1.8).toFixed(2) + "rem");
+        b.style.setProperty("--dur", (10 + Math.random() * 8).toFixed(2) + "s");
+        b.style.setProperty("--delay", (Math.random() * 5).toFixed(2) + "s");
+        b.innerHTML = BAT_SVG;
+        sky.appendChild(b);
+        bats.push(b);
+      }
+      setTimeout(function () {
+        bats.forEach(function (b) { b.remove(); });
+      }, 30000);
+    }
+    window.__batT = setTimeout(batWatch, 240000 + Math.random() * 300000);
+  }
+  window.__spawnBat = batWatch; /* headless-test hook */
+
   /* night freight: five boxcars and an engine thread the horizon, windows lit */
   var TRAIN_SVG =
     '<svg viewBox="0 0 128 22" aria-hidden="true">' +
@@ -4205,6 +4252,7 @@
   glassDropsWatch();
   birdWatch();
   swallowWatch();
+  batWatch();
   trainWatch();
   balloonWatch();
   hawkWatch();
