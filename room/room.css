@@ -2780,3 +2780,36 @@ body.lamplit .winreflect-warm { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .glassdrops { display: none !important; }
 }
+
+/* frost on the glass: on cold desert mornings — the real thermometer
+   says 50f or below — feathery frost ferns the inside of the window
+   pane, thickest at the corners and edges, melting off as the sun
+   climbs. static, no animation loop; under prefers-reduced-motion it
+   simply appears or not. the mask keeps the middle clearest, where
+   you look out. */
+.frost {
+  position: absolute; inset: 0;
+  z-index: 53; pointer-events: none;
+  opacity: 0; transition: opacity 4s ease;
+  background:
+    radial-gradient(ellipse 3.4rem 2.2rem at 4% 6%,
+      rgba(235, 244, 252, 0.85), rgba(235, 244, 252, 0) 70%),
+    radial-gradient(ellipse 2.8rem 2.6rem at 96% 8%,
+      rgba(235, 244, 252, 0.8), rgba(235, 244, 252, 0) 70%),
+    radial-gradient(ellipse 3rem 2rem at 92% 94%,
+      rgba(235, 244, 252, 0.7), rgba(235, 244, 252, 0) 70%),
+    radial-gradient(ellipse 2.4rem 1.8rem at 8% 92%,
+      rgba(235, 244, 252, 0.65), rgba(235, 244, 252, 0) 70%),
+    repeating-linear-gradient(63deg,
+      rgba(240, 248, 255, 0.16) 0 1px, rgba(240, 248, 255, 0) 1px 7px),
+    repeating-linear-gradient(-48deg,
+      rgba(240, 248, 255, 0.12) 0 1px, rgba(240, 248, 255, 0) 1px 9px),
+    linear-gradient(rgba(225, 238, 250, 0.10), rgba(225, 238, 250, 0.05));
+  -webkit-mask-image: radial-gradient(ellipse 78% 72% at 50% 50%,
+    rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 1) 100%);
+  mask-image: radial-gradient(ellipse 78% 72% at 50% 50%,
+    rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 1) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .frost { transition: none; }
+}

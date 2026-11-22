@@ -500,6 +500,44 @@
   }
   window.__paintDew = paintDew; /* headless-test hook */
 
+  /* frost on the glass: on cold desert mornings — the real thermometer
+     says 50f or below — feathery frost ferns the inside of the window
+     pane, thickest at the corners, melting off as the sun climbs.
+     gate: temp <= 50 + phoenix midnight-to-morning + dry (rain/storm
+     would wash the pane). opacity scales with the cold — 0.35 at 50f,
+     0.9 at 32f and below — and fades across the three hours after
+     sunrise as the glass warms. static, no animation loop, so
+     reduced-motion has nothing to idle. window.__forceFrost
+     (true/false) is the console easter egg to peek anytime (and the
+     headless hook). called from paintSky so the minute tick carries
+     it, and from loadRoom so fresh weather lands with the data
+     instead of lagging a tick behind. */
+  function paintFrost() {
+    var force = window.__forceFrost;
+    var el = document.getElementById("frost");
+    if (!el) return;
+    var op = 0;
+    if (force === true) { op = 0.85; }
+    else if (force === false) { op = 0; }
+    else {
+      var temp = (typeof window.__wxTemp === "number")
+        ? window.__wxTemp : 99;
+      var K = window.__wxKind || "clear";
+      var t = phxNow().getHours() * 60 + phxNow().getMinutes();
+      var rise = (typeof window.__sunRiseMin === "number")
+        ? window.__sunRiseMin : 420;
+      if (temp <= 50 && K !== "rain" && K !== "storm" &&
+          t >= 0 && t <= rise + 180) {
+        var coldFade = Math.min(1, Math.max(0, (50 - temp) / 18));
+        var meltFade = t <= rise
+          ? 1 : Math.max(0, (rise + 180 - t) / 180);
+        op = (0.35 + 0.55 * coldFade) * meltFade;
+      }
+    }
+    el.style.opacity = op.toFixed(3);
+  }
+  window.__paintFrost = paintFrost; /* headless-test hook */
+
   /* dark sky: on the darkest nights the sky holds more stars — a
      second, fainter layer comes out when there's no moonlight to wash
      it away. gate: night (stars opacity == 1) + the real moon's
@@ -596,6 +634,7 @@
     paintCityGlow(); /* the light dome glows on the night horizon, on the same tick */
     paintNightChill(); /* the desert floor cools after sunset, on the same tick */
     paintDew(); /* the dew glints on cool humid mornings, on the same tick */
+    paintFrost(); /* the frost ferns the glass on cold mornings, on the same tick */
     paintDarkSky(); /* fainter stars come out on moonless nights, on the same tick */
     paintSundogs(); /* rainbow flecks flanking the low sun, on the same tick */
     paintScope(); /* the telescope slews to the radiant on shower nights, on the same tick */
@@ -2686,6 +2725,7 @@
         paintSkyGlow(); /* the skyglow bounce rides fresh weather, not a lagging tick */
         paintNightChill(); /* the night chill rides fresh weather too */
         paintDew(); /* the morning dew rides fresh weather too */
+        paintFrost(); /* the morning frost rides fresh weather too */
         paintCurtains(); /* real wind is stashed now; paint before the next minute tick */
         paintWindmill(); /* the old mill answers the same real wind */
         paintWindsock(); /* the sock points downwind on the same real wind */
