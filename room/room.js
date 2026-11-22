@@ -830,6 +830,7 @@
     } else {
       moon.style.right = ""; moon.style.left = ""; moon.style.top = "";
     }
+    paintMoonlit(); /* the mesa rims ride the moon's own tick + data refresh */
   }
   window.__paintMoon = paintMoon; /* headless-test hook */
 
@@ -854,6 +855,55 @@
     document.body.classList.toggle("glow-pm", cls === "glow-pm");
   }
   window.__paintGlow = paintGlow; /* headless-test hook */
+
+  /* moonlit mesa rims: on bright-moon nights the mesas catch the real
+     moonlight on their summit edges — the alpenglow's cold twin, silver
+     instead of rose-gold. same bright-moon gate as the wash (night +
+     clear/partly + illum >= 50 + the moon actually up on its real arc),
+     opacity scaled by the real illumination, and off inside the
+     sunrise/sunset glow windows so the two rims never fight. called
+     from paintMoon so it rides the moon's own minute tick and the
+     loadRoom data refresh; static once painted, so
+     prefers-reduced-motion only kills the fade.
+     window.__forceMoonlit (true/false) is the console easter egg to
+     peek anytime (and the headless hook). */
+  function paintMoonlit() {
+    var force = window.__forceMoonlit;
+    var on = false, op = 0, effIllum = 75;
+    if (force === true) {
+      on = true;
+      op = 0.15 + 0.25 * (effIllum - 50) / 50;
+    } else if (force === false) {
+      on = false;
+    } else {
+      var stars = document.getElementById("stars");
+      var night = stars && stars.style.opacity === "1";
+      var wxK = window.__wxKind || "clear";
+      var md = window.__moonData || null;
+      var illum = (md && typeof md.illum === "number") ? md.illum : null;
+      var up = true;
+      var now = phxNow();
+      var t = now.getHours() * 60 + now.getMinutes();
+      if (typeof window.__moonRiseMin === "number" &&
+          typeof window.__moonSetMin === "number") {
+        var mra = window.__moonRiseMin, msa = window.__moonSetMin, mta = t;
+        if (msa < mra) msa += 1440;
+        if (mta < mra) mta += 1440;
+        var arc = (mta - mra) / (msa - mra);
+        up = arc >= 0 && arc <= 1;
+      }
+      /* the sun's rims own the ±25min windows around rise/set */
+      var rise = window.__sunRiseMin, set = window.__sunSetMin;
+      var glowWin = (typeof rise === "number" && Math.abs(t - rise) <= 25) ||
+        (typeof set === "number" && Math.abs(t - set) <= 25);
+      on = !!(night && (wxK === "clear" || wxK === "partly") &&
+        illum !== null && illum >= 50 && up && !glowWin);
+      if (on) op = 0.15 + 0.25 * (illum - 50) / 50;
+    }
+    document.body.classList.toggle("moonlit", on);
+    document.body.style.setProperty("--moonrim", op.toFixed(3));
+  }
+  window.__paintMoonlit = paintMoonlit; /* headless-test hook */
 
   /* sunlight pooling: the real sun comes through the window and lands on
      the room — a warm wash on the wall below the sill (#sunwall) and a

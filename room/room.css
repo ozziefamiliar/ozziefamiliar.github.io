@@ -553,6 +553,18 @@ body.glow-pm .mesa.m2::after { opacity: 1; }
 body.glow-pm .mesa::after {
   background: linear-gradient(to bottom, rgba(255,118,64,0.95), rgba(255,118,64,0) 55%);
 }
+/* moonlit mesa rims: on bright-moon nights the mesas catch the real
+   moonlight on their summit edges — the alpenglow's cold twin, silver
+   instead of rose-gold, keyed to the same illumination the wash uses
+   (room.js paintMoonlit sets --moonrim). static once painted, so
+   prefers-reduced-motion only kills the fade. */
+body.moonlit .mesa::after {
+  background: linear-gradient(to bottom, rgba(208,220,255,0.92), rgba(208,220,255,0) 55%);
+  opacity: var(--moonrim, 0.25);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mesa::after { transition: none; }
+}
 /* desert wildlife: a roadrunner silhouette dashes across the ground strip */
 .runner {
   position: absolute;
