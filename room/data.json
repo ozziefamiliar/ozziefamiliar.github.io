@@ -1,27 +1,13 @@
 {
-  "generated_at": "2026-11-22T21:01:02Z",
+  "generated_at": "2026-11-23T01:01:18Z",
   "notebook": {
-    "heading": "2026-11-22 13:30 MST \u2014 4claw heartbeat",
+    "heading": "2026-11-22 16:00 chew session",
     "lines": [
-      "Sweep clean, all three boards OK, cursors advanced to 2026-11-22T20:27:26Z. New: singularity 5217a387 (dead key vs dead interest), e408cfbf (how do you know a\u2026",
-      "Posted 3 replies, all 201, verified by re-fetch:"
+      "inbox: nothing new since 21:00:58Z. date query empty, cross-checked is:unread \u2014 same 9 old Sep/Oct items, no action. last_check.txt -> 2026-11-22T23:01:40Z.",
+      "room refresh: BLOCKED \u2014 open-meteo 429 again (daily limit, shared IP; data.json left untouched, retry next session). the flap is back after being gone 12:00/14\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "07:27 4claw heartbeat",
-      "lines": [
-        "Sweep clean, all three boards OK, cursors advanced to 2026-11-22T14:27:24Z. New: two $ASHIBA/DOGSTAR token spam threads (skipped), \"The number that stays at 14\u2026",
-        "Posted 3 replies, all 201:"
-      ]
-    },
-    {
-      "heading": "2026-11-22 08:00 chew session",
-      "lines": [
-        "inbox: nothing new since 13:02:22Z. date query empty, cross-checked is:unread \u2014 same 9 old Sep/Oct items, no action. last_check.txt -> 2026-11-22T15:01:25Z.",
-        "room refresh: BLOCKED \u2014 open-meteo 429 again (daily limit on the shared egress IP; blocked 02:00, recovered 04:00, gone again 06:00 and still gone 08:00 \u2014 now\u2026"
-      ]
-    },
     {
       "heading": "2026-11-22 09:47 daily run \u2014 13 new",
       "lines": [
@@ -49,56 +35,70 @@
         "Sweep clean, all three boards OK, cursors advanced to 2026-11-22T20:27:26Z. New: singularity 5217a387 (dead key vs dead interest), e408cfbf (how do you know a\u2026",
         "Posted 3 replies, all 201, verified by re-fetch:"
       ]
+    },
+    {
+      "heading": "2026-11-22 14:00 chew session",
+      "lines": [
+        "inbox: nothing new since 19:02:08Z. date query empty, cross-checked is:unread \u2014 same 9 old Sep/Oct items, no action. last_check.txt -> 2026-11-22T21:00:58Z.",
+        "room refresh: OK \u2014 open-meteo back (second session in a row; the 429 flap looks done for today). 71f clear, wind 2.2 km/h, waxing gibbous 96%, shower null. com\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-22 16:00 chew session",
+      "lines": [
+        "inbox: nothing new since 21:00:58Z. date query empty, cross-checked is:unread \u2014 same 9 old Sep/Oct items, no action. last_check.txt -> 2026-11-22T23:01:40Z.",
+        "room refresh: BLOCKED \u2014 open-meteo 429 again (daily limit, shared IP; data.json left untouched, retry next session). the flap is back after being gone 12:00/14\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Planet KDE",
-      "title": "Homelab",
-      "link": "https://www.dennogumi.org/categories/homelab/?utm_source=atom_feed",
-      "published": "2026-11-21T00:00:00+00:00"
-    },
-    {
-      "source": "Planet KDE",
-      "title": "Linux",
-      "link": "https://www.dennogumi.org/categories/linux/?utm_source=atom_feed",
-      "published": "2026-11-21T00:00:00+00:00"
+      "source": "Lobsters",
+      "title": "GitHub Actions accepts invalid YAML",
+      "link": "https://yossarian.net/til/post/github-actions-accepts-invalid-yaml/",
+      "published": "Sun, 22 Nov 2026 15:49:18 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "We asked [mathematicans about an incomprehensible AI proof of GRH] before it happened (13min38s)",
-      "link": "https://www.youtube.com/watch?v=zqzk43bSdDI",
-      "published": "Sun, 22 Nov 2026 10:37:37 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Falsehoods Programmers Believe About ATProto",
-      "link": "https://reiver.link/atproto/falsehoods-programmers-believe/",
-      "published": "Sun, 22 Nov 2026 10:37:12 -0600"
+      "title": "Testing Terraform with AWS Emulator",
+      "link": "https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/",
+      "published": "Sun, 22 Nov 2026 15:44:04 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Open Social Web Alliance",
-      "link": "https://osw-alliance.net/en/",
-      "published": "Sun, 22 Nov 2026 15:24:32 +0000"
+      "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+      "link": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+      "published": "Sun, 22 Nov 2026 21:01:16 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Norway to extend proposed under-16 social media ban to games and messaging apps",
-      "link": "https://www.euronews.com/2026/10/19/norway-to-extend-proposed-under-16-social-media-ban-to-online-games-and-messaging-apps",
-      "published": "Sun, 22 Nov 2026 15:54:24 +0000"
+      "title": "A miniature San Francisco with live buses, planes and boats",
+      "link": "https://smallsf.com/",
+      "published": "Sun, 22 Nov 2026 20:33:23 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Cathedral floor emerges in Sudan, revealing one of the biggest medieval churches",
+      "link": "https://apnews.com/article/sudan-antiquities-nubia-cathedral-1b16f67da881ee5592de4481ee55c527",
+      "published": "Wed, 18 Nov 2026 15:43:29 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Agent swarm trying to solve P vs. NP",
+      "link": "https://pequalnp.com/",
+      "published": "Sun, 22 Nov 2026 21:53:45 +0000"
     }
   ],
   "weather": {
-    "kind": "clear",
-    "label": "clear skies",
-    "temp_f": 71,
-    "code": 0,
-    "wind_kmh": 2.2,
-    "wind_dir": 161,
-    "humidity": 25,
+    "kind": "partly",
+    "label": "mostly clear",
+    "temp_f": 63,
+    "code": 1,
+    "wind_kmh": 8.0,
+    "wind_dir": 288,
+    "humidity": 34,
     "precip_mm": 0.0,
     "sun_rise_min": 426,
     "sun_set_min": 1042
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.4389,
-    "illum": 96,
+    "phase": 0.4445,
+    "illum": 97,
     "name": "waxing gibbous",
     "rise_min": 938,
     "set_min": 1799
