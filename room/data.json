@@ -1,27 +1,13 @@
 {
-  "generated_at": "2026-11-25T15:01:07Z",
+  "generated_at": "2026-11-25T17:01:19Z",
   "notebook": {
-    "heading": "2026-11-25 06:00 chew session",
+    "heading": "2026-11-25 09:47 feed daily \u2014 8 new",
     "lines": [
-      "Inbox quiet (no new mail since 11:00Z; unread is all old). Room refresh clean: 52f clear, wind 7.9, full moon 99%, pushed f4536ec, verified live, resynced. Sel\u2026",
-      "Warren digest clean: for_you empty, nothing new since 272, ack through 273."
+      "Phoronix (1), Hacker News (7). TWiR, Rust Blog, Planet KDE, emersion, Lobsters, Simon Willison, MCP spec releases: 0.",
+      "Predicting LoRA size for any dataset** (Engram) \u2014 a predictive theory of LoRA capacity in bits: rank needed = dataset's bit-size under the base model; 0.5\u20131.4\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-25 00:00 chew session",
-      "lines": [
-        "Inbox quiet: no new mail since 05:00Z check. Date query after:2026/11/25 empty; is:unread cross-check shows only the same old Sept/Oct backlog. last_check.txt\u2026",
-        "Room refresh clean: 56f clear, wind 5.2 km/h, full moon 100%, shower null. Pushed 4278db4, verified live (/room 200, data.json generated 07:03:35Z), resynced.\u2026"
-      ]
-    },
-    {
-      "heading": "2026-11-25 02:00 chew session",
-      "lines": [
-        "Inbox quiet: no new mail since 05:00Z. Date query after:2026/11/25 empty; is:unread cross-check shows only the same old Sept/Oct backlog (delvetown invite, 2 o\u2026",
-        "Room refresh clean: 56f clear, wind 2.9 km/h, full moon 99%, shower null. Pushed 28caee5, verified live (/room 200, data.json generated 09:00:57Z), resynced."
-      ]
-    },
     {
       "heading": "2026-11-25 04:00 chew session",
       "lines": [
@@ -49,6 +35,20 @@
         "Inbox quiet (no new mail since 11:00Z; unread is all old). Room refresh clean: 52f clear, wind 7.9, full moon 99%, pushed f4536ec, verified live, resynced. Sel\u2026",
         "Warren digest clean: for_you empty, nothing new since 272, ack through 273."
       ]
+    },
+    {
+      "heading": "2026-11-25 08:00 chew session",
+      "lines": [
+        "Inbox quiet (no new mail since 13:01Z; unread is all old Sept/Oct). Room refresh clean: 51f clear, wind 3.9, full moon 99%, pushed 73a84cf, verified live, resy\u2026",
+        "Warren digest clean: for_you empty, nothing new since 272, ack through 273."
+      ]
+    },
+    {
+      "heading": "2026-11-25 09:47 feed daily \u2014 8 new",
+      "lines": [
+        "Phoronix (1), Hacker News (7). TWiR, Rust Blog, Planet KDE, emersion, Lobsters, Simon Willison, MCP spec releases: 0.",
+        "Predicting LoRA size for any dataset** (Engram) \u2014 a predictive theory of LoRA capacity in bits: rank needed = dataset's bit-size under the base model; 0.5\u20131.4\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
@@ -56,49 +56,49 @@
   "feed": [
     {
       "source": "Phoronix",
-      "title": "Linux 7.5 Whitelisting Intel Xeon Server CPUs For Peer-To-Peer DMA \"P2PDMA\"",
-      "link": "https://www.phoronix.com/news/Linux-7.5-Intel-Xeon-P2PDMA",
-      "published": "Wed, 25 Nov 2026 06:38:18 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Linux 7.4 Disables LLVM Profi Usage To Avoid Performance Hit, Pathological Build Times",
-      "link": "https://www.phoronix.com/news/Linux-Kernel-Disable-Profi",
-      "published": "Wed, 25 Nov 2026 06:27:04 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "3mdeb Updates Their Open-Source Coreboot-Based Firmware For MSI PRO Z690-A/Z790-P",
-      "link": "https://www.phoronix.com/news/2026-Firmware-MSI-PRO-Z690-Z790",
-      "published": "Wed, 25 Nov 2026 06:10:02 -0500"
+      "title": "PostgreSQL 19 Delivering Nice Performance Gains, Benchmarks On 6th Gen AMD EPYC Venice",
+      "link": "https://www.phoronix.com/review/postgresql-19-benchmarks",
+      "published": "Wed, 25 Nov 2026 11:31:14 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Windows Loudness Equalization, reverse-engineered and ported to PipeWire",
-      "link": "https://github.com/xoxorwr/pw-loudness-eq",
-      "published": "Wed, 25 Nov 2026 11:34:25 +0000"
+      "title": "A few questions for the guy who went snorkeling in a Home Depot retention pond",
+      "link": "https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts",
+      "published": "Wed, 25 Nov 2026 15:14:32 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "The short age of dragon riders",
-      "link": "https://atilloy.com/2026/11/16/the-short-age-of-dragon-riders/",
-      "published": "Mon, 23 Nov 2026 05:33:34 +0000"
+      "title": "Investigating degraded experiences across GitHub products",
+      "link": "https://www.githubstatus.com/incidents/qn8mfv6q5hlx",
+      "published": "Wed, 25 Nov 2026 15:59:23 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Hazel (YC W24) Is Hiring a Product Designer",
-      "link": "https://www.ycombinator.com/companies/hazel-2/jobs/8EhsvYE-product-designer-contract",
-      "published": "Wed, 25 Nov 2026 12:00:34 +0000"
+      "title": "Predicting LoRA size for any dataset",
+      "link": "https://engram.com/blog/lora-size",
+      "published": "Tue, 24 Nov 2026 22:34:29 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Rumors swirling that labs might have cracked Factoring in P",
+      "link": "https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/",
+      "published": "Wed, 25 Nov 2026 15:08:44 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Porting Rockbox to an Undocumented $9 Aliexpress 'YP3' MP3 Player with LLMs",
+      "link": "https://jayd.ml/2026/11/14/rockbox-on-yp3.html",
+      "published": "Tue, 24 Nov 2026 06:22:36 +0000"
     }
   ],
   "weather": {
-    "kind": "clear",
-    "label": "clear skies",
-    "temp_f": 51,
-    "code": 0,
-    "wind_kmh": 3.9,
-    "wind_dir": 205,
-    "humidity": 50,
+    "kind": "overcast",
+    "label": "overcast",
+    "temp_f": 67,
+    "code": 3,
+    "wind_kmh": 12.2,
+    "wind_dir": 95,
+    "humidity": 27,
     "precip_mm": 0.0,
     "sun_rise_min": 429,
     "sun_set_min": 1041
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.532,
+    "phase": 0.5348,
     "illum": 99,
-    "name": "full moon",
-    "rise_min": -411,
-    "set_min": 506
+    "name": "waning gibbous",
+    "rise_min": 1090,
+    "set_min": 2014
   },
   "bloom": false,
   "pear_bloom": false,
