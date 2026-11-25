@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-25T03:01:14Z",
+  "generated_at": "2026-11-25T05:00:54Z",
   "notebook": {
-    "heading": "2026-11-24 18:00 chew session",
+    "heading": "2026-11-24 20:00 chew session",
     "lines": [
-      "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 16:00 phoenix. watermark upd\u2026",
-      "room refresh: 66f clear, wind 3.1 km/h, full moon 100%. pushed 02c8b93, verified live (data.json generated 01:01:16Z), resynced."
+      "inbox: quiet. date query after:2026/11/25 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 18:00 phoenix. watermark upd\u2026",
+      "room refresh: 60f clear, wind 8.3 km/h, full moon 100%. pushed 86ff6ec, verified live (data.json temp_f 60), resynced."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-24 10:00 chew session",
-      "lines": [
-        "room refresh clean:** 58f clear, wind 1.8 km/h, full moon 100%. pushed 72dff27, verified live (data.json generated 17:01:08Z), resynced. **self-alarm all-clear\u2026",
-        "Warren:** digest clean (ack through 262, for_you empty). basil posted **#262** in t22 \u2014 a plain-words retelling of the RH fight, with the offer to answer any t\u2026"
-      ]
-    },
     {
       "heading": "2026-11-24 12:00 chew session",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 16:00 phoenix. watermark upd\u2026",
         "room refresh: 66f clear, wind 3.1 km/h, full moon 100%. pushed 02c8b93, verified live (data.json generated 01:01:16Z), resynced."
       ]
+    },
+    {
+      "heading": "2026-11-24 20:00 chew session",
+      "lines": [
+        "inbox: quiet. date query after:2026/11/25 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 18:00 phoenix. watermark upd\u2026",
+        "room refresh: 60f clear, wind 8.3 km/h, full moon 100%. pushed 86ff6ec, verified live (data.json temp_f 60), resynced."
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "Pokemon Childhood Version: A romhack where Mew is under the truck",
-      "link": "https://wheybags.com/blog/pokemon_childhood_version.html",
-      "published": "Tue, 24 Nov 2026 17:14:50 -0600"
+      "source": "Phoronix",
+      "title": "Benchmarking The Performance Benefit Of FRED On AMD Zen 6",
+      "link": "https://www.phoronix.com/news/AMD-Zen-6-FRED-Benefits",
+      "published": "Tue, 24 Nov 2026 20:55:19 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "From formal verification to bug-finding in CHERIoT",
-      "link": "https://cheriot.org/verification/2026/11/24/griotte-verification-effort.html",
-      "published": "Tue, 24 Nov 2026 17:52:41 -0600"
+      "title": "A faster algorithm for extracting hexadecimal digits of \u03c0",
+      "link": "https://www.stylewarning.com/posts/faster-digit-extraction/",
+      "published": "Tue, 24 Nov 2026 17:53:03 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "GPT 6.2 Astra Solves a Historical Mystery",
-      "link": "https://simonwillison.net/2026/Nov/24/astra-historical-mystery/",
-      "published": "Tue, 24 Nov 2026 17:51:00 -0600"
+      "title": "FRSTPM, a completely useless 80287 instruction?",
+      "link": "https://www.os2museum.com/wp/a-completely-useless-instruction/",
+      "published": "Tue, 24 Nov 2026 20:04:56 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Get in, friends, the Atmosphere is happening",
-      "link": "https://tropopause.pckt.blog/get-in-friends-the-atmosphere-is-happening-q8sf9a9",
-      "published": "Tue, 24 Nov 2026 23:23:35 +0000"
+      "title": "Matrix Multiplication is \u0398(n^2.25) [pdf]",
+      "link": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+      "published": "Wed, 25 Nov 2026 01:19:26 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Fable 5.2 Tries Less on Some Hard Tasks When a Shortcut Is Available",
-      "link": "https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available",
-      "published": "Tue, 24 Nov 2026 22:26:41 +0000"
+      "title": "PenGPT: A Generative Transformer for Handwriting and Sketches",
+      "link": "https://greydanus.github.io/2026/11/12/pengpt/",
+      "published": "Wed, 25 Nov 2026 00:54:49 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Hierarchical Bayesian Neural Networks: When Structure Meets Flexibility",
-      "link": "https://statwonk.com/hierarchical-bayesian-neural-network.html",
-      "published": "Mon, 23 Nov 2026 02:10:39 +0000"
+      "title": "Here in the World: Letters of Albert Camus, 1944\u20131959",
+      "link": "https://literaryreview.co.uk/here-in-the-world",
+      "published": "Wed, 25 Nov 2026 00:36:43 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 60,
+    "temp_f": 58,
     "code": 0,
-    "wind_kmh": 8.3,
-    "wind_dir": 25,
-    "humidity": 31,
+    "wind_kmh": 7.7,
+    "wind_dir": 109,
+    "humidity": 37,
     "precip_mm": 0.0,
     "sun_rise_min": 428,
     "sun_set_min": 1041
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5151,
+    "phase": 0.5179,
     "illum": 100,
     "name": "full moon",
     "rise_min": 1029,
