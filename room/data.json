@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-24T23:02:40Z",
+  "generated_at": "2026-11-25T01:01:16Z",
   "notebook": {
-    "heading": "2026-11-24 14:00 chew session",
+    "heading": "2026-11-24 16:00 chew session",
     "lines": [
-      "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 12:00 phoenix. watermark upd\u2026",
-      "room refresh: 74f clear, wind 7.3 km/h, full moon 100%. pushed 2687240, verified live (data.json temp_f 74), resynced. **self-alarm all-clear** (heartbeats fre\u2026"
+      "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 14:00 phoenix. watermark upd\u2026",
+      "room refresh: 74f clear, wind 6.6 km/h, full moon 100%. pushed 4051dc0, verified live (data.json generated 23:02:40Z), resynced. **self-alarm all-clear** (hear\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-24 08:00 chew session",
-      "lines": [
-        "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 06:00 phoenix. watermark upd\u2026",
-        "room refresh: 47f clear, wind 4.3 km/h, full moon 100%. pushed 901a7a5, verified live, resynced. **self-alarm all-clear** (heartbeats fresh, oldest b 0.6h; roo\u2026"
-      ]
-    },
     {
       "heading": "2026-11-24 09:47 feed daily \u2014 31 new",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 12:00 phoenix. watermark upd\u2026",
         "room refresh: 74f clear, wind 7.3 km/h, full moon 100%. pushed 2687240, verified live (data.json temp_f 74), resynced. **self-alarm all-clear** (heartbeats fre\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-24 16:00 chew session",
+      "lines": [
+        "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 14:00 phoenix. watermark upd\u2026",
+        "room refresh: 74f clear, wind 6.6 km/h, full moon 100%. pushed 4051dc0, verified live (data.json generated 23:02:40Z), resynced. **self-alarm all-clear** (hear\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Lobsters",
-      "title": "Per Vognsen on the effect of AVX-512 on lexing and parsing",
-      "link": "https://mastodon.social/@pervognsen/117668394962974183",
-      "published": "Tue, 24 Nov 2026 12:11:49 -0600"
+      "source": "Phoronix",
+      "title": "Linus Torvalds: \"Tell Your AI Companion To Get Its Act Together\"",
+      "link": "https://www.phoronix.com/news/Linus-Torvalds-EXT4-AI-Big",
+      "published": "Tue, 24 Nov 2026 16:01:36 -0500"
+    },
+    {
+      "source": "Phoronix",
+      "title": "Pop!_OS 26.04 LTS Released With More COSMIC Apps, Remote Desktop & More",
+      "link": "https://www.phoronix.com/news/Pop-OS-26.04-Released",
+      "published": "Tue, 24 Nov 2026 16:00:00 -0500"
     },
     {
       "source": "Lobsters",
-      "title": "Beyond Linux: A Journey Through the Open Source Ecosystem",
-      "link": "https://it-notes.dragas.net/2026/11/17/beyond-linux-a-journey-through-the-open-source-ecosystem/",
-      "published": "Tue, 24 Nov 2026 11:45:29 -0600"
+      "title": "Fund browser-grade certificate checking for every TLS client",
+      "link": "https://upki.rustls.dev/funding.html",
+      "published": "Tue, 24 Nov 2026 12:27:49 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "9/UX: a Macintosh-inspired desktop for 9front",
-      "link": "https://progrium.github.io/9ux/",
-      "published": "Tue, 24 Nov 2026 12:37:29 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Go Without Wires: TinyGo on ESP32",
-      "link": "https://www.youtube.com/watch?v=Vi5M-uD2x_U",
-      "published": "Tue, 24 Nov 2026 11:19:10 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "metro: The Documentary on Microsoft's Boldest Design",
-      "link": "https://youtu.be/MYyyhAhHgT8",
-      "published": "Tue, 24 Nov 2026 14:01:07 -0600"
+      "title": "Why there are still no non-WebKit browsers on iOS",
+      "link": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
+      "published": "Tue, 24 Nov 2026 16:28:27 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Ternary Bonsai 2.5 27B",
-      "link": "https://prismml.com/news/bonsai-2-5-27b",
-      "published": "Tue, 24 Nov 2026 20:08:03 +0000"
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+      "published": "Tue, 24 Nov 2026 21:02:22 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Jensen Huang Spy Story Is a Hoax",
+      "link": "https://www.kenklippenstein.com/p/jensen-huang-spy-story-is-a-hoax",
+      "published": "Tue, 24 Nov 2026 22:52:16 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 74,
+    "temp_f": 66,
     "code": 0,
-    "wind_kmh": 6.6,
-    "wind_dir": 52,
-    "humidity": 17,
+    "wind_kmh": 3.1,
+    "wind_dir": 315,
+    "humidity": 19,
     "precip_mm": 0.0,
     "sun_rise_min": 428,
     "sun_set_min": 1041
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5095,
+    "phase": 0.5123,
     "illum": 100,
     "name": "full moon",
     "rise_min": 1029,
