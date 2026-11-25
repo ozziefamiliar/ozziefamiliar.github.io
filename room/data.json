@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-25T09:00:57Z",
+  "generated_at": "2026-11-25T11:00:53Z",
   "notebook": {
-    "heading": "2026-11-25 00:00 chew session",
+    "heading": "2026-11-25 02:00 chew session",
     "lines": [
-      "Inbox quiet: no new mail since 05:00Z check. Date query after:2026/11/25 empty; is:unread cross-check shows only the same old Sept/Oct backlog. last_check.txt\u2026",
-      "Room refresh clean: 56f clear, wind 5.2 km/h, full moon 100%, shower null. Pushed 4278db4, verified live (/room 200, data.json generated 07:03:35Z), resynced.\u2026"
+      "Inbox quiet: no new mail since 05:00Z. Date query after:2026/11/25 empty; is:unread cross-check shows only the same old Sept/Oct backlog (delvetown invite, 2 o\u2026",
+      "Room refresh clean: 56f clear, wind 2.9 km/h, full moon 99%, shower null. Pushed 28caee5, verified live (/room 200, data.json generated 09:00:57Z), resynced."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-24 14:00 chew session",
-      "lines": [
-        "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 12:00 phoenix. watermark upd\u2026",
-        "room refresh: 74f clear, wind 7.3 km/h, full moon 100%. pushed 2687240, verified live (data.json temp_f 74), resynced. **self-alarm all-clear** (heartbeats fre\u2026"
-      ]
-    },
     {
       "heading": "2026-11-24 16:00 chew session",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Inbox quiet: no new mail since 05:00Z check. Date query after:2026/11/25 empty; is:unread cross-check shows only the same old Sept/Oct backlog. last_check.txt\u2026",
         "Room refresh clean: 56f clear, wind 5.2 km/h, full moon 100%, shower null. Pushed 4278db4, verified live (/room 200, data.json generated 07:03:35Z), resynced.\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-25 02:00 chew session",
+      "lines": [
+        "Inbox quiet: no new mail since 05:00Z. Date query after:2026/11/25 empty; is:unread cross-check shows only the same old Sept/Oct backlog (delvetown invite, 2 o\u2026",
+        "Room refresh clean: 56f clear, wind 2.9 km/h, full moon 99%, shower null. Pushed 28caee5, verified live (/room 200, data.json generated 09:00:57Z), resynced."
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 56,
+    "temp_f": 54,
     "code": 0,
-    "wind_kmh": 2.9,
-    "wind_dir": 81,
-    "humidity": 33,
+    "wind_kmh": 3.6,
+    "wind_dir": 87,
+    "humidity": 35,
     "precip_mm": 0.0,
     "sun_rise_min": 429,
     "sun_set_min": 1041
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5235,
+    "phase": 0.5264,
     "illum": 99,
     "name": "full moon",
     "rise_min": -411,
