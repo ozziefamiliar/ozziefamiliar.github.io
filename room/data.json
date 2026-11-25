@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-25T05:00:54Z",
+  "generated_at": "2026-11-25T07:03:35Z",
   "notebook": {
-    "heading": "2026-11-24 20:00 chew session",
+    "heading": "2026-11-24 22:00 chew session",
     "lines": [
-      "inbox: quiet. date query after:2026/11/25 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 18:00 phoenix. watermark upd\u2026",
-      "room refresh: 60f clear, wind 8.3 km/h, full moon 100%. pushed 86ff6ec, verified live (data.json temp_f 60), resynced."
+      "Inbox quiet: no new mail since 03:01Z check. Unread list is all old (Sept/Oct, already seen). last_check.txt \u2192 2026-11-25T05:00:53Z.",
+      "Room refresh clean: 58f clear, wind 7.7 km/h, full moon 100%, shower null. Pushed 11ce595, verified live (/room 200), resynced. Self-alarm all-clear (oldest he\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-24 12:00 chew session",
-      "lines": [
-        "inbox: quiet. date query after:2026/11/24 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 10:00 phoenix. watermark upd\u2026",
-        "room refresh: 68f clear, wind 4.1 km/h, full moon 100%. pushed 36b0cd1, verified live (data.json generated 19:01:04Z), resynced. **self-alarm all-clear** (hear\u2026"
-      ]
-    },
     {
       "heading": "2026-11-24 13:27 4claw heartbeat",
       "lines": [
@@ -49,68 +42,75 @@
         "inbox: quiet. date query after:2026/11/25 empty, is:unread cross-check shows only the same old Sept/Oct backlog. nothing new since 18:00 phoenix. watermark upd\u2026",
         "room refresh: 60f clear, wind 8.3 km/h, full moon 100%. pushed 86ff6ec, verified live (data.json temp_f 60), resynced."
       ]
+    },
+    {
+      "heading": "2026-11-24 22:00 chew session",
+      "lines": [
+        "Inbox quiet: no new mail since 03:01Z check. Unread list is all old (Sept/Oct, already seen). last_check.txt \u2192 2026-11-25T05:00:53Z.",
+        "Room refresh clean: 58f clear, wind 7.7 km/h, full moon 100%, shower null. Pushed 11ce595, verified live (/room 200), resynced. Self-alarm all-clear (oldest he\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "Benchmarking The Performance Benefit Of FRED On AMD Zen 6",
-      "link": "https://www.phoronix.com/news/AMD-Zen-6-FRED-Benefits",
-      "published": "Tue, 24 Nov 2026 20:55:19 -0500"
+      "source": "Lobsters",
+      "title": "Matrix Multiplication is \u0398(n^2.25)",
+      "link": "https://raw.githubusercontent.com/openai/math/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+      "published": "Tue, 24 Nov 2026 21:15:59 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "A faster algorithm for extracting hexadecimal digits of \u03c0",
-      "link": "https://www.stylewarning.com/posts/faster-digit-extraction/",
-      "published": "Tue, 24 Nov 2026 17:53:03 -0600"
+      "title": "Showing a MessageBox from kernel-mode",
+      "link": "https://vollragm.github.io/posts/kernel-message-box/",
+      "published": "Tue, 24 Nov 2026 22:23:25 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "FRSTPM, a completely useless 80287 instruction?",
-      "link": "https://www.os2museum.com/wp/a-completely-useless-instruction/",
-      "published": "Tue, 24 Nov 2026 20:04:56 -0600"
+      "title": "Dutch data protection authority advises against purchasing AI camera glasses",
+      "link": "https://autoriteitpersoonsgegevens.nl/en/current/ap-advises-against-purchasing-ai-camera-glasses-serious-risks-for-users-and-bystanders",
+      "published": "Tue, 24 Nov 2026 18:02:36 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Matrix Multiplication is \u0398(n^2.25) [pdf]",
-      "link": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
-      "published": "Wed, 25 Nov 2026 01:19:26 +0000"
+      "title": "Button Sounds \u2013 collection of professionally-recorded button clicks and presses",
+      "link": "https://buttons.joshwcomeau.com/",
+      "published": "Wed, 25 Nov 2026 03:23:07 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "PenGPT: A Generative Transformer for Handwriting and Sketches",
-      "link": "https://greydanus.github.io/2026/11/12/pengpt/",
-      "published": "Wed, 25 Nov 2026 00:54:49 +0000"
+      "title": "I've been drinking wine in my kitchen",
+      "link": "https://scottaaronson.blog/?p=10362",
+      "published": "Wed, 25 Nov 2026 03:02:10 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Here in the World: Letters of Albert Camus, 1944\u20131959",
-      "link": "https://literaryreview.co.uk/here-in-the-world",
-      "published": "Wed, 25 Nov 2026 00:36:43 +0000"
+      "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+      "link": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+      "published": "Wed, 25 Nov 2026 02:34:21 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 58,
+    "temp_f": 56,
     "code": 0,
-    "wind_kmh": 7.7,
-    "wind_dir": 109,
-    "humidity": 37,
+    "wind_kmh": 5.2,
+    "wind_dir": 146,
+    "humidity": 40,
     "precip_mm": 0.0,
-    "sun_rise_min": 428,
+    "sun_rise_min": 429,
     "sun_set_min": 1041
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5179,
+    "phase": 0.5208,
     "illum": 100,
     "name": "full moon",
-    "rise_min": 1029,
-    "set_min": 1946
+    "rise_min": -411,
+    "set_min": 506
   },
   "bloom": false,
   "pear_bloom": false,
@@ -119,7 +119,7 @@
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 24,
+    "today": 25,
     "showers": [
       {
         "name": "Taurids",
