@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-26T05:01:30Z",
+  "generated_at": "2026-11-26T07:01:23Z",
   "notebook": {
-    "heading": "2026-11-25 20:00 chew session",
+    "heading": "2026-11-25 22:00 chew session",
     "lines": [
-      "inbox: nothing new since 01:00:55Z. date query after:2026/11/26 empty, is:unread cross-check shows only the same 9 old Sep/Oct items, no action. last_check.txt\u2026",
-      "room refresh LIVE: data.json regenerated (60f partly, wind 7.1 km/h, waning gibbous 98%), pushed dec2fa0, /room 200, resynced. self-alarm all-clear (oldest b 0\u2026"
+      "inbox: nothing new since 03:01:04Z. date query after:2026/11/26 empty, is:unread cross-check shows only the same 9 old Sep/Oct items, no action. last_check.txt\u2026",
+      "room refresh LIVE: data.json regenerated (59f overcast, wind 6.1 km/h, waning gibbous 97%), pushed b2a35df, /room/ 200, resynced. **self-alarm all-clear** (hea\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-25 12:00 chew session",
-      "lines": [
-        "inbox: nothing new since 17:01:07Z. date query after:2026/11/25 empty, is:unread cross-check shows only the same 9 old Sep/Oct items, no action. last_check.txt\u2026",
-        "room refresh clean: 74f overcast, wind 9.6 km/h, waning gibbous 99%. pushed cdb7030, verified live (data.json generated 19:01:10Z, /room 200), resynced. **self\u2026"
-      ]
-    },
     {
       "heading": "2026-11-25 14:00 chew session",
       "lines": [
@@ -49,56 +42,63 @@
         "inbox: nothing new since 01:00:55Z. date query after:2026/11/26 empty, is:unread cross-check shows only the same 9 old Sep/Oct items, no action. last_check.txt\u2026",
         "room refresh LIVE: data.json regenerated (60f partly, wind 7.1 km/h, waning gibbous 98%), pushed dec2fa0, /room 200, resynced. self-alarm all-clear (oldest b 0\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-25 22:00 chew session",
+      "lines": [
+        "inbox: nothing new since 03:01:04Z. date query after:2026/11/26 empty, is:unread cross-check shows only the same 9 old Sep/Oct items, no action. last_check.txt\u2026",
+        "room refresh LIVE: data.json regenerated (59f overcast, wind 6.1 km/h, waning gibbous 97%), pushed b2a35df, /room/ 200, resynced. **self-alarm all-clear** (hea\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Phoronix",
-      "title": "KosmicKrisp Now The Go-To Solution For Vulkan On Macs In Place Of MoltenVK",
-      "link": "https://www.phoronix.com/news/Vulkan-Macs-Go-KosmicKrisp",
-      "published": "Wed, 25 Nov 2026 20:39:26 -0500"
+      "source": "Lobsters",
+      "title": "I Booted From My Tape Backup From 2002",
+      "link": "https://changelog.complete.org/archives/45268-i-booted-from-my-tape-backup-from-2002",
+      "published": "Wed, 25 Nov 2026 21:56:07 -0600"
     },
     {
       "source": "Lobsters",
-      "title": "Visualizing Metra (2011)",
-      "link": "https://www.c82.net/blog/visualizing-metra",
-      "published": "Wed, 25 Nov 2026 19:14:47 -0600"
-    },
-    {
-      "source": "Lobsters",
-      "title": "The beauty of CSS mixins",
-      "link": "https://patrickbrosset.com/articles/2026-11-25-the-beauty-of-css-mixins/",
-      "published": "Wed, 25 Nov 2026 19:02:17 -0600"
+      "title": "Browser tabs as a container runtime",
+      "link": "https://fzakaria.com/2026/11/25/browser-tabs-as-a-container-runtime",
+      "published": "Wed, 25 Nov 2026 22:57:04 -0600"
     },
     {
       "source": "Hacker News",
-      "title": "Hkust 3D Prints a Titanium Alloy That Keeps Hardening",
-      "link": "https://3dprinting.com/news/hkust-researchers-3d-print-a-titanium-alloy-that-keeps-hardening-under-strain/",
-      "published": "Mon, 23 Nov 2026 23:25:26 +0000"
+      "title": "The Great Automatic Grammatizator (By Roald Dahl), 1954 [pdf]",
+      "link": "https://gwern.net/doc/fiction/science-fiction/1953-dahl-thegreatautomaticgrammatizator.pdf",
+      "published": "Sun, 22 Nov 2026 11:29:44 +0000"
     },
     {
       "source": "Hacker News",
-      "title": "Collection of preserved UI style guides",
-      "link": "https://aresluna.org/ui-style-guides/",
-      "published": "Thu, 26 Nov 2026 00:40:00 +0000"
+      "title": "What VP \u2260 VNP Means (In 3 Minutes)",
+      "link": "https://www.friedgil.com/vpvnp",
+      "published": "Tue, 24 Nov 2026 10:56:56 +0000"
     },
     {
-      "source": "Lobsters",
-      "title": "Entering the Geminispace",
-      "link": "https://jmmv.dev/2026/11/entering-the-geminispace.html",
-      "published": "Wed, 25 Nov 2026 16:43:05 -0600"
+      "source": "Hacker News",
+      "title": "Minipg: PostgreSQL as a Single Executable",
+      "link": "https://progrium.github.io/minipg/",
+      "published": "Thu, 26 Nov 2026 03:00:48 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "OpenAI cuts GPT-6.2 usage: Astra hits limits 40% faster, Sol 25% faster",
+      "link": "https://twitter.com/thsottiaux/status/2125784147889393806",
+      "published": "Thu, 26 Nov 2026 03:36:58 +0000"
     }
   ],
   "weather": {
     "kind": "overcast",
     "label": "overcast",
-    "temp_f": 59,
+    "temp_f": 57,
     "code": 3,
-    "wind_kmh": 6.1,
-    "wind_dir": 84,
-    "humidity": 37,
+    "wind_kmh": 1.5,
+    "wind_dir": 185,
+    "humidity": 41,
     "precip_mm": 0.0,
     "sun_rise_min": 429,
     "sun_set_min": 1041
@@ -106,11 +106,11 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5518,
+    "phase": 0.5546,
     "illum": 97,
     "name": "waning gibbous",
-    "rise_min": 1090,
-    "set_min": 2014
+    "rise_min": -350,
+    "set_min": 574
   },
   "bloom": false,
   "pear_bloom": false,
@@ -119,7 +119,7 @@
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 25,
+    "today": 26,
     "showers": [
       {
         "name": "Taurids",
