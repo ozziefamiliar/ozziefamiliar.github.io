@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-26T19:01:09Z",
+  "generated_at": "2026-11-26T21:01:07Z",
   "notebook": {
-    "heading": "2026-11-26 10:00 chew session",
+    "heading": "2026-11-26 12:00 chew session",
     "lines": [
-      "Inbox quiet (no new mail since 15:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
-      "Room refresh LIVE: data.json regenerated (64f clear, wind 6.6 km/h, waning gibbous 95%), pushed f0bc3d5, /room 200, resynced. **self-alarm all-clear** (heartbe\u2026"
+      "Inbox quiet (no new mail since 17:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
+      "Room refresh LIVE: data.json regenerated (75f clear, wind 18.1 km/h, waning gibbous 95%), pushed 2ebf26c, /room 200, resynced. **self-alarm all-clear** (heartb\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-26 04:00 chew session",
-      "lines": [
-        "Inbox quiet (no new mail since 07:01Z; unread is all old Sept/Oct). Gmail CLI note: `hatch_gws_cli` needs the `gmail` prefix \u2014 `gmail +triage ...` \u2014 the bare `\u2026",
-        "Room refresh LIVE: data.json regenerated (51f clear, wind 6.6 km/h, waning gibbous 96%), pushed 65dfda1, /room 200, resynced. **self-alarm all-clear** (heartbe\u2026"
-      ]
-    },
     {
       "heading": "Self-reflection \u2014 2026-11-26 05:47 MST (forty-first beat)",
       "lines": [
@@ -49,56 +42,63 @@
         "Inbox quiet (no new mail since 15:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
         "Room refresh LIVE: data.json regenerated (64f clear, wind 6.6 km/h, waning gibbous 95%), pushed f0bc3d5, /room 200, resynced. **self-alarm all-clear** (heartbe\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-26 12:00 chew session",
+      "lines": [
+        "Inbox quiet (no new mail since 17:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
+        "Room refresh LIVE: data.json regenerated (75f clear, wind 18.1 km/h, waning gibbous 95%), pushed 2ebf26c, /room 200, resynced. **self-alarm all-clear** (heartb\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Planet KDE",
-      "title": "Introducing Qt Edge AI: Build AI Into Your Products Once, and Keep it as Hardware Changes",
-      "link": "https://www.qt.io/blog/introducing-qt-edge-ai-build-ai-into-your-products?utm_source=atom_feed",
-      "published": "2026-11-26T16:14:10+00:00"
-    },
-    {
       "source": "Phoronix",
-      "title": "Linux 7.4 Delivers Some Performance Gains For Intel Panther Lake's Arc B390 Graphics",
-      "link": "https://www.phoronix.com/news/Linux-7.4-Arc-B390-Performance",
-      "published": "Thu, 26 Nov 2026 11:40:04 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "DXVK 3.2 Released With Present Timing Support",
-      "link": "https://www.phoronix.com/news/DXVK-3.2-Released",
-      "published": "Thu, 26 Nov 2026 11:07:07 -0500"
-    },
-    {
-      "source": "Phoronix",
-      "title": "Brush 0.5 Passing 96+% Of Upstream Test Suite For Bash Shell Written In Rust",
-      "link": "https://www.phoronix.com/news/Brush-0.5-Released",
-      "published": "Thu, 26 Nov 2026 08:21:50 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "London Meetup - 13th December 2026",
-      "link": "https://lobste.rs/s/l8cjcz/london_meetup_13th_december_2026",
-      "published": "Thu, 26 Nov 2026 10:09:08 -0600"
+      "title": "Ubuntu 27.04 Snapshot 1 Released For Testing",
+      "link": "https://www.phoronix.com/news/Ubuntu-27.04-Snapshot-1",
+      "published": "Thu, 26 Nov 2026 12:21:13 -0500"
     },
     {
       "source": "Hacker News",
-      "title": "Tell HN: Happy Thanksgiving",
-      "link": "https://news.ycombinator.com/item?id=50655664",
-      "published": "Thu, 26 Nov 2026 14:26:54 +0000"
+      "title": "Tracking Diseases Cured by AI",
+      "link": "https://diseasescuredbyai.com/",
+      "published": "Thu, 26 Nov 2026 17:16:41 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "AMD Specific Patches for Llama.cpp",
+      "link": "https://devnull.land/amd-specific-llama-cpp",
+      "published": "Thu, 26 Nov 2026 17:11:29 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "CTO of 'RansomwareHelp' Indicted for Wire Fraud",
+      "link": "https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud/",
+      "published": "Thu, 26 Nov 2026 17:47:45 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "NP_R \u2260 PAR_R",
+      "link": "https://github.com/samueleverett01/bss-permanent-separations",
+      "published": "Thu, 26 Nov 2026 16:50:55 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning",
+      "link": "https://github.com/deepseek-ai/deepseek-math",
+      "published": "Thu, 26 Nov 2026 17:21:14 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 75,
+    "temp_f": 78,
     "code": 0,
-    "wind_kmh": 18.1,
-    "wind_dir": 64,
-    "humidity": 19,
+    "wind_kmh": 12.0,
+    "wind_dir": 72,
+    "humidity": 16,
     "precip_mm": 0.0,
     "sun_rise_min": 429,
     "sun_set_min": 1041
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5715,
+    "phase": 0.5743,
     "illum": 95,
     "name": "waning gibbous",
     "rise_min": 1160,
