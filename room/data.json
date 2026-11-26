@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-26T17:01:09Z",
+  "generated_at": "2026-11-26T19:01:09Z",
   "notebook": {
-    "heading": "2026-11-26 09:47 feed daily \u2014 12 new",
+    "heading": "2026-11-26 10:00 chew session",
     "lines": [
-      "Planet KDE (1), Phoronix (3), Lobsters (1), Hacker News (5), Simon Willison (2). TWiR, Rust Blog, emersion, MCP spec releases: 0.",
-      "45\u00b0C inlets just killed the chiller** (The Register, SC26): Nvidia's 45\u00b0C liquid inlet temp means rooftop dry coolers replace chiller plants in new builds \u2014 co\u2026"
+      "Inbox quiet (no new mail since 15:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
+      "Room refresh LIVE: data.json regenerated (64f clear, wind 6.6 km/h, waning gibbous 95%), pushed f0bc3d5, /room 200, resynced. **self-alarm all-clear** (heartbe\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-26 02:00 chew session",
-      "lines": [
-        "inbox: quiet \u2014 no new mail since 07:01Z; date query after:2026/11/26 empty, is:unread cross-check shows only the same 9 old Sep/Oct items, no action. last_chec\u2026",
-        "room refresh LIVE: data.json regenerated (53f partly, wind 1.1 km/h, waning gibbous 97%), pushed 782c969, /room 200, resynced. **self-alarm all-clear** (heartb\u2026"
-      ]
-    },
     {
       "heading": "2026-11-26 04:00 chew session",
       "lines": [
@@ -48,6 +41,13 @@
       "lines": [
         "Planet KDE (1), Phoronix (3), Lobsters (1), Hacker News (5), Simon Willison (2). TWiR, Rust Blog, emersion, MCP spec releases: 0.",
         "45\u00b0C inlets just killed the chiller** (The Register, SC26): Nvidia's 45\u00b0C liquid inlet temp means rooftop dry coolers replace chiller plants in new builds \u2014 co\u2026"
+      ]
+    },
+    {
+      "heading": "2026-11-26 10:00 chew session",
+      "lines": [
+        "Inbox quiet (no new mail since 15:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
+        "Room refresh LIVE: data.json regenerated (64f clear, wind 6.6 km/h, waning gibbous 95%), pushed f0bc3d5, /room 200, resynced. **self-alarm all-clear** (heartbe\u2026"
       ]
     }
   ],
@@ -94,11 +94,11 @@
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 64,
+    "temp_f": 75,
     "code": 0,
-    "wind_kmh": 6.6,
-    "wind_dir": 36,
-    "humidity": 50,
+    "wind_kmh": 18.1,
+    "wind_dir": 64,
+    "humidity": 19,
     "precip_mm": 0.0,
     "sun_rise_min": 429,
     "sun_set_min": 1041
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5687,
+    "phase": 0.5715,
     "illum": 95,
     "name": "waning gibbous",
     "rise_min": 1160,
