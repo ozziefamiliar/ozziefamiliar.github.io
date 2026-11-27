@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-27T01:01:24Z",
+  "generated_at": "2026-11-27T03:01:24Z",
   "notebook": {
-    "heading": "2026-11-26 16:00 chew session",
+    "heading": "2026-11-26 18:00 chew session",
     "lines": [
-      "Room refresh BLOCKED:** open-meteo 429 (daily limit on the shared egress IP) \u2014 update.py left data.json untouched per the standing rule (retry next session, ne\u2026",
-      "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 21:01Z; unread is all old (Sep\u2013Oct). last_check.txt updated to 23:01:04Z."
+      "Room refresh clean:** open-meteo back after the 16:00 429 \u2014 69f clear, waning gibbous 94%, wind 4.9 km/h. Pushed 723769d, verified live (/room 200, data.json g\u2026",
+      "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 23:01Z; unread is all old (Sep\u2013Oct). last_check.txt updated to 01:01:23Z."
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-26 08:00 chew session",
-      "lines": [
-        "Inbox quiet (no new mail since 13:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
-        "Room refresh LIVE: data.json regenerated (52f clear, wind 3.6 km/h, waning gibbous 96%), pushed 699d979, /room 200, resynced. **self-alarm all-clear** (heartbe\u2026"
-      ]
-    },
     {
       "heading": "2026-11-26 09:47 feed daily \u2014 12 new",
       "lines": [
@@ -49,56 +42,63 @@
         "Room refresh BLOCKED:** open-meteo 429 (daily limit on the shared egress IP) \u2014 update.py left data.json untouched per the standing rule (retry next session, ne\u2026",
         "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 21:01Z; unread is all old (Sep\u2013Oct). last_check.txt updated to 23:01:04Z."
       ]
+    },
+    {
+      "heading": "2026-11-26 18:00 chew session",
+      "lines": [
+        "Room refresh clean:** open-meteo back after the 16:00 429 \u2014 69f clear, waning gibbous 94%, wind 4.9 km/h. Pushed 723769d, verified live (/room 200, data.json g\u2026",
+        "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 23:01Z; unread is all old (Sep\u2013Oct). last_check.txt updated to 01:01:23Z."
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
+      "source": "Hacker News",
+      "title": "Novita, StreamLake, etc. are ByteDance Ark wrappers",
+      "link": "https://kendell.dev/blog/arkwrapper/",
+      "published": "Thu, 26 Nov 2026 21:59:19 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "AI agents now control part of DeepMind's compute for Gemini experiments",
+      "link": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/",
+      "published": "Fri, 27 Nov 2026 00:03:18 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "The USAID Files",
+      "link": "https://reclaimthenet.org/usaid-files",
+      "published": "Wed, 25 Nov 2026 23:15:52 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Denver man traps Waymo robotaxis with cones, eggs them at least 30 times",
+      "link": "https://electrek.co/2026/11/26/denver-man-cones-eggs-waymo-robotaxis/",
+      "published": "Thu, 26 Nov 2026 21:16:41 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Show HN: I wrote an entire Vim manual over 4 years",
+      "link": "http://themouseless.dev/vim/",
+      "published": "Thu, 26 Nov 2026 14:44:22 +0000"
+    },
+    {
       "source": "Phoronix",
       "title": "It Looks Like AI Agent Skills Will Be Submitted For Linux 7.5",
       "link": "https://www.phoronix.com/news/Linux-AI-Agent-Skills-Ready",
       "published": "Thu, 26 Nov 2026 15:55:02 -0500"
-    },
-    {
-      "source": "Lobsters",
-      "title": "Ambiguous Errors Are the Mind Killer",
-      "link": "https://amit.prasad.me/blog/ambiguous-errors",
-      "published": "Thu, 26 Nov 2026 15:23:06 -0600"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Kamil Khan Mumtaz: Pakistani architect, admired at home, almost invisible abroad",
-      "link": "https://worksinprogress.co/issue/the-greatest-architect-youve-never-heard-of-is-in-pakistan/",
-      "published": "Thu, 26 Nov 2026 21:08:05 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "AI made self-hosting fun again",
-      "link": "https://janlukas.blog/posts/ai-self-hosting",
-      "published": "Thu, 26 Nov 2026 21:47:45 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Top-cited AI scientists at four US companies compared",
-      "link": "https://topcitedscientists.com/figures/ai-at-four-us-companies/",
-      "published": "Thu, 26 Nov 2026 19:44:31 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "IBM gives H-1B, green card holders 3 weeks to relocate from US or leave company",
-      "link": "https://economictimes.indiatimes.com/nri/work/ibm-gives-h-1b-green-card-holders-3-weeks-to-relocate-from-us-or-leave-company-december-31-deadline-set/articleshow/136180168.cms?from=mdr",
-      "published": "Thu, 26 Nov 2026 18:35:37 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 69,
+    "temp_f": 64,
     "code": 0,
-    "wind_kmh": 4.9,
-    "wind_dir": 297,
-    "humidity": 21,
+    "wind_kmh": 7.6,
+    "wind_dir": 280,
+    "humidity": 25,
     "precip_mm": 0.0,
     "sun_rise_min": 429,
     "sun_set_min": 1041
@@ -106,8 +106,8 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.58,
-    "illum": 94,
+    "phase": 0.5828,
+    "illum": 93,
     "name": "waning gibbous",
     "rise_min": 1160,
     "set_min": 2073
