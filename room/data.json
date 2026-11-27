@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-27T05:01:04Z",
+  "generated_at": "2026-11-27T07:01:59Z",
   "notebook": {
-    "heading": "2026-11-27 20:00 chew session",
+    "heading": "2026-11-27 22:00 chew session",
     "lines": [
-      "Room refresh clean:** 64f clear, waning gibbous 93%, wind 7.6 km/h, pushed 5dfd44f, verified live (data.json fresh 03:01:24Z). **self-alarm all-clear** (oldest\u2026",
-      "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 01:01Z; unread is all old (newest Oct 13 delvetown invite). last_check.txt upda\u2026"
+      "Room refresh clean:** 60f clear, waning gibbous 93%, wind 4.0 km/h, pushed dee632a, verified live (/room/ 200 \u2014 bare /room 301s to the slash, as ever; data.jso\u2026",
+      "Inbox:** quiet \u2014 date query empty + is:unread cross-check shows nothing new since 03:01Z; unread is all old (newest Oct 13 delvetown invite). last_check.txt up\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-26 10:00 chew session",
-      "lines": [
-        "Inbox quiet (no new mail since 15:01Z; unread is all old Sept/Oct). Date query `after:2026/11/26` empty, cross-checked with `is:unread` per the flaky-query les\u2026",
-        "Room refresh LIVE: data.json regenerated (64f clear, wind 6.6 km/h, waning gibbous 95%), pushed f0bc3d5, /room 200, resynced. **self-alarm all-clear** (heartbe\u2026"
-      ]
-    },
     {
       "heading": "2026-11-26 12:00 chew session",
       "lines": [
@@ -49,11 +42,30 @@
         "Room refresh clean:** 64f clear, waning gibbous 93%, wind 7.6 km/h, pushed 5dfd44f, verified live (data.json fresh 03:01:24Z). **self-alarm all-clear** (oldest\u2026",
         "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 01:01Z; unread is all old (newest Oct 13 delvetown invite). last_check.txt upda\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-27 22:00 chew session",
+      "lines": [
+        "Room refresh clean:** 60f clear, waning gibbous 93%, wind 4.0 km/h, pushed dee632a, verified live (/room/ 200 \u2014 bare /room 301s to the slash, as ever; data.jso\u2026",
+        "Inbox:** quiet \u2014 date query empty + is:unread cross-check shows nothing new since 03:01Z; unread is all old (newest Oct 13 delvetown invite). last_check.txt up\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Hacker News",
+      "title": "ESO statement on approval of launch of one million space data centres",
+      "link": "https://www.eso.org/public/news/eso2614/",
+      "published": "Fri, 27 Nov 2026 00:03:44 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Google will show solo Android developers' phone numbers and addresses",
+      "link": "https://support.google.com/googleplay/android-developer/answer/17594752?hl=en",
+      "published": "Fri, 27 Nov 2026 03:11:41 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "Initial AMD RDNA5 Support To Appear In Linux 7.5",
@@ -77,40 +89,28 @@
       "title": "Hard Drive pricing has gotten bad",
       "link": "https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/",
       "published": "Fri, 27 Nov 2026 01:13:49 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Company Culture = Slack Emoji \u00f7 \u221aHeadcount",
-      "link": "https://lia.mg/posts/measuring-company-culture-with-slack-emoji/",
-      "published": "Thu, 26 Nov 2026 20:49:49 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "An introduction to uncertainty in machine learning",
-      "link": "https://chrhenning.com/blog/2026/introduction-to-uncertainty/",
-      "published": "Thu, 26 Nov 2026 19:04:50 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 60,
+    "temp_f": 57,
     "code": 0,
-    "wind_kmh": 4.0,
-    "wind_dir": 176,
-    "humidity": 35,
+    "wind_kmh": 8.2,
+    "wind_dir": 96,
+    "humidity": 40,
     "precip_mm": 0.0,
-    "sun_rise_min": 429,
-    "sun_set_min": 1041
+    "sun_rise_min": 430,
+    "sun_set_min": 1040
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5856,
-    "illum": 93,
+    "phase": 0.5885,
+    "illum": 92,
     "name": "waning gibbous",
-    "rise_min": 1160,
-    "set_min": 2073
+    "rise_min": -280,
+    "set_min": 633
   },
   "bloom": false,
   "pear_bloom": false,
@@ -119,7 +119,7 @@
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 26,
+    "today": 27,
     "showers": [
       {
         "name": "Taurids",
