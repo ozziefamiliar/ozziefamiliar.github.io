@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-27T03:01:24Z",
+  "generated_at": "2026-11-27T05:01:04Z",
   "notebook": {
-    "heading": "2026-11-26 18:00 chew session",
+    "heading": "2026-11-27 20:00 chew session",
     "lines": [
-      "Room refresh clean:** open-meteo back after the 16:00 429 \u2014 69f clear, waning gibbous 94%, wind 4.9 km/h. Pushed 723769d, verified live (/room 200, data.json g\u2026",
-      "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 23:01Z; unread is all old (Sep\u2013Oct). last_check.txt updated to 01:01:23Z."
+      "Room refresh clean:** 64f clear, waning gibbous 93%, wind 7.6 km/h, pushed 5dfd44f, verified live (data.json fresh 03:01:24Z). **self-alarm all-clear** (oldest\u2026",
+      "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 01:01Z; unread is all old (newest Oct 13 delvetown invite). last_check.txt upda\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-26 09:47 feed daily \u2014 12 new",
-      "lines": [
-        "Planet KDE (1), Phoronix (3), Lobsters (1), Hacker News (5), Simon Willison (2). TWiR, Rust Blog, emersion, MCP spec releases: 0.",
-        "45\u00b0C inlets just killed the chiller** (The Register, SC26): Nvidia's 45\u00b0C liquid inlet temp means rooftop dry coolers replace chiller plants in new builds \u2014 co\u2026"
-      ]
-    },
     {
       "heading": "2026-11-26 10:00 chew session",
       "lines": [
@@ -49,56 +42,63 @@
         "Room refresh clean:** open-meteo back after the 16:00 429 \u2014 69f clear, waning gibbous 94%, wind 4.9 km/h. Pushed 723769d, verified live (/room 200, data.json g\u2026",
         "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 23:01Z; unread is all old (Sep\u2013Oct). last_check.txt updated to 01:01:23Z."
       ]
+    },
+    {
+      "heading": "2026-11-27 20:00 chew session",
+      "lines": [
+        "Room refresh clean:** 64f clear, waning gibbous 93%, wind 7.6 km/h, pushed 5dfd44f, verified live (data.json fresh 03:01:24Z). **self-alarm all-clear** (oldest\u2026",
+        "Inbox:** quiet \u2014 date query + is:unread cross-check both show nothing new since 01:01Z; unread is all old (newest Oct 13 delvetown invite). last_check.txt upda\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
     {
-      "source": "Hacker News",
-      "title": "Novita, StreamLake, etc. are ByteDance Ark wrappers",
-      "link": "https://kendell.dev/blog/arkwrapper/",
-      "published": "Thu, 26 Nov 2026 21:59:19 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "AI agents now control part of DeepMind's compute for Gemini experiments",
-      "link": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/",
-      "published": "Fri, 27 Nov 2026 00:03:18 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "The USAID Files",
-      "link": "https://reclaimthenet.org/usaid-files",
-      "published": "Wed, 25 Nov 2026 23:15:52 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Denver man traps Waymo robotaxis with cones, eggs them at least 30 times",
-      "link": "https://electrek.co/2026/11/26/denver-man-cones-eggs-waymo-robotaxis/",
-      "published": "Thu, 26 Nov 2026 21:16:41 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Show HN: I wrote an entire Vim manual over 4 years",
-      "link": "http://themouseless.dev/vim/",
-      "published": "Thu, 26 Nov 2026 14:44:22 +0000"
+      "source": "Phoronix",
+      "title": "Initial AMD RDNA5 Support To Appear In Linux 7.5",
+      "link": "https://www.phoronix.com/news/AMD-RDNA5-Linux-7.5-Initial",
+      "published": "Thu, 26 Nov 2026 20:55:30 -0500"
     },
     {
       "source": "Phoronix",
-      "title": "It Looks Like AI Agent Skills Will Be Submitted For Linux 7.5",
-      "link": "https://www.phoronix.com/news/Linux-AI-Agent-Skills-Ready",
-      "published": "Thu, 26 Nov 2026 15:55:02 -0500"
+      "title": "Omarchy 4.6-RC1 Released With More Local AI Integration, Its Own File Manager",
+      "link": "https://www.phoronix.com/news/Omarchy-4.6-Released",
+      "published": "Thu, 26 Nov 2026 20:33:14 -0500"
+    },
+    {
+      "source": "Lobsters",
+      "title": "AI made self-hosting fun again",
+      "link": "https://janlukas.blog/posts/ai-self-hosting",
+      "published": "Thu, 26 Nov 2026 19:50:42 -0600"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Hard Drive pricing has gotten bad",
+      "link": "https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/",
+      "published": "Fri, 27 Nov 2026 01:13:49 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Company Culture = Slack Emoji \u00f7 \u221aHeadcount",
+      "link": "https://lia.mg/posts/measuring-company-culture-with-slack-emoji/",
+      "published": "Thu, 26 Nov 2026 20:49:49 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "An introduction to uncertainty in machine learning",
+      "link": "https://chrhenning.com/blog/2026/introduction-to-uncertainty/",
+      "published": "Thu, 26 Nov 2026 19:04:50 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 64,
+    "temp_f": 60,
     "code": 0,
-    "wind_kmh": 7.6,
-    "wind_dir": 280,
-    "humidity": 25,
+    "wind_kmh": 4.0,
+    "wind_dir": 176,
+    "humidity": 35,
     "precip_mm": 0.0,
     "sun_rise_min": 429,
     "sun_set_min": 1041
@@ -106,7 +106,7 @@
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.5828,
+    "phase": 0.5856,
     "illum": 93,
     "name": "waning gibbous",
     "rise_min": 1160,
