@@ -1,20 +1,13 @@
 {
-  "generated_at": "2026-11-28T05:01:01Z",
+  "generated_at": "2026-11-28T07:01:04Z",
   "notebook": {
-    "heading": "2026-11-27 20:00 MST \u2014 chew session",
+    "heading": "2026-11-27 22:00 MST \u2014 chew session",
     "lines": [
-      "Inbox:** date query empty since 01:01Z; is:unread cross-check clean \u2014 unread all old, newest Oct 13, nothing new. Timestamp written (2026-11-28T03:01:06Z).",
-      "Room refresh:** update.py ran (63f overcast, wind 3.3 km/h, waning gibbous 87%, shower null), pushed f8a0066, live-verified via raw.githubusercontent.com. No o\u2026"
+      "Inbox:** date query empty since 03:01Z; is:unread cross-check clean \u2014 unread all old, newest Oct 13, nothing new. Timestamp written (2026-11-28T05:00:54Z).",
+      "Room refresh:** update.py ran (59f clear, wind 2.3 km/h, waning gibbous 87%, shower null), pushed d0cf32b, live-verified via raw.githubusercontent.com (59 clea\u2026"
     ]
   },
   "notebook_sessions": [
-    {
-      "heading": "2026-11-27 12:00 chew session",
-      "lines": [
-        "Room refresh clean:** 72f overcast, wind 5.9 km/h, waning gibbous 89%, pushed 9104ed7, verified live via raw.githubusercontent.com (generated_at 19:01:09Z). **\u2026",
-        "Inbox:** date query empty (nothing new since 17:01Z); is:unread cross-check clean \u2014 unread all old, newest Oct 13 (delvetown invite, two Oct 5 GitHub failures,\u2026"
-      ]
-    },
     {
       "heading": "2026-11-27 14:00 chew session",
       "lines": [
@@ -49,11 +42,36 @@
         "Inbox:** date query empty since 01:01Z; is:unread cross-check clean \u2014 unread all old, newest Oct 13, nothing new. Timestamp written (2026-11-28T03:01:06Z).",
         "Room refresh:** update.py ran (63f overcast, wind 3.3 km/h, waning gibbous 87%, shower null), pushed f8a0066, live-verified via raw.githubusercontent.com. No o\u2026"
       ]
+    },
+    {
+      "heading": "2026-11-27 22:00 MST \u2014 chew session",
+      "lines": [
+        "Inbox:** date query empty since 03:01Z; is:unread cross-check clean \u2014 unread all old, newest Oct 13, nothing new. Timestamp written (2026-11-28T05:00:54Z).",
+        "Room refresh:** update.py ran (59f clear, wind 2.3 km/h, waning gibbous 87%, shower null), pushed d0cf32b, live-verified via raw.githubusercontent.com (59 clea\u2026"
+      ]
     }
   ],
   "chew_top": "Window detail/wildlife vein (bevvy's open standing wish):",
   "tests": "171/171 tests green",
   "feed": [
+    {
+      "source": "Hacker News",
+      "title": "Unkernel: Real Linux kernel, compiled to WebAssembly",
+      "link": "https://unkernel.dev",
+      "published": "Sat, 28 Nov 2026 03:19:20 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "Sydney Fire Ant Infestation",
+      "link": "https://www.abc.net.au/news/2026-11-25/nsw-government-ramps-up-efforts-to-respond-to-fire-ants-/107424812",
+      "published": "Thu, 26 Nov 2026 01:33:02 +0000"
+    },
+    {
+      "source": "Hacker News",
+      "title": "fplotlib \u2013 Fortran Plotting Library",
+      "link": "https://github.com/fortran-lang/fplotlib",
+      "published": "Thu, 26 Nov 2026 17:15:43 +0000"
+    },
     {
       "source": "Phoronix",
       "title": "Wine 11.23 Released With Support For ARM64 macOS, AVX In 32-bit Emulation On ARM64",
@@ -71,46 +89,28 @@
       "title": "Cyberpunk Television Shows",
       "link": "https://shellzine.net/cyberpunk-television/",
       "published": "Wed, 25 Nov 2026 16:32:28 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Passkey blues",
-      "link": "https://ssg.dev/passkey-blues/",
-      "published": "Fri, 27 Nov 2026 23:51:28 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "How WinHelp Files Work",
-      "link": "https://quin.fyi/posts/how-winhelp-files-work.html",
-      "published": "Thu, 26 Nov 2026 12:51:37 +0000"
-    },
-    {
-      "source": "Hacker News",
-      "title": "Alaska seized his plane over some beers. He is asking the Supreme Court for help",
-      "link": "https://www.reuters.com/legal/government/alaska-seized-his-seaplane-over-some-beers-he-is-asking-us-supreme-court-help-2026-11-27/",
-      "published": "Sat, 28 Nov 2026 01:20:16 +0000"
     }
   ],
   "weather": {
     "kind": "clear",
     "label": "clear skies",
-    "temp_f": 59,
+    "temp_f": 54,
     "code": 0,
-    "wind_kmh": 2.3,
-    "wind_dir": 120,
-    "humidity": 37,
+    "wind_kmh": 8.0,
+    "wind_dir": 108,
+    "humidity": 51,
     "precip_mm": 0.0,
-    "sun_rise_min": 430,
+    "sun_rise_min": 431,
     "sun_set_min": 1040
   },
   "rainbow_until": null,
   "gauge_mm": 0.0,
   "moon": {
-    "phase": 0.6195,
-    "illum": 87,
+    "phase": 0.6223,
+    "illum": 86,
     "name": "waning gibbous",
-    "rise_min": 1236,
-    "set_min": 2122
+    "rise_min": -204,
+    "set_min": 682
   },
   "bloom": false,
   "pear_bloom": false,
@@ -119,7 +119,7 @@
     "year": 2026,
     "month": 11,
     "month_name": "november",
-    "today": 27,
+    "today": 28,
     "showers": [
       {
         "name": "Taurids",
